@@ -1,0 +1,56 @@
+{
+  "provenance": "Own original fictional demonstrations. No paid clients or account-performance results.",
+  "historical_native_checked_at": "2026-10-12T21:09:17.661Z",
+  "linkedin": {
+    "pages": 5,
+    "all_pages_opened_in_editor_and_public_view": true,
+    "native_text_edited_and_restored": true,
+    "native_frame_image_replaced_and_restored": true,
+    "crop_control_observed": true,
+    "remaining_photo_frames_accessibility_present": true
+  },
+  "a4": {
+    "pages": 2,
+    "native_heading_edited_and_restored": true,
+    "native_table_cell_edited_and_restored": true,
+    "table_original_text": "1. Przygotowanie materiałów",
+    "blank_left_back_verified_in_local_renderer": true,
+    "physical_duplex_print_not_verified": true
+  },
+  "parenting": {
+    "native_editor_pages_recorded": 5,
+    "public_viewer_pages_recorded": 5,
+    "record_date": "2026-10-12",
+    "no_extra_edit_test_claim_from_screenshot_existence": true
+  },
+  "current_share_status": {
+    "review_date": "2026-10-13",
+    "observation_source": "Root live browser/headers check, not a new network request by this agent.",
+    "previously_used_public_shortlink_usable_today": false,
+    "observed_result": "HEAD403/IABERR_ABORTED reported by root.",
+    "public_url_here_is_an_owned_preview_collection": true
+  },
+  "source_format": "Original final PPTX files for import. These downloads are not live Canva editor links.",
+  "private_editor_urls_distributed": false,
+  "account_or_login_screenshots_distributed": false,
+  "deck_files": [
+    {
+      "family": "linkedin",
+      "file": "files/linkedin-5-szablonow-do-importu.pptx",
+      "pages": 5,
+      "sha256": "cd64fc607eae9e2fd5847dd31e4e71bbde4bae0ff21c765c30dc769074edb9fd"
+    },
+    {
+      "family": "a4",
+      "file": "files/a4-duplex-2-strony-probka.pptx",
+      "pages": 2,
+      "sha256": "dd42534e3510ac63cc75e3bca65b9746f905e5aa85e2480b06fd9399dd2fae72"
+    },
+    {
+      "family": "parenting",
+      "file": "files/przed-drzwiami-karuzela-5-do-canva.pptx",
+      "pages": 5,
+      "sha256": "b63be98b2cf10777a7591d5e0ef9f8b9dab2df63517051232ee998e821cd4410"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "kind": "own synthetic engineering demo",
+  "tracks": [
+    {
+      "id": "t01",
+      "name": "Własna próbka 01",
+      "file": "audio/t01.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t02",
+      "name": "Własna próbka 02",
+      "file": "audio/t02.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t03",
+      "name": "Własna próbka 03",
+      "file": "audio/t03.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t04",
+      "name": "Własna próbka 04",
+      "file": "audio/t04.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t05",
+      "name": "Własna próbka 05",
+      "file": "audio/t05.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t06",
+      "name": "Własna próbka 06",
+      "file": "audio/t06.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    },
+    {
+      "id": "t07",
+      "name": "Własna próbka 07",
+      "file": "audio/t07.mp3",
+      "source_duration": 4,
+      "kind": "own synthetic test; not client catalog"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "p01",
+      "name": "Spokojne wejście",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p02",
+      "name": "Ciepłe popołudnie",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p03",
+      "name": "Lekki ruch",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p04",
+      "name": "Przestrzeń",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p05",
+      "name": "Wieczorny spokój",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p06",
+      "name": "Jasny poranek",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    },
+    {
+      "id": "p07",
+      "name": "Neutralne tło",
+      "demo_library": "Shared7 original synthetic tracks, not75+ client tracks"
+    }
+  ]
+}

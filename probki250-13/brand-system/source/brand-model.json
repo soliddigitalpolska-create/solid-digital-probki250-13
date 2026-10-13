@@ -1,0 +1,146 @@
+{
+  "provenance": "Original fictional producer/product identity. No client case or market claim.",
+  "brands": [
+    {
+      "id": "norda",
+      "name": "NORDA",
+      "role": "Producent technologii",
+      "accent": "#3269E8",
+      "dark_accent": "#84A9FF"
+    },
+    {
+      "id": "plico",
+      "name": "PLICO",
+      "role": "Produkt do pracy z dokumentami",
+      "accent": "#0C8B7D",
+      "dark_accent": "#6DD8C9"
+    }
+  ],
+  "palette": {
+    "ink": "#11243A",
+    "paper": "#F6F8FC",
+    "blue": "#3269E8",
+    "teal": "#0C8B7D"
+  },
+  "font": {
+    "family": "DejaVu Sans",
+    "file": "source/DejaVuSans.ttf",
+    "license": "source/FONT-LICENSE.txt",
+    "commercial_permission_present": true
+  },
+  "logos": [
+    {
+      "brand": "norda",
+      "variant": "light",
+      "signet": false,
+      "svg": "logos/norda-logo-light.svg",
+      "png": "logos/norda-logo-light.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "light",
+      "signet": true,
+      "svg": "logos/norda-signet-light.svg",
+      "png": "logos/norda-signet-light.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "dark",
+      "signet": false,
+      "svg": "logos/norda-logo-dark.svg",
+      "png": "logos/norda-logo-dark.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "dark",
+      "signet": true,
+      "svg": "logos/norda-signet-dark.svg",
+      "png": "logos/norda-signet-dark.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "mono-black",
+      "signet": false,
+      "svg": "logos/norda-logo-mono-black.svg",
+      "png": "logos/norda-logo-mono-black.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "mono-black",
+      "signet": true,
+      "svg": "logos/norda-signet-mono-black.svg",
+      "png": "logos/norda-signet-mono-black.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "mono-white",
+      "signet": false,
+      "svg": "logos/norda-logo-mono-white.svg",
+      "png": "logos/norda-logo-mono-white.png"
+    },
+    {
+      "brand": "norda",
+      "variant": "mono-white",
+      "signet": true,
+      "svg": "logos/norda-signet-mono-white.svg",
+      "png": "logos/norda-signet-mono-white.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "light",
+      "signet": false,
+      "svg": "logos/plico-logo-light.svg",
+      "png": "logos/plico-logo-light.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "light",
+      "signet": true,
+      "svg": "logos/plico-signet-light.svg",
+      "png": "logos/plico-signet-light.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "dark",
+      "signet": false,
+      "svg": "logos/plico-logo-dark.svg",
+      "png": "logos/plico-logo-dark.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "dark",
+      "signet": true,
+      "svg": "logos/plico-signet-dark.svg",
+      "png": "logos/plico-signet-dark.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "mono-black",
+      "signet": false,
+      "svg": "logos/plico-logo-mono-black.svg",
+      "png": "logos/plico-logo-mono-black.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "mono-black",
+      "signet": true,
+      "svg": "logos/plico-signet-mono-black.svg",
+      "png": "logos/plico-signet-mono-black.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "mono-white",
+      "signet": false,
+      "svg": "logos/plico-logo-mono-white.svg",
+      "png": "logos/plico-logo-mono-white.png"
+    },
+    {
+      "brand": "plico",
+      "variant": "mono-white",
+      "signet": true,
+      "svg": "logos/plico-signet-mono-white.svg",
+      "png": "logos/plico-signet-mono-white.png"
+    }
+  ],
+  "scope": "Own proof sample only:2fictional logos, variants,4native PPTXslides,2page DOCXoffer and separate2pagePDF. Not a finished client brandbook."
+}

@@ -1,0 +1,149 @@
+{
+  "status": "PASS_TECHNICAL_CHECKS",
+  "kind": "Own local engineering prototype with public frontend demonstration",
+  "backend_tests_passed": 18,
+  "backend_test_names": [
+    "test_all_seven_profiles_have_independent_complete_cycles",
+    "test_audio_ticket_expiration_denies_request_even_while_link_valid",
+    "test_expired_lease_allows_new_device_and_rejects_old_heartbeat",
+    "test_expired_link_cannot_start_or_stream",
+    "test_forged_token_cannot_start_lease",
+    "test_http_owner_release_allows_second_client_and_blocks_old_heartbeat",
+    "test_http_two_clients_and_admin_authorization",
+    "test_owner_release_does_not_allow_foreign_release",
+    "test_payment_event_replay_with_changed_content_is_rejected",
+    "test_revocation_blocks_old_link_and_signed_audio_ticket",
+    "test_server_does_not_serve_database_source_or_private_config",
+    "test_server_returns_static_catalog_as_object_not_reserialised_bytes",
+    "test_seven_profiles_with75_logical_records_each_complete_two_cycles",
+    "test_shuffle_plays_every_track_before_repetition_and_avoids_boundary_repeat",
+    "test_signed_media_rejects_other_track_wrong_device_or_expiration",
+    "test_test_payment_requires_signed_confirmed_amount_and_is_idempotent",
+    "test_two_simultaneous_devices_only_one_acquires",
+    "test_unknown_profile_and_device_input_are_rejected"
+  ],
+  "scheduler_tests": {
+    "status": "PASS",
+    "tested_cycles": 100,
+    "tracks_per_cycle": 7,
+    "contiguous_timeline": true,
+    "underrun_detected": true
+  },
+  "audio_files": [
+    {
+      "name": "t01.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t02.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t03.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t04.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t05.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t06.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    },
+    {
+      "name": "t07.mp3",
+      "encoding": "MP3",
+      "sample_rate": 48000,
+      "channels": 1,
+      "source_frames": 192000,
+      "source_duration_seconds": 4,
+      "fully_decoded": true,
+      "kind": "own synthetic, not client music"
+    }
+  ],
+  "actual_local_http": {
+    "catalog_status": 200,
+    "profiles": 7,
+    "tracks": 7,
+    "mode": "local-prototype",
+    "payments": "SIMULATION_NO_PAYMENT",
+    "cdn": "local-signed-stream"
+  },
+  "gui_verification": {
+    "verified": true,
+    "checked_at": "2026-10-13T09:16:41.766Z",
+    "browser": "Codex In-app Browser",
+    "local_backend_mode": true,
+    "loaded_profiles": 7,
+    "played_source_count_before_profile_change": 27,
+    "queue_delays_displayed": 0,
+    "profile_changed": true,
+    "volume_keyboard_control_verified": true,
+    "pause_verified": true,
+    "resume_verified": true,
+    "stop_verified": true,
+    "native_device_test": false,
+    "actual_PSP_test": false,
+    "actual_CDN_test": false,
+    "actual_525_music_files": false,
+    "post_fix_stop_verified": true,
+    "post_fix_verified_at": "2026-10-13T09:36:47.340Z",
+    "initial_controls_verified": true,
+    "final_stop_feedback_retest": true,
+    "source_player_js_sha256": "1c6e477f893be04b64d0e093718ae3ac8742a26eb7d56d1f74d842a77ec88d7e"
+  },
+  "source_zip_files": 24,
+  "no_env_database_or_runtime_secrets_in_zip": true,
+  "production_psp_integrated": false,
+  "production_cdn_integrated": false,
+  "client_catalog_received": false,
+  "physical_ios_android_safari_tests": false,
+  "limitations": [
+    "Public frontend does not enforce a real backend lease.",
+    "Local prototype enforces leases, signatures and revocation; own MP3s are also intentionally public sample assets.",
+    "Payment handler is a generic signed simulator, not any PSP protocol or real BLIK.",
+    "Continuous Web Audio timestamps are not a universal gapless guarantee.",
+    "No DRM or guarantee against copying already downloaded sound.",
+    "Production requires client PSP/CDN and actual-device/sandbox checks."
+  ]
+}
