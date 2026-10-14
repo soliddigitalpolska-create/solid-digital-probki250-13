@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1700" viewBox="0 0 1600 1700" role="img" aria-labelledby="title desc"><title id="title">Milo - własny moodboard produktów dziecięcych premium</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="1600" height="1700" rx="0" fill="#F7F5ED"/>
+<text x="76" y="92" font-family="Georgia" font-size="54" font-weight="400" fill="#173D32" letter-spacing="0">milo</text>
+<text x="1250" y="83" font-family="Segoe UI" font-size="13" font-weight="400" fill="#173D32" letter-spacing="1">ART DIRECTION / 01</text>
+<text x="76" y="190" font-family="Georgia" font-size="52" font-weight="400" fill="#173D32" letter-spacing="0">Mały świat. Dużo uważności.</text>
+<text x="76" y="238" font-family="Segoe UI" font-size="23" font-weight="400" fill="#627165" letter-spacing="0">Naturalny kolor, oszczędna kompozycja i własna ilustracja wektorowa.</text>
+<line x1="76" y1="277" x2="1524" y2="277" stroke="#CBD2C3" stroke-width="1" stroke-linecap="round"/>
+<text x="76" y="338" font-family="Segoe UI" font-size="13" font-weight="700" fill="#173D32" letter-spacing="2">PALETA</text>
+<rect x="76" y="372" width="222" height="137" rx="11" fill="#E8E9DB"/>
+<text x="76" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#E8E9DB</text>
+<rect x="318" y="372" width="222" height="137" rx="11" fill="#B6C6AD"/>
+<text x="318" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#B6C6AD</text>
+<rect x="560" y="372" width="222" height="137" rx="11" fill="#173D32"/>
+<text x="560" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#173D32</text>
+<rect x="802" y="372" width="222" height="137" rx="11" fill="#DF8E64"/>
+<text x="802" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#DF8E64</text>
+<rect x="1044" y="372" width="222" height="137" rx="11" fill="#EEE5D9"/>
+<text x="1044" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#EEE5D9</text>
+<rect x="1286" y="372" width="222" height="137" rx="11" fill="#255B56"/>
+<text x="1286" y="541" font-family="Segoe UI" font-size="14" font-weight="400" fill="#173D32" letter-spacing="0.5">#255B56</text>
+<text x="76" y="623" font-family="Segoe UI" font-size="13" font-weight="700" fill="#173D32" letter-spacing="2">TYPOGRAFIA</text>
+<text x="76" y="697" font-family="Georgia" font-size="56" font-weight="400" fill="#173D32" letter-spacing="0">Spokojna forma.</text>
+<text x="830" y="655" font-family="Segoe UI" font-size="13" font-weight="400" fill="#173D32" letter-spacing="1">GEORGIA / TYTUŁY</text>
+<text x="830" y="699" font-family="Segoe UI" font-size="24" font-weight="400" fill="#173D32" letter-spacing="0">Czytelny rytm i wyraźna hierarchia</text>
+<text x="830" y="739" font-family="Segoe UI" font-size="13" font-weight="400" fill="#173D32" letter-spacing="1">SEGOE UI / OPISY I INFORMACJE</text>
+<line x1="76" y1="800" x2="1524" y2="800" stroke="#CBD2C3" stroke-width="1" stroke-linecap="round"/>
+<text x="76" y="865" font-family="Segoe UI" font-size="13" font-weight="700" fill="#173D32" letter-spacing="2">WŁASNY JĘZYK ILUSTRACJI</text>
+<rect x="76" y="905" width="458" height="360" rx="20" fill="#E8E9DB"/>
+<rect x="571" y="905" width="458" height="360" rx="20" fill="#EEE5D9"/>
+<rect x="1066" y="905" width="458" height="360" rx="20" fill="#DDE6DF"/>
+<ellipse cx="285" cy="1075" rx="107.25" ry="66.0" fill="#173D32"/>
+<ellipse cx="359.25" cy="1035.4" rx="39.599999999999994" ry="39.599999999999994" fill="#173D32"/>
+<polygon points="393.9,1025.5 436.79999999999995,1040.35 392.25,1055.2" fill="#DF8E64"/>
+<ellipse cx="372.45" cy="1027.15" rx="4.949999999999999" ry="4.949999999999999" fill="#F8F8F0"/>
+<ellipse cx="281.7" cy="1075" rx="41.25" ry="28.049999999999997" fill="#B6C6AD"/>
+<line x1="260.25" y1="1134.4" x2="260.25" y2="1182.25" stroke="#173D32" stroke-width="3.3" stroke-linecap="round"/>
+<line x1="303.15" y1="1134.4" x2="303.15" y2="1182.25" stroke="#173D32" stroke-width="3.3" stroke-linecap="round"/>
+<ellipse cx="143" cy="1178" rx="19.8" ry="48.400000000000006" fill="#ABC0A2"/>
+<line x1="143" y1="1141.7" x2="143" y2="1219.8" stroke="#EDEBE1" stroke-width="1.4300000000000002" stroke-linecap="round"/>
+<ellipse cx="725" cy="1094" rx="65" ry="38" fill="#FAF7F0"/>
+<ellipse cx="807" cy="1078" rx="89" ry="54" fill="#FAF7F0"/>
+<ellipse cx="888" cy="1110" rx="56" ry="34" fill="#FAF7F0"/>
+<ellipse cx="740" cy="1001" rx="35" ry="35" fill="#CF9C7F"/>
+<ellipse cx="754" cy="993" rx="34" ry="32" fill="#EEE5D9"/>
+<polygon points="1110,1110 1180,1080 1250,1110 1320,1080 1460,1125 1460,1200 1110,1200" fill="#A7C4B4"/>
+<polygon points="1110,1142 1180,1112 1250,1142 1320,1112 1460,1157 1460,1200 1110,1200" fill="#5E9386"/>
+<polygon points="1110,1174 1180,1144 1250,1174 1320,1144 1460,1189 1460,1200 1110,1200" fill="#255B56"/>
+<text x="76" y="1325" font-family="Georgia" font-size="24" font-weight="400" fill="#173D32" letter-spacing="0">01 / Leśne historie</text>
+<text x="571" y="1325" font-family="Georgia" font-size="24" font-weight="400" fill="#173D32" letter-spacing="0">02 / Blisko chmur</text>
+<text x="1066" y="1325" font-family="Georgia" font-size="24" font-weight="400" fill="#173D32" letter-spacing="0">03 / Pod małą falą</text>
+<text x="76" y="1370" font-family="Segoe UI" font-size="18" font-weight="400" fill="#627165" letter-spacing="0">Miękkie organiczne motywy.</text>
+<text x="571" y="1370" font-family="Segoe UI" font-size="18" font-weight="400" fill="#627165" letter-spacing="0">Dużo światła i ciepły akcent.</text>
+<text x="1066" y="1370" font-family="Segoe UI" font-size="18" font-weight="400" fill="#627165" letter-spacing="0">Prosta geometria i głębia koloru.</text>
+<rect x="76" y="1450" width="1448" height="137" rx="15" fill="#E9EBDD"/>
+<text x="104" y="1495" font-family="Segoe UI" font-size="13" font-weight="700" fill="#173D32" letter-spacing="1">DEMO / FIKCYJNA MARKA / ORYGINALNE WEKTORY</text>
+<text x="104" y="1531" font-family="Segoe UI" font-size="18" font-weight="400" fill="#173D32" letter-spacing="0">Źródła SVG z edytowalnym tekstem i elementami; PDF oraz PNG jako podglądy.</text>
+<text x="104" y="1562" font-family="Segoe UI" font-size="16" font-weight="400" fill="#627165" letter-spacing="0">Dieliny, spady, profil koloru i obowiązkowe oznaczenia wymagają specyfikacji klienta.</text>
+<text x="76" y="1650" font-family="Segoe UI" font-size="14" font-weight="400" fill="#627165" letter-spacing="0">Własna koncepcja warsztatowa. Nie jest projektem klienta ani gotowym opakowaniem do druku.</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="1100" viewBox="0 0 3000 1100" role="img" aria-labelledby="title desc"><title id="title">Luma - edytowalna grafika własna, bez wymiarów produkcyjnych</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="3000" height="1100" rx="0" fill="#FFFFFF"/>
+<text x="210" y="340" font-family="Segoe UI" font-size="188" font-weight="700" fill="#112B35" letter-spacing="10">LUMA</text>
+<text x="214" y="447" font-family="Segoe UI" font-size="66" font-weight="400" fill="#112B35" letter-spacing="5">instalacje</text>
+<text x="1550" y="350" font-family="Segoe UI" font-size="60" font-weight="400" fill="#112B35" letter-spacing="5">ELEKTRYKA</text>
+<text x="1550" y="442" font-family="Segoe UI" font-size="60" font-weight="400" fill="#112B35" letter-spacing="5">OZE / SERWIS</text>
+<polygon points="0,660 1670,660 2320,1050 0,1050" fill="#112B35"/>
+<polygon points="0,565 1410,565 1530,610 0,610" fill="#ADBFAD"/>
+</svg>

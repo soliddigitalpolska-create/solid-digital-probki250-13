@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc"><title id="title">Milo - własna koncepcja graficzna premium dla dzieci</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="900" height="1200" rx="0" fill="#EEE5D9"/>
+<rect x="32" y="32" width="836" height="1136" rx="3" fill="#EEE5D9" stroke="#735749" stroke-width="1"/>
+<text x="75" y="116" font-family="Georgia" font-size="45" font-weight="400" fill="#735749" letter-spacing="0">milo</text>
+<text x="656" y="109" font-family="Segoe UI" font-size="12" font-weight="400" fill="#735749" letter-spacing="1">OWN CONCEPT</text>
+<ellipse cx="345" cy="555" rx="130" ry="78.0" fill="#FAF7F0"/>
+<ellipse cx="498" cy="505" rx="167" ry="100.2" fill="#FAF7F0"/>
+<ellipse cx="607" cy="595" rx="113" ry="67.8" fill="#FAF7F0"/>
+<ellipse cx="416" cy="401" rx="58" ry="58" fill="#CF9C7F"/>
+<ellipse cx="438" cy="388" rx="55" ry="53" fill="#EEE5D9"/>
+<line x1="265" y1="384" x2="281" y2="384" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="273" y1="376" x2="273" y2="392" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="660" y1="403" x2="676" y2="403" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="668" y1="395" x2="668" y2="411" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="343" y1="716" x2="359" y2="716" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="351" y1="708" x2="351" y2="724" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="581" y1="735" x2="597" y2="735" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<line x1="589" y1="727" x2="589" y2="743" stroke="#735749" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="512" cy="688" rx="53" ry="24" fill="#CFB9A1"/>
+<ellipse cx="414" cy="685" rx="38" ry="18" fill="#D5C8B8"/>
+<text x="75" y="914" font-family="Georgia" font-size="61" font-weight="400" fill="#735749" letter-spacing="0">Blisko chmur</text>
+<text x="77" y="972" font-family="Segoe UI" font-size="15" font-weight="400" fill="#735749" letter-spacing="1">SPOKOJNY RYTM / SWOBODNA ZABAWA</text>
+<line x1="76" y1="1041" x2="824" y2="1041" stroke="#735749" stroke-width="1" stroke-linecap="round"/>
+<text x="76" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#735749" letter-spacing="1">WŁASNY PROJEKT GRAFICZNY</text>
+<text x="638" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#735749" letter-spacing="1">SERIA / 02</text>
+</svg>

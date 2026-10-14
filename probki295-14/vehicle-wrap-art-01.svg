@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="1100" viewBox="0 0 3000 1100" role="img" aria-labelledby="title desc"><title id="title">Luma - edytowalna grafika własna, bez wymiarów produkcyjnych</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="3000" height="1100" rx="0" fill="#FFFFFF"/>
+<text x="210" y="340" font-family="Segoe UI" font-size="188" font-weight="700" fill="#173D32" letter-spacing="10">LUMA</text>
+<text x="214" y="447" font-family="Segoe UI" font-size="66" font-weight="400" fill="#173D32" letter-spacing="5">instalacje</text>
+<text x="1550" y="350" font-family="Segoe UI" font-size="60" font-weight="400" fill="#173D32" letter-spacing="5">ELEKTRYKA</text>
+<text x="1550" y="442" font-family="Segoe UI" font-size="60" font-weight="400" fill="#173D32" letter-spacing="5">OZE / SERWIS</text>
+<line x1="70" y1="800" x2="1250" y2="800" stroke="#173D32" stroke-width="18" stroke-linecap="round"/>
+<line x1="1250" y1="800" x2="1670" y2="560" stroke="#173D32" stroke-width="18" stroke-linecap="round"/>
+<line x1="1670" y1="560" x2="2720" y2="560" stroke="#173D32" stroke-width="18" stroke-linecap="round"/>
+<ellipse cx="2720" cy="560" rx="20" ry="20" fill="#173D32"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc"><title id="title">Milo - własna koncepcja graficzna premium dla dzieci</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="900" height="1200" rx="0" fill="#DDE6DF"/>
+<rect x="32" y="32" width="836" height="1136" rx="3" fill="#DDE6DF" stroke="#255B56" stroke-width="1"/>
+<text x="75" y="116" font-family="Georgia" font-size="45" font-weight="400" fill="#255B56" letter-spacing="0">milo</text>
+<text x="656" y="109" font-family="Segoe UI" font-size="12" font-weight="400" fill="#255B56" letter-spacing="1">OWN CONCEPT</text>
+<ellipse cx="451" cy="565" rx="260" ry="260" fill="#F6F6EC"/>
+<polygon points="199,590 258,555 341,596 425,555 510,596 589,555 698,596 698,739 199,739" fill="#A7C4B4"/>
+<polygon points="199,634 258,599 341,640 425,599 510,640 589,599 698,640 698,739 199,739" fill="#5E9386"/>
+<polygon points="199,678 258,643 341,684 425,643 510,684 589,643 698,684 698,739 199,739" fill="#255B56"/>
+<ellipse cx="536" cy="465" rx="21" ry="21" fill="#CA9171"/>
+<ellipse cx="536" cy="438" rx="6" ry="6" fill="#CA9171"/>
+<ellipse cx="288" cy="476" rx="9" ry="9" fill="#ADBDAD"/>
+<text x="75" y="914" font-family="Georgia" font-size="61" font-weight="400" fill="#255B56" letter-spacing="0">Pod małą falą</text>
+<text x="77" y="972" font-family="Segoe UI" font-size="15" font-weight="400" fill="#255B56" letter-spacing="1">CIEKAWOŚĆ / KOLOR / ODKRYWANIE</text>
+<line x1="76" y1="1041" x2="824" y2="1041" stroke="#255B56" stroke-width="1" stroke-linecap="round"/>
+<text x="76" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#255B56" letter-spacing="1">WŁASNY PROJEKT GRAFICZNY</text>
+<text x="638" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#255B56" letter-spacing="1">SERIA / 03</text>
+</svg>

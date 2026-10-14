@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc"><title id="title">Milo - własna koncepcja graficzna premium dla dzieci</title><desc id="desc">Własny projekt demonstracyjny. Fikcyjna marka. Nie jest realizacją klienta ani gotowym plikiem produkcyjnym.</desc>
+<rect x="0" y="0" width="900" height="1200" rx="0" fill="#E8E9DB"/>
+<rect x="32" y="32" width="836" height="1136" rx="3" fill="#E8E9DB" stroke="#173D32" stroke-width="1"/>
+<text x="75" y="116" font-family="Georgia" font-size="45" font-weight="400" fill="#173D32" letter-spacing="0">milo</text>
+<text x="656" y="109" font-family="Segoe UI" font-size="12" font-weight="400" fill="#173D32" letter-spacing="1">OWN CONCEPT</text>
+<ellipse cx="453" cy="559" rx="251" ry="262" fill="#F8F8F0"/>
+<ellipse cx="459" cy="548" rx="169.0" ry="104.0" fill="#173D32"/>
+<ellipse cx="576.0" cy="485.6" rx="62.400000000000006" ry="62.400000000000006" fill="#173D32"/>
+<polygon points="630.6,470.0 698.2,493.4 628.0,516.8" fill="#DF8E64"/>
+<ellipse cx="596.8" cy="472.6" rx="7.800000000000001" ry="7.800000000000001" fill="#F8F8F0"/>
+<ellipse cx="453.8" cy="548" rx="65.0" ry="44.2" fill="#B6C6AD"/>
+<line x1="420.0" y1="641.6" x2="420.0" y2="717.0" stroke="#173D32" stroke-width="5.2" stroke-linecap="round"/>
+<line x1="487.6" y1="641.6" x2="487.6" y2="717.0" stroke="#173D32" stroke-width="5.2" stroke-linecap="round"/>
+<ellipse cx="249" cy="698" rx="27.0" ry="66.0" fill="#ABC0A2"/>
+<line x1="249" y1="648.5" x2="249" y2="755.0" stroke="#EDEBE1" stroke-width="1.9500000000000002" stroke-linecap="round"/>
+<ellipse cx="699" cy="383" rx="30.599999999999998" ry="74.8" fill="#B7C7AC"/>
+<line x1="699" y1="326.9" x2="699" y2="447.6" stroke="#EDEBE1" stroke-width="2.21" stroke-linecap="round"/>
+<ellipse cx="676" cy="695" rx="30" ry="22" fill="#DF8E64"/>
+<text x="75" y="914" font-family="Georgia" font-size="61" font-weight="400" fill="#173D32" letter-spacing="0">Leśne historie</text>
+<text x="77" y="972" font-family="Segoe UI" font-size="15" font-weight="400" fill="#173D32" letter-spacing="1">MAŁE ODKRYCIA / DUŻO WYOBRAŹNI</text>
+<line x1="76" y1="1041" x2="824" y2="1041" stroke="#173D32" stroke-width="1" stroke-linecap="round"/>
+<text x="76" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#173D32" letter-spacing="1">WŁASNY PROJEKT GRAFICZNY</text>
+<text x="638" y="1101" font-family="Segoe UI" font-size="13" font-weight="400" fill="#173D32" letter-spacing="1">SERIA / 01</text>
+</svg>
