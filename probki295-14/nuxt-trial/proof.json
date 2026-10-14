@@ -1,0 +1,101 @@
+{
+  "status": "BUILD_TYPECHECK_HTTP_AND_BROWSER_INTERACTIONS_VERIFIED",
+  "checked_at": "2026-10-14T22:04:15.293Z",
+  "versions": {
+    "nuxt": "3.21.11",
+    "vue": "3.5.44"
+  },
+  "typecheck_exit": 0,
+  "production_build_exit": 0,
+  "tests": [
+    {
+      "case": "GET_initial_state",
+      "status": 200,
+      "projects": 3
+    },
+    {
+      "case": "PATCH_project_done",
+      "status": 200,
+      "project": {
+        "id": "01",
+        "title": "Strona pracowni",
+        "description": "Projekt i wdrożenie nowej strony",
+        "status": "done",
+        "progress": 100,
+        "due": "24 paź",
+        "color": "#C1D8BA"
+      }
+    },
+    {
+      "case": "GET_project_readback",
+      "status": 200,
+      "matched": true
+    },
+    {
+      "case": "PATCH_invalid_status_rejected",
+      "status": 400
+    },
+    {
+      "case": "PATCH_unknown_id_rejected",
+      "status": 404
+    },
+    {
+      "case": "PATCH_short_name_rejected",
+      "status": 400
+    },
+    {
+      "case": "PATCH_workspace",
+      "status": 200,
+      "workspace": {
+        "name": "Pracownia próba HTTP",
+        "weeklyDigest": false,
+        "compactView": true
+      }
+    },
+    {
+      "case": "GET_workspace_readback",
+      "status": 200,
+      "matched": true
+    },
+    {
+      "case": "SSR_page_/",
+      "status": 200,
+      "title_visible": true,
+      "current_state_rendered": true
+    },
+    {
+      "case": "SSR_page_/ustawienia",
+      "status": 200,
+      "title_visible": true,
+      "current_state_rendered": true
+    }
+  ],
+  "source_hashes": {
+    "package.json": "95dd5ded710d681f8a5250bff0ad28b56dd80736d36ddfa24d60d75370cff419",
+    "package-lock.json": "9ba592a3a0ff1b935c59b21303fefa4776d37a29b706ca4fb24c3be877824201",
+    "nuxt.config.ts": "0ac3d151cb855fd93ae363320d3dff4cd53c53487b58cb13f0d6cc167bef5cb7",
+    "app.vue": "1abb4f827037fb944e4a5f2c4c92a90e734234693065e9437a995cc29533439f",
+    "pages/index.vue": "136284bfe2138efc9d1f5c8c84db66f58b00aca9bc41e4b8591413342e065b27",
+    "pages/ustawienia.vue": "6323f3500dff3bd33130c3072213a4130752b025c02fff8f45a36f7f34a6f7a7",
+    "shared/types.ts": "69e907b99bb80788211fbfa329e8e12c920a419579313c17bdfae2da24933234",
+    "server/api/demo.get.ts": "3e7b31775037c0a4939d355f6edd31141df5df61c713dc7bf099f7c49a801629",
+    "server/api/projects/[id].patch.ts": "8f08c15ad627421722e18dde765525f7ca4189e6a3b258273594ef2bd48d228c",
+    "server/api/workspace.patch.ts": "30eca3ee8f84f223306672c155bdcbf6742fe4261c8974b0b9cf51c1e0ff3707",
+    "server/utils/store.ts": "03a0ee4d9879e509b262000023ebc557f4f51fd696662d5bc2b60e3cb91d9bd9",
+    "assets/main.css": "58769af086ca74546ad8fc564f0c5b49e451910b5e3ef08c6056ec94e81253db"
+  },
+  "own_fictional_demo": true,
+  "commercial_case": false,
+  "backend": "Nitro_in_memory_mock_not_Laravel",
+  "limitations": [
+    "No authentication, database, payments or external messages.",
+    "No Laravel/Vuetify/MySQL/Stripe implementation claim.",
+    "State is demonstration-only and resets on process restart.",
+    "Browserinteraction/visualchecks are root task."
+  ],
+  "local_runtime_verified": true,
+  "browser_interactions_verified": [
+    "Projectstatuschange persisted afterreload (root).",
+    "Workspacefields saved andpersisted afterreload (root)."
+  ]
+}

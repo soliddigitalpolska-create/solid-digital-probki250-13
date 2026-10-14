@@ -1,0 +1,10 @@
+{
+  "zip_entries": 17,
+  "crc_verified": true,
+  "source_zip_bytes": 98529,
+  "source_zip_sha256": "3e017a9cd02559ca164428e3b6ebf4374d356ee19276ec7fbe2219fd48c751a9",
+  "browser_interactions_verified": true,
+  "screenshots": 3,
+  "no_credentials": true,
+  "no_filesystem_paths_in_publicproof": true
+}

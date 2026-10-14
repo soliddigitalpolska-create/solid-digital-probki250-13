@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-14T22:00:30.090Z",
+  "inputs": [
+    {
+      "checked": false,
+      "type": "text",
+      "value": "Pracownia Metrik QA"
+    },
+    {
+      "checked": true,
+      "type": "checkbox",
+      "value": "on"
+    },
+    {
+      "checked": false,
+      "type": "checkbox",
+      "value": "on"
+    }
+  ],
+  "text": "DOPASUJ SWOJĄ PRZESTRZEŃ\n\nPracownia po Twojemu.\n\nDwa ustawienia. Jeden czytelny formularz.\n\nUstawienia pracowni\nNazwa pracowni\n\nOd3 do60znaków. W tej próbce zapis trwa do restartu serwera.\n\nPodsumowanie tygodnia\nWyłącznie flaga demonstracyjna. Żaden e-mail nie jest wysyłany.\nZwarty widok projektów\nMniej miejsca między kartami na stronie głównej.\nZapisz ustawienia →\n\nCO SPRAWDZA TA PRÓBKA?\n\nUI i API\npracują razem.\n\nFormularz korzysta z typowanych danych. Serwer sprawdza wartości, a ponowne wejście do widoku pobiera zapisany stan.\n\nDwie rzeczywiste trasy Vue\nSSR i interakcje po stronie klienta\nGET/PATCH w lokalnym Nitro API\nWalidacja i komunikaty błędów\n\nBackend to jawny mock w Nitro, nie Laravel. Brak bazy MySQL, Stripe i płatności."
+}
