@@ -1,0 +1,1 @@
+Autorski kontrolowany test. Otwórz index.html. Przed/po w MP4. Własny model .blend i znaki, brak materiału klienta. Ruch logo po wyrenderowaniu filmu wyznacza SIFT/RANSAC, nie gotowe krzywe 3D. Maska okluzji pochodzi z własnej sceny; nie jest dowodem automatycznej segmentacji obcej surówki. Log błędów w tracking-evidence.json. Żadnej oferty nie wysłano przez te pliki.

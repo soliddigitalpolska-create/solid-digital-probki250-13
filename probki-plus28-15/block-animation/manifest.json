@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-10-15T15:36:39.993600+00:00",
+  "files": [
+    {
+      "file": "animation.mp4",
+      "bytes": 298131,
+      "sha256": "f41c5de31791b66b09cdd068fa58661d0deb82901ffaede4157930886bd0e1d2"
+    },
+    {
+      "file": "build.py",
+      "bytes": 13436,
+      "sha256": "a7bc58bbd9bb5e2a2f5489b6379808b900d4b7cb8f882a4236dfe9f43a3636f4"
+    },
+    {
+      "file": "evidence.json",
+      "bytes": 1483,
+      "sha256": "2ce931dd36f852284949350e5d905c00f204487c260e151788c03c04ccbca36e"
+    },
+    {
+      "file": "frame-000.jpg",
+      "bytes": 32419,
+      "sha256": "d9d65f991bb381a783cbb3de762e5814af2235b5040cea879063513537a4edad"
+    },
+    {
+      "file": "frame-032.jpg",
+      "bytes": 34711,
+      "sha256": "5c0e814fced0ee46518eaea3c741a9bf346b984c711d1481727a35f2ccd158d1"
+    },
+    {
+      "file": "frame-068.jpg",
+      "bytes": 35560,
+      "sha256": "da956bca133decc0be649f3f864e1ea594aad4f44af049f35853bef30e7ca1e0"
+    },
+    {
+      "file": "frame-128.jpg",
+      "bytes": 29710,
+      "sha256": "042c9ae0d2c8039e2f058a07fa5774e9e07a198ccfe6ea817d6c5754c897f81c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3328,
+      "sha256": "806a7e46aa068cef465aa8fcf8bdc613612ecb8642abb299f21c987068a63dd4"
+    },
+    {
+      "file": "own-block-rig.blend",
+      "bytes": 119824,
+      "sha256": "aeb409b12c245315778a237cd2b9fda199dc3709e8bff4a3522df047e3471ceb"
+    },
+    {
+      "file": "own-system-voice.wav",
+      "bytes": 471384,
+      "sha256": "dc54904224da912c90a676a9fb86c66918b4c485bcf504fc2515276c8b6e9436"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 362,
+      "sha256": "e016d7c077d2e5275aac7168c067ededb15f28bea3051eeb7dcb01829b478bd3"
+    },
+    {
+      "file": "voice-script.json",
+      "bytes": 452,
+      "sha256": "0f88b995634abb5e51b9d3a01d84ec5e52f069db27c888c15de7547f4cb6acb2"
+    },
+    {
+      "file": "voice.ps1",
+      "bytes": 868,
+      "sha256": "84ae18c0f945d53f19f026d6bc6341fd9f4704d6fa0420cc8ccfb10f8ea94f54"
+    }
+  ]
+}

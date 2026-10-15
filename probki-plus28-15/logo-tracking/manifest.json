@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-10-15T15:36:39.815763+00:00",
+  "files": [
+    {
+      "file": "after.mp4",
+      "bytes": 206563,
+      "sha256": "66d9f0a79e1e8bcfaae56c65c32fa90edd00989ca45051ec82bef9a780549185"
+    },
+    {
+      "file": "before-after.mp4",
+      "bytes": 382116,
+      "sha256": "1d449bb3a7faa087cb3b4d1a848602bfcf2af740f6fb32e422c8c8668fe70a1b"
+    },
+    {
+      "file": "before.mp4",
+      "bytes": 191118,
+      "sha256": "b12fbc8482349938b73acf77d044530adb81f36aafe755eb19639dc67773db69"
+    },
+    {
+      "file": "comparison-00.jpg",
+      "bytes": 30486,
+      "sha256": "cd316ee72ec7bc9162b3f5eced83bc84c94a56a8f9e469e1d34355d291ee7247"
+    },
+    {
+      "file": "comparison-24.jpg",
+      "bytes": 31860,
+      "sha256": "509d642a77535ec670b767285984c578b817102e033407018e845956934a7b1e"
+    },
+    {
+      "file": "comparison-35.jpg",
+      "bytes": 28984,
+      "sha256": "870fcefe286cb0c39eb4e36bf5aa575fd21ce9571738f9ec9e232800732f1c13"
+    },
+    {
+      "file": "comparison-59.jpg",
+      "bytes": 32246,
+      "sha256": "7d09a0567df4748dba7eb50e7fb83781707eba6f14deeddc90cbfdaeaf8569b2"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3504,
+      "sha256": "1ba203aeda18843b463f311c819ba3e3176d3f2546bdb76cd9a73bc1b21ba603"
+    },
+    {
+      "file": "new-logo-0.png",
+      "bytes": 11446,
+      "sha256": "bfbc13d067481a04ddea32c091c7beead3dda8041d6964fbfd2ac834731c6ceb"
+    },
+    {
+      "file": "new-logo-1.png",
+      "bytes": 9971,
+      "sha256": "5cbebc2d97e30b77d910976c638971d82290ee523844286fe2674416f9db2fd0"
+    },
+    {
+      "file": "own-source-robot.blend",
+      "bytes": 131034,
+      "sha256": "59c8a0897f8aea2bcadbaba3e695e8f09404f7b8292285e943ebdeda52dcc0a7"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 382,
+      "sha256": "1fd1b21734d299176fb62a00a29ad17737674baa399de3586a4f6a187e682722"
+    },
+    {
+      "file": "render_source.py",
+      "bytes": 5301,
+      "sha256": "b817e8738120e378024dcf52b74e677747ba5c524587f64c14b3c217dc448688"
+    },
+    {
+      "file": "track_and_package.py",
+      "bytes": 12295,
+      "sha256": "a60e594951ddff50b1616db427ba58b666cbaa188e1a3032bbf8154d77d5b040"
+    },
+    {
+      "file": "tracking-evidence.json",
+      "bytes": 98770,
+      "sha256": "89995a62bd637adfa2bd1be01efab3500c49d237676b93694380d185bcf09dfe"
+    }
+  ]
+}

@@ -1,0 +1,3682 @@
+{
+  "frame_count": 60,
+  "fps": 20,
+  "resolution": [
+    800,
+    450
+  ],
+  "motion": "Two independent 3D label surfaces with perspective changes, rendered in Blender",
+  "tracker": "OpenCV SIFT features, ratio test, RANSAC homography and five-frame temporal median; no ground-truth transforms used for placement",
+  "max_corner_rmse_px": 3.052,
+  "median_corner_rmse_px": 0.52,
+  "raw_max_corner_rmse_px": 7.208,
+  "occlusion": "Own opaque foreground beam. Mask computed from own source geometry, analogous to supplied holdout/rotoscope; not proof of automatic mask extraction from arbitrary client footage.",
+  "sample_status": "Own controlled test; not client footage, no commercial case, no promise that 16 client shots can be automatically processed.",
+  "client_scope": "Approx.16 shots,2–10sec each, two logos, perspective and occlusion. Each client shot requires manual review and masks as needed.",
+  "software": {
+    "OpenCV": "5.0.0",
+    "Blender": "5.2.2"
+  },
+  "log": [
+    {
+      "frame": 0,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 0,
+          "inliers": 127,
+          "raw_corner_rmse_px": 0.0,
+          "observed_quad": [
+            [
+              272.7904052734375,
+              94.8122787475586
+            ],
+            [
+              416.8252868652344,
+              105.59376525878906
+            ],
+            [
+              416.4831237792969,
+              186.44351196289062
+            ],
+            [
+              275.2218017578125,
+              171.00071716308594
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.0
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 0,
+          "inliers": 111,
+          "raw_corner_rmse_px": 0.0,
+          "observed_quad": [
+            [
+              322.93597412109375,
+              230.90335083007812
+            ],
+            [
+              511.6029357910156,
+              256.1082458496094
+            ],
+            [
+              511.79693603515625,
+              304.7418212890625
+            ],
+            [
+              326.0859680175781,
+              276.23486328125
+            ]
+          ],
+          "illumination_scale": 0.874,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.0
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 66,
+          "inliers": 55,
+          "raw_corner_rmse_px": 0.123,
+          "observed_quad": [
+            [
+              273.185302734375,
+              94.24215698242188
+            ],
+            [
+              419.23431396484375,
+              107.80830383300781
+            ],
+            [
+              417.9001159667969,
+              188.0685272216797
+            ],
+            [
+              274.8722229003906,
+              170.4595489501953
+            ]
+          ],
+          "illumination_scale": 1.063,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.123
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 71,
+          "inliers": 55,
+          "raw_corner_rmse_px": 0.503,
+          "observed_quad": [
+            [
+              323.27764892578125,
+              232.1397247314453
+            ],
+            [
+              510.7966613769531,
+              255.5087890625
+            ],
+            [
+              510.992431640625,
+              304.3836669921875
+            ],
+            [
+              326.6773986816406,
+              277.2542724609375
+            ]
+          ],
+          "illumination_scale": 0.874,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.503
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 63,
+          "inliers": 60,
+          "raw_corner_rmse_px": 0.455,
+          "observed_quad": [
+            [
+              274.59088134765625,
+              94.30321502685547
+            ],
+            [
+              421.85418701171875,
+              109.77497100830078
+            ],
+            [
+              419.429443359375,
+              189.6161651611328
+            ],
+            [
+              274.5476989746094,
+              169.72665405273438
+            ]
+          ],
+          "illumination_scale": 1.046,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.433
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 45,
+          "raw_corner_rmse_px": 0.526,
+          "observed_quad": [
+            [
+              323.57891845703125,
+              232.96832275390625
+            ],
+            [
+              508.8166198730469,
+              255.3470001220703
+            ],
+            [
+              509.62384033203125,
+              303.9441223144531
+            ],
+            [
+              327.2785339355469,
+              277.93218994140625
+            ]
+          ],
+          "illumination_scale": 0.87,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.418
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 58,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.353,
+          "observed_quad": [
+            [
+              274.5755920410156,
+              93.69770812988281
+            ],
+            [
+              423.8153076171875,
+              111.93270111083984
+            ],
+            [
+              420.61041259765625,
+              190.90126037597656
+            ],
+            [
+              274.21142578125,
+              169.25643920898438
+            ]
+          ],
+          "illumination_scale": 1.034,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.361
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 59,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.912,
+          "observed_quad": [
+            [
+              323.185546875,
+              233.78289794921875
+            ],
+            [
+              508.46075439453125,
+              254.41159057617188
+            ],
+            [
+              509.2234802246094,
+              303.47064208984375
+            ],
+            [
+              328.43548583984375,
+              278.6514587402344
+            ]
+          ],
+          "illumination_scale": 0.866,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.906
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 58,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.4,
+          "observed_quad": [
+            [
+              275.47406005859375,
+              93.44367980957031
+            ],
+            [
+              426.358154296875,
+              113.7846908569336
+            ],
+            [
+              421.72064208984375,
+              192.3752899169922
+            ],
+            [
+              274.27587890625,
+              168.6901092529297
+            ]
+          ],
+          "illumination_scale": 1.021,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.4
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 60,
+          "inliers": 53,
+          "raw_corner_rmse_px": 0.444,
+          "observed_quad": [
+            [
+              323.0982360839844,
+              234.31399536132812
+            ],
+            [
+              505.9389343261719,
+              254.48388671875
+            ],
+            [
+              507.96112060546875,
+              303.07568359375
+            ],
+            [
+              328.5647277832031,
+              279.16009521484375
+            ]
+          ],
+          "illumination_scale": 0.866,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.592
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 64,
+          "inliers": 54,
+          "raw_corner_rmse_px": 0.727,
+          "observed_quad": [
+            [
+              277.1326904296875,
+              93.07198333740234
+            ],
+            [
+              428.4473876953125,
+              115.55686950683594
+            ],
+            [
+              422.429443359375,
+              194.0637969970703
+            ],
+            [
+              274.3512878417969,
+              167.7599334716797
+            ]
+          ],
+          "illumination_scale": 1.008,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.631
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 53,
+          "inliers": 48,
+          "raw_corner_rmse_px": 1.195,
+          "observed_quad": [
+            [
+              324.412353515625,
+              235.4496307373047
+            ],
+            [
+              504.4040222167969,
+              253.8469696044922
+            ],
+            [
+              509.3507385253906,
+              303.4899597167969
+            ],
+            [
+              329.647705078125,
+              279.6396179199219
+            ]
+          ],
+          "illumination_scale": 0.866,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.569
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 60,
+          "inliers": 53,
+          "raw_corner_rmse_px": 0.37,
+          "observed_quad": [
+            [
+              276.9452819824219,
+              92.06876373291016
+            ],
+            [
+              430.3607482910156,
+              117.68707275390625
+            ],
+            [
+              423.3675537109375,
+              195.31887817382812
+            ],
+            [
+              273.29327392578125,
+              167.14173889160156
+            ]
+          ],
+          "illumination_scale": 1.0,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.418
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 64,
+          "inliers": 52,
+          "raw_corner_rmse_px": 0.828,
+          "observed_quad": [
+            [
+              323.76910400390625,
+              235.484130859375
+            ],
+            [
+              503.23199462890625,
+              253.42385864257812
+            ],
+            [
+              507.9869384765625,
+              303.0107727050781
+            ],
+            [
+              330.0259094238281,
+              280.13970947265625
+            ]
+          ],
+          "illumination_scale": 0.866,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.865
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 63,
+          "inliers": 51,
+          "raw_corner_rmse_px": 0.673,
+          "observed_quad": [
+            [
+              278.44488525390625,
+              92.41056060791016
+            ],
+            [
+              431.5315246582031,
+              118.7856216430664
+            ],
+            [
+              423.83551025390625,
+              196.09266662597656
+            ],
+            [
+              273.6754150390625,
+              167.0667724609375
+            ]
+          ],
+          "illumination_scale": 0.992,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.59
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 59,
+          "inliers": 47,
+          "raw_corner_rmse_px": 0.482,
+          "observed_quad": [
+            [
+              324.2453308105469,
+              236.33409118652344
+            ],
+            [
+              501.08685302734375,
+              253.1414337158203
+            ],
+            [
+              506.19049072265625,
+              302.0323181152344
+            ],
+            [
+              330.3601379394531,
+              280.4788513183594
+            ]
+          ],
+          "illumination_scale": 0.87,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.449
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 60,
+          "inliers": 51,
+          "raw_corner_rmse_px": 0.46,
+          "observed_quad": [
+            [
+              278.8731384277344,
+              92.11052703857422
+            ],
+            [
+              433.70489501953125,
+              120.51750183105469
+            ],
+            [
+              424.3324279785156,
+              196.84259033203125
+            ],
+            [
+              273.215087890625,
+              166.26332092285156
+            ]
+          ],
+          "illumination_scale": 0.983,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.41
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 44,
+          "raw_corner_rmse_px": 1.251,
+          "observed_quad": [
+            [
+              324.01812744140625,
+              236.0768585205078
+            ],
+            [
+              500.0700378417969,
+              252.20025634765625
+            ],
+            [
+              502.8497619628906,
+              300.9346618652344
+            ],
+            [
+              330.8148193359375,
+              281.0188293457031
+            ]
+          ],
+          "illumination_scale": 0.874,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.377
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 60,
+          "inliers": 54,
+          "raw_corner_rmse_px": 0.526,
+          "observed_quad": [
+            [
+              278.6341552734375,
+              91.1301498413086
+            ],
+            [
+              434.6215515136719,
+              121.9020767211914
+            ],
+            [
+              424.4205627441406,
+              197.37277221679688
+            ],
+            [
+              273.4294738769531,
+              165.90029907226562
+            ]
+          ],
+          "illumination_scale": 0.979,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.607
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 56,
+          "inliers": 49,
+          "raw_corner_rmse_px": 0.596,
+          "observed_quad": [
+            [
+              324.27593994140625,
+              236.46563720703125
+            ],
+            [
+              498.80206298828125,
+              251.75958251953125
+            ],
+            [
+              505.22100830078125,
+              301.6338806152344
+            ],
+            [
+              331.23712158203125,
+              281.4502868652344
+            ]
+          ],
+          "illumination_scale": 0.878,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.454
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 59,
+          "inliers": 49,
+          "raw_corner_rmse_px": 0.905,
+          "observed_quad": [
+            [
+              281.2373352050781,
+              91.90338134765625
+            ],
+            [
+              436.13018798828125,
+              122.62995147705078
+            ],
+            [
+              425.2415771484375,
+              198.98721313476562
+            ],
+            [
+              273.3502197265625,
+              165.6092987060547
+            ]
+          ],
+          "illumination_scale": 0.975,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.665
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 53,
+          "inliers": 43,
+          "raw_corner_rmse_px": 0.62,
+          "observed_quad": [
+            [
+              324.66162109375,
+              236.9216766357422
+            ],
+            [
+              498.8998107910156,
+              250.76486206054688
+            ],
+            [
+              503.8492431640625,
+              300.55975341796875
+            ],
+            [
+              331.72027587890625,
+              281.6181335449219
+            ]
+          ],
+          "illumination_scale": 0.887,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.569
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 66,
+          "inliers": 57,
+          "raw_corner_rmse_px": 0.472,
+          "observed_quad": [
+            [
+              280.9908447265625,
+              91.33548736572266
+            ],
+            [
+              436.8486022949219,
+              123.66205596923828
+            ],
+            [
+              425.2444152832031,
+              199.0729217529297
+            ],
+            [
+              273.16778564453125,
+              165.3105010986328
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.406
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 44,
+          "inliers": 36,
+          "raw_corner_rmse_px": 0.968,
+          "observed_quad": [
+            [
+              325.8409729003906,
+              237.44482421875
+            ],
+            [
+              497.4542541503906,
+              250.3838653564453
+            ],
+            [
+              503.747802734375,
+              300.1138916015625
+            ],
+            [
+              331.6596984863281,
+              281.6653137207031
+            ]
+          ],
+          "illumination_scale": 0.891,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.462
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 59,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.416,
+          "observed_quad": [
+            [
+              281.31890869140625,
+              90.95948791503906
+            ],
+            [
+              437.5256042480469,
+              124.37615203857422
+            ],
+            [
+              425.5244140625,
+              199.47396850585938
+            ],
+            [
+              273.03765869140625,
+              164.73117065429688
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.398
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 48,
+          "inliers": 41,
+          "raw_corner_rmse_px": 0.631,
+          "observed_quad": [
+            [
+              324.6600646972656,
+              236.86105346679688
+            ],
+            [
+              497.74151611328125,
+              249.78221130371094
+            ],
+            [
+              502.4146423339844,
+              299.4259948730469
+            ],
+            [
+              332.6131591796875,
+              281.4288635253906
+            ]
+          ],
+          "illumination_scale": 0.899,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.535
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 63,
+          "inliers": 57,
+          "raw_corner_rmse_px": 0.364,
+          "observed_quad": [
+            [
+              280.86248779296875,
+              90.55615234375
+            ],
+            [
+              438.085693359375,
+              124.97383117675781
+            ],
+            [
+              425.6131896972656,
+              199.74708557128906
+            ],
+            [
+              272.9306335449219,
+              164.5401611328125
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.404
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 60,
+          "inliers": 43,
+          "raw_corner_rmse_px": 0.367,
+          "observed_quad": [
+            [
+              324.9563903808594,
+              236.5213165283203
+            ],
+            [
+              496.6490478515625,
+              249.17337036132812
+            ],
+            [
+              501.926513671875,
+              299.1286926269531
+            ],
+            [
+              332.2033996582031,
+              281.4813537597656
+            ]
+          ],
+          "illumination_scale": 0.903,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.381
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 68,
+          "inliers": 58,
+          "raw_corner_rmse_px": 0.481,
+          "observed_quad": [
+            [
+              281.8401184082031,
+              90.84532928466797
+            ],
+            [
+              438.26123046875,
+              125.39015197753906
+            ],
+            [
+              425.64288330078125,
+              200.08114624023438
+            ],
+            [
+              272.8888244628906,
+              164.31039428710938
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.477
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 46,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.405,
+          "observed_quad": [
+            [
+              325.05780029296875,
+              236.1221160888672
+            ],
+            [
+              496.1115417480469,
+              248.82217407226562
+            ],
+            [
+              501.5376281738281,
+              298.87579345703125
+            ],
+            [
+              332.5908508300781,
+              281.1485290527344
+            ]
+          ],
+          "illumination_scale": 0.912,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.333
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 62,
+          "inliers": 56,
+          "raw_corner_rmse_px": 1.254,
+          "observed_quad": [
+            [
+              283.14776611328125,
+              91.98432922363281
+            ],
+            [
+              438.29779052734375,
+              125.37189483642578
+            ],
+            [
+              425.94073486328125,
+              200.22581481933594
+            ],
+            [
+              272.8833923339844,
+              164.23297119140625
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.479
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.231,
+          "observed_quad": [
+            [
+              325.01800537109375,
+              235.51197814941406
+            ],
+            [
+              496.2266845703125,
+              248.24061584472656
+            ],
+            [
+              501.8868103027344,
+              298.7474670410156
+            ],
+            [
+              332.1233825683594,
+              280.8576965332031
+            ]
+          ],
+          "illumination_scale": 0.916,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.332
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 61,
+          "inliers": 56,
+          "raw_corner_rmse_px": 0.937,
+          "observed_quad": [
+            [
+              282.2456970214844,
+              91.2520523071289
+            ],
+            [
+              438.3223876953125,
+              124.95484161376953
+            ],
+            [
+              426.454833984375,
+              200.30905151367188
+            ],
+            [
+              273.5478820800781,
+              164.31155395507812
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.604
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 53,
+          "inliers": 43,
+          "raw_corner_rmse_px": 1.302,
+          "observed_quad": [
+            [
+              325.0412292480469,
+              235.08056640625
+            ],
+            [
+              498.91180419921875,
+              247.1151580810547
+            ],
+            [
+              501.8018798828125,
+              298.323486328125
+            ],
+            [
+              331.95050048828125,
+              280.5653991699219
+            ]
+          ],
+          "illumination_scale": 0.924,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.408
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 71,
+          "inliers": 60,
+          "raw_corner_rmse_px": 0.48,
+          "observed_quad": [
+            [
+              280.7362976074219,
+              90.88877868652344
+            ],
+            [
+              438.05352783203125,
+              124.578857421875
+            ],
+            [
+              425.7525329589844,
+              199.30685424804688
+            ],
+            [
+              273.0247497558594,
+              164.70437622070312
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.749
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.256,
+          "observed_quad": [
+            [
+              325.1608581542969,
+              234.62863159179688
+            ],
+            [
+              496.76763916015625,
+              247.0496826171875
+            ],
+            [
+              501.69818115234375,
+              297.93231201171875
+            ],
+            [
+              331.23834228515625,
+              280.252685546875
+            ]
+          ],
+          "illumination_scale": 0.929,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.393
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 64,
+          "inliers": 55,
+          "raw_corner_rmse_px": 0.897,
+          "observed_quad": [
+            [
+              281.7951354980469,
+              91.88273620605469
+            ],
+            [
+              437.5365295410156,
+              123.87918090820312
+            ],
+            [
+              425.6441650390625,
+              199.50039672851562
+            ],
+            [
+              273.2911071777344,
+              165.0718231201172
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.694
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 49,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.251,
+          "observed_quad": [
+            [
+              325.0877380371094,
+              233.75128173828125
+            ],
+            [
+              497.5001525878906,
+              246.63665771484375
+            ],
+            [
+              501.824951171875,
+              297.8035888671875
+            ],
+            [
+              331.123291015625,
+              279.7146911621094
+            ]
+          ],
+          "illumination_scale": 0.937,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.467
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 62,
+          "inliers": 53,
+          "raw_corner_rmse_px": 0.716,
+          "observed_quad": [
+            [
+              281.30499267578125,
+              91.6113052368164
+            ],
+            [
+              436.61334228515625,
+              123.26013946533203
+            ],
+            [
+              425.1607666015625,
+              199.03866577148438
+            ],
+            [
+              273.1231689453125,
+              165.31309509277344
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.778
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 47,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.21,
+          "observed_quad": [
+            [
+              324.999267578125,
+              233.06472778320312
+            ],
+            [
+              498.26336669921875,
+              246.40264892578125
+            ],
+            [
+              502.0055236816406,
+              297.40948486328125
+            ],
+            [
+              330.3801574707031,
+              279.1276550292969
+            ]
+          ],
+          "illumination_scale": 0.945,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.222
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 67,
+          "inliers": 56,
+          "raw_corner_rmse_px": 1.585,
+          "observed_quad": [
+            [
+              281.25531005859375,
+              93.11302947998047
+            ],
+            [
+              435.7752990722656,
+              122.06619262695312
+            ],
+            [
+              426.168701171875,
+              198.70721435546875
+            ],
+            [
+              273.5776672363281,
+              165.89126586914062
+            ]
+          ],
+          "illumination_scale": 0.979,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.959
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 50,
+          "inliers": 43,
+          "raw_corner_rmse_px": 0.309,
+          "observed_quad": [
+            [
+              324.933837890625,
+              232.06802368164062
+            ],
+            [
+              499.228759765625,
+              246.01260375976562
+            ],
+            [
+              502.5079345703125,
+              297.52099609375
+            ],
+            [
+              330.1982421875,
+              278.54595947265625
+            ]
+          ],
+          "illumination_scale": 0.954,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.43
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 55,
+          "inliers": 46,
+          "raw_corner_rmse_px": 0.61,
+          "observed_quad": [
+            [
+              278.2242126464844,
+              91.28870391845703
+            ],
+            [
+              434.30889892578125,
+              121.23741149902344
+            ],
+            [
+              425.107421875,
+              197.60406494140625
+            ],
+            [
+              272.61871337890625,
+              166.13394165039062
+            ]
+          ],
+          "illumination_scale": 0.983,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.568
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 45,
+          "raw_corner_rmse_px": 0.45,
+          "observed_quad": [
+            [
+              325.15533447265625,
+              231.0718994140625
+            ],
+            [
+              499.9876403808594,
+              246.0277862548828
+            ],
+            [
+              502.5267333984375,
+              297.3138732910156
+            ],
+            [
+              329.5379638671875,
+              277.5077819824219
+            ]
+          ],
+          "illumination_scale": 0.958,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.43
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 50,
+          "inliers": 45,
+          "raw_corner_rmse_px": 0.348,
+          "observed_quad": [
+            [
+              278.0361022949219,
+              91.35319519042969
+            ],
+            [
+              432.67437744140625,
+              119.97257995605469
+            ],
+            [
+              423.89068603515625,
+              196.44805908203125
+            ],
+            [
+              273.255615234375,
+              166.30685424804688
+            ]
+          ],
+          "illumination_scale": 0.992,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.691
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 43,
+          "raw_corner_rmse_px": 1.182,
+          "observed_quad": [
+            [
+              324.98736572265625,
+              230.0316162109375
+            ],
+            [
+              501.0982971191406,
+              245.87940979003906
+            ],
+            [
+              501.5040588378906,
+              296.9116516113281
+            ],
+            [
+              328.26654052734375,
+              277.0540466308594
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.693
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 54,
+          "inliers": 47,
+          "raw_corner_rmse_px": 0.637,
+          "observed_quad": [
+            [
+              277.60125732421875,
+              92.66312408447266
+            ],
+            [
+              431.47064208984375,
+              118.13922882080078
+            ],
+            [
+              424.2464904785156,
+              195.74732971191406
+            ],
+            [
+              273.7127685546875,
+              167.16184997558594
+            ]
+          ],
+          "illumination_scale": 1.0,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.527
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.484,
+          "observed_quad": [
+            [
+              324.95953369140625,
+              229.2174530029297
+            ],
+            [
+              503.6224060058594,
+              245.355224609375
+            ],
+            [
+              504.2886657714844,
+              297.3345642089844
+            ],
+            [
+              328.15850830078125,
+              276.2826843261719
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.46
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 56,
+          "inliers": 47,
+          "raw_corner_rmse_px": 0.459,
+          "observed_quad": [
+            [
+              276.8731384277344,
+              92.91923522949219
+            ],
+            [
+              429.5328369140625,
+              116.3947982788086
+            ],
+            [
+              422.8367614746094,
+              194.26564025878906
+            ],
+            [
+              274.02166748046875,
+              167.73324584960938
+            ]
+          ],
+          "illumination_scale": 1.008,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.459
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 57,
+          "inliers": 50,
+          "raw_corner_rmse_px": 0.488,
+          "observed_quad": [
+            [
+              324.85504150390625,
+              228.18251037597656
+            ],
+            [
+              504.9825134277344,
+              245.45692443847656
+            ],
+            [
+              505.3251647949219,
+              297.3160705566406
+            ],
+            [
+              327.78961181640625,
+              275.3133850097656
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.498
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 56,
+          "inliers": 49,
+          "raw_corner_rmse_px": 0.37,
+          "observed_quad": [
+            [
+              275.7535705566406,
+              92.96074676513672
+            ],
+            [
+              427.2153625488281,
+              114.82809448242188
+            ],
+            [
+              421.6844482421875,
+              193.01519775390625
+            ],
+            [
+              274.2469482421875,
+              168.3365020751953
+            ]
+          ],
+          "illumination_scale": 1.017,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.577
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 52,
+          "inliers": 43,
+          "raw_corner_rmse_px": 0.409,
+          "observed_quad": [
+            [
+              324.9620666503906,
+              227.11080932617188
+            ],
+            [
+              506.43280029296875,
+              245.33189392089844
+            ],
+            [
+              506.0087585449219,
+              297.43060302734375
+            ],
+            [
+              326.6309509277344,
+              274.5599670410156
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.371
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 61,
+          "inliers": 45,
+          "raw_corner_rmse_px": 1.033,
+          "observed_quad": [
+            [
+              276.5555725097656,
+              94.09779357910156
+            ],
+            [
+              424.8872985839844,
+              112.9233627319336
+            ],
+            [
+              421.09814453125,
+              192.11358642578125
+            ],
+            [
+              274.2615966796875,
+              169.0552978515625
+            ]
+          ],
+          "illumination_scale": 1.025,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.719
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 46,
+          "inliers": 39,
+          "raw_corner_rmse_px": 0.374,
+          "observed_quad": [
+            [
+              325.0483093261719,
+              226.356201171875
+            ],
+            [
+              507.8453063964844,
+              245.68174743652344
+            ],
+            [
+              507.0215148925781,
+              297.4629821777344
+            ],
+            [
+              325.5467834472656,
+              273.6188659667969
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.372
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 55,
+          "inliers": 41,
+          "raw_corner_rmse_px": 0.874,
+          "observed_quad": [
+            [
+              275.5010681152344,
+              94.07322692871094
+            ],
+            [
+              422.548095703125,
+              110.98036193847656
+            ],
+            [
+              420.1405334472656,
+              190.66757202148438
+            ],
+            [
+              274.9198303222656,
+              169.0628204345703
+            ]
+          ],
+          "illumination_scale": 1.038,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.828
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 45,
+          "raw_corner_rmse_px": 0.247,
+          "observed_quad": [
+            [
+              325.0392150878906,
+              224.98973083496094
+            ],
+            [
+              509.5222473144531,
+              246.00059509277344
+            ],
+            [
+              508.0218811035156,
+              297.95355224609375
+            ],
+            [
+              325.3603515625,
+              272.5585021972656
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.235
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 58,
+          "inliers": 47,
+          "raw_corner_rmse_px": 0.53,
+          "observed_quad": [
+            [
+              274.05865478515625,
+              94.00313568115234
+            ],
+            [
+              420.2085266113281,
+              109.05307006835938
+            ],
+            [
+              418.66741943359375,
+              189.01011657714844
+            ],
+            [
+              273.956787109375,
+              170.14785766601562
+            ]
+          ],
+          "illumination_scale": 1.046,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.409
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 57,
+          "inliers": 49,
+          "raw_corner_rmse_px": 0.334,
+          "observed_quad": [
+            [
+              325.185546875,
+              223.9696502685547
+            ],
+            [
+              511.2781677246094,
+              246.11279296875
+            ],
+            [
+              508.6036376953125,
+              297.8150939941406
+            ],
+            [
+              324.77374267578125,
+              271.6494445800781
+            ]
+          ],
+          "illumination_scale": 0.971,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.292
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 45,
+          "inliers": 38,
+          "raw_corner_rmse_px": 0.434,
+          "observed_quad": [
+            [
+              273.6172180175781,
+              94.75975799560547
+            ],
+            [
+              417.7751159667969,
+              106.73302459716797
+            ],
+            [
+              417.51141357421875,
+              187.5966033935547
+            ],
+            [
+              275.1829833984375,
+              170.6724090576172
+            ]
+          ],
+          "illumination_scale": 1.059,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.431
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 46,
+          "raw_corner_rmse_px": 0.335,
+          "observed_quad": [
+            [
+              324.944091796875,
+              222.95123291015625
+            ],
+            [
+              513.0873413085938,
+              246.77210998535156
+            ],
+            [
+              509.9817810058594,
+              298.3206787109375
+            ],
+            [
+              324.4479064941406,
+              270.55419921875
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.336
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 48,
+          "inliers": 36,
+          "raw_corner_rmse_px": 0.507,
+          "observed_quad": [
+            [
+              272.3210144042969,
+              94.9638442993164
+            ],
+            [
+              414.9587097167969,
+              104.49247741699219
+            ],
+            [
+              415.66424560546875,
+              185.68211364746094
+            ],
+            [
+              276.2108459472656,
+              171.2305145263672
+            ]
+          ],
+          "illumination_scale": 1.067,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.338
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 46,
+          "raw_corner_rmse_px": 0.263,
+          "observed_quad": [
+            [
+              325.2181701660156,
+              221.92681884765625
+            ],
+            [
+              514.5961303710938,
+              246.7819366455078
+            ],
+            [
+              511.06390380859375,
+              298.5918273925781
+            ],
+            [
+              323.21612548828125,
+              269.97369384765625
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.299
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 35,
+          "inliers": 24,
+          "raw_corner_rmse_px": 2.468,
+          "observed_quad": [
+            [
+              271.9477233886719,
+              95.32313537597656
+            ],
+            [
+              411.7948913574219,
+              103.1545181274414
+            ],
+            [
+              414.1856689453125,
+              184.1624755859375
+            ],
+            [
+              271.5969543457031,
+              173.9942169189453
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.753
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 55,
+          "inliers": 43,
+          "raw_corner_rmse_px": 0.401,
+          "observed_quad": [
+            [
+              324.95245361328125,
+              220.998291015625
+            ],
+            [
+              516.290771484375,
+              246.93548583984375
+            ],
+            [
+              511.85736083984375,
+              298.8551330566406
+            ],
+            [
+              323.4413146972656,
+              269.2947082519531
+            ]
+          ],
+          "illumination_scale": 0.954,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.368
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 32,
+          "inliers": 20,
+          "raw_corner_rmse_px": 0.233,
+          "observed_quad": [
+            [
+              271.8658752441406,
+              96.01853942871094
+            ],
+            [
+              410.0022888183594,
+              100.37548065185547
+            ],
+            [
+              412.6650695800781,
+              182.2229766845703
+            ],
+            [
+              276.4892578125,
+              172.3630828857422
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.413
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 49,
+          "inliers": 39,
+          "raw_corner_rmse_px": 0.637,
+          "observed_quad": [
+            [
+              325.2297058105469,
+              220.17677307128906
+            ],
+            [
+              517.562255859375,
+              247.41786193847656
+            ],
+            [
+              512.87646484375,
+              299.1171875
+            ],
+            [
+              323.8900146484375,
+              268.3706359863281
+            ]
+          ],
+          "illumination_scale": 0.945,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.346
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 21,
+          "inliers": 10,
+          "raw_corner_rmse_px": 0.441,
+          "observed_quad": [
+            [
+              271.418212890625,
+              96.9477310180664
+            ],
+            [
+              407.7019348144531,
+              98.56338500976562
+            ],
+            [
+              410.5557556152344,
+              180.31777954101562
+            ],
+            [
+              277.2177734375,
+              173.0955047607422
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.454
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 49,
+          "inliers": 39,
+          "raw_corner_rmse_px": 0.86,
+          "observed_quad": [
+            [
+              325.4783630371094,
+              219.72140502929688
+            ],
+            [
+              519.9635620117188,
+              247.46766662597656
+            ],
+            [
+              513.7150268554688,
+              299.36468505859375
+            ],
+            [
+              322.9822998046875,
+              268.2325744628906
+            ]
+          ],
+          "illumination_scale": 0.937,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.927
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 26,
+          "inliers": 14,
+          "raw_corner_rmse_px": 0.81,
+          "observed_quad": [
+            [
+              270.946044921875,
+              96.01741027832031
+            ],
+            [
+              405.07122802734375,
+              96.41706848144531
+            ],
+            [
+              408.939453125,
+              179.22996520996094
+            ],
+            [
+              277.59991455078125,
+              173.07745361328125
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.066
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 50,
+          "inliers": 38,
+          "raw_corner_rmse_px": 0.928,
+          "observed_quad": [
+            [
+              326.4732360839844,
+              219.2206573486328
+            ],
+            [
+              521.044921875,
+              247.9099884033203
+            ],
+            [
+              514.7840576171875,
+              299.8044128417969
+            ],
+            [
+              323.064453125,
+              267.4888000488281
+            ]
+          ],
+          "illumination_scale": 0.924,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.968
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 34,
+          "inliers": 16,
+          "raw_corner_rmse_px": 0.981,
+          "observed_quad": [
+            [
+              270.88031005859375,
+              96.7325668334961
+            ],
+            [
+              402.7012939453125,
+              95.70421600341797
+            ],
+            [
+              407.06005859375,
+              177.59616088867188
+            ],
+            [
+              276.7825012207031,
+              174.12486267089844
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.034
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 37,
+          "inliers": 30,
+          "raw_corner_rmse_px": 0.991,
+          "observed_quad": [
+            [
+              326.45440673828125,
+              218.5652313232422
+            ],
+            [
+              522.2190551757812,
+              248.41868591308594
+            ],
+            [
+              515.3465576171875,
+              300.13385009765625
+            ],
+            [
+              323.3039245605469,
+              266.879638671875
+            ]
+          ],
+          "illumination_scale": 0.916,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.913
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 34,
+          "inliers": 14,
+          "raw_corner_rmse_px": 7.208,
+          "observed_quad": [
+            [
+              271.4104919433594,
+              97.26307678222656
+            ],
+            [
+              391.6899108886719,
+              98.45336151123047
+            ],
+            [
+              400.548583984375,
+              173.63272094726562
+            ],
+            [
+              271.2494201660156,
+              179.26608276367188
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 3.052
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 44,
+          "inliers": 30,
+          "raw_corner_rmse_px": 2.028,
+          "observed_quad": [
+            [
+              326.2787780761719,
+              217.96080017089844
+            ],
+            [
+              523.4996948242188,
+              248.9337921142578
+            ],
+            [
+              515.3270874023438,
+              300.2371826171875
+            ],
+            [
+              325.5098876953125,
+              266.48480224609375
+            ]
+          ],
+          "illumination_scale": 0.912,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.051
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 23,
+          "inliers": 16,
+          "raw_corner_rmse_px": 1.385,
+          "observed_quad": [
+            [
+              271.23486328125,
+              97.4039077758789
+            ],
+            [
+              397.128173828125,
+              91.82262420654297
+            ],
+            [
+              402.0439147949219,
+              173.97488403320312
+            ],
+            [
+              278.4198303222656,
+              174.9906768798828
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 2.092
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 31,
+          "inliers": 23,
+          "raw_corner_rmse_px": 1.138,
+          "observed_quad": [
+            [
+              326.46417236328125,
+              216.9860382080078
+            ],
+            [
+              525.1907958984375,
+              249.3536376953125
+            ],
+            [
+              515.9199829101562,
+              300.73907470703125
+            ],
+            [
+              322.0977783203125,
+              265.9622802734375
+            ]
+          ],
+          "illumination_scale": 0.95,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.198
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 44,
+          "inliers": 20,
+          "raw_corner_rmse_px": 2.517,
+          "observed_quad": [
+            [
+              269.5799560546875,
+              96.80818176269531
+            ],
+            [
+              394.3421325683594,
+              90.85921478271484
+            ],
+            [
+              400.2009582519531,
+              172.16847229003906
+            ],
+            [
+              278.6048889160156,
+              175.98988342285156
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.789
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 23,
+          "inliers": 16,
+          "raw_corner_rmse_px": 1.407,
+          "observed_quad": [
+            [
+              324.8583068847656,
+              215.8023223876953
+            ],
+            [
+              525.4923706054688,
+              249.9927520751953
+            ],
+            [
+              516.7615356445312,
+              301.3840637207031
+            ],
+            [
+              322.5173034667969,
+              265.38995361328125
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.907
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 32,
+          "inliers": 19,
+          "raw_corner_rmse_px": 1.044,
+          "observed_quad": [
+            [
+              273.1948547363281,
+              100.21997833251953
+            ],
+            [
+              395.15936279296875,
+              88.54821014404297
+            ],
+            [
+              402.43017578125,
+              172.03953552246094
+            ],
+            [
+              279.73651123046875,
+              174.57688903808594
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.065
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 29,
+          "inliers": 17,
+          "raw_corner_rmse_px": 1.064,
+          "observed_quad": [
+            [
+              325.71533203125,
+              216.12826538085938
+            ],
+            [
+              526.217041015625,
+              251.07229614257812
+            ],
+            [
+              517.2910766601562,
+              301.87872314453125
+            ],
+            [
+              322.29278564453125,
+              265.041748046875
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.566
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 32,
+          "inliers": 17,
+          "raw_corner_rmse_px": 0.636,
+          "observed_quad": [
+            [
+              272.8013916015625,
+              99.05925750732422
+            ],
+            [
+              394.50213623046875,
+              87.41912841796875
+            ],
+            [
+              399.4283142089844,
+              171.1675567626953
+            ],
+            [
+              279.05596923828125,
+              175.36248779296875
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.319
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 32,
+          "inliers": 22,
+          "raw_corner_rmse_px": 0.695,
+          "observed_quad": [
+            [
+              326.824462890625,
+              216.63092041015625
+            ],
+            [
+              526.3084106445312,
+              251.20970153808594
+            ],
+            [
+              517.9068603515625,
+              302.40142822265625
+            ],
+            [
+              322.2173767089844,
+              265.12078857421875
+            ]
+          ],
+          "illumination_scale": 0.966,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.692
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 37,
+          "inliers": 22,
+          "raw_corner_rmse_px": 2.645,
+          "observed_quad": [
+            [
+              269.719970703125,
+              98.1142807006836
+            ],
+            [
+              391.7226867675781,
+              87.41602325439453
+            ],
+            [
+              396.00469970703125,
+              168.42857360839844
+            ],
+            [
+              280.46051025390625,
+              175.15142822265625
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.568
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 37,
+          "inliers": 25,
+          "raw_corner_rmse_px": 0.416,
+          "observed_quad": [
+            [
+              326.9457092285156,
+              216.71450805664062
+            ],
+            [
+              525.1130981445312,
+              252.18321228027344
+            ],
+            [
+              518.4313354492188,
+              302.9603271484375
+            ],
+            [
+              321.9751892089844,
+              265.07952880859375
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.543
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 30,
+          "inliers": 22,
+          "raw_corner_rmse_px": 1.824,
+          "observed_quad": [
+            [
+              271.0010986328125,
+              97.97582244873047
+            ],
+            [
+              391.3961486816406,
+              86.50114440917969
+            ],
+            [
+              396.3157958984375,
+              169.6529083251953
+            ],
+            [
+              279.54022216796875,
+              176.47177124023438
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.719
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 32,
+          "inliers": 27,
+          "raw_corner_rmse_px": 1.38,
+          "observed_quad": [
+            [
+              327.14447021484375,
+              216.71104431152344
+            ],
+            [
+              527.2239379882812,
+              252.45445251464844
+            ],
+            [
+              515.9668579101562,
+              302.3531799316406
+            ],
+            [
+              321.78070068359375,
+              265.17034912109375
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.581
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 43,
+          "inliers": 22,
+          "raw_corner_rmse_px": 2.775,
+          "observed_quad": [
+            [
+              270.6439514160156,
+              97.90872192382812
+            ],
+            [
+              392.68084716796875,
+              84.94314575195312
+            ],
+            [
+              397.3769226074219,
+              170.26808166503906
+            ],
+            [
+              282.9600830078125,
+              173.6848602294922
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.705
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 43,
+          "inliers": 34,
+          "raw_corner_rmse_px": 0.641,
+          "observed_quad": [
+            [
+              326.493408203125,
+              216.7996063232422
+            ],
+            [
+              526.7819213867188,
+              253.40899658203125
+            ],
+            [
+              518.2954711914062,
+              303.7432556152344
+            ],
+            [
+              322.3501281738281,
+              265.1639404296875
+            ]
+          ],
+          "illumination_scale": 0.962,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.503
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 24,
+          "inliers": 16,
+          "raw_corner_rmse_px": 3.405,
+          "observed_quad": [
+            [
+              271.82080078125,
+              98.54563903808594
+            ],
+            [
+              393.7967834472656,
+              81.70523834228516
+            ],
+            [
+              396.986328125,
+              170.05291748046875
+            ],
+            [
+              283.3578796386719,
+              174.4203338623047
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.503
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 41,
+          "inliers": 32,
+          "raw_corner_rmse_px": 0.948,
+          "observed_quad": [
+            [
+              326.7213439941406,
+              217.41482543945312
+            ],
+            [
+              527.5464477539062,
+              253.1051788330078
+            ],
+            [
+              518.9506225585938,
+              303.600341796875
+            ],
+            [
+              322.13909912109375,
+              265.5966491699219
+            ]
+          ],
+          "illumination_scale": 0.954,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.545
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 25,
+          "inliers": 16,
+          "raw_corner_rmse_px": 6.047,
+          "observed_quad": [
+            [
+              275.38482666015625,
+              100.18827819824219
+            ],
+            [
+              386.43115234375,
+              91.59101104736328
+            ],
+            [
+              397.3127136230469,
+              170.5245819091797
+            ],
+            [
+              271.7138977050781,
+              180.50894165039062
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.388
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 46,
+          "raw_corner_rmse_px": 0.747,
+          "observed_quad": [
+            [
+              326.2686767578125,
+              217.51223754882812
+            ],
+            [
+              525.6896362304688,
+              254.58865356445312
+            ],
+            [
+              517.1259765625,
+              304.0913391113281
+            ],
+            [
+              322.0763854980469,
+              265.78424072265625
+            ]
+          ],
+          "illumination_scale": 0.95,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.504
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 31,
+          "inliers": 16,
+          "raw_corner_rmse_px": 3.475,
+          "observed_quad": [
+            [
+              272.4076232910156,
+              98.07044219970703
+            ],
+            [
+              387.3835754394531,
+              87.71255493164062
+            ],
+            [
+              398.665771484375,
+              171.80038452148438
+            ],
+            [
+              277.6943664550781,
+              179.64906311035156
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.177
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 49,
+          "inliers": 38,
+          "raw_corner_rmse_px": 1.509,
+          "observed_quad": [
+            [
+              326.5826110839844,
+              218.5524139404297
+            ],
+            [
+              526.0902709960938,
+              254.7397918701172
+            ],
+            [
+              520.9188232421875,
+              305.7141418457031
+            ],
+            [
+              322.1255187988281,
+              266.3505554199219
+            ]
+          ],
+          "illumination_scale": 0.945,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.468
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 31,
+          "inliers": 18,
+          "raw_corner_rmse_px": 1.047,
+          "observed_quad": [
+            [
+              271.77703857421875,
+              98.6745376586914
+            ],
+            [
+              391.8547058105469,
+              86.67082977294922
+            ],
+            [
+              398.32781982421875,
+              170.6970672607422
+            ],
+            [
+              280.22821044921875,
+              175.59083557128906
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.185
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 48,
+          "inliers": 38,
+          "raw_corner_rmse_px": 0.731,
+          "observed_quad": [
+            [
+              326.45343017578125,
+              219.2022247314453
+            ],
+            [
+              525.0663452148438,
+              255.266357421875
+            ],
+            [
+              518.9052124023438,
+              305.4333190917969
+            ],
+            [
+              322.83721923828125,
+              266.77630615234375
+            ]
+          ],
+          "illumination_scale": 0.937,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.567
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 26,
+          "inliers": 16,
+          "raw_corner_rmse_px": 1.234,
+          "observed_quad": [
+            [
+              272.2543029785156,
+              98.3712158203125
+            ],
+            [
+              394.0732421875,
+              86.77720642089844
+            ],
+            [
+              399.17706298828125,
+              171.6859130859375
+            ],
+            [
+              280.277587890625,
+              174.75079345703125
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.988
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 52,
+          "inliers": 34,
+          "raw_corner_rmse_px": 0.83,
+          "observed_quad": [
+            [
+              325.6020202636719,
+              219.8140411376953
+            ],
+            [
+              523.099365234375,
+              255.37115478515625
+            ],
+            [
+              517.54052734375,
+              304.94287109375
+            ],
+            [
+              321.9497375488281,
+              267.6739807128906
+            ]
+          ],
+          "illumination_scale": 0.933,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.762
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 30,
+          "inliers": 20,
+          "raw_corner_rmse_px": 0.571,
+          "observed_quad": [
+            [
+              273.12750244140625,
+              98.8182601928711
+            ],
+            [
+              393.9002380371094,
+              88.46595764160156
+            ],
+            [
+              400.2772521972656,
+              172.24026489257812
+            ],
+            [
+              279.6619873046875,
+              174.87806701660156
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.672
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 52,
+          "inliers": 47,
+          "raw_corner_rmse_px": 1.038,
+          "observed_quad": [
+            [
+              325.5925598144531,
+              220.89077758789062
+            ],
+            [
+              523.0091552734375,
+              255.56825256347656
+            ],
+            [
+              519.2505493164062,
+              305.75372314453125
+            ],
+            [
+              322.2681884765625,
+              268.30828857421875
+            ]
+          ],
+          "illumination_scale": 0.924,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.564
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 37,
+          "inliers": 23,
+          "raw_corner_rmse_px": 0.593,
+          "observed_quad": [
+            [
+              272.6481018066406,
+              98.59890747070312
+            ],
+            [
+              395.7388610839844,
+              89.58998107910156
+            ],
+            [
+              401.44091796875,
+              173.12600708007812
+            ],
+            [
+              279.66363525390625,
+              174.4163055419922
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.62
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 54,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.518,
+          "observed_quad": [
+            [
+              324.8750305175781,
+              221.45037841796875
+            ],
+            [
+              523.8594970703125,
+              255.8648223876953
+            ],
+            [
+              517.3690795898438,
+              305.4436950683594
+            ],
+            [
+              322.6612854003906,
+              268.9771423339844
+            ]
+          ],
+          "illumination_scale": 0.92,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.391
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 40,
+          "inliers": 25,
+          "raw_corner_rmse_px": 0.748,
+          "observed_quad": [
+            [
+              272.1549377441406,
+              98.13153839111328
+            ],
+            [
+              397.2758483886719,
+              91.44937133789062
+            ],
+            [
+              403.0932922363281,
+              174.301025390625
+            ],
+            [
+              277.5400695800781,
+              174.88572692871094
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.016
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 70,
+          "inliers": 59,
+          "raw_corner_rmse_px": 0.579,
+          "observed_quad": [
+            [
+              324.8183288574219,
+              222.6334991455078
+            ],
+            [
+              523.0943603515625,
+              255.9955596923828
+            ],
+            [
+              516.804443359375,
+              305.6269226074219
+            ],
+            [
+              323.1185302734375,
+              269.8468017578125
+            ]
+          ],
+          "illumination_scale": 0.916,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.507
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 37,
+          "inliers": 20,
+          "raw_corner_rmse_px": 0.586,
+          "observed_quad": [
+            [
+              271.39599609375,
+              97.69924926757812
+            ],
+            [
+              399.15240478515625,
+              92.56719207763672
+            ],
+            [
+              404.4825439453125,
+              175.44210815429688
+            ],
+            [
+              278.45367431640625,
+              174.40017700195312
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.206
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 65,
+          "inliers": 54,
+          "raw_corner_rmse_px": 0.315,
+          "observed_quad": [
+            [
+              324.4267272949219,
+              223.68504333496094
+            ],
+            [
+              521.5841674804688,
+              256.4505920410156
+            ],
+            [
+              516.60595703125,
+              305.5657653808594
+            ],
+            [
+              322.9591064453125,
+              270.4435119628906
+            ]
+          ],
+          "illumination_scale": 0.912,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.403
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 35,
+          "inliers": 18,
+          "raw_corner_rmse_px": 3.489,
+          "observed_quad": [
+            [
+              271.0622863769531,
+              97.40682983398438
+            ],
+            [
+              395.3486633300781,
+              96.0361099243164
+            ],
+            [
+              406.383056640625,
+              176.9712677001953
+            ],
+            [
+              278.3822326660156,
+              175.84844970703125
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 1.518
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 69,
+          "inliers": 54,
+          "raw_corner_rmse_px": 0.567,
+          "observed_quad": [
+            [
+              323.86798095703125,
+              224.61598205566406
+            ],
+            [
+              520.9736328125,
+              256.2778625488281
+            ],
+            [
+              515.921142578125,
+              305.4290771484375
+            ],
+            [
+              323.34869384765625,
+              271.3724060058594
+            ]
+          ],
+          "illumination_scale": 0.908,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.554
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 38,
+          "inliers": 26,
+          "raw_corner_rmse_px": 0.366,
+          "observed_quad": [
+            [
+              271.460205078125,
+              97.0035629272461
+            ],
+            [
+              403.9530029296875,
+              95.38423156738281
+            ],
+            [
+              408.0456848144531,
+              178.4168701171875
+            ],
+            [
+              277.2979431152344,
+              173.79335021972656
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.513
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 58,
+          "inliers": 51,
+          "raw_corner_rmse_px": 0.733,
+          "observed_quad": [
+            [
+              323.6885070800781,
+              225.63168334960938
+            ],
+            [
+              520.0369873046875,
+              256.06201171875
+            ],
+            [
+              515.3980712890625,
+              305.5704040527344
+            ],
+            [
+              323.83642578125,
+              272.4455871582031
+            ]
+          ],
+          "illumination_scale": 0.908,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.673
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 37,
+          "inliers": 26,
+          "raw_corner_rmse_px": 0.837,
+          "observed_quad": [
+            [
+              270.73565673828125,
+              96.295654296875
+            ],
+            [
+              406.0252685546875,
+              97.62787628173828
+            ],
+            [
+              410.0606689453125,
+              179.83657836914062
+            ],
+            [
+              277.7510986328125,
+              172.8085479736328
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.565
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 59,
+          "inliers": 48,
+          "raw_corner_rmse_px": 0.378,
+          "observed_quad": [
+            [
+              323.7196044921875,
+              226.9636688232422
+            ],
+            [
+              517.8185424804688,
+              256.6184997558594
+            ],
+            [
+              515.2722778320312,
+              305.68621826171875
+            ],
+            [
+              323.9536437988281,
+              273.0295104980469
+            ]
+          ],
+          "illumination_scale": 0.903,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.428
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 44,
+          "inliers": 31,
+          "raw_corner_rmse_px": 0.51,
+          "observed_quad": [
+            [
+              271.2773742675781,
+              95.73273468017578
+            ],
+            [
+              408.93243408203125,
+              99.49402618408203
+            ],
+            [
+              411.46142578125,
+              181.5515899658203
+            ],
+            [
+              276.7874450683594,
+              172.6402130126953
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.407
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 59,
+          "inliers": 53,
+          "raw_corner_rmse_px": 0.39,
+          "observed_quad": [
+            [
+              322.906982421875,
+              227.84878540039062
+            ],
+            [
+              516.5572509765625,
+              256.63958740234375
+            ],
+            [
+              514.1719970703125,
+              305.4952392578125
+            ],
+            [
+              324.6614074707031,
+              273.8731689453125
+            ]
+          ],
+          "illumination_scale": 0.899,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.377
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 48,
+          "inliers": 42,
+          "raw_corner_rmse_px": 0.178,
+          "observed_quad": [
+            [
+              271.98541259765625,
+              95.86406707763672
+            ],
+            [
+              411.59814453125,
+              101.46868133544922
+            ],
+            [
+              413.18951416015625,
+              182.8174285888672
+            ],
+            [
+              276.0564880371094,
+              172.05123901367188
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.189
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 60,
+          "inliers": 51,
+          "raw_corner_rmse_px": 0.445,
+          "observed_quad": [
+            [
+              323.07110595703125,
+              229.1007080078125
+            ],
+            [
+              515.44189453125,
+              256.2577819824219
+            ],
+            [
+              513.39306640625,
+              305.0414123535156
+            ],
+            [
+              324.8484191894531,
+              274.7641296386719
+            ]
+          ],
+          "illumination_scale": 0.899,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.461
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 68,
+          "inliers": 58,
+          "raw_corner_rmse_px": 0.367,
+          "observed_quad": [
+            [
+              272.76483154296875,
+              95.52703094482422
+            ],
+            [
+              413.7158508300781,
+              103.76304626464844
+            ],
+            [
+              415.0693054199219,
+              184.88523864746094
+            ],
+            [
+              275.8374328613281,
+              171.60585021972656
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.367
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 61,
+          "inliers": 54,
+          "raw_corner_rmse_px": 0.172,
+          "observed_quad": [
+            [
+              322.82049560546875,
+              229.8697509765625
+            ],
+            [
+              513.3067016601562,
+              256.30047607421875
+            ],
+            [
+              512.38232421875,
+              304.9529113769531
+            ],
+            [
+              325.49700927734375,
+              275.47625732421875
+            ]
+          ],
+          "illumination_scale": 0.895,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.172
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "surfaces": [
+        {
+          "surface": 0,
+          "reference_keypoints": 127,
+          "matches": 105,
+          "inliers": 100,
+          "raw_corner_rmse_px": 0.075,
+          "observed_quad": [
+            [
+              272.8725891113281,
+              94.80682373046875
+            ],
+            [
+              416.7891845703125,
+              105.56138610839844
+            ],
+            [
+              416.4502258300781,
+              186.42430114746094
+            ],
+            [
+              275.3184509277344,
+              171.04872131347656
+            ]
+          ],
+          "illumination_scale": 1.071,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.075
+        },
+        {
+          "surface": 1,
+          "reference_keypoints": 111,
+          "matches": 102,
+          "inliers": 101,
+          "raw_corner_rmse_px": 0.045,
+          "observed_quad": [
+            [
+              322.90191650390625,
+              230.89529418945312
+            ],
+            [
+              511.6458740234375,
+              256.061767578125
+            ],
+            [
+              511.76739501953125,
+              304.7164001464844
+            ],
+            [
+              326.1177062988281,
+              276.2542419433594
+            ]
+          ],
+          "illumination_scale": 0.891,
+          "occlusion_mask": "Own geometry projection, not an automatic segmentation claim",
+          "corner_rmse_px": 0.045
+        }
+      ]
+    }
+  ]
+}

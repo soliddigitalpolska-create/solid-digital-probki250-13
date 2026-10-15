@@ -1,0 +1,1 @@
+Własna postać blokowa i natywny Blender. Otwórz index.html. Plik.blend zawiera rig, wagi i klatki kluczowe. MP4 zawiera systemową syntezę Microsoft Paulina Desktop z autorskim tekstem, nie ludzki głos ani lektora klienta. Brak Roblox Studio/.rbxl, marketplace assets lub cudzych postaci. Próbka nie dowodzi kompetencji wdrożenia animacji w grze Roblox.

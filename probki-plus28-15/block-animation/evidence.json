@@ -1,0 +1,36 @@
+{
+  "status": "OWN_DEMO_NOT_CLIENT_ASSET",
+  "software": "Native Blender5.2.2, actual weighted armature and keyframed meshes",
+  "armature_bones": 9,
+  "weighted_body_objects": 8,
+  "frames": 129,
+  "fps": 12,
+  "duration_seconds": 10.688,
+  "audio": "Own Polish script, Microsoft Paulina Desktop system speech synthesis via local Windows SAPI; not human voice, no voice clone, not client voiceover.",
+  "sync": "Semantic gestures and prop order align to phrase timing. Mouth opening follows waveform amplitude, not phoneme-accurate lip sync.",
+  "cues": [
+    {
+      "text": "Spójrz na całość.",
+      "start_seconds": 0,
+      "end_seconds": 1.781
+    },
+    {
+      "text": "Teraz przyjrzyj się szczegółowi.",
+      "start_seconds": 2.031,
+      "end_seconds": 4.334
+    },
+    {
+      "text": "Zamieńmy kolejność.",
+      "start_seconds": 4.584,
+      "end_seconds": 6.715
+    },
+    {
+      "text": "Właśnie tak. Ruch podąża za słowem.",
+      "start_seconds": 6.965,
+      "end_seconds": 10.438
+    }
+  ],
+  "rights": "Original simple block character, props, rig, animation and script. No Roblox marketplace assets or third-party character copied.",
+  "native_Roblox_Studio_project": false,
+  "client_brief_tool_requirement": "Public brief only asks to animate characters to voiceover,50–60sec; no literal Roblox Studio/native .rbxl requirement. Confirm required output and supplied character/voiceover before contract."
+}
