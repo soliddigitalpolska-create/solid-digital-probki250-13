@@ -1,0 +1,250 @@
+{
+  "created_at": "2026-10-15T15:12:45.360352+00:00",
+  "blender": "5.2.2 LTS",
+  "nominal_mm": [
+    800,
+    350,
+    600
+  ],
+  "parts": [
+    {
+      "id": "A1",
+      "name": "Bok lewy",
+      "size_mm": [
+        18,
+        350,
+        600
+      ],
+      "center_mm": [
+        -391,
+        0,
+        300
+      ],
+      "cut_mm": [
+        600,
+        350,
+        18
+      ],
+      "family": "A"
+    },
+    {
+      "id": "A2",
+      "name": "Bok prawy",
+      "size_mm": [
+        18,
+        350,
+        600
+      ],
+      "center_mm": [
+        391,
+        0,
+        300
+      ],
+      "cut_mm": [
+        600,
+        350,
+        18
+      ],
+      "family": "A"
+    },
+    {
+      "id": "B1",
+      "name": "Półka dolna",
+      "size_mm": [
+        764,
+        350,
+        18
+      ],
+      "center_mm": [
+        0,
+        0,
+        109
+      ],
+      "cut_mm": [
+        764,
+        350,
+        18
+      ],
+      "family": "B"
+    },
+    {
+      "id": "B2",
+      "name": "Półka górna",
+      "size_mm": [
+        764,
+        350,
+        18
+      ],
+      "center_mm": [
+        0,
+        0,
+        559
+      ],
+      "cut_mm": [
+        764,
+        350,
+        18
+      ],
+      "family": "B"
+    },
+    {
+      "id": "C1",
+      "name": "Rygiel tylny dolny",
+      "size_mm": [
+        764,
+        18,
+        70
+      ],
+      "center_mm": [
+        0,
+        166,
+        65
+      ],
+      "cut_mm": [
+        764,
+        70,
+        18
+      ],
+      "family": "C"
+    },
+    {
+      "id": "C2",
+      "name": "Rygiel tylny górny",
+      "size_mm": [
+        764,
+        18,
+        70
+      ],
+      "center_mm": [
+        0,
+        166,
+        515
+      ],
+      "cut_mm": [
+        764,
+        70,
+        18
+      ],
+      "family": "C"
+    }
+  ],
+  "pilot_axes": [
+    {
+      "target": "B1",
+      "side": -1,
+      "y_mm": -115,
+      "z_mm": 109
+    },
+    {
+      "target": "B1",
+      "side": -1,
+      "y_mm": 115,
+      "z_mm": 109
+    },
+    {
+      "target": "C1",
+      "side": -1,
+      "y_mm": 166,
+      "z_mm": 45
+    },
+    {
+      "target": "C1",
+      "side": -1,
+      "y_mm": 166,
+      "z_mm": 85
+    },
+    {
+      "target": "B1",
+      "side": 1,
+      "y_mm": -115,
+      "z_mm": 109
+    },
+    {
+      "target": "B1",
+      "side": 1,
+      "y_mm": 115,
+      "z_mm": 109
+    },
+    {
+      "target": "C1",
+      "side": 1,
+      "y_mm": 166,
+      "z_mm": 45
+    },
+    {
+      "target": "C1",
+      "side": 1,
+      "y_mm": 166,
+      "z_mm": 85
+    },
+    {
+      "target": "B2",
+      "side": -1,
+      "y_mm": -115,
+      "z_mm": 559
+    },
+    {
+      "target": "B2",
+      "side": -1,
+      "y_mm": 115,
+      "z_mm": 559
+    },
+    {
+      "target": "C2",
+      "side": -1,
+      "y_mm": 166,
+      "z_mm": 495
+    },
+    {
+      "target": "C2",
+      "side": -1,
+      "y_mm": 166,
+      "z_mm": 535
+    },
+    {
+      "target": "B2",
+      "side": 1,
+      "y_mm": -115,
+      "z_mm": 559
+    },
+    {
+      "target": "B2",
+      "side": 1,
+      "y_mm": 115,
+      "z_mm": 559
+    },
+    {
+      "target": "C2",
+      "side": 1,
+      "y_mm": 166,
+      "z_mm": 495
+    },
+    {
+      "target": "C2",
+      "side": 1,
+      "y_mm": 166,
+      "z_mm": 535
+    }
+  ],
+  "pilot_diameter_mm": 3,
+  "screws_count": 16,
+  "screw_nominal_mm": [
+    4,
+    40
+  ],
+  "material_thickness_mm": 18,
+  "cut_dimensions_are_finished_dimensions": true,
+  "saw_kerf_mm": 3,
+  "panel_total_m2": 1.06176,
+  "no_external_images": true,
+  "renders": [
+    "01-regal-zlozony",
+    "02-widok-rozstrzelony",
+    "etap-1",
+    "etap-2",
+    "etap-3",
+    "etap-4"
+  ],
+  "native_assembly_saved": true,
+  "seconds": 73.68
+}

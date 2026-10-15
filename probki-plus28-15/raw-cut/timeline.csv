@@ -1,0 +1,7 @@
+﻿shot,timeline_in,timeline_out,source,voice,voice_text,asset,actual_3d_frames,camera_orbit_degrees
+1,0,5.792,sources/shot-01.mp4,sources/vo-01.wav,"Najpierw cała lampa. Jeden kadr, który pokazuje jej kształt.",01-lampa-led,35,8
+2,5.792,11.708,sources/shot-02.mp4,sources/vo-02.wav,Teraz zbliżenie. Pokazuję podstawę i niewielki przycisk do sterowania.,01-lampa-led,38,8
+3,11.708,17.583,sources/shot-03.mp4,sources/vo-03.wav,Przy kinkiecie zaczynam od boku. Tak łatwiej zobaczyć jego proporcje.,02-kinkiet-led,36,8
+4,17.583,22.208,sources/shot-04.mp4,sources/vo-04.wav,Dopiero potem zbliżenie na oprawę i element mocujący z tyłu.,02-kinkiet-led,31,8
+5,22.208,28.458,sources/shot-05.mp4,sources/vo-05.wav,Organizer najpierw oglądamy w całości. Później przychodzi czas na szczegół.,03-organizer,38,8
+6,28.458,34.958,sources/shot-06.mp4,sources/vo-06.wav,Zbliżenie pokazuje przegródki i układ wnętrza. Obraz podąża za narracją.,03-organizer,39,8

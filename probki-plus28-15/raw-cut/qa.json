@@ -1,0 +1,97 @@
+{
+  "own_demo": true,
+  "not_client_footage": true,
+  "commercial_history_claimed": false,
+  "resolution": [
+    540,
+    960
+  ],
+  "fps": 24,
+  "duration_seconds": 34.958,
+  "narration": "Autorski skrypt PL, lokalny systemowy syntezator Microsoft Paulina Desktop. Klient w zleceniu dostarcza własny voiceover.",
+  "shots": 6,
+  "native_3d_frames": 217,
+  "assembly": "Rzeczywiste renderowane ruchy kamery z sześciu ujęć 3D, złożone do sześciu nagranych zdań. Bez zdjęciowego slideshow, bez pobranych TikToków, bez muzyki i napisów wtopionych.",
+  "files": [
+    {
+      "path": "poster.jpg",
+      "sha256": "c26b1cf751393ff0c6d13a4e2faeb187d96b11f5a6f1ebe82718614d03c0c07b",
+      "bytes": 9846
+    },
+    {
+      "path": "raw-cut.mp4",
+      "sha256": "c79b396a08212e96147de7703b495cbf0c34d6d622bb32090875f099d43d28d8",
+      "bytes": 1350520
+    },
+    {
+      "path": "sources/shot-01.mp4",
+      "sha256": "cf81de8d6b136930a749e20f5ee0efdbc6d42e0e416b2a07b73881e348debe63",
+      "bytes": 78168
+    },
+    {
+      "path": "sources/shot-02.mp4",
+      "sha256": "a84e927ebb3dfd37f52819334956050e3cfa5fa00e82e153ae62d863db856c67",
+      "bytes": 115293
+    },
+    {
+      "path": "sources/shot-03.mp4",
+      "sha256": "5f8a0cba1a12513bc20f48ff2aabfa5ddf6cf36f18a0e6e176092ed2f57e9a5e",
+      "bytes": 52950
+    },
+    {
+      "path": "sources/shot-04.mp4",
+      "sha256": "03b9438fb3893ae756db3afc9a45e4a1073600e52cc989ba0d18b5a11d6e3a4b",
+      "bytes": 103035
+    },
+    {
+      "path": "sources/shot-05.mp4",
+      "sha256": "4bb3a6e2efde9cc3d2808904c9650c76534184758e1f9f645548d5029af99a7c",
+      "bytes": 226760
+    },
+    {
+      "path": "sources/shot-06.mp4",
+      "sha256": "8f48f8246e1bc86b0944b7f2238f1ea86031411cdee943a32ea800c433645f9c",
+      "bytes": 508213
+    },
+    {
+      "path": "sources/vo-01.wav",
+      "sha256": "3136913e4495d8770db68c3f8a2f69348da30c6215a18d02ac04d03ea2448b77",
+      "bytes": 242096
+    },
+    {
+      "path": "sources/vo-02.wav",
+      "sha256": "c1e2c8aef3d3281d026e440be869e53214187787783c4215c751c9dfc956e660",
+      "bytes": 247380
+    },
+    {
+      "path": "sources/vo-03.wav",
+      "sha256": "8b95b5c920232cea64dc6118d95fbe6aefeeed51eb4c57e9993b6f34bd2ab59c",
+      "bytes": 245400
+    },
+    {
+      "path": "sources/vo-04.wav",
+      "sha256": "57f7836d12a32e1f21ee33c6be0f4e72d204bb3b2ca973552857e69faa7fc47f",
+      "bytes": 190494
+    },
+    {
+      "path": "sources/vo-05.wav",
+      "sha256": "7c16331b1056aff2963108feac44f9e29b0056b25b65194703c50b422f15b329",
+      "bytes": 262816
+    },
+    {
+      "path": "sources/vo-06.wav",
+      "sha256": "766f4ab3dbe17e50ecccfc91385ea062b3c97c14d914565f78ac1b66eef94119",
+      "bytes": 273834
+    },
+    {
+      "path": "timeline.csv",
+      "sha256": "f4848973d46aaa038b5d45982df1516d7b135e87b2e9f884d5c59dea1908c0a0",
+      "bytes": 977
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "6d44a86e68baef83fdd77f9dc5317f0153825e3678a90794bfc68b454b601b3d",
+      "bytes": 2052
+    }
+  ]
+}

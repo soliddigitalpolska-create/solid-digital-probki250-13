@@ -1,0 +1,7 @@
+﻿ID;Nazwa;Sztuki;Dlugosc_mm;Szerokosc_mm;Grubosc_mm;Material
+A1;Bok lewy;1;600;350;18;Sklejka brzozowa
+A2;Bok prawy;1;600;350;18;Sklejka brzozowa
+B1;Półka dolna;1;764;350;18;Sklejka brzozowa
+B2;Półka górna;1;764;350;18;Sklejka brzozowa
+C1;Rygiel tylny dolny;1;764;70;18;Sklejka brzozowa
+C2;Rygiel tylny górny;1;764;70;18;Sklejka brzozowa

@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-15T15:14:31.088220+00:00",
+  "blender_version": "5.2.2 LTS",
+  "native_file_reopened": true,
+  "actual_rerender": true,
+  "parts": [
+    {
+      "id": "A1",
+      "actual_mm": [
+        17.999999225139618,
+        349.9999940395355,
+        600.0000238418579
+      ],
+      "cut_mm": [
+        600,
+        350,
+        18
+      ],
+      "dimension_error_mm": 2.384185791015625e-05,
+      "pass": true
+    },
+    {
+      "id": "A2",
+      "actual_mm": [
+        17.999999225139618,
+        349.9999940395355,
+        600.0000238418579
+      ],
+      "cut_mm": [
+        600,
+        350,
+        18
+      ],
+      "dimension_error_mm": 2.384185791015625e-05,
+      "pass": true
+    },
+    {
+      "id": "B1",
+      "actual_mm": [
+        763.9999985694885,
+        349.9999940395355,
+        17.999999225139618
+      ],
+      "cut_mm": [
+        764,
+        350,
+        18
+      ],
+      "dimension_error_mm": 5.9604644775390625e-06,
+      "pass": true
+    },
+    {
+      "id": "B2",
+      "actual_mm": [
+        763.9999985694885,
+        349.9999940395355,
+        17.999999225139618
+      ],
+      "cut_mm": [
+        764,
+        350,
+        18
+      ],
+      "dimension_error_mm": 5.9604644775390625e-06,
+      "pass": true
+    },
+    {
+      "id": "C1",
+      "actual_mm": [
+        763.9999985694885,
+        17.999999225139618,
+        70.00000029802322
+      ],
+      "cut_mm": [
+        764,
+        70,
+        18
+      ],
+      "dimension_error_mm": 1.430511474609375e-06,
+      "pass": true
+    },
+    {
+      "id": "C2",
+      "actual_mm": [
+        763.9999985694885,
+        17.999999225139618,
+        70.00000029802322
+      ],
+      "cut_mm": [
+        764,
+        70,
+        18
+      ],
+      "dimension_error_mm": 1.430511474609375e-06,
+      "pass": true
+    }
+  ],
+  "assembled_dimensions_mm": [
+    800.000011920929,
+    349.9999940395355,
+    600.0000238418579
+  ],
+  "wood_part_pair_intersections": [],
+  "contact_pairs": [
+    [
+      "A1",
+      "B1"
+    ],
+    [
+      "A1",
+      "B2"
+    ],
+    [
+      "A1",
+      "C1"
+    ],
+    [
+      "A1",
+      "C2"
+    ],
+    [
+      "A2",
+      "B1"
+    ],
+    [
+      "A2",
+      "B2"
+    ],
+    [
+      "A2",
+      "C1"
+    ],
+    [
+      "A2",
+      "C2"
+    ],
+    [
+      "B1",
+      "C1"
+    ],
+    [
+      "B2",
+      "C2"
+    ]
+  ],
+  "contact_count": 10,
+  "all_16_pilot_axes_align_side_and_target": true,
+  "pilot_axes_are_native_geometry_guides_not_claimed_manufactured_holes": true,
+  "mesh_sha_before": "5798b8fcc314b9d66081049e1ce26a2687cdf16d9c35166534b483f5b801314b",
+  "mesh_sha_after": "5798b8fcc314b9d66081049e1ce26a2687cdf16d9c35166534b483f5b801314b",
+  "geometry_unchanged_after_render": true,
+  "no_external_images": true,
+  "glb_fresh_reimport": true,
+  "glb_dimensions_mm": [
+    800.000011920929,
+    349.9999940395355,
+    600.0000238418579
+  ],
+  "native_stats": {
+    "scene": "WOOD-01 — assembly",
+    "mesh_objects": 54,
+    "parts": 6,
+    "connector_shafts": 16,
+    "drill_guides": 16
+  },
+  "what_this_proves": "Dimensional, assembly-documentation and native-file workflow on a real own model. Not a physical load test or commercial project history."
+}

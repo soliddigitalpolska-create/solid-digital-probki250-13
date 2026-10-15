@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940mm" height="490mm" viewBox="-70 -70 940 490">
+<rect x="-70" y="-70" width="100%" height="100%" fill="white"/>
+<text x="0" y="-35" font-size="16" font-family="Arial">WOOD 01 / top / mm / 1:1</text>
+<rect x="0.0" y="0.0" width="18" height="350" fill="none" stroke="#192d2b" stroke-width="1" data-part="A1"/>
+<rect x="782.0" y="0.0" width="18" height="350" fill="none" stroke="#192d2b" stroke-width="1" data-part="A2"/>
+<rect x="18.0" y="0.0" width="764" height="350" fill="none" stroke="#192d2b" stroke-width="1" data-part="B1"/>
+<rect x="18.0" y="0.0" width="764" height="350" fill="none" stroke="#192d2b" stroke-width="1" data-part="B2"/>
+<rect x="18.0" y="0.0" width="764" height="18" fill="none" stroke="#192d2b" stroke-width="1" data-part="C1"/>
+<rect x="18.0" y="0.0" width="764" height="18" fill="none" stroke="#192d2b" stroke-width="1" data-part="C2"/>
+<path d="M0 375 H800 M0 365 V385 M800 365 V385" fill="none" stroke="#326251"/>
+<text x="400.0" y="398" text-anchor="middle" font-size="16" font-family="Arial">800</text>
+<path d="M825 0 V350 M815 0 H835 M815 350 H835" fill="none" stroke="#326251"/>
+<text x="833" y="175.0" font-size="16" font-family="Arial">350</text>
+</svg>
