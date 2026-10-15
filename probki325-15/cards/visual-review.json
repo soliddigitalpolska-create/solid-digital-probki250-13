@@ -1,0 +1,66 @@
+{
+  "reviewed_at": "2026-10-15T13:07:57.620417+00:00",
+  "method": "Actual PDF pages rendered through bundled Poppler and inspected with view_image. Moodboard preserves the three actual PDF fronts as vectors; all three separate PDF rears inspected too.",
+  "files_reviewed": [
+    "00-trzy-kierunki-moodboard.png",
+    "01-cieply-editorial-back.png",
+    "02-spokojna-geometria-back.png",
+    "03-sliwka-i-linia-back.png"
+  ],
+  "three_distinct_directions": true,
+  "no_clipped_text_or_collisions_observed": true,
+  "polish_diacritics_render_correctly": true,
+  "neutral_non_medical_demo_copy": true,
+  "common_back_per_direction_not_individual_card_number": true,
+  "actual_pdf_boxes_verified": [
+    {
+      "file": "00-trzy-kierunki-moodboard.pdf",
+      "page": 1,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "01-cieply-editorial.pdf",
+      "page": 1,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "01-cieply-editorial.pdf",
+      "page": 2,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "02-spokojna-geometria.pdf",
+      "page": 1,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "02-spokojna-geometria.pdf",
+      "page": 2,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "03-sliwka-i-linia.pdf",
+      "page": 1,
+      "trim_verified": true,
+      "bleed_verified": true
+    },
+    {
+      "file": "03-sliwka-i-linia.pdf",
+      "page": 2,
+      "trim_verified": true,
+      "bleed_verified": true
+    }
+  ],
+  "all_expected_card_svg_texts_editable": true,
+  "svg_font_weight_matches_pdf_light_face": true,
+  "limitations": [
+    "Review proves these three sample directions, not all52futurecards.",
+    "No PDF/X, ICC or printerapproval claim.",
+    "Phone/browserlayout QA of public webpage is rootresponsibility afterpublication."
+  ]
+}

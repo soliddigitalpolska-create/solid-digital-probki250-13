@@ -1,0 +1,425 @@
+{
+  "status": "TECHNICAL_AND_VISUAL_SAMPLE_REVIEW_PASSED",
+  "created_at": "2026-10-15T13:06:40.603594+00:00",
+  "original_fictional_brand": true,
+  "client_deliverable_complete": false,
+  "external_artwork": false,
+  "generated_bitmap_artwork": false,
+  "font_licenses_included": true,
+  "pdf_count": 4,
+  "pdf_pages": 7,
+  "card_trim_mm": [
+    80,
+    120
+  ],
+  "card_bleed_mm": 3,
+  "card_safe_text_mm": 7,
+  "all_text_inside_safe_margin": true,
+  "all_pdf_device_cmyk": true,
+  "all_used_fonts_embedded": true,
+  "all_pdf_vector_artwork": true,
+  "pdf_x_certified": false,
+  "icc_output_intent": false,
+  "native_Adobe_source": false,
+  "printer_approved": false,
+  "files": [
+    {
+      "file": "00-trzy-kierunki-moodboard.pdf",
+      "pages": [
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            297.0,
+            210.0
+          ],
+          "trim_mm": [
+            0.0,
+            0.0,
+            297.0,
+            210.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            297.0,
+            210.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F1+0-0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0-0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            },
+            {
+              "resource": "/F1+0-1",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            },
+            {
+              "resource": "/F1+0-2",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0-1",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        }
+      ],
+      "sha256": "898b9c17bfb50f351d031ec4c091c95292b5a003a23f0e5d8b7070ef44012d89",
+      "bytes": 146792
+    },
+    {
+      "file": "01-cieply-editorial.pdf",
+      "pages": [
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        },
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        }
+      ],
+      "sha256": "292c2ea39dec4abd207b723028365cacf8fba10134e8e848b5f3bad898778231",
+      "bytes": 36330
+    },
+    {
+      "file": "02-spokojna-geometria.pdf",
+      "pages": [
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        },
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        }
+      ],
+      "sha256": "cc930c76a914ffe1e0a86bbd73accb4545cf793bfa2b1f1fd3b33348f817188f",
+      "bytes": 24936
+    },
+    {
+      "file": "03-sliwka-i-linia.pdf",
+      "pages": [
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        },
+        {
+          "media_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "trim_mm": [
+            3.0,
+            3.0,
+            83.0,
+            123.0
+          ],
+          "bleed_mm": [
+            0.0,
+            0.0,
+            86.0,
+            126.0
+          ],
+          "paint_operators": [
+            "K",
+            "k"
+          ],
+          "device_cmyk_only": true,
+          "used_fonts": [
+            {
+              "resource": "/F1+0",
+              "basefont": "/AAAAAA+CormorantGaramond-Light",
+              "embedded": true
+            },
+            {
+              "resource": "/F2+0",
+              "basefont": "/AAAAAA+DejaVuSans",
+              "embedded": true
+            }
+          ],
+          "all_used_fonts_embedded": true,
+          "text_extracts_polish_correctly": true,
+          "raster_images": 0
+        }
+      ],
+      "sha256": "fa43c296c75e90ad32c83b7d60baa737093e09243851a3b1fe4432950d19d7fe",
+      "bytes": 36352
+    }
+  ],
+  "limitations": [
+    "Three design directions, each one front and back. Not the full52-card deck.",
+    "Text is original neutral copy, not psychological or nutritional advice.",
+    "Demo80x120mm card format is an assumption; real sizes, printerdielinesandICCprofile are client inputs.",
+    "PDF files use actual DeviceCMYK vectors and embeddedfonts; this is not PDF/X certification or printeracceptance.",
+    "EditableSVG files use screenRGB and included opensourcefonts.",
+    "No client content, stockphotography or claims ofpaidprojectexperience."
+  ],
+  "all_card_trim_and_bleed_boxes_verified": true,
+  "visual_review": {
+    "reviewed_at": "2026-10-15T13:07:57.620417+00:00",
+    "method": "Actual PDF pages rendered through bundled Poppler and inspected with view_image. Moodboard preserves the three actual PDF fronts as vectors; all three separate PDF rears inspected too.",
+    "files_reviewed": [
+      "00-trzy-kierunki-moodboard.png",
+      "01-cieply-editorial-back.png",
+      "02-spokojna-geometria-back.png",
+      "03-sliwka-i-linia-back.png"
+    ],
+    "three_distinct_directions": true,
+    "no_clipped_text_or_collisions_observed": true,
+    "polish_diacritics_render_correctly": true,
+    "neutral_non_medical_demo_copy": true,
+    "common_back_per_direction_not_individual_card_number": true,
+    "actual_pdf_boxes_verified": [
+      {
+        "file": "00-trzy-kierunki-moodboard.pdf",
+        "page": 1,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "01-cieply-editorial.pdf",
+        "page": 1,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "01-cieply-editorial.pdf",
+        "page": 2,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "02-spokojna-geometria.pdf",
+        "page": 1,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "02-spokojna-geometria.pdf",
+        "page": 2,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "03-sliwka-i-linia.pdf",
+        "page": 1,
+        "trim_verified": true,
+        "bleed_verified": true
+      },
+      {
+        "file": "03-sliwka-i-linia.pdf",
+        "page": 2,
+        "trim_verified": true,
+        "bleed_verified": true
+      }
+    ],
+    "all_expected_card_svg_texts_editable": true,
+    "svg_font_weight_matches_pdf_light_face": true,
+    "limitations": [
+      "Review proves these three sample directions, not all52futurecards.",
+      "No PDF/X, ICC or printerapproval claim.",
+      "Phone/browserlayout QA of public webpage is rootresponsibility afterpublication."
+    ]
+  }
+}
