@@ -1,0 +1,17 @@
+{
+  "status": "PASS_NATIVE_CLASSIC_EDITOR_HTTP_AND_ROOT_VISUAL_QA",
+  "checked_at": "2026-10-15T14:53:52.324660+00:00",
+  "core_filter": "use_block_editor_for_post",
+  "scope": "only own fictional post28",
+  "classic_core_WYSIWYG_bootstrap_present": true,
+  "native_content_textarea_present": true,
+  "native_SEO_metabox_present": true,
+  "content_hash_unchanged": true,
+  "serialized_native_block_count": 12,
+  "visual_Gutenberg_claim": false,
+  "Gutenberg_blob_canvas_issue": "Observed blank in root browser; core data/preload intact; no React or browser policy patch applied.",
+  "visual_Classic_QA": "PASS_ROOT_2026-10-15T14:55:42.598Z",
+  "portable_mu_plugin": "sources/own-cypr-classic-editor.php",
+  "native_admin_url": "http://127.0.0.1:8796/wp-admin/post.php?post=28&action=edit",
+  "native_rich_text_content_and_images_visible": true
+}

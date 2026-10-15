@@ -1,0 +1,30 @@
+{
+  "status": "OWN_FICTIONAL_SAMPLE_REVIEWED",
+  "created_at": "2026-10-15T13:11:02.265184+00:00",
+  "basis": "OwnpreviousfictionalENPLsample;allmaterialismadeup,noclientcopy.",
+  "source_factbox_preserved": true,
+  "polish_description_paragraphs": 3,
+  "key_data_verified": [
+    "86 m²",
+    "18 m²",
+    "4 m²",
+    "650 m",
+    "349 000 EUR",
+    "Częściowy widok",
+    "Nieumeblowane",
+    "Basen i ogród"
+  ],
+  "bedrooms": 2,
+  "bathrooms": 2,
+  "sea_view": "partial",
+  "terrace": "covered,southwest",
+  "furnishing": "Onlyfittedkitchenandappliances;otherroomsunfurnished",
+  "parking": "allocatedcovered",
+  "pool_and_garden": "communal",
+  "tax_and_transaction_costs": "notspecified",
+  "images_included": false,
+  "fake_actual_listing_claim": false,
+  "paid_client_case_claim": false,
+  "external_assets": false,
+  "outbound_or_backend": false
+}

@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-15T14:43:55.245898+00:00",
+  "source_url": "https://help.allegro.com/pl/sell/a/czym-sa-miniaturki-i-jak-je-stosowac-zgodnie-z-naszymi-zasadami-D7aze0AkDh7",
+  "rules_applied": [
+    "Białe tło RGB255/255/255.",
+    "Brak dodanych napisów, ikon, ramek i logotypów na miniaturze.",
+    "2560x2560px, poniżej26Mpx; dłuższy bok co najmniej400px.",
+    "Wyraźnie pokazany produkt."
+  ],
+  "implementation": "Render natywnej geometrii, biały kompozytor, wyłączony dithering, zachowane wymiary modeli.",
+  "limitations": "Własne fikcyjne produkty demonstracyjne, nie aktywne oferty ani dowódCTR. Przed realną publikacją sprawdzić kategorię i wymagane oznaczeniaAI."
+}

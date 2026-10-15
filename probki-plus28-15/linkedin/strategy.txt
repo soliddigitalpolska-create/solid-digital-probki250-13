@@ -1,0 +1,37 @@
+Niewdrożone demo wykonane na podstawie publicznego briefu. Nie jest realizacją dla Addven ani dowodem wyników kampanii.
+
+Publiczny brief nie podaje branży, witryny ani specyfikacji produktów Addven. Nie udało się jednoznacznie potwierdzić oficjalnej polskiej strony marki. Próbka rozwija wskazane przez klienta tematy: produkty, wiedzę, biznes, decyzje i ludzi; nie przypisuje Addven żadnych usług, technologii, historii ani osiągnięć. Właściwe nazwy produktów, fakty i głos autora wymagają wywiadu oraz akceptacji przed publikacją.
+
+{
+  "goal": "Pomóc odbiorcy zrozumieć sposób myślenia stojący za marką i rozpocząć merytoryczną rozmowę. W pierwszym miesiącu oceniamy użyteczność tematów i jakość odpowiedzi, bez obiecywania sprzedaży.",
+  "audience_hypothesis": "Osoby porównujące rozwiązania produktowe oraz partnerzy interesujący się rozwojem marki. To hipoteza wynikająca z briefu, a nie potwierdzony profil klientów Addven. Dokładne role zakupowe ustalamy na starcie.",
+  "company": {
+    "role": "Porządkuje wiedzę, ułatwia porównywanie produktów i pokazuje zasady podejmowania decyzji.",
+    "voice": "Jasny, konkretny język. Najpierw problem odbiorcy, potem kryterium wyboru i jedno zaproszenie do rozmowy.",
+    "themes": [
+      "Od parametrów do zastosowania",
+      "Pytania przed zakupem",
+      "Decyzje o rozwoju produktu"
+    ],
+    "avoid": "Nie publikujemy niepotwierdzonych przewag, liczb sprzedaży, fikcyjnych historii klientów ani pustych relacji z codzienności."
+  },
+  "person": {
+    "role": "Dodaje autorski punkt widzenia osoby odpowiedzialnej za markę lub produkt. Nie powiela firmowych postów słowo w słowo.",
+    "voice": "Pierwsza osoba i konkretne kryterium decyzji. W tej próbce są to propozycje opinii do akceptacji, bez wymyślonych wspomnień autora.",
+    "themes": [
+      "Co zasługuje na priorytet",
+      "Jak wyjaśniać wiedzę",
+      "Czego nie zamieniać w treść"
+    ],
+    "avoid": "Nie wkładamy autorowi w usta doświadczeń ani wartości, których nie potwierdził. Osoba akceptuje finalną wersję."
+  },
+  "cadence": "6 publikacji w 30 dni: 3 firmowe i 3 osobiste. Posty naprzemiennie, z odstępem na odczyt odpowiedzi. Dzień i godzinę wybieramy po sprawdzeniu dostępnych danych; nie zakładamy uniwersalnej pory gwarantującej zasięg.",
+  "workflow": [
+    "Pisemny wywiad i potwierdzenie faktów, odbiorcy oraz słów zakazanych.",
+    "Mapa tematów i wybór jednego celu dla każdej publikacji.",
+    "Redakcja, weryfikacja faktów i kontrola spójności firmowego oraz osobistego głosu.",
+    "Jedna zbiorcza tura uwag przed zatwierdzeniem materiałów.",
+    "Publikacja po akceptacji, odczyt danych po 7 dniach i podsumowanie po miesiącu."
+  ],
+  "test": "Porównujemy dwa typy użyteczności: proste narzędzie do decyzji (P01/P02) i autorski punkt widzenia (P04/P05). Mała próba służy wyborowi kolejnych tematów, nie ogłaszaniu statystycznego zwycięzcy."
+}

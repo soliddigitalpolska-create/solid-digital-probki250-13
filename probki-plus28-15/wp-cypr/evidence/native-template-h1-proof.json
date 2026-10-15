@@ -1,0 +1,14 @@
+{
+  "status": "PASS_NATIVE_POST_TITLE_TEMPLATE",
+  "checked_at": "2026-10-15T14:50:18.507867+00:00",
+  "template": "own-native-workshop/templates/single.html",
+  "native_block": "core/post-title",
+  "h1_count": 1,
+  "h1_exact": "Dwie sypialnie. Zadaszony taras. Częściowy widok na morze.",
+  "seo_document_title_matches_native_meta": true,
+  "post_content_hash_unchanged": true,
+  "post_content_sha256": "d85acdd337c8c98ae994aff09aa1e9175c81d6272d015be0b5b7e893a1ad6211",
+  "native_content_block_count": 12,
+  "source_template_sha256": "6c0e26eb8cce0157b0a5c0236955d2b895d8a5eb5efe7b1c8214494c689be2f5",
+  "original_theme_not_modified": true
+}

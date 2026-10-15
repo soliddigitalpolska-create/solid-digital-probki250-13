@@ -1,0 +1,107 @@
+{
+  "status": "PASS_NATIVE_CLASSIC_EDITOR_PUBLIC_PAGE_ROOT_VISUAL_QA",
+  "files": [
+    {
+      "path": "evidence/classic-editor-proof.json",
+      "bytes": 861,
+      "sha256": "3286a42828eec7455ee631bc07e0520ed2b03254b789cbe74d38d1aad971afef"
+    },
+    {
+      "path": "evidence/create.json",
+      "bytes": 2677,
+      "sha256": "4743caf8d125a52bb393c5cca259a97bc57b0636b58877a3d513dfb8e6f68455"
+    },
+    {
+      "path": "evidence/editorial-check.json",
+      "bytes": 893,
+      "sha256": "62c7ca3fd6eaa3689fc761a8c20d74f60f317d6ac8a29ec2f6b15c367f7460d5"
+    },
+    {
+      "path": "evidence/inspect.json",
+      "bytes": 2678,
+      "sha256": "e2c9db3c22b650a01e69cb7f8f93c8523d9cb0cade50bf36a4465cbbb1c2a8dc"
+    },
+    {
+      "path": "evidence/native-proof.json",
+      "bytes": 2679,
+      "sha256": "05f703ca159ccd2bdfbfef7a7112056de49b0e235e2fb48a436c592942ded45f"
+    },
+    {
+      "path": "evidence/native-template-h1-proof.json",
+      "bytes": 658,
+      "sha256": "057dd037a2fb2ef3cfcef5efb86192754e62d8dabebc2224bc410c6eb7247afd"
+    },
+    {
+      "path": "evidence/original-integrity-before.json",
+      "bytes": 208,
+      "sha256": "68e4aa092c8aa777560421353821af1e0272d3f5157fb29e58d172a4c3b9bf78"
+    },
+    {
+      "path": "evidence/root-browser-qa.json",
+      "bytes": 1266,
+      "sha256": "0028f88cebd317782eee9b21da4b09e6a1e3e8ae53e245421a6f1b0f69fb2c0f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 9636,
+      "sha256": "ed479c4de19f7b41fd3c515ade2853c8d9ddb530fbef0ade1805d89e42935412"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2216,
+      "sha256": "d7487ef4ac5bfdd73540508100c0fae4eb739108573600ca84c63f195321a0e7"
+    },
+    {
+      "path": "screenshots/native-editor.jpg",
+      "bytes": 119470,
+      "sha256": "26f3cc8ce79262ebb3a9081bc228375e218468fd1f39e5d56942302aa51a0129"
+    },
+    {
+      "path": "screenshots/native-public.jpg",
+      "bytes": 89758,
+      "sha256": "2361732fb564df0f9d9951a9a48db787217ed1bc6f6cc1f0c9e0fad33b6e4886"
+    },
+    {
+      "path": "sources/dane.svg",
+      "bytes": 813,
+      "sha256": "e3e2fe6d3b41f184b0c5b318e04ef212502bbfa736e9d5c99d1c5ef5c69037ab"
+    },
+    {
+      "path": "sources/native-gutenberg-content.html",
+      "bytes": 4090,
+      "sha256": "d85acdd337c8c98ae994aff09aa1e9175c81d6272d015be0b5b7e893a1ad6211"
+    },
+    {
+      "path": "sources/native-post-export.json",
+      "bytes": 6128,
+      "sha256": "3d8f2667b7a35bfbf2205d4aa1bc4a9c6f1dcfe1b8360d981f3a383057558785"
+    },
+    {
+      "path": "sources/native-property.php",
+      "bytes": 7694,
+      "sha256": "53f92d4eedba30a09eef5c81fae8302aed0af12239e35057a33b04497e7cd228"
+    },
+    {
+      "path": "sources/own-cypr-classic-editor.php",
+      "bytes": 2333,
+      "sha256": "6c0c8b54f713d3aac42aa31a0abeba9e7f87559135fc9772634dc182383e3dd1"
+    },
+    {
+      "path": "sources/plan.svg",
+      "bytes": 974,
+      "sha256": "4daae36e0ca3deb629c9b3091e21214b147bc8b1650c1bc7cb0c57d90f8d56b8"
+    },
+    {
+      "path": "sources/property-copy-demo-en-pl.txt",
+      "bytes": 3302,
+      "sha256": "1d3877380e4ea6b51ac1a6ad88554896b4cf6b8673d3d529589e3215c046aaf4"
+    },
+    {
+      "path": "sources/templates/single.html",
+      "bytes": 545,
+      "sha256": "6c0e26eb8cce0157b0a5c0236955d2b895d8a5eb5efe7b1c8214494c689be2f5"
+    }
+  ],
+  "private_runtime_excluded": true,
+  "published_externally": false
+}

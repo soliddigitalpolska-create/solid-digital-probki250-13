@@ -1,0 +1,145 @@
+{
+  "title": "Addven: produkt, decyzje i ludzie",
+  "subtitle": "Autorska próbka komunikacji na LinkedIn",
+  "status": "Niewdrożone demo wykonane na podstawie publicznego briefu. Nie jest realizacją dla Addven ani dowodem wyników kampanii.",
+  "research_limit": "Publiczny brief nie podaje branży, witryny ani specyfikacji produktów Addven. Nie udało się jednoznacznie potwierdzić oficjalnej polskiej strony marki. Próbka rozwija wskazane przez klienta tematy: produkty, wiedzę, biznes, decyzje i ludzi; nie przypisuje Addven żadnych usług, technologii, historii ani osiągnięć. Właściwe nazwy produktów, fakty i głos autora wymagają wywiadu oraz akceptacji przed publikacją.",
+  "design_note": "Proponowany system wizualny próbki: ciepła biel, granat i pomarańcz. Nie jest oficjalną identyfikacją Addven. Autorski skład SVG, eksport PNG; bez twierdzenia o pracy w Figma lub Canva.",
+  "strategy": {
+    "goal": "Pomóc odbiorcy zrozumieć sposób myślenia stojący za marką i rozpocząć merytoryczną rozmowę. W pierwszym miesiącu oceniamy użyteczność tematów i jakość odpowiedzi, bez obiecywania sprzedaży.",
+    "audience_hypothesis": "Osoby porównujące rozwiązania produktowe oraz partnerzy interesujący się rozwojem marki. To hipoteza wynikająca z briefu, a nie potwierdzony profil klientów Addven. Dokładne role zakupowe ustalamy na starcie.",
+    "company": {
+      "role": "Porządkuje wiedzę, ułatwia porównywanie produktów i pokazuje zasady podejmowania decyzji.",
+      "voice": "Jasny, konkretny język. Najpierw problem odbiorcy, potem kryterium wyboru i jedno zaproszenie do rozmowy.",
+      "themes": [
+        "Od parametrów do zastosowania",
+        "Pytania przed zakupem",
+        "Decyzje o rozwoju produktu"
+      ],
+      "avoid": "Nie publikujemy niepotwierdzonych przewag, liczb sprzedaży, fikcyjnych historii klientów ani pustych relacji z codzienności."
+    },
+    "person": {
+      "role": "Dodaje autorski punkt widzenia osoby odpowiedzialnej za markę lub produkt. Nie powiela firmowych postów słowo w słowo.",
+      "voice": "Pierwsza osoba i konkretne kryterium decyzji. W tej próbce są to propozycje opinii do akceptacji, bez wymyślonych wspomnień autora.",
+      "themes": [
+        "Co zasługuje na priorytet",
+        "Jak wyjaśniać wiedzę",
+        "Czego nie zamieniać w treść"
+      ],
+      "avoid": "Nie wkładamy autorowi w usta doświadczeń ani wartości, których nie potwierdził. Osoba akceptuje finalną wersję."
+    },
+    "cadence": "6 publikacji w 30 dni: 3 firmowe i 3 osobiste. Posty naprzemiennie, z odstępem na odczyt odpowiedzi. Dzień i godzinę wybieramy po sprawdzeniu dostępnych danych; nie zakładamy uniwersalnej pory gwarantującej zasięg.",
+    "workflow": [
+      "Pisemny wywiad i potwierdzenie faktów, odbiorcy oraz słów zakazanych.",
+      "Mapa tematów i wybór jednego celu dla każdej publikacji.",
+      "Redakcja, weryfikacja faktów i kontrola spójności firmowego oraz osobistego głosu.",
+      "Jedna zbiorcza tura uwag przed zatwierdzeniem materiałów.",
+      "Publikacja po akceptacji, odczyt danych po 7 dniach i podsumowanie po miesiącu."
+    ],
+    "test": "Porównujemy dwa typy użyteczności: proste narzędzie do decyzji (P01/P02) i autorski punkt widzenia (P04/P05). Mała próba służy wyborowi kolejnych tematów, nie ogłaszaniu statystycznego zwycięzcy."
+  },
+  "posts": [
+    {
+      "id": "P01",
+      "channel": "Profil firmy",
+      "day": 3,
+      "title": "Specyfikacja nie podejmuje decyzji",
+      "pillar": "Produkt → zastosowanie",
+      "format": "Plakat pionowy 1080 × 1350",
+      "asset": "format-a-plakat.png",
+      "text": "Dwa produkty mogą mieć podobne parametry i pasować do zupełnie innych sytuacji.\n\nDlatego porównania warto zaczynać od zadania, które produkt ma wykonać. Nie od najdłuższej listy funkcji.\n\nPrzed wyborem zapisz trzy rzeczy:\n\n1. Zastosowanie: co konkretnie ma być łatwiejsze po zakupie?\n2. Ograniczenie: czego nie możesz zmienić — czasu, miejsca, sposobu pracy?\n3. Dowód: po czym poznasz, że rozwiązanie pasuje właśnie do tej sytuacji?\n\nDopiero do tych odpowiedzi dopasuj parametry. Wtedy łatwiej odróżnić cechę potrzebną od tej, która tylko dobrze wygląda w tabeli.\n\nTo również dobry test komunikacji marki: czy opis produktu pomaga wybrać, czy jedynie wymienia, co znajduje się w ofercie?\n\nJakiej informacji najczęściej brakuje Ci przy porównywaniu produktów?",
+      "cta": "Pytanie o brakującą informację przy wyborze produktu.",
+      "alt": "Specyfikacja nie podejmuje decyzji. Trzy kryteria: zastosowanie, ograniczenie, dowód.",
+      "check": "Treść edukacyjna bez twierdzeń o konkretnych właściwościach produktów Addven."
+    },
+    {
+      "id": "P02",
+      "channel": "Profil firmy",
+      "day": 8,
+      "title": "Trzy pytania, zanim porównasz produkt",
+      "pillar": "Wiedza → wybór",
+      "format": "Seria trzech plansz kwadratowych 1080 × 1080",
+      "asset": "format-b-01.png",
+      "text": "Dobra rekomendacja produktu zaczyna się od pytań, a nie od nazwy modelu.\n\nPierwsze: do czego go potrzebujesz?\n„Do codziennego używania” to początek rozmowy. Warto doprecyzować, w jakiej sytuacji produkt będzie używany i co ma wtedy umożliwić.\n\nDrugie: z czego nie chcesz rezygnować?\nWygoda, trwałość, prostota obsługi i cena mogą prowadzić do różnych wyborów. Ustalenie priorytetu pomaga zobaczyć kompromis, zamiast odkrywać go po zakupie.\n\nTrzecie: co sprawdzisz przed decyzją?\nWymiary, sposób użycia, warunki użytkowania, dokumentację lub próbkę — zależnie od rodzaju produktu. Dowód powinien dotyczyć Twojego zastosowania.\n\nTe pytania można zabrać do rozmowy ze sprzedawcą albo wykorzystać do oceny opisu na stronie.\n\nKtóre z nich najczęściej pomijamy, kiedy wybieramy zbyt szybko?",
+      "cta": "Zaproszenie do rozmowy o pomijanym kryterium.",
+      "alt": "Trzy plansze: zastosowanie — co ma być łatwiejsze; kompromis — z czego nie chcesz rezygnować; dowód — co sprawdzisz przed wyborem.",
+      "check": "Nie obiecuje parametrów, które nie zostały potwierdzone przez markę."
+    },
+    {
+      "id": "P03",
+      "channel": "Profil firmy",
+      "day": 13,
+      "title": "Co marka powinna wyjaśniać obok produktu",
+      "pillar": "Biznes → przejrzystość",
+      "format": "Post tekstowy",
+      "text": "„Rozwijamy ofertę” to informacja. Jeszcze nie wyjaśnienie.\n\nOdbiorcy więcej daje odpowiedź na trzy pytania:\n\n— Jaki problem ma rozwiązać zmiana?\n— Co będzie dzięki niej inne w używaniu produktu?\n— Co pozostaje bez zmian i dlaczego?\n\nTaki opis pokazuje sens decyzji. Nie wymaga wielkiej premiery ani komunikatu pełnego przymiotników.\n\nWarto też rozdzielić to, co już jest dostępne, od tego, co dopiero rozważamy. Pomysł nie jest obietnicą terminu. Test nie jest gotowym wdrożeniem.\n\nMarka może pokazywać kulisy rozwoju bez ujawniania poufnych danych. Wystarczy wyjaśnić problem, kryterium wyboru i konsekwencję dla odbiorcy.\n\nJaki rodzaj informacji o zmianach w produkcie rzeczywiście pomaga Ci podjąć decyzję?",
+      "cta": "Pytanie o użyteczną informację przy zmianie oferty.",
+      "check": "Nie przedstawia fikcyjnej premiery, zapowiedzi ani firmowej praktyki jako faktu."
+    },
+    {
+      "id": "P04",
+      "channel": "Profil osoby",
+      "day": 5,
+      "title": "Priorytet wymaga rezygnacji",
+      "pillar": "Decyzje → autorska perspektywa",
+      "format": "Post tekstowy",
+      "text": "Najbardziej interesujące pytanie przy nowym pomyśle brzmi dla mnie: z czego zrezygnujemy, jeśli wybierzemy właśnie to?\n\nGdy odpowiedź brzmi „z niczego”, sprawdziłbym założenia jeszcze raz. Czas ludzi, miejsce w planie i uwaga odbiorców mają granice.\n\nPomysł może być dobry, a mimo to nie powinien trafić na początek kolejki. Powinien najpierw przejść trzy pytania:\n\nJaki problem rozwiązuje?\nDla kogo jest ważny teraz?\nCo opóźni jego realizacja?\n\nTo nie jest argument przeciw eksperymentom. To sposób, by odróżnić świadomy wybór od dokładania kolejnych zadań do już pełnego planu.\n\nW komunikacji warto pokazywać właśnie takie kryteria. Sam komunikat „pracujemy nad nowościami” niewiele mówi o sposobie myślenia stojącym za marką.\n\nJakie pytanie pomaga Wam odróżnić ważny pomysł od pilnego?",
+      "cta": "Wymiana kryteriów ustalania priorytetów.",
+      "check": "Proponowany głos autora do osobistej akceptacji; bez przypisanej historii zawodowej."
+    },
+    {
+      "id": "P05",
+      "channel": "Profil osoby",
+      "day": 19,
+      "title": "Wyjaśnienie zamiast popisu",
+      "pillar": "Wiedza → przystępność",
+      "format": "Post tekstowy",
+      "text": "Po czym poznaję dobre wyjaśnienie?\n\nPo tym, że odbiorca wie, co zrobić dalej. Nie po liczbie specjalistycznych słów.\n\nGdybym miał wyjaśnić komuś produkt bez prezentacji i tabeli, zacząłbym od trzech zdań:\n\nTo rozwiązanie przydaje się wtedy, gdy występuje określony problem.\nJego najważniejsze ograniczenie warto znać przed wyborem.\nPrzed decyzją dobrze sprawdzić jeden konkretny warunek.\n\nJeśli nie potrafię dokończyć tych zdań prostym językiem, potrzebuję wrócić do sedna sprawy.\n\nParametry nadal są ważne. Tyle że odbiorca musi wiedzieć, dlaczego ma na nie spojrzeć. W przeciwnym razie opis pozostaje zrozumiały głównie dla osoby, która go napisała.\n\nCo w Waszej branży dałoby się wyjaśnić prościej bez utraty precyzji?",
+      "cta": "Rozmowa o upraszczaniu języka bez utraty znaczenia.",
+      "check": "Opinia redakcyjna, nie deklaracja kompetencji konkretnego pracownika Addven."
+    },
+    {
+      "id": "P06",
+      "channel": "Profil osoby",
+      "day": 25,
+      "title": "Nie każde kulisy są warte publikacji",
+      "pillar": "Ludzie → odpowiedzialność",
+      "format": "Post tekstowy",
+      "text": "Nie każde spotkanie zespołu musi stać się postem.\n\nZdjęcie z biura pokazuje, że ludzie byli w jednym miejscu. O sposobie pracy mówi dopiero konkret: pytanie, z którym przyszli, kryterium decyzji albo wniosek, który może pomóc komuś innemu.\n\nZanim zamieniłbym kulisy w treść, sprawdziłbym trzy rzeczy:\n\nCzy odbiorca coś z tego wyniesie?\nCzy osoby widoczne lub przywołane zgadzają się na publikację?\nCzy da się opowiedzieć sedno bez ujawniania cudzych danych i poufnych ustaleń?\n\nJeśli zostaje tylko „dzieje się”, temat może spokojnie zostać wewnątrz firmy.\n\nAutentyczna komunikacja nie wymaga pokazania wszystkiego. Wymaga uczciwego wyboru tego, co ma znaczenie dla odbiorcy.\n\nJakie firmowe kulisy sami czytacie z zainteresowaniem?",
+      "cta": "Pytanie o wartościowe kulisy pracy.",
+      "check": "Bez fikcyjnego zespołu, spotkania, zdjęcia i anegdoty."
+    }
+  ],
+  "offer": {
+    "price_net": 1500,
+    "days": 30,
+    "rights_choice": "Przeniesienie praw autorskich",
+    "scope": "Pierwszy pełny miesiąc dla strony Addven i jednego profilu osobistego: pisemny wywiad, strategia obu profili, mapa tematów, 6 postów łącznie (3 + 3), 2 formaty graficzne z eksportami do uzgodnionych postów, kalendarz, jedna zbiorcza tura poprawek oraz końcowe podsumowanie dostępnych danych i rekomendacje na kolejny miesiąc. Publikacja po akceptacji klienta, jeśli nada uprawnienia; alternatywnie gotowy pakiet do samodzielnej publikacji w tej samej cenie.",
+    "human_hours_estimate": [
+      18,
+      22
+    ],
+    "timing": "Przed umową uzgadniamy dostęp do danych, materiały, osobę akceptującą oraz datę startu. Termin 30 dni kalendarzowych od potwierdzenia wpłaty przez Useme. Dostępność 2–3 h dziennie łącznie na całą kolejkę kontaktu i kontroli jakości, nie osobno dla każdego klienta.",
+    "boundaries": "Cena obejmuje jedną osobę i stronę firmy. Kolejne profile, płatne kampanie, budżet reklamowy, sesje zdjęciowe i stała moderacja codziennych wiadomości wymagają osobnego uzgodnienia. Nie obiecujemy liczby leadów, wyświetleń ani wzrostu sprzedaży.",
+    "rights": "Przeniesienie praw do zaakceptowanych autorskich tekstów i grafik w zakresie uzgodnionym w umowie Useme. Materiały dostarczone przez klienta zachowują własne zasady praw; nie odsprzedajemy cudzych zdjęć ani fontów."
+  },
+  "sources": [
+    {
+      "title": "Publiczny brief zleceniodawcy",
+      "url": "https://useme.com/pl/jobs/szukamy-eksperta-linkedin-ktory-pomoze-nam-budowac-marke-i-ludzi-ktorzy-za-nia-s,145947/",
+      "checked_at": "2026-10-15T14:37:56.184Z",
+      "use": "Cele, zakres, wymóg przykładów i przeniesienie praw. Brief nie wymaga pracy w konkretnym edytorze graficznym."
+    },
+    {
+      "title": "LinkedIn Help: Content analytics for your LinkedIn Page",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a564051",
+      "checked_at": "2026-10-15",
+      "use": "Rozróżnienie wyświetleń, zasięgu, kliknięć i współczynnika zaangażowania; możliwość opóźnień danych."
+    },
+    {
+      "title": "LinkedIn: What is Thought Leadership?",
+      "url": "https://business.linkedin.com/advertise/resources/marketing-terms/thought-leadership",
+      "checked_at": "2026-10-15",
+      "use": "Użyteczne treści eksperckie i autentyczny głos osoby. Własne propozycje redakcyjne nie są gwarancją wyników."
+    }
+  ]
+}

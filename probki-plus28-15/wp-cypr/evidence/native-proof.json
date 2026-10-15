@@ -1,0 +1,74 @@
+{
+  "status": "PASS_NATIVE_WORDPRESS_CONTENT_MEDIA_SQL_HTTP_RESTART_PERSISTENCE",
+  "checked_at": "2026-10-15T14:50:00.965912+00:00",
+  "native_post_id": 28,
+  "native_post_type": "post",
+  "public_permalink": "http://127.0.0.1:8796/cypr-apartament-wlasna-probka-en-pl/",
+  "public_http_status": 200,
+  "admin_http_status": 200,
+  "admin_editor_loaded": true,
+  "admin_entry_local_only": "http://127.0.0.1:8796/proof-local-editor/",
+  "media": [
+    {
+      "id": 26,
+      "status": 200,
+      "bytes": 974,
+      "mime": "image/svg+xml",
+      "url": "http://127.0.0.1:8796/wp-content/uploads/2026/10/cypr-own-plan.svg",
+      "sha256": "4daae36e0ca3deb629c9b3091e21214b147bc8b1650c1bc7cb0c57d90f8d56b8"
+    },
+    {
+      "id": 27,
+      "status": 200,
+      "bytes": 813,
+      "mime": "image/svg+xml",
+      "url": "http://127.0.0.1:8796/wp-content/uploads/2026/10/cypr-own-dane.svg",
+      "sha256": "e3e2fe6d3b41f184b0c5b318e04ef212502bbfa736e9d5c99d1c5ef5c69037ab"
+    }
+  ],
+  "original_source_integrity_unchanged": {
+    "private\\wordpress.sqlite": true,
+    "site\\wordpress\\wp-config.php": true
+  },
+  "restart": {
+    "first_pid": 47912,
+    "second_pid": 42040,
+    "different_process": true,
+    "content_hash_preserved": true
+  },
+  "direct_sql_content_hash_matches_php_readback": true,
+  "native_block_types": [
+    "core/paragraph",
+    "core/paragraph",
+    "core/heading",
+    "core/paragraph",
+    "core/image",
+    "core/image",
+    "core/heading",
+    "core/paragraph",
+    "core/heading",
+    "core/table",
+    "core/heading",
+    "core/paragraph"
+  ],
+  "native_attachments": 2,
+  "fresh_process_php_readback": true,
+  "source_language": "en",
+  "target_language": "pl",
+  "commercial_client_case": false,
+  "admin_auth": "NativeWordPressauthcookie issuedonlythroughloopback-own-demo-route;noexistingcredentialsused.",
+  "external_network_blocked": true,
+  "email_blocked": true,
+  "visual_browser_QA": "PASS_ROOT_NATIVE_CLASSIC_EDITOR_AND_PUBLIC_PAGE",
+  "public_screenshot": "screenshots/native-public.jpg",
+  "admin_screenshot": "screenshots/native-editor.jpg",
+  "published_externally": false,
+  "admin_editor_mode": "WordPress core Classic Editor / native WYSIWYG",
+  "previous_visual_Gutenberg_canvas": "Blank in root browser; no working visual Gutenberg claim.",
+  "native_content_serialization": "12 Gutenberg blocks preserved without altering postcontent",
+  "root_browser_QA_checked_at": "2026-10-15T14:55:42.598Z",
+  "root_editor_actual_content_visible": true,
+  "root_public_H1_exact_count": 1,
+  "root_content_images_loaded": 2,
+  "root_horizontal_overflow": false
+}

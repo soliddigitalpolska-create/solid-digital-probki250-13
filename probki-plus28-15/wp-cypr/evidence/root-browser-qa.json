@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-15T14:55:42.598Z",
+  "public": {
+    "description": "Fikcyjny przykład EN→PL: 86 m² wnętrza, taras 18 m², 2 sypialnie, 2 łazienki i zadaszony parking. Próbka redakcyjna, nie oferta sprzedaży.",
+    "h1": [
+      "Dwie sypialnie. Zadaszony taras. Częściowy widok na morze."
+    ],
+    "horizontal_overflow": false,
+    "images": [
+      {
+        "alt": "",
+        "loaded": false
+      },
+      {
+        "alt": "",
+        "loaded": false
+      },
+      {
+        "alt": "Autorski schemat demonstracyjny: salon z kuchnią, 2 sypialnie, 2 łazienki i taras. Nie jest rzeczywistym rzutem.",
+        "loaded": true
+      },
+      {
+        "alt": "Infografika demonstracyjna: wnętrze 86 m², taras 18 m², 2 sypialnie, 2 łazienki, fikcyjna trasa do plaży 650 m.",
+        "loaded": true
+      }
+    ],
+    "title": "Apartament z tarasem 18 m² i częściowym widokiem na morze | Demo",
+    "url": "http://127.0.0.1:8796/cypr-apartament-wlasna-probka-en-pl/"
+  },
+  "editor_mode": "Native WordPress core Classic/TinyMCE visual editor",
+  "editor_actual_content_visible": true,
+  "editor_empty_Gutenberg_iframe_not_claimed": true,
+  "screenshots": [
+    "screenshots/native-editor.jpg",
+    "screenshots/native-public.jpg"
+  ]
+}

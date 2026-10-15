@@ -1,0 +1,433 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-15T14:39:50.777283+00:00",
+  "blender_version": "5.2.2 LTS",
+  "image_count": 6,
+  "native_file_count": 3,
+  "commercial_client_claim": false,
+  "allegro_active_offer_claim": false,
+  "measured_CTR_claim": false,
+  "safety_notes": "Own fictional products; tests are file/render/composition QA, not marketplace acceptance or sales results.",
+  "products": [
+    {
+      "id": "01-lampa-led",
+      "native_open": "PASS",
+      "native_rerender": "PASS",
+      "dimensions_preserved": "PASS",
+      "actual_model_dimensions_m": [
+        0.22499999403953552,
+        0.1899999976158142,
+        0.4099999964237213
+      ],
+      "actual_label": "225 × 190 × 410 mm",
+      "mesh_object_count": 7,
+      "vertex_count": 4420,
+      "face_count": 4074,
+      "no_external_texture_files": true,
+      "native_geometry_unchanged_after_rerender": true,
+      "before_product_bbox": [
+        936,
+        586,
+        1657,
+        1997
+      ],
+      "export": {
+        "format": "GLB",
+        "status": "PASS",
+        "bytes": 332312,
+        "note": "Geometry and base PBR material colors; procedural wood grain is retained in .blend and final raster, not baked into GLB."
+      },
+      "images": [
+        {
+          "file": "01-lampa-led-miniatura.png",
+          "format": "PNG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.90621,
+          "nonwhite_fraction": 0.09379,
+          "product_mask_bbox_threshold245": [
+            774,
+            258,
+            1836,
+            2337
+          ],
+          "margins_px": [
+            774,
+            258,
+            723,
+            222
+          ],
+          "bbox_width_fraction": 0.4152,
+          "bbox_height_fraction": 0.8125,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "0e5cb04b0ec6735d8b70d7fab0030294258a99bdcfff4dd3eddc7036a58128a9",
+          "bytes": 685750,
+          "all_image_edges_white": true
+        },
+        {
+          "file": "01-lampa-led-miniatura.jpg",
+          "format": "JPG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.90126,
+          "nonwhite_fraction": 0.09874,
+          "product_mask_bbox_threshold245": [
+            774,
+            258,
+            1837,
+            2337
+          ],
+          "margins_px": [
+            774,
+            258,
+            722,
+            222
+          ],
+          "bbox_width_fraction": 0.4156,
+          "bbox_height_fraction": 0.8125,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "2eec397f1ba956086838ffc4ce28b4ac019e342fead21b67850d36bc7187e45f",
+          "bytes": 196145,
+          "all_image_edges_white": true
+        }
+      ],
+      "export_roundtrip": {
+        "id": "01-lampa-led",
+        "glb_reimport": "PASS",
+        "mesh_count": 7,
+        "dimensions_m": [
+          0.22499999403953552,
+          0.1899999976158142,
+          0.4099999964237213
+        ],
+        "max_dimension_error_m": 0.0
+      }
+    },
+    {
+      "id": "02-kinkiet-led",
+      "native_open": "PASS",
+      "native_rerender": "PASS",
+      "dimensions_preserved": "PASS",
+      "actual_model_dimensions_m": [
+        0.11999999731779099,
+        0.12099999934434891,
+        0.26100000366568565
+      ],
+      "actual_label": "120 × 121 × 261 mm",
+      "mesh_object_count": 8,
+      "vertex_count": 1352,
+      "face_count": 692,
+      "no_external_texture_files": true,
+      "native_geometry_unchanged_after_rerender": true,
+      "before_product_bbox": [
+        977,
+        569,
+        1674,
+        1991
+      ],
+      "export": {
+        "format": "GLB",
+        "status": "PASS",
+        "bytes": 240084,
+        "note": "Geometry and base PBR material colors; procedural wood grain is retained in .blend and final raster, not baked into GLB."
+      },
+      "images": [
+        {
+          "file": "02-kinkiet-led-miniatura.png",
+          "format": "PNG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.72335,
+          "nonwhite_fraction": 0.27665,
+          "product_mask_bbox_threshold245": [
+            833,
+            232,
+            1861,
+            2327
+          ],
+          "margins_px": [
+            833,
+            232,
+            698,
+            232
+          ],
+          "bbox_width_fraction": 0.402,
+          "bbox_height_fraction": 0.8187,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "84fd63372899048eb10b216877c60a218af816992ceceb756ab279757118aa7e",
+          "bytes": 603536,
+          "all_image_edges_white": true
+        },
+        {
+          "file": "02-kinkiet-led-miniatura.jpg",
+          "format": "JPG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.72126,
+          "nonwhite_fraction": 0.27874,
+          "product_mask_bbox_threshold245": [
+            833,
+            232,
+            1861,
+            2327
+          ],
+          "margins_px": [
+            833,
+            232,
+            698,
+            232
+          ],
+          "bbox_width_fraction": 0.402,
+          "bbox_height_fraction": 0.8187,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "17027cad1579623548207cb7bdce55a76367c7d81477f979019c338d4662c6da",
+          "bytes": 179887,
+          "all_image_edges_white": true
+        }
+      ],
+      "export_roundtrip": {
+        "id": "02-kinkiet-led",
+        "glb_reimport": "PASS",
+        "mesh_count": 8,
+        "dimensions_m": [
+          0.11999999731779099,
+          0.12099999934434891,
+          0.26100000366568565
+        ],
+        "max_dimension_error_m": 3.725290298461914e-09
+      }
+    },
+    {
+      "id": "03-organizer",
+      "native_open": "PASS",
+      "native_rerender": "PASS",
+      "dimensions_preserved": "PASS",
+      "actual_model_dimensions_m": [
+        0.28999999165534973,
+        0.1899999976158142,
+        0.09000000357627869
+      ],
+      "actual_label": "290 × 190 × 90 mm",
+      "mesh_object_count": 7,
+      "vertex_count": 56,
+      "face_count": 42,
+      "no_external_texture_files": true,
+      "native_geometry_unchanged_after_rerender": true,
+      "before_product_bbox": [
+        513,
+        690,
+        2046,
+        1869
+      ],
+      "export": {
+        "format": "GLB",
+        "status": "PASS",
+        "bytes": 53312,
+        "note": "Geometry and base PBR material colors; procedural wood grain is retained in .blend and final raster, not baked into GLB."
+      },
+      "images": [
+        {
+          "file": "03-organizer-miniatura.png",
+          "format": "PNG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.63126,
+          "nonwhite_fraction": 0.36874,
+          "product_mask_bbox_threshold245": [
+            150,
+            411,
+            2409,
+            2148
+          ],
+          "margins_px": [
+            150,
+            411,
+            150,
+            411
+          ],
+          "bbox_width_fraction": 0.8828,
+          "bbox_height_fraction": 0.6789,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "801f7801cac45f8e705624ca3444d65481675c675973c547bd101fd0c9697c4b",
+          "bytes": 3845266,
+          "all_image_edges_white": true
+        },
+        {
+          "file": "03-organizer-miniatura.jpg",
+          "format": "JPG",
+          "dimensions": [
+            2560,
+            2560
+          ],
+          "exact_white_background_fraction": 0.6253,
+          "nonwhite_fraction": 0.3747,
+          "product_mask_bbox_threshold245": [
+            150,
+            411,
+            2409,
+            2148
+          ],
+          "margins_px": [
+            150,
+            411,
+            150,
+            411
+          ],
+          "bbox_width_fraction": 0.8828,
+          "bbox_height_fraction": 0.6789,
+          "corners_rgb": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ],
+          "sha256": "1a28716ca7689d2f0e44a16aa0af49ac1b11fc105563d0bf7763529cce45d26e",
+          "bytes": 728347,
+          "all_image_edges_white": true
+        }
+      ],
+      "export_roundtrip": {
+        "id": "03-organizer",
+        "glb_reimport": "PASS",
+        "mesh_count": 7,
+        "dimensions_m": [
+          0.28999999165534973,
+          0.1899999976158142,
+          0.09000000357627869
+        ],
+        "max_dimension_error_m": 0.0
+      }
+    }
+  ]
+}
