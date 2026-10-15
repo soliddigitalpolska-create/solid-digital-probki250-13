@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-10-15T19:30:06.106988+00:00",
+  "own_fictional_data": true,
+  "native_GetResponse": false,
+  "native_Klaviyo": false,
+  "email_sent": false,
+  "external_calls": 0,
+  "test_count": 14,
+  "tests_passed": true,
+  "test_output": "test_cart_full_three_steps (__main__.FlowTests.test_cart_full_three_steps) ... ok\ntest_cart_timing (__main__.FlowTests.test_cart_timing) ... ok\ntest_consent_revocation_between_steps (__main__.FlowTests.test_consent_revocation_between_steps) ... ok\ntest_duplicate_event (__main__.FlowTests.test_duplicate_event) ... ok\ntest_duplicate_scheduler (__main__.FlowTests.test_duplicate_scheduler) ... ok\ntest_no_consent (__main__.FlowTests.test_no_consent) ... ok\ntest_no_early_second_welcome (__main__.FlowTests.test_no_early_second_welcome) ... ok\ntest_purchase_stops_remaining_cart (__main__.FlowTests.test_purchase_stops_remaining_cart) ... ok\ntest_restart_idempotency_with_sqlite (__main__.FlowTests.test_restart_idempotency_with_sqlite) ... ok\ntest_two_actual_cohorts (__main__.FlowTests.test_two_actual_cohorts) ... ok\ntest_unsubscribe_between_steps (__main__.FlowTests.test_unsubscribe_between_steps) ... ok\ntest_unsubscribed (__main__.FlowTests.test_unsubscribed) ... ok\ntest_welcome_full_three_steps (__main__.FlowTests.test_welcome_full_three_steps) ... ok\ntest_welcome_timing (__main__.FlowTests.test_welcome_timing) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.037s\n\nOK\n",
+  "three_step_welcome_days": [
+    0,
+    2,
+    5
+  ],
+  "three_step_cart_days": [
+    0,
+    1,
+    3
+  ],
+  "cohorts": [
+    "new_subscribers_with_permission",
+    "abandoned_cart_without_purchase"
+  ],
+  "outbox": [
+    {
+      "delivery_key": "A:welcome:1",
+      "contact": "A",
+      "flow": "welcome",
+      "step": 1,
+      "due_day": 0,
+      "recorded_day": 0
+    },
+    {
+      "delivery_key": "A:welcome:2",
+      "contact": "A",
+      "flow": "welcome",
+      "step": 2,
+      "due_day": 2,
+      "recorded_day": 2
+    },
+    {
+      "delivery_key": "A:welcome:3",
+      "contact": "A",
+      "flow": "welcome",
+      "step": 3,
+      "due_day": 5,
+      "recorded_day": 5
+    },
+    {
+      "delivery_key": "D:cart:1",
+      "contact": "D",
+      "flow": "cart",
+      "step": 1,
+      "due_day": 0,
+      "recorded_day": 0
+    },
+    {
+      "delivery_key": "E:cart:1",
+      "contact": "E",
+      "flow": "cart",
+      "step": 1,
+      "due_day": 0,
+      "recorded_day": 0
+    },
+    {
+      "delivery_key": "E:cart:2",
+      "contact": "E",
+      "flow": "cart",
+      "step": 2,
+      "due_day": 1,
+      "recorded_day": 1
+    },
+    {
+      "delivery_key": "E:cart:3",
+      "contact": "E",
+      "flow": "cart",
+      "step": 3,
+      "due_day": 3,
+      "recorded_day": 3
+    }
+  ],
+  "limitations": "Local SQLite fixture scheduler and six original HTML emails; not provider configuration, not actual deliverability or a public backend."
+}

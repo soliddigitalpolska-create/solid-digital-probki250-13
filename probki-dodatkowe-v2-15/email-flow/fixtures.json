@@ -1,0 +1,68 @@
+{
+  "contacts": {
+    "A": {
+      "marketing_consent": true,
+      "unsubscribed": false
+    },
+    "B": {
+      "marketing_consent": false,
+      "unsubscribed": false
+    },
+    "C": {
+      "marketing_consent": true,
+      "unsubscribed": true
+    },
+    "D": {
+      "marketing_consent": true,
+      "unsubscribed": false
+    },
+    "E": {
+      "marketing_consent": true,
+      "unsubscribed": false
+    }
+  },
+  "events": [
+    {
+      "id": "signup-A",
+      "contact": "A",
+      "type": "signup",
+      "day": 0
+    },
+    {
+      "id": "signup-A",
+      "contact": "A",
+      "type": "signup",
+      "day": 0
+    },
+    {
+      "id": "signup-B",
+      "contact": "B",
+      "type": "signup",
+      "day": 0
+    },
+    {
+      "id": "signup-C",
+      "contact": "C",
+      "type": "signup",
+      "day": 0
+    },
+    {
+      "id": "cart-D",
+      "contact": "D",
+      "type": "abandoned_cart",
+      "day": 0
+    },
+    {
+      "id": "purchase-D",
+      "contact": "D",
+      "type": "purchase",
+      "day": 1
+    },
+    {
+      "id": "cart-E",
+      "contact": "E",
+      "type": "abandoned_cart",
+      "day": 0
+    }
+  ]
+}
