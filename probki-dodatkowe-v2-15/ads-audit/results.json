@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-15T19:24:20.547596+00:00",
+  "own_fictional_data": true,
+  "real_google_account": false,
+  "external_calls": 0,
+  "rows": 18,
+  "totals": {
+    "impressions": 72000,
+    "clicks": 2520,
+    "cost": 4140,
+    "orders": 162
+  },
+  "zero_order_segment": {
+    "impressions": 45000,
+    "clicks": 900,
+    "cost": 1710,
+    "orders": 0
+  },
+  "outside_delivery_cost": 342,
+  "tests_run": 8,
+  "tests_passed": true,
+  "test_output": "test_cpc_denominator (__main__.AdsTests.test_cpc_denominator) ... ok\ntest_ctr_denominator (__main__.AdsTests.test_ctr_denominator) ... ok\ntest_no_duplicate_rows (__main__.AdsTests.test_no_duplicate_rows) ... ok\ntest_no_real_account (__main__.AdsTests.test_no_real_account) ... ok\ntest_outside_delivery (__main__.AdsTests.test_outside_delivery) ... ok\ntest_spend_segment_preserved (__main__.AdsTests.test_spend_segment_preserved) ... ok\ntest_totals (__main__.AdsTests.test_totals) ... ok\ntest_zero_orders_not_invented (__main__.AdsTests.test_zero_orders_not_invented) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n"
+}

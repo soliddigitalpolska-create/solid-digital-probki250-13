@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-15T19:24:20.547596+00:00",
+  "checks": {
+    "source_original": true,
+    "client_content_used": false,
+    "sections_equal": true,
+    "SKU018_preserved": true,
+    "file_name_preserved": true,
+    "slug_ascii": true,
+    "native_docx": true,
+    "rendered_visual_QA": "PASS: both single-page Microsoft Word PDFs rendered by bundled Poppler, every page visually inspected; no overlap, missing glyphs, clipping or title border."
+  },
+  "source_words": 192,
+  "translated_words": 218,
+  "render_engine": "Microsoft Word COM ExportAsFixedFormat + bundled Poppler; packaged render_docx.py attempted first, LibreOffice absent.",
+  "native_structure": {
+    "source-en": {
+      "native_paragraphs": 13,
+      "paragraph_borders": 0,
+      "sha256": "55b7ade4b494bdc74ff667726d185a339388eee6017aff72bb7c49ff5f5b738f",
+      "rendered_pages": 1
+    },
+    "translation-es": {
+      "native_paragraphs": 13,
+      "paragraph_borders": 0,
+      "sha256": "58e638d38f8659aec57849c954f4c3b5f530b3546af762594ea7a8c8c9a2445b",
+      "rendered_pages": 1
+    }
+  }
+}

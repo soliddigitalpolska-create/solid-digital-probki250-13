@@ -1,0 +1,38 @@
+{
+  "own_original": true,
+  "client_content": false,
+  "en": {
+    "title": "Preparing product photographs for an online catalogue",
+    "intro": "A consistent set of photographs makes a catalogue easier to review and maintain. This short workflow explains how to name the files, check the crop and hand over the final package without losing the original images.",
+    "headings": [
+      "Keep the source files separate",
+      "Check the product before exporting",
+      "Make the handover easy to review"
+    ],
+    "paragraphs": [
+      "Create a read-only folder for the original photographs and a separate working folder. Use the same product code in the image name and the catalogue spreadsheet. For example, SKU018_front identifies the front view of product SKU018. Keep a short record of any missing or uncertain views.",
+      "Compare the crop with the original photograph. The complete product should remain visible, including handles, edges and small parts. Check the background, orientation and colour consistency across the whole set. Retouching should not change the shape, markings or stated features of the item. Confirm any uncertain detail with the product owner.",
+      "Export the approved images in the agreed format and keep the editable sources. Include a simple file list with the product code, view and review status. Open every exported file once, check the names against the spreadsheet and place the final package in a new folder. An archive is useful only if the recipient can identify what is inside."
+    ],
+    "meta_title": "Product photographs for an online catalogue",
+    "slug": "prepare-product-photographs-online-catalogue",
+    "meta_description": "A practical workflow for organising product photographs, reviewing crops and delivering consistent catalogue files with a clear file list."
+  },
+  "es": {
+    "title": "Cómo preparar fotografías de producto para un catálogo online",
+    "intro": "Un conjunto coherente de fotografías facilita la revisión y el mantenimiento de un catálogo. Este breve flujo de trabajo explica cómo nombrar los archivos, comprobar el encuadre y entregar el material final sin perder las imágenes originales.",
+    "headings": [
+      "Conservar los originales por separado",
+      "Revisar el producto antes de exportar",
+      "Facilitar la revisión de la entrega"
+    ],
+    "paragraphs": [
+      "Cree una carpeta de solo lectura para las fotografías originales y otra para los archivos de trabajo. Utilice el mismo código de producto en el nombre de la imagen y en la hoja de cálculo del catálogo. Por ejemplo, SKU018_front identifica la vista frontal del producto SKU018. Anote brevemente las vistas que falten o generen dudas.",
+      "Compare el encuadre con la fotografía original. El producto debe verse completo, incluidas las asas, los bordes y las piezas pequeñas. Compruebe el fondo, la orientación y la coherencia del color en todo el conjunto. El retoque no debe modificar la forma, las marcas ni las características declaradas del artículo. Confirme cualquier detalle dudoso con la persona responsable del producto.",
+      "Exporte las imágenes aprobadas en el formato acordado y conserve los archivos editables. Incluya una lista sencilla con el código del producto, la vista y el estado de revisión. Abra una vez cada archivo exportado, contraste los nombres con la hoja de cálculo y coloque la entrega final en una carpeta nueva. Un archivo comprimido solo resulta útil si su destinatario puede identificar el contenido."
+    ],
+    "meta_title": "Fotos de producto para un catálogo online",
+    "slug": "preparar-fotos-producto-catalogo-online",
+    "meta_description": "Un flujo de trabajo práctico para organizar fotos de producto, revisar encuadres y entregar archivos de catálogo coherentes con una lista clara."
+  }
+}

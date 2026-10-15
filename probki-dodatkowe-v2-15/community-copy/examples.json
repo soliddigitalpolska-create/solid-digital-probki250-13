@@ -1,0 +1,21 @@
+{
+  "original": true,
+  "posted": false,
+  "examples": [
+    [
+      "PL",
+      "Czy warto porównywać oferty wyłącznie po cenie?",
+      "Z perspektywy marki warto zacząć od zakresu, terminu i tego, co rzeczywiście zawiera dostawa. Przy podobnej cenie różnicę może zrobić sposób wsparcia albo koszt dodatkowej usługi. Jeśli chcesz, możemy wyjaśnić te elementy naszej oferty na konkretnym przykładzie. To jawna odpowiedź przedstawiciela fikcyjnej marki, nie opinia klienta."
+    ],
+    [
+      "EN",
+      "What information helps when asking a telecom provider for support?",
+      "As a provider, we would first ask which service is affected, when the issue started and whether it affects one device or several. Please avoid posting account numbers or private contact details in a public thread. A short description of the symptoms helps the support team identify the next check. This is an original demonstration of a disclosed brand response, not a real customer conversation."
+    ],
+    [
+      "EN",
+      "What should I compare before choosing a business connectivity offer?",
+      "Look at the agreed service scope, installation arrangements, support hours and the terms that apply when your needs change. If a specification is unclear, ask the provider to explain it in writing before committing. We can clarify how those points are described in our own offer. This is a fictional brand example and does not claim that a particular service has been tested."
+    ]
+  ]
+}
