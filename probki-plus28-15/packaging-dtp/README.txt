@@ -1,0 +1,4 @@
+AUTORSKI PROOF DTP
+Otwórz index.html. Źródłowe pliki PDF są wektorowe, DeviceCMYK plus spot. WHITE ma prawdziwą separację i overprint; osobne płyty wyodrębniono z operatorów produkcyjnego PDF. Źródła SVG przedstawiają kompozycje, a parametry farb i produkcja są w PDF/Python. Wszystkie teksty są krzywymi; plików fontów nie dołączono.
+To własne techniczne demonstracje, nie wydrukowane wdrożenia klientów. Bez certyfikacji PDF/X, fizycznej weryfikacji Pantone i oceny kodów ISO. W produkcji wymagane są zatwierdzone teksty, kody, wykrojnik i specyfikacja drukarni. Żadnego załącznika klienta lub surowego briefu Useme nie dołączono.
+Odtwarzanie: Python 3.12+, pip install reportlab fonttools pikepdf pillow. Windows: font Arial z legalnej instalacji systemu, nie jest dołączony. Poppler pdftoppm w PATH. Uruchom python verify.py w katalogu źródeł; sam ponownie tworzy projekt, separacje i podglądy. Kod nie pobiera danych ani nie wysyła niczego do sieci.

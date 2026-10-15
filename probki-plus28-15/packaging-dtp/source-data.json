@@ -1,0 +1,85 @@
+{
+  "status": "OWN_TECHNICAL_DEMOS_NOT_COMMERCIAL_CASES",
+  "labels": {
+    "count": 5,
+    "trim_mm": [
+      155,
+      60
+    ],
+    "bleed_mm": 3,
+    "white_choke_mm": 0.15,
+    "white_clear_window_mm": [
+      7,
+      6,
+      10,
+      5
+    ],
+    "texts_are_outlines": true,
+    "EAN": [
+      {
+        "digits": "2000000000015",
+        "checksum_valid": true,
+        "module_mm": 0.33,
+        "left_quiet_modules": 11,
+        "right_quiet_modules": 9,
+        "bar_height_mm": 22.85,
+        "meaning": "Own internal demonstration code, not a GS1 allocation or verified print grade"
+      },
+      {
+        "digits": "2000000000022",
+        "checksum_valid": true,
+        "module_mm": 0.33,
+        "left_quiet_modules": 11,
+        "right_quiet_modules": 9,
+        "bar_height_mm": 22.85,
+        "meaning": "Own internal demonstration code, not a GS1 allocation or verified print grade"
+      },
+      {
+        "digits": "2000000000039",
+        "checksum_valid": true,
+        "module_mm": 0.33,
+        "left_quiet_modules": 11,
+        "right_quiet_modules": 9,
+        "bar_height_mm": 22.85,
+        "meaning": "Own internal demonstration code, not a GS1 allocation or verified print grade"
+      },
+      {
+        "digits": "2000000000046",
+        "checksum_valid": true,
+        "module_mm": 0.33,
+        "left_quiet_modules": 11,
+        "right_quiet_modules": 9,
+        "bar_height_mm": 22.85,
+        "meaning": "Own internal demonstration code, not a GS1 allocation or verified print grade"
+      },
+      {
+        "digits": "2000000000053",
+        "checksum_valid": true,
+        "module_mm": 0.33,
+        "left_quiet_modules": 11,
+        "right_quiet_modules": 9,
+        "bar_height_mm": 22.85,
+        "meaning": "Own internal demonstration code, not a GS1 allocation or verified print grade"
+      }
+    ]
+  },
+  "watch": {
+    "production_pdf_pages": 8,
+    "box_nominal_mm": [
+      45,
+      70,
+      20
+    ],
+    "glue_tab_mm": 12,
+    "insert_mm": [
+      43,
+      67
+    ],
+    "manual_pages": 4,
+    "all_parts": "Main box, insert, four-page manual, screen/cable/product/sticker labels and front/side/back branding drawings",
+    "not_claimed": "Not a printed customer case, certified physical die, tested smartwatch, Pantone swatch match or compliance approval."
+  },
+  "font_use": "System Arial outlines; no font files distributed.",
+  "production_profile": "DeviceCMYK plus named spots. No PDF/X certification or printer-specific ICC assumed.",
+  "printer_inputs": "Client supplies approved dieline, exact texts, ink definitions, profile and PDF standard before final production."
+}

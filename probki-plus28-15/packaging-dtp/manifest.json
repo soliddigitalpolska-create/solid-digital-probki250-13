@@ -1,0 +1,265 @@
+{
+  "created_at": "2026-10-15T16:07:34.174080+00:00",
+  "files": [
+    {
+      "file": "build.py",
+      "bytes": 17132,
+      "sha256": "aaaa9ce5c34238a0c1e73f1cbec7f6afd681bed2a7e8d7d1849818071f89f0ff"
+    },
+    {
+      "file": "index.html",
+      "bytes": 12649,
+      "sha256": "fb9befdf52ba93a4bf9eab26be5c792d918e1b15af6c054366e65ce63c348de2"
+    },
+    {
+      "file": "label-composite-1.png",
+      "bytes": 63793,
+      "sha256": "fe6dadcf9e4de8b90979cf74e5a814472958b747d8087763a395096daedde776"
+    },
+    {
+      "file": "label-composite-2.png",
+      "bytes": 64699,
+      "sha256": "89ae54b7ed11b6fc83068240e38e780ccc4ff372fcc13189829184064842e063"
+    },
+    {
+      "file": "label-composite-3.png",
+      "bytes": 65381,
+      "sha256": "d96c2b0055c47bdfca261e413c5c7d6711a57479729e677c668f214d6e454902"
+    },
+    {
+      "file": "label-composite-4.png",
+      "bytes": 64296,
+      "sha256": "e26a28b0d8a1494359c7f4c1b157b958837d3db4155a34883717009549ff22f9"
+    },
+    {
+      "file": "label-composite-5.png",
+      "bytes": 65183,
+      "sha256": "27c8a12da0ca5f5fa2ce0ff64963a37915f58b0e6bae6f7e67a246d30d357dda"
+    },
+    {
+      "file": "labels-plate-C.pdf",
+      "bytes": 577583,
+      "sha256": "3516660f8194b5cfcde23d8fd00134d5f03dedc7f7b79bdf76279accca10f47c"
+    },
+    {
+      "file": "labels-plate-K.pdf",
+      "bytes": 577605,
+      "sha256": "e6da5a1afe39594b7bb3ae14d448d7ceca10a35209dbbd448b2de3da06090468"
+    },
+    {
+      "file": "labels-plate-M.pdf",
+      "bytes": 577584,
+      "sha256": "144335ed7e041471aac670be47199073dfc7af4a424faa68f77dca96f1b5564b"
+    },
+    {
+      "file": "labels-plate-WHITE.pdf",
+      "bytes": 576611,
+      "sha256": "044d70615ec75a6109f3ac3a74b2f1f56cc898a2e76f51e584a19be99cf044cf"
+    },
+    {
+      "file": "labels-plate-Y.pdf",
+      "bytes": 577581,
+      "sha256": "3f86690c6c522445f7052759aba4e9ead4ca8253b8a6b6e2079bd6cc63b2eea9"
+    },
+    {
+      "file": "labels-production-01.svg",
+      "bytes": 328446,
+      "sha256": "57a07fa21380914dbe26a776365f5f5ffcb8ba034f68162a860cca425d5a8b90"
+    },
+    {
+      "file": "labels-production-02.svg",
+      "bytes": 330627,
+      "sha256": "2f95f3130fd3b8436379f20239b413494b69f64cd507af995ffbd16a6bb19ab1"
+    },
+    {
+      "file": "labels-production-03.svg",
+      "bytes": 332427,
+      "sha256": "c4601ac638c5802e009ae3c8335155b1fdc4167c33e7562f47c34a9b1254c8d2"
+    },
+    {
+      "file": "labels-production-04.svg",
+      "bytes": 328924,
+      "sha256": "7a5559ea47e30c03d5bf61c12f27f6f30ed9c70ec6cd45b4b9e1daf0273e7641"
+    },
+    {
+      "file": "labels-production-05.svg",
+      "bytes": 330808,
+      "sha256": "3fefab3ad89aae5b3c313de593327e2f0d390302b2b4a5d6eed32e7e84c7797e"
+    },
+    {
+      "file": "labels-production.pdf",
+      "bytes": 579289,
+      "sha256": "f67165c6b86b6fbb5430f427e0584f48d9c56dae5741ea7b00b7daa454cea3c0"
+    },
+    {
+      "file": "preflight.json",
+      "bytes": 9260,
+      "sha256": "fd979898c9bc7f0e06b61e866f5f531252c44ec137d8ac60dc8865105ea9ab84"
+    },
+    {
+      "file": "process-plate-C.png",
+      "bytes": 22757,
+      "sha256": "7cd7cdc1270e446bf405beeea8accfe87ace1a3c122de8134a3cf77f92dfa57b"
+    },
+    {
+      "file": "process-plate-K.png",
+      "bytes": 38518,
+      "sha256": "670cd89ee6b5f3e436b6e78386bda25c6c1c911c29a8b4d28e987b55d5d4ea72"
+    },
+    {
+      "file": "process-plate-M.png",
+      "bytes": 20927,
+      "sha256": "3e421871bcf0ff19a7d6b938f8568abe653bde090e605b8cb122aba7e6d6be24"
+    },
+    {
+      "file": "process-plate-Y.png",
+      "bytes": 28650,
+      "sha256": "c5f123c675cc180aa2dcbe2604a119864019551ddcf7fe6f55bde2e7c5c2256f"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 996,
+      "sha256": "8e2518b8396ba55a572528ba76b123a85e1909cd9a5ceef375769d5370a5bb1a"
+    },
+    {
+      "file": "source-data.json",
+      "bytes": 2728,
+      "sha256": "e6a4dc913b5cffc7427e6d167e11f92c6be5210af4f3485ad8c3bd80cf27f5b2"
+    },
+    {
+      "file": "technical-1.png",
+      "bytes": 120276,
+      "sha256": "4a28c072ce8a123ab19bafb9dee150633949183a589f89875721f8a1872833fe"
+    },
+    {
+      "file": "technical-sheet-01.svg",
+      "bytes": 935287,
+      "sha256": "3d21d5037003e3dff26bf3a0c2de11375816559824724ff66f758d71bbe54379"
+    },
+    {
+      "file": "technical-sheet.pdf",
+      "bytes": 310148,
+      "sha256": "a56ccbde48bd35188568ca9e0baf20e1e731dd9e1ccdcfdf13af88e4ad2262e7"
+    },
+    {
+      "file": "verify.py",
+      "bytes": 12545,
+      "sha256": "f621e33d7a96e2ce01fd86de47b5fa8ae95b2fbeb1c3464a753eb13e4851680f"
+    },
+    {
+      "file": "watch-composite-1.png",
+      "bytes": 37491,
+      "sha256": "cd71d16e360d5782a5b18e220a01ccb061c7c14a3e079f20e1b473b373b5a77e"
+    },
+    {
+      "file": "watch-composite-2.png",
+      "bytes": 10307,
+      "sha256": "d41393fd202cdf49d84b9c7019f307f00886462b110378eb54ed156ec5d320b5"
+    },
+    {
+      "file": "watch-composite-3.png",
+      "bytes": 22080,
+      "sha256": "198c1e40c66c7afd9be68c14d3e254299b68cddc17953194ced67578094f9113"
+    },
+    {
+      "file": "watch-composite-4.png",
+      "bytes": 24501,
+      "sha256": "b62883d18882b4d6e7beb692d2fbbfefef050fba3de12ad838af7aacd148ff8c"
+    },
+    {
+      "file": "watch-composite-5.png",
+      "bytes": 26049,
+      "sha256": "c99fbf073c8ec18cb07f4fa442be1822a66bf4a9815f993e84252ca24bcfd8f3"
+    },
+    {
+      "file": "watch-composite-6.png",
+      "bytes": 28009,
+      "sha256": "ff7b04e9d04f13cc4e3c8919416f297faf4830e598b2152b498c3136d0125d8d"
+    },
+    {
+      "file": "watch-composite-7.png",
+      "bytes": 42035,
+      "sha256": "bdea22ba1639a9a3460acd76d18b9370f9763085457ad59c8b0b3c0196bb6608"
+    },
+    {
+      "file": "watch-composite-8.png",
+      "bytes": 46153,
+      "sha256": "aa5f938fdda0f2961d861875cfdb5d8db85986fbde65c887bb931aee70e21e07"
+    },
+    {
+      "file": "watch-production-01.svg",
+      "bytes": 243022,
+      "sha256": "cd3fd83e30a8fecc1ad4880b29d30df371b6ff6d3dc703494b835ccbbac1d356"
+    },
+    {
+      "file": "watch-production-02.svg",
+      "bytes": 75346,
+      "sha256": "2f47d111309bed5c2f8ac3f2ed0aec4335e5c2a89c6b4205ac8e1019a41ef235"
+    },
+    {
+      "file": "watch-production-03.svg",
+      "bytes": 144922,
+      "sha256": "aa095ff833b29bfff9dcc5cbfb1696117ba92569acdd4ce5b26cd1e956b14410"
+    },
+    {
+      "file": "watch-production-04.svg",
+      "bytes": 155756,
+      "sha256": "ac08d68a80a473394288ef7c4e4679a8c7157c982aaea7d0eb7db1e5c6c628c5"
+    },
+    {
+      "file": "watch-production-05.svg",
+      "bytes": 184619,
+      "sha256": "a000866cee1d9cd9bde97bf19b0284cb5160021ffe86ac8b872a9ed709e1a1c5"
+    },
+    {
+      "file": "watch-production-06.svg",
+      "bytes": 203991,
+      "sha256": "69110e163a4db41098eaff400480f5c1c634a70c0f7a4d9771998d9deba20db7"
+    },
+    {
+      "file": "watch-production-07.svg",
+      "bytes": 205409,
+      "sha256": "8af30e9b5a0c9305427d630ee6c5ce2c40297bc36131a460c55cad5678639f43"
+    },
+    {
+      "file": "watch-production-08.svg",
+      "bytes": 237598,
+      "sha256": "a5efa1aae98779179d9b86d672051c8a2111d42fbf27f75b25250e422c93e94d"
+    },
+    {
+      "file": "watch-production.pdf",
+      "bytes": 514208,
+      "sha256": "5f2cbe00c4da5466fe678f54d13ba6692365178168d7de622db9d1ad96c64c8e"
+    },
+    {
+      "file": "watch-spot-plates.pdf",
+      "bytes": 1532353,
+      "sha256": "e5fab2b559b06bb0638e389602a569413549103a772267e89b7d28c088376d01"
+    },
+    {
+      "file": "white-plate-1.png",
+      "bytes": 3811,
+      "sha256": "a7adee36ee5bfff1709ddd4183d82e9415ee08d8d2937946611a266ebc88762f"
+    },
+    {
+      "file": "white-plate-2.png",
+      "bytes": 3811,
+      "sha256": "a7adee36ee5bfff1709ddd4183d82e9415ee08d8d2937946611a266ebc88762f"
+    },
+    {
+      "file": "white-plate-3.png",
+      "bytes": 3811,
+      "sha256": "a7adee36ee5bfff1709ddd4183d82e9415ee08d8d2937946611a266ebc88762f"
+    },
+    {
+      "file": "white-plate-4.png",
+      "bytes": 3811,
+      "sha256": "a7adee36ee5bfff1709ddd4183d82e9415ee08d8d2937946611a266ebc88762f"
+    },
+    {
+      "file": "white-plate-5.png",
+      "bytes": 3811,
+      "sha256": "a7adee36ee5bfff1709ddd4183d82e9415ee08d8d2937946611a266ebc88762f"
+    }
+  ]
+}

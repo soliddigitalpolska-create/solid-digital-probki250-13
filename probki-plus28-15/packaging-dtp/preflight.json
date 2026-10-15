@@ -1,0 +1,436 @@
+{
+  "status": "OWN_TECHNICAL_VECTOR_PROOF_NOT_PRINTED_CUSTOMER_CASE",
+  "labels_preflight": [
+    {
+      "page": 1,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        447.874,
+        178.5827
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "spot_names": [
+        "/WHITE"
+      ],
+      "white_paints": [
+        {
+          "kind": "fill",
+          "overprint": true,
+          "OPM": 1,
+          "tint": [
+            1.0
+          ]
+        }
+      ],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 2,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        447.874,
+        178.5827
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "spot_names": [
+        "/WHITE"
+      ],
+      "white_paints": [
+        {
+          "kind": "fill",
+          "overprint": true,
+          "OPM": 1,
+          "tint": [
+            1.0
+          ]
+        }
+      ],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 3,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        447.874,
+        178.5827
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "spot_names": [
+        "/WHITE"
+      ],
+      "white_paints": [
+        {
+          "kind": "fill",
+          "overprint": true,
+          "OPM": 1,
+          "tint": [
+            1.0
+          ]
+        }
+      ],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 4,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        447.874,
+        178.5827
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "spot_names": [
+        "/WHITE"
+      ],
+      "white_paints": [
+        {
+          "kind": "fill",
+          "overprint": true,
+          "OPM": 1,
+          "tint": [
+            1.0
+          ]
+        }
+      ],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 5,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        447.874,
+        178.5827
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        456.378,
+        187.0866
+      ],
+      "spot_names": [
+        "/WHITE"
+      ],
+      "white_paints": [
+        {
+          "kind": "fill",
+          "overprint": true,
+          "OPM": 1,
+          "tint": [
+            1.0
+          ]
+        }
+      ],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    }
+  ],
+  "watch_preflight": [
+    {
+      "page": 1,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        464.8819,
+        374.1732
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        456.378,
+        365.6693
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        464.8819,
+        374.1732
+      ],
+      "spot_names": [
+        "/CREASE",
+        "/DIELINE",
+        "/VARNISH"
+      ],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 2,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        243.7795,
+        311.811
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        235.2756,
+        303.3071
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        243.7795,
+        311.811
+      ],
+      "spot_names": [
+        "/DIELINE"
+      ],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 3,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        263.622,
+        192.7559
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "spot_names": [],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 4,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        263.622,
+        192.7559
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "spot_names": [],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 5,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        263.622,
+        192.7559
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "spot_names": [],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 6,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        263.622,
+        192.7559
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        272.126,
+        201.2598
+      ],
+      "spot_names": [],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 7,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        436.5354,
+        612.2835
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        428.0315,
+        603.7795
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        436.5354,
+        612.2835
+      ],
+      "spot_names": [
+        "/DIELINE"
+      ],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    },
+    {
+      "page": 8,
+      "media_box_pt": [
+        0.0,
+        0.0,
+        436.5354,
+        612.2835
+      ],
+      "trim_box_pt": [
+        8.503937,
+        8.503937,
+        428.0315,
+        603.7795
+      ],
+      "bleed_box_pt": [
+        0.0,
+        0.0,
+        436.5354,
+        612.2835
+      ],
+      "spot_names": [],
+      "white_paints": [],
+      "RGB_paint_operators": 0,
+      "text_paint_operators": 0,
+      "embedded_raster_xobjects": 0
+    }
+  ],
+  "white_separation_actual_name": "WHITE",
+  "white_color_space": "Separation with DeviceCMYK alternate",
+  "white_is_real_spot_not_RGB_simulation": true,
+  "white_paint_effective_fill_overprint": true,
+  "white_effective_OPM": 1,
+  "all_visible_text_is_vector_outlines": true,
+  "all_raster_xobjects_zero": true,
+  "process_art_native_DeviceCMYK": true,
+  "plate_method": "Re-read actual production PDF content streams with pikepdf, interpret effective ink and overprint states, isolate actual painted geometry for each ink, then rasterize the derived plate PDFs with Poppler. Plate images are not redrawn from the source design.",
+  "white_hole": "Actual compound even-odd WHITE path excludes the same 10 x 5 mm clear window used by process artwork.",
+  "not_claimed": [
+    "No physical press proof or ISO15416 barcode grade.",
+    "No printer-specific ICC/profile or PDF/X certification without supplied print specification.",
+    "No paid/customer packaging history or manufactured smartwatch.",
+    "No commercial Pantone swatch match or licensed Adobe source file."
+  ],
+  "final_print_conditions": [
+    "Approved client texts, regulated label content and assigned product EANs.",
+    "Approved printer dieline, material, WHITE/choke/overprint specification and ink order.",
+    "Printer profile, output standard, separations and physical proof/acceptance before mass production."
+  ],
+  "actual_WHITE_clear_window_pixel_check": {
+    "hole_luminance": 255,
+    "surrounding_ink_luminance": 32,
+    "status": "PASS"
+  },
+  "white_plate_raster_dark_fraction": 0.9854,
+  "all_9_PDFs_created": true
+}
