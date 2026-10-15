@@ -1,0 +1,68 @@
+[
+  {
+    "shot": 1,
+    "timeline_in": 0,
+    "timeline_out": 5.792,
+    "source": "sources/shot-01.mp4",
+    "voice": "sources/vo-01.wav",
+    "voice_text": "Najpierw cała lampa. Jeden kadr, który pokazuje jej kształt.",
+    "asset": "01-lampa-led",
+    "actual_3d_frames": 35,
+    "camera_orbit_degrees": 8
+  },
+  {
+    "shot": 2,
+    "timeline_in": 5.792,
+    "timeline_out": 11.708,
+    "source": "sources/shot-02.mp4",
+    "voice": "sources/vo-02.wav",
+    "voice_text": "Teraz zbliżenie. Pokazuję podstawę i niewielki przycisk do sterowania.",
+    "asset": "01-lampa-led",
+    "actual_3d_frames": 38,
+    "camera_orbit_degrees": 8
+  },
+  {
+    "shot": 3,
+    "timeline_in": 11.708,
+    "timeline_out": 17.583,
+    "source": "sources/shot-03.mp4",
+    "voice": "sources/vo-03.wav",
+    "voice_text": "Przy kinkiecie zaczynam od boku. Tak łatwiej zobaczyć jego proporcje.",
+    "asset": "02-kinkiet-led",
+    "actual_3d_frames": 36,
+    "camera_orbit_degrees": 8
+  },
+  {
+    "shot": 4,
+    "timeline_in": 17.583,
+    "timeline_out": 22.208,
+    "source": "sources/shot-04.mp4",
+    "voice": "sources/vo-04.wav",
+    "voice_text": "Dopiero potem zbliżenie na oprawę i element mocujący z tyłu.",
+    "asset": "02-kinkiet-led",
+    "actual_3d_frames": 31,
+    "camera_orbit_degrees": 8
+  },
+  {
+    "shot": 5,
+    "timeline_in": 22.208,
+    "timeline_out": 28.458,
+    "source": "sources/shot-05.mp4",
+    "voice": "sources/vo-05.wav",
+    "voice_text": "Organizer najpierw oglądamy w całości. Później przychodzi czas na szczegół.",
+    "asset": "03-organizer",
+    "actual_3d_frames": 38,
+    "camera_orbit_degrees": 8
+  },
+  {
+    "shot": 6,
+    "timeline_in": 28.458,
+    "timeline_out": 34.958,
+    "source": "sources/shot-06.mp4",
+    "voice": "sources/vo-06.wav",
+    "voice_text": "Zbliżenie pokazuje przegródki i układ wnętrza. Obraz podąża za narracją.",
+    "asset": "03-organizer",
+    "actual_3d_frames": 39,
+    "camera_orbit_degrees": 8
+  }
+]

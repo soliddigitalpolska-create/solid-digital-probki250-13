@@ -1,0 +1,203 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-15T15:57:27.445974+00:00",
+  "blender": "5.2.2 LTS",
+  "records": [
+    {
+      "file": "ba01-base.blend",
+      "variant": "tray",
+      "native_open": true,
+      "native_rerender": true,
+      "room_common_hash_before": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "room_common_hash_after": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5
+      },
+      "lighting_hash": "c7a20051746c02dd3efbfc7f190221299ecbe549f8e430124ee65aef7b52b5a5",
+      "structural_inner_dimensions_m": [
+        3.0,
+        2.5,
+        2.700000047683716
+      ],
+      "finished_surface_clear_dimensions_m": [
+        2.964,
+        2.482,
+        2.684
+      ],
+      "visible_equipment_counts": {
+        "TRAY": 2,
+        "SHOWER_SCREEN": 4,
+        "LINEAR_DRAIN": 0,
+        "BATH": 0,
+        "BATH_SCREEN": 0
+      },
+      "drain_grille_top_m": -0.007800000254064798,
+      "sloped_floor_z_at_drain_m": -0.007799999999999998,
+      "all_equipment_is_real_geometry": true,
+      "no_external_images": true
+    },
+    {
+      "file": "ba01-linear.blend",
+      "variant": "linear",
+      "native_open": true,
+      "native_rerender": true,
+      "room_common_hash_before": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "room_common_hash_after": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5
+      },
+      "lighting_hash": "c7a20051746c02dd3efbfc7f190221299ecbe549f8e430124ee65aef7b52b5a5",
+      "structural_inner_dimensions_m": [
+        3.0,
+        2.5,
+        2.700000047683716
+      ],
+      "finished_surface_clear_dimensions_m": [
+        2.964,
+        2.482,
+        2.684
+      ],
+      "visible_equipment_counts": {
+        "TRAY": 0,
+        "SHOWER_SCREEN": 4,
+        "LINEAR_DRAIN": 23,
+        "BATH": 0,
+        "BATH_SCREEN": 0
+      },
+      "drain_grille_top_m": -0.007800000254064798,
+      "sloped_floor_z_at_drain_m": -0.007799999999999998,
+      "all_equipment_is_real_geometry": true,
+      "no_external_images": true
+    },
+    {
+      "file": "ba01-bath.blend",
+      "variant": "bath",
+      "native_open": true,
+      "native_rerender": true,
+      "room_common_hash_before": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "room_common_hash_after": "686ffde04a111d22ae1239d63d7a530d822873322e19baf4a4dfb41aa1d66fee",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5
+      },
+      "lighting_hash": "c7a20051746c02dd3efbfc7f190221299ecbe549f8e430124ee65aef7b52b5a5",
+      "structural_inner_dimensions_m": [
+        3.0,
+        2.5,
+        2.700000047683716
+      ],
+      "finished_surface_clear_dimensions_m": [
+        2.964,
+        2.482,
+        2.684
+      ],
+      "visible_equipment_counts": {
+        "TRAY": 0,
+        "SHOWER_SCREEN": 0,
+        "LINEAR_DRAIN": 0,
+        "BATH": 2,
+        "BATH_SCREEN": 3
+      },
+      "drain_grille_top_m": -0.007800000254064798,
+      "sloped_floor_z_at_drain_m": -0.007799999999999998,
+      "all_equipment_is_real_geometry": true,
+      "no_external_images": true
+    }
+  ],
+  "same_room_and_common_fixtures": true,
+  "same_camera_and_lens": true,
+  "same_light_settings": true,
+  "structural_room_dimensions_m": [
+    3,
+    2.5,
+    2.7
+  ],
+  "room_nominal_area_m2": 7.5,
+  "finished_clear_dimensions_m": [
+    2.964,
+    2.482,
+    2.684
+  ],
+  "door_width_m": 1.0,
+  "visible_equipment_variants_are_distinct": true,
+  "drain_grille_matches_floor_to_mm": 0.2,
+  "raster_variants_not_composited": true,
+  "client_deliverable_is_rendered_variants_and_scene_not_configurator_API": true
+}

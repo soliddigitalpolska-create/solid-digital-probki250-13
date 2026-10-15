@@ -1,0 +1,17 @@
+[
+  {
+    "id": "T1",
+    "subject": "Błąd płatności",
+    "body": "Nie działa płatność za zamówienie — fikcyjne dane"
+  },
+  {
+    "id": "T2",
+    "subject": "=1+1",
+    "body": "Nieznany temat do ręcznej decyzji"
+  },
+  {
+    "id": "T3",
+    "subject": "Błąd strony",
+    "body": "Nie działa podgląd — przykład własny"
+  }
+]

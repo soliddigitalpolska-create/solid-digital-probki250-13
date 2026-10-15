@@ -1,0 +1,19 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 540
+PlayResY: 960
+WrapStyle: 0
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,29,&H00FFFFFF,&H00FFFFFF,&H00332717,&H00211711,-1,0,0,0,100,100,0,0,3,12,0,2,28,28,76,1
+Style: Hook,Segoe UI,38,&H00385618,&H00385618,&H00FFFFFF,&H00FFFFFF,-1,0,0,0,100,100,0,0,1,1.5,0,8,25,25,60,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.79,Caption,,0,0,0,,{\fad(100,100)}Najpierw cała lampa. Jeden\Nkadr, który pokazuje jej\Nkształt.
+Dialogue: 0,0:00:05.79,0:00:11.71,Caption,,0,0,0,,{\fad(100,100)}Teraz zbliżenie. Pokazuję\Npodstawę i niewielki przycisk\Ndo sterowania.
+Dialogue: 0,0:00:11.71,0:00:17.58,Caption,,0,0,0,,{\fad(100,100)}Przy kinkiecie zaczynam od\Nboku. Tak łatwiej zobaczyć\Njego proporcje.
+Dialogue: 0,0:00:17.58,0:00:22.21,Caption,,0,0,0,,{\fad(100,100)}Dopiero potem zbliżenie na\Noprawę i element mocujący z\Ntyłu.
+Dialogue: 0,0:00:22.21,0:00:28.46,Caption,,0,0,0,,{\fad(100,100)}Organizer najpierw oglądamy w\Ncałości. Później przychodzi\Nczas na szczegół.
+Dialogue: 0,0:00:28.46,0:00:34.96,Caption,,0,0,0,,{\fad(100,100)}Zbliżenie pokazuje przegródki\Ni układ wnętrza. Obraz podąża\Nza narracją.
+Dialogue: 1,0:00:00.00,0:00:03.00,Hook,,0,0,0,,{\fad(180,180)}Zacznij od całości.
+Dialogue: 1,0:00:32.00,0:00:34.95,Hook,,0,0,0,,{\fad(180,180)}Który detal pokazujesz?

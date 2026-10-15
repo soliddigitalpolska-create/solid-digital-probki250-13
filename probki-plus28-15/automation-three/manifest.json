@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-10-15T15:56:06.386326+00:00",
+  "status": "EXECUTED_OWN_LOCAL_WORKFLOWS",
+  "files": [
+    {
+      "path": "fixtures/contacts-valid-only.csv",
+      "bytes": 90,
+      "sha256": "511dd5c86e7bd832a504f9926d0b6a44786ecf041d68f34eb48677ea08adc29b"
+    },
+    {
+      "path": "fixtures/contacts.csv",
+      "bytes": 168,
+      "sha256": "661f130f6f5e20e9e7ef1493efd5aacaf4f89cadc9e4048db51adab6ec8099ed"
+    },
+    {
+      "path": "fixtures/orders.csv",
+      "bytes": 108,
+      "sha256": "cb4592a470d64dc684456272eb3edde3389078c2c9a2fa43934b26c8c24a2a03"
+    },
+    {
+      "path": "fixtures/tickets.json",
+      "bytes": 362,
+      "sha256": "1e00c0a621d0228996ffd5d6000e3cf801d075107ee9146e610bb14cfceb9dcf"
+    },
+    {
+      "path": "index.html",
+      "bytes": 11187,
+      "sha256": "c63344791ea9ef345b0e10c38854a4d1ddbbcf9412c07abd39aad415dd40bec2"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1924,
+      "sha256": "08c85a7a8cf79b4b7b4ad1c817e3039dddaacd7ec7b3d5468b4ded9351d7aeeb"
+    },
+    {
+      "path": "results/database-readback.json",
+      "bytes": 6934,
+      "sha256": "4e7b580957cf8daf51997b63081928ae82614433a1cf814c8e7c5aa5e4210053"
+    },
+    {
+      "path": "results/demo-summary.json",
+      "bytes": 2445,
+      "sha256": "1e00d6412b76b4bc344117f774d7cd25772d1ff632bdefb916e7db6ca50c3573"
+    },
+    {
+      "path": "results/order-Z1.html",
+      "bytes": 528,
+      "sha256": "e2bb75689db94d0d7f7f296997d6e0df0f8a4b8027cfb7a6156267afaea36b46"
+    },
+    {
+      "path": "results/tests.json",
+      "bytes": 1694,
+      "sha256": "e6ca361f22eff0a8d5469ee8088bcfe748a2aa17d91473cff57433b8ca46a7a6"
+    },
+    {
+      "path": "results/tickets.csv",
+      "bytes": 223,
+      "sha256": "9cfa4170f8d345a80b5928b2c85179b5770b229d195fb493f344f1be107d84d5"
+    },
+    {
+      "path": "sources/run_demo.py",
+      "bytes": 5158,
+      "sha256": "232da0b5c985558ef1ba9cedccb7fa83ab85546bc9ad685024acdb44167e52fe"
+    },
+    {
+      "path": "sources/test_workflows.py",
+      "bytes": 4546,
+      "sha256": "19caf50e6412686f55a7b3caaed6b5d1e9abce411ff707d3646bd7b097302487"
+    },
+    {
+      "path": "sources/workflow.py",
+      "bytes": 13488,
+      "sha256": "d6de10995c46aeda7b104e46763789e42f1272e43807c2f071649bd4a0fd2e46"
+    },
+    {
+      "path": "style.css",
+      "bytes": 1777,
+      "sha256": "a37c82a801e080bd82467b8578ef0a6a66ea6937fe6cdfd6968bd48f2b68c9a7"
+    }
+  ]
+}

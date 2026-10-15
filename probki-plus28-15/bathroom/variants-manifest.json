@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-15T15:55:58.263905+00:00",
+  "blender": "5.2.2 LTS",
+  "device": "OPTIX RTX4080SUPER",
+  "native_room_dimensions_m": [
+    3,
+    2.5,
+    2.7
+  ],
+  "native_room_area_m2": 7.5,
+  "one_base_room_model": true,
+  "equipment_variants": 3,
+  "material_palette": "warm limestone / oak / brass",
+  "image_dimensions": [
+    4096,
+    3072
+  ],
+  "renders": [
+    {
+      "key": "tray",
+      "native_file": "ba01-base.blend",
+      "image": "01-brodzik-4k.png",
+      "jpeg": "01-brodzik-4k.jpg",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5,
+        "resolution": [
+          4096,
+          3072
+        ]
+      },
+      "room_hash": "95763b761081fd2c6a24915e3237aef39c5e8f31cc4da3b60fd98f051e8aa2e2",
+      "common_fixtures_hash": "951550dc4fa6e1b50a1876153860c88814e06a689a51645ccbcb1fb0e636e3db",
+      "lighting_hash": "f8a590e5823f3809217c36ddfc74c7ff16ecb3971d0d038e6c2ff75aa800e125",
+      "visible_equipment": [
+        "Glass top brace",
+        "Raised tray | real shallow basin",
+        "Screen floor clip",
+        "Screen floor clip.001",
+        "Shower glass fixed panel",
+        "Tray waste"
+      ],
+      "seconds": 51.93
+    },
+    {
+      "key": "linear",
+      "native_file": "ba01-linear.blend",
+      "image": "02-odplyw-liniowy-4k.png",
+      "jpeg": "02-odplyw-liniowy-4k.jpg",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5,
+        "resolution": [
+          4096,
+          3072
+        ]
+      },
+      "room_hash": "95763b761081fd2c6a24915e3237aef39c5e8f31cc4da3b60fd98f051e8aa2e2",
+      "common_fixtures_hash": "951550dc4fa6e1b50a1876153860c88814e06a689a51645ccbcb1fb0e636e3db",
+      "lighting_hash": "f8a590e5823f3809217c36ddfc74c7ff16ecb3971d0d038e6c2ff75aa800e125",
+      "visible_equipment": [
+        "Drain grille 0",
+        "Drain grille 1",
+        "Drain grille 10",
+        "Drain grille 11",
+        "Drain grille 12",
+        "Drain grille 13",
+        "Drain grille 14",
+        "Drain grille 15",
+        "Drain grille 16",
+        "Drain grille 17",
+        "Drain grille 18",
+        "Drain grille 19",
+        "Drain grille 2",
+        "Drain grille 20",
+        "Drain grille 21",
+        "Drain grille 3",
+        "Drain grille 4",
+        "Drain grille 5",
+        "Drain grille 6",
+        "Drain grille 7",
+        "Drain grille 8",
+        "Drain grille 9",
+        "Glass top brace",
+        "Linear drain recessed body",
+        "Screen floor clip",
+        "Screen floor clip.001",
+        "Shower glass fixed panel"
+      ],
+      "seconds": 50.26
+    },
+    {
+      "key": "bath",
+      "native_file": "ba01-bath.blend",
+      "image": "03-wanna-prysznic-4k.png",
+      "jpeg": "03-wanna-prysznic-4k.jpg",
+      "camera": {
+        "matrix": [
+          [
+            0.8438622951507568,
+            -0.11503714323043823,
+            0.5240828990936279,
+            2.549999952316284
+          ],
+          [
+            0.5365598201751709,
+            0.1809220165014267,
+            -0.8242394924163818,
+            -0.18000000715255737
+          ],
+          [
+            1.7928652340515328e-08,
+            0.9767464995384216,
+            0.2143975794315338,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 19.5,
+        "resolution": [
+          4096,
+          3072
+        ]
+      },
+      "room_hash": "95763b761081fd2c6a24915e3237aef39c5e8f31cc4da3b60fd98f051e8aa2e2",
+      "common_fixtures_hash": "951550dc4fa6e1b50a1876153860c88814e06a689a51645ccbcb1fb0e636e3db",
+      "lighting_hash": "f8a590e5823f3809217c36ddfc74c7ff16ecb3971d0d038e6c2ff75aa800e125",
+      "visible_equipment": [
+        "Bath screen hinge",
+        "Bath screen hinge.001",
+        "Bath shower screen",
+        "Bath waste",
+        "Bathtub | genuine outer and inner shell"
+      ],
+      "seconds": 48.17
+    }
+  ],
+  "same_room_geometry": true,
+  "same_common_fixtures": true,
+  "same_camera": true,
+  "same_lighting": true,
+  "shadow_note": "Light sources and settings are fixed. Shadows are physically recomputed for actual equipment changes; not pasted or forced pixel-identical.",
+  "deliverable_requested_by_client": "A base3Dscene and15–20variantimages for an existing configurator; no software/API/configurator-development requirement in full publicbrief."
+}

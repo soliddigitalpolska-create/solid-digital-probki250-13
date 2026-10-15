@@ -1,0 +1,4 @@
+id,buyer,quantity,unit_net
+Z1,Fikcyjna Pracownia,2,123.45
+Z2,Demo Studio,1,85.00
+Z3,Błędne dane,-1,99

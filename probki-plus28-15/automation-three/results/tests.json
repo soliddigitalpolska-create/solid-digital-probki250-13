@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-15T15:56:06.333942+00:00",
+  "command": "python -m unittest discover -s sources -p test_workflows.py -v",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_api_validation_and_fixed_schema_reject_bad_payload (test_workflows.RealWorkflows.test_api_validation_and_fixed_schema_reject_bad_payload) ... ok\ntest_csv_crm_retries_429_and_503_then_persists_without_duplicate_after_restart (test_workflows.RealWorkflows.test_csv_crm_retries_429_and_503_then_persists_without_duplicate_after_restart) ... ok\ntest_csv_report_neutralizes_spreadsheet_formula_input (test_workflows.RealWorkflows.test_csv_report_neutralizes_spreadsheet_formula_input) ... ok\ntest_fixture_cannot_bypass_review_with_direct_task_request (test_workflows.RealWorkflows.test_fixture_cannot_bypass_review_with_direct_task_request) ... ok\ntest_network_boundary_rejects_non_fixture_target (test_workflows.RealWorkflows.test_network_boundary_rejects_non_fixture_target) ... ok\ntest_order_approval_prevents_document_until_human_and_stops_duplicate (test_workflows.RealWorkflows.test_order_approval_prevents_document_until_human_and_stops_duplicate) ... ok\ntest_retry_exhaustion_creates_dead_letter_without_false_success (test_workflows.RealWorkflows.test_retry_exhaustion_creates_dead_letter_without_false_success) ... ok\ntest_webhook_duplicate_classification_human_gate_report_csv (test_workflows.RealWorkflows.test_webhook_duplicate_classification_human_gate_report_csv) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 4.895s\n\nOK\n",
+  "tests": 8,
+  "scope": "Real loopback HTTP API + temporary SQLite fixtures, no external API or email"
+}

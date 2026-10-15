@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-15T15:54:01.907376+00:00",
+  "source": "Three actual own Python workflows, real local HTTP API and SQLite persistence",
+  "data": "Own fictional fixtures; no customer data",
+  "LLM_used": false,
+  "human_decisions": "Explicitly simulated by --approve-demo; not real client approvals",
+  "external_email_or_payment": false,
+  "health": {
+    "status": "own_local_fixture",
+    "email_transport": false
+  },
+  "crm_first": {
+    "workflow": "CSV → CRM fixture",
+    "created": 2,
+    "skipped": 0,
+    "invalid": 1,
+    "dead_letter": 1
+  },
+  "crm_after_process_reopen": {
+    "workflow": "CSV → CRM fixture",
+    "created": 0,
+    "skipped": 2,
+    "invalid": 0,
+    "dead_letter": 0
+  },
+  "orders_staged": {
+    "workflow": "Orders → human review → document",
+    "pending": 2,
+    "invalid": 1,
+    "duplicates": 0
+  },
+  "documents_before_explicit_test_review": 0,
+  "order_review_bypass_blocked": true,
+  "order_approved": {
+    "id": "Z1",
+    "document": "work\\useme-plus28-2026-10-15\\proof-145158\\run-20261015-a\\documents\\order-Z1.html",
+    "net_total": "246.90",
+    "email_sent": false,
+    "outbox_status": "staged_not_sent"
+  },
+  "outbox_after_duplicate_approval": 1,
+  "webhooks": [
+    {
+      "id": "T1",
+      "category": "billing",
+      "human_required": true
+    },
+    {
+      "id": "T2",
+      "category": "manual",
+      "human_required": true
+    },
+    {
+      "id": "T3",
+      "category": "support",
+      "human_required": true
+    }
+  ],
+  "tasks_before_explicit_test_review": 0,
+  "task_review_bypass_blocked": true,
+  "tickets_after_duplicate": 3,
+  "tasks_after_duplicate": 2,
+  "report": "work\\useme-plus28-2026-10-15\\proof-145158\\run-20261015-a\\reports\\tickets.csv",
+  "attempts": {
+    "POST:/contacts:A1": 3,
+    "POST:/contacts:A2": 1,
+    "POST:/contacts:FAIL": 3,
+    "POST:/outbox:Z2": 1,
+    "POST:/outbox:Z1": 2,
+    "POST:/webhooks/tickets:T1": 2,
+    "POST:/webhooks/tickets:T2": 1,
+    "POST:/webhooks/tickets:T3": 1,
+    "POST:/tasks:T2": 1,
+    "POST:/tasks:T1": 2,
+    "POST:/tasks:T3": 1
+  },
+  "outbound_non_fixture_client_blocked": true,
+  "independent_process_SQL_readback": {
+    "contacts": 2,
+    "orders": 2,
+    "outbox": 1,
+    "tickets": 3,
+    "tasks": 2,
+    "dead_letters": 1,
+    "events": 20
+  },
+  "status": "PASS_THREE_EXECUTED_LOCAL_WORKFLOWS"
+}

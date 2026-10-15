@@ -1,0 +1,217 @@
+{
+  "checked_at": "2026-10-15T15:54:03.155510+00:00",
+  "own_fictional_local_demo_only": true,
+  "email_sent": false,
+  "LLM_used": false,
+  "tables": {
+    "contacts": [
+      {
+        "id": "A1",
+        "name": "Ada Demo",
+        "email": "ada@example.invalid"
+      },
+      {
+        "id": "A2",
+        "name": "Jan Demo",
+        "email": "jan@example.invalid"
+      }
+    ],
+    "orders": [
+      {
+        "id": "Z1",
+        "buyer": "Fikcyjna Pracownia",
+        "quantity": 2,
+        "unit_cents": 12345,
+        "review_status": "approved",
+        "reviewer": "DEMO_TEST_EXPLICIT_REVIEW",
+        "document": "work\\useme-plus28-2026-10-15\\proof-145158\\run-20261015-a\\documents\\order-Z1.html"
+      },
+      {
+        "id": "Z2",
+        "buyer": "Demo Studio",
+        "quantity": 1,
+        "unit_cents": 8500,
+        "review_status": "pending",
+        "reviewer": null,
+        "document": null
+      }
+    ],
+    "outbox": [
+      {
+        "id": "Z1",
+        "document_name": "order-Z1.html",
+        "status": "staged_not_sent",
+        "email_sent": 0
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T1",
+        "subject": "Błąd płatności",
+        "body": "Nie działa płatność za zamówienie — fikcyjne dane",
+        "category": "billing",
+        "review_status": "approved",
+        "reviewer": "DEMO_TEST_EXPLICIT_REVIEW"
+      },
+      {
+        "id": "T2",
+        "subject": "=1+1",
+        "body": "Nieznany temat do ręcznej decyzji",
+        "category": "manual",
+        "review_status": "rejected",
+        "reviewer": "DEMO_TEST_EXPLICIT_REVIEW"
+      },
+      {
+        "id": "T3",
+        "subject": "Błąd strony",
+        "body": "Nie działa podgląd — przykład własny",
+        "category": "support",
+        "review_status": "approved",
+        "reviewer": "DEMO_TEST_EXPLICIT_REVIEW"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "T1",
+        "category": "billing",
+        "status": "ready_after_human_review"
+      },
+      {
+        "id": "T3",
+        "category": "support",
+        "status": "ready_after_human_review"
+      }
+    ],
+    "dead_letters": [
+      {
+        "id": 1,
+        "workflow": "csv_crm",
+        "key": "crm:FAIL",
+        "reason": "Fixture failed after 3 attempt(s), HTTP 503",
+        "at": "2026-10-15T15:54:02.143739+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "at": "2026-10-15T15:54:01.915177+00:00",
+        "kind": "api_retry",
+        "payload": "{\"path\": \"/contacts\", \"status\": 429, \"attempt\": 1, \"backoff_seconds\": 0.02}"
+      },
+      {
+        "id": 2,
+        "at": "2026-10-15T15:54:01.957063+00:00",
+        "kind": "api_retry",
+        "payload": "{\"path\": \"/contacts\", \"status\": 503, \"attempt\": 2, \"backoff_seconds\": 0.04}"
+      },
+      {
+        "id": 3,
+        "at": "2026-10-15T15:54:02.016165+00:00",
+        "kind": "crm_contact_confirmed",
+        "payload": "{\"key\": \"crm:A1\"}"
+      },
+      {
+        "id": 4,
+        "at": "2026-10-15T15:54:02.034257+00:00",
+        "kind": "crm_contact_confirmed",
+        "payload": "{\"key\": \"crm:A2\"}"
+      },
+      {
+        "id": 5,
+        "at": "2026-10-15T15:54:02.040137+00:00",
+        "kind": "csv_rejected",
+        "payload": "{\"line\": 4, \"reason\": \"invalid own-demo identifier/name/email\"}"
+      },
+      {
+        "id": 6,
+        "at": "2026-10-15T15:54:02.046483+00:00",
+        "kind": "api_retry",
+        "payload": "{\"path\": \"/contacts\", \"status\": 503, \"attempt\": 1, \"backoff_seconds\": 0.02}"
+      },
+      {
+        "id": 7,
+        "at": "2026-10-15T15:54:02.096926+00:00",
+        "kind": "api_retry",
+        "payload": "{\"path\": \"/contacts\", \"status\": 503, \"attempt\": 2, \"backoff_seconds\": 0.04}"
+      },
+      {
+        "id": 8,
+        "at": "2026-10-15T15:54:02.149653+00:00",
+        "kind": "dead_letter",
+        "payload": "{\"workflow\": \"csv_crm\", \"key\": \"crm:FAIL\"}"
+      },
+      {
+        "id": 9,
+        "at": "2026-10-15T15:54:02.178495+00:00",
+        "kind": "order_rejected",
+        "payload": "{\"id\": \"Z3\", \"reason\": \"invalid quantity/amount/fields\"}"
+      },
+      {
+        "id": 10,
+        "at": "2026-10-15T15:54:02.225458+00:00",
+        "kind": "order_human_approved",
+        "payload": "{\"id\": \"Z1\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\", \"email_sent\": false}"
+      },
+      {
+        "id": 11,
+        "at": "2026-10-15T15:54:02.233915+00:00",
+        "kind": "order_human_approved",
+        "payload": "{\"id\": \"Z1\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\", \"email_sent\": false}"
+      },
+      {
+        "id": 12,
+        "at": "2026-10-15T15:54:02.257930+00:00",
+        "kind": "ticket_rule_classified",
+        "payload": "{\"id\": \"T1\", \"category\": \"billing\", \"LLM\": false, \"human_required\": true}"
+      },
+      {
+        "id": 13,
+        "at": "2026-10-15T15:54:02.269981+00:00",
+        "kind": "ticket_rule_classified",
+        "payload": "{\"id\": \"T2\", \"category\": \"manual\", \"LLM\": false, \"human_required\": true}"
+      },
+      {
+        "id": 14,
+        "at": "2026-10-15T15:54:02.468386+00:00",
+        "kind": "ticket_rule_classified",
+        "payload": "{\"id\": \"T3\", \"category\": \"support\", \"LLM\": false, \"human_required\": true}"
+      },
+      {
+        "id": 15,
+        "at": "2026-10-15T15:54:02.475138+00:00",
+        "kind": "ticket_rule_classified",
+        "payload": "{\"id\": \"T1\", \"category\": \"billing\", \"LLM\": false, \"human_required\": true}"
+      },
+      {
+        "id": 16,
+        "at": "2026-10-15T15:54:02.538278+00:00",
+        "kind": "ticket_human_review",
+        "payload": "{\"id\": \"T1\", \"decision\": \"approved\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\"}"
+      },
+      {
+        "id": 17,
+        "at": "2026-10-15T15:54:02.550472+00:00",
+        "kind": "ticket_human_review",
+        "payload": "{\"id\": \"T2\", \"decision\": \"rejected\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\"}"
+      },
+      {
+        "id": 18,
+        "at": "2026-10-15T15:54:02.585211+00:00",
+        "kind": "ticket_human_review",
+        "payload": "{\"id\": \"T3\", \"decision\": \"approved\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\"}"
+      },
+      {
+        "id": 19,
+        "at": "2026-10-15T15:54:02.610980+00:00",
+        "kind": "ticket_human_review",
+        "payload": "{\"id\": \"T1\", \"decision\": \"approved\", \"reviewer\": \"DEMO_TEST_EXPLICIT_REVIEW\"}"
+      },
+      {
+        "id": 20,
+        "at": "2026-10-15T15:54:02.617346+00:00",
+        "kind": "report_created",
+        "payload": "{\"filename\": \"tickets.csv\", \"rows\": 3}"
+      }
+    ]
+  }
+}

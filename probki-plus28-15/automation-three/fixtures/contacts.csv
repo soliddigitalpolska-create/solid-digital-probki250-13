@@ -1,0 +1,5 @@
+external_id,name,email
+A1,Ada Demo,ada@example.invalid
+A2,Jan Demo,jan@example.invalid
+A3,Błędny kontakt,nie-email
+FAIL,Awaria kontrolowana,fail@example.invalid

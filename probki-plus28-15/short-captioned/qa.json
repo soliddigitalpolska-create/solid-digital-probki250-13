@@ -1,0 +1,41 @@
+{
+  "own_demo": true,
+  "source_and_audio_owned_or_system_generated": true,
+  "files": [
+    {
+      "path": "captioned.mp4",
+      "sha256": "cc2f6c9ffe4287d2cf4848ca556be1796ab3640a55696ef0032f865484588b81",
+      "bytes": 1548010
+    },
+    {
+      "path": "captions.ass",
+      "sha256": "32dbd3ad390cabd88ae3f203efe892625a81eea47b13b2c1547d6f77b59da522",
+      "bytes": 1669
+    },
+    {
+      "path": "index.html",
+      "sha256": "7b745e530e3aa3f338bc3919e2a65f31902e6001227053b9a15a719cb6cdb5d4",
+      "bytes": 2287
+    },
+    {
+      "path": "input.mp4",
+      "sha256": "c79b396a08212e96147de7703b495cbf0c34d6d622bb32090875f099d43d28d8",
+      "bytes": 1350520
+    },
+    {
+      "path": "poster.jpg",
+      "sha256": "b51c7aacd2c46b80b1dfdb2efc3c6a2184d9c1b297f18da1355248766e301b23",
+      "bytes": 17809
+    },
+    {
+      "path": "README.txt",
+      "sha256": "75f6b9b1f0417557724ea5f448d1aa433b23be4d975034f65475f98817a0cf45",
+      "bytes": 472
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "6d44a86e68baef83fdd77f9dc5317f0153825e3678a90794bfc68b454b601b3d",
+      "bytes": 2052
+    }
+  ]
+}

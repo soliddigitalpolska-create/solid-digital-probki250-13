@@ -1,0 +1,4 @@
+id,subject,category,review_status,reviewer
+T1,Błąd płatności,billing,approved,DEMO_TEST_EXPLICIT_REVIEW
+T2,'=1+1,manual,rejected,DEMO_TEST_EXPLICIT_REVIEW
+T3,Błąd strony,support,approved,DEMO_TEST_EXPLICIT_REVIEW
