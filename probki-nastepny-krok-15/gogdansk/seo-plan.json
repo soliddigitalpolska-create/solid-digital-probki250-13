@@ -1,0 +1,33 @@
+{
+  "demo_only": true,
+  "actual_owned_before": "before.html",
+  "actual_owned_after": "landing.html",
+  "canonical_after": "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/probki-nastepny-krok-15/gogdansk/landing.html",
+  "robots": "noindex,follow — celowo dla publicznej demonstracji",
+  "monthly_pages": [
+    {
+      "page": "Oferta spaceru nad Motławą",
+      "intent": "wybór konkretnej wycieczki",
+      "changes": "unikalny title, opis, H1, program, FAQ i canonical"
+    },
+    {
+      "page": "Oferta spaceru po Starym Mieście",
+      "intent": "porównanie programu i czasu",
+      "changes": "unikalny title, opis, nagłówki, spójne linkowanie"
+    },
+    {
+      "page": "Lista wycieczek po Gdańsku",
+      "intent": "porównanie dostępnych tras",
+      "changes": "hierarchia nagłówków, opisy kategorii, linki do ofert"
+    },
+    {
+      "page": "Informacje organizacyjne / FAQ",
+      "intent": "usunięcie pytań przed zapytaniem",
+      "changes": "zbiórka, dostępność, zasady potwierdzenia, linki kontekstowe"
+    }
+  ],
+  "scope_note": "Cztery pozycje opisują miesięczny zakres na stronie klienta. W demonstracji wdrożono jedną własną stronę przed/po i osobny tekst; nie audytowano strony klienta.",
+  "article": "guide.html",
+  "no_ranking_promise": true,
+  "client_cms_not_accessed": true
+}

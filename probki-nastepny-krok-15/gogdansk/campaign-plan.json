@@ -1,0 +1,134 @@
+{
+  "demo_only": true,
+  "brand": "Szlak Motławy — fikcyjna marka własnej demonstracji",
+  "currency": "PLN",
+  "monthly_media_total": "3000.00",
+  "service_fee_net": "1600.00",
+  "period_days": 30,
+  "not_live_platform_export": true,
+  "performance_history": null,
+  "campaigns": [
+    {
+      "id": "google-search-city",
+      "platform": "Google",
+      "type": "Search",
+      "monthly_media_cap": "1000.00",
+      "utm_campaign": "demo_gdansk_city",
+      "objective": "REQUEST_BOOKING",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "keywords": [
+        "\"spacer z przewodnikiem Gdańsk\"",
+        "\"wycieczka Gdańsk stare miasto\""
+      ],
+      "negative_keywords": [
+        "praca",
+        "staż",
+        "za darmo",
+        "mapa pdf"
+      ],
+      "headlines": [
+        "Gdańsk pieszo z przewodnikiem",
+        "Zaplanuj spacer nad Motławą",
+        "Poznaj trasę przed wyjściem",
+        "Mała grupa. Czytelny program."
+      ],
+      "descriptions": [
+        "Sprawdź przykładową trasę, czas spaceru i miejsce zbiórki. Zapytaj o termin.",
+        "Dwa pomysły na zwiedzanie Gdańska. Wybierz tempo i zobacz, co obejmuje program."
+      ]
+    },
+    {
+      "id": "google-search-motlawa",
+      "platform": "Google",
+      "type": "Search",
+      "monthly_media_cap": "800.00",
+      "utm_campaign": "demo_gdansk_motlawa",
+      "objective": "REQUEST_BOOKING",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "keywords": [
+        "\"spacer nad Motławą\"",
+        "\"zwiedzanie Gdańska mała grupa\""
+      ],
+      "negative_keywords": [
+        "wynajem mieszkania",
+        "praca",
+        "bezpłatny"
+      ],
+      "headlines": [
+        "Spacer nad Motławą",
+        "Gdańsk w spokojnym tempie",
+        "Zobacz program wycieczki"
+      ],
+      "descriptions": [
+        "Najpierw program i cena, potem decyzja. Zobacz własną demonstrację strony wycieczki.",
+        "Przykładowy spacer w małej grupie. Sprawdź informacje organizacyjne i zapytaj o termin."
+      ]
+    },
+    {
+      "id": "meta-city",
+      "platform": "Meta",
+      "type": "Static",
+      "monthly_media_cap": "700.00",
+      "utm_campaign": "demo_meta_city",
+      "objective": "REQUEST_BOOKING",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative": "assets/meta-city.svg",
+      "primary_text": "Masz popołudnie w Gdańsku? Zacznij od trasy, którą łatwo zaplanować: miejsce zbiórki, czas spaceru i najważniejsze informacje w jednym miejscu. Zobacz przykładowy program.",
+      "headline": "Miasto poznaje się krok po kroku",
+      "cta": "Zobacz program",
+      "audience": "Propozycja: dorośli planujący wizytę w Gdańsku; zakres geograficzny i język do uzgodnienia."
+    },
+    {
+      "id": "meta-motlawa",
+      "platform": "Meta",
+      "type": "Static",
+      "monthly_media_cap": "500.00",
+      "utm_campaign": "demo_meta_motlawa",
+      "objective": "REQUEST_BOOKING",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative": "assets/meta-motlawa.svg",
+      "primary_text": "Nad Motławą warto zwolnić. Wybierz przykładowy spacer, porównaj program i sprawdź, czy jego tempo pasuje do Twojego dnia. Termin potwierdza organizator.",
+      "headline": "Znajdź swoje tempo nad Motławą",
+      "cta": "Sprawdź trasę",
+      "audience": "Oddzielny test komunikatu; bez list klientów i bez uruchomionego remarketingu."
+    }
+  ],
+  "monthly_scope": {
+    "google_campaign_limit": 3,
+    "google_types": [
+      "Search",
+      "PMax"
+    ],
+    "meta_campaign_limit": 3,
+    "creative_limit": 4,
+    "seo_pages": 4,
+    "seo_article_words": 600,
+    "human_hours": 22,
+    "markets": 1,
+    "languages": 1
+  },
+  "media_note": "3000 PLN to wyłącznie fikcyjny przykład podziału. Rzeczywisty budżet ustala i opłaca klient osobno. Nie wchodzi w 1600 PLN netto.",
+  "pmax_note": "PMax może zastąpić jedną z maksymalnie 3 kampanii Google po weryfikacji pomiaru, materiałów i zasad konta. W tej próbce brak konfiguracji API i emisji.",
+  "review": [
+    "wydatek względem uzgodnionego budżetu",
+    "poprawne request_booking i ich jakość",
+    "koszt poprawnego zapytania, gdy dostępny",
+    "wyszukiwane hasła i wykluczenia",
+    "test komunikatu i kreacji",
+    "rejestr zmian"
+  ],
+  "launch_gates": [
+    "umowa i finansowanie Useme",
+    "dostępy do kont i CMS",
+    "zatwierdzony budżet i materiały",
+    "sprawdzenie pomiaru na właściwej stronie",
+    "akceptacja uruchomienia"
+  ],
+  "human_hours_allocation": {
+    "start_i_pomiar": 4,
+    "Google_i_Meta": 7,
+    "kreacje": 3,
+    "SEO": 6,
+    "raport_i_kontakt": 2
+  }
+}
