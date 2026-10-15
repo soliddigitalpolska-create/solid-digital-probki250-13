@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "video": "wood01-instrukcja-montazu.mp4",
+  "duration_seconds": 38,
+  "frames": 912,
+  "fps": 24,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "bytes": 1227793,
+  "source_frames_actual_Blender": 912,
+  "overlay_seconds": 20.84,
+  "external_music_or_TTS": false
+}
