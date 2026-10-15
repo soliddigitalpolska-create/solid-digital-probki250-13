@@ -1,0 +1,61 @@
+{
+  "local_only": true,
+  "root_publishes": true,
+  "files": [
+    {
+      "file": "app.mjs",
+      "bytes": 2431,
+      "sha256": "b8e40c56e00dd0f55154f72b62fe8741d047aab2d91126427c231f12d52dcbe5"
+    },
+    {
+      "file": "calculator-source.zip",
+      "bytes": 9956,
+      "sha256": "f04b1f3ff72f8eaa85aeb83e3699f7d77245c70f4f4fa52b334c6f80fb578057"
+    },
+    {
+      "file": "calculator.mjs",
+      "bytes": 2132,
+      "sha256": "23fbc728553957486c2c3f92251d45a9bdd2e3c95532b239df3e9bcd653a3977"
+    },
+    {
+      "file": "catalog.mjs",
+      "bytes": 650,
+      "sha256": "7bd6363d7acffdc53f8b22fee200dcf7c8bf115fc38ce53cb831163cf05cd784"
+    },
+    {
+      "file": "index.html",
+      "bytes": 4029,
+      "sha256": "d82de295790cf6bd02a90c71341a32cef658ff6187010b197c78d732b7fef57d"
+    },
+    {
+      "file": "mvp-scope.txt",
+      "bytes": 1620,
+      "sha256": "20d2b4db336e2293d46e1d50b3828c66bc1e7db1d6d963f0e3606fecd23882ab"
+    },
+    {
+      "file": "qa.json",
+      "bytes": 2890,
+      "sha256": "f0f34f51aaa352f8ce4fe013b0234bb7115b77a421fabb4d76ec43038d705f04"
+    },
+    {
+      "file": "style.css",
+      "bytes": 2514,
+      "sha256": "3dd14df0a1a9341f6f5e9afd913ef144ff4936fd7f0a119a421e8b228b5fda2e"
+    },
+    {
+      "file": "test-calculator.mjs",
+      "bytes": 3007,
+      "sha256": "a16a3144b10714fd859ad7de716517dfbda5da684008686605bbecdb710610e7"
+    },
+    {
+      "file": "tests.log",
+      "bytes": 2639,
+      "sha256": "0e2a75d68d13906a38cb3396660c3cc5f4c10ac9d20de97c5ea65993b9e4d1db"
+    },
+    {
+      "file": "verify.mjs",
+      "bytes": 1319,
+      "sha256": "eabcd4045b44799f7a60f088b6b92108a87427f5225bf55c82c35a051e1fb945"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+WŁASNA PRÓBKA / ETAP SPECYFIKACJA + KALKULATOR
+900 PLN NETTO / 14 dni od potwierdzenia wpłaty Useme
+
+Powiązanie z briefem: dedykowany serwis usług elo boosting, niestandardowy kalkulator i panele użytkowników. Publiczny opis nie podaje reguł cen ani procesów kont.
+
+Rezultat proponowanego płatnego etapu:
+1. Dokument zaakceptowanego zakresu MVP i granic odpowiedzialności.
+2. Macierz ról: klient, wykonawca zlecenia, administrator.
+3. Ścieżka: wybór usługi -> kalkulacja -> zlecenie -> płatność -> przydział -> aktualizacja statusu -> odbiór/reklamacja.
+4. Macierz rzeczywistych cen wejściowych klienta i działający kalkulator z testami granic kwot.
+5. Lista widoków i danych paneli oraz kryteria odbioru.
+6. Podział dalszej budowy na wycenione moduły.
+
+Do ustalenia PRZED FINANSOWANIEM ETAPU:
+- lista usług/gier i rzeczywiste reguły cen;
+- poziomy, warianty, regiony, dodatki, rabaty i zasady zaokrąglania;
+- role/odpowiedzialność, akceptowane zasady usług i danych;
+- waluta, zakres płatności, fakturowanie, zwroty i statusy;
+- reguły przydziału oraz terminy; tryb odbioru, reklamacje;
+- docelowy hosting, sposób przekazania kodu i termin startu w kolejce.
+
+Poza ceną 900 NET etapu:
+Gotowa pełna platforma produkcyjna, uwierzytelnianie użytkowników, integracja płatności, panele, moderacja, utrzymanie oraz integracje z zewnętrznymi kontami/API. Nie ma tych funkcji w tym kalkulatorze i nie twierdzimy, że je ma.
+
+Demonstracja korzysta z FIKCYJNYCH poziomów i stawek, nie cennika klienta. Nie pobiera haseł, nie łączy się z grami i nie wykonuje zakupów/płatności.

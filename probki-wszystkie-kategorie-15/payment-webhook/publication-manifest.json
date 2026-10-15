@@ -1,0 +1,56 @@
+{
+  "local_only": true,
+  "root_publishes": true,
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 5169,
+      "sha256": "5b88bacbcb158de80894c03ee9ac81d969539265c62356b57b61dbb4bceefa8b"
+    },
+    {
+      "file": "payment-proof-source.zip",
+      "bytes": 14477,
+      "sha256": "3cd2fdaf9be7032d57daed0bd8a098b1f996dbb5075b9caace81ddf635796d82"
+    },
+    {
+      "file": "payment_demo.py",
+      "bytes": 9888,
+      "sha256": "5efd76e1d054620d423ee3a502607ed117d7a78a4e7b20ad0181b13e89aa40e3"
+    },
+    {
+      "file": "qa.json",
+      "bytes": 2302,
+      "sha256": "7ae4145e307a38c94e13d5718b1422e2f40548b7fa93f77b732748078a3d3011"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 751,
+      "sha256": "ee1869ed448da42d73daaa3188fadfec4d9d39c461d39c9aa5bb569295687e00"
+    },
+    {
+      "file": "run_demo.py",
+      "bytes": 11420,
+      "sha256": "48d925d812e1bb1b1860fedbdef5e7aa8040ac18454bedf50b8c0b6939c6d1b2"
+    },
+    {
+      "file": "tests.log",
+      "bytes": 2272,
+      "sha256": "1f5d46d7d57c953035c149471f5d767ef94c607efdd8ae40264e05f8c9cbb435"
+    },
+    {
+      "file": "test_payment.py",
+      "bytes": 7281,
+      "sha256": "3e004ff7f18e471561f7d9dc257d3bb50796cb0f4a858e74a0fbf6ac0d5fa2dc"
+    },
+    {
+      "file": "results/http-trace.json",
+      "bytes": 16260,
+      "sha256": "a4b406b3410a1cb6cdbf4be53efbc510611c6295cfb7a34ca129d0596deb9c42"
+    },
+    {
+      "file": "results/independent-readback.json",
+      "bytes": 2878,
+      "sha256": "e30de56292b41d43120e588a690074e0c79f94cfd5bd9009885ec07bae59f314"
+    }
+  ]
+}

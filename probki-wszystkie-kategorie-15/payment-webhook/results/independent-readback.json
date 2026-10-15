@@ -1,0 +1,94 @@
+{
+  "orders": [
+    {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"PAID / OWN DEMO\"}",
+      "payment_status": "refunded"
+    },
+    {
+      "order_id": "ord_demo_9bccf44c7565",
+      "session_id": "session_demo_bae6ad1f954a",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"CANCELED / OWN DEMO\"}",
+      "payment_status": "canceled"
+    },
+    {
+      "order_id": "ord_demo_6347d54281d9",
+      "session_id": "session_demo_aa4c47804c31",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"FAILED / OWN DEMO\"}",
+      "payment_status": "failed"
+    },
+    {
+      "order_id": "ord_demo_478e5f21b763",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"EARLY REFUND / OWN DEMO\"}",
+      "payment_status": "refunded"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_paid",
+      "body_sha256": "9136847e449e79b679e4d83914bdedd1c370063a9481aa0577471ddad84f6f84",
+      "event_type": "payment.paid",
+      "order_id": "ord_demo_9d4b5accd81c"
+    },
+    {
+      "event_id": "evt_late_refund",
+      "body_sha256": "8924edd9a5342bf2111589c4b6e34876f3060dc85ee2ac418d3ec1bb8f936ad2",
+      "event_type": "payment.refunded",
+      "order_id": "ord_demo_9d4b5accd81c"
+    },
+    {
+      "event_id": "evt_cancel",
+      "body_sha256": "850119d94eb9f3a7a2629b4b3c38623d79eb5f503930c7017cf5d375afbeb343",
+      "event_type": "payment.canceled",
+      "order_id": "ord_demo_9bccf44c7565"
+    },
+    {
+      "event_id": "evt_failed",
+      "body_sha256": "0eb89e9c658dee95936c6d3df8cdecb8469b9ebcb9412442921ca872a3e81938",
+      "event_type": "payment.failed",
+      "order_id": "ord_demo_6347d54281d9"
+    },
+    {
+      "event_id": "evt_early_paid",
+      "body_sha256": "59313ed2e49e44c55846bc046ef66f2f1adb4a1036b1f0c5e6eecc685da68ea1",
+      "event_type": "payment.paid",
+      "order_id": "ord_demo_478e5f21b763"
+    },
+    {
+      "event_id": "evt_early_refund",
+      "body_sha256": "6d8153f97abc7d61b6beb608e16275580c452aef95895638d2fcd533c321f3d8",
+      "event_type": "payment.refunded",
+      "order_id": "ord_demo_478e5f21b763"
+    }
+  ],
+  "fulfillment": [
+    {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "status": "recall_required"
+    },
+    {
+      "order_id": "ord_demo_478e5f21b763",
+      "status": "canceled"
+    }
+  ],
+  "refunds": [
+    {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "event_id": "evt_late_refund"
+    },
+    {
+      "order_id": "ord_demo_478e5f21b763",
+      "event_id": "evt_early_refund"
+    }
+  ]
+}

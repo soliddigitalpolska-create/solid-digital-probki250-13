@@ -1,0 +1,21 @@
+
+test_cancelled_payment_never_reaches_realization (test_payment.PaymentIntegration.test_cancelled_payment_never_reaches_realization) ... ok
+test_event_id_collision_with_changed_payload_is_rejected (test_payment.PaymentIntegration.test_event_id_collision_with_changed_payload_is_rejected) ... ok
+test_failed_payment_never_reaches_realization (test_payment.PaymentIntegration.test_failed_payment_never_reaches_realization) ... ok
+test_full_flow_paid_dispatches_once_and_callback_repeat_is_idempotent (test_payment.PaymentIntegration.test_full_flow_paid_dispatches_once_and_callback_repeat_is_idempotent) ... ok
+test_invalid_order_amounts_are_rejected (test_payment.PaymentIntegration.test_invalid_order_amounts_are_rejected) ... ok
+test_invalid_signature_cannot_mark_order_paid (test_payment.PaymentIntegration.test_invalid_signature_cannot_mark_order_paid) ... ok
+test_refund_after_dispatch_records_recall_required_instead_of_fake_undo (test_payment.PaymentIntegration.test_refund_after_dispatch_records_recall_required_instead_of_fake_undo) ... ok
+test_refund_before_dispatch_stops_queued_realization (test_payment.PaymentIntegration.test_refund_before_dispatch_stops_queued_realization) ... ok
+test_refund_without_prior_payment_is_rejected (test_payment.PaymentIntegration.test_refund_without_prior_payment_is_rejected) ... ok
+test_stale_signed_event_is_rejected (test_payment.PaymentIntegration.test_stale_signed_event_is_rejected) ... ok
+test_twenty_concurrent_retries_create_single_fulfillment_row (test_payment.PaymentIntegration.test_twenty_concurrent_retries_create_single_fulfillment_row) ... ok
+test_unknown_session_is_rejected (test_payment.PaymentIntegration.test_unknown_session_is_rejected) ... ok
+test_unsigned_browser_return_cannot_mark_order_paid (test_payment.PaymentIntegration.test_unsigned_browser_return_cannot_mark_order_paid) ... ok
+test_wrong_amount_is_rejected_without_fulfillment (test_payment.PaymentIntegration.test_wrong_amount_is_rejected_without_fulfillment) ... ok
+test_wrong_currency_is_rejected_without_payment_mutation (test_payment.PaymentIntegration.test_wrong_currency_is_rejected_without_payment_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 8.531s
+
+OK

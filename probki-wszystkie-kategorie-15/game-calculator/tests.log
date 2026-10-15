@@ -1,0 +1,119 @@
+TAP version 13
+# Subtest: sums the crossed segments, not a flat rank count
+ok 1 - sums the crossed segments, not a flat rank count
+  ---
+  duration_ms: 0.6644
+  type: 'test'
+  ...
+# Subtest: a single step is exactly 2500 minor units
+ok 2 - a single step is exactly 2500 minor units
+  ---
+  duration_ms: 0.4227
+  type: 'test'
+  ...
+# Subtest: higher starting rank omits earlier segments
+ok 3 - higher starting rank omits earlier segments
+  ---
+  duration_ms: 0.0955
+  type: 'test'
+  ...
+# Subtest: FPS uses its own price path
+ok 4 - FPS uses its own price path
+  ---
+  duration_ms: 0.0745
+  type: 'test'
+  ...
+# Subtest: priority adds 15 percent once
+ok 5 - priority adds 15 percent once
+  ---
+  duration_ms: 0.0675
+  type: 'test'
+  ...
+# Subtest: two options add 25 percent, not compounded 26.5 percent
+ok 6 - two options add 25 percent, not compounded 26.5 percent
+  ---
+  duration_ms: 0.0559
+  type: 'test'
+  ...
+# Subtest: rounds currency in minor units once, half-up
+ok 7 - rounds currency in minor units once, half-up
+  ---
+  duration_ms: 0.0799
+  type: 'test'
+  ...
+# Subtest: rejects same target
+ok 8 - rejects same target
+  ---
+  duration_ms: 0.1525
+  type: 'test'
+  ...
+# Subtest: rejects lower target
+ok 9 - rejects lower target
+  ---
+  duration_ms: 0.0691
+  type: 'test'
+  ...
+# Subtest: rejects unknown game
+ok 10 - rejects unknown game
+  ---
+  duration_ms: 0.0914
+  type: 'test'
+  ...
+# Subtest: rejects unknown start
+ok 11 - rejects unknown start
+  ---
+  duration_ms: 0.0525
+  type: 'test'
+  ...
+# Subtest: rejects unknown target
+ok 12 - rejects unknown target
+  ---
+  duration_ms: 0.0629
+  type: 'test'
+  ...
+# Subtest: rejects prototype game
+ok 13 - rejects prototype game
+  ---
+  duration_ms: 0.0384
+  type: 'test'
+  ...
+# Subtest: rejects nonboolean option
+ok 14 - rejects nonboolean option
+  ---
+  duration_ms: 0.0277
+  type: 'test'
+  ...
+# Subtest: rejects a malformed price table instead of returning a wrong amount
+ok 15 - rejects a malformed price table instead of returning a wrong amount
+  ---
+  duration_ms: 0.0844
+  type: 'test'
+  ...
+# Subtest: does not mutate catalogue or request
+ok 16 - does not mutate catalogue or request
+  ---
+  duration_ms: 0.0812
+  type: 'test'
+  ...
+# Subtest: adds the selected server price once
+ok 17 - adds the selected server price once
+  ---
+  duration_ms: 0.1367
+  type: 'test'
+  ...
+# Subtest: rejects unknown server instead of silently using the default
+ok 18 - rejects unknown server instead of silently using the default
+  ---
+  duration_ms: 0.1171
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 52.0846
+

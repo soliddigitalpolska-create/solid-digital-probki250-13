@@ -1,0 +1,73 @@
+{
+  "own_fictional_demo": true,
+  "real_operator_adapter": false,
+  "real_money_processed": 0,
+  "external_payment_calls": 0,
+  "external_fulfillment_calls": 0,
+  "customer_data_used": false,
+  "public_key_is_dummy_not_a_credential": true,
+  "bound_to_loopback_only": true,
+  "test_count": 15,
+  "tests_passed": 15,
+  "tests_exit_code": 0,
+  "concurrent_signed_retries": 20,
+  "concurrent_fulfillment_rows_created": 1,
+  "persisted_order_count": 4,
+  "persisted_event_count": 6,
+  "persisted_fulfillment_count": 2,
+  "persisted_refund_count": 2,
+  "independent_sqlite_readback_process": true,
+  "invalid_signature_http": 401,
+  "wrong_amount_http": 409,
+  "browser_return_is_not_payment_authority": true,
+  "states": [
+    {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"PAID / OWN DEMO\"}",
+      "payment_status": "refunded",
+      "fulfillment_status": "recall_required",
+      "fulfillment_rows": 1,
+      "refund_rows": 1,
+      "event_rows": 2
+    },
+    {
+      "order_id": "ord_demo_9bccf44c7565",
+      "session_id": "session_demo_bae6ad1f954a",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"CANCELED / OWN DEMO\"}",
+      "payment_status": "canceled",
+      "fulfillment_status": null,
+      "fulfillment_rows": 0,
+      "refund_rows": 0,
+      "event_rows": 1
+    },
+    {
+      "order_id": "ord_demo_6347d54281d9",
+      "session_id": "session_demo_aa4c47804c31",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"FAILED / OWN DEMO\"}",
+      "payment_status": "failed",
+      "fulfillment_status": null,
+      "fulfillment_rows": 0,
+      "refund_rows": 0,
+      "event_rows": 1
+    },
+    {
+      "order_id": "ord_demo_478e5f21b763",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"EARLY REFUND / OWN DEMO\"}",
+      "payment_status": "refunded",
+      "fulfillment_status": "canceled",
+      "fulfillment_rows": 1,
+      "refund_rows": 1,
+      "event_rows": 2
+    }
+  ]
+}

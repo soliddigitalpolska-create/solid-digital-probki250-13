@@ -1,0 +1,129 @@
+{
+  "own_demo": true,
+  "production_platform": false,
+  "fictional_prices": true,
+  "game_api_calls": 0,
+  "orders_created": 0,
+  "payments_created": 0,
+  "browser_ui_checked_by_agent": false,
+  "browser_ui_check_owner": "ROOT",
+  "tests": 18,
+  "passed": 18,
+  "failed": 0,
+  "test_exit_code": 0,
+  "same_module_used_in_browser_and_tests": true,
+  "currency_minor_units": true,
+  "examples": [
+    {
+      "input": {
+        "game": "moba",
+        "server": "eu",
+        "from": "bronze",
+        "to": "platinum",
+        "priority": false,
+        "streaming": false
+      },
+      "result": {
+        "currency": "PLN",
+        "base_minor": 10000,
+        "server": "eu",
+        "server_extra_minor": 0,
+        "surcharge_percent": 0,
+        "surcharge_minor": 0,
+        "total_minor": 10000,
+        "breakdown": [
+          {
+            "from": "bronze",
+            "to": "silver",
+            "price_minor": 2500
+          },
+          {
+            "from": "silver",
+            "to": "gold",
+            "price_minor": 3000
+          },
+          {
+            "from": "gold",
+            "to": "platinum",
+            "price_minor": 4500
+          }
+        ],
+        "fixture_only": true
+      }
+    },
+    {
+      "input": {
+        "game": "moba",
+        "server": "eu",
+        "from": "bronze",
+        "to": "platinum",
+        "priority": true,
+        "streaming": true
+      },
+      "result": {
+        "currency": "PLN",
+        "base_minor": 10000,
+        "server": "eu",
+        "server_extra_minor": 0,
+        "surcharge_percent": 25,
+        "surcharge_minor": 2500,
+        "total_minor": 12500,
+        "breakdown": [
+          {
+            "from": "bronze",
+            "to": "silver",
+            "price_minor": 2500
+          },
+          {
+            "from": "silver",
+            "to": "gold",
+            "price_minor": 3000
+          },
+          {
+            "from": "gold",
+            "to": "platinum",
+            "price_minor": 4500
+          }
+        ],
+        "fixture_only": true
+      }
+    },
+    {
+      "input": {
+        "game": "fps",
+        "server": "na",
+        "from": "bronze",
+        "to": "platinum",
+        "priority": false,
+        "streaming": false
+      },
+      "result": {
+        "currency": "PLN",
+        "base_minor": 18000,
+        "server": "na",
+        "server_extra_minor": 1500,
+        "surcharge_percent": 0,
+        "surcharge_minor": 0,
+        "total_minor": 18000,
+        "breakdown": [
+          {
+            "from": "bronze",
+            "to": "silver",
+            "price_minor": 4000
+          },
+          {
+            "from": "silver",
+            "to": "gold",
+            "price_minor": 5500
+          },
+          {
+            "from": "gold",
+            "to": "platinum",
+            "price_minor": 7000
+          }
+        ],
+        "fixture_only": true
+      }
+    }
+  ]
+}

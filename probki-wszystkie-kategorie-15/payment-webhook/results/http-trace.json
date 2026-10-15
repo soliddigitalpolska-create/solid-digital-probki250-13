@@ -1,0 +1,684 @@
+[
+  {
+    "method": "POST",
+    "path": "/orders",
+    "http_status": 201,
+    "request": {
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": {
+        "engraving": "PAID / OWN DEMO"
+      }
+    },
+    "response": {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "payment_status": "awaiting_payment",
+      "demo_checkout": "/demo-checkout/session_demo_8f33723a582c"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/return?session_id=session_demo_8f33723a582c&paid=true",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "payment_authority": false,
+      "message": "Browser return is informational. Signed webhook is authoritative."
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_9d4b5accd81c",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"PAID / OWN DEMO\"}",
+      "payment_status": "awaiting_payment",
+      "fulfillment_status": null,
+      "fulfillment_rows": 0,
+      "refund_rows": 0,
+      "event_rows": 0
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 401,
+    "request": {
+      "id": "evt_bad_signature",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "error": "invalid signature"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 409,
+    "request": {
+      "id": "evt_bad_amount",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 1,
+      "currency": "PLN"
+    },
+    "response": {
+      "error": "amount or currency mismatch"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_9d4b5accd81c"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/dispatch",
+    "http_status": 200,
+    "request": {},
+    "response": {
+      "dispatched": [
+        "ord_demo_9d4b5accd81c"
+      ],
+      "external_transport_called": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/dispatch",
+    "http_status": 200,
+    "request": {},
+    "response": {
+      "dispatched": [],
+      "external_transport_called": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_late_refund",
+      "type": "payment.refunded",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_9d4b5accd81c"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_9d4b5accd81c",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"PAID / OWN DEMO\"}",
+      "payment_status": "refunded",
+      "fulfillment_status": "recall_required",
+      "fulfillment_rows": 1,
+      "refund_rows": 1,
+      "event_rows": 2
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "http_status": 201,
+    "request": {
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": {
+        "engraving": "CANCELED / OWN DEMO"
+      }
+    },
+    "response": {
+      "order_id": "ord_demo_9bccf44c7565",
+      "session_id": "session_demo_bae6ad1f954a",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "payment_status": "awaiting_payment",
+      "demo_checkout": "/demo-checkout/session_demo_bae6ad1f954a"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_cancel",
+      "type": "payment.canceled",
+      "session_id": "session_demo_bae6ad1f954a",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_9bccf44c7565"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "http_status": 201,
+    "request": {
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": {
+        "engraving": "FAILED / OWN DEMO"
+      }
+    },
+    "response": {
+      "order_id": "ord_demo_6347d54281d9",
+      "session_id": "session_demo_aa4c47804c31",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "payment_status": "awaiting_payment",
+      "demo_checkout": "/demo-checkout/session_demo_aa4c47804c31"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_failed",
+      "type": "payment.failed",
+      "session_id": "session_demo_aa4c47804c31",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_6347d54281d9"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "http_status": 201,
+    "request": {
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": {
+        "engraving": "EARLY REFUND / OWN DEMO"
+      }
+    },
+    "response": {
+      "order_id": "ord_demo_478e5f21b763",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "payment_status": "awaiting_payment",
+      "demo_checkout": "/demo-checkout/session_demo_eaebf326ab2e"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_early_paid",
+      "type": "payment.paid",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_478e5f21b763"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_early_refund",
+      "type": "payment.refunded",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": false,
+      "order_id": "ord_demo_478e5f21b763"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/webhook",
+    "http_status": 200,
+    "request": {
+      "id": "evt_early_refund",
+      "type": "payment.refunded",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN"
+    },
+    "response": {
+      "accepted": true,
+      "duplicate": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/dispatch",
+    "http_status": 200,
+    "request": {},
+    "response": {
+      "dispatched": [],
+      "external_transport_called": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_9d4b5accd81c",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_9d4b5accd81c",
+      "session_id": "session_demo_8f33723a582c",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"PAID / OWN DEMO\"}",
+      "payment_status": "refunded",
+      "fulfillment_status": "recall_required",
+      "fulfillment_rows": 1,
+      "refund_rows": 1,
+      "event_rows": 2
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_9bccf44c7565",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_9bccf44c7565",
+      "session_id": "session_demo_bae6ad1f954a",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"CANCELED / OWN DEMO\"}",
+      "payment_status": "canceled",
+      "fulfillment_status": null,
+      "fulfillment_rows": 0,
+      "refund_rows": 0,
+      "event_rows": 1
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_6347d54281d9",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_6347d54281d9",
+      "session_id": "session_demo_aa4c47804c31",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"FAILED / OWN DEMO\"}",
+      "payment_status": "failed",
+      "fulfillment_status": null,
+      "fulfillment_rows": 0,
+      "refund_rows": 0,
+      "event_rows": 1
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/ord_demo_478e5f21b763",
+    "http_status": 200,
+    "request": null,
+    "response": {
+      "order_id": "ord_demo_478e5f21b763",
+      "session_id": "session_demo_eaebf326ab2e",
+      "amount_minor": 34900,
+      "currency": "PLN",
+      "personalization": "{\"engraving\": \"EARLY REFUND / OWN DEMO\"}",
+      "payment_status": "refunded",
+      "fulfillment_status": "canceled",
+      "fulfillment_rows": 1,
+      "refund_rows": 1,
+      "event_rows": 2
+    }
+  }
+]

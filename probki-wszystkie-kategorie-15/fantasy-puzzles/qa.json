@@ -1,0 +1,34 @@
+{
+  "created": "2026-10-15",
+  "mode": "built-in image_gen; one call per image; no private input images",
+  "images": [
+    {
+      "file": "01-miasto-drzewo.png",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "bytes": 3988314,
+      "sha256": "ea31c59112b63f7ef0ba7883b2c8944b88a50fd78e4b37e6ca827c34945d1b36",
+      "native_unmodified_tool_output": true
+    },
+    {
+      "file": "02-port-powietrzny.png",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "bytes": 3855044,
+      "sha256": "6110ab510045660573edd3578814b69a3a2b3af459e8a23cfdf1752af3c2bc1b",
+      "native_unmodified_tool_output": true
+    }
+  ],
+  "visual_review": {
+    "performed": true,
+    "tree_city": "Dense coherent tree-city, differentiated foreground/bridges/greenhouses/market, no large blank sky; small distant humans are illustrative detail rather than identity-accurate portraits.",
+    "aerial_port": "Distinct cool-toned skyport with large blue vessel, white stone terraces and red awnings; water/sky broken by vessels and architecture.",
+    "passed_concept_composition": true
+  },
+  "print_status": "Portfolio concept only. Native1536x1024; not4K, not proofed CMYK and not approved for production printing. Exact final output must be agreed before funding.",
+  "external_writes_or_publication": false
+}
