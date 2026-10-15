@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-10-15T15:24:41+00:00",
+  "home": "http://127.0.0.1:8799/",
+  "theme": "own-native-workshop",
+  "wordpress": "7.1.3",
+  "woocommerce": "11.2.1",
+  "products": [
+    {
+      "id": 15,
+      "name": "Notes pracowni — produkt testowy",
+      "type": "simple",
+      "virtual": false,
+      "price": "49.00",
+      "stock_management": false,
+      "url": "http://127.0.0.1:8799/product/notes-pracowni/"
+    },
+    {
+      "id": 18,
+      "name": "Konsultacja projektu — usługa testowa",
+      "type": "simple",
+      "virtual": true,
+      "price": "120",
+      "stock_management": false,
+      "url": "http://127.0.0.1:8799/product/konsultacja-projektu/"
+    }
+  ],
+  "native_CMS_backend": true,
+  "fictional_own_shop": true,
+  "real_payment_provider": false,
+  "email_disabled": true,
+  "front_page": {
+    "id": 10,
+    "title": "Pracownia — własny projekt WordPress",
+    "sha256": "ca161d48da974350f8ef991a03dfb0fdcba90a06017c8c136a1f6fac6388e40c"
+  }
+}

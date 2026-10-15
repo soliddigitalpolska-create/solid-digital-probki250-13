@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": { "contentSize": "1160px", "wideSize": "1280px" },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        { "slug": "workshop-paper", "name": "Papier", "color": "#faf7ef" },
+        { "slug": "workshop-ink", "name": "Atrament", "color": "#182c35" },
+        { "slug": "workshop-rust", "name": "Terakota", "color": "#bd613e" },
+        { "slug": "workshop-mint", "name": "Mięta", "color": "#77d9b4" },
+        { "slug": "workshop-yellow", "name": "Miód", "color": "#f3b83c" },
+        { "slug": "workshop-white", "name": "Biel", "color": "#ffffff" }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "rem", "%", "vw"],
+      "spacingSizes": [
+        { "slug": "20", "name": "XS", "size": "0.5rem" },
+        { "slug": "30", "name": "S", "size": "1rem" },
+        { "slug": "40", "name": "M", "size": "1.5rem" },
+        { "slug": "50", "name": "L", "size": "2.5rem" },
+        { "slug": "60", "name": "XL", "size": "4rem" }
+      ]
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        { "slug": "workshop-sans", "name": "Systemowa bezszeryfowa", "fontFamily": "Arial, Helvetica, sans-serif" },
+        { "slug": "workshop-serif", "name": "Systemowa szeryfowa", "fontFamily": "Georgia, 'Times New Roman', serif" },
+        { "slug": "workshop-mono", "name": "Systemowa monospace", "fontFamily": "'Courier New', monospace" }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "Mały", "size": "0.85rem" },
+        { "slug": "medium", "name": "Tekst", "size": "1.05rem" },
+        { "slug": "large", "name": "Duży", "size": "1.4rem" },
+        { "slug": "x-large", "name": "Nagłówek", "size": "2.4rem" }
+      ]
+    }
+  },
+  "styles": {
+    "color": { "background": "var:preset|color|workshop-paper", "text": "var:preset|color|workshop-ink" },
+    "typography": { "fontFamily": "var:preset|font-family|workshop-sans", "fontSize": "var:preset|font-size|medium", "lineHeight": "1.65" },
+    "spacing": { "blockGap": "1.4rem", "padding": { "top": "0", "right": "0", "bottom": "0", "left": "0" } },
+    "elements": {
+      "link": { "color": { "text": "currentColor" } },
+      "heading": { "typography": { "lineHeight": "1.15", "fontWeight": "500" } },
+      "button": { "border": { "radius": "4px" }, "typography": { "fontSize": "0.95rem", "fontWeight": "600" } }
+    }
+  },
+  "templateParts": [
+    { "name": "header", "title": "Nagłówek warsztatu", "area": "header" },
+    { "name": "footer", "title": "Stopka warsztatu", "area": "footer" }
+  ]
+}

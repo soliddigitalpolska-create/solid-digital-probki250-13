@@ -1,0 +1,15 @@
+﻿{
+    "checkedAt":  "2026-10-15T15:26:12.8702451Z",
+    "product_id":  18,
+    "home_status":  200,
+    "product_status":  200,
+    "php_product_note":  true,
+    "cart_status":  200,
+    "cart_contains_product":  true,
+    "checkout_status":  200,
+    "shipping_method":  "",
+    "checkout_result":  "success",
+    "real_charge":  false,
+    "real_email":  false,
+    "payment_gateway":  "manual BACS test only"
+}

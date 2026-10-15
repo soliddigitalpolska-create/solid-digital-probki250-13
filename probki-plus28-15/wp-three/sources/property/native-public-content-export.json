@@ -1,0 +1,82 @@
+{
+  "own_fictional_only": true,
+  "not_commercial_cases": true,
+  "posts": [
+    {
+      "id": 28,
+      "type": "cy_property",
+      "status": "publish",
+      "title": "Dwie sypialnie. Zadaszony taras. Częściowy widok na morze.",
+      "slug": "apartament-86m2-taras-18m2-demo",
+      "native_serialized_content": "<!-- wp:paragraph {\"backgroundColor\":\"base-2\"} --><p class=\"has-base-2-background-color has-background\"><strong>WŁASNA PRÓBKA DEMONSTRACYJNA.</strong> Dane, układ i cena są fikcyjne. To nie jest oferta sprzedaży ani realizacja dla klienta.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>86 m² wnętrza, dwie sypialnie i zadaszony taras o powierzchni 18 m². Salon z otwartą kuchnią łączy się z tarasem skierowanym na południowy zachód, z częściowym widokiem na morze. Dwie łazienki i oddzielna część sypialniana porządkują codzienne korzystanie z mieszkania.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Przestrzeń i wyposażenie</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Apartament znajduje się na drugim piętrze trzypiętrowego budynku z windą. Kuchnia obejmuje zabudowę i sprzęt; pozostałe pomieszczenia są nieumeblowane. Klimatyzację przewidziano w salonie i obu sypialniach. Do lokalu przypisano jedno zadaszone miejsce parkingowe oraz prywatny schowek o powierzchni 4 m².</p><!-- /wp:paragraph --><!-- wp:image {\"id\":26,\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"http://127.0.0.1:8798/wp-content/uploads/2026/10/cy-own-plan.svg\" alt=\"Autorski schemat demonstracyjny: salon z kuchnią, 2 sypialnie, 2 łazienki i taras. Nie jest rzeczywistym rzutem.\" class=\"wp-image-26\"/><figcaption class=\"wp-element-caption\">Schemat funkcjonalny fikcyjnego apartamentu — ilustracja własna, nie zdjęcie ani rzeczywisty rzut.</figcaption></figure><!-- /wp:image --><!-- wp:image {\"id\":27,\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"http://127.0.0.1:8798/wp-content/uploads/2026/10/cy-own-dane.svg\" alt=\"Infografika demonstracyjna: wnętrze 86 m², taras 18 m², 2 sypialnie, 2 łazienki, fikcyjna trasa do plaży 650 m.\" class=\"wp-image-27\"/><figcaption class=\"wp-element-caption\">Parametry fikcyjnego apartamentu — ilustracja własna, nie zdjęcie ani rzeczywisty rzut.</figcaption></figure><!-- /wp:image --><!-- wp:heading --><h2 class=\"wp-block-heading\">Otoczenie i warunki</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Mieszkańcy korzystają ze wspólnego basenu i ogrodu. Trasa piesza do plaży, przyjęta w fikcyjnym briefie, liczy 650 m. Cena demonstracyjna wynosi 349 000 EUR; podatki i koszty transakcji nie zostały określone. To przykład redakcyjny pokazujący pracę z konkretnymi danymi, bez dodawania obietnic, których nie zawiera źródło.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Parametry — według fikcyjnej karty źródłowej</h2><!-- /wp:heading --><!-- wp:table --><figure class=\"wp-block-table\"><table class=\"has-fixed-layout\"><tbody><tr><td>Wnętrze</td><td>86 m²</td></tr><tr><td>Zadaszony taras</td><td>18 m²; południowy zachód</td></tr><tr><td>Widok</td><td>Częściowy widok na morze</td></tr><tr><td>Sypialnie / łazienki</td><td>2 / 2</td></tr><tr><td>Piętro</td><td>Drugie; trzypiętrowy budynek z windą</td></tr><tr><td>Wyposażenie</td><td>Zabudowa kuchenna i sprzęt; pozostałe pomieszczenia nieumeblowane</td></tr><tr><td>Klimatyzacja</td><td>Salon i obie sypialnie</td></tr><tr><td>Parking</td><td>Jedno przypisane, zadaszone miejsce</td></tr><tr><td>Schowek</td><td>Prywatny, 4 m²</td></tr><tr><td>Części wspólne</td><td>Basen i ogród</td></tr><tr><td>Trasa do plaży</td><td>650 m, pieszo według fikcyjnego briefu</td></tr><tr><td>Cena demonstracyjna</td><td>349 000 EUR</td></tr><tr><td>Podatki i koszty transakcji</td><td>Nieokreślone w źródle</td></tr></tbody></table></figure><!-- /wp:table --><!-- wp:heading --><h2 class=\"wp-block-heading\">Sposób przygotowania próbki</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Materiał EN → selekcja danych → autorska redakcja PL → kontrola parametrów → struktura SEO → natywne bloki WordPress i opisy mediów. Ilustracje są własnymi schematami pokazującymi techniczny zapis w bibliotece mediów; nie zastępują zdjęć dewelopera.</p><!-- /wp:paragraph -->",
+      "excerpt": "86 m² wnętrza, taras 18 m² i dwie łazienki. Wszystkie dane są fikcyjne.",
+      "metadata": {
+        "_cy_own_fiction": "1",
+        "_cy_bedrooms": "2",
+        "_cy_internal_area": "86",
+        "_cy_terrace_area": "18",
+        "_cy_seo_title": "Apartament 86 m² i taras 18 m² | własna próbka Cypr",
+        "_cy_seo_description": "Fikcyjna oferta EN→PL: 86 m², 2 sypialnie, taras 18 m², częściowy widok na morze."
+      }
+    },
+    {
+      "id": 29,
+      "type": "cy_property",
+      "status": "publish",
+      "title": "Jedna sypialnia. Taras 12 m². Prosty układ.",
+      "slug": "apartament-62m2-taras-12m2-demo",
+      "native_serialized_content": "<!-- wp:paragraph --><p><strong>WŁASNA FIKCYJNA PRÓBKA.</strong> Nie jest ofertą sprzedaży ani projektem klienta.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>62 m² wnętrza i zadaszony taras 12 m². Jedna sypialnia, łazienka oraz salon z otwartą kuchnią tworzą kompaktowy układ. Apartament znajduje się na pierwszym piętrze budynku z windą.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Wyposażenie i części wspólne</h2><!-- /wp:heading --><!-- wp:paragraph --><p>W fikcyjnej cenie uwzględniono zabudowę kuchenną i sprzęt; pozostałe wnętrza są nieumeblowane. Jedno przypisane miejsce parkingowe i wspólny basen należą do parametrów demonstracyjnych. Widok na morze nie jest oferowany.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Fikcyjna trasa do plaży wynosi 400 m. Cena demonstracyjna: 229 000 EUR. Podatki i koszty transakcji nie zostały określone. Nie dodajemy obietnic wzrostu wartości ani wynajmu.</p><!-- /wp:paragraph -->",
+      "excerpt": "62 m² wnętrza, pierwsze piętro i wspólny basen. Własna fikcyjna oferta.",
+      "metadata": {
+        "_cy_own_fiction": "1",
+        "_cy_bedrooms": "1",
+        "_cy_internal_area": "62",
+        "_cy_terrace_area": "12",
+        "_cy_seo_title": "Apartament 62 m² i taras 12 m² | własna próbka Cypr",
+        "_cy_seo_description": "Fikcyjna oferta: 62 m², jedna sypialnia, taras 12 m² i wspólny basen."
+      }
+    },
+    {
+      "id": 31,
+      "type": "page",
+      "status": "publish",
+      "title": "Katalog demonstracyjny",
+      "slug": "cy-home",
+      "native_serialized_content": "<!-- wp:html --><section class=\"cy-hero\"><p class=\"cy-kicker\">Cypr / notes / własna demonstracja CMS</p><p class=\"cy-demo\">Wszystkie nieruchomości, ceny i ilustracje są fikcyjne. Nie jest to rzeczywista oferta sprzedaży ani realizacja klienta.</p><h1>Najpierw dane.<br>Potem dobry opis.</h1><p class=\"cy-lead\">Autorska witryna pokazuje proces EN→PL: od sprawdzenia parametrów do kompletnej, czytelnej oferty w natywnym WordPressie. Katalog filtruje rzeczywiste wpisy CMS.</p></section><!-- /wp:html --><!-- wp:shortcode -->[cy_property_catalog]<!-- /wp:shortcode -->",
+      "excerpt": "",
+      "metadata": {
+        "_cy_own_fiction": "1",
+        "_cy_seo_title": "Katalog demonstracyjny | Cypr — własna demonstracja",
+        "_cy_seo_description": "Odrębna własna witryna WordPress: fikcyjny katalog nieruchomości i proces redakcyjny EN→PL."
+      }
+    },
+    {
+      "id": 32,
+      "type": "page",
+      "status": "publish",
+      "title": "Jak powstaje oferta",
+      "slug": "jak-powstaje-oferta",
+      "native_serialized_content": "<!-- wp:paragraph --><p>Karta źródłowa EN → selekcja informacji → samodzielna redakcja PL → kontrola parametrów → SEO i media → publikacja w CMS. W tej demonstracji nie wykorzystano materiałów dewelopera ani prawdziwych fotografii.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Kontrola faktów</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Weryfikujemy powierzchnię, taras, liczbę pomieszczeń, widok, wyposażenie i zakres ceny. Nie dodajemy rentowności, wzrostu wartości ani udogodnień spoza źródła.</p><!-- /wp:paragraph -->",
+      "excerpt": "",
+      "metadata": {
+        "_cy_own_fiction": "1",
+        "_cy_seo_title": "Jak powstaje oferta | Cypr — własna demonstracja",
+        "_cy_seo_description": "Odrębna własna witryna WordPress: fikcyjny katalog nieruchomości i proces redakcyjny EN→PL."
+      }
+    },
+    {
+      "id": 33,
+      "type": "page",
+      "status": "publish",
+      "title": "O własnej próbce",
+      "slug": "o-probce",
+      "native_serialized_content": "<!-- wp:paragraph --><p>To odrębna instalacja WordPress z własną bazą, motywem, katalogiem, filtrem i natywnymi wpisami typu cy_property. Nie jest trzema postami jednej strony ani kopią działającej kancelarii.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Codzienna edycja używa natywnego Classic/TinyMCE; metadane i ilustracje należą do WordPressa. Wszystkie scenariusze są autorskie i fikcyjne.</p><!-- /wp:paragraph -->",
+      "excerpt": "",
+      "metadata": {
+        "_cy_own_fiction": "1",
+        "_cy_seo_title": "O własnej próbce | Cypr — własna demonstracja",
+        "_cy_seo_description": "Odrębna własna witryna WordPress: fikcyjny katalog nieruchomości i proces redakcyjny EN→PL."
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1160px",
+      "wideSize": "1220px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "green",
+          "name": "Zieleń",
+          "color": "#163f35"
+        },
+        {
+          "slug": "gold",
+          "name": "Złoto",
+          "color": "#b49a67"
+        },
+        {
+          "slug": "paper",
+          "name": "Papier",
+          "color": "#f7f5f0"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Systemowy",
+          "slug": "system",
+          "fontFamily": "Arial, sans-serif"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "Arial, sans-serif"
+    },
+    "spacing": {
+      "blockGap": "24px"
+    }
+  }
+}

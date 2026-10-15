@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "created_at": "2026-10-15T15:41:20.227772+00:00",
+  "blender": "5.2.2 LTS",
+  "device": "OPTIX NVIDIA GeForce RTX 4080 SUPER",
+  "samples_max": 64,
+  "project_count": 1,
+  "renders": [
+    {
+      "file": "01-salon-4k.png",
+      "jpeg": "01-salon-4k.jpg",
+      "seconds": 48.15,
+      "camera": {
+        "name": "01-salon",
+        "matrix": [
+          [
+            0.5427154898643494,
+            -0.0685080736875534,
+            0.8371180295944214,
+            5.650000095367432
+          ],
+          [
+            0.8399165868759155,
+            0.04426679387688637,
+            -0.5409071445465088,
+            0.47999998927116394
+          ],
+          [
+            -2.657198194810917e-08,
+            0.9966679811477661,
+            0.08156534284353256,
+            1.6299999952316284
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 25.0,
+        "resolution": [
+          4096,
+          2732
+        ]
+      },
+      "geometry_hash": "b8f1f523b5c4a9846e0efc79e1a0108f063b722920af4672cc5732f2a627e9f3",
+      "lighting_hash": "cf982faef8d04e01c7af6874691f65d4e928554064e9a5f9c6da8371d08a63ff"
+    },
+    {
+      "file": "02-strefa-wypoczynku-4k.png",
+      "jpeg": "02-strefa-wypoczynku-4k.jpg",
+      "seconds": 45.73,
+      "camera": {
+        "name": "02-strefa-wypoczynku",
+        "matrix": [
+          [
+            0.04120216146111488,
+            -0.09223045408725739,
+            0.9948849081993103,
+            5.449999809265137
+          ],
+          [
+            0.999150812625885,
+            0.0038034648168832064,
+            -0.04102623090147972,
+            2.0
+          ],
+          [
+            -1.4167791562158527e-07,
+            0.9957304000854492,
+            0.09230884164571762,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 36.0,
+        "resolution": [
+          4096,
+          2732
+        ]
+      },
+      "geometry_hash": "b8f1f523b5c4a9846e0efc79e1a0108f063b722920af4672cc5732f2a627e9f3",
+      "lighting_hash": "cf982faef8d04e01c7af6874691f65d4e928554064e9a5f9c6da8371d08a63ff"
+    },
+    {
+      "file": "03-wariant-materialowy-4k.png",
+      "jpeg": "03-wariant-materialowy-4k.jpg",
+      "seconds": 49.65,
+      "camera": {
+        "name": "01-salon",
+        "matrix": [
+          [
+            0.5427154898643494,
+            -0.0685080736875534,
+            0.8371180295944214,
+            5.650000095367432
+          ],
+          [
+            0.8399165868759155,
+            0.04426679387688637,
+            -0.5409071445465088,
+            0.47999998927116394
+          ],
+          [
+            -2.657198194810917e-08,
+            0.9966679811477661,
+            0.08156534284353256,
+            1.6299999952316284
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "lens": 25.0,
+        "resolution": [
+          4096,
+          2732
+        ]
+      },
+      "geometry_hash": "b8f1f523b5c4a9846e0efc79e1a0108f063b722920af4672cc5732f2a627e9f3",
+      "lighting_hash": "cf982faef8d04e01c7af6874691f65d4e928554064e9a5f9c6da8371d08a63ff"
+    }
+  ],
+  "material_changes": [
+    {
+      "material": "05 | tkanina lniana sofy",
+      "old": [
+        0.6299999952316284,
+        0.550000011920929,
+        0.4300000071525574,
+        1.0
+      ],
+      "new": [
+        0.28,
+        0.34,
+        0.25,
+        1
+      ]
+    },
+    {
+      "material": "04 | lakier szałwiowy",
+      "old": [
+        0.20499999821186066,
+        0.27000001072883606,
+        0.2150000035762787,
+        1.0
+      ],
+      "new": [
+        0.46,
+        0.36,
+        0.255,
+        1
+      ]
+    }
+  ],
+  "same_geometry_all_renders": true,
+  "same_lighting_all_renders": true,
+  "same_camera_base_vs_variant": true,
+  "room_dimensions_m": [
+    6,
+    5.2,
+    2.9
+  ],
+  "room_area_m2": 31.2,
+  "full_native_source_files": [
+    "wn01-salon.blend",
+    "wn01-salon-wariant.blend"
+  ],
+  "no_external_images": true,
+  "mesh_objects": 290,
+  "curve_objects": 22,
+  "materials": 19,
+  "proof_scope": "One own living-room/kitchen interior, two camera views and one material variant. Not a bathroom-configurator proof and not five separate realizations."
+}

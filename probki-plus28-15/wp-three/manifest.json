@@ -1,0 +1,519 @@
+{
+  "checked_at": "2026-10-15T15:52:18.647622+00:00",
+  "status": "THREE_REAL_INDEPENDENT_OWN_NATIVE_WP_SITES_SOURCE_AND_ROOT_QA",
+  "sites": [
+    {
+      "key": "pf",
+      "native_local_port": 8797,
+      "theme": "pf-own-studio",
+      "commercial_case": false,
+      "source_export": "sources/pf/native-public-content-export.json"
+    },
+    {
+      "key": "property",
+      "native_local_port": 8798,
+      "theme": "cy-own-journal",
+      "commercial_case": false,
+      "source_export": "sources/property/native-public-content-export.json"
+    },
+    {
+      "key": "retail",
+      "native_local_port": 8799,
+      "theme": "own-native-workshop",
+      "commercial_case": false,
+      "source_export": "sources/retail/native-public-content-export.json"
+    }
+  ],
+  "files": [
+    {
+      "path": "evidence/pf/create.json",
+      "bytes": 4317,
+      "sha256": "99129a6f3f7801339e61f5bb6eb937d92de031f3b69cc3c407caea5cd419396e"
+    },
+    {
+      "path": "evidence/pf/inspect.json",
+      "bytes": 4318,
+      "sha256": "9a7124bb6c184ef069abade8bc0f6d657470068559635c001526bf1b42fe75ba"
+    },
+    {
+      "path": "evidence/pf/lighthouse-summary.json",
+      "bytes": 9762,
+      "sha256": "26b71b29db6123b76e9bf3fcd5c42515a9d23d2890c167cd2c8d9f5bb2bd4963"
+    },
+    {
+      "path": "evidence/pf/native-http-form-proof.json",
+      "bytes": 3301,
+      "sha256": "8161751b25a0a33380928b47a126e69593d87a4273153984b29911f0a620afb4"
+    },
+    {
+      "path": "evidence/pf/root-browser-qa.json",
+      "bytes": 424,
+      "sha256": "6ce2aba829c009351b010cfb38776818fed80d5180972ab27f2aee753bfc7c4a"
+    },
+    {
+      "path": "evidence/property/create.json",
+      "bytes": 2632,
+      "sha256": "d425bd511ece2d3149c54caaabbaf25952c0fdd005ceeb0657acc746b8d90591"
+    },
+    {
+      "path": "evidence/property/inspect.json",
+      "bytes": 2635,
+      "sha256": "818674d83f4df7b692ed41c9cb581d20d640846513e295ae968f7dcf46920391"
+    },
+    {
+      "path": "evidence/property/native-query-filter.json",
+      "bytes": 526,
+      "sha256": "380e29d485d6e13bc8ee2d27f331f0d2a2942c8a70f43194c19da696c12582b0"
+    },
+    {
+      "path": "evidence/property/root-browser-qa.json",
+      "bytes": 393,
+      "sha256": "e22fd782d4f5d5d194749638fa0d72b44355fdd05dd4819b45d3f8b5ceef0a1c"
+    },
+    {
+      "path": "evidence/retail/native-order-readback.json",
+      "bytes": 941,
+      "sha256": "b6fdfe4e7dbf7328d89ac44c6270cca142adfbdd14f86afb989cca266204e052"
+    },
+    {
+      "path": "evidence/retail/native-physical-checkout.json",
+      "bytes": 444,
+      "sha256": "dde54c2abbb4d8e4d01e8b5aaa97b37f6e0c92611bb68e2db0b5a343347db125"
+    },
+    {
+      "path": "evidence/retail/native-retail-read.json",
+      "bytes": 1020,
+      "sha256": "4c91c366121e55cd9722b7a5f16268002b4457b2c77173fc1ecf60afb1f9c1a5"
+    },
+    {
+      "path": "evidence/retail/native-virtual-checkout.json",
+      "bytes": 433,
+      "sha256": "f15ee6c49db971c35aeab96363595e373278e99c59547bdbb4e6a436902eaffa"
+    },
+    {
+      "path": "evidence/retail/root-browser-qa.json",
+      "bytes": 243,
+      "sha256": "a03a76d590375dd47c51ff75a7769e0fac02938acd2cf1737a894ed87979418f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4652,
+      "sha256": "cd3b3a34ea98ce5e5526e8c83e12b1cc04b053914d5b1adb30114ac86650c895"
+    },
+    {
+      "path": "projects/pf/index.html",
+      "bytes": 3499,
+      "sha256": "af4c94b602c09cbf5b146d1de82db090c30843d919e418821824324d6ef99e48"
+    },
+    {
+      "path": "projects/pf/screenshots/proof-wp-three-root-editor.jpg",
+      "bytes": 255311,
+      "sha256": "08c6f062861b2b783cc709a859bdbcef37474f6c88b3d9ad41acb5def1de9d46"
+    },
+    {
+      "path": "projects/pf/screenshots/proof-wp-three-root-leads.jpg",
+      "bytes": 55954,
+      "sha256": "b3592a9597a22fa235c7d56a411b85cef6389eda2197fbdc6b22ca04a176f8c5"
+    },
+    {
+      "path": "projects/pf/screenshots/proof-wp-three-root-public.jpg",
+      "bytes": 276920,
+      "sha256": "0cd24a87f2bad7e77428afd840bb12a30e4f8f6623b7e43090a0b4f7d591e4db"
+    },
+    {
+      "path": "projects/property/index.html",
+      "bytes": 3209,
+      "sha256": "a458cbbcaa7224bfef60e94c6c035c833a326aa4b55aebb961fed1f7751cdb7c"
+    },
+    {
+      "path": "projects/property/screenshots/proof-wp-three-root-publisher-editor.jpg",
+      "bytes": 406613,
+      "sha256": "22e7d0df66f04e36e376bfe72024c975a19d3c0c2217df4172987cf709ec8f0b"
+    },
+    {
+      "path": "projects/property/screenshots/proof-wp-three-root-publisher.jpg",
+      "bytes": 159946,
+      "sha256": "0c37dd65b66c15ce88d7b7ec3192d01e3135f5f2b100fab240a67ac2d7819c98"
+    },
+    {
+      "path": "projects/retail/index.html",
+      "bytes": 3244,
+      "sha256": "31f047f1e8898a412f7e6330a18a45c583d672175e4d12a255ff4b43f442f616"
+    },
+    {
+      "path": "projects/retail/screenshots/proof-wp-three-root-shop.jpg",
+      "bytes": 127490,
+      "sha256": "96f10494a5f810cd0c0f739054209cf0827f1972237d5a01ffc04685a5191e3f"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 3052,
+      "sha256": "e0c9711ed3545ee96b0418893d77973c4659f28093a945f6a89cec58dd2df9e2"
+    },
+    {
+      "path": "reports/lighthouse-summary.json",
+      "bytes": 9762,
+      "sha256": "26b71b29db6123b76e9bf3fcd5c42515a9d23d2890c167cd2c8d9f5bb2bd4963"
+    },
+    {
+      "path": "reports/pf-desktop-actual-lh.jpg",
+      "bytes": 19000,
+      "sha256": "cc4a0c9d096f386088889b23a796bd378ab7c471dce11ec8824996ce1cc9fd8b"
+    },
+    {
+      "path": "reports/pf-desktop.report.html",
+      "bytes": 734214,
+      "sha256": "2c436205742355d8a77a5429d21e580313a8e2028935d8f0af7514cbdc3e4aa6"
+    },
+    {
+      "path": "reports/pf-desktop.report.json",
+      "bytes": 637264,
+      "sha256": "b3e688d527edf59da1404330e5edef6af14e26effc468ddb5c1a6db02d064540"
+    },
+    {
+      "path": "reports/pf-mobile-actual-lh.jpg",
+      "bytes": 19399,
+      "sha256": "65fd1436b95a173c05543a3117b48e3e5c12c507de99ce2c7f072899493b8547"
+    },
+    {
+      "path": "reports/pf-mobile.report.html",
+      "bytes": 724097,
+      "sha256": "0929a977b2881cf54ede7fde27be505e775b3b42899670d5a6fac103491daa7c"
+    },
+    {
+      "path": "reports/pf-mobile.report.json",
+      "bytes": 627737,
+      "sha256": "1e602223a7526a10f8667d6237be839df6ca4d730dc8b04888616adf37d810d4"
+    },
+    {
+      "path": "reports/property-desktop-actual-lh.jpg",
+      "bytes": 17312,
+      "sha256": "83c4e7bc54340b13d5248eb85e99de5972a9adb34c0c5a74a0823ad65cf81b1f"
+    },
+    {
+      "path": "reports/property-desktop.report.html",
+      "bytes": 649119,
+      "sha256": "f47e770d5b8d5d4cfd031b3a6eeb1f4ea051805788354b0db1bac6d5d4211f09"
+    },
+    {
+      "path": "reports/property-desktop.report.json",
+      "bytes": 548690,
+      "sha256": "8945e4cc90bdd0b6d1fb503bd8aa22de7e5141fd111101c622692d3d2031bc47"
+    },
+    {
+      "path": "reports/property-mobile-actual-lh.jpg",
+      "bytes": 20457,
+      "sha256": "282b2caf8f0fabca47ae9fba479c03df24ff32b9b6c5b33299981ad590c3d660"
+    },
+    {
+      "path": "reports/property-mobile.report.html",
+      "bytes": 641924,
+      "sha256": "fb804f3ef45d9ae4bdb2d22cab7d747ea428c10f843c1a80060cc270120b4c58"
+    },
+    {
+      "path": "reports/property-mobile.report.json",
+      "bytes": 542547,
+      "sha256": "385ac3086e1344e6391a0df1f734cbc5ac2420c9537626e36954181e8a981674"
+    },
+    {
+      "path": "reports/retail-desktop-actual-lh.jpg",
+      "bytes": 19342,
+      "sha256": "59949b563ed5c24e0c5432619b3e4d06e7a4d25467aa610bf662fa988dc102ef"
+    },
+    {
+      "path": "reports/retail-desktop.report.html",
+      "bytes": 682530,
+      "sha256": "4157782cecfc6030e626c9d7d24780d1de0675d9a4bf777f1c398bdd571f8b85"
+    },
+    {
+      "path": "reports/retail-desktop.report.json",
+      "bytes": 602036,
+      "sha256": "b05a743c751540abb7fb5bc810097e70ff018f660fb7c460c9f96d2552cf7225"
+    },
+    {
+      "path": "reports/retail-mobile-actual-lh.jpg",
+      "bytes": 23154,
+      "sha256": "c88793412b515b60a3534cb1fd6dabbb4bf818b3901d766090401e220ec75fc0"
+    },
+    {
+      "path": "reports/retail-mobile.report.html",
+      "bytes": 714979,
+      "sha256": "ea675c6041a3cffd84eba8372360693001abdc5c3e626183c6ddc146681b8828"
+    },
+    {
+      "path": "reports/retail-mobile.report.json",
+      "bytes": 634423,
+      "sha256": "1cef981f51910aa4ec85059a8b2876a7272b1dd4a30f1e531993430c8020a5b1"
+    },
+    {
+      "path": "sources/pf/native-law.php",
+      "bytes": 9428,
+      "sha256": "4c3075dd646c4f563d4eab43ca1ffafcffec744026e5467cb702ea63291970fe"
+    },
+    {
+      "path": "sources/pf/native-public-content-export.json",
+      "bytes": 9863,
+      "sha256": "0b8c1db56fc0cf72b17e4995fdb59b444b310e9fd24e6b21affd74d716704d96"
+    },
+    {
+      "path": "sources/pf/pf-own-workflow.php",
+      "bytes": 6970,
+      "sha256": "3ca5eaaccdc5234a4a46cf25ec57d5b675f1e393da4e2fcd8f70e37dfe024088"
+    },
+    {
+      "path": "sources/pf/theme/assets/pf-logo-round.png",
+      "bytes": 18578,
+      "sha256": "73b0b91695d540cff3d8bd670c3c92446f8ef44b283a363aa0afb2b33aea0172"
+    },
+    {
+      "path": "sources/pf/theme/assets/pf-logo-round.svg",
+      "bytes": 312,
+      "sha256": "3bb035ed5ef85efeee7d8a289a7a148dec3efe718572379fc50cbd3d57c19dc6"
+    },
+    {
+      "path": "sources/pf/theme/assets/pf-logo.png",
+      "bytes": 8718,
+      "sha256": "7ab223649e67cc8c05a5d65f0932e830763d4532b5d6eae2faeff194332c4d6d"
+    },
+    {
+      "path": "sources/pf/theme/assets/pf-logo.svg",
+      "bytes": 317,
+      "sha256": "c48159b87624d183352d30968d8222a16711b15023f6852863efa6b280903b98"
+    },
+    {
+      "path": "sources/pf/theme/functions.php",
+      "bytes": 236,
+      "sha256": "139d0a26465ca24be89b4bdf7822843aa9cb4fabd0ac63d25993d281b1f25a51"
+    },
+    {
+      "path": "sources/pf/theme/parts/footer.html",
+      "bytes": 341,
+      "sha256": "0b043aead25b36350f9ba618687f878718ad146ee4251fba154155c489b3c0e1"
+    },
+    {
+      "path": "sources/pf/theme/parts/header.html",
+      "bytes": 649,
+      "sha256": "95a79d8bfd0aea4bca25b4b2bd87dcd0776ad3ba9da8adaa5ae57174d2895fdc"
+    },
+    {
+      "path": "sources/pf/theme/style.css",
+      "bytes": 3688,
+      "sha256": "05f6169852b57afca915a239f7decccf8fa9e8f4b9c3c81f7e4ba73298aa1b2b"
+    },
+    {
+      "path": "sources/pf/theme/templates/front-page.html",
+      "bytes": 235,
+      "sha256": "02ea64285b8baf748c4a5170dc7885ebcb826e777ab42b06caec66bb2a24923c"
+    },
+    {
+      "path": "sources/pf/theme/templates/index.html",
+      "bytes": 235,
+      "sha256": "02ea64285b8baf748c4a5170dc7885ebcb826e777ab42b06caec66bb2a24923c"
+    },
+    {
+      "path": "sources/pf/theme/templates/page.html",
+      "bytes": 292,
+      "sha256": "c6446f022de6eed979a35093b772758914f8f504d1a8c53db930c790eb5f2950"
+    },
+    {
+      "path": "sources/pf/theme/theme.json",
+      "bytes": 872,
+      "sha256": "d9004a05d99ac4fee968d79a975267c06365649318413a0a0bad72d42658d4bf"
+    },
+    {
+      "path": "sources/pf/wp-three-offline-guard.php",
+      "bytes": 318,
+      "sha256": "ef2ff58fcc090105a7a034308d16a7fa8de344f054a0cf2cdbac8aea5c8ace86"
+    },
+    {
+      "path": "sources/property/cy-own-catalog.php",
+      "bytes": 3608,
+      "sha256": "791856edb2156a8918eed806d7b720b53786aa751ccdc93889422bd34ba1090e"
+    },
+    {
+      "path": "sources/property/fix-copy.php",
+      "bytes": 1996,
+      "sha256": "79bf5b40dd674a13173175c5ed166d4c9d07acac3e5e557bb68080cb8ea0ca3a"
+    },
+    {
+      "path": "sources/property/native-property-site.php",
+      "bytes": 8772,
+      "sha256": "e49fce935331ed3fa0dbf16318f5cf39bdfeb02f85917e66357dbcd2592815cc"
+    },
+    {
+      "path": "sources/property/native-public-content-export.json",
+      "bytes": 9730,
+      "sha256": "ba687e9748c26f2edadebc6436de2572150bec08d6b430caebece8359f0bc40d"
+    },
+    {
+      "path": "sources/property/seed-data/dane.svg",
+      "bytes": 813,
+      "sha256": "e3e2fe6d3b41f184b0c5b318e04ef212502bbfa736e9d5c99d1c5ef5c69037ab"
+    },
+    {
+      "path": "sources/property/seed-data/native-post-export.json",
+      "bytes": 6128,
+      "sha256": "3d8f2667b7a35bfbf2205d4aa1bc4a9c6f1dcfe1b8360d981f3a383057558785"
+    },
+    {
+      "path": "sources/property/seed-data/plan.svg",
+      "bytes": 974,
+      "sha256": "4daae36e0ca3deb629c9b3091e21214b147bc8b1650c1bc7cb0c57d90f8d56b8"
+    },
+    {
+      "path": "sources/property/theme/functions.php",
+      "bytes": 227,
+      "sha256": "b062df81948b9a8df8b663206ca6649e8156406c1643c825ea8a34904c60c696"
+    },
+    {
+      "path": "sources/property/theme/parts/footer.html",
+      "bytes": 253,
+      "sha256": "24dc75f6bd2af3e231f91f414037ca7166a07469ec06f84b07946d7bf106ba60"
+    },
+    {
+      "path": "sources/property/theme/parts/header.html",
+      "bytes": 325,
+      "sha256": "d4c0443b56434422027bf943598f177a368586141e22168907b6c37b61f10798"
+    },
+    {
+      "path": "sources/property/theme/style.css",
+      "bytes": 2485,
+      "sha256": "bc7ac49c82bb89ae9b2d25da14f4de5a85b25c4b649ad751fd8c771886ceb6b5"
+    },
+    {
+      "path": "sources/property/theme/templates/front-page.html",
+      "bytes": 235,
+      "sha256": "31cffd81e8d30a3001c4dae3a33d6fcaa3db9a47eb143ebf1d484c4f17780514"
+    },
+    {
+      "path": "sources/property/theme/templates/index.html",
+      "bytes": 292,
+      "sha256": "6b656c83692b6297f164aa730aa2a0973091975a29e70690672cbca0071faa19"
+    },
+    {
+      "path": "sources/property/theme/templates/page.html",
+      "bytes": 292,
+      "sha256": "6b656c83692b6297f164aa730aa2a0973091975a29e70690672cbca0071faa19"
+    },
+    {
+      "path": "sources/property/theme/templates/single-cy_property.html",
+      "bytes": 292,
+      "sha256": "6b656c83692b6297f164aa730aa2a0973091975a29e70690672cbca0071faa19"
+    },
+    {
+      "path": "sources/property/theme/templates/single.html",
+      "bytes": 292,
+      "sha256": "6b656c83692b6297f164aa730aa2a0973091975a29e70690672cbca0071faa19"
+    },
+    {
+      "path": "sources/property/theme/theme.json",
+      "bytes": 103,
+      "sha256": "ac654d0417b2670c2bf89293195f34d2393c4dcf130e559f8018d3c2ad6a046c"
+    },
+    {
+      "path": "sources/property/wp-three-offline-guard.php",
+      "bytes": 318,
+      "sha256": "ef2ff58fcc090105a7a034308d16a7fa8de344f054a0cf2cdbac8aea5c8ace86"
+    },
+    {
+      "path": "sources/retail/checkout-http.ps1",
+      "bytes": 2695,
+      "sha256": "2d7d629f93490f5dc4139a699c42e6d1818f6b103dd23c5e487f5c74ef6b6d4a"
+    },
+    {
+      "path": "sources/retail/native-public-content-export.json",
+      "bytes": 4055,
+      "sha256": "2762d270092a18e9c2e9af28b6cf64ab52eac9df467b4fd61d52d6a2691ee13b"
+    },
+    {
+      "path": "sources/retail/native-retail-read.php",
+      "bytes": 967,
+      "sha256": "fd7e8af8f836fcf7d59fedaea64f3744467fe53f6407abab025a1f0cb873b177"
+    },
+    {
+      "path": "sources/retail/native-seo.php",
+      "bytes": 748,
+      "sha256": "68f83338e9ede84461eaab2b07425582eda44d75dfaa018a6590ffeffdf52ce0"
+    },
+    {
+      "path": "sources/retail/owned-media/konsultacja-projektu.svg",
+      "bytes": 2150,
+      "sha256": "560ecc0ee69a4b6fd56e6bab04e70aeef876d41babde8ce6d3a2c8b97c141224"
+    },
+    {
+      "path": "sources/retail/owned-media/notes-pracowni.svg",
+      "bytes": 1754,
+      "sha256": "9fa56836791b3338c9489bfe02f640b22c284b4f6fc02408c6cb19429182e3e4"
+    },
+    {
+      "path": "sources/retail/read-orders.php",
+      "bytes": 942,
+      "sha256": "4501dd9e34b8d821bfb6fb3281dac2c6c01335fb6fe8400c60e6438bfff29d70"
+    },
+    {
+      "path": "sources/retail/theme/assets/workshop-data-layer.js",
+      "bytes": 1048,
+      "sha256": "c950850d902ac94a58bfd2739ad57083aeb3829d242b4e8545004946f6fd3fd3"
+    },
+    {
+      "path": "sources/retail/theme/functions.php",
+      "bytes": 1477,
+      "sha256": "c461cfe4e1556a48f19328358b16a53f3e372ee42efaea6d793d170f6558c58d"
+    },
+    {
+      "path": "sources/retail/theme/parts/footer.html",
+      "bytes": 460,
+      "sha256": "1ee4475665e6e46d68f7e36b989c17acbfe67ea32ca2b224a7369bc6071b9732"
+    },
+    {
+      "path": "sources/retail/theme/parts/header.html",
+      "bytes": 929,
+      "sha256": "eed80af102260b91122e930e80e3a26b654053eef61d20f633457704991c1848"
+    },
+    {
+      "path": "sources/retail/theme/style.css",
+      "bytes": 12101,
+      "sha256": "d557418128b5f6d896b35f88919c9da57ac76635f52f1b5a5a0aca6962c370e2"
+    },
+    {
+      "path": "sources/retail/theme/templates/404.html",
+      "bytes": 557,
+      "sha256": "255cbe6755c20aeacf03c3ad7005b45b30114e659641a47b0df90abae3694760"
+    },
+    {
+      "path": "sources/retail/theme/templates/index.html",
+      "bytes": 367,
+      "sha256": "53f72474b75faea9d8698087660d1455bdf4de7219e6f9d9b4c86abd7ef1638d"
+    },
+    {
+      "path": "sources/retail/theme/templates/page.html",
+      "bytes": 367,
+      "sha256": "53f72474b75faea9d8698087660d1455bdf4de7219e6f9d9b4c86abd7ef1638d"
+    },
+    {
+      "path": "sources/retail/theme/theme.json",
+      "bytes": 2691,
+      "sha256": "77d8301c0323b063464f0b3426adb038d96572a29e78850c22d32d92d859be91"
+    },
+    {
+      "path": "sources/retail/workshop-local.php",
+      "bytes": 1830,
+      "sha256": "119a2f64ec5984fa0fad2e0e20f1821c05625dcc2910d40a76f1429202c748c5"
+    },
+    {
+      "path": "sources/retail/wp-three-offline-guard.php",
+      "bytes": 318,
+      "sha256": "ef2ff58fcc090105a7a034308d16a7fa8de344f054a0cf2cdbac8aea5c8ace86"
+    },
+    {
+      "path": "sources/run-owned-audits.mjs",
+      "bytes": 3489,
+      "sha256": "3c2bf18cf2d4d35d7cd8b4d5a164a4a17e7c290b477eb7bcd2f54daa0772cb92"
+    },
+    {
+      "path": "style.css",
+      "bytes": 1898,
+      "sha256": "fdbce33fc89004e36db65072d3edf2ec17929e61f9a08aedd646985d963656c2"
+    }
+  ]
+}

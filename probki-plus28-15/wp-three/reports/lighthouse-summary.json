@@ -1,0 +1,275 @@
+{
+  "status": "SIX_OFFICIAL_LOCAL_LIGHTHOUSE_RUNS_COMPLETE",
+  "checked_at": "2026-10-15T15:41:00.790Z",
+  "source_registry": "https://registry.npmjs.org",
+  "package": "lighthouse@13.5.0",
+  "runner": "Official Lighthouse Node API, same npm engine as CLI; explicit own Chrome cleanup. CLI initially generated report but Windows Node process did not exit, recorded separately.",
+  "browser": "Official installed Google Chrome; independent headless runs",
+  "not_google_PSI_production_or_field_test": true,
+  "runs": [
+    {
+      "site": "pf",
+      "mode": "mobile",
+      "URL": "http://127.0.0.1:8797/",
+      "fetch_time": "2026-10-15T15:33:33.692Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": 925.1199999999999,
+        "largest-contentful-paint": 1075.12,
+        "speed-index": 1128.9687219983005,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "pf-mobile.report.json",
+      "report_HTML": "pf-mobile.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4876.5,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    },
+    {
+      "site": "property",
+      "mode": "mobile",
+      "URL": "http://127.0.0.1:8798/",
+      "fetch_time": "2026-10-15T15:34:23.473Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": 993.3900000000001,
+        "largest-contentful-paint": 1143.39,
+        "speed-index": 2505.928424001847,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "property-mobile.report.json",
+      "report_HTML": "property-mobile.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4822,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    },
+    {
+      "site": "pf",
+      "mode": "desktop",
+      "URL": "http://127.0.0.1:8797/",
+      "fetch_time": "2026-10-15T15:35:29.138Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": 305.158,
+        "largest-contentful-paint": 305.158,
+        "speed-index": 458.5459416660583,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "pf-desktop.report.json",
+      "report_HTML": "pf-desktop.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4940,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "desktop",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    },
+    {
+      "site": "property",
+      "mode": "desktop",
+      "URL": "http://127.0.0.1:8798/",
+      "fetch_time": "2026-10-15T15:36:02.439Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": 269.2702,
+        "largest-contentful-paint": 309.2702,
+        "speed-index": 679.1259066668637,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "property-desktop.report.json",
+      "report_HTML": "property-desktop.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4655.5,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "desktop",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    },
+    {
+      "site": "retail",
+      "mode": "mobile",
+      "URL": "http://127.0.0.1:8799/",
+      "fetch_time": "2026-10-15T15:40:38.076Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 75,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "metrics": {
+        "first-contentful-paint": 4203.475999999999,
+        "largest-contentful-paint": 4353.475999999999,
+        "speed-index": 4203.475999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "retail-mobile.report.json",
+      "report_HTML": "retail-mobile.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4430,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    },
+    {
+      "site": "retail",
+      "mode": "desktop",
+      "URL": "http://127.0.0.1:8799/",
+      "fetch_time": "2026-10-15T15:40:46.865Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 98,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "metrics": {
+        "first-contentful-paint": 884.94,
+        "largest-contentful-paint": 924.9400000000002,
+        "speed-index": 884.94,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "report_JSON": "retail-desktop.report.json",
+      "report_HTML": "retail-desktop.report.html",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+        "benchmarkIndex": 4927.5,
+        "credits": {
+          "axe-core": "4.14.0"
+        }
+      },
+      "config": {
+        "formFactor": "desktop",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        }
+      },
+      "local_own_demo_not_client_production": true,
+      "hosting_or_field_performance_guarantee": false
+    }
+  ]
+}

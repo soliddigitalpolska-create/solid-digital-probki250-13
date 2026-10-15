@@ -1,0 +1,31 @@
+{
+  "status": "PASS_NATIVE_WP_QUERY_METADATA_FILTER",
+  "tests": [
+    {
+      "bedrooms": 0,
+      "expected": 2,
+      "actual": 2,
+      "HTTP": 200
+    },
+    {
+      "bedrooms": 1,
+      "expected": 1,
+      "actual": 1,
+      "HTTP": 200
+    },
+    {
+      "bedrooms": 2,
+      "expected": 1,
+      "actual": 1,
+      "HTTP": 200
+    },
+    {
+      "bedrooms": 3,
+      "expected": 0,
+      "actual": 0,
+      "HTTP": 200
+    }
+  ],
+  "not_static_HTML": true,
+  "own_fictional_only": true
+}

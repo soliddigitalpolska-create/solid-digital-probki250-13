@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-10-15T15:16:04+00:00",
+  "operation": "create",
+  "site_url": "http://127.0.0.1:8797/",
+  "wordpress": "7.1.3",
+  "theme": "pf-own-studio",
+  "independent_site": "Own separate WordPress DB/config/theme/URLs, not three posts in one site.",
+  "public_pages": [
+    {
+      "id": 26,
+      "title": "Strona główna",
+      "slug": "pf-start",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/",
+      "content_sha256": "6321d7203e266d9b10e329a5075d9e3ae05513651c43b305f61fa710ee4ad2a0",
+      "native_block_types": [
+        "core/html",
+        "core/heading",
+        "core/html",
+        "core/html",
+        "core/heading",
+        "core/html",
+        "core/html",
+        "core/heading",
+        "core/paragraph",
+        "core/html",
+        "core/html",
+        "core/shortcode",
+        "core/html",
+        "core/html",
+        "core/shortcode",
+        "core/html"
+      ],
+      "seo_title": "PF · własna demonstracja strony kancelarii",
+      "seo_description": "Własna fikcyjna strona kancelarii: pięć podstron, autorski monogram PF i formularz zapisujący zgłoszenia w lokalnym WordPressie."
+    },
+    {
+      "id": 27,
+      "title": "O nas",
+      "slug": "o-nas",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/o-nas/",
+      "content_sha256": "3a55d89b7f2a0ca2c81700d9906734772a91f690ef5f8a7ecbfd530dffd91758",
+      "native_block_types": [
+        "core/html",
+        "core/heading",
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph",
+        "core/paragraph"
+      ],
+      "seo_title": "O nas | PF — własna demonstracja",
+      "seo_description": "Fikcyjny przykład usługowej witryny WordPress z edytowalną stroną o zespole."
+    },
+    {
+      "id": 28,
+      "title": "Prawo cywilne",
+      "slug": "prawo-cywilne",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/prawo-cywilne/",
+      "content_sha256": "55e39bd63261301bf6405c9154445c6dbe8f4c2c25affdd45a53cae5c8a5c6b0",
+      "native_block_types": [
+        "core/html",
+        "core/heading",
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph",
+        "core/html"
+      ],
+      "seo_title": "Prawo cywilne | fikcyjna strona PF",
+      "seo_description": "Przykładowa podstrona usługowa. Tekst demonstracyjny, bez porad i deklarowania rzeczywistej praktyki."
+    },
+    {
+      "id": 29,
+      "title": "Prawo rodzinne",
+      "slug": "prawo-rodzinne",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/prawo-rodzinne/",
+      "content_sha256": "86bc51d5eca04d1f1b8d0553d69599170ac05bd332739faaa8c5f01c5c79e3f1",
+      "native_block_types": [
+        "core/html",
+        "core/heading",
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph",
+        "core/html"
+      ],
+      "seo_title": "Prawo rodzinne | fikcyjna strona PF",
+      "seo_description": "Fikcyjna podstrona usługowa z przejrzystą strukturą i formularzem kontaktowym."
+    },
+    {
+      "id": 30,
+      "title": "Kontakt",
+      "slug": "kontakt",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/kontakt/",
+      "content_sha256": "2cdd501ca2f1607340d69dadf72a14e95d90bbf7b82f8c1873658049e06add78",
+      "native_block_types": [
+        "core/html",
+        "core/heading",
+        "core/paragraph",
+        "core/shortcode"
+      ],
+      "seo_title": "Kontakt | PF — lokalny formularz demonstracyjny",
+      "seo_description": "Test formularza WordPress: walidacja, zapis w CMS i potwierdzenie na stronie. Bez wysyłania wiadomości e-mail."
+    },
+    {
+      "id": 31,
+      "title": "Zgłoszenie zapisane",
+      "slug": "dziekujemy",
+      "status": "publish",
+      "url": "http://127.0.0.1:8797/dziekujemy/",
+      "content_sha256": "09a16fc132819683d218cf4b2d731d2bd07ffcc3c84f418179d8348e11134d13",
+      "native_block_types": [
+        "core/html"
+      ],
+      "seo_title": "Zgłoszenie zapisane | PF — własny test",
+      "seo_description": "Potwierdzenie lokalnego zapisu formularza. Nie wysłano e-maila."
+    }
+  ],
+  "lead_count": 0,
+  "external_http_disabled": true,
+  "email_sent": false,
+  "google_live_reviews_or_API_proven": false
+}

@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-15T15:38:01+00:00",
+  "status": "PASS_NATIVE_WOO_REAL_LOCAL_ORDER_OBJECTS",
+  "orders": [
+    {
+      "id": 27,
+      "status": "on-hold",
+      "payment_method": "bacs",
+      "total": "120.00",
+      "shipping_total": "0",
+      "currency": "PLN",
+      "items": [
+        {
+          "product_id": 18,
+          "virtual": true,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "status": "on-hold",
+      "payment_method": "bacs",
+      "total": "61.00",
+      "shipping_total": "12",
+      "currency": "PLN",
+      "items": [
+        {
+          "product_id": 15,
+          "virtual": false,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "real_charge": false,
+  "email_sent": false,
+  "gateway": "NativeWooCommerceBACSmanualtestonly",
+  "inventory_reservation_proven": false,
+  "stock_management_disabled_in_this_SQLite_demo": true
+}

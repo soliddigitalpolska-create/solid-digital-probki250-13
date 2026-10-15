@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-15T15:34:08+00:00",
+  "operation": "inspect",
+  "home": "http://127.0.0.1:8798/",
+  "theme": "cy-own-journal",
+  "wordpress": "7.1.3",
+  "posts": [
+    {
+      "id": 31,
+      "type": "page",
+      "title": "Katalog demonstracyjny",
+      "url": "http://127.0.0.1:8798/",
+      "sha256": "838a37c79d62c50d40aadca02f16eb7e43bd156b796b5ead122e4d6b26c0a6be",
+      "native_block_types": [
+        "core/html",
+        "core/shortcode"
+      ],
+      "bedrooms": "",
+      "thumbnail_id": 0
+    },
+    {
+      "id": 32,
+      "type": "page",
+      "title": "Jak powstaje oferta",
+      "url": "http://127.0.0.1:8798/jak-powstaje-oferta/",
+      "sha256": "bbe51215bdda30d39de895eec40bcfa66080ecb0d1524865db31c7359a6ed82a",
+      "native_block_types": [
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph"
+      ],
+      "bedrooms": "",
+      "thumbnail_id": 0
+    },
+    {
+      "id": 33,
+      "type": "page",
+      "title": "O własnej próbce",
+      "url": "http://127.0.0.1:8798/o-probce/",
+      "sha256": "1b4d54731b960f6a21bb8596cce7374d0e545a1682df08f5791cc29de9cfec00",
+      "native_block_types": [
+        "core/paragraph",
+        "core/paragraph"
+      ],
+      "bedrooms": "",
+      "thumbnail_id": 0
+    },
+    {
+      "id": 28,
+      "type": "cy_property",
+      "title": "Dwie sypialnie. Zadaszony taras. Częściowy widok na morze.",
+      "url": "http://127.0.0.1:8798/nieruchomosc/apartament-86m2-taras-18m2-demo/",
+      "sha256": "fad007ff15c85d4a34ee9eb741dc804cd4dedbdf8f36b8f11e305844f6a789ce",
+      "native_block_types": [
+        "core/paragraph",
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph",
+        "core/image",
+        "core/image",
+        "core/heading",
+        "core/paragraph",
+        "core/heading",
+        "core/table",
+        "core/heading",
+        "core/paragraph"
+      ],
+      "bedrooms": "2",
+      "thumbnail_id": 27
+    },
+    {
+      "id": 29,
+      "type": "cy_property",
+      "title": "Jedna sypialnia. Taras 12 m². Prosty układ.",
+      "url": "http://127.0.0.1:8798/nieruchomosc/apartament-62m2-taras-12m2-demo/",
+      "sha256": "abcc3c61a13245bac8487782aa539dc5121a19c24c1291d3623cfb4a3430aee2",
+      "native_block_types": [
+        "core/paragraph",
+        "core/paragraph",
+        "core/heading",
+        "core/paragraph",
+        "core/paragraph"
+      ],
+      "bedrooms": "1",
+      "thumbnail_id": 30
+    }
+  ],
+  "native_CMS_backend": true,
+  "own_fictional_only": true,
+  "commercial_cases": 0
+}

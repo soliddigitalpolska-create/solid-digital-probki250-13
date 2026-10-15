@@ -1,0 +1,90 @@
+{
+  "own_fictional_only": true,
+  "not_commercial_cases": true,
+  "posts": [
+    {
+      "id": 26,
+      "type": "page",
+      "status": "publish",
+      "title": "Strona główna",
+      "slug": "pf-start",
+      "native_serialized_content": "<!-- wp:html --><section class=\"pf-hero\"><p class=\"pf-kicker\">Prawo / przejrzysty proces / spokojna komunikacja</p><p class=\"pf-demo-label\">WŁASNA FIKCYJNA DEMONSTRACJA. To nie jest rzeczywista kancelaria ani płatna realizacja klienta.</p><!-- /wp:html --><!-- wp:heading {\"level\":1} --><h1 class=\"wp-block-heading\">Prawo. Jasna rozmowa.<br>Uporządkowany kolejny krok.</h1><!-- /wp:heading --><!-- wp:html --><p class=\"pf-lead\">Strona fikcyjnej kancelarii pokazuje, jak czytelnie przedstawić obszary pomocy, wyjaśnić przebieg kontaktu i ułatwić wysłanie wiadomości.</p><div class=\"pf-actions\"><a class=\"pf-button\" href=\"#kontakt\">Zostaw kontakt</a><a class=\"pf-button pf-button-outline\" href=\"tel:+48000000000\">Zadzwoń — numer demonstracyjny</a></div></section><!-- /wp:html --><!-- wp:html --><section class=\"pf-section\"><p class=\"pf-kicker\">Zakres prezentacji</p><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Dwa obszary. Czytelna struktura.</h2><!-- /wp:heading --><!-- wp:html --><div class=\"pf-grid\"><article class=\"pf-card\"><span class=\"number\">01 / PRAWO CYWILNE</span><h3>Umowy i sprawy codzienne.</h3><p>Przykładowy opis obszaru usług: omówienie dokumentów, określenie pytań i uporządkowanie dalszych działań.</p><a href=\"/prawo-cywilne/\">Zobacz podstronę</a></article><article class=\"pf-card\"><span class=\"number\">02 / PRAWO RODZINNE</span><h3>Uważnie o sprawach osobistych.</h3><p>Neutralny tekst demonstracyjny pokazuje hierarchię informacji. Nie stanowi porady ani obietnicy wyniku.</p><a href=\"/prawo-rodzinne/\">Zobacz podstronę</a></article><article class=\"pf-card\"><span class=\"number\">03 / PIERWSZY KONTAKT</span><h3>Wiesz, od czego zacząć.</h3><p>Krótki formularz, jawny kolejny krok i czytelne dane kontaktowe. Bez zbędnych pól na start.</p><a href=\"/kontakt/\">Przejdź do kontaktu</a></article></div></section><!-- /wp:html --><!-- wp:html --><section class=\"pf-section\"><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Prosty przebieg pierwszego kontaktu.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Wiadomość → uporządkowanie potrzeby → ustalenie terminu rozmowy. W rzeczywistej kancelarii treści, zakres usług i sposób kontaktu zatwierdzają jej właściciele. Ta demonstracja nie przedstawia prawdziwego zespołu ani jego doświadczenia.</p><!-- /wp:paragraph --><!-- wp:html --></section><!-- /wp:html --><!-- wp:html --><section class=\"pf-section\"><!-- /wp:html --><!-- wp:shortcode -->[pf_google_reviews]<!-- /wp:shortcode --><!-- wp:html --></section><!-- /wp:html --><!-- wp:html --><section class=\"pf-section pf-contact-grid\" id=\"kontakt\"><div><p class=\"pf-kicker\">Formularz na stronie głównej</p><h2>Zostaw kontakt.<br>Uporządkujmy temat.</h2><p>Wyłącznie demonstracja: formularz waliduje dane i zapisuje zgłoszenie w lokalnym WordPressie. Nie wysyła żadnych wiadomości e-mail.</p><p><a href=\"tel:+48000000000\">+48 000 000 000 — numer fikcyjny</a></p></div><div><!-- /wp:html --><!-- wp:shortcode -->[pf_contact_form]<!-- /wp:shortcode --><!-- wp:html --></div></section><!-- /wp:html -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "PF · własna demonstracja strony kancelarii",
+        "_pf_seo_description": "Własna fikcyjna strona kancelarii: pięć podstron, autorski monogram PF i formularz zapisujący zgłoszenia w lokalnym WordPressie."
+      }
+    },
+    {
+      "id": 27,
+      "type": "page",
+      "status": "publish",
+      "title": "O nas",
+      "slug": "o-nas",
+      "native_serialized_content": "<!-- wp:html --><p class=\"pf-demo-label\">Własna fikcyjna demonstracja. Nie przedstawiamy prawdziwych prawników, uprawnień ani doświadczenia kancelarii.</p><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Przejrzysta komunikacja od pierwszej wiadomości.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Ta autorska koncepcja pokazuje stronę usługową w spokojnym, minimalistycznym stylu. Treści wyjaśniają obszary działania i sposób kontaktu, pozostawiając miejsce na zweryfikowane informacje rzeczywistego zespołu.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Co właściciel może edytować?</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Tytuły, akapity, opisy usług, dane kontaktowe i podstawowe metadane SEO. Wszystkie strony zapisano w natywnym CMS; codzienna edycja używa klasycznego edytora WordPressa.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Butelkowa zieleń i geometryczny monogram PF stanowią własny projekt demonstracyjny, bez wag, paragrafów i stockowych portretów.</p><!-- /wp:paragraph -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "O nas | PF — własna demonstracja",
+        "_pf_seo_description": "Fikcyjny przykład usługowej witryny WordPress z edytowalną stroną o zespole."
+      }
+    },
+    {
+      "id": 28,
+      "type": "page",
+      "status": "publish",
+      "title": "Prawo cywilne",
+      "slug": "prawo-cywilne",
+      "native_serialized_content": "<!-- wp:html --><p class=\"pf-demo-label\">Neutralna treść demonstracyjna, nie porada prawna i nie oferta rzeczywistej kancelarii.</p><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Czytelny zakres rozmowy o dokumentach.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Podstrona pokazuje miejsce na opis usług cywilnych, informacje o dokumentach i przebieg współpracy. W prawdziwym projekcie merytorykę dostarcza i zatwierdza kancelaria.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Co warto przygotować do pierwszego kontaktu?</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Krótki opis sprawy i ogólny cel rozmowy. Nie należy przesyłać danych wrażliwych przez formularz demonstracyjny.</p><!-- /wp:paragraph --><!-- wp:html --><p><a class=\"pf-button\" href=\"/kontakt/\">Przejdź do formularza</a></p><!-- /wp:html -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "Prawo cywilne | fikcyjna strona PF",
+        "_pf_seo_description": "Przykładowa podstrona usługowa. Tekst demonstracyjny, bez porad i deklarowania rzeczywistej praktyki."
+      }
+    },
+    {
+      "id": 29,
+      "type": "page",
+      "status": "publish",
+      "title": "Prawo rodzinne",
+      "slug": "prawo-rodzinne",
+      "native_serialized_content": "<!-- wp:html --><p class=\"pf-demo-label\">Własna fikcyjna demonstracja — nie jest poradą ani ofertą rzeczywistej kancelarii.</p><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Spokojne przedstawienie spraw osobistych.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Układ tej podstrony prowadzi od ogólnego opisu obszaru do pierwszego kontaktu. Nie zawiera obietnic rozstrzygnięcia, historii klientów ani wymyślonych wyników postępowań.</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class=\"wp-block-heading\">Poufność zaczyna się od rozsądnego formularza.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Na stronie demonstracyjnej zbieramy tylko dane testowe. Dla rzeczywistej kancelarii zakres formularza, informacje o prywatności i sposób przekazania dokumentów wymagają uzgodnienia z właścicielami.</p><!-- /wp:paragraph --><!-- wp:html --><p><a class=\"pf-button\" href=\"/kontakt/\">Zostaw kontakt</a></p><!-- /wp:html -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "Prawo rodzinne | fikcyjna strona PF",
+        "_pf_seo_description": "Fikcyjna podstrona usługowa z przejrzystą strukturą i formularzem kontaktowym."
+      }
+    },
+    {
+      "id": 30,
+      "type": "page",
+      "status": "publish",
+      "title": "Kontakt",
+      "slug": "kontakt",
+      "native_serialized_content": "<!-- wp:html --><p class=\"pf-demo-label\">Dane kontaktowe są fikcyjne. Formularz służy lokalnym testom; nie wysyła poczty.</p><!-- /wp:html --><!-- wp:heading --><h2 class=\"wp-block-heading\">Zostaw kontakt.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Wystarczą imię, testowy e-mail lub telefon i krótki opis. Po poprawnym wysłaniu otrzymasz potwierdzenie na stronie, a zgłoszenie będzie widoczne w natywnym panelu WordPress.</p><!-- /wp:paragraph --><!-- wp:shortcode -->[pf_contact_form]<!-- /wp:shortcode -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "Kontakt | PF — lokalny formularz demonstracyjny",
+        "_pf_seo_description": "Test formularza WordPress: walidacja, zapis w CMS i potwierdzenie na stronie. Bez wysyłania wiadomości e-mail."
+      }
+    },
+    {
+      "id": 31,
+      "type": "page",
+      "status": "publish",
+      "title": "Zgłoszenie zapisane",
+      "slug": "dziekujemy",
+      "native_serialized_content": "<!-- wp:html --><div class=\"pf-message\"><h2>Dziękujemy — lokalny test zakończony.</h2><p>Wiadomość została zapisana w odrębnym demonstracyjnym WordPressie. Żaden e-mail nie został wysłany. Nie rozpoczynamy kontaktu z żadną osobą.</p><p><a href=\"/\">Wróć do strony głównej</a></p></div><!-- /wp:html -->",
+      "excerpt": "",
+      "metadata": {
+        "_pf_own_fiction": "1",
+        "_pf_seo_title": "Zgłoszenie zapisane | PF — własny test",
+        "_pf_seo_description": "Potwierdzenie lokalnego zapisu formularza. Nie wysłano e-maila."
+      }
+    }
+  ]
+}

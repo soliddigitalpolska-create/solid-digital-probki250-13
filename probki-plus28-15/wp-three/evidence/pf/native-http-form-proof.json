@@ -1,0 +1,109 @@
+{
+  "status": "PASS_THIRD_INDEPENDENT_NATIVE_WORDPRESS_PF",
+  "checked_at": "2026-10-15T15:17:20.984791+00:00",
+  "site_url": "http://127.0.0.1:8797/",
+  "native_public_pages": [
+    {
+      "url": "http://127.0.0.1:8797/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "Prawo. Jasna rozmowa.Uporządkowany kolejny krok.",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 31745
+    },
+    {
+      "url": "http://127.0.0.1:8797/o-nas/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "O nas",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 29043
+    },
+    {
+      "url": "http://127.0.0.1:8797/prawo-cywilne/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "Prawo cywilne",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 28875
+    },
+    {
+      "url": "http://127.0.0.1:8797/prawo-rodzinne/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "Prawo rodzinne",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 28948
+    },
+    {
+      "url": "http://127.0.0.1:8797/kontakt/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "Kontakt",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 29634
+    },
+    {
+      "url": "http://127.0.0.1:8797/dziekujemy/",
+      "status": 200,
+      "h1_count": 1,
+      "h1": "Zgłoszenie zapisane",
+      "SEO_title_matches": true,
+      "SEO_description_matches": true,
+      "body_bytes": 26345
+    }
+  ],
+  "architecture": "SeparateWPDB/config/theme;5publicbusinesspages+1technicalthankyoupage;nativeleadposttype",
+  "contact_form": {
+    "successful_HTTP_roundtrip": true,
+    "thankyou_url": "http://127.0.0.1:8797/dziekujemy/?demo=recorded",
+    "lead_id": 32,
+    "private_lead_persisted_SQL": true,
+    "same_lead_visible_native_admin": true,
+    "invalid_cases": [
+      {
+        "test": "invalid_nonce",
+        "status": 403,
+        "no_lead_created": true
+      },
+      {
+        "test": "invalid_email",
+        "status": 422,
+        "no_lead_created": true
+      },
+      {
+        "test": "missing_consent",
+        "status": 422,
+        "no_lead_created": true
+      },
+      {
+        "test": "honeypot",
+        "status": 422,
+        "no_lead_created": true
+      }
+    ],
+    "no_email_or_external_notification_sent": true,
+    "notification_mode": "LOCAL_CMS_ONLY_NO_EMAIL"
+  },
+  "restart": {
+    "first_pid": 17852,
+    "second_pid": 49864,
+    "content_and_lead_preserved": true
+  },
+  "native_classic_editor_HTTP": 200,
+  "native_admin_local_entry": "http://127.0.0.1:8797/proof-local-editor/",
+  "native_lead_admin": "http://127.0.0.1:8797/wp-admin/edit.php?post_type=pf_demo_lead",
+  "root_visual_QA": "PENDING",
+  "Google_reviews": "Unconfiguredownfiction: genuineAPI/readreviewsnotclaimed;validatedconfigurationmoduleonly",
+  "Click_to_Call": "native tel link with clearlyfictionalnumber",
+  "logo": "OwnPFvectorSVG+roundSVG+PNG",
+  "original_source_unchanged": true,
+  "frozen_cypr_unchanged": true,
+  "no_production_client_data": true,
+  "no_commercial_case_claim": true
+}

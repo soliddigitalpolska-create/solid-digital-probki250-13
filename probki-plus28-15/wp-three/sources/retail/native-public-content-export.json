@@ -1,0 +1,72 @@
+{
+  "own_fictional_only": true,
+  "not_commercial_cases": true,
+  "posts": [
+    {
+      "id": 10,
+      "type": "page",
+      "status": "publish",
+      "title": "Pracownia — własny projekt WordPress",
+      "slug": "pracownia",
+      "native_serialized_content": "<!-- wp:group {\"className\":\"workshop-page\"} --><div class=\"wp-block-group workshop-page\"><!-- wp:group {\"className\":\"workshop-section workshop-container\"} --><div class=\"wp-block-group workshop-section workshop-container\"><!-- wp:paragraph {\"className\":\"workshop-eyebrow\"} --><p class=\"workshop-eyebrow\">Autorski warsztat / WordPress + WooCommerce</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":1,\"className\":\"workshop-hero-title\"} --><h1 class=\"wp-block-heading workshop-hero-title\">Treść, którą możesz edytować.</h1><!-- /wp:heading --><!-- wp:paragraph {\"className\":\"workshop-hero-intro\"} --><p class=\"workshop-hero-intro\">To własny projekt demonstracyjny. Natywny CMS zapisuje edycje w bazie SQLite, autorski motyw renderuje bloki, a WooCommerce obsługuje produkt, koszyk i zamówienie testowe.</p><!-- /wp:paragraph --><!-- wp:buttons --><div class=\"wp-block-buttons\"><!-- wp:button --><div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"/sklep/\">Zobacz sklep warsztatowy</a></div><!-- /wp:button --></div><!-- /wp:buttons --><!-- wp:heading --><h2 class=\"wp-block-heading\">Techniczny wkład</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Autorski motyw blokowy, modyfikacja PHP karty produktu, ochrona lokalnej bazy poza katalogiem publicznym oraz sprawdzone odtworzenie backupu. Ten projekt nie jest płatną realizacją klienta.</p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group -->",
+      "excerpt": "",
+      "metadata": {
+        "_workshop_seo_description": "Własny fikcyjny sklep WordPress/WooCommerce: katalog, koszyk, produkt fizyczny i usługa. Natywne zamówienia testowe BACS, bez opłat i e-maili."
+      }
+    },
+    {
+      "id": 11,
+      "type": "page",
+      "status": "publish",
+      "title": "Sklep warsztatowy",
+      "slug": "sklep",
+      "native_serialized_content": "<!-- wp:heading --><h2>Produkty testowe</h2><!-- /wp:heading --><!-- wp:shortcode -->[products limit=\"4\"]<!-- /wp:shortcode -->",
+      "excerpt": "",
+      "metadata": {}
+    },
+    {
+      "id": 12,
+      "type": "page",
+      "status": "publish",
+      "title": "Koszyk",
+      "slug": "koszyk",
+      "native_serialized_content": "[woocommerce_cart]",
+      "excerpt": "",
+      "metadata": {}
+    },
+    {
+      "id": 13,
+      "type": "page",
+      "status": "publish",
+      "title": "Zamówienie testowe",
+      "slug": "zamowienie",
+      "native_serialized_content": "[woocommerce_checkout]",
+      "excerpt": "",
+      "metadata": {}
+    },
+    {
+      "id": 15,
+      "type": "product",
+      "status": "publish",
+      "title": "Notes pracowni — produkt testowy",
+      "slug": "notes-pracowni",
+      "native_serialized_content": "Autorska karta produktu w natywnym WooCommerce. Produkt istnieje w bazie CMS; opis i cena są edytowalne.",
+      "excerpt": "Notes A5. Wyłącznie demonstracja — bez rzeczywistej sprzedaży.",
+      "metadata": {
+        "_workshop_seo_description": "Fikcyjny notes Pracownia — własny przykład produktu WooCommerce z koszykiem, dostawą i testowym zamówieniem BACS."
+      }
+    },
+    {
+      "id": 18,
+      "type": "product",
+      "status": "publish",
+      "title": "Konsultacja projektu — usługa testowa",
+      "slug": "konsultacja-projektu",
+      "native_serialized_content": "Drugi własny scenariusz WooCommerce: usługa wirtualna, bez naliczania dostawy. Bez rzeczywistej rezerwacji lub świadczenia usługi.",
+      "excerpt": "",
+      "metadata": {
+        "_workshop_seo_description": "Fikcyjna konsultacja projektu — własny przykład usługi wirtualnej WooCommerce, bez dostawy i rzeczywistej płatności."
+      }
+    }
+  ]
+}
