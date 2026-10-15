@@ -7,6 +7,8 @@
   "period_days": 30,
   "not_live_platform_export": true,
   "performance_history": null,
+  "service_fee_requires_technically_ready_shop": true,
+  "service_readiness_note": "1600 PLN netto / 30 dni dotyczy wyłącznie późniejszej obsługi po technicznym uruchomieniu sklepu, checkoutu, poprawnego pomiaru i zgód. Nie jest wyceną budowy lub naprawy sklepu ani pełnego zlecenia wymagającego tych wdrożeń.",
   "campaigns": [
     {
       "id": "google-search-city",
@@ -103,10 +105,22 @@
     "creative_limit": 4,
     "seo_pages": 4,
     "seo_article_words": 600,
+    "article_word_limit": 600,
+    "new_campaigns_first_month_total_limit": 2,
+    "campaign_limits_include_existing_and_new": true,
+    "creative_type": "static_from_client_materials",
     "human_hours": 22,
     "markets": 1,
     "languages": 1
   },
+  "draft_selection_note": "Cztery szkice do wyboru, nie cztery uruchomione kampanie. Pierwszy miesiąc: maksymalnie 2 nowe kampanie łącznie Google i Meta; limity 3 Google + 3 Meta obejmują istniejące i nowe łącznie.",
+  "readiness_requirements": [
+    "sprawny pomiar konwersji",
+    "poprawne zgody",
+    "gotowe materiały klienta",
+    "prosty edytowalny CMS"
+  ],
+  "additional_work_policy": "Wdrożenie lub naprawa pomiaru, CMP, checkoutu i przebudowa serwisu wyceniane po przeglądzie przed umową. Dodatkowe koszty wymagają wcześniejszego uzgodnienia; bez niespodziewanego rachunku.",
   "media_note": "3000 PLN to wyłącznie fikcyjny przykład podziału. Rzeczywisty budżet ustala i opłaca klient osobno. Nie wchodzi w 1600 PLN netto.",
   "pmax_note": "PMax może zastąpić jedną z maksymalnie 3 kampanii Google po weryfikacji pomiaru, materiałów i zasad konta. W tej próbce brak konfiguracji API i emisji.",
   "review": [
@@ -118,6 +132,8 @@
     "rejestr zmian"
   ],
   "launch_gates": [
+    "potwierdzenie gotowości pomiaru, zgód i materiałów przed umową",
+    "maksymalnie 2 nowe kampanie łącznie w pierwszym miesiącu",
     "umowa i finansowanie Useme",
     "dostępy do kont i CMS",
     "zatwierdzony budżet i materiały",

@@ -15,6 +15,7 @@ PLAN=json.loads((PUB/'campaign-plan.json').read_text(encoding='utf-8'))
 
 def validate_plan(p):
     if p.get('demo_only') is not True or p['currency']!='PLN':raise ValueError('demo currency')
+    if p.get('service_fee_requires_technically_ready_shop') is not True:raise ValueError('shop readiness')
     if Decimal(p['service_fee_net'])!=Decimal('1600'):raise ValueError('fee')
     caps=[Decimal(x['monthly_media_cap']) for x in p['campaigns']]
     if any(x<=0 for x in caps):raise ValueError('nonpositive cap')
@@ -31,6 +32,8 @@ def validate_plan(p):
     scope=p['monthly_scope']
     if scope['human_hours']!=22 or sum(p['human_hours_allocation'].values())!=22:raise ValueError('human hours')
     if scope['seo_pages']!=4 or scope['seo_article_words']!=600 or scope['creative_limit']!=4:raise ValueError('scope')
+    if scope.get('new_campaigns_first_month_total_limit')!=2 or scope.get('campaign_limits_include_existing_and_new') is not True:raise ValueError('first month launch limit')
+    if scope.get('creative_type')!='static_from_client_materials' or scope.get('article_word_limit')!=600:raise ValueError('bounded deliverables')
     return True
 
 class Document(HTMLParser):
@@ -82,7 +85,7 @@ class OwnedProofTests(unittest.TestCase):
         for f in PUB.glob('*.html'):self.assertEqual(Document(f.read_text(encoding='utf-8')).meta.get('robots'),'noindex,follow',f.name)
     def test_article_word_count(self):
         s=(PUB/'guide.html').read_text(encoding='utf-8');article=s.split('<h1>',1)[1].split('<p><a class="btn"',1)[0]
-        words=len(re.sub('<[^>]*>',' ',article).split());self.assertGreaterEqual(words,600);self.assertLessEqual(words,660)
+        words=len(re.sub('<[^>]*>',' ',article).split());self.assertGreaterEqual(words,550);self.assertLessEqual(words,600)
     def test_local_links_exist(self):
         for f in PUB.glob('*.html'):
             for u in Document(f.read_text(encoding='utf-8')).links:
@@ -100,6 +103,11 @@ class OwnedProofTests(unittest.TestCase):
     def test_monthly_scope_and_hours(self):
         self.assertEqual(PLAN['monthly_scope']['google_campaign_limit'],3);self.assertEqual(PLAN['monthly_scope']['meta_campaign_limit'],3)
         self.assertEqual(PLAN['period_days'],30);self.assertEqual(sum(PLAN['human_hours_allocation'].values()),22)
+        self.assertEqual(PLAN['monthly_scope']['new_campaigns_first_month_total_limit'],2)
+        self.assertTrue(PLAN['monthly_scope']['campaign_limits_include_existing_and_new'])
+    def test_excess_first_month_launches_rejected(self):
+        p=copy.deepcopy(PLAN);p['monthly_scope']['new_campaigns_first_month_total_limit']=3
+        with self.assertRaisesRegex(ValueError,'first month launch limit'):validate_plan(p)
 
 def run():
     # Make source/tests themselves reachable and independently runnable from the downloaded archive.
