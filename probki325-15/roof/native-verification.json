@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "native_engine": "Blender 5.2.2 LTS",
+  "reopened_saved_blend": true,
+  "layer_count": 8,
+  "layer_checks": [
+    {
+      "collection": "01 | Soffit panel",
+      "meshes": 1,
+      "hide_show_verified": true,
+      "vertices": 8,
+      "polygons": 6
+    },
+    {
+      "collection": "02 | Reinforcement grid",
+      "meshes": 52,
+      "hide_show_verified": true,
+      "vertices": 416,
+      "polygons": 312
+    },
+    {
+      "collection": "03 | Insulation",
+      "meshes": 3,
+      "hide_show_verified": true,
+      "vertices": 24,
+      "polygons": 18
+    },
+    {
+      "collection": "04 | Deck and membrane",
+      "meshes": 2,
+      "hide_show_verified": true,
+      "vertices": 16,
+      "polygons": 12
+    },
+    {
+      "collection": "05 | Counter battens",
+      "meshes": 4,
+      "hide_show_verified": true,
+      "vertices": 32,
+      "polygons": 24
+    },
+    {
+      "collection": "06 | Roof battens",
+      "meshes": 4,
+      "hide_show_verified": true,
+      "vertices": 32,
+      "polygons": 24
+    },
+    {
+      "collection": "07 | Roof covering",
+      "meshes": 4,
+      "hide_show_verified": true,
+      "vertices": 200,
+      "polygons": 96
+    },
+    {
+      "collection": "08 | Fascia and gutter",
+      "meshes": 3,
+      "hide_show_verified": true,
+      "vertices": 122,
+      "polygons": 62
+    }
+  ],
+  "remove_upper_layers_test": {
+    "removed_meshes": 15,
+    "underlying_meshes_retained": 58,
+    "passed": true
+  },
+  "client_assets_embedded": false,
+  "external_image_dependencies": 0,
+  "blend_sha256": "29d1f7f1770091f6a8110e44e3c1a0f6444062fccfc35a9e244d4c3bd5d25cb3",
+  "saved_file_left_unchanged": true
+}

@@ -1,0 +1,51 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "own_sample": true,
+  "client_assets_embedded": false,
+  "layer_count": 8,
+  "layers": [
+    {
+      "name": "01 | Soffit panel",
+      "description": "Continuous base panel; real mesh beneath other layers.",
+      "mesh_objects": 1
+    },
+    {
+      "name": "02 | Reinforcement grid",
+      "description": "Independent grid made from real crossed mesh strips.",
+      "mesh_objects": 52
+    },
+    {
+      "name": "03 | Insulation",
+      "description": "Three closed insulation blocks: exposed surfaces remain after hiding the roof.",
+      "mesh_objects": 3
+    },
+    {
+      "name": "04 | Deck and membrane",
+      "description": "Solid fibreboard deck and a separate underlay; neither is an image plane.",
+      "mesh_objects": 2
+    },
+    {
+      "name": "05 | Counter battens",
+      "description": "Four individually editable wooden members.",
+      "mesh_objects": 4
+    },
+    {
+      "name": "06 | Roof battens",
+      "description": "Four separate transverse wooden members.",
+      "mesh_objects": 4
+    },
+    {
+      "name": "07 | Roof covering",
+      "description": "Four separate folded metal sheets with real corrugated cross sections.",
+      "mesh_objects": 4
+    },
+    {
+      "name": "08 | Fascia and gutter",
+      "description": "Fascia, half-round gutter and downpipe, each independently editable.",
+      "mesh_objects": 3
+    }
+  ],
+  "material_count": 8,
+  "external_image_textures": 0,
+  "limitations": "Illustrative geometry only. Dimensions and layer composition are fictional. Not construction documentation or a specification of a certified roof system."
+}
