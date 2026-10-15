@@ -1,0 +1,50 @@
+{
+  "preset": "editorial",
+  "ratio": "9:16",
+  "source": {
+    "image": {
+      "filename": "own-lamp-render.png",
+      "sha256": "0e5cb04b0ec6735d8b70d7fab0030294258a99bdcfff4dd3eddc7036a58128a9"
+    },
+    "audio": {
+      "filename": "local-tts-demo.wav",
+      "sha256": "e7dd9d15935eab26fdf1e2822cfe90051b336c65eb68635942cc2c63081992a3"
+    }
+  },
+  "source_kind": "Own Blender product render, not a physical client photograph",
+  "audio_kind": "Local Windows SAPI/Paulina technical demo; no production commercial licence claim",
+  "product_geometry": {
+    "source_dimensions": [
+      2560,
+      2560
+    ],
+    "source_aspect_ratio": 1.0,
+    "image_box": [
+      130,
+      536,
+      885,
+      885
+    ],
+    "operation": "proportional resize + original source pixels; no crop, inpaint or image generation"
+  },
+  "output": {
+    "filename": "video.mp4",
+    "sha256": "5f91fbaad2ed3aab05d83ec89e2d6f5ae18324527a20af952b495661245c4c5b",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 24,
+    "frames": 322,
+    "duration_seconds": 13.4,
+    "audio_present": true,
+    "codec": "H264/AAC",
+    "caption_count": 5,
+    "captions_burned_in": true
+  },
+  "network_calls": 0,
+  "llm_called": false,
+  "generative_video_called": false,
+  "commercial_voice_licence_claimed": false,
+  "production_voice_requirement": "Client-provided audio or a licensed provider agreed before financing. Local TTS is only a technical demo."
+}

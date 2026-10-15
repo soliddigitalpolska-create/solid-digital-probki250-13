@@ -1,0 +1,9 @@
+
+test_missing_asset_fails_without_output (test_workflow.RealWorkflowTest.test_missing_asset_fails_without_output) ... ok
+test_render_preserves_product_and_has_audio_and_captions (test_workflow.RealWorkflowTest.test_render_preserves_product_and_has_audio_and_captions) ... ok
+test_video_input_is_decoded_instead_of_being_ignored (test_workflow.RealWorkflowTest.test_video_input_is_decoded_instead_of_being_ignored) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.607s
+
+OK

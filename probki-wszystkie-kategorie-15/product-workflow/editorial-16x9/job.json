@@ -1,0 +1,37 @@
+{
+  "image": "own-lamp-render.png",
+  "audio": "local-tts-demo.wav",
+  "duration": 13.4,
+  "headline": "Twój produkt.\nDokładnie ten sam.",
+  "caption": "Ten sam kształt i detale.",
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 2.68,
+      "text": "Jedno źródło produktu."
+    },
+    {
+      "start": 2.68,
+      "end": 5.36,
+      "text": "Dwa formaty publikacji."
+    },
+    {
+      "start": 5.36,
+      "end": 8.04,
+      "text": "Ten sam kształt i detale."
+    },
+    {
+      "start": 8.04,
+      "end": 10.72,
+      "text": "Własny głos i napisy."
+    },
+    {
+      "start": 10.72,
+      "end": 13.4,
+      "text": "Gotowy plik do akceptacji."
+    }
+  ],
+  "source_kind": "Own Blender product render, not a physical client photograph",
+  "audio_kind": "Local Windows SAPI/Paulina technical demo; no production commercial licence claim",
+  "cta": "Wybierz układ"
+}

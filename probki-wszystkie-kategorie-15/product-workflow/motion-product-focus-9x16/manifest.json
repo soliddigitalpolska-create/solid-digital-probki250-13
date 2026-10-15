@@ -1,0 +1,56 @@
+{
+  "preset": "product-focus",
+  "ratio": "9:16",
+  "source": {
+    "image": {
+      "filename": "own-lamp-render.png",
+      "sha256": "0e5cb04b0ec6735d8b70d7fab0030294258a99bdcfff4dd3eddc7036a58128a9"
+    },
+    "audio": {
+      "filename": "local-tts-demo.wav",
+      "sha256": "e7dd9d15935eab26fdf1e2822cfe90051b336c65eb68635942cc2c63081992a3"
+    },
+    "video": {
+      "filename": "own-lamp-footage.mp4",
+      "sha256": "fa41dd9a2d1b1b7636048e59653017c82d5e4f60e76723a19e04aba224ba0a24"
+    }
+  },
+  "source_kind": "Own actual Blender camera-orbit footage, two source clips, 540x960; not physical client footage. Original frames decoded; no generated video.",
+  "audio_kind": "Local Windows SAPI/Paulina technical demo; no production commercial licence claim",
+  "source_video_frames_decoded": 322,
+  "video_input_processing": "Original decoded frames; proportional fit, 24fps resampling and final-frame hold if narration is longer. No generated motion.",
+  "product_geometry": {
+    "source_dimensions": [
+      540,
+      960
+    ],
+    "source_aspect_ratio": 0.5625,
+    "image_box": [
+      283,
+      499,
+      513,
+      912
+    ],
+    "operation": "proportional resize + original source pixels; no crop, inpaint or image generation"
+  },
+  "output": {
+    "filename": "video.mp4",
+    "sha256": "796dbaa32e7463e021722f123d30042dd49d5fad334336601532df5070d9182d",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 24,
+    "frames": 322,
+    "duration_seconds": 13.4,
+    "audio_present": true,
+    "codec": "H264/AAC",
+    "caption_count": 5,
+    "captions_burned_in": true
+  },
+  "network_calls": 0,
+  "llm_called": false,
+  "generative_video_called": false,
+  "commercial_voice_licence_claimed": false,
+  "production_voice_requirement": "Client-provided audio or a licensed provider agreed before financing. Local TTS is only a technical demo."
+}
