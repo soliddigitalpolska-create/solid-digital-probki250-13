@@ -1,0 +1,114 @@
+[
+  {
+    "id": "API-01",
+    "title": "Pobranie trzech projektów i ustawień",
+    "method": "HTTP",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "SSR-1",
+    "title": "Render głównego widoku",
+    "method": "HTTP SSR",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "SSR-2",
+    "title": "Render ustawień",
+    "method": "HTTP SSR",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "API-04",
+    "title": "Nazwa o minimalnej długości",
+    "method": "HTTP",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "API-05",
+    "title": "Nazwa poniżej minimum",
+    "method": "HTTP",
+    "expected": 400,
+    "actual": 400,
+    "result": "PASS"
+  },
+  {
+    "id": "API-06",
+    "title": "Nazwa na górnej granicy",
+    "method": "HTTP",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "API-07",
+    "title": "Nazwa ponad górną granicą",
+    "method": "HTTP",
+    "expected": 400,
+    "actual": 400,
+    "result": "PASS"
+  },
+  {
+    "id": "API-08",
+    "title": "Same zwykłe spacje",
+    "method": "HTTP",
+    "expected": 400,
+    "actual": 400,
+    "result": "PASS"
+  },
+  {
+    "id": "API-09",
+    "title": "Wartość tekstowa zamiast boolean",
+    "method": "HTTP",
+    "expected": 400,
+    "actual": 400,
+    "result": "PASS"
+  },
+  {
+    "id": "API-10",
+    "title": "Nieistniejący projekt",
+    "method": "HTTP",
+    "expected": 404,
+    "actual": 404,
+    "result": "PASS"
+  },
+  {
+    "id": "API-11",
+    "title": "Nieprawidłowy status",
+    "method": "HTTP",
+    "expected": 400,
+    "actual": 400,
+    "result": "PASS"
+  },
+  {
+    "id": "API-12",
+    "title": "Poprawny zapis statusu i odczyt",
+    "method": "HTTP",
+    "expected": 200,
+    "actual": 200,
+    "result": "PASS"
+  },
+  {
+    "id": "API-13",
+    "title": "Nazwa wyłącznie z trzech niewidocznych U+200B",
+    "method": "HTTP",
+    "expected": "Proponowane kryterium QA: 400 oraz brak zmiany nazwy",
+    "actual": "200; zapisano dokładnie trzy U+200B; 3/3 powtórzeń",
+    "result": "FINDING"
+  },
+  {
+    "id": "API-14",
+    "title": "Pełne odtworzenie stanu po testach",
+    "method": "HTTP",
+    "expected": "Stan identyczny z początkowym",
+    "actual": "Zgodność całego JSON",
+    "result": "PASS"
+  }
+]

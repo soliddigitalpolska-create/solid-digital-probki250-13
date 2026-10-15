@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-10-15T13:18:22.638Z",
+  "route": "/ustawienia",
+  "actions": [
+    "FillworkspaceinputwiththreeU+200B",
+    "Clicksaveandsuccessconfirmed",
+    "Reloadpage",
+    "ReadDOMfieldcodepoints"
+  ],
+  "field_codepoints": [
+    8203,
+    8203,
+    8203
+  ],
+  "screenshot": "ui-blank-name.jpg",
+  "own_fictional_app": true,
+  "customer_or_account_data": false,
+  "original_name_restored_by_root": true
+}

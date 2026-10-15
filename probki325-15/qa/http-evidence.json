@@ -1,0 +1,590 @@
+{
+  "status": "ACTUAL_LOCAL_HTTP_REPRODUCTION_COMPLETE",
+  "tested_at": "2026-10-15T13:22:03.112069+00:00",
+  "environment": {
+    "application": "Metrik own demo1.0.0",
+    "Nuxt": "3.21.11",
+    "Vue": "3.5.44",
+    "Node": "v24.19.0",
+    "OS": "Windows",
+    "backend": "LocalNitroin-memorymock;notcustomerproduction"
+  },
+  "source_handler": "server/api/workspace.patch.ts",
+  "source_sha256": "30eca3ee8f84f223306672c155bdcbf6742fe4261c8974b0b9cf51c1e0ff3707",
+  "source_matches_previous_build_proof": true,
+  "own_fictional_demo": true,
+  "customer_project_or_paid_case": false,
+  "tested_by_current_agent": "HTTPand source review only;no browserUI claim",
+  "http_cases_count": 14,
+  "http_pass_count": 13,
+  "findings_count": 1,
+  "finding_reproduced_attempts": [
+    {
+      "attempt": 1,
+      "patch_trace_index": 12,
+      "readback_trace_index": 13,
+      "status": 200,
+      "saved_name_json": "\"\\u200b\\u200b\\u200b\"",
+      "codepoints": [
+        "U+200B",
+        "U+200B",
+        "U+200B"
+      ],
+      "exact_roundtrip_match": true
+    },
+    {
+      "attempt": 2,
+      "patch_trace_index": 15,
+      "readback_trace_index": 16,
+      "status": 200,
+      "saved_name_json": "\"\\u200b\\u200b\\u200b\"",
+      "codepoints": [
+        "U+200B",
+        "U+200B",
+        "U+200B"
+      ],
+      "exact_roundtrip_match": true
+    },
+    {
+      "attempt": 3,
+      "patch_trace_index": 18,
+      "readback_trace_index": 19,
+      "status": 200,
+      "saved_name_json": "\"\\u200b\\u200b\\u200b\"",
+      "codepoints": [
+        "U+200B",
+        "U+200B",
+        "U+200B"
+      ],
+      "exact_roundtrip_match": true
+    }
+  ],
+  "original_full_state_restored": true,
+  "traces": [
+    {
+      "at": "2026-10-15T13:22:03.049727+00:00",
+      "method": "GET",
+      "path": "/api/demo",
+      "request": null,
+      "status": 200,
+      "response": {
+        "workspace": {
+          "name": "Pracownia Metrik",
+          "weeklyDigest": true,
+          "compactView": false
+        },
+        "projects": [
+          {
+            "id": "01",
+            "title": "Strona pracowni",
+            "description": "Projekt i wdro\u017cenie nowej strony",
+            "status": "active",
+            "progress": 68,
+            "due": "24 pa\u017a",
+            "color": "#C1D8BA"
+          },
+          {
+            "id": "02",
+            "title": "System opakowa\u0144",
+            "description": "Kierunek wizualny i \u017ar\u00f3d\u0142a",
+            "status": "plan",
+            "progress": 12,
+            "due": "30 pa\u017a",
+            "color": "#E9C798"
+          },
+          {
+            "id": "03",
+            "title": "Animacja produktu",
+            "description": "Storyboard, monta\u017c i napisy",
+            "status": "done",
+            "progress": 100,
+            "due": "18 pa\u017a",
+            "color": "#C8C7E5"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.052239+00:00",
+      "method": "GET",
+      "path": "/",
+      "request": null,
+      "status": 200,
+      "response": "HTMLresponseomitted;HTTPstatusandpagetitlecheckedlocally."
+    },
+    {
+      "at": "2026-10-15T13:22:03.053750+00:00",
+      "method": "GET",
+      "path": "/ustawienia",
+      "request": null,
+      "status": 200,
+      "response": "HTMLresponseomitted;HTTPstatusandpagetitlecheckedlocally."
+    },
+    {
+      "at": "2026-10-15T13:22:03.070868+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "ABC",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "ABC",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.086715+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "AB",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 400,
+      "response": {
+        "error": true,
+        "url": "/api/workspace",
+        "statusCode": 400,
+        "statusMessage": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne",
+        "message": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.087719+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.088223+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 400,
+      "response": {
+        "error": true,
+        "url": "/api/workspace",
+        "statusCode": 400,
+        "statusMessage": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne",
+        "message": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.089228+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "   ",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 400,
+      "response": {
+        "error": true,
+        "url": "/api/workspace",
+        "statusCode": 400,
+        "statusMessage": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne",
+        "message": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.089732+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "Pr\u00f3ba QA",
+        "weeklyDigest": "true",
+        "compactView": false
+      },
+      "status": 400,
+      "response": {
+        "error": true,
+        "url": "/api/workspace",
+        "statusCode": 400,
+        "statusMessage": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne",
+        "message": "Wymagane: nazwa3\u201360znak\u00f3w i ustawienia logiczne"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.089732+00:00",
+      "method": "PATCH",
+      "path": "/api/projects/missing",
+      "request": {
+        "status": "done"
+      },
+      "status": 404,
+      "response": {
+        "error": true,
+        "url": "/api/projects/missing",
+        "statusCode": 404,
+        "statusMessage": "Nie ma takiego projektu",
+        "message": "Nie ma takiego projektu"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.090735+00:00",
+      "method": "PATCH",
+      "path": "/api/projects/03",
+      "request": {
+        "status": "invalid"
+      },
+      "status": 400,
+      "response": {
+        "error": true,
+        "url": "/api/projects/03",
+        "statusCode": 400,
+        "statusMessage": "Nieprawid\u0142owy status",
+        "message": "Nieprawid\u0142owy status"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.090735+00:00",
+      "method": "PATCH",
+      "path": "/api/projects/03",
+      "request": {
+        "status": "done"
+      },
+      "status": 200,
+      "response": {
+        "id": "03",
+        "title": "Animacja produktu",
+        "description": "Storyboard, monta\u017c i napisy",
+        "status": "done",
+        "progress": 100,
+        "due": "18 pa\u017a",
+        "color": "#C8C7E5"
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.092641+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.092641+00:00",
+      "method": "GET",
+      "path": "/api/demo",
+      "request": null,
+      "status": 200,
+      "response": {
+        "workspace": {
+          "name": "\u200b\u200b\u200b",
+          "weeklyDigest": true,
+          "compactView": false
+        },
+        "projects": [
+          {
+            "id": "01",
+            "title": "Strona pracowni",
+            "description": "Projekt i wdro\u017cenie nowej strony",
+            "status": "active",
+            "progress": 68,
+            "due": "24 pa\u017a",
+            "color": "#C1D8BA"
+          },
+          {
+            "id": "02",
+            "title": "System opakowa\u0144",
+            "description": "Kierunek wizualny i \u017ar\u00f3d\u0142a",
+            "status": "plan",
+            "progress": 12,
+            "due": "30 pa\u017a",
+            "color": "#E9C798"
+          },
+          {
+            "id": "03",
+            "title": "Animacja produktu",
+            "description": "Storyboard, monta\u017c i napisy",
+            "status": "done",
+            "progress": 100,
+            "due": "18 pa\u017a",
+            "color": "#C8C7E5"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.092641+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.094155+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.094155+00:00",
+      "method": "GET",
+      "path": "/api/demo",
+      "request": null,
+      "status": 200,
+      "response": {
+        "workspace": {
+          "name": "\u200b\u200b\u200b",
+          "weeklyDigest": true,
+          "compactView": false
+        },
+        "projects": [
+          {
+            "id": "01",
+            "title": "Strona pracowni",
+            "description": "Projekt i wdro\u017cenie nowej strony",
+            "status": "active",
+            "progress": 68,
+            "due": "24 pa\u017a",
+            "color": "#C1D8BA"
+          },
+          {
+            "id": "02",
+            "title": "System opakowa\u0144",
+            "description": "Kierunek wizualny i \u017ar\u00f3d\u0142a",
+            "status": "plan",
+            "progress": 12,
+            "due": "30 pa\u017a",
+            "color": "#E9C798"
+          },
+          {
+            "id": "03",
+            "title": "Animacja produktu",
+            "description": "Storyboard, monta\u017c i napisy",
+            "status": "done",
+            "progress": 100,
+            "due": "18 pa\u017a",
+            "color": "#C8C7E5"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.094155+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.095749+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "\u200b\u200b\u200b",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.095749+00:00",
+      "method": "GET",
+      "path": "/api/demo",
+      "request": null,
+      "status": 200,
+      "response": {
+        "workspace": {
+          "name": "\u200b\u200b\u200b",
+          "weeklyDigest": true,
+          "compactView": false
+        },
+        "projects": [
+          {
+            "id": "01",
+            "title": "Strona pracowni",
+            "description": "Projekt i wdro\u017cenie nowej strony",
+            "status": "active",
+            "progress": 68,
+            "due": "24 pa\u017a",
+            "color": "#C1D8BA"
+          },
+          {
+            "id": "02",
+            "title": "System opakowa\u0144",
+            "description": "Kierunek wizualny i \u017ar\u00f3d\u0142a",
+            "status": "plan",
+            "progress": 12,
+            "due": "30 pa\u017a",
+            "color": "#E9C798"
+          },
+          {
+            "id": "03",
+            "title": "Animacja produktu",
+            "description": "Storyboard, monta\u017c i napisy",
+            "status": "done",
+            "progress": 100,
+            "due": "18 pa\u017a",
+            "color": "#C8C7E5"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.095749+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.095749+00:00",
+      "method": "PATCH",
+      "path": "/api/workspace",
+      "request": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      },
+      "status": 200,
+      "response": {
+        "name": "Pracownia Metrik",
+        "weeklyDigest": true,
+        "compactView": false
+      }
+    },
+    {
+      "at": "2026-10-15T13:22:03.097261+00:00",
+      "method": "GET",
+      "path": "/api/demo",
+      "request": null,
+      "status": 200,
+      "response": {
+        "workspace": {
+          "name": "Pracownia Metrik",
+          "weeklyDigest": true,
+          "compactView": false
+        },
+        "projects": [
+          {
+            "id": "01",
+            "title": "Strona pracowni",
+            "description": "Projekt i wdro\u017cenie nowej strony",
+            "status": "active",
+            "progress": 68,
+            "due": "24 pa\u017a",
+            "color": "#C1D8BA"
+          },
+          {
+            "id": "02",
+            "title": "System opakowa\u0144",
+            "description": "Kierunek wizualny i \u017ar\u00f3d\u0142a",
+            "status": "plan",
+            "progress": 12,
+            "due": "30 pa\u017a",
+            "color": "#E9C798"
+          },
+          {
+            "id": "03",
+            "title": "Animacja produktu",
+            "description": "Storyboard, monta\u017c i napisy",
+            "status": "done",
+            "progress": 100,
+            "due": "18 pa\u017a",
+            "color": "#C8C7E5"
+          }
+        ]
+      }
+    }
+  ],
+  "known_limitations_not_reported_as_bugs": [
+    "Themockstoresstateinmemoryandresetsatrestart;alreadydocumented.",
+    "Nologin,payments,databaseormobiledevicecoverageclaim."
+  ],
+  "previous_root_browser_check": {
+    "date": "2026-10-14T22:00:30.090Z",
+    "scope": "ActualsettingsforminteractionandreadbackinownNuxtdemo;historicalevidence,separatefromtodayHTTPtest.",
+    "current_bug_UI_reproduction": "CONFIRMED_IN_SEPARATE_CURRENT_ROOT_EVIDENCE"
+  },
+  "current_bug_UI_reproduction": {
+    "verified_at": "2026-10-15T13:18:22.638Z",
+    "route": "/ustawienia",
+    "actions": [
+      "FillworkspaceinputwiththreeU+200B",
+      "Clicksaveandsuccessconfirmed",
+      "Reloadpage",
+      "ReadDOMfieldcodepoints"
+    ],
+    "field_codepoints": [
+      8203,
+      8203,
+      8203
+    ],
+    "screenshot": "ui-blank-name.jpg",
+    "own_fictional_app": true,
+    "customer_or_account_data": false,
+    "original_name_restored_by_root": true
+  }
+}

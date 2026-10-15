@@ -1,0 +1,70 @@
+{
+  "id": "QA-001",
+  "title": "Nazwa pracowni z\u0142o\u017cona wy\u0142\u0105cznie z niewidocznych znak\u00f3w zostaje zapisana",
+  "status": "REPRODUCED_HTTP_AND_BROWSER_UI;acceptancecriterionpending",
+  "severity": "Minor / walidacja i czytelno\u015b\u0107 danych",
+  "priority": "P2 - propozycja do uzgodnienia z PO",
+  "environment": {
+    "application": "Metrik own demo1.0.0",
+    "Nuxt": "3.21.11",
+    "Vue": "3.5.44",
+    "Node": "v24.19.0",
+    "OS": "Windows",
+    "backend": "LocalNitroin-memorymock;notcustomerproduction"
+  },
+  "preconditions": [
+    "W\u0142asna lokalna aplikacja Metrik1.0.0 jest uruchomiona.",
+    "Odczytano i zachowano pierwotne ustawienia przez GET /api/demo."
+  ],
+  "steps": [
+    "Wy\u015blij PATCH /api/workspace z name r\u00f3wnym trzem znakom U+200B; oba pola logiczne zachowaj jako boolean.",
+    "Odczytaj odpowied\u017a PATCH.",
+    "Wy\u015blij GET /api/demo i sprawd\u017a zapisan\u0105 nazw\u0119.",
+    "Po reprodukcji odtw\u00f3rz pierwotne ustawienia."
+  ],
+  "request_json": {
+    "name": "\u200b\u200b\u200b",
+    "weeklyDigest": true,
+    "compactView": false
+  },
+  "request_name_codepoints": [
+    "U+200B",
+    "U+200B",
+    "U+200B"
+  ],
+  "actual": "HTTP200; odpowied\u017a i p\u00f3\u017aniejszy GET zawieraj\u0105 dok\u0142adnie trzy U+200B. Potwierdzono3/3 razy. S\u0105 to znaki niewidoczne, wi\u0119c nazwa nie daje czytelnej tre\u015bci. Przegl\u0105darka potwierdzi\u0142a zapis, od\u015bwie\u017cenie oraz warto\u015b\u0107 pola o kodach[8203,8203,8203]; zrzut pokazuje wizualnie puste pole.",
+  "expected_proposed": "Nazwa z\u0142o\u017cona wy\u0142\u0105cznie z niewidocznych znak\u00f3w powinna zosta\u0107 odrzucona z HTTP400, bez zmiany poprawnej nazwy. To proponowane kryterium QA do akceptacji product ownera; istniej\u0105cy tekstUI podaje3\u201360znak\u00f3w, nie definiuj\u0105c widoczno\u015bci.",
+  "evidence": "http-evidence.json; finding_reproduced_attempts i \u015blady PATCH/GET.",
+  "root_cause_source_review": "Warunek name.trim().length sprawdza d\u0142ugo\u015b\u0107, ale trim nie usuwa U+200B. Hipoteza przyczyny potwierdzona zachowaniem HTTP i odczytem handlera.",
+  "impact": "Mo\u017cliwy zapis nazwy bez czytelnej tre\u015bci. Nie stwierdzono utraty projekt\u00f3w, eskalacji uprawnie\u0144 ani podatno\u015bci bezpiecze\u0144stwa.",
+  "suggested_retest": [
+    "Spacje i trzy U+200B odrzucone.",
+    "Poprawne nazwy3i60znak\u00f3w zapisane.",
+    "Dwie i61liter odrzucone.",
+    "Zachowanie poprawnych nazw wieloj\u0119zycznych po uzgodnieniu regu\u0142.",
+    "Nieudany zapis pozostawia poprzedni\u0105 nazw\u0119."
+  ],
+  "not_claimed": [
+    "Gotowa poprawka,securitypentestlubcertyfikacjamobilna.",
+    "Resetmockapo restarcie jakonowyb\u0142\u0105d."
+  ],
+  "ui_reproduction": {
+    "verified_at": "2026-10-15T13:18:22.638Z",
+    "route": "/ustawienia",
+    "actions": [
+      "FillworkspaceinputwiththreeU+200B",
+      "Clicksaveandsuccessconfirmed",
+      "Reloadpage",
+      "ReadDOMfieldcodepoints"
+    ],
+    "field_codepoints": [
+      8203,
+      8203,
+      8203
+    ],
+    "screenshot": "ui-blank-name.jpg",
+    "own_fictional_app": true,
+    "customer_or_account_data": false,
+    "original_name_restored_by_root": true
+  }
+}

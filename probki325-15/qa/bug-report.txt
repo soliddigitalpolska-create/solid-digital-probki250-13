@@ -1,0 +1,40 @@
+QA-001 | Nazwa pracowni złożona wyłącznie z niewidocznych znaków zostaje zapisana
+
+WŁASNA PRÓBKA QA. Fikcyjna aplikacja Metrik, nie projekt klienta.
+Metoda: rzeczywiste HTTP i analiza kodu. Reprodukcję potwierdzono również w interfejsie po zapisie i odświeżeniu; zrzut oraz kody pola w ui-evidence.json.
+
+ŚRODOWISKO
+{
+  "application": "Metrik own demo1.0.0",
+  "Nuxt": "3.21.11",
+  "Vue": "3.5.44",
+  "Node": "v24.19.0",
+  "OS": "Windows",
+  "backend": "LocalNitroin-memorymock;notcustomerproduction"
+}
+
+KROKI
+1. Wyślij PATCH /api/workspace z name równym trzem znakom U+200B; oba pola logiczne zachowaj jako boolean.
+2. Odczytaj odpowiedź PATCH.
+3. Wyślij GET /api/demo i sprawdź zapisaną nazwę.
+4. Po reprodukcji odtwórz pierwotne ustawienia.
+
+WYNIK RZECZYWISTY
+HTTP200; odpowiedź i późniejszy GET zawierają dokładnie trzy U+200B. Potwierdzono3/3 razy. Są to znaki niewidoczne, więc nazwa nie daje czytelnej treści. Przeglądarka potwierdziła zapis, odświeżenie oraz wartość pola o kodach[8203,8203,8203]; zrzut pokazuje wizualnie puste pole.
+
+OCZEKIWANIE - PROPOZYCJA KRYTERIUM DO ZATWIERDZENIA
+Nazwa złożona wyłącznie z niewidocznych znaków powinna zostać odrzucona z HTTP400, bez zmiany poprawnej nazwy. To proponowane kryterium QA do akceptacji product ownera; istniejący tekstUI podaje3–60znaków, nie definiując widoczności.
+
+WPŁYW
+Możliwy zapis nazwy bez czytelnej treści. Nie stwierdzono utraty projektów, eskalacji uprawnień ani podatności bezpieczeństwa.
+
+POWTARZALNOŚĆ
+3/3; po każdej próbie przywrócono dane. Końcowy stan identyczny z początkowym.
+
+PRZYCZYNA - ANALIZA KODU
+Warunek name.trim().length sprawdza długość, ale trim nie usuwa U+200B. Hipoteza przyczyny potwierdzona zachowaniem HTTP i odczytem handlera.
+SHA256 handlera: 30eca3ee8f84f223306672c155bdcbf6742fe4261c8974b0b9cf51c1e0ff3707
+
+DOWODY I REGRESJA
+http-evidence.json / test-cases.json / bug-report.json
+To nie jest dowód komercyjnego doświadczenia ani wynik testów fizycznych urządzeń.
