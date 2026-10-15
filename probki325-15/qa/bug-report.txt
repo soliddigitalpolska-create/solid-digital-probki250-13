@@ -20,10 +20,10 @@ KROKI
 4. Po reprodukcji odtwórz pierwotne ustawienia.
 
 WYNIK RZECZYWISTY
-HTTP200; odpowiedź i późniejszy GET zawierają dokładnie trzy U+200B. Potwierdzono3/3 razy. Są to znaki niewidoczne, więc nazwa nie daje czytelnej treści. Przeglądarka potwierdziła zapis, odświeżenie oraz wartość pola o kodach[8203,8203,8203]; zrzut pokazuje wizualnie puste pole.
+HTTP 200; odpowiedź i późniejszy GET zawierają dokładnie trzy U+200B. Potwierdzono 3/3 razy. Są to znaki niewidoczne, więc nazwa nie daje czytelnej treści. Przeglądarka potwierdziła zapis, odświeżenie oraz wartość pola o kodach [8203, 8203, 8203]; zrzut pokazuje wizualnie puste pole.
 
 OCZEKIWANIE - PROPOZYCJA KRYTERIUM DO ZATWIERDZENIA
-Nazwa złożona wyłącznie z niewidocznych znaków powinna zostać odrzucona z HTTP400, bez zmiany poprawnej nazwy. To proponowane kryterium QA do akceptacji product ownera; istniejący tekstUI podaje3–60znaków, nie definiując widoczności.
+Nazwa złożona wyłącznie z niewidocznych znaków powinna zostać odrzucona z HTTP 400, bez zmiany poprawnej nazwy. To proponowane kryterium QA do zatwierdzenia przez osobę odpowiedzialną za produkt; istniejący tekst interfejsu podaje 3–60 znaków, nie definiując widoczności.
 
 WPŁYW
 Możliwy zapis nazwy bez czytelnej treści. Nie stwierdzono utraty projektów, eskalacji uprawnień ani podatności bezpieczeństwa.
@@ -33,8 +33,8 @@ POWTARZALNOŚĆ
 
 PRZYCZYNA - ANALIZA KODU
 Warunek name.trim().length sprawdza długość, ale trim nie usuwa U+200B. Hipoteza przyczyny potwierdzona zachowaniem HTTP i odczytem handlera.
-SHA256 handlera: 30eca3ee8f84f223306672c155bdcbf6742fe4261c8974b0b9cf51c1e0ff3707
+SHA-256 handlera: 30eca3ee8f84f223306672c155bdcbf6742fe4261c8974b0b9cf51c1e0ff3707
 
 DOWODY I REGRESJA
 http-evidence.json / test-cases.json / bug-report.json
-To nie jest dowód komercyjnego doświadczenia ani wynik testów fizycznych urządzeń.
+To własna próbka warsztatowa, bez deklaracji komercyjnego doświadczenia lub testów na fizycznych urządzeniach.

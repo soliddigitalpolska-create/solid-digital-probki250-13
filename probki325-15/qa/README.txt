@@ -2,7 +2,7 @@ WŁASNA PRÓBKA QA - METRIK
 
 Rzeczywisty test HTTP własnej aplikacji demonstracyjnej.
 To nie projekt klienta ani deklaracja komercyjnego doświadczenia.
-Jedna obserwacja odtworzona3/3razy; całość stanu przywrócono.
+Jedna obserwacja odtworzona 3/3 razy; całość stanu przywrócono.
 Istniejący mock resetuje się po restarcie - to znane ograniczenie.
 
 index.html - czytelny raport
