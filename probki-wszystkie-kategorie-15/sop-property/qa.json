@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-15",
+  "sops": 6,
+  "steps_total": 36,
+  "filled_examples": 6,
+  "roles": 4,
+  "statuses": 7,
+  "field_definitions": 10,
+  "local_rule_cases": 3,
+  "local_rule_results": [
+    "CLOSED",
+    "BLOCKED",
+    "CLOSED"
+  ],
+  "rule_failure_caught": "Missing owner cost approval blocked close",
+  "client_accounts_used": false,
+  "external_actions": 0,
+  "client_data": false,
+  "visual_status": "Static HTML authored; ROOT browser preview remains required before publication."
+}

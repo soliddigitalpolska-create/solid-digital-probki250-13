@@ -1,0 +1,70 @@
+{
+  "pages": 11,
+  "bytes": 102069,
+  "sha256": "a3e118644d201cfcc86a4d57fb4068ca1a05ca97adeeb047593a6c5b2fcd6655",
+  "text_extraction_all_pages": true,
+  "layout": [
+    {
+      "page": 2,
+      "title": "Zanim otworzysz kalendarz",
+      "last_text_y": 213.68,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 3,
+      "title": "Zrób zrzut zadań",
+      "last_text_y": 139.28,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 4,
+      "title": "Trzy rezultaty tygodnia",
+      "last_text_y": 119.28,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 5,
+      "title": "Zarezerwuj bloki",
+      "last_text_y": 139.28,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 6,
+      "title": "Zapisz następny krok",
+      "last_text_y": 127.28,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 7,
+      "title": "Zostaw miejsce na zmianę",
+      "last_text_y": 154.88,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 8,
+      "title": "Zamknij dzień",
+      "last_text_y": 177.68,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 9,
+      "title": "Przejrzyj tydzień",
+      "last_text_y": 96.08,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 10,
+      "title": "Zobacz pełny przykład",
+      "last_text_y": 99.68,
+      "no_bottom_overflow": true
+    },
+    {
+      "page": 11,
+      "title": "Zacznij od jutra",
+      "last_text_y": 96.08,
+      "no_bottom_overflow": true
+    }
+  ],
+  "visual_review": "PASS_ALL_11_PAGE_CONTACT_SHEET_AND_FULL_PAGE_5",
+  "visual_review_notes": "All11 rendered pages inspected in contact sheet; full page5 confirms readable Polish typography, no missing glyphs/clipping/overlap; cover inspected in sheet."
+}

@@ -1,0 +1,22 @@
+PRZYKŁADOWA STRUKTURA — NIE UTWORZONO KATALOGÓW NA KONCIE KLIENTA
+
+00_Procedury
+  SOP-01_Dokumenty
+  SOP-02_Najemcy
+  SOP-03_Rozliczenia
+  SOP-04_Usterki
+  SOP-05_Terminy
+  SOP-06_Decyzje_i_przekazanie
+01_Lokale
+  DEMO-01
+    01_Karta_lokalu
+    02_Umowy
+    03_Protokoly
+    04_Usterki
+    05_Rozliczenia
+02_Kontrahenci
+03_Decyzje_wlasciciela
+04_Raporty
+99_Archiwum
+
+Dostęp według roli i sprawy; bez publicznych linków do dokumentów najemców. Hasła nie trafiają do plików procedur.

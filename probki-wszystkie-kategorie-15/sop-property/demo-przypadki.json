@@ -1,0 +1,52 @@
+{
+  "note": "Wykonany lokalny demonstrator reguł na3fikcyjnych przypadkach, nie integracja ClickUp/API ani dane najemców.",
+  "input": [
+    {
+      "id": "REP-DEMO-001",
+      "local": "DEMO-01",
+      "owner": "Asystent",
+      "cost": 180,
+      "evidence": "demo-confirmation-001",
+      "accepted_by": "Właściciel"
+    },
+    {
+      "id": "REP-DEMO-002",
+      "local": "DEMO-02",
+      "owner": "Asystent",
+      "cost": 420,
+      "evidence": "demo-confirmation-002",
+      "accepted_by": "Właściciel"
+    },
+    {
+      "id": "REP-DEMO-003",
+      "local": "DEMO-03",
+      "owner": "Asystent",
+      "cost": 420,
+      "evidence": "demo-confirmation-003",
+      "accepted_by": "Właściciel",
+      "cost_approved_by": "Właściciel"
+    }
+  ],
+  "output": [
+    {
+      "id": "REP-DEMO-001",
+      "requested_status": "Zamknięte",
+      "result": "CLOSED",
+      "missing": []
+    },
+    {
+      "id": "REP-DEMO-002",
+      "requested_status": "Zamknięte",
+      "result": "BLOCKED",
+      "missing": [
+        "cost_approved_by"
+      ]
+    },
+    {
+      "id": "REP-DEMO-003",
+      "requested_status": "Zamknięte",
+      "result": "CLOSED",
+      "missing": []
+    }
+  ]
+}

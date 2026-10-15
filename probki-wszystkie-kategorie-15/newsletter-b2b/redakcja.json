@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-10-15T15:10:32.028426+00:00",
+  "status": "OWN_DEMO_NOT_SENT_NOT_CLIENT_CASE",
+  "subject": "Strona gotowa. A prawa do niej?",
+  "subject_variants": [
+    "Strona gotowa. A prawa do niej?",
+    "Zmieniasz wykonawcę strony? Sprawdź te trzy pytania",
+    "Masz pliki strony. Co możesz z nimi zrobić?"
+  ],
+  "preheader": "Trzy pytania przed kolejną zmianą wykonawcy.",
+  "audience": "Właściciel lub osoba zarządzająca małą firmą, planująca zmianę wykonawcy lub rozbudowę witryny.",
+  "goal": "Jedna odpowiedź o planowanej zmianie; bez bezpłatnej analizy nieznanej umowy i bez obietnicy uniknięcia strat.",
+  "structure": [
+    "Konkretna sytuacja biznesowa",
+    "Rozróżnienie dostępu do plików i praw",
+    "Trzy pytania do dokumentów",
+    "Jedno wezwanie do odpowiedzi"
+  ],
+  "own_work_evidence": [
+    {
+      "type": "Autorska próbka LinkedIn",
+      "what": "Strategia i 6 ukończonych postów dla firmy i osoby; próbka niewdrożona, bez wyników kampanii.",
+      "local": "../linkedin/index.html"
+    },
+    {
+      "type": "Autorski newsletter i landing page",
+      "what": "Ta próbka: research oficjalnych źródeł, teksty, temat, preheader, CTA i własny kod HTML/CSS.",
+      "local": "newsletter.html"
+    }
+  ],
+  "experience_limit": "Wykonane własne materiały B2B są rzeczywistą pracą redakcyjną. Nie potwierdzają zatrudnienia w kancelarii, płatnej obsługi jej kampanii ani historii wdrożeń u klientów. Wymóg doświadczenia należy przedstawiać właśnie z takim zakresem.",
+  "human_qa": [
+    "Redakcja bez dopisywania pracodawcy lub wyników",
+    "Zweryfikowane podstawowe fakty w źródłach publicznych",
+    "Kontrola sensu CTA i spójności follow-upu",
+    "Finalną wersję prawną do publikacji akceptuje klient"
+  ],
+  "measurement": "Odpowiedzi i uzgodnione rozmowy, kliknięcia przy linkach z oznaczeniem kampanii. Otwarcia nie są dowodem intencji odbiorcy ani miarą sprzedaży. Brak wyników: materiału nie wysłano.",
+  "sources": [
+    {
+      "title": "PARP: Umowa o przeniesienie autorskich praw majątkowych",
+      "url": "https://www.parp.gov.pl/component/content/article/83261:umowa-o-przeniesienie-autorskich-praw-majatkowych",
+      "checked_at": "2026-10-15",
+      "use": "Rozróżnienie egzemplarza i praw oraz wyraźne określenie pól eksploatacji. Własne ujęcie redakcyjne; bez analizy konkretnej umowy."
+    },
+    {
+      "title": "Sejm RP: tekst jednolity ustawy, Dz.U. 2025 poz. 24",
+      "url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083&min=1",
+      "checked_at": "2026-10-15",
+      "use": "Status aktu i odwołanie do ustawy. Próba nie obejmuje świadczenia porad prawnych."
+    }
+  ]
+}

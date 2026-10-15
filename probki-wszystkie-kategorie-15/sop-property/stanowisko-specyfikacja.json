@@ -1,0 +1,266 @@
+{
+  "note": "Specyfikacja gotowa do konfiguracji narzędzia po poznaniu konta klienta; nie jest istniejącym wdrożeniem ClickUp ani Google Drive.",
+  "demo_cost_limit_pln": 250,
+  "roles": {
+    "Asystent operacyjny": "Przyjmuje, porządkuje i uzupełnia zgłoszenie; prowadzi statusy, terminy, dokumenty i kontrolę kompletności. Nie zatwierdza samodzielnie kosztów, umów ani potrąceń.",
+    "Właściciel": "Zatwierdza warunki, wydatki ponad limit, umowy, rozliczenia sporne i decyzje wymagające reprezentacji firmy. Ustala instrukcję zdarzeń pilnych.",
+    "Księgowość": "Potwierdza ujęcie dokumentów i reguły rozliczenia; wyjaśnia niezgodności finansowe na podstawie źródeł.",
+    "Wykonawca": "Przyjmuje opis i zatwierdzony zakres; wykonuje pracę i dostarcza dowód wykonania oraz dokument kosztowy."
+  },
+  "statuses": [
+    "Nowe",
+    "Do uzupełnienia",
+    "Do decyzji właściciela",
+    "W realizacji",
+    "Czeka na stronę",
+    "Do kontroli",
+    "Zamknięte"
+  ],
+  "fields": [
+    {
+      "name": "ID sprawy",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "Lokal",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "Proces",
+      "type": "select",
+      "values": [
+        "SOP-01",
+        "SOP-02",
+        "SOP-03",
+        "SOP-04",
+        "SOP-05",
+        "SOP-06"
+      ]
+    },
+    {
+      "name": "Status",
+      "type": "select",
+      "values": [
+        "Nowe",
+        "Do uzupełnienia",
+        "Do decyzji właściciela",
+        "W realizacji",
+        "Czeka na stronę",
+        "Do kontroli",
+        "Zamknięte"
+      ]
+    },
+    {
+      "name": "Odpowiedzialny",
+      "type": "person",
+      "required": true
+    },
+    {
+      "name": "Termin",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "Kolejny krok",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "Link do dokumentu",
+      "type": "url",
+      "required_for_close": true
+    },
+    {
+      "name": "Decyzja kosztowa",
+      "type": "text",
+      "required_if_cost_over_demo_limit": true
+    },
+    {
+      "name": "Dowód odbioru",
+      "type": "text",
+      "required_for_close": true
+    }
+  ],
+  "sops": [
+    {
+      "id": "SOP-01",
+      "title": "Dokumenty i wersje",
+      "trigger": "Wpływa dokument dotyczący lokalu, najemcy albo wykonawcy.",
+      "owner": "Asystent operacyjny",
+      "input": "Dokument źródłowy, identyfikator lokalu, kontrahent, typ dokumentu i data wpływu.",
+      "steps": [
+        "Nadaj ID sprawy. Sprawdź, czy plik nie ma już wpisu: porównaj lokal, typ, datę i wersję.",
+        "Zapisz źródło w katalogu lokalu. Nazwa: DEMO-01_typ_2026-10-15_v01. Nie nadpisuj wersji zatwierdzonej.",
+        "W zadaniu zapisz typ, kontrahenta, daty, właściciela zadania i link do pliku. Udostępniaj tylko osobom potrzebnym do sprawy.",
+        "Brak załącznika lub identyfikatora kieruje do Do uzupełnienia, ze wskazaną osobą i terminem odpowiedzi.",
+        "Treść wymagającą zatwierdzenia przekaż właścicielowi. Zachowaj poprzednią wersję i ślad decyzji.",
+        "Po akceptacji oznacz wersję jako obowiązującą, dodaj datę i link do decyzji; zamknij zadanie dopiero po kontroli odczytu pliku."
+      ],
+      "exit": "Plik da się otworzyć; właściwy lokal i wersja są jednoznaczne; decyzja i uprawnienia zapisane.",
+      "escalation": "Nieznany kontrahent, sprzeczne wersje, brak uprawnienia do podpisu lub pytanie prawne → właściciel.",
+      "template": {
+        "sprawa": "DOC-DEMO-001",
+        "lokal": "DEMO-01",
+        "typ": "Aneks — przykład techniczny",
+        "wersja": "v01",
+        "status": "Do decyzji właściciela",
+        "plik": "01_Lokale/DEMO-01/02_Umowy/DEMO-01_aneks_2026-10-15_v01.pdf",
+        "decyzja": "Oczekiwanie na właściciela; brak podpisu i brak automatycznej akceptacji."
+      }
+    },
+    {
+      "id": "SOP-02",
+      "title": "Wprowadzenie najemcy",
+      "trigger": "Właściciel potwierdza podpisaną umowę i datę rozpoczęcia.",
+      "owner": "Asystent operacyjny",
+      "input": "Zatwierdzona umowa, dane firmowe/operacyjne, lokal, okres, harmonogram i potwierdzone warunki.",
+      "steps": [
+        "Sprawdź zgodność lokalu, dat, firmy i osoby kontaktowej z zatwierdzonym dokumentem. Nie przepisuj niepotrzebnych danych osobowych.",
+        "Załóż kartę najemcy z powiązaniem do lokalu, umowy i kontaktu. Sprawdź, czy ten kontrahent nie istnieje już w bazie.",
+        "Przepisz uzgodniony harmonogram oraz warunki płatności. Wątpliwość kwoty lub terminu kieruj do właściciela.",
+        "Zaplanuj przekazanie kluczy i protokół. Zapisz osobę wykonującą, termin, stan liczników i link do dokumentacji.",
+        "Przekaż zaakceptowaną informację organizacyjną: kontakt, sposób zgłaszania usterek i zasady przekazywania dokumentów.",
+        "Do kontroli dołącz komplet potwierdzeń. Zakończ dopiero po odnotowaniu faktycznego przekazania i zgodności danych."
+      ],
+      "exit": "Karta, umowa, harmonogram i protokół są połączone; przekazanie ma potwierdzenie; odpowiedzialności są przypisane.",
+      "escalation": "Niezgodne dane, brak zatwierdzonej umowy, niepotwierdzone warunki lub spór przy przekazaniu → właściciel.",
+      "template": {
+        "sprawa": "TEN-DEMO-001",
+        "najemca": "Firma Przykładowa DEMO",
+        "lokal": "DEMO-01",
+        "kontakt": "Rola: osoba upoważniona przez najemcę",
+        "poczatek": "2026-11-01",
+        "protokol": "Zaplanowany na 2026-10-30; wykonuje przedstawiciel właściciela",
+        "status": "W realizacji"
+      }
+    },
+    {
+      "id": "SOP-03",
+      "title": "Rozliczenia i kaucje",
+      "trigger": "Nadchodzi termin rozliczenia lub wpłata/dokument wymagający przypisania.",
+      "owner": "Asystent operacyjny + księgowość",
+      "input": "Zatwierdzony harmonogram, potwierdzone wpłaty, dokumenty kosztowe i reguły zaakceptowane przez właściciela.",
+      "steps": [
+        "Pobierz uzgodniony okres i listę oczekiwanych dokumentów. Zachowaj źródłowe zestawienie bez nadpisywania.",
+        "Powiąż wpłatę z lokalem/najemcą według identyfikatora i daty. Niejednoznaczne dopasowanie pozostaw do decyzji, bez automatycznego zaliczenia.",
+        "Oznacz zgodne pozycje, różnice i brakujące dokumenty. Zapisz źródło każdej kwoty.",
+        "Przekaż rozbieżności księgowości lub właścicielowi w jednej liście z kwotą, terminem i potrzebną decyzją.",
+        "Kaucję prowadź osobno od bieżących wpłat. Zwrot, potrącenie i korekta wymagają zapisanej decyzji osoby uprawnionej.",
+        "Po zatwierdzeniu odnotuj wynik i potwierdzenie czynności. Zamknij okres z listą wyjątków przekazanych konkretnym osobom."
+      ],
+      "exit": "Każda pozycja ma źródło i status; różnice mają właściciela; decyzje dotyczące kaucji nie są domniemane.",
+      "escalation": "Spór, nieidentyfikowalna wpłata, korekta dokumentu lub potrącenie z kaucji → księgowość/właściciel.",
+      "template": {
+        "sprawa": "PAY-DEMO-001",
+        "okres": "2026-10",
+        "lokal": "DEMO-01",
+        "oczekiwane_PLN": "3500.00 — dane przykładowe",
+        "potwierdzone_PLN": "3500.00 — dane przykładowe",
+        "status": "Do kontroli",
+        "kaucja": "Osobny rejestr; bez decyzji o wypłacie lub potrąceniu."
+      }
+    },
+    {
+      "id": "SOP-04",
+      "title": "Usterka od przyjęcia do odbioru",
+      "trigger": "Najemca lub zespół zgłasza problem techniczny.",
+      "owner": "Asystent operacyjny",
+      "input": "Lokal, opis, zgłaszający, data, skala pilności, zdjęcia i dostęp do lokalu.",
+      "steps": [
+        "Nadaj ID. Zapisz lokal, objaw, czas wystąpienia i kontakt. Nie opisuj przypuszczalnej przyczyny jako diagnozy.",
+        "Oceń kompletność. Brak opisu, zdjęć lub informacji o dostępie → Do uzupełnienia. Zdarzenie wymagające pilnej reakcji eskaluj według instrukcji właściciela.",
+        "Ustal wykonawcę i wycenę. W tym przykładzie koszt ponad 250 PLN wymaga decyzji właściciela; próg jest założeniem demo, nie polityką klienta.",
+        "Zlecenie pracy następuje dopiero po zapisaniu akceptacji zakresu i kosztu. Ustal termin, osobę wpuszczającą i sposób potwierdzenia.",
+        "Po wykonaniu zbierz opis czynności, zdjęcie/dowód i dokument kosztowy, jeśli ma powstać. Wyślij do kontroli rezultatu.",
+        "Zamknięcie wymaga odbioru przez wskazaną osobę, załączników i odnotowania rozliczenia albo przyczyny oczekiwania. Nieskuteczna naprawa wraca do realizacji."
+      ],
+      "exit": "Problem odebrany, potwierdzenie wykonania i koszt/rozliczenie są zapisane; najemca ma informację o zakończeniu.",
+      "escalation": "Pilne zdarzenie, przekroczony limit, brak dostępu, opóźnienie lub ponowne wystąpienie problemu → właściciel.",
+      "template": {
+        "sprawa": "REP-DEMO-001",
+        "lokal": "DEMO-01",
+        "objaw": "Drzwi szafki nie domykają się — przykład",
+        "koszt_PLN": 180,
+        "akceptacja": "W granicach przykładowego limitu; potwierdzony zakres",
+        "status": "Do kontroli",
+        "dowod": "photo-after-demo.jpg — fikcyjna nazwa do wzoru",
+        "odbior": "Potwierdzenie wymagane przed zamknięciem."
+      }
+    },
+    {
+      "id": "SOP-05",
+      "title": "Terminy i przypomnienia",
+      "trigger": "Powstaje dokument lub ustalenie z datą wykonania.",
+      "owner": "Asystent operacyjny",
+      "input": "Źródło daty, sprawa, osoba odpowiedzialna i oczekiwany rezultat.",
+      "steps": [
+        "Utwórz termin tylko na podstawie wskazanego dokumentu lub ustalenia. Zapisz link do źródła i strefę czasową, gdy ma znaczenie.",
+        "Przypisz jednego właściciela zadania i zastępcę. Sama data bez osoby nie trafia do kalendarza operacyjnego.",
+        "Dodaj przypomnienia według ustalonego cyklu. Przykład demo: 7 dni i 1 dzień przed terminem; nie jest to termin wynikający z przepisów.",
+        "Codziennie sprawdź zaległe pozycje i sprawy bez potwierdzenia. Odróżnij wykonaną czynność od wysłanego przypomnienia.",
+        "Brak reakcji eskaluj z opisem wpływu i potrzebną decyzją. Zmianę daty zapisz z przyczyną i zatwierdzeniem.",
+        "Po zakończeniu dołącz dowód rezultatu i odnotuj datę wykonania. Nie usuwaj historii po przesunięciu terminu."
+      ],
+      "exit": "Termin ma rezultat i potwierdzenie albo jawny, zaakceptowany nowy harmonogram.",
+      "escalation": "Termin zagrożony, brak właściciela, zależność blokująca inną sprawę → właściciel firmy.",
+      "template": {
+        "sprawa": "DUE-DEMO-001",
+        "rezultat": "Przegląd kompletu dokumentów lokalu",
+        "termin": "2026-10-23",
+        "osoba": "Asystent operacyjny",
+        "przypomnienia": [
+          "2026-10-16",
+          "2026-10-22"
+        ],
+        "status": "W realizacji"
+      }
+    },
+    {
+      "id": "SOP-06",
+      "title": "Decyzje, eskalacje i przekazanie stanowiska",
+      "trigger": "Sprawa przekracza mandat asystenta lub zmienia się osoba obsługująca.",
+      "owner": "Asystent operacyjny + właściciel",
+      "input": "ID sprawy, stan, przeszkoda, dostępne warianty i potrzebny termin decyzji.",
+      "steps": [
+        "Do właściciela przekazuj jedną kartę decyzji: fakt, wpływ, opcje, rekomendacja operacyjna i termin. Nie wysyłaj samego łańcucha wiadomości.",
+        "W Do decyzji właściciela zapisz, co konkretnie czeka na akceptację. Do decyzji nie są kierowane rutynowe sprawy mieszczące się w uzgodnionych regułach.",
+        "Decyzję wpisz z datą, osobą i linkiem do źródła. Jeśli decyzji brak, nie oznaczaj jej jako zaakceptowanej.",
+        "Przy przekazaniu stanowiska wygeneruj listę otwartych spraw: priorytet, termin, kolejny krok, lokal, osoba i dokumenty.",
+        "Sprawdź odbiorcę, uprawnienia i odczyt plików. Zmieniaj dostępy przez właściciela kont, bez umieszczania haseł w SOP.",
+        "Nowa osoba przechodzi jeden przypadek testowy każdego obiegu i potwierdza, że umie znaleźć sprawę, podjąć kolejny krok i poprawnie ją zamknąć."
+      ],
+      "exit": "Sprawy i decyzje mają jawnego właściciela; nowa osoba potwierdziła dostęp i przejście 6 przykładów.",
+      "escalation": "Brak uprawnień, brak zastępcy, nieodwracalna decyzja lub nierozstrzygnięty wyjątek → właściciel.",
+      "template": {
+        "sprawa": "DEC-DEMO-001",
+        "fakt": "Koszt naprawy 420 PLN przekracza przykładowy limit 250 PLN",
+        "opcje": [
+          "Zaakceptować zakres 420 PLN",
+          "Poprosić o drugą wycenę"
+        ],
+        "potrzebna_decyzja": "Zgoda na koszt i zakres",
+        "decyduje": "Właściciel",
+        "status": "Do decyzji właściciela"
+      }
+    }
+  ],
+  "kpis": [
+    {
+      "name": "Otwarte po terminie",
+      "calculation": "Liczba spraw z terminem wcześniejszym niż dzień raportu i statusem innym niż Zamknięte.",
+      "use": "Lista do codziennej kontroli, nie automatyczna ocena pracownika."
+    },
+    {
+      "name": "Sprawy bez właściciela",
+      "calculation": "Liczba otwartych spraw bez jednej wskazanej osoby odpowiedzialnej.",
+      "use": "Uzupełnić przypisanie."
+    },
+    {
+      "name": "Kompletność zamknięcia",
+      "calculation": "Zamknięte sprawy z dowodem i decyzją, jeśli wymagana, podzielone przez wszystkie zamknięte sprawy.",
+      "use": "Przegląd jakości zamknięcia."
+    }
+  ]
+}

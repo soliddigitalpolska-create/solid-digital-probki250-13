@@ -1,0 +1,30 @@
+[
+  {
+    "file": "follow-up.txt",
+    "sha256": "7f5d51917603c00308aa696f1601c167d64e6649ac6d0b67cf0b68c2121e7158"
+  },
+  {
+    "file": "index.html",
+    "sha256": "e7eae17c52ca2574209115112299f1dfd595567b0996e431ba1165337845ee99"
+  },
+  {
+    "file": "landing-page.html",
+    "sha256": "3ca9007307a2f305a20050b9a09bf68098734d424fd4a3c9a73c3d694ac78e62"
+  },
+  {
+    "file": "newsletter.html",
+    "sha256": "e098a36e0e6d30d637296707c2dcf3cbead4e4f969cb49a835581977d615b473"
+  },
+  {
+    "file": "newsletter.txt",
+    "sha256": "c5e239a3dbb06c60e449a4cfd73a3460c8bd3cd8145f26c5f67060d132b5f6e3"
+  },
+  {
+    "file": "README.txt",
+    "sha256": "57e115aeae18a2cbadbace9fb71db80332c63103c1562dd362199bf1d20ffd70"
+  },
+  {
+    "file": "redakcja.json",
+    "sha256": "78310544db5de12a1723e17c3532d3bd44122767c6e83930eb710ec21edb6b93"
+  }
+]
