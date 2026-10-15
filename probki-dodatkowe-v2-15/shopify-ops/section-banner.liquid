@@ -1,0 +1,15 @@
+{% if section.settings.enabled %}
+<section class="studio-note" aria-label="{{ section.settings.title | escape }}">
+  {% if section.settings.image != blank %}
+    {{ section.settings.image | image_url: width: 1600 | image_tag: alt: section.settings.title }}
+  {% endif %}
+  <h2>{{ section.settings.title | escape }}</h2>
+  <div>{{ section.settings.body }}</div>
+  {% if section.settings.link != blank %}
+    <a href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+  {% endif %}
+</section>
+{% endif %}
+{% schema %}
+{"name":"Studio info","settings":[{"type":"checkbox","id":"enabled","label":"Pokaż sekcję","default":true},{"type":"text","id":"title","label":"Nagłówek","default":"Ubrania na co dzień"},{"type":"richtext","id":"body","label":"Treść","default":"<p>Wybierz wygodę i prosty krój.</p>"},{"type":"image_picker","id":"image","label":"Obraz"},{"type":"url","id":"link","label":"Link"},{"type":"text","id":"link_label","label":"Tekst linku","default":"Zobacz kolekcję"}],"presets":[{"name":"Studio info"}]}
+{% endschema %}

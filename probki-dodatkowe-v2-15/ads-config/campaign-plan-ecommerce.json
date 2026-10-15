@@ -1,0 +1,49 @@
+{
+  "demo_only": true,
+  "client": "Fikcyjna marka Studio Forma",
+  "currency": "PLN",
+  "monthly_media_total": "3000.00",
+  "service_fee": "1100.00",
+  "campaigns": [
+    {
+      "id": "ecom-search",
+      "platform": "Google",
+      "objective": "SALES",
+      "monthly_media_cap": "900.00",
+      "utm_campaign": "forma_search",
+      "status": "DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "ecom-pmax",
+      "platform": "Google",
+      "objective": "SALES",
+      "monthly_media_cap": "600.00",
+      "utm_campaign": "forma_pmax",
+      "status": "DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "ecom-meta-1",
+      "platform": "Meta",
+      "objective": "SALES",
+      "monthly_media_cap": "750.00",
+      "utm_campaign": "forma_meta_product",
+      "status": "DRAFT_NOT_PUBLISHED"
+    },
+    {
+      "id": "ecom-meta-2",
+      "platform": "Meta",
+      "objective": "SALES",
+      "monthly_media_cap": "750.00",
+      "utm_campaign": "forma_meta_test",
+      "status": "DRAFT_NOT_PUBLISHED"
+    }
+  ],
+  "feed_preflight": [
+    "product_id_unique",
+    "price_matches_product",
+    "currency_matches_checkout",
+    "availability_matches_stock",
+    "landing_url_validated_before_launch"
+  ],
+  "performance_history": "None; draft configuration only."
+}

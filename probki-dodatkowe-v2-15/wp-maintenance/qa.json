@@ -1,0 +1,138 @@
+{
+  "status": "PASS_NATIVE_WP_WOO_ISOLATED",
+  "checked_at": "2026-10-15T19:18:48.996236+00:00",
+  "test_count": 16,
+  "tests": [
+    {
+      "test": "real_WordPress_and_Woo_loaded",
+      "passed": true,
+      "wordpress": "7.1.3",
+      "woocommerce": "11.2.1"
+    },
+    {
+      "test": "before_fix_native_WP_HTTP_blocked",
+      "passed": true
+    },
+    {
+      "test": "mail_transport_blocked",
+      "passed": true
+    },
+    {
+      "test": "real_backup_zip_integrity",
+      "passed": true
+    },
+    {
+      "test": "fresh_native_read_sees_deliberate_damage",
+      "passed": true
+    },
+    {
+      "test": "native_database_and_file_restore_verified",
+      "passed": true
+    },
+    {
+      "test": "restored_guard_matches_backup",
+      "passed": true
+    },
+    {
+      "test": "narrow_fix_native_WP_HTTP_reaches_actual_loopback_server",
+      "passed": true,
+      "fixture_hits": 1,
+      "response": {
+        "status": 200,
+        "body": "{\"fixture\":\"own loopback emulator, not WordPress.com\",\"ok\":true}"
+      }
+    },
+    {
+      "test": "unapproved_URL_still_blocked_https://public-api.wordpress.com/",
+      "passed": true
+    },
+    {
+      "test": "unapproved_URL_still_blocked_https://example.invalid/",
+      "passed": true
+    },
+    {
+      "test": "unapproved_URL_still_blocked_http://127.0.0.1:8822/unapproved-path",
+      "passed": true
+    },
+    {
+      "test": "native_cart_accepts_physical_and_virtual",
+      "passed": true,
+      "readback": {
+        "order_id": 28,
+        "cart_items": 0,
+        "added_physical": true,
+        "added_virtual": true,
+        "rates": {
+          "flat_rate:1": {
+            "cost": "12.00",
+            "label": "Dostawa testowa"
+          },
+          "legacy_flat_rate": {
+            "cost": "12",
+            "label": "Flat rate"
+          }
+        },
+        "chosen": "flat_rate:1",
+        "gateways": [
+          "bacs"
+        ],
+        "native_payment_result": "success",
+        "status": "on-hold",
+        "total": "181.00",
+        "shipping_total": "12",
+        "order_items": 2,
+        "real_charge": false
+      }
+    },
+    {
+      "test": "native_shipping_rate_available",
+      "passed": true,
+      "rates": {
+        "flat_rate:1": {
+          "cost": "12.00",
+          "label": "Dostawa testowa"
+        },
+        "legacy_flat_rate": {
+          "cost": "12",
+          "label": "Flat rate"
+        }
+      }
+    },
+    {
+      "test": "native_BACS_test_order_created",
+      "passed": true,
+      "real_charge": false
+    },
+    {
+      "test": "fresh_process_order_shipping_payment_readback",
+      "passed": true,
+      "readback": {
+        "id": 28,
+        "status": "on-hold",
+        "total": "181.00",
+        "shipping_total": "12",
+        "items": 2,
+        "payment": "bacs"
+      }
+    },
+    {
+      "test": "source_database_and_configuration_unchanged",
+      "passed": true
+    }
+  ],
+  "scope": "Own fixture: backup/restore, narrow local HTTP firewall rule, native cart/shipping/BACS order regression",
+  "wordpress": "7.1.3",
+  "woocommerce": "11.2.1",
+  "old_published_sources_unchanged": true,
+  "real_wordpress_com_contact": false,
+  "real_client_firewall_repaired": false,
+  "real_payment": false,
+  "email_sent": false,
+  "external_network_calls": 0,
+  "local_fixture_http_requests": 1,
+  "client_case": false,
+  "version_updates_tested": false,
+  "performance_improvement_claimed": false,
+  "browser_checkout_tested": false,
+  "limits": "Controlled fault in own mu-plugin and own loopback endpoint; no claim of diagnosing an actual Jetpack/WordPress.com hosting failure. Native API checkout test; root/client browser regression still required."
+}

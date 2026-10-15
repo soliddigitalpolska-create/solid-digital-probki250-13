@@ -1,0 +1,77 @@
+[
+  {
+    "handle": "koszulka-dzien",
+    "title": "Koszulka DZIEŃ",
+    "collection": "codziennie",
+    "variants": [
+      {
+        "sku": "DZIEN-S",
+        "size": "S",
+        "price": "129.00",
+        "stock": 8
+      },
+      {
+        "sku": "DZIEN-M",
+        "size": "M",
+        "price": "129.00",
+        "stock": 12
+      },
+      {
+        "sku": "DZIEN-L",
+        "size": "L",
+        "price": "129.00",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "handle": "bluza-miasto",
+    "title": "Bluza MIASTO",
+    "collection": "warstwy",
+    "variants": [
+      {
+        "sku": "MIASTO-S",
+        "size": "S",
+        "price": "249.00",
+        "stock": 4
+      },
+      {
+        "sku": "MIASTO-M",
+        "size": "M",
+        "price": "249.00",
+        "stock": 7
+      },
+      {
+        "sku": "MIASTO-L",
+        "size": "L",
+        "price": "249.00",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "handle": "spodnie-spokoj",
+    "title": "Spodnie SPOKÓJ",
+    "collection": "codziennie",
+    "variants": [
+      {
+        "sku": "SPOKOJ-S",
+        "size": "S",
+        "price": "219.00",
+        "stock": 3
+      },
+      {
+        "sku": "SPOKOJ-M",
+        "size": "M",
+        "price": "219.00",
+        "stock": 4
+      },
+      {
+        "sku": "SPOKOJ-L",
+        "size": "L",
+        "price": "219.00",
+        "stock": 2
+      }
+    ]
+  }
+]

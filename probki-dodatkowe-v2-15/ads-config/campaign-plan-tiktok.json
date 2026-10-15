@@ -1,0 +1,69 @@
+{
+  "demo_only": true,
+  "client": "Fikcyjna marka Studio Forma",
+  "currency": "PLN",
+  "monthly_media_total": "3000.00",
+  "service_fee": "700.00",
+  "campaigns": [
+    {
+      "id": "tiktok-test",
+      "platform": "TikTok",
+      "objective": "SALES",
+      "monthly_media_cap": "1500.00",
+      "utm_campaign": "forma_video_test",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative_variants": [
+        "problem_solution",
+        "product_detail",
+        "outfit_use"
+      ]
+    },
+    {
+      "id": "tiktok-next-test",
+      "platform": "TikTok",
+      "objective": "SALES",
+      "monthly_media_cap": "1500.00",
+      "utm_campaign": "forma_next_test",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative_variants": [
+        "problem_solution_b",
+        "product_detail_b",
+        "outfit_use_b"
+      ]
+    }
+  ],
+  "ugc_briefs": [
+    {
+      "id": "problem_solution",
+      "hook": "Co zakładasz, kiedy chcesz prostego zestawu?",
+      "shots": [
+        "detal produktu",
+        "cały fason",
+        "dwie możliwości zestawienia"
+      ],
+      "cta": "Sprawdź rozmiary i dostępność"
+    },
+    {
+      "id": "product_detail",
+      "hook": "Najpierw zobacz detal, potem wybierz rozmiar.",
+      "shots": [
+        "zbliżenie szwu",
+        "materiał w ruchu",
+        "czytelna tabela rozmiarów"
+      ],
+      "cta": "Zobacz kartę produktu"
+    },
+    {
+      "id": "outfit_use",
+      "hook": "Jedna bluza, dwie codzienne sytuacje.",
+      "shots": [
+        "zestaw do pracy",
+        "zestaw po pracy",
+        "detal koloru"
+      ],
+      "cta": "Wybierz dostępny wariant"
+    }
+  ],
+  "measurement": "Lokalny kontrakt purchase/value/currency/event_id. Mapowanie do aktualnych narzędzi konta wymaga osobnej walidacji przy wdrożeniu.",
+  "performance_history": "None; configuration proposal only."
+}

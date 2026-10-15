@@ -1,0 +1,36 @@
+{
+  "demo_only": true,
+  "catalog": {
+    "products": 3,
+    "variants": 9,
+    "total_stock": 51
+  },
+  "collections": [
+    "codziennie",
+    "warstwy"
+  ],
+  "newsletters": [
+    {
+      "subject": "Proste warstwy na chłodniejszy dzień",
+      "preheader": "Bluza MIASTO w trzech rozmiarach",
+      "body": "Wybierz wygodny fason, sprawdź tabelę rozmiarów i zobacz dostępne warianty. Cena 249 PLN pochodzi z danych testowego katalogu.",
+      "cta": "Zobacz kolekcję warstwy"
+    },
+    {
+      "subject": "Twoja codzienna baza",
+      "preheader": "Koszulka i spodnie z kolekcji codziennie",
+      "body": "Porównaj rozmiary, sprawdź dostępność i skomponuj własny zestaw. Newsletter jest lokalnym szkicem i nie został wysłany.",
+      "cta": "Zobacz kolekcję codziennie"
+    }
+  ],
+  "release_checklist": [
+    "copy_theme_before_changes",
+    "validate_product_data",
+    "review_mobile_and_desktop",
+    "test_newsletter_to_control_address",
+    "confirm_opt_in_and_unsubscribe",
+    "get_client_approval",
+    "publish_approved_version",
+    "keep_rollback_copy"
+  ]
+}

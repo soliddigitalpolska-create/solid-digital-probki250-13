@@ -1,0 +1,87 @@
+{
+  "demo_only": true,
+  "client": "Własna fikcyjna marka: Studio Proces",
+  "currency": "PLN",
+  "monthly_media_total": "3500.00",
+  "service_fee": "1100.00",
+  "campaigns": [
+    {
+      "id": "meta-static-1",
+      "platform": "Meta",
+      "objective": "LEADS",
+      "monthly_media_cap": "600.00",
+      "utm_campaign": "b2b_integracje_static",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative_brief": "Problem ręcznego przepisywania zamówień; pokaż proces przed i po, bez nieudokumentowanych liczb.",
+      "audience": "Polska, osoby zainteresowane usługami dla firm; bez wrażliwych kategorii."
+    },
+    {
+      "id": "meta-static-2",
+      "platform": "Meta",
+      "objective": "LEADS",
+      "monthly_media_cap": "600.00",
+      "utm_campaign": "b2b_automatyzacje_static",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative_brief": "Jedna czynność, jeden wynik i formularz kontaktu; gotowy materiał klienta.",
+      "audience": "Oddzielny test komunikatu; wykluczenie istniejących leadów dopiero po zatwierdzeniu podstawy i źródła danych."
+    },
+    {
+      "id": "meta-video",
+      "platform": "Meta",
+      "objective": "LEADS",
+      "monthly_media_cap": "550.00",
+      "utm_campaign": "b2b_video",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "creative_brief": "15–30 sekund: problem, pokazanie procesu, CTA. Bez obietnicy oszczędności niepopartej materiałami.",
+      "audience": "Polska; test kreacji video."
+    },
+    {
+      "id": "google-search",
+      "platform": "Google",
+      "objective": "LEADS",
+      "monthly_media_cap": "1250.00",
+      "utm_campaign": "b2b_search",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "keywords": [
+        "integracja zamówień dla firmy",
+        "automatyzacja procesów firmowych"
+      ],
+      "negative_keywords": [
+        "praca",
+        "kurs",
+        "darmowe",
+        "staż"
+      ],
+      "headlines": [
+        "Integracje dla Twojej firmy",
+        "Połącz systemy i procesy",
+        "Omów konkretną automatyzację"
+      ]
+    },
+    {
+      "id": "google-pmax",
+      "platform": "Google",
+      "objective": "LEADS",
+      "monthly_media_cap": "500.00",
+      "utm_campaign": "b2b_pmax",
+      "status": "DRAFT_NOT_PUBLISHED",
+      "asset_inventory": "Materiały klienta: nagłówki, teksty, obrazy i video; kompletność sprawdzona przed publikacją."
+    }
+  ],
+  "publication_gate": [
+    "approved_budget",
+    "approved_creatives",
+    "access_verified",
+    "conversion_test_passed",
+    "client_launch_approval"
+  ],
+  "weekly_review": [
+    "spend_vs_cap",
+    "qualified_leads",
+    "cost_per_qualified_lead",
+    "search_terms",
+    "creative_variant_result",
+    "change_log"
+  ],
+  "performance_history": "None. This file is not a live platform export and contains no paid performance claim."
+}

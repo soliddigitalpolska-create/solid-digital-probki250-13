@@ -1,0 +1,3 @@
+WŁASNY TEST NATYWNY WORDPRESS/WOOCOMMERCE
+
+Odizolowana kopia własnego fikcyjnego sklepu, nie klient. Pełny wynik w qa.json. Runner wymaga własnej lokalnej instalacji WordPress 7.1.3 / WooCommerce 11.2.1 ze SQLite i odpowiedniego PHP. Ścieżki SOURCE oraz runtime trzeba dostosować do własnej instalacji. Nie uruchamiać w produkcji: runner celowo zmienia własną bazę i plik, a następnie odtwarza własny sandbox. Port8822 służy wyłącznie kontrolowanemu fixture loopback. Nie łączy się z WordPress.com i nie naprawia rzeczywistego Jetpacka. W publicznym pakiecie nie ma baz, konfiguracji, cookies ani salts.

@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 5158,
+      "sha256": "ab5192641b95b94fc5694b45cacf60fe233113c9fac265a311795d8ddf880751"
+    },
+    {
+      "file": "native-check.php",
+      "bytes": 4173,
+      "sha256": "5b980b20a54dc5b9a6d1521c9b64408f5264e578c890b89b61515b31383ff190"
+    },
+    {
+      "file": "offline-guard.php",
+      "bytes": 587,
+      "sha256": "f44c160f0d66d2bba4f0d0cb89e71d40a9f3bcda3d3cbc3bffcc4fe48626717a"
+    },
+    {
+      "file": "qa.json",
+      "bytes": 3823,
+      "sha256": "ea6ba38dc79fc5afc082f692c05de7d77e6765a7d4bdf0c0ce1f0d9cf9e48810"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 628,
+      "sha256": "46f9b7358d6aee99b8f1d008e2054ee7cb5d1522682b50c8c52c3328d062314f"
+    },
+    {
+      "file": "verify.py",
+      "bytes": 8990,
+      "sha256": "f4690f6cd81a07521a3605e20e79f703e39bed3a8d76a742347b4dcb61045d18"
+    },
+    {
+      "file": "wp-maintenance-own-source.zip",
+      "bytes": 8053,
+      "sha256": "e2241098e144655580d6e6cf1ee63e918797e5c2bde8887a123e244ac364ce58"
+    }
+  ],
+  "local_only": true,
+  "root_publishes": true
+}

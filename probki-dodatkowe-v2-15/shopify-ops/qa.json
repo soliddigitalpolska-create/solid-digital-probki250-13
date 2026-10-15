@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "tests_run": 14,
+  "failures": 0,
+  "errors": 0,
+  "checked_at": "2026-10-15T19:16:41.546092+00:00",
+  "actual_run_output": "test_broken_conditional_rejected (__main__.ShopifyTests.test_broken_conditional_rejected) ... ok\ntest_catalog (__main__.ShopifyTests.test_catalog) ... ok\ntest_duplicate_handle_rejected (__main__.ShopifyTests.test_duplicate_handle_rejected) ... ok\ntest_duplicate_sku_rejected (__main__.ShopifyTests.test_duplicate_sku_rejected) ... ok\ntest_empty_title_rejected (__main__.ShopifyTests.test_empty_title_rejected) ... ok\ntest_invalid_size_rejected (__main__.ShopifyTests.test_invalid_size_rejected) ... ok\ntest_negative_stock_rejected (__main__.ShopifyTests.test_negative_stock_rejected) ... ok\ntest_opt_in_required (__main__.ShopifyTests.test_opt_in_required) ... ok\ntest_opted_in_selected (__main__.ShopifyTests.test_opted_in_selected) ... ok\ntest_schema (__main__.ShopifyTests.test_schema) ... ok\ntest_unescaped_title_rejected (__main__.ShopifyTests.test_unescaped_title_rejected) ... ok\ntest_unknown_collection_rejected (__main__.ShopifyTests.test_unknown_collection_rejected) ... ok\ntest_unsubscribed_excluded (__main__.ShopifyTests.test_unsubscribed_excluded) ... ok\ntest_zero_price_rejected (__main__.ShopifyTests.test_zero_price_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+}

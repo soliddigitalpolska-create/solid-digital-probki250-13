@@ -1,0 +1,32 @@
+{
+  "accepted": [
+    {
+      "event_id": "lead-001",
+      "event_name": "generate_lead",
+      "value": "0.00",
+      "currency": "PLN",
+      "analytics_consent": true
+    },
+    {
+      "event_id": "order-001",
+      "event_name": "purchase",
+      "value": "249.00",
+      "currency": "PLN",
+      "analytics_consent": true
+    }
+  ],
+  "rejected": [
+    {
+      "event_id": "order-001",
+      "reason": "duplicate"
+    },
+    {
+      "event_id": "lead-002",
+      "reason": "consent_denied"
+    },
+    {
+      "event_id": "order-usd",
+      "reason": "currency_mismatch"
+    }
+  ]
+}
