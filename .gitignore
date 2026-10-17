@@ -1,0 +1,16 @@
+# Public portfolio: never commit runtime credentials or customer exports.
+**/node_modules/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+**/*.pem
+**/*.key
+**/*.pfx
+**/*.p12
+**/fb-cookies*.json
+**/*cookies*.json
+**/*storage-state*.json
+**/*storageState*.json
+**/.sessions/
+**/.secrets/
