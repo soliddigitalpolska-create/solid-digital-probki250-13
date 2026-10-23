@@ -6,13 +6,24 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
-**23.10.2026 — pięć makiet funkcji do otwartych zleceń** (jeden plik HTML każda, motyw jasny/ciemny, rozpisanie zakresu na moduły). Fikcyjne dane, nic nie jest zapisywane.
+**23.10.2026 — 16 makiet funkcji do otwartych zleceń** (jeden plik HTML każda, motyw jasny/ciemny, rozpisanie zakresu na moduły i plan rozliczenia w trzech etapach). Fikcyjne dane, nic nie jest zapisywane.
 
 - [System zarządzania stajnią](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/stadnina-system/)
 - [Strona sprzedażowa z katalogiem i pozyskiwaniem leadów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/strona-leady-salon/)
 - [Autoposter AI i poprawki sklepu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/autoposter-ai-sklep/)
-- [Strona salonu beauty z rezerwacją online](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/salon-beauty-rezerwacje/)
 - [Generator ofert PDF dla grupy spółek](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/generator-ofert-pdf/)
+- [Strona salonu beauty z rezerwacją online](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/salon-beauty-rezerwacje/)
+- [Modularna strona WordPress bez uzależnienia od wykonawcy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/wordpress-modularny/)
+- [Wprowadzanie 1500 produktów z kontrolą jakości](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/katalog-1500-produktow/)
+- [Ścieżka zakupowa WooCommerce: diagnoza i poprawki](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/woocommerce-konwersja/)
+- [Wystawianie 500 aukcji części samochodowych na Allegro](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/allegro-czesci-500/)
+- [Wypożyczalnia sprzętu z rezerwacją i płatnością online](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/wypozyczalnia-sprzetu/)
+- [Strona szkoły językowej online w stylu editorial](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/szkola-jezykowa-online/)
+- [Uruchomienie sklepu Shoper ze sprzętem sportowym](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/shoper-uruchomienie-sklepu/)
+- [Nowy szablon graficzny sklepu Shoper](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/shoper-nowy-szablon/)
+- [Automatyzacje procesów z człowiekiem w pętli](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/automatyzacje-agencja/)
+- [Analiza UX sklepu z rekomendacjami do wdrożenia](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/audyt-ux-sklepu/)
+- [Architektura autorskiego systemu AI z kontrolą człowieka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/projekt-ai-architektura/)
 
 **23.10.2026 — prototyp architektury: lokalny system agentów AI z kontrolą człowieka** (dane lokalnie na mini PC/NAS, agent publiczny odcięty od bazy prywatnej, n8n + Python, kolejka akceptacji). Fikcyjne dane, cała logika w przeglądarce.
 
@@ -27,7 +38,7 @@ Nazwy z liczbami są historycznymi nazwami zestawów. Nie oznaczają liczby repo
 
 | Katalog | Zawartość |
 | --- | --- |
-| [makiety-23-10-2026/](makiety-23-10-2026/) | Makiety funkcji do zleceń: stajnia, strona z leadami, autoposter AI, salon beauty, generator ofert PDF |
+| [makiety-23-10-2026/](makiety-23-10-2026/) | 16 makiet funkcji do zleceń: systemy, strony, sklepy, automatyzacje, analiza UX i architektura AI |
 | [probki-23-10-2026/](probki-23-10-2026/) | Prototyp lokalnego systemu agentów AI z akceptacją człowieka |
 | [probki-16-10-2026/](probki-16-10-2026/) | Próbka jubilerska |
 | [probki-dodatkowe-v2-15/](probki-dodatkowe-v2-15/) | Audyt i konfiguracja reklam, e-mail flow, Shopify, WordPress, teksty i lokalizacja |
