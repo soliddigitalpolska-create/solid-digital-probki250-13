@@ -6,6 +6,14 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**23.10.2026 — pięć makiet funkcji do otwartych zleceń** (jeden plik HTML każda, motyw jasny/ciemny, rozpisanie zakresu na moduły). Fikcyjne dane, nic nie jest zapisywane.
+
+- [System zarządzania stajnią](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/stadnina-system/)
+- [Strona sprzedażowa z katalogiem i pozyskiwaniem leadów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/strona-leady-salon/)
+- [Autoposter AI i poprawki sklepu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/autoposter-ai-sklep/)
+- [Strona salonu beauty z rezerwacją online](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/salon-beauty-rezerwacje/)
+- [Generator ofert PDF dla grupy spółek](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/generator-ofert-pdf/)
+
 **23.10.2026 — prototyp architektury: lokalny system agentów AI z kontrolą człowieka** (dane lokalnie na mini PC/NAS, agent publiczny odcięty od bazy prywatnej, n8n + Python, kolejka akceptacji). Fikcyjne dane, cała logika w przeglądarce.
 
 - [Prototyp — podgląd](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/probki-23-10-2026/agent-lokalny/)
@@ -19,7 +27,8 @@ Nazwy z liczbami są historycznymi nazwami zestawów. Nie oznaczają liczby repo
 
 | Katalog | Zawartość |
 | --- | --- |
-| [probki-23-10-2026/](probki-23-10-2026/) | Najnowszy zestaw: prototyp lokalnego systemu agentów AI z akceptacją człowieka |
+| [makiety-23-10-2026/](makiety-23-10-2026/) | Makiety funkcji do zleceń: stajnia, strona z leadami, autoposter AI, salon beauty, generator ofert PDF |
+| [probki-23-10-2026/](probki-23-10-2026/) | Prototyp lokalnego systemu agentów AI z akceptacją człowieka |
 | [probki-16-10-2026/](probki-16-10-2026/) | Próbka jubilerska |
 | [probki-dodatkowe-v2-15/](probki-dodatkowe-v2-15/) | Audyt i konfiguracja reklam, e-mail flow, Shopify, WordPress, teksty i lokalizacja |
 | [probki-nastepny-krok-15/](probki-nastepny-krok-15/) | Przykładowy kolejny etap GoGdansk |
