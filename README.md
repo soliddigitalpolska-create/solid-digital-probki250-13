@@ -6,10 +6,12 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
-Ostatnia dodana grupa przed uporządkowaniem indeksu: **16.10.2026 — próbka jubilerska**, commit `247d15c`.
+**23.10.2026 — prototyp architektury: lokalny system agentów AI z kontrolą człowieka** (dane lokalnie na mini PC/NAS, agent publiczny odcięty od bazy prywatnej, n8n + Python, kolejka akceptacji). Fikcyjne dane, cała logika w przeglądarce.
 
-- [Próbka jubilerska — podgląd](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/probki-16-10-2026/jewellery/)
-- [Pliki źródłowe próbki](probki-16-10-2026/jewellery/)
+- [Prototyp — podgląd](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/probki-23-10-2026/agent-lokalny/)
+- [Pliki źródłowe prototypu](probki-23-10-2026/agent-lokalny/)
+
+Poprzednio: **16.10.2026 — próbka jubilerska**, commit `247d15c` ([podgląd](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/probki-16-10-2026/jewellery/)).
 
 ## Pełna mapa katalogów
 
@@ -17,7 +19,8 @@ Nazwy z liczbami są historycznymi nazwami zestawów. Nie oznaczają liczby repo
 
 | Katalog | Zawartość |
 | --- | --- |
-| [probki-16-10-2026/](probki-16-10-2026/) | Najnowszy zestaw: próbka jubilerska |
+| [probki-23-10-2026/](probki-23-10-2026/) | Najnowszy zestaw: prototyp lokalnego systemu agentów AI z akceptacją człowieka |
+| [probki-16-10-2026/](probki-16-10-2026/) | Próbka jubilerska |
 | [probki-dodatkowe-v2-15/](probki-dodatkowe-v2-15/) | Audyt i konfiguracja reklam, e-mail flow, Shopify, WordPress, teksty i lokalizacja |
 | [probki-nastepny-krok-15/](probki-nastepny-krok-15/) | Przykładowy kolejny etap GoGdansk |
 | [probki-plus28-15/](probki-plus28-15/) | Automatyzacje, Allegro, wnętrza, wideo, animacja, LinkedIn, DTP, WordPress i pozostałe materiały |
