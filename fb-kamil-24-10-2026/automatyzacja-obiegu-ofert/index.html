@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-p0UVgnEiMmdPIxd0xUzB0oDRnwtHJfxcwtREGMixTrU='; script-src 'sha256-kgVoi4M6sPzefqd5+EAHH+eSC89aLlOD+lvC6IlyO/U='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-p0UVgnEiMmdPIxd0xUzB0oDRnwtHJfxcwtREGMixTrU='; script-src 'sha256-S85oOQRxTSfzgm6tQPi+WMzAPaEAoibFl+PAP0x442E='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="description" content="Wybierz branżę albo wpisz własne zapytanie: zobaczysz policzoną ofertę, szkic odpowiedzi i kartę na tablicy statusów. Człowiek tylko sprawdza i zatwierdza.">
 <meta property="og:title" content="Zapytanie klienta → oferta w 15 sekund">
 <meta property="og:description" content="Wybierz branżę albo wpisz własne zapytanie: zobaczysz policzoną ofertę, szkic odpowiedzi i kartę na tablicy statusów. Człowiek tylko sprawdza i zatwierdza.">
@@ -81,7 +81,7 @@ const INDUSTRIES=[
   items:[{n:'Malowanie ścian (m²)',unit:'m2|m²|metr',def:60,p:28},{n:'Gładzie (m²)',unit:'m2|m²|metr',when:'gladz',def:60,p:32},{n:'Materiały i zabezpieczenie',def:1,p:850}]},
  {id:'it',name:'Usługi IT dla biur',client:'Epsilon Consulting',sample:'Potrzebujemy przeglądu 12 komputerów, konfiguracji sieci i kopii zapasowej na NAS w biurze w Katowicach.',
   items:[{n:'Przegląd stanowiska',unit:'komputer|stanowisk|laptop',def:5,p:180},{n:'Konfiguracja sieci',when:'siec|router|wifi',def:1,p:450},{n:'Kopia zapasowa na NAS',when:'nas|kopi|backup',def:1,p:900}]}];
-const CITIES=['warszaw','krakow','wroclaw','poznan','gdansk','lodz','katowic','szczecin','lublin','bialystok'];
+const CITIES=[['warszaw','Warszawa'],['krakow','Kraków'],['wroclaw','Wrocław'],['poznan','Poznań'],['gdansk','Gdańsk'],['lodz','Łódź'],['katowic','Katowice'],['szczecin','Szczecin'],['lublin','Lublin'],['bialystok','Białystok']];
 const sel=$('industry');for(const [i,x] of INDUSTRIES.entries()){const o=document.createElement('option');o.value=String(i);o.textContent=x.name;sel.append(o);}
 const ind=()=>INDUSTRIES[Number(sel.value)];const input=$('inquiry'),steps=[...document.querySelectorAll('#flow li')];let timers=[];
 const reset=()=>{for(const t of timers){clearTimeout(t);clearInterval(t);}timers=[];for(const s of steps)s.classList.remove('on');$('clock').textContent='0,0 s';for(const id of ['f1','f2','f3'])$(id).textContent='';};
@@ -90,8 +90,8 @@ $('mine').addEventListener('click',()=>{input.value='';input.focus();reset();});
 /** Reads quantities next to unit words; an item with "when" is quoted only if the inquiry mentions it. */
 const quote=(text,x)=>{const t=fold(text);const lines=[];for(const it of x.items){if(it.when&&!new RegExp(it.when).test(t))continue;let q=it.def;
  if(it.unit){const m=t.match(new RegExp('([0-9]+)[ ]*(?:'+it.unit+')'));if(m)q=Number(m[1]);}const units=it.per?q/it.per:q;lines.push({n:it.n,q,units,v:units*it.p});}
- const city=CITIES.find((c)=>t.includes(c));const when=/pilne|jutro|asap/.test(t)?'pilne':/do konca|przyszl|termin/.test(t)?'termin podany w zapytaniu':'do ustalenia';
- return {lines,net:lines.reduce((a,l)=>a+l.v,0),city:city?city[0].toUpperCase()+city.slice(1):'nie podano',when};};
+ const city=CITIES.find((c)=>t.includes(c[0]));const when=/pilne|jutro|asap/.test(t)?'pilne':/do konca|przyszl|termin/.test(t)?'termin podany w zapytaniu':'do ustalenia';
+ return {lines,net:lines.reduce((a,l)=>a+l.v,0),city:city?city[1]:'nie podano',when};};
 const lane=(id)=>document.querySelector('[data-lane="'+id+'"]');const count=()=>{for(const l of document.querySelectorAll('[data-lane]'))l.querySelector('i').textContent=String(l.querySelectorAll('.card').length);};
 let live=null;
 $('run').addEventListener('click',()=>{reset();const x=ind(),text=input.value.trim()||x.sample,r=quote(text,x);

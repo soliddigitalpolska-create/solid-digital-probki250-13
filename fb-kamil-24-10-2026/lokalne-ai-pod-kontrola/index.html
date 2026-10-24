@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-p0UVgnEiMmdPIxd0xUzB0oDRnwtHJfxcwtREGMixTrU='; script-src 'sha256-5IwKt6fjwMGGf+clo3W0dI8horOPWApoVrnMZMhlXiE='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-p0UVgnEiMmdPIxd0xUzB0oDRnwtHJfxcwtREGMixTrU='; script-src 'sha256-fIsi55+w1LMqEWgN8/5rU4p+eOD/VAABMn29HoVBq/Q='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="description" content="Model działa na komputerze w Twojej firmie, walidator zatrzymuje błędne kwoty, dane osobowe i pytania o tajemnice firmy, a każdą odpowiedź zatwierdza człowiek.">
 <meta property="og:title" content="Lokalne AI pod kontrolą operatora">
 <meta property="og:description" content="Model działa na komputerze w Twojej firmie, walidator zatrzymuje błędne kwoty, dane osobowe i pytania o tajemnice firmy, a każdą odpowiedź zatwierdza człowiek.">
@@ -90,7 +90,7 @@ const render=()=>{q.replaceChildren();const t=TICKETS[i%TICKETS.length];const bo
  for(const [label,act] of [['Zatwierdź 1 kliknięciem','ok'],['Popraw','fix'],['Odrzuć','no']]){const b=document.createElement('button');b.className=act==='ok'?'btn':'ghost';b.textContent=label;
   b.disabled=act==='ok'&&blocked;if(act==='fix'&&!t.fixed)b.disabled=true;b.addEventListener('click',()=>decide(t,act,d));row.append(b);}
  const why=document.createElement('p');why.className='muted';why.textContent=blocked?'Walidator zablokował zatwierdzenie: popraw albo odrzuć.':'Walidator nie znalazł problemów.';box.append(h,d,v,why,row);q.append(box);};
-const decide=(t,act,d)=>{if(act==='fix'&&t.fixed){d.textContent='Poprawione przez operatora: '+t.fixed;}stat[act]++;const tr=document.createElement('tr');
+const decide=(t,act,d)=>{for(const b of q.querySelectorAll('button'))b.disabled=true;if(act==='fix'&&t.fixed){d.textContent='Poprawione przez operatora: '+t.fixed;}stat[act]++;const tr=document.createElement('tr');
  for(const val of [new Date().toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit',second:'2-digit'}),t.from,act==='ok'?'zatwierdzone':act==='fix'?'poprawione i zatwierdzone':'odrzucone'])
  {const td=document.createElement('td');td.textContent=val;tr.append(td);}log.prepend(tr);$('cOk').textContent=stat.ok;$('cFix').textContent=stat.fix;$('cNo').textContent=stat.no;
  setTimeout(()=>{i++;render();},act==='fix'?700:0);};
