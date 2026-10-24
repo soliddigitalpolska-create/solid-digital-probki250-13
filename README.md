@@ -6,10 +6,18 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**24.10.2026 — 8 hubów architektury** (typowe zlecenia, warstwy rozwiązania do kliknięcia, moduły, co zostaje u klienta, ryzyka, działające próbki i kalkulator Etapu 1):
+
+- [Wszystkie huby](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/)
+- [Strony WWW i landing pages](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/strony-www-landing/) · [Sklepy e-commerce](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/sklepy-ecommerce/) · [Automatyzacje AI i boty](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/automatyzacje-ai-boty/) · [Aplikacje webowe, CRM i ERP](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/aplikacje-crm-erp/)
+- [Skrypty, integracje API i bazy danych](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/integracje-api-bazy/) · [Analityka, Excel/CSV i prace biurowe](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/analityka-excel-biuro/) · [Copywriting techniczny i tłumaczenia](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/copywriting-tlumaczenia/) · [Audyty, poprawki i optymalizacja](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/audyty-poprawki/)
+
 **24.10.2026 — dwa symulatory na żywo** (wszystko działa w przeglądarce na fikcyjnych danych, strona niczego nie zapisuje ani nie wysyła):
 
-- [Zapytanie klienta → oferta w 15 sekund](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/fb-kamil-24-10-2026/obieg-zapytan-live/): odczyt zapytania, wycena z cennika, szkic odpowiedzi, status w tabeli i kalkulator godzin oraz kosztu ręcznych odpowiedzi.
-- [Lokalne AI z kontrolą operatora](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/fb-kamil-24-10-2026/lokalne-ai-operator/): porównanie z czatem w chmurze, konsola operatora z akceptacją jednym kliknięciem i kalkulator: chmura a własny sprzęt.
+- [Automatyzacja obiegu zapytań i ofert](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/fb-kamil-24-10-2026/automatyzacja-obiegu-ofert/): wybór branży albo własne zapytanie, wycena z cennika w 15 sekund, szkic odpowiedzi, tablica statusów i kalkulator odzyskanego czasu oraz zleceń.
+- [Lokalne AI pod kontrolą operatora](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/fb-kamil-24-10-2026/lokalne-ai-pod-kontrola/): czat w chmurze a lokalne AI, przepływ danych, konsola operatora z walidatorem (kwoty, dane osobowe, tajemnica przedsiębiorstwa) i kalkulator subskrypcji.
+
+Wszystkie makiety z 23.10 i 24.10 mają od 24.10 „Kalkulator Etapu 1 (30% na start przez bezpieczną umowę Useme)” z wyborem modułów i gotowym zakresem do wklejenia w rozmowie na Useme.
 
 **24.10.2026 — 15 kolejnych makiet do otwartych zleceń** (motyw jasny/ciemny, moduły z ceną, plan trzech etapów i gotowa akceptacja Etapu 1 do wklejenia na Useme):
 
