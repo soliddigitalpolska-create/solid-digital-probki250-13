@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-9SVvVPa+OZDtvff4Ofz5km9Ia2sbsuf6IoZeQH+f4SA='; script-src 'sha256-he9kaD/lUoew1GUPBbPaFUQhGgSROHRn2umM+kU7G1I='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex">
+<meta name="description" content="Plan realizacji i wycena etapami dla 30 otwartych zleceń.">
+<title>Karty planu i wyceny — zlecenia z Useme</title>
+<style>:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18223b;--line:#26324f;--text:#e8edf7;--muted:#95a2bb;--accent:#5b8cff;--ok:#34d399;--warn:#fbbf24}
+:root[data-theme=light]{--bg:#f5f7fb;--panel:#fff;--panel2:#f0f3f9;--line:#d9e0ec;--text:#18233a;--muted:#5d6b84;--accent:#2f6bff;--ok:#0f9f6e;--warn:#b45309}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1080px;margin:0 auto;padding:0 18px}header{padding-top:36px}main{display:grid;gap:16px;padding-bottom:32px}
+.eyebrow{color:var(--accent);font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px}h1{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 10px}.lead{color:var(--muted);max-width:760px}
+.top{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}input[type=search]{flex:1 1 260px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:inherit;font:inherit}
+button{font:inherit;color:inherit;cursor:pointer}.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;scroll-margin-top:16px}.card:target{border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,140,255,.25)}
+.card h2{margin:0 0 6px;font-size:19px}.need{color:var(--muted);margin:0 0 12px}.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:12px 0 6px}ol,ul{margin:0;padding-left:18px}li{margin:3px 0}ol li b{display:block}ol li span{color:var(--muted);font-size:13.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.risk{color:var(--warn)}.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:6px}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:2px}
+.stage:first-child{border-color:var(--ok)}.stage b{font-size:18px}.stage span{color:var(--muted);font-size:12.5px}details{margin-top:10px}summary{cursor:pointer;color:var(--accent);font-weight:600}
+textarea{width:100%;margin:8px 0;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;color:inherit;font:13px/1.5 ui-monospace,Consolas,monospace}
+.copy{background:var(--ok);color:#04130c;border:0;border-radius:10px;padding:9px 14px;font-weight:700}.ok{color:var(--ok);font-weight:600}.muted{color:var(--muted);font-size:13.5px}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.groups a{display:grid;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;color:inherit;text-decoration:none}
+.groups a:hover{border-color:var(--accent)}.groups b{font-size:17px}footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.cols,.stages{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Karty planu i wyceny · 30 zleceń</p><h1>Plan realizacji i wycena etapami</h1><p class="lead">Dla każdego zlecenia: czego potrzebuje, plan w krokach, co trafia do odbioru, narzędzia, ryzyka i podział ceny na trzy etapy rozliczane osobno przez Useme.</p><div class="top"><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header><main><div class="groups"><a href="social-media/"><b>Social media i content</b><span class="muted">12 kart · Prowadzenie profili, rolki i treści: strategia, produkcja, publikacja i pomiar zapytań.</span></a><a href="reklamy-seo/"><b>Reklamy, SEO i analityka</b><span class="muted">6 kart · Kampanie, widoczność w Google i AI oraz audyty: plan, konfiguracja, optymalizacja i raport.</span></a><a href="grafika-3d/"><b>Grafika, 3D i animacja</b><span class="muted">5 kart · Projekty graficzne, wizualizacje i animacje: kierunek do akceptacji, seria i pliki produkcyjne.</span></a><a href="strony-aplikacje/"><b>Strony i aplikacje webowe</b><span class="muted">2 kart · Projekt i front-end: prototyp, dostępność, kod i instrukcja wdrożenia.</span></a><a href="teksty-tlumaczenia/"><b>Teksty, korekta i tłumaczenia</b><span class="muted">3 kart · Próbka w ustalonym standardzie, potem całość z kontrolą jakości.</span></a><a href="wsparcie-operacyjne/"><b>Programy partnerskie i wsparcie operacyjne</b><span class="muted">2 kart · Pozyskiwanie partnerów i porządek w zadaniach: plan pierwszego tygodnia i stały rytm.</span></a></div></main>
+<footer>Karty planu i wyceny do otwartych zleceń z Useme. Ceny to nasze oferty netto; umowa i płatność wyłącznie przez Useme, każdy etap osobno. Bez danych zleceniodawców.</footer>
+<script>'use strict';
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('card-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+const theme=document.getElementById('theme');if(theme)theme.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('card-theme',root.dataset.theme)}catch(e){}});
+const q=document.getElementById('q');if(q)q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();for(const c of document.querySelectorAll('.card'))c.hidden=!!v&&!c.textContent.toLowerCase().includes(v);});
+for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const box=document.getElementById(b.dataset.copy),done=b.nextElementSibling;let ok=false;
+try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(box.value);ok=true;}}catch(e){ok=false;}
+if(!ok){box.focus();box.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}}done.textContent=ok?'Skopiowano. Wystarczy wkleić w wiadomości na Useme.':'Zaznacz tekst i skopiuj ręcznie.';done.hidden=false;});</script>
+</body>
+</html>

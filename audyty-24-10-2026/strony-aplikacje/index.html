@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-9SVvVPa+OZDtvff4Ofz5km9Ia2sbsuf6IoZeQH+f4SA='; script-src 'sha256-he9kaD/lUoew1GUPBbPaFUQhGgSROHRn2umM+kU7G1I='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex">
+<meta name="description" content="Projekt i front-end: prototyp, dostępność, kod i instrukcja wdrożenia.">
+<title>Strony i aplikacje webowe — karty planu i wyceny</title>
+<style>:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18223b;--line:#26324f;--text:#e8edf7;--muted:#95a2bb;--accent:#5b8cff;--ok:#34d399;--warn:#fbbf24}
+:root[data-theme=light]{--bg:#f5f7fb;--panel:#fff;--panel2:#f0f3f9;--line:#d9e0ec;--text:#18233a;--muted:#5d6b84;--accent:#2f6bff;--ok:#0f9f6e;--warn:#b45309}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1080px;margin:0 auto;padding:0 18px}header{padding-top:36px}main{display:grid;gap:16px;padding-bottom:32px}
+.eyebrow{color:var(--accent);font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px}h1{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 10px}.lead{color:var(--muted);max-width:760px}
+.top{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}input[type=search]{flex:1 1 260px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:inherit;font:inherit}
+button{font:inherit;color:inherit;cursor:pointer}.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;scroll-margin-top:16px}.card:target{border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,140,255,.25)}
+.card h2{margin:0 0 6px;font-size:19px}.need{color:var(--muted);margin:0 0 12px}.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:12px 0 6px}ol,ul{margin:0;padding-left:18px}li{margin:3px 0}ol li b{display:block}ol li span{color:var(--muted);font-size:13.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.risk{color:var(--warn)}.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:6px}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:2px}
+.stage:first-child{border-color:var(--ok)}.stage b{font-size:18px}.stage span{color:var(--muted);font-size:12.5px}details{margin-top:10px}summary{cursor:pointer;color:var(--accent);font-weight:600}
+textarea{width:100%;margin:8px 0;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;color:inherit;font:13px/1.5 ui-monospace,Consolas,monospace}
+.copy{background:var(--ok);color:#04130c;border:0;border-radius:10px;padding:9px 14px;font-weight:700}.ok{color:var(--ok);font-weight:600}.muted{color:var(--muted);font-size:13.5px}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.groups a{display:grid;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;color:inherit;text-decoration:none}
+.groups a:hover{border-color:var(--accent)}.groups b{font-size:17px}footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.cols,.stages{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Karty planu i wyceny · 2 zleceń z Useme · bez danych zleceniodawców</p><h1>Strony i aplikacje webowe</h1><p class="lead">Projekt i front-end: prototyp, dostępność, kod i instrukcja wdrożenia.</p><div class="top"><input id="q" type="search" placeholder="Szukaj w kartach…" aria-label="Szukaj w kartach"><a class="ghost" href="../">Wszystkie kategorie</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header><main><article class="card" id="o2911684"><h2>UX/UI i front-end aplikacji do ćwiczeń dla uczniów</h2><p class="need">Około dwudziestu ekranów z zapisem postępu, obsługą klawiatury i podstawową analityką; WCAG i responsywność; treść merytoryczna gotowa.</p><div class="cols"><div><h3>Plan</h3><ol><li><b>Przepływ</b><span>Prototyp ekranów ćwiczeń i postępu.</span></li><li><b>UI</b><span>Kontrast, obsługa klawiatury, czytelność dla dzieci.</span></li><li><b>Front-end</b><span>Komponenty, zapis postępu, analityka ćwiczeń.</span></li><li><b>Testy</b><span>Dostępność i różne urządzenia.</span></li></ol></div><div><h3>Do odbioru</h3><ul><li>Prototyp klikalny</li><li>Front-end gotowy do wdrożenia</li><li>Raport dostępności WCAG</li></ul><h3>Narzędzia</h3><div class="tags"><span class="tag">Figma</span><span class="tag">React lub Svelte</span><span class="tag">Lighthouse i axe</span></div></div><div><h3>Ryzyka i jak je ograniczam</h3><ul><li class="risk">Dostępność dopisana na końcu: kryteria WCAG od pierwszego ekranu.</li><li class="risk">Zapis postępu bez kont: decyzja przed kodowaniem.</li></ul><h3>Pytanie na start</h3><p class="muted">Czy postęp ma być zapisywany na koncie ucznia, czy wystarczy na urządzeniu?</p></div></div><h3>Wycena i etapy (7 dni)</h3><div class="stages"><div class="stage"><span>Etap 1 · start i pierwsza wersja</span><b>420 zł</b><span>30%</span></div><div class="stage"><span>Etap 2 · główna część</span><b>560 zł</b><span>40%</span></div><div class="stage"><span>Etap 3 · domknięcie i przekazanie</span><b>420 zł</b><span>30%</span></div></div><details><summary>Zatwierdź Etap 1: wiadomość do wklejenia na Useme</summary><textarea id="t2911684" rows="8" readonly>Dzień dobry,
+
+akceptuję plan z karty „UX/UI i front-end aplikacji do ćwiczeń dla uczniów”: https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/strony-aplikacje/#o2911684
+
+Kwota całkowita: 1 400 zł netto.
+Etap 1 (30%): 420 zł netto.
+
+Proszę o przygotowanie umowy na Etap 1 w Useme.</textarea><button type="button" class="copy" data-copy="t2911684">Kopiuj akceptację Etapu 1</button><p class="ok" hidden></p></details></article>
+<article class="card" id="o2932106"><h2>Projekt i kodowanie strony edukacyjnej z panelem użytkownika</h2><p class="need">Estetyczna strona szkolna: FAQ, ikony, wideo, kontakt, o nas, cennik i panel po zalogowaniu; wdrożenie kodu po stronie zamawiającego.</p><div class="cols"><div><h3>Plan</h3><ol><li><b>Projekt</b><span>Strona główna i panel w Figmie.</span></li><li><b>Kodowanie</b><span>Responsywny HTML, CSS i JavaScript.</span></li><li><b>Panel</b><span>Widoki po zalogowaniu gotowe do podpięcia.</span></li><li><b>Przekazanie</b><span>Kod i instrukcja wdrożenia.</span></li></ol></div><div><h3>Do odbioru</h3><ul><li>Projekt graficzny</li><li>Zakodowane strony</li><li>Widoki panelu i instrukcja</li></ul><h3>Narzędzia</h3><div class="tags"><span class="tag">Figma</span><span class="tag">HTML, CSS, JavaScript</span></div></div><div><h3>Ryzyka i jak je ograniczam</h3><ul><li class="risk">Panel bez ustalonego backendu: opis danych przed kodowaniem.</li><li class="risk">Grafiki i zdjęcia: tylko z licencją.</li></ul><h3>Pytanie na start</h3><p class="muted">Jakie opcje ma mieć panel użytkownika po zalogowaniu?</p></div></div><h3>Wycena i etapy (21 dni)</h3><div class="stages"><div class="stage"><span>Etap 1 · start i pierwsza wersja</span><b>540 zł</b><span>30%</span></div><div class="stage"><span>Etap 2 · główna część</span><b>720 zł</b><span>40%</span></div><div class="stage"><span>Etap 3 · domknięcie i przekazanie</span><b>540 zł</b><span>30%</span></div></div><details><summary>Zatwierdź Etap 1: wiadomość do wklejenia na Useme</summary><textarea id="t2932106" rows="8" readonly>Dzień dobry,
+
+akceptuję plan z karty „Projekt i kodowanie strony edukacyjnej z panelem użytkownika”: https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/strony-aplikacje/#o2932106
+
+Kwota całkowita: 1 800 zł netto.
+Etap 1 (30%): 540 zł netto.
+
+Proszę o przygotowanie umowy na Etap 1 w Useme.</textarea><button type="button" class="copy" data-copy="t2932106">Kopiuj akceptację Etapu 1</button><p class="ok" hidden></p></details></article></main>
+<footer>Karty planu i wyceny do otwartych zleceń z Useme. Ceny to nasze oferty netto; umowa i płatność wyłącznie przez Useme, każdy etap osobno. Bez danych zleceniodawców.</footer>
+<script>'use strict';
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('card-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+const theme=document.getElementById('theme');if(theme)theme.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('card-theme',root.dataset.theme)}catch(e){}});
+const q=document.getElementById('q');if(q)q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();for(const c of document.querySelectorAll('.card'))c.hidden=!!v&&!c.textContent.toLowerCase().includes(v);});
+for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const box=document.getElementById(b.dataset.copy),done=b.nextElementSibling;let ok=false;
+try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(box.value);ok=true;}}catch(e){ok=false;}
+if(!ok){box.focus();box.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}}done.textContent=ok?'Skopiowano. Wystarczy wkleić w wiadomości na Useme.':'Zaznacz tekst i skopiuj ręcznie.';done.hidden=false;});</script>
+</body>
+</html>

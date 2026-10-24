@@ -6,6 +6,14 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**24.10.2026 — 30 kart planu i wyceny do otwartych zleceń** (plan w krokach, elementy do odbioru, narzędzia, ryzyka i podział ceny na trzy etapy rozliczane przez Useme), w sześciu kategoriach. Bez danych zleceniodawców.
+
+- [Wszystkie kategorie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/)
+- [Social media i content](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/social-media/) · [Reklamy, SEO i analityka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/reklamy-seo/) · [Grafika, 3D i animacja](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/grafika-3d/)
+- [Strony i aplikacje webowe](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/strony-aplikacje/) · [Teksty, korekta i tłumaczenia](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/teksty-tlumaczenia/) · [Programy partnerskie i wsparcie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/audyty-24-10-2026/wsparcie-operacyjne/)
+
+Makiety z 23.10 mają od 24.10 sekcję „Zatwierdź zakres Etapu 1” z gotową wiadomością do wklejenia na Useme.
+
 **23.10.2026 — 16 makiet funkcji do otwartych zleceń** (jeden plik HTML każda, motyw jasny/ciemny, rozpisanie zakresu na moduły i plan rozliczenia w trzech etapach). Fikcyjne dane, nic nie jest zapisywane.
 
 - [System zarządzania stajnią](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-23-10-2026/stadnina-system/)
@@ -38,6 +46,7 @@ Nazwy z liczbami są historycznymi nazwami zestawów. Nie oznaczają liczby repo
 
 | Katalog | Zawartość |
 | --- | --- |
+| [audyty-24-10-2026/](audyty-24-10-2026/) | 30 kart planu i wyceny do zleceń w sześciu kategoriach |
 | [makiety-23-10-2026/](makiety-23-10-2026/) | 16 makiet funkcji do zleceń: systemy, strony, sklepy, automatyzacje, analiza UX i architektura AI |
 | [probki-23-10-2026/](probki-23-10-2026/) | Prototyp lokalnego systemu agentów AI z akceptacją człowieka |
 | [probki-16-10-2026/](probki-16-10-2026/) | Próbka jubilerska |
