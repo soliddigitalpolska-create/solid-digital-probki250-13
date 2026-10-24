@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Ky7jyXD8s7gRvdXSiwYCwOu59wXHJHw2pBXHQg9KaIo='; script-src 'sha256-5jpNGVJtjUYirSeKpxIqo/5An4wyKwBmQGOHngBatX4='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Wybierz przykład albo wpisz własny proces i zaznacz, co jest prawdą. Wynik mówi, czy zacząć, co uzupełnić i gdzie powinny zostać dane.">
+<meta property="og:title" content="Czy ten proces można bezpiecznie oddać AI z kontrolą operatora?">
+<meta property="og:description" content="Wybierz przykład albo wpisz własny proces i zaznacz, co jest prawdą. Wynik mówi, czy zacząć, co uzupełnić i gdzie powinny zostać dane.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/audyt-gotowosci-ai/">
+<title>Czy ten proces można bezpiecznie oddać AI z kontrolą operatora?</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:980px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:740px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}h2{margin:0 0 6px;font-size:19px}.muted{color:var(--muted);font-size:13.5px}
+button,select,input{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+select,input[type=number],input[type=text]{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}input[type=range]{width:100%;accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.kpi b{font-size:22px;letter-spacing:-.01em}.kpi.big b{color:var(--ok);font-size:26px}.kpi.bad b{color:var(--bad)}
+.checks{display:grid;gap:8px}.checks label{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--text);font-size:14px}
+.checks input{accent-color:var(--accent);margin-top:3px}.checks small{display:block;color:var(--muted);font-size:12.5px}
+.verdict{border-radius:12px;padding:14px;border:1px solid var(--line);display:grid;gap:4px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ok{color:var(--ok);font-weight:600}
+.offer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}.offer b{font-size:22px}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.stages{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Bezpłatny audyt · 8 pytań</p><h1>Czy ten proces można bezpiecznie oddać AI z kontrolą operatora?</h1><p class="lead">Wybierz przykład albo wpisz własny proces i zaznacz, co jest prawdą. Wynik mówi, czy zacząć, co uzupełnić i gdzie powinny zostać dane.</p>
+<div class="top"><a class="ghost" href="../">Wszystkie narzędzia</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Proces</h2><div class="chips"><button class="chip" type="button" data-preset="oferty">Przykład Alfa: zapytania ofertowe</button><button class="chip" type="button" data-preset="faktury">Przykład Beta: faktury kosztowe</button><button class="chip" type="button" data-preset="kredyty">Przykład Gamma: limity kupieckie</button></div>
+<label>Nazwa procesu<input id="process" type="text" maxlength="80" placeholder="np. odpowiedzi na reklamacje"></label></section>
+<section><h2>8 pytań</h2><div class="checks">
+<label><input type="checkbox" id="q1" data-q><span>Proces powtarza się co najmniej kilka razy w tygodniu<small>AI opłaca się przy powtarzalnej pracy.</small></span></label>
+<label><input type="checkbox" id="q2" data-q><span>Da się opisać zasady, według których człowiek dziś decyduje<small>Bez reguł model nie ma czego się trzymać.</small></span></label>
+<label><input type="checkbox" id="q3" data-q><span>Dane wejściowe mają podobną formę (e-maile, formularze, faktury)<small>Im bardziej powtarzalny format, tym mniej błędów.</small></span></label>
+<label><input type="checkbox" id="q4" data-q><span>Są dokumenty źródłowe, na których AI ma się opierać<small>Cennik, regulamin, baza wiedzy, archiwum odpowiedzi.</small></span></label>
+<label><input type="checkbox" id="q5" data-q><span>Wynik można sprawdzić przed użyciem (kolejka akceptacji)<small>Człowiek zatwierdza, poprawia albo odrzuca.</small></span></label>
+<label><input type="checkbox" id="q6" data-q><span>Pomyłka jest łatwa do wychwycenia i tania do naprawy<small>Na start wybierz proces o niskim koszcie błędu.</small></span></label>
+<label><input type="checkbox" id="q7" data-q><span>W danych są dane osobowe, tajemnice firmy albo dane klientów<small>Wpływa na to, czy model ma działać lokalnie.</small></span></label>
+<label><input type="checkbox" id="q8" data-q><span>Wynik sam rozstrzyga o prawach lub pieniądzach klienta<small>Np. odmowa, kredyt, kara: tu decyduje człowiek.</small></span></label></div></section>
+<section><h2>Wynik</h2><div class="verdict" id="verdict"><span class="muted">Punkty gotowości: <b id="score"></b></span><b id="vhead"></b><span id="vwhy"></span><span class="muted" id="vwhere"></span></div><div class="share"><button class="btn" id="share" type="button">Kopiuj wynik do komentarza</button><span class="ok" id="copied" hidden></span></div></section>
+<section id="prototyp"><div class="offer"><div><h2>Chcesz zobaczyć to na danych swojej firmy?</h2><p class="muted">Etap 0: rozmowa o procesie, mapa obiegu, wiążąca wycena i prototyp na przykładzie z Twojej firmy. Decyzja o wdrożeniu dopiero potem.</p></div>
+<div><b>900 zł netto</b><p class="muted">Napisz w wiadomości prywatnej na Facebooku: „Prototyp”.</p></div></div></section>
+</main>
+<footer>Bezpłatne narzędzie na Twoich liczbach; przykłady firm (Alfa, Beta, Gamma) są fikcyjne. Strona niczego nie zapisuje i niczego nie wysyła. Wynik to szacunek na wpisanych założeniach, nie obietnica efektu.</footer>
+<script>'use strict';
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);const num=(id)=>Math.max(0,Number($(id).value)||0);const zl=(n)=>Math.round(n).toLocaleString('pl-PL')+' zł';
+const fmt=(n,d)=>Number(n).toFixed(d||0).replace('.',',');
+const bind=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',fn);e.addEventListener('change',fn);}fn();};
+let summary='';const share=$('share');if(share)share.addEventListener('click',async()=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(summary);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=summary;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ $('copied').textContent=ok?'Skopiowano wynik.':'Zaznacz wynik i skopiuj ręcznie.';$('copied').hidden=false;});
+for(const o of document.querySelectorAll('[data-out]')){const i=$(o.dataset.out);const f=()=>{o.textContent=i.value;};i.addEventListener('input',f);f();}
+const PRESETS={oferty:'Odpowiedzi na zapytania ofertowe',faktury:'Odczyt faktur kosztowych',kredyty:'Decyzje o przyznaniu limitu kupieckiego'};
+const SET={oferty:[1,1,1,1,1,1,0,0],faktury:[1,1,1,1,1,1,1,0],kredyty:[0,1,0,0,1,0,1,1]};
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>{for(const x of document.querySelectorAll('[data-preset]'))x.classList.toggle('on',x===b);
+ $('process').value=PRESETS[b.dataset.preset];[...document.querySelectorAll('[data-q]')].forEach((c,i)=>{c.checked=!!SET[b.dataset.preset][i];});calc();});
+const calc=()=>{const q=[...document.querySelectorAll('[data-q]')].map((c)=>c.checked);const score=q.slice(0,6).filter(Boolean).length;const sensitive=q[6],decides=q[7];
+ const name=$('process').value.trim()||'Ten proces';const v=$('verdict');let cls,head,why;
+ if(decides){cls='bad';head='Nie teraz: decyzja wpływa na prawa lub pieniądze klienta';why='AI może przygotować analizę, ale decyzję musi podejmować człowiek; zacznij od procesu pomocniczego.';}
+ else if(score>=5){cls='ok';head='Gotowy na AI z kontrolą operatora';why='Proces jest powtarzalny, ma jasne reguły i dane źródłowe, a wynik można sprawdzić przed użyciem.';}
+ else if(score>=3){cls='warn';head='Warunkowo: najpierw uzupełnij braki';why='Uzupełnij odznaczone punkty (zwłaszcza reguły i źródła danych), potem prototyp na danych testowych.';}
+ else{cls='bad';head='Nie teraz: za mało powtarzalności lub danych';why='Lepszy start to prosta automatyzacja bez AI albo porządek w danych.';}
+ const where=sensitive?'Dane wrażliwe: model lokalny w firmie albo dane zanonimizowane przed wysłaniem do chmury.':'Dane niewrażliwe: można użyć modelu w chmurze z umową powierzenia lub modelu lokalnego.';
+ v.className='verdict '+cls;$('vhead').textContent=head;$('vwhy').textContent=why;$('vwhere').textContent=where;$('score').textContent=score+' / 6';
+ summary='Audyt gotowości AI: '+name+'. Wynik '+score+'/6 punktów gotowości. '+head+'. '+where;};
+bind([...[...document.querySelectorAll('[data-q]')].map((c)=>c.id),'process'],calc);</script>
+</body>
+</html>

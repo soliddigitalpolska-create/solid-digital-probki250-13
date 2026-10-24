@@ -6,6 +6,36 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**25.10.2026 — 19 kolejnych makiet do najcenniejszych otwartych zleceń** (przełącznik zestawów danych Alfa/Beta/Gamma, symulator działania, moduły z ceną i Kalkulator Etapu 1):
+
+- [Skład kroniki na 300–400 stron: siatka, zdjęcia i pliki do druku](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/dtp-kronika-400-stron/)
+- [Dziennik typu workbook: szablony stron, okładka i cztery wersje do druku](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/workbook-200-stron/)
+- [Łazienka 3D do konfiguratora: jedna scena, 15–20 wariantów, ten sam kadr](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/lazienka-3d-konfigurator/)
+- [Grafika pakietu edukacyjnego: jeden styl dla ilustracji, ikon, plansz i prezentacji](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/pakiet-edukacyjny-grafika/)
+- [E-book od tematu do automatycznej sprzedaży, z mentoringiem krok po kroku](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/ebook-sprzedaz-automatyczna/)
+- [Middleware dla enova365: dane tylko do odczytu przez własne REST API](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/middleware-enova365-api/)
+- [Asystent przy projektach: tablica zadań, codzienne priorytety i podsumowanie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/asystent-zadania-projekty/)
+- [Talia 52 kart rozwojowych: koncepcja, karty, rewers, pudełko i książeczka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/talia-52-kart-projekt/)
+- [Rebranding dwóch marek: firma technologiczna i jej produkt SaaS](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/rebranding-firma-saas/)
+- [Montaż około 20 rolek miesięcznie: szablon, stały rytm i archiwum](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/montaz-rolek-fitness/)
+- [Trzy projekty premium dla marki dziecięcej: moodboard, seria i pliki](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/grafika-premium-dla-dzieci/)
+- [Sklep z dwiema kategoriami, płatnościami online, Allegro i blogiem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/sklep-dwie-kategorie-allegro/)
+- [Przeniesienie serwisu z Laravel na WordPress bez zmiany wyglądu i treści](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/migracja-laravel-wordpress/)
+- [Sklep WooCommerce na rynku niemieckim: mapa, kategorie i treści DE](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/woocommerce-seo-de/)
+- [Szata graficzna nowej marki suplementów: etykieta wzorcowa i seria](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/suplementy-etykiety-seria/)
+- [Social media i wizytówka Google: treści, rolki, opinie i widoczność lokalna](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/social-media-wizytowka-google/)
+- [Kalendarze i materiały na jubileusz firmy: koncepcja, kalendarze i roll-upy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/kalendarze-jubileuszowe/)
+- [Animowane instrukcje montażu mebli: próbka, szablon i seria](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/animacje-instrukcji-mebli/)
+- [Asystent AI do prawa i podatków oparty na zweryfikowanych źródłach (RAG)](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/asystent-ai-prawo-rag/)
+
+**25.10.2026 — 5 bezpłatnych kalkulatorów dla firm** (liczysz na swoich danych, założenia widoczne wprost, nic nie jest zapisywane): [wszystkie narzędzia](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/)
+
+- [Ile zleceń ucieka przy wolnej odpowiedzi](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/kalkulator-strat-zapytan/)
+- [Audyt gotowości procesu na AI z kontrolą operatora](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/audyt-gotowosci-ai/)
+- [Koszt nieodwołanych wizyt i przypomnienia SMS](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/kalkulator-rezerwacji-noshow/)
+- [Budżet i etapy strony, katalogu lub systemu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/estimator-wdrozenia-www/)
+- [Koszt ręcznego przeklejania danych](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/narzedzia-fb-25-10-2026/kalkulator-automatyzacji-raportow/)
+
 **24.10.2026 — 8 hubów architektury** (typowe zlecenia, warstwy rozwiązania do kliknięcia, moduły, co zostaje u klienta, ryzyka, działające próbki i kalkulator Etapu 1):
 
 - [Wszystkie huby](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/huby-architektury-24-10-2026/)
