@@ -30,8 +30,9 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 - [Platforma B2B na Magento 2: cenniki grup, weryfikacja firm i limity kredytowe](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/magento-2-b2b-wdrozenie/)
 - [Home Assistant: monitoring PV, trzech zbiorników CWU i grzałek na jednym panelu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/home-assistant-pv-cwu-dashboard/)
 
-**25.10.2026 — 20 makiet do otwartych ofert z miejsc 51–70** (zastępują karty planu):
+**25.10.2026 — 21 makiet do otwartych ofert z miejsc 51–71** (zastępują karty planu):
 
+- [Tłumaczenie fragmentu książki z angielskiego: próbka stylu, słownik decyzji i redakcja](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/tlumaczenie-fragmentu-ksiazki/)
 - [Logo pracowni warsztatów artystycznych: trzy kierunki i komplet plików](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/logo-pracownia-warsztatow/)
 - [Dwie ścianki tekstylne i dwa roll-upy z gotowego key visual](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/scianki-rollupy-konferencja/)
 - [Bajka gotowa do publikacji w Amazon KDP: wnętrze i okładka z grzbietem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/bajka-amazon-kdp/)
