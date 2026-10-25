@@ -6,6 +6,53 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**25.10.2026 — 20 makiet pod nowe, publiczne zlecenia** (oferta jeszcze niezłożona; dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
+
+- [Lista wszystkich 20](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/)
+- [Zapytania ze strony: źródło, klasyfikacja AI i przekierowanie w n8n](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/n8n-zapytania-ze-strony/)
+- [Aplikacja rozliczeniowa dla sieci restauracji: sprzedaż, magazyn, KSeF i straty](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/rozliczenia-gastronomia-8-lokali/)
+- [Masowa edycja ofert Allegro przez oficjalne API](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/allegro-api-masowe-oferty/)
+- [Konfigurator 3D szaf vendingowych w przeglądarce](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/konfigurator-3d-szafy-vending/)
+- [Flipy i podnajem: ClickUp, komunikator, Dysk i asystent AI w jednym obiegu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/nieruchomosci-clickup-komunikator-ai/)
+- [PWA dla muzyków: profile, karty z dopasowaniem i czat w czasie rzeczywistym](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/pwa-networking-muzykow/)
+- [Marketplace B2B w FlutterFlow: Firestore, reguły ról i logika transakcji](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/flutterflow-marketplace-b2b-firebase/)
+- [WooCommerce: błąd krytyczny po aktualizacji PHP 7.4](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/woocommerce-aktualizacja-php/)
+- [Wolne podstrony na telefonie mimo dobrego wyniku strony głównej](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/predkosc-mobile-podstron/)
+- [Strona agencji nieruchomości z gotowego projektu: oferty dodawane samodzielnie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/strona-agencji-nieruchomosci-z-projektu/)
+- [Serwis zamówień personalizowanych piosenek: historia, okazja, styl i płatność](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/zamowienia-personalizowanych-piosenek/)
+- [Marketplace usług z terminami: partnerzy, rezerwacje, płatności i prowizje](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/marketplace-uslug-z-terminami/)
+- [Strona agencji nieruchomości w Elementorze: ciemne tło, wideo i jasne napisy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/agencja-nieruchomosci-ciemny-motyw-wideo/)
+- [Strona inwestycji mieszkaniowej: katalog lokali, historia cen i raport do dane.gov.pl](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/strona-inwestycji-katalog-mieszkan/)
+- [wFirma, Base, Allegro i InPost: zamówienia, etykiety, KSeF i magazyn z kompletacją](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/wfirma-base-allegro-inpost-ksef/)
+- [Skład poradnika na 270 stron: druk, EPUB i PDF](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/sklad-poradnika-270-stron-ebook/)
+- [Poranny raport Meta Ads i WooCommerce gotowy przed 7:00 bez przepisywania](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/raport-meta-ads-woocommerce-arkusz/)
+- [Opisy kategorii opon: poprawne parametry, frazy i jeden standard](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/opisy-kategorii-opon/)
+- [Platforma B2B na Magento 2: cenniki grup, weryfikacja firm i limity kredytowe](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/magento-2-b2b-wdrozenie/)
+- [Home Assistant: monitoring PV, trzech zbiorników CWU i grzałek na jednym panelu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/home-assistant-pv-cwu-dashboard/)
+
+**25.10.2026 — 20 makiet do otwartych ofert z miejsc 51–70** (zastępują karty planu):
+
+- [Logo pracowni warsztatów artystycznych: trzy kierunki i komplet plików](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/logo-pracownia-warsztatow/)
+- [Dwie ścianki tekstylne i dwa roll-upy z gotowego key visual](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/scianki-rollupy-konferencja/)
+- [Bajka gotowa do publikacji w Amazon KDP: wnętrze i okładka z grzbietem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/bajka-amazon-kdp/)
+- [Strona wizytówka na Wix: pięć podstron i samodzielna edycja](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/wizytowka-wix-piec-podstron/)
+- [Krótki spot B2B: jedna korzyść w 15–30 sekund i trzy formaty](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/spot-reklamowy-b2b/)
+- [Montaż filmów o inwestowaniu: plansze liczb, wykresy i stały rytm](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/montaz-filmow-inwestowanie/)
+- [Marketing automation: audyt bazy, segmenty ze scoringiem i cykl nurturingowy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/marketing-automation-segmenty/)
+- [Start portalu ogłoszeń motoryzacyjnych: najpierw sprzedawcy, potem kupujący](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/promocja-portalu-ogloszen-moto/)
+- [Stała opieka nad dwoma sklepami WooCommerce: przejęcie, audyt i aktualizacje na kopii](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/opieka-dwa-sklepy-woocommerce/)
+- [Pilna naprawa WordPress: blokada połączeń, aktualizacje i szybkość](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/naprawa-wordpress-blokada-polaczen/)
+- [TikTok Ads dla sklepu: struktura kampanii, hooki UGC i raport ROAS](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/tiktok-ads-sklep/)
+- [Instagram firmy: kalendarz miesiąca, szablony postów i rolki](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/instagram-firmy-plan-miesiaca/)
+- [Rolki edukacyjne biura rachunkowego z akceptacją merytoryczną](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/rolki-biuro-rachunkowe/)
+- [Arkusz CRM odblokowany: archiwum komentarzy bez utraty historii](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/arkusz-crm-limit-komentarzy/)
+- [Stały montaż rolek i filmów YouTube: szablon, rytm i czytelne nagrania ekranu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/montaz-rolek-youtube-marketer/)
+- [Aplikacja webowa: lista funkcji pierwszej wersji i prototyp ekranów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/aplikacja-webowa-pierwsza-wersja/)
+- [Migracja WordPress na nową domenę bez utraty pozycji](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/migracja-wordpress-nowa-domena/)
+- [Audyt CTR trzech sklepów: strony z potencjałem, nowe tytuły i pomiar](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/audyt-ctr-trzech-sklepow/)
+- [Teksty blogowe po angielsku dla branży telekomunikacyjnej](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/blog-en-telekomunikacja/)
+- [Ultralekka strona marki osobistej z wynikiem Lighthouse 95+](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala2/ultralekka-strona-marki-osobistej/)
+
 **25.10.2026 — 19 kolejnych makiet do najcenniejszych otwartych zleceń** (przełącznik zestawów danych Alfa/Beta/Gamma, symulator działania, moduły z ceną i Kalkulator Etapu 1):
 
 - [Skład kroniki na 300–400 stron: siatka, zdjęcia i pliki do druku](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-2026/dtp-kronika-400-stron/)
