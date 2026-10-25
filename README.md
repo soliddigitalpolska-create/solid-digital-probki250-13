@@ -6,6 +6,45 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**25.10.2026 — 36 makiet do otwartych ofert, które miały dotąd tylko hub branżowy** (dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
+
+- [Specjalista AI: pakiet 20 godzin z listą rezultatów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/specjalista-ai-pakiet-20h/)
+- [Strona firmowa white label: 5 podstron z SEO na stronie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/white-label-strona-5-podstron/)
+- [CRM rezerwacji wycieczek szkolnych z Kalendarzem Google](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/crm-rezerwacje-wycieczek-szkolnych/)
+- [Kontrola faktur inwestycji i prognoza przepływów z Excela](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/kontrola-faktur-inwestycji/)
+- [48 kart pracy dla przedszkolaków i klas 1–3](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/karty-pracy-przedszkole-klasy-1-3/)
+- [Redesign aplikacji Nuxt 3 i Laravel: płatny etap próbny](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/redesign-nuxt-laravel-etap-probny/)
+- [Wdrożenie gotowego projektu w motywie WordPress](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/wdrozenie-projektu-wordpress-motyw/)
+- [Redakcyjna strona z blogiem na WordPressie, grafiki social i wizytówka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/strona-redakcyjna-blog-wordpress/)
+- [Model 3D fotela, pięć renderów produktowych i GLB na stronę](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/model-3d-fotela-rendery/)
+- [Koncepcja 3D budki akustycznej 120 × 120 × 220 cm](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/budka-akustyczna-koncepcja-3d/)
+- [Aplikacja na smartfon: kolejka donate, dźwięk według kwoty i lektor](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/aplikacja-donate-lektor/)
+- [Audyt tekstów i konwersji sklepu beauty na Shopify](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/teksty-konwersji-sklep-beauty/)
+- [Seria 10 grafik dla marki zapachowej z prawdziwym flakonem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/grafiki-marka-zapachowa/)
+- [Opieka nad wielojęzycznym WordPressem: 12 godzin miesięcznie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/opieka-wordpress-wielojezyczny/)
+- [Facebook i Instagram dla auto detailingu z kampanią zimową](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/social-media-auto-detailing/)
+- [One page white label na WordPressie: do 8 sekcji](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/white-label-one-page-wordpress/)
+- [Google Ads i Meta Ads dla sklepu WooCommerce: pierwszy miesiąc](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/google-ads-meta-ads-sklep/)
+- [Wprowadzenie 100 produktów na Allegro z szablonem opisu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/allegro-100-produktow/)
+- [Pakiet 8 rolek z nagrań ekranu i voice-overów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/osiem-rolek-nagrania-ekranu/)
+- [Nowa odsłona wizualna marki meblowej na Instagramie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/nowa-odslona-marki-meblowej/)
+- [Koncepcja stylistyczna domu 180 m² z moodboardem i paletą](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/koncepcja-stylistyczna-domu/)
+- [Wklejenie gotowego HTML do około 500 kart produktów w IdoSell](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/idosell-opisy-html-500-kart/)
+- [Email marketing dla sklepu: pierwszy miesiąc](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/email-marketing-sklep-miesiac/)
+- [Opisy nieruchomości premium z materiałów EN i publikacja w CMS](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/nieruchomosci-premium-opisy-en-pl/)
+- [Skoroszyt Excel: projekty, pracownicy, koszty i dashboard](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/skoroszyt-excel-projekty-koszty/)
+- [Pięć wizualizacji hali 800 m² z rysunków](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/wizualizacja-hali-800-m2/)
+- [Montaż odcinka YouTube o wspólnotach energetycznych](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/montaz-odcinka-youtube-energia/)
+- [Wizualizacja wnętrza do 25 m²: dwa ujęcia 4K](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/wizualizacja-wnetrza-25-m2/)
+- [Projekt graficzny landing page’a: OZE i finansowanie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/landing-oze-finansowanie/)
+- [Cztery rolki sportowe 45–60 sekund](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/cztery-rolki-sportowe/)
+- [Testy gry lub aplikacji w przeglądarce: 15 scenariuszy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/testy-gry-przegladarkowej/)
+- [Makieta landing page’a premium e-commerce: desktop i mobile](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/makieta-landing-premium-ecommerce/)
+- [Zestaw modułów A+ na Amazon dla jednego produktu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/moduly-a-plus-amazon/)
+- [Przebudowa strony biura: ubezpieczenia, wyjazdy i wizy](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/przebudowa-strony-biura-uslug/)
+- [Postać 2D jako czysty wektor z nazwanymi grupami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/postac-2d-wektor-warstwy/)
+- [Grafiki social i plakat dla targów rękodzieła](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/grafiki-targi-rekodziela/)
+
 **25.10.2026 — 15 makiet pod nowe zlecenia z mniejszą konkurencją (drugi nabór)** (dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
 
 - [Lista wszystkich 15](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/)
