@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Mk5OMAPAgX6pNMdnIFR1NDnn1xZn0lzjgb4oKVA4r8w='; script-src 'sha256-cpoQ+4nbTZjVEmAIDjHLVEJ996Q38JT0hU89X0Yb5Ng='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Porównaj składanie raportu z kilku plików z panelem, który co noc pobiera dane i liczy wskaźniki według jednej definicji.">
+<meta property="og:title" content="Rozproszone arkusze czy panel zarządczy KPI?">
+<meta property="og:description" content="Porównaj składanie raportu z kilku plików z panelem, który co noc pobiera dane i liczy wskaźniki według jednej definicji.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/arkusze-vs-panel-kpi/">
+<title>Rozproszone arkusze czy panel zarządczy KPI?</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:980px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:740px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}h2{margin:0 0 8px;font-size:19px}.muted{color:var(--muted);font-size:13.5px}
+button,input{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number]{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}label{font-size:13px;color:var(--muted);display:grid;gap:4px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}.steps li{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}.dot.ok{background:var(--ok)}.dot.warn{background:var(--warn)}.dot.block{background:var(--bad)}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok);font-size:24px}.kpi.bad b{color:var(--bad)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.ok{color:var(--ok);font-weight:600}a.kpi{color:inherit;text-decoration:none}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid4{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Porównanie przed i po · firmy fikcyjne</p><h1>Rozproszone arkusze czy panel zarządczy KPI?</h1><p class="lead">Porównaj składanie raportu z kilku plików z panelem, który co noc pobiera dane i liczy wskaźniki według jednej definicji.</p>
+<div class="top"><a class="ghost" href="../">Wszystkie porównania</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Firma przykładowa</h2><div class="chips"><button class="chip" type="button" data-preset="0">Alfa · sieć trzech sklepów</button><button class="chip" type="button" data-preset="1">Beta · firma produkcyjna</button><button class="chip" type="button" data-preset="2">Gamma · agencja</button></div>
+<p class="muted">Przykłady wczytują fikcyjne liczby; każdą możesz zmienić poniżej.</p></section>
+<section><h2>Proces</h2><div class="chips"><button class="chip" type="button" data-view="before">Przed: Rozproszone arkusze</button><button class="chip" type="button" data-view="after">Po: Panel zarządczy KPI</button></div>
+<ul class="steps" id="before"><li><span class="dot warn"></span>Eksport z trzech systemów</li><li><span class="dot warn"></span>Sklejanie arkuszy ręcznie</li><li><span class="dot block"></span>Różne wersje pliku w mailach</li></ul><ul class="steps" id="after"><li><span class="dot ok"></span>Import danych co noc</li><li><span class="dot ok"></span>Jedna definicja każdego wskaźnika</li><li><span class="dot ok"></span>Panel z historią i alertami</li></ul></section>
+<section><h2>Twoje liczby</h2><div class="grid2"><label>Raporty miesięcznie<input id="volume" type="number" min="0" value="20"></label><label>Minuty na złożenie raportu<input id="minBefore" type="number" min="0" step="0.5" value="90"></label><label>Założenie: minuty kontroli panelu<input id="minAfter" type="number" min="0" step="0.1" value="10"></label><label>Koszt godziny pracy (zł)<input id="rate" type="number" min="0" value="90"></label><label>Raporty z błędem w danych (%)<input id="errBefore" type="number" min="0" step="0.1" value="15"></label><label>Założenie: raporty z błędem po panelu (%)<input id="errAfter" type="number" min="0" step="0.1" value="3"></label><label>Koszt złej decyzji z błędnego raportu (zł)<input id="errCost" type="number" min="0" value="800"></label><label>Koszt wdrożenia jednorazowo (zł)<input id="setup" type="number" min="0" value="12000"></label></div></section>
+<section><h2>Wynik</h2><div class="grid4"><div class="kpi bad"><span class="muted">Godziny miesięcznie dziś</span><b id="k1"></b></div><div class="kpi"><span class="muted">Godziny miesięcznie po zmianie</span><b id="k2"></b></div><div class="kpi"><span class="muted">Koszt miesięczny dziś (praca i błędy)</span><b id="k3"></b></div><div class="kpi"><span class="muted">Koszt miesięczny po zmianie</span><b id="k4"></b></div><div class="kpi big"><span class="muted">Różnica miesięcznie</span><b id="k5"></b></div><div class="kpi big"><span class="muted">Zwrot wdrożenia</span><b id="k6"></b></div></div>
+<p class="muted">Koszt to godziny razy stawka plus pomyłki razy ich koszt. Czas i odsetek pomyłek po zmianie to założenia: wpisz własne.</p><div class="share"><button class="btn" id="share" type="button">Kopiuj wynik</button><span class="ok" id="copied" hidden></span></div></section>
+<section><h2>Chcesz to samo porównanie na liczbach swojej firmy?</h2><p class="muted">Zaczynamy od mapy procesu i prototypu na Twoim przykładzie; wdrożenie rozliczane etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p></section>
+</main>
+<footer>Porównanie na fikcyjnych przykładach (Alfa, Beta, Gamma). Strona niczego nie zapisuje i niczego nie wysyła. Wynik to szacunek na wpisanych założeniach, nie obietnica efektu.</footer>
+<script>'use strict';
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const CFG={"title":"Rozproszone arkusze vs panel KPI","mode":"time","fields":["volume","minBefore","minAfter","rate","errBefore","errAfter","errCost","setup"],"presets":[{"name":"Alfa · sieć trzech sklepów","values":{"volume":20,"minBefore":90,"minAfter":10,"rate":90,"errBefore":15,"errAfter":3,"errCost":800,"setup":12000}},{"name":"Beta · firma produkcyjna","values":{"volume":12,"minBefore":180,"minAfter":15,"rate":110,"errBefore":20,"errAfter":4,"errCost":1500,"setup":18000}},{"name":"Gamma · agencja","values":{"volume":30,"minBefore":45,"minAfter":5,"rate":80,"errBefore":10,"errAfter":2,"errCost":300,"setup":8000}}]};
+const $=(id)=>document.getElementById(id);const num=(id)=>Math.max(0,Number($(id).value)||0);
+const zl=(n)=>Math.round(n).toLocaleString('pl-PL')+' zł';const fmt=(n)=>Number(n).toLocaleString('pl-PL',{maximumFractionDigits:1});
+let summary='';
+const calc=()=>{
+ if(CFG.mode==='time'){const v=num('volume'),hb=v*num('minBefore')/60,ha=v*num('minAfter')/60,r=num('rate'),ec=num('errCost');
+  const cb=hb*r+v*num('errBefore')/100*ec,ca=ha*r+v*num('errAfter')/100*ec,diff=cb-ca,setup=num('setup'),pb=diff>0?Math.max(1,Math.ceil(setup/diff)):null;
+  $('k1').textContent=fmt(hb)+' h';$('k2').textContent=fmt(ha)+' h';$('k3').textContent=zl(cb);$('k4').textContent=zl(ca);$('k5').textContent=zl(diff);$('k6').textContent=pb?pb+' mies.':'—';
+  summary=CFG.title+': '+fmt(hb)+' h i '+zl(cb)+' miesięcznie dziś, '+fmt(ha)+' h i '+zl(ca)+' po zmianie (różnica '+zl(diff)+' miesięcznie, przy moich założeniach).';}
+ else if(CFG.mode==='revenue'){const c=num('carts'),val=num('orderValue'),rb=c*num('recBefore')/100*val,ra=c*num('recAfter')/100*val,gain=ra-rb-num('monthly'),setup=num('setup'),pb=gain>0?Math.max(1,Math.ceil(setup/gain)):null;
+  $('k1').textContent=zl(rb);$('k2').textContent=zl(ra);$('k3').textContent=zl(gain);$('k4').textContent=pb?pb+' mies.':'—';
+  summary=CFG.title+': odzyskana sprzedaż '+zl(rb)+' miesięcznie dziś i '+zl(ra)+' po zmianie; po koszcie narzędzia '+zl(gain)+' miesięcznie (przy moich założeniach).';}
+ else{const v=num('value'),risk=Math.min(100,num('risk'))/100,first=Math.round(v*0.3);
+  $('k1').textContent=zl(v);$('k2').textContent=zl(first);$('k3').textContent=zl(v*risk);$('k4').textContent=zl(first*risk);
+  summary=CFG.title+': przed pierwszym odbiorem zagrożone '+zl(v)+' bez etapów i '+zl(first)+' w modelu 30/40/30; oczekiwana strata '+zl(v*risk)+' wobec '+zl(first*risk)+' (przy moich założeniach).';}
+};
+const setView=(v)=>{for(const b of document.querySelectorAll('[data-view]'))b.classList.toggle('on',b.dataset.view===v);$('before').hidden=v!=='before';$('after').hidden=v!=='after';};
+const setPreset=(i)=>{const p=CFG.presets[i];for(const k of Object.keys(p.values))$(k).value=String(p.values[k]);for(const b of document.querySelectorAll('[data-preset]'))b.classList.toggle('on',Number(b.dataset.preset)===i);calc();};
+for(const b of document.querySelectorAll('[data-view]'))b.addEventListener('click',()=>setView(b.dataset.view));
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>setPreset(Number(b.dataset.preset)));
+for(const f of CFG.fields){$(f).addEventListener('input',calc);}
+$('share').addEventListener('click',async()=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(summary);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=summary;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ $('copied').textContent=ok?'Skopiowano wynik.':'Zaznacz wynik i skopiuj ręcznie.';$('copied').hidden=false;});
+setView('before');setPreset(0);</script>
+</body>
+</html>

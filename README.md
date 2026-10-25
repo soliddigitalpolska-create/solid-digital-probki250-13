@@ -6,6 +6,20 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**25.10.2026 — 10 interaktywnych porównań „przed i po wdrożeniu”** (firmy fikcyjne Alfa/Beta/Gamma, wynik liczony z wpisanych liczb):
+
+- [Lista wszystkich 10](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/)
+- [Ręczne ofertowanie vs generator PDF](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/ofertowanie-reczne-vs-generator-pdf/)
+- [Surowy model AI vs lokalne AI z walidatorem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/surowe-ai-vs-lokalne-ai-z-walidatorem/)
+- [Zapisy telefoniczne vs rezerwacje online](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/zapisy-telefoniczne-vs-rezerwacje-online/)
+- [Ręczne stany sklepu vs integracja](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/stany-reczne-vs-integracja-dwukierunkowa/)
+- [Rozproszone arkusze vs panel KPI](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/arkusze-vs-panel-kpi/)
+- [Wizytówka WWW vs konfigurator wyceny](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/wizytowka-vs-konfigurator-wyceny/)
+- [Tłumaczenie surowe vs słownik i korekta](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/tlumaczenie-surowe-vs-slownik-terminologii/)
+- [Ręczne faktury vs obieg dokumentów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/faktury-reczne-vs-obieg-dokumentow/)
+- [Porzucone koszyki: bez analityki vs odzyskiwanie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/porzucone-koszyki-odzyskiwanie/)
+- [Wdrożenie bez etapów vs model 30/40/30](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/wdrozenie-bez-etapow-vs-30-40-30/)
+
 **25.10.2026 — 36 makiet do otwartych ofert, które miały dotąd tylko hub branżowy** (dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
 
 - [Specjalista AI: pakiet 20 godzin z listą rezultatów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala4/specjalista-ai-pakiet-20h/)
