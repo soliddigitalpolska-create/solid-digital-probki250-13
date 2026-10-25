@@ -6,6 +6,56 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**25.10.2026 — 15 makiet pod nowe zlecenia z mniejszą konkurencją (drugi nabór)** (dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
+
+- [Lista wszystkich 15](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/)
+- [Gra FPS w Unity: ekwipunek, podnoszenie przedmiotów i przerywniki w stylu graphic novel](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/unity-fps-ekwipunek-przerywniki/)
+- [Aktualizacja szablonu Comarch e-Sklep z zachowaniem modyfikacji i integracji z magazynem](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/comarch-esklep-aktualizacja-szablonu/)
+- [Badanie dostępności WCAG 2.2 platformy e-learning z autorskim motywem i wtyczkami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/audyt-wcag-platformy-elearning/)
+- [Bot MQL5 na MetaTrader 5: przegląd kodu, backtesty i plan optymalizacji](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/mql5-przeglad-bota-backtesty/)
+- [Audyt sklepu B2B na IdoSell: konfiguracja, checkout, wydajność, SEO i analityka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/audyt-sklepu-b2b-idosell/)
+- [Moduł aukcji transportowych i czatu w platformie ASP.NET Core](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/aspnet-aukcje-transportowe-czat/)
+- [YetiForce CRM 7: diagnoza błędów, automatyzacje i porządek w integracjach REST](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/yetiforce-crm-naprawa-automatyzacje/)
+- [Microsoft 365 uporządkowany zdalnie: Outlook, skrzynki, OneDrive, SharePoint i asystent AI](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/microsoft-365-outlook-ai/)
+- [Audyt CRO i UX strony kancelarii: ścieżka do kontaktu, wersja mobilna i rekomendacje](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/audyt-cro-ux-strona-kancelarii/)
+- [Przejęcie strefy DNS bez przerwy w poczcie Google Workspace](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/dns-google-workspace-bez-utraty-poczty/)
+- [Opieka nad serwerami wirtualnymi w chmurze: inwentaryzacja, monitoring, kaskadowy backup i dostęp](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/opieka-serwery-chmura/)
+- [Sklep PrestaShop od podstaw: konfiguracja, szablon, płatności, import produktów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/sklep-prestashop-od-podstaw/)
+- [Aplikacja szkoły językowej dla dzieci: maskotka, punkty, minigry i panel nauczyciela](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/aplikacja-dla-dzieci-grywalizacja/)
+- [Strona firmowa z panelem B2B, integracją Subiekt nexo PRO, marketplace i kurierami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/strona-b2b-subiekt-nexo/)
+- [MVP aplikacji marketplace na Androida i iOS w budżecie do 15 000 zł](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-fala2/mvp-aplikacja-marketplace/)
+
+**25.10.2026 — 28 makiet do otwartych ofert z miejsc 72–103** (zastępują karty planu i szybkie wznowienia):
+
+- [Książka dziecięca z ilustracjami AI: audyt i poprawki wzorcowe](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/ksiazka-dziecieca-ai-audyt/)
+- [Rebranding pizzerii: nowe logo i karta menu w jednym stylu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/logo-pizzerii-menu/)
+- [Film reklamowy w premium looku z kilku zdjęć produktu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/film-reklamowy-premium-ze-zdjec/)
+- [Wsparcie SEO czterech marek: dobór portali i optymalizacja artykułów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/seo-cztery-marki-link-building/)
+- [Redakcja opisów podstron kancelarii podatkowej pod marketing i SEO](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/redakcja-opisow-kancelarii-podatkowej/)
+- [Strona firmy z przeglądem UX i prostym CMS](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/strona-ux-prosty-cms/)
+- [Art direction social mediów perfumerii niszowej](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/art-direction-perfumeria/)
+- [Fotorealistyczne aranżacje wnętrz z AI: pakiet 10 zdjęć](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/aranzacje-wnetrz-ai-10-zdjec/)
+- [Audyt Google Ads i przyczyny spadku sprzedaży sklepu](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/audyt-google-ads-spadek-sprzedazy/)
+- [Miesięczne raporty finansowe trzech jednostek produkcyjnych](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/raporty-finansowe-jednostek/)
+- [Poprawa koszyka i procesu zamówienia w PrestaShop](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/prestashop-poprawa-koszyka/)
+- [Konwersja zakupu WooCommerce → Google Ads po stronie serwera](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/woocommerce-google-ads-konwersja-serwer/)
+- [Manualne testy QA aplikacji webowych i mobilnych](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/testy-qa-aplikacji/)
+- [Asystentura zarządu z AI: szkice, podsumowania i priorytety](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/asystentura-zarzadu-ai/)
+- [Integracja WooCommerce z Subiektem: koszt przesyłki w dokumencie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/subiekt-woocommerce-koszt-przesylki/)
+- [Teaser osobistego filmu dokumentalnego](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/teaser-filmu-dokumentalnego/)
+- [Wystawienie produktów na Bol.com i Home24 przez Base](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/bol-home24-base/)
+- [Projekt oklejenia samochodu dostawczego: dwa warianty i pliki produkcyjne](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/oklejenie-auta-dostawczego/)
+- [E-book pod klucz: temat, tekst, skład i automatyczna sprzedaż](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/ebook-pod-klucz-sprzedaz/)
+- [Strona spółki z sektora finansowego z archiwum relacji inwestorskich](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/strona-spolki-finansowej-relacje-inwestorskie/)
+- [Podmiana logo na ruchomym obiekcie w gotowym filmie](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/podmiana-logo-w-filmie/)
+- [Montaż kanału eksperckiego o finansach i kredytach](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/montaz-youtube-finanse-kredyty/)
+- [Marketing firmy schodów na zamówienie w Wielkiej Brytanii](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/marketing-schody-uk/)
+- [Publikowanie ogłoszeń w grupach mieszkańców zgodnie z regulaminami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/posty-grupy-mieszkancow/)
+- [Montaż 15–20 rolek miesięcznie z edytowalnymi plikami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/montaz-rolek-15-20-miesiecznie/)
+- [Pięciostronicowa strona firmy usługowej w WordPress](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/strona-firmy-uslugowej-wordpress/)
+- [Książeczka kuponowa premium 120 × 70 mm z uszlachetnieniami](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/ksiazeczka-kuponowa-premium/)
+- [Explainer video platformy do nauki języka](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-25-10-fala3/explainer-platforma-jezykowa/)
+
 **25.10.2026 — 20 makiet pod nowe, publiczne zlecenia** (oferta jeszcze niezłożona; dane fikcyjne Alfa/Beta/Gamma, symulator, moduły z ceną i Kalkulator Etapu 1):
 
 - [Lista wszystkich 20](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/nowe-zlecenia-25-10-2026/)
