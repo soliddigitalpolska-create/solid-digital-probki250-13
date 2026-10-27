@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-V5d4zZ0aj5Rbm+u7P7m3g7zYON2QoqiUTU8tsW8F/Vk='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Oferta z przeniesieniem praw czy bez? Generator umów pokazuje teksty dla obu ustawień, a detektor zapisów o prawach sprawdza specyfikację, harmonogram i odpowiedź w czacie i wskazuje zdanie, które obiecuje coś innego niż oferta.">
+<meta property="og:title" content="Detektor ryzyka praw autorskich">
+<meta property="og:description" content="Oferta z przeniesieniem praw czy bez? Generator umów pokazuje teksty dla obu ustawień, a detektor zapisów o prawach sprawdza specyfikację, harmonogram i odpowiedź w czacie i wskazuje zdanie, które obiecuje coś innego niż oferta.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/detektor-ryzyka-praw-autorskich/">
+<title>Detektor ryzyka praw autorskich</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Detektor ryzyka praw autorskich</h1><p class="lead">Oferta z przeniesieniem praw czy bez? Generator umów pokazuje teksty dla obu ustawień, a detektor zapisów o prawach sprawdza specyfikację, harmonogram i odpowiedź w czacie i wskazuje zdanie, które obiecuje coś innego niż oferta.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Ustawienie praw w ofercie Useme</h2><div class="chips"><button class="chip" type="button" data-preset="0">Alfa · integracja magazynu</button><button class="chip" type="button" data-preset="1">Beta · identyfikacja wizualna</button><button class="chip" type="button" data-preset="2">Gamma · panel KPI</button></div>
+<div class="chips"><button class="chip" type="button" data-rights="TRANSFER">Przeniesienie praw majątkowych (TRANSFER)</button><button class="chip" type="button" data-rights="LICENSE">Bez przeniesienia praw: licencja (LICENSE)</button></div>
+<div class="grid4"><label>Tytuł zlecenia<input id="title" type="text"></label><label>Wycena całości w zł netto<input id="amount" type="number" min="100" step="100"></label><label>Termin całości w dniach<input id="days" type="number" min="1" step="1"></label>
+<label>Rodzaj rezultatu<select id="kind"><option value="CODE">Kod i pliki (oprogramowanie)</option><option value="FILES">Projekty i pliki źródłowe</option></select></label></div>
+<p class="muted gap">Przełącznik zmienia ustawienie oferty, a teksty niżej zostają bez zmian: tak sprawdzisz, czy specyfikacja napisana do jednej oferty pasuje do drugiej.</p></section>
+<section><h2>Co zmienia przełącznik w tekstach z generatora</h2><p class="muted">Zdania o prawach, które contractTexts pisze dla każdego ustawienia, przy tej samej wycenie i tym samym zakresie.</p>
+<div class="grid2"><div><h3>TRANSFER: przeniesienie praw</h3><ul class="list" id="lineT"></ul></div><div><h3>LICENSE: bez przeniesienia</h3><ul class="list" id="lineL"></ul></div></div></section>
+<section><h2>Teksty do sprawdzenia</h2><div class="chips"><button class="chip" type="button" id="regen">Wstaw teksty z generatora dla tego ustawienia</button><button class="chip" type="button" data-sample="transfer">Odpowiedź obiecuje pełne prawa</button><button class="chip" type="button" data-sample="licence">Specyfikacja daje tylko licencję</button><button class="chip" type="button" data-sample="exclusive">Harmonogram z licencją wyłączną</button></div>
+<div class="grid3"><label>Specyfikacja Etapu 1<textarea id="tspec" rows="14" spellcheck="false"></textarea></label><label>Harmonogram 30/40/30<textarea id="tschedule" rows="14" spellcheck="false"></textarea></label><label>Odpowiedź w czacie Useme<textarea id="tmessage" rows="14" spellcheck="false"></textarea></label></div>
+<p class="err gap" id="err" hidden></p></section>
+<section><h2>Wynik</h2><div class="verdict" id="verdict"><b id="vhead"></b><span class="muted" id="vsub"></span></div>
+<div class="grid3"><div><h3>Specyfikacja</h3><ul class="issues" id="rspec"></ul></div><div><h3>Harmonogram</h3><ul class="issues" id="rschedule"></ul></div><div><h3>Odpowiedź</h3><ul class="issues" id="rmessage"></ul></div></div></section>
+<section><h2>Co widzi detektor</h2><p class="muted">Każde trafienie detectIpRightsIntent: fraza, rodzaj i status w zdaniu. „Korekta strony” oznacza zaprzeczenie zaraz po frazie (np. „nie przechodzą”), którego detektor, napisany do czytania zapytań klientów, nie uwzględnia.</p>
+<div class="scroll"><table><thead><tr><th>Tekst</th><th>Fraza</th><th>Rodzaj</th><th>Status</th><th>Zdanie</th></tr></thead><tbody id="hits"></tbody></table></div></section>
+<section><h2>Co tu jest kodem backendu, a co logiką strony</h2><p>Detektor zapisów o prawach (src/services/negotiation-engine/ip-rights-detector.ts) i generator tekstów umowy (src/sales/useme-contract-spec.ts) działają tu bez zmian. W backendzie nie było porównania tekstu z ustawieniem praw w ofercie, więc reguła konfliktu jest dopisana dla tej strony: reviewRights w src/sales/arsenal-70k.ts, pokryta testem.</p>
+<p class="muted">Reguła: przy licencji konfliktem jest obietnica przeniesienia praw albo licencja wyłączna; przy przeniesieniu konfliktem jest zdanie, że prawa nie przechodzą, albo sama licencja bez przeniesienia. Wynik pomaga czytać tekst, nie jest poradą prawną.</p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 30,2 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/services/negotiation-engine/ip-rights-detector.ts</code></span><span class="muted">detectIpRightsIntent, IP_RIGHTS_DETECTOR_VERSION · zapisy o prawach oceniane w zdaniu: przeniesienie, licencja wyłączna, kod i pliki źródłowe; status ACCEPTED, NEGATED albo CONTEXT_ONLY</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme-contract-spec.ts</code></span><span class="muted">contractTexts, checkContractText, ContractInputError · specyfikacja, harmonogram i odpowiedź dla TRANSFER i LICENSE oraz kontrola kwot 30/40/30</span></li><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">reviewRights, RIGHTS_AFTER_NEGATION · w backendzie nie było porównania tekstu z ustawieniem praw w ofercie: reguła konfliktu i zaprzeczenie po frazie („nie przechodzą”) dopisane tutaj, pokryte testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/services/negotiation-engine/ip-rights-detector.ts</code> <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/resume-followup.ts</code> <code>src/sales/useme-contract-spec.ts</code> <code>src/sales/arsenal-70k.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-detektor-ryzyka-praw-autorskich.entry.ts
+  var arsenal_detektor_ryzyka_praw_autorskich_entry_exports = {};
+  __export(arsenal_detektor_ryzyka_praw_autorskich_entry_exports, {
+    ContractInputError: () => ContractInputError,
+    IP_RIGHTS_DETECTOR_VERSION: () => IP_RIGHTS_DETECTOR_VERSION,
+    RIGHTS_AFTER_NEGATION: () => RIGHTS_AFTER_NEGATION,
+    checkContractText: () => checkContractText,
+    contractTexts: () => contractTexts,
+    detectIpRightsIntent: () => detectIpRightsIntent,
+    reviewRights: () => reviewRights
+  });
+
+  // src/services/negotiation-engine/ip-rights-detector.ts
+  var IP_RIGHTS_DETECTOR_VERSION = "1.0.0";
+  var L = "[\\p{L}\\p{N}_]";
+  var START = `(?<!${L})`;
+  var END = `(?!${L})`;
+  var word = (body) => `${START}(?:${body})${END}`;
+  var RIGHTS = "praw(?:a|o|ami|ach)?";
+  var PATTERNS = [
+    [
+      "COPYRIGHT_TRANSFER",
+      new RegExp(
+        [
+          // przeniesienie / przekazanie (maj\u0105tkowych) praw (autorskich)
+          `${START}(?:przenie[s\u015B]\\p{L}*|przeka[z\u017C]\\p{L}*|nabyci\\p{L}*|nabyw\\p{L}*|cesj\\p{L}*)\\s+(?:wszystkich\\s+|pe\u0142n\\p{L}*\\s+|ca\u0142o\u015Bci\\s+)?(?:autorsk\\p{L}*\\s+)?(?:maj\u0105tkow\\p{L}*\\s+)?${RIGHTS}(?:\\s+(?:autorsk\\p{L}*|maj\u0105tkow\\p{L}*))*${END}`,
+          // (autorskie) prawa maj\u0105tkowe
+          `${START}(?:autorsk\\p{L}*\\s+)?${RIGHTS}\\s+maj\u0105tkow\\p{L}*${END}`,
+          // (na) polach eksploatacji
+          `${START}pol\\p{L}*\\s+eksploatacji${END}`,
+          // (wraz) z (pe\u0142nymi) prawami autorskimi
+          `${START}(?:wraz\\s+)?z\\s+(?:pe\u0142nymi\\s+|wszystkimi\\s+)?prawami\\s+autorskimi${END}`,
+          // English
+          `${START}(?:copyright\\s+(?:transfer|assignment)|(?:transfer|assignment)\\s+of\\s+(?:all\\s+|the\\s+)?(?:copyrights?|(?:intellectual\\s+property|ip)\\s+rights|rights)|full\\s+(?:ownership|rights)|work\\s+(?:made\\s+)?for\\s+hire)${END}`
+        ].join("|"),
+        "giu"
+      )
+    ],
+    [
+      "EXCLUSIVE_LICENSE",
+      new RegExp(word("licencj\\p{L}*\\s+wy\u0142\u0105czn\\p{L}*|wy\u0142\u0105czn\\p{L}*\\s+licencj\\p{L}*|exclusive\\s+licen[cs]e"), "giu")
+    ],
+    [
+      "SOURCE_CODE",
+      new RegExp(
+        word(
+          "kod(?:u|em|zie|y|\xF3w|ami)?\\s+\u017Ar\xF3d\u0142ow\\p{L}*|\u017Ar\xF3d\u0142ow\\p{L}*\\s+kod\\p{L}*|kod(?:u|em|y)?\\s+\u017Ar\\.|source\\s+(?:code|files?)|sources?\\s+of\\s+the\\s+(?:project|app|application)"
+        ),
+        "giu"
+      )
+    ],
+    [
+      "OPEN_FILES",
+      new RegExp(
+        word(
+          [
+            "plik\\p{L}*\\s+(?:otwart\\p{L}*|\u017Ar\xF3d\u0142ow\\p{L}*|edytowaln\\p{L}*|robocz\\p{L}*)",
+            "(?:otwart\\p{L}*|\u017Ar\xF3d\u0142ow\\p{L}*|edytowaln\\p{L}*|robocz\\p{L}*)\\s+plik\\p{L}*",
+            "plik\\p{L}*\\s+(?:w\\s+formacie\\s+)?\\.?(?:psd|ai|fig|figma|indd|sketch|xd|cdr|aep|prproj|blend)",
+            "(?:open|editable|working|layered)\\s+files?"
+          ].join("|")
+        ),
+        "giu"
+      )
+    ],
+    [
+      "COPYRIGHT_MENTION",
+      new RegExp(
+        word("praw(?:a|o|ami|ach|em|u)?\\s+autorsk\\p{L}*|autorsk\\p{L}*\\s+praw\\p{L}*|copyrights?|intellectual\\s+property|ip\\s+rights"),
+        "giu"
+      )
+    ]
+  ];
+  var cue = (body) => new RegExp(word(body), "iu");
+  var cues = (body) => new RegExp(word(body), "giu");
+  var NEGATION = cues("bez|nie|ani|no|without|not|don'?t|doesn'?t|nor");
+  var CONTRAST = cue("poza|opr\xF3cz|z\\s+wyj\u0105tkiem|except|only|tylko|jedynie|ale|lecz|but");
+  var POST_NEGATION = cue(
+    [
+      "nie\\s+(?:jest|s\u0105|b\u0119dzie|b\u0119d\u0105)\\s+(?:potrzebn\\p{L}*|wymagan\\p{L}*|konieczn\\p{L}*|istotn\\p{L}*)",
+      "nie\\s+(?:potrzebuj\\p{L}*|wymagam\\p{L}*|interesuj\\p{L}*)",
+      "(?:pozostaj|zostaj|zostan)\\p{L}*\\s+(?:po\\s+stronie|przy|u)\\s+(?:wykonawc|autor|grafik|programist|freelancer|tw\xF3rc|pan|pa\u0144|ciebie|was)\\p{L}*",
+      "(?:is|are)\\s+not\\s+(?:needed|required|necessary)",
+      "not\\s+(?:needed|required|necessary)",
+      "stays?\\s+with\\s+(?:the\\s+)?(?:contractor|author|freelancer|you)"
+    ].join("|")
+  );
+  var REQUEST = cues(
+    [
+      "prosz\u0119|prosimy|pro\u015Bb\\p{L}*|potrzebuj\\p{L}*|potrzebn\\p{L}*|wymag\\p{L}*|oczekuj\\p{L}*|oczekiwan\\p{L}*",
+      "chc\\p{L}*|chcia\u0142\\p{L}*|musi\\p{L}*|musz\u0105|trzeba|konieczn\\p{L}*",
+      "ma(?:my|m)?\\s+(?:dosta\u0107|otrzyma\u0107)|otrzyma\\p{L}*|dosta\u0107|dostarcz\\p{L}*|przekazan\\p{L}*|przekaza\u0107|przeka\u017C(?!\u0119|emy)",
+      "przenie[s\u015B]\\p{L}*|wydani\\p{L}*|wyda\u0107|wraz\\s+z|\u0142\u0105cznie\\s+z|razem\\s+z|w\\s+tym",
+      "obejm\\p{L}*|zawiera\\p{L}*|czy|includ\\p{L}*|need\\p{L}*|requir\\p{L}*|want\\p{L}*|deliver\\p{L}*|hand\\s+over|provide\\s+(?:us|me)|must"
+    ].join("|")
+  );
+  var PROVIDE = cues(
+    [
+      "udost\u0119pni(?:\u0119|my|am|amy)|prze\u015Bl(?:\u0119|emy)|wy\u015Bl(?:\u0119|emy)|przeka\u017C(?:\u0119|emy)|da(?:m|my)\\s+dost\u0119p",
+      "za\u0142\u0105cz(?:am|amy|y\u0142\\p{L}*|a\u0142\\p{L}*|on\\p{L}*)|w\\s+za\u0142\u0105cz\\p{L}*|za\u0142\u0105czn\\p{L}*",
+      "posiada(?:m|my)|mam(?:y)?(?!\\s+(?:dosta\u0107|otrzyma\u0107|mie\u0107))|nasz\\p{L}*|m\xF3j|moj\\p{L}*",
+      "istniej\u0105c\\p{L}*|obecn\\p{L}*|aktualn\\p{L}*|dotychczasow\\p{L}*",
+      "github\\p{L}*|gitlab\\p{L}*|bitbucket\\p{L}*|repozytori\\p{L}*|dost\u0119p\\p{L}*\\s+do",
+      "(?:i|we)\\s+(?:will\\s+)?(?:send|share|provide|attach)|attached|our\\s+existing|existing"
+    ].join("|")
+  );
+  var OWNERSHIP = cues(
+    "ma(?:j\u0105)?\\s+by\u0107\\s+nasz\\p{L}*|na\\s+w\u0142asno\u015B\u0107|nale\u017C\\p{L}*\\s+do\\s+nas|na\\s+nas|(?:must|should)\\s+be\\s+ours"
+  );
+  var EXCLUSION = cue(
+    [
+      "woln\\p{L}*\\s+od|narusz\\p{L}*|narusze\u0144|\u0142amani\\p{L}*|plagiat\\p{L}*|stock\\p{L}*|royalty|cudzych|os\xF3b\\s+trzecich",
+      "third[-\\s]party|infring\\p{L}*|free\\s+of|licencj\\p{L}*\\s+(?:na|do)\\s+(?:zdj\u0119ci|grafik|czcion|font|muzyk)\\p{L}*"
+    ].join("|")
+  );
+  var TRANSFER = cue(
+    "przenie[s\u015B]\\p{L}*|przeka[z\u017C]\\p{L}*|przechodz\\p{L}*|przejd\\p{L}*|przej\u015B\\p{L}*|nabyci\\p{L}*|maj\u0105tkow\\p{L}*|wy\u0142\u0105czn\\p{L}*|pe\u0142n\\p{L}*|eksploatacji|transfer\\p{L}*|assign\\p{L}*|ownership"
+  );
+  var NEGATED_NEED = cue(
+    "(?:nie|ani)\\s+(?:potrzebuj|wymag|chc|oczekuj|interesuj|musi)\\p{L}*|bez|without|(?:don'?t|do\\s+not)\\s+need|no\\s+need"
+  );
+  var FORM_ANSWER = /^\s*[:=\-\u2013\u2014]\s*(tak|yes|nie|no)(?![\p{L}\p{N}_])/iu;
+  var CLAUSE_BOUNDARY = /[.!?;\n]/u;
+  var WINDOW = 300;
+  var MAX_MATCHES = 500;
+  function clauseBounds(text, from, to) {
+    const floor = Math.max(0, from - WINDOW);
+    let start = from;
+    while (start > floor && !CLAUSE_BOUNDARY.test(text[start - 1])) start -= 1;
+    const ceiling = Math.min(text.length, to + WINDOW);
+    let end = to;
+    while (end < ceiling && !CLAUSE_BOUNDARY.test(text[end])) end += 1;
+    return [start, end];
+  }
+  function lastMatch(pattern, text) {
+    pattern.lastIndex = 0;
+    let found = null;
+    for (let hit = pattern.exec(text); hit; hit = pattern.exec(text)) found = hit;
+    return found;
+  }
+  function spans(pattern, text) {
+    pattern.lastIndex = 0;
+    return [...text.matchAll(pattern)].map((hit) => [hit.index, hit.index + hit[0].length]);
+  }
+  function wordCount(text) {
+    return text.split(/\s+/u).filter((part) => /[\p{L}\p{N}]/u.test(part)).length;
+  }
+  var overlaps = (span, others) => others.some(([s, e]) => span[0] < e && s < span[1]);
+  function cueSpans(sub) {
+    const ownership = spans(OWNERSHIP, sub);
+    const provide = spans(PROVIDE, sub).filter((span) => !overlaps(span, ownership));
+    const request = [...spans(REQUEST, sub).filter((span) => !overlaps(span, provide)), ...ownership];
+    return { provide, request };
+  }
+  function negatedBefore(before) {
+    const negation = lastMatch(NEGATION, before);
+    if (!negation) return false;
+    const between = before.slice(negation.index + negation[0].length);
+    return wordCount(between) <= 6 && !CONTRAST.test(between);
+  }
+  function classify(text, kind, index, length) {
+    const [clauseStart, clauseEnd] = clauseBounds(text, index, index + length);
+    const clause = text.slice(clauseStart, clauseEnd);
+    const at = index - clauseStart;
+    const subStart = clause.lastIndexOf(",", at) + 1;
+    const commaAfter = clause.indexOf(",", at + length);
+    const subEnd = commaAfter === -1 ? clause.length : commaAfter;
+    const before = clause.slice(subStart, at);
+    const after = clause.slice(at + length, subEnd);
+    const sub = clause.slice(subStart, subEnd);
+    const form = FORM_ANSWER.exec(after);
+    if (form) return /^(tak|yes)$/iu.test(form[1]) ? "ACCEPTED" : "NEGATED";
+    if (kind === "COPYRIGHT_MENTION" && EXCLUSION.test(clause)) return "EXCLUDED";
+    const found = cueSpans(sub);
+    const request = found.request.length > 0;
+    let negated = negatedBefore(before) || POST_NEGATION.test(after);
+    if (!negated && subStart > 0 && wordCount(before) <= 1 && !request) {
+      const previous = clause.slice(0, subStart).split(",").at(-2) ?? "";
+      negated = NEGATED_NEED.test(previous) && !CONTRAST.test(previous);
+    }
+    if (negated) return "NEGATED";
+    if (kind === "COPYRIGHT_TRANSFER" || kind === "EXCLUSIVE_LICENSE") return "ACCEPTED";
+    if (kind === "COPYRIGHT_MENTION") return request || TRANSFER.test(sub) ? "ACCEPTED" : "CONTEXT_ONLY";
+    const hit = [at - subStart, at - subStart + length];
+    const near = found.provide.some(
+      ([s, e]) => e <= hit[0] && wordCount(sub.slice(e, hit[0])) <= 3 || s >= hit[1] && wordCount(sub.slice(hit[1], s)) <= 4
+    );
+    const ownership = spans(OWNERSHIP, sub).length > 0;
+    if (near && !ownership) return "CONTEXT_ONLY";
+    return found.provide.length > 0 && !request ? "CONTEXT_ONLY" : "ACCEPTED";
+  }
+  function detectIpRightsIntent(text, options = {}) {
+    const maxLength = options.maxLength ?? 2e4;
+    const source = typeof text === "string" ? text.normalize("NFC").slice(0, maxLength) : "";
+    const claimed = [];
+    const matches = [];
+    for (const [kind, pattern] of PATTERNS) {
+      pattern.lastIndex = 0;
+      for (const hit of source.matchAll(pattern)) {
+        if (matches.length >= MAX_MATCHES) break;
+        const start = hit.index;
+        const end = start + hit[0].length;
+        if (claimed.some(([s, e]) => start < e && s < end)) continue;
+        claimed.push([start, end]);
+        const [clauseStart, clauseEnd] = clauseBounds(source, start, end);
+        matches.push({
+          kind,
+          status: classify(source, kind, start, hit[0].length),
+          phrase: hit[0],
+          index: start,
+          evidence: source.slice(clauseStart, clauseEnd).replace(/\s+/gu, " ").trim().slice(0, 200)
+        });
+      }
+    }
+    matches.sort((a, b) => a.index - b.index);
+    const accepted = matches.filter((match) => match.status === "ACCEPTED");
+    const textSays = accepted.length > 0;
+    const structured = options.structuredTransfer;
+    const hasStructured = structured === true || structured === false;
+    return Object.freeze({
+      version: IP_RIGHTS_DETECTOR_VERSION,
+      detected: hasStructured ? structured : textSays,
+      source: hasStructured ? "STRUCTURED_FIELD" : textSays ? "TEXT" : "NONE",
+      conflict: hasStructured && structured !== textSays && (textSays || matches.some((m) => m.status === "NEGATED")),
+      matches: Object.freeze(matches.map((match) => Object.freeze(match))),
+      evidence: Object.freeze([...new Set(accepted.map((match) => match.evidence))])
+    });
+  }
+
+  // src/sales/demo-scaffolder.ts
+  var STAGE_SHARES = [30, 40, 30];
+  function stageSplit(total) {
+    let left = total;
+    return STAGE_SHARES.map((share, index) => {
+      const amount = index === STAGE_SHARES.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= amount;
+      return amount;
+    });
+  }
+  var stage1Days = (days) => Math.max(2, Math.round((days ?? 7) * 0.3));
+
+  // src/sales/useme/conversion-style.ts
+  var WORD_LIMITS = { OFFER: [80, 220], REPLY: [35, 160], FOLLOWUP: [25, 100] };
+  var FIRST_PARAGRAPH = { OFFER: [1, 32], REPLY: [2, 45], FOLLOWUP: [2, 60] };
+  var USEME_CLICHES = [
+    "ch\u0119tnie",
+    "z przyjemno\u015Bci\u0105",
+    "z ch\u0119ci\u0105",
+    "z mi\u0142\u0105 ch\u0119ci\u0105",
+    "jestem zainteresowany",
+    "jestem zainteresowana",
+    "oto",
+    "jako model",
+    "jako ai",
+    "kompleksow*",
+    "profesjonaln*",
+    "najwy\u017Cszej jako\u015Bci",
+    "najwy\u017Csz\u0105 jako\u015B\u0107",
+    "nie wahaj*",
+    "s\u0142u\u017C\u0119 pomoc\u0105",
+    "prosz\u0119 o kontakt",
+    "gwarantuj*",
+    "gwarancj*",
+    "innowacyjn*",
+    "szyte na miar\u0119",
+    "szyty na miar\u0119",
+    "skrojon*",
+    "wieloletnie do\u015Bwiadczenie",
+    "wieloletniego do\u015Bwiadczenia",
+    "pasj*",
+    "w dzisiejszych czasach",
+    "w dobie",
+    "dedykowan*",
+    "holistyczn*",
+    "synergi*",
+    "rewolucyjn*",
+    "prze\u0142omow*",
+    "bezproblemow*",
+    "wychodz\u0105c naprzeciw",
+    "na ka\u017Cdym etapie",
+    "zapraszam do wsp\xF3\u0142pracy",
+    "idealnie si\u0119 nadaj\u0119",
+    "idealnym wyborem",
+    "mam do\u015Bwiadczenie w",
+    "doskonale rozumiem",
+    "rozumiem doskonale",
+    "ciesz\u0119 si\u0119",
+    "dzi\u0119kuj\u0119 za mo\u017Cliwo\u015B\u0107"
+  ];
+  var fold = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").toLowerCase();
+  var URL_RE = /https?:\/\/[^\s)>\]]+/giu;
+  var trimUrl = (url) => url.replace(/[.,;:]+$/u, "");
+  var sentences = (paragraph) => paragraph.split(/(?<=[.?!])\s+(?=[A-Z\u0104\u0106\u0118\u0141\u0143\u00d3\u015a\u0179\u017b0-9\u201e"])/u).filter((part) => part.trim()).length;
+  var wordCount2 = (text) => text.replace(URL_RE, " link ").split(/\s+/u).filter((word2) => /[\p{L}\p{N}]/u.test(word2)).length;
+  var PLAN_LINE = /^\s*(?:[1-3][.)]|[-\u2013\u2022])\s+\S/u;
+  var NOUNS_ENDING_LEM = [
+    "dzia\u0142",
+    "materia\u0142",
+    "kana\u0142",
+    "zapa\u0142",
+    "upa\u0142",
+    "sza\u0142",
+    "pomys\u0142",
+    "przemys\u0142",
+    "zmys\u0142",
+    "namys\u0142",
+    "ko\u0142",
+    "sto\u0142",
+    "anio\u0142",
+    "ko\u015Bcio\u0142",
+    "popio\u0142",
+    "w\u0119z\u0142",
+    "or\u0142",
+    "mu\u0142",
+    "paw\u0142",
+    "sy\u0142",
+    "artyku\u0142",
+    "\u015Bwiat\u0142",
+    "\u017Ar\xF3d\u0142",
+    "szk\u0142",
+    "krzes\u0142",
+    "rzemios\u0142",
+    "myd\u0142",
+    "mas\u0142",
+    "potencja\u0142",
+    "kapita\u0142",
+    "sygna\u0142",
+    "rytua\u0142",
+    "kryszta\u0142",
+    "zespo\u0142"
+  ];
+  function checkUsemeText(text, options) {
+    const issues = [];
+    const add = (code, detail) => {
+      issues.push({ code, detail });
+    };
+    const body = text.replace(/\r/gu, "").trim();
+    const paragraphs = body.split(/\n\s*\n/u).map((part) => part.trim()).filter(Boolean);
+    if (!/^Dzie\u0144 dobry,/u.test(body)) add("GREETING", "Wiadomo\u015B\u0107 zaczyna si\u0119 od \u201EDzie\u0144 dobry,\u201D.");
+    const folded = ` ${fold(body.replace(URL_RE, " ")).replace(/[^\p{L}\p{N}]+/gu, " ")} `;
+    for (const entry of USEME_CLICHES) {
+      const stem = entry.endsWith("*"), phrase = entry.replace(/\*$/u, "");
+      if (folded.includes(` ${fold(phrase)}${stem ? "" : " "}`)) add("CLICHE", `Usu\u0144 fraz\u0119 \u201E${phrase}${stem ? "\u2026" : ""}\u201D.`);
+    }
+    if (body.includes("!")) add("EXCLAMATION", "Bez wykrzyknik\xF3w.");
+    if (/\p{Extended_Pictographic}/u.test(body)) add("EMOJI", "Bez emotikon.");
+    const urls = (body.match(URL_RE) ?? []).map(trimUrl);
+    for (const url of urls) if (!options.allowedUrls.has(url)) add("URL_NOT_ALLOWED", `Adres spoza portfolio: ${url}`);
+    if (urls.length > 1) add("TOO_MANY_LINKS", "Najwy\u017Cej jeden link do pr\xF3bki.");
+    if (options.requireLink && !urls.some((url) => options.allowedUrls.has(url))) add("LINK_MISSING", 'Dodaj jeden link z pola "probki".');
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/u.test(body) || /(?:\+?\d[\d\s-]{7,}\d)/u.test(body.replace(URL_RE, "")) || /(?:^|[^\p{L}])(?:whats ?app|telegram|messenger|signal|skype)(?=$|[^\p{L}])/iu.test(body)) {
+      add("CONTACT_DATA", "Bez danych kontaktowych i komunikator\xF3w (regulamin Useme).");
+    }
+    if (/(?:^|[^\p{L}])(?:stripe|paypal|payu|blik|przelew\p{L}*|poza useme|poza platform\p{L}*|bezpo\u015brednio na konto)(?=$|[^\p{L}])/iu.test(body)) add("OFF_PLATFORM_PAYMENT", "Rozliczenie wy\u0142\u0105cznie przez Useme.");
+    const informal = /(?:^|[^\p{L}])(chcesz|masz|mo\u017cesz|wolisz|zobaczysz|potrzebujesz|twoj\p{L}*|twoim|twoj\u0105|twoich|ci\u0119|ciebie|tob\u0105|tobie|daj zna\u0107|chcecie|macie|mo\u017cecie|wasz\p{L}*|chcia\u0142by pa\u0144stwo|chce pa\u0144stwa)(?=$|[^\p{L}])/iu.exec(body);
+    if (informal) add("INFORMAL", `Forma grzeczno\u015Bciowa (Pa\u0144stwo), bez \u201E${informal[1]}\u201D.`);
+    if (/Pan\s*\/\s*Pani|Pani\s*\/\s*Pan/u.test(body)) add("PAN_PANI", "Bez \u201EPan/Pani\u201D: forma \u201EPa\u0144stwo\u201D.");
+    if (/(?:^|[^\p{L}])(rozmow\p{L}* telefoniczn\p{L}*|kontakt\p{L}* telefoniczn\p{L}*|telefonicznie|telekonferencj\p{L}*|zadzwoni\p{L}*|zadzwo\u0144|numer\p{L}* telefonu)(?=$|[^\p{L}])/iu.test(body)) {
+      add("OFF_PLATFORM_CONTACT", "Bez propozycji rozmowy telefonicznej: ustalenia w wiadomo\u015Bciach Useme.");
+    }
+    if (/(?:^|\n)\s*(?:Klient|Klientka|Zleceniodawca)\s/u.test(body) || /klient (?:jest )?zainteresowan/iu.test(body)) add("META", "Pisz do klienta, nie o kliencie w trzeciej osobie.");
+    const gendered = [...body.matchAll(/(?:^|[^\p{L}])(\p{L}+(?:\u0142em|\u0142am))(?=$|[^\p{L}])/gu)].map((match) => match[1]).find((word2) => !NOUNS_ENDING_LEM.some((stem) => word2.toLowerCase().slice(0, -2).endsWith(stem)));
+    if (gendered) add("GENDERED_PAST", `Forma neutralna zamiast \u201E${gendered}\u201D: \u201Eprzygotuj\u0119\u201D, \u201Esprawdz\u0119\u201D.`);
+    const last = paragraphs.at(-1) ?? "";
+    const questions = (body.match(/\?/gu) ?? []).length;
+    if (!last.endsWith("?")) add("QUESTION_END", "Ostatnie zdanie to jedno pytanie otwarte; po nim nic.");
+    if (questions !== 1) add("ONE_QUESTION", `Dok\u0142adnie jedno pytanie (jest ${questions}).`);
+    const planLines = body.split("\n").filter((line) => PLAN_LINE.test(line));
+    if (options.requirePlan && planLines.length !== 3) add("PLAN", `Plan ma dok\u0142adnie 3 punkty (jest ${planLines.length}).`);
+    const diagnosis = paragraphs[0]?.replace(/^Dzie\u0144 dobry,\s*/u, "").trim() || paragraphs[1] || "";
+    const firstText = diagnosis && !PLAN_LINE.test(diagnosis) ? diagnosis : "";
+    const [maxSentences, maxWords] = FIRST_PARAGRAPH[options.kind];
+    if (firstText && (sentences(firstText) > maxSentences || wordCount2(firstText) > maxWords)) {
+      add("DIAGNOSIS", options.kind === "OFFER" ? "Diagnoza: jedno zdanie do 30 s\u0142\xF3w." : `Pierwszy akapit: najwy\u017Cej ${maxSentences} zdania i ${maxWords} s\u0142\xF3w.`);
+    }
+    const [min, max] = WORD_LIMITS[options.kind];
+    const words = wordCount2(body);
+    if (words < min || words > max) add("WORDS", `D\u0142ugo\u015B\u0107 ${words} s\u0142\xF3w, dozwolone ${min}\u2013${max}.`);
+    if (typeof options.price === "number") {
+      for (const match of body.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/giu)) {
+        const amount = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+        if (amount !== options.price) add("PRICE", `Kwota ${match[0].trim()} r\xF3\u017Cni si\u0119 od naszej wyceny ${options.price} z\u0142.`);
+      }
+    }
+    return issues;
+  }
+
+  // src/sales/architecture-hubs.ts
+  var SAMPLES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var HUBS_PUBLIC_BASE = `${SAMPLES_BASE}huby-architektury-24-10-2026/`;
+  var BLUEPRINT_BASE = `${SAMPLES_BASE}audyty-24-10-2026/`;
+
+  // src/sales/useme/resume-followup.ts
+  function quotableTitle(title) {
+    const clean = title.replace(/https?:\/\/\S+/gu, "").replace(/[\w.+-]+@[\w-]+\.[\w.]+/gu, "").replace(/[?!\u201e\u201d"]/gu, "").replace(/\s+/gu, " ").trim();
+    if (clean.length <= 70) return clean;
+    const cut = clean.slice(0, 70);
+    return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 40)).replace(/[\s,;:\u2013-]+$/u, "")}\u2026`;
+  }
+
+  // src/sales/useme-contract-spec.ts
+  var MESSAGE_ONLY = /* @__PURE__ */ new Set(["GREETING", "QUESTION_END", "ONE_QUESTION", "WORDS", "DIAGNOSIS", "PLAN", "PRICE", "TOO_MANY_LINKS", "LINK_MISSING"]);
+  var LINK_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var zl = (n) => `${Math.round(n).toLocaleString("pl-PL", { useGrouping: true }).replace(/[\u00a0\u202f]/gu, " ")} z\u0142`;
+  var sentence = (text) => {
+    const t = text.trim().replace(/[.;:,\s]+$/u, "");
+    return t ? `${t.charAt(0).toUpperCase()}${t.slice(1)}.` : "";
+  };
+  var lowerStart = (text) => /^\p{Lu}[\p{Ll}\d-]*(?=[\s,:;.]|$)/u.test(text) ? text.charAt(0).toLowerCase() + text.slice(1) : text;
+  var lower = lowerStart;
+  var bare = (text) => text.trim().replace(/[.;:,\s]+$/u, "");
+  var ContractInputError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+    }
+    code;
+  };
+  function checkContractText(text, amounts, links = []) {
+    const issues = checkUsemeText(text, { kind: "REPLY", allowedUrls: new Set(links), requirePlan: false, requireLink: false, price: null }).filter((issue) => !MESSAGE_ONLY.has(issue.code));
+    const allowed = new Set(amounts);
+    for (const match of text.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/gu)) {
+      const value = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+      if (!allowed.has(value)) issues.push({ code: "AMOUNT", detail: `Kwota ${match[0].trim()} spoza podzia\u0142u 30/40/30 tej oferty.` });
+    }
+    return issues;
+  }
+  function contractTexts(input) {
+    if (!Number.isFinite(input.amountPLN) || input.amountPLN < 100 || input.amountPLN > 1e6) throw new ContractInputError("AMOUNT_INVALID");
+    const scope = input.scope.map((item) => item.trim()).filter(Boolean).slice(0, 4);
+    const deliverables = input.deliverables.map((item) => item.trim()).filter(Boolean).slice(0, 4);
+    if (!scope.length) throw new ContractInputError("SCOPE_MISSING");
+    if (!deliverables.length) throw new ContractInputError("DELIVERABLES_MISSING");
+    const total = Math.round(input.amountPLN);
+    const [s1, s2, s3] = stageSplit(total);
+    const days = stage1Days(input.days ?? null);
+    const link = input.link && input.link.startsWith(LINK_BASE) && !/\s/u.test(input.link) ? input.link : null;
+    const title = quotableTitle(input.title);
+    const rights = input.kind === "CODE" ? "kodu \u017Ar\xF3d\u0142owego i plik\xF3w" : "projekt\xF3w i plik\xF3w \u017Ar\xF3d\u0142owych";
+    const licence = input.rights === "LICENSE";
+    const titleLine = title ? `Zlecenie: \u201E${title}\u201D` : "Zlecenie: zgodnie z ofert\u0105 w Useme";
+    const specLines = (head) => [
+      "Specyfikacja Etapu 1 (30%): prototyp i fundament",
+      head,
+      "",
+      "Zakres prac Etapu 1:",
+      ...scope.map((item, i) => `${i + 1}. ${sentence(item)}`),
+      "",
+      "Kryteria odbioru (Etap 1 jest wykonany, gdy Zamawiaj\u0105cy otrzyma):",
+      ...deliverables.map((item) => `- ${sentence(item)}`),
+      "- Kr\xF3tki opis wykonanych prac i sposobu sprawdzenia, przekazany w wiadomo\u015Bci w Useme.",
+      "- Poprawki zg\u0142oszone do zakresu Etapu 1 w ci\u0105gu 3 dni roboczych od przekazania, wprowadzone w jednej rundzie.",
+      "",
+      `Kwota Etapu 1: ${zl(s1)} netto (30% wyceny ca\u0142o\u015Bci ${zl(total)} netto).`,
+      `Termin: start i pierwszy podgl\u0105d w ci\u0105gu 48\u201372 godzin od zawarcia umowy; przekazanie Etapu 1 w ci\u0105gu ${days} dni roboczych.`,
+      licence ? `Prawa autorskie: zgodnie z ustawieniem zlecenia bez przeniesienia praw; Zamawiaj\u0105cy otrzymuje niewy\u0142\u0105czn\u0105, nieograniczon\u0105 w czasie licencj\u0119 na korzystanie z ${rights} powsta\u0142ych w Etapie 1 po odbiorze i rozliczeniu etapu w Useme, w zakresie wskazanym w umowie Useme.` : `Prawa autorskie: autorskie prawa maj\u0105tkowe do ${rights} powsta\u0142ych w Etapie 1 przechodz\u0105 na Zamawiaj\u0105cego po odbiorze i rozliczeniu etapu w Useme, na polach eksploatacji wskazanych w umowie Useme.`,
+      "Poza zakresem Etapu 1: prace Etap\xF3w 2 i 3; ka\u017Cdy kolejny etap to osobna umowa w Useme po odbiorze poprzedniego.",
+      ...link ? ["", `Zakres odpowiada makiecie lub karcie planu: ${link}`] : []
+    ];
+    const spec = specLines(titleLine).join("\n");
+    const issuesSpec = checkContractText(specLines("Zlecenie: zgodnie z ofert\u0105 w Useme").join("\n"), [s1, s2, s3, total], link ? [link] : []);
+    const scheduleLines = (head) => [
+      "Harmonogram i rozliczenie przez Useme",
+      head,
+      `Wycena ca\u0142o\u015Bci: ${zl(total)} netto, trzy etapy, ka\u017Cdy jako osobna umowa w Useme.`,
+      "",
+      `Etap 1 (30%): ${zl(s1)} netto. Prototyp i fundament: ${scope.map((item) => lower(bare(item))).join("; ")}. Odbi\xF3r: ${deliverables.map((item) => lower(bare(item))).join("; ")}. Start w ci\u0105gu 48\u201372 godzin od umowy, przekazanie w ci\u0105gu ${days} dni roboczych.`,
+      `Etap 2 (40%): ${zl(s2)} netto. ${sentence(input.stage2)}`,
+      `Etap 3 (30%): ${zl(s3)} netto. ${sentence(input.stage3)}`,
+      "",
+      licence ? "Kolejny etap zaczyna si\u0119 po odbiorze poprzedniego. Licencja na rezultaty ka\u017Cdego etapu (bez przeniesienia praw) obowi\u0105zuje od jego rozliczenia w Useme." : "Kolejny etap zaczyna si\u0119 po odbiorze poprzedniego. Autorskie prawa maj\u0105tkowe do rezultat\xF3w ka\u017Cdego etapu przechodz\u0105 na Zamawiaj\u0105cego po jego rozliczeniu w Useme."
+    ];
+    const schedule = scheduleLines(titleLine).join("\n");
+    const issuesSchedule = checkContractText(scheduleLines("Zlecenie: zgodnie z ofert\u0105 w Useme").join("\n"), [s1, s2, s3, total]);
+    const message = [
+      "Dzie\u0144 dobry,",
+      `dzi\u0119kuj\u0119 za decyzj\u0119; poni\u017Cej zakres Etapu 1 do umowy w Useme: ${zl(s1)} netto, start i pierwszy podgl\u0105d w ci\u0105gu 48\u201372 godzin od zawarcia umowy.`,
+      `1. Zakres: ${lower(scope[0]).replace(/[.\s]+$/u, "")}.
+2. Odbi\xF3r: ${lower(deliverables[0]).replace(/[.\s]+$/u, "")}.
+3. ${licence ? "Licencja na rezultaty obowi\u0105zuje" : "Prawa maj\u0105tkowe przechodz\u0105 na Pa\u0144stwa"} po odbiorze i rozliczeniu etapu w Useme.`,
+      "Czy mog\u0119 przygotowa\u0107 umow\u0119 na Etap 1 z tym zakresem?"
+    ].join("\n\n");
+    const issuesMessage = checkUsemeText(message, { kind: "REPLY", allowedUrls: /* @__PURE__ */ new Set(), requirePlan: true, requireLink: false, price: null });
+    const issues = [...issuesSpec, ...issuesSchedule, ...issuesMessage];
+    return { spec, schedule, message, amounts: [s1, s2, s3], issues };
+  }
+
+  // src/sales/arsenal-70k.ts
+  var ARSENAL_FOLDER = "arsenal-70k-27-10-2026";
+  var SAMPLES_PAGES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var ARSENAL_PUBLIC_BASE = `${SAMPLES_PAGES_BASE}${ARSENAL_FOLDER}/`;
+  var RIGHTS_AFTER_NEGATION = /^[^.;!?\n]{0,60}?(?<![\p{L}\p{N}_])nie\s+(?:przechodz|przejd|jest\s+obj\u0119t|s\u0105\s+obj\u0119t|obejmuj|wchodz|zawiera|nast\u0119puj)/iu;
+  var LICENCE_WORD = /(?<![\p{L}\p{N}_])licencj\p{L}*/iu;
+  var RIGHTS_DETAIL = {
+    TRANSFER_UNDER_LICENSE: "Tekst obiecuje przeniesienie praw, a oferta w Useme jest bez przeniesienia praw (licencja).",
+    EXCLUSIVE_UNDER_LICENSE: "Licencja wy\u0142\u0105czna to wi\u0119cej ni\u017C licencja niewy\u0142\u0105czna z ustawienia oferty bez przeniesienia praw.",
+    NO_TRANSFER_UNDER_TRANSFER: "Tekst m\xF3wi, \u017Ce prawa nie przechodz\u0105, a oferta w Useme zak\u0142ada przeniesienie autorskich praw maj\u0105tkowych.",
+    LICENSE_ONLY_UNDER_TRANSFER: "Tekst daje tylko licencj\u0119, bez przeniesienia praw, a oferta w Useme zak\u0142ada przeniesienie."
+  };
+  var clauseAround = (text, from, to) => {
+    let start = from;
+    while (start > 0 && !/[.!?;\n]/u.test(text[start - 1])) start -= 1;
+    let end = to;
+    while (end < text.length && !/[.!?;\n]/u.test(text[end])) end += 1;
+    return text.slice(start, end).replace(/\s+/gu, " ").trim().slice(0, 200);
+  };
+  function reviewRights(text, matches, setting) {
+    const reviewed = matches.map((match) => {
+      const corrected = match.status === "ACCEPTED" && (match.kind === "COPYRIGHT_TRANSFER" || match.kind === "COPYRIGHT_MENTION") && RIGHTS_AFTER_NEGATION.test(text.slice(match.index + match.phrase.length));
+      return { ...match, status: corrected ? "NEGATED" : match.status, corrected };
+    });
+    const transfers = reviewed.filter((match) => match.kind === "COPYRIGHT_TRANSFER" && match.status === "ACCEPTED");
+    const exclusive = reviewed.filter((match) => match.kind === "EXCLUSIVE_LICENSE" && match.status === "ACCEPTED");
+    const denials = reviewed.filter((match) => (match.kind === "COPYRIGHT_TRANSFER" || match.kind === "COPYRIGHT_MENTION") && match.status === "NEGATED");
+    const licence = LICENCE_WORD.exec(text);
+    const finding = (code, phrase, evidence) => ({ code, phrase, evidence, detail: RIGHTS_DETAIL[code] });
+    const all = setting === "LICENSE" ? [...transfers.map((match) => finding("TRANSFER_UNDER_LICENSE", match.phrase, match.evidence)), ...exclusive.map((match) => finding("EXCLUSIVE_UNDER_LICENSE", match.phrase, match.evidence))] : [
+      ...denials.map((match) => finding("NO_TRANSFER_UNDER_TRANSFER", match.phrase, match.evidence)),
+      ...licence && !transfers.length ? [finding("LICENSE_ONLY_UNDER_TRANSFER", licence[0], clauseAround(text, licence.index, licence.index + licence[0].length))] : []
+    ];
+    const findings = all.filter((item, index) => all.findIndex((other) => other.code === item.code && other.evidence === item.evidence) === index);
+    return { matches: reviewed, findings, transfer: transfers.length > 0, noTransfer: denials.length > 0, licence: licence !== null };
+  }
+  var SAMPLE_LINK = `${ARSENAL_PUBLIC_BASE}kreator-makiet-instant/`;
+  return __toCommonJS(arsenal_detektor_ryzyka_praw_autorskich_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"presets":[{"name":"Alfa · integracja magazynu","title":"Integracja sklepu z programem magazynowym","amount":12000,"days":30,"kind":"CODE","rights":"TRANSFER","scope":["Mapa pól między sklepem a programem magazynowym","Import zamówień na środowisku testowym"],"deliverables":["Działający import 20 zamówień testowych bez błędów","Dokumentacja mapowania pól"],"stage2":"Synchronizacja stanów i obsługa błędów importu","stage3":"Testy na danych produkcyjnych, wdrożenie i przekazanie kodu"},{"name":"Beta · identyfikacja wizualna","title":"Identyfikacja wizualna dla firmy logistycznej","amount":6000,"days":21,"kind":"FILES","rights":"LICENSE","scope":["Trzy kierunki znaku firmowego","Paleta kolorów i typografia"],"deliverables":["Pliki znaku w formatach SVG i PNG","Krótka księga znaku"],"stage2":"Materiały firmowe na bazie wybranego kierunku","stage3":"Pliki źródłowe i przekazanie"},{"name":"Gamma · panel KPI","title":"Panel KPI dla zarządu firmy produkcyjnej","amount":18000,"days":45,"kind":"CODE","rights":"TRANSFER","scope":["Model danych i import z trzech źródeł","Pierwszy ekran z pięcioma wskaźnikami"],"deliverables":["Panel na środowisku testowym z danymi z ostatniego miesiąca","Opis definicji każdego wskaźnika"],"stage2":"Pozostałe ekrany, alerty i historia wskaźników","stage3":"Testy z zespołem, wdrożenie i przekazanie kodu"}],"samples":{"transfer":{"target":"message","line":"all","label":"Odpowiedź obiecuje pełne prawa","text":"Dzień dobry,\n\ndziękuję za decyzję. Po odbiorze i zapłacie Etapu 1 przekazuję pełne prawa autorskie do projektu wraz z plikami źródłowymi.\n\nCzy mogę przygotować umowę na Etap 1 z tym zakresem?"},"licence":{"target":"spec","line":"rights","label":"Specyfikacja daje tylko licencję","text":"Prawa autorskie: autorskie prawa majątkowe nie przechodzą na Zamawiającego; Zamawiający otrzymuje licencję na korzystanie z rezultatów Etapu 1 po rozliczeniu etapu w Useme."},"exclusive":{"target":"schedule","line":"last","label":"Harmonogram z licencją wyłączną","text":"Kolejny etap zaczyna się po odbiorze poprzedniego. Zamawiający otrzymuje licencję wyłączną na rezultaty każdego etapu od jego rozliczenia w Useme."}}};
+const ERR={AMOUNT_INVALID:'Wycena musi mieścić się w przedziale od 100 do 1 000 000 zł.',SCOPE_MISSING:'Brak zakresu Etapu 1.',DELIVERABLES_MISSING:'Brak rezultatów odbioru.'};
+const KIND={COPYRIGHT_TRANSFER:'przeniesienie praw',EXCLUSIVE_LICENSE:'licencja wyłączna',COPYRIGHT_MENTION:'wzmianka o prawach',SOURCE_CODE:'kod źródłowy',OPEN_FILES:'pliki źródłowe'};
+const STATUS={ACCEPTED:'obiecuje albo żąda',NEGATED:'zaprzecza',CONTEXT_ONLY:'tylko wzmianka',EXCLUDED:'inny temat'};
+const CODE={TRANSFER_UNDER_LICENSE:'Przeniesienie praw przy licencji',EXCLUSIVE_UNDER_LICENSE:'Licencja wyłączna przy licencji',NO_TRANSFER_UNDER_TRANSFER:'Brak przeniesienia przy przeniesieniu',LICENSE_ONLY_UNDER_TRANSFER:'Sama licencja przy przeniesieniu'};
+const SET={TRANSFER:'przeniesienie autorskich praw majątkowych',LICENSE:'licencja bez przeniesienia praw'};
+const TEXTS=['spec','schedule','message'],NAMES={spec:'Specyfikacja',schedule:'Harmonogram',message:'Odpowiedź'};
+let preset=0,rights='TRANSFER',gen=null;
+const input=(r)=>{const p=CFG.presets[preset];return{title:$('title').value,amountPLN:num('amount'),days:num('days')||null,kind:$('kind').value,rights:r,scope:p.scope,deliverables:p.deliverables,stage2:p.stage2,stage3:p.stage3};};
+const generate=()=>{try{gen={TRANSFER:E.contractTexts(input('TRANSFER')),LICENSE:E.contractTexts(input('LICENSE'))};$('err').hidden=true;}catch(e){gen=null;$('err').textContent=ERR[e&&e.code]||String(e&&e.message||e);$('err').hidden=false;}};
+const rightsLines=(t)=>[['Specyfikacja',t.spec.split('\n').find((l)=>l.startsWith('Prawa autorskie:'))||''],['Harmonogram',t.schedule.split('\n').filter(Boolean).pop()||''],['Odpowiedź',t.message.split('\n').find((l)=>l.startsWith('3. '))||'']];
+const showLines=()=>{for(const r of ['TRANSFER','LICENSE'])$('line'+r[0]).innerHTML=gen?rightsLines(gen[r]).map((x)=>'<li><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></li>').join(''):'';};
+const fill=()=>{if(gen)for(const k of TEXTS)$('t'+k).value=gen[rights][k];};
+const says=(r)=>r.transfer?'tekst przenosi prawa':r.noTransfer?'tekst mówi, że prawa nie przechodzą':r.licence?'tekst daje licencję':'brak zdania o prawach';
+const check=()=>{mark('[data-rights]','rights',rights);mark('[data-preset]','preset',preset);let conflicts=0;const rows=[];
+ for(const k of TEXTS){const text=$('t'+k).value;const r=E.reviewRights(text,E.detectIpRightsIntent(text).matches,rights);conflicts+=r.findings.length;
+  const items=r.findings.map((f)=>'<li class="bad"><b>'+esc(CODE[f.code])+' <code>'+esc(f.code)+'</code></b><span>„'+esc(f.evidence)+'”</span><span class="muted">'+esc(f.detail)+'</span></li>');
+  if(!r.findings.length)items.push('<li><b>Zgodne z ustawieniem oferty</b><span>'+esc(says(r))+'</span></li>');
+  if(k!=='message'&&gen){const iss=E.checkContractText(text,[...gen[rights].amounts,Math.round(num('amount'))]);if(iss.length)items.push('<li class="warn"><b>USEME-CONV-1.0 i kwoty</b><span>'+esc(iss.map((i)=>i.code+': '+i.detail).join(' · '))+'</span></li>');}
+  $('r'+k).innerHTML=items.join('');
+  for(const m of r.matches)rows.push('<tr><td>'+esc(NAMES[k])+'</td><td>'+esc(m.phrase)+'</td><td>'+esc(KIND[m.kind]||m.kind)+'</td><td>'+esc(STATUS[m.status]||m.status)+(m.corrected?' (korekta strony)':'')+'</td><td>'+esc(m.evidence)+'</td></tr>');}
+ $('hits').innerHTML=rows.length?rows.join(''):'<tr><td colspan="5" class="muted">Brak zapisów o prawach w tekstach.</td></tr>';
+ $('verdict').className='verdict '+(conflicts?'bad':'ok');
+ $('vhead').textContent=conflicts?('Konflikt z ustawieniem oferty: '+conflicts+' '+plural(conflicts,'zdanie','zdania','zdań')):'Teksty zgodne z ustawieniem oferty';
+ $('vsub').textContent='Oferta: '+SET[rights]+' · detektor '+E.IP_RIGHTS_DETECTOR_VERSION+(conflicts?' · popraw zdania albo wstaw teksty z generatora':' · przełącz ustawienie, a te same teksty pokażą konflikt');};
+const setPreset=(i)=>{preset=i;const p=CFG.presets[i];$('title').value=p.title;$('amount').value=String(p.amount);$('days').value=String(p.days);$('kind').value=p.kind;rights=p.rights;generate();showLines();fill();check();};
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>setPreset(Number(b.dataset.preset)));
+for(const b of document.querySelectorAll('[data-rights]'))b.addEventListener('click',()=>{rights=b.dataset.rights;check();});
+for(const b of document.querySelectorAll('[data-sample]'))b.addEventListener('click',()=>{const s=CFG.samples[b.dataset.sample];const box=$('t'+s.target);
+ if(s.line==='all')box.value=s.text;else{const lines=box.value.split('\n');const at=s.line==='rights'?lines.findIndex((l)=>l.startsWith('Prawa autorskie:')):lines.map((l)=>l.trim()!=='').lastIndexOf(true);if(at>=0)lines[at]=s.text;else lines.push(s.text);box.value=lines.join('\n');}
+ check();});
+$('regen').addEventListener('click',()=>{generate();showLines();fill();check();});
+watch(['title','amount','days','kind'],()=>{generate();showLines();check();});watch(['tspec','tschedule','tmessage'],check);setPreset(0);</script>
+</body>
+</html>

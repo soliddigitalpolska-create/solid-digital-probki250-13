@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-7euyCYYVPanpnMQIh5uHohGvz39igoDDbG8OYEl8lX8='; script-src 'sha256-FMhJgNLllln+doxSEXvSKmEHK05Z0ucdBeJ4HLxeMvE='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Silnik npm run useme:sync-sent na fikcyjnych tytułach: które świeże zlecenia mają już naszą ofertę na liście, dlaczego zmieniony tytuł nie pasuje i jak rejestr blokuje drugą ofertę do tego samego zlecenia przed wysyłką.">
+<meta property="og:title" content="Symulator synchronizacji ofert">
+<meta property="og:description" content="Silnik npm run useme:sync-sent na fikcyjnych tytułach: które świeże zlecenia mają już naszą ofertę na liście, dlaczego zmieniony tytuł nie pasuje i jak rejestr blokuje drugą ofertę do tego samego zlecenia przed wysyłką.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/symulator-synchronizacji-ofert/">
+<title>Symulator synchronizacji ofert</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}.offrow,.jobrow{display:grid;gap:8px;align-items:center;margin-bottom:6px}.offrow{grid-template-columns:130px 120px minmax(0,1fr)}.jobrow{grid-template-columns:110px minmax(0,1fr) 110px}
+td.bad{color:var(--bad);font-weight:600}td.warn{color:var(--warn)}td.ok{color:var(--ok)}
+@media(max-width:760px){.offrow,.jobrow{grid-template-columns:1fr 1fr}.offrow input[id^=otitle],.jobrow input[id^=jtitle]{grid-column:1/3}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Symulator synchronizacji ofert</h1><p class="lead">Silnik npm run useme:sync-sent na fikcyjnych tytułach: które świeże zlecenia mają już naszą ofertę na liście, dlaczego zmieniony tytuł nie pasuje i jak rejestr blokuje drugą ofertę do tego samego zlecenia przed wysyłką.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Nasze oferty na liście Useme</h2><div class="chips"><button class="chip" type="button" data-mode="snapshot">Migawka listy: identyfikator i tytuł</button><button class="chip" type="button" data-mode="text">Tekst stron „Moje oferty”</button></div>
+<div id="snapBox"><p class="muted">Zaznaczona oferta była na liście przed tą rundą świeżych zleceń (knownOfferIds): jej tytuł nie oznacza nowego zlecenia.</p>
+<div class="offrow"><label class="inline"><input id="known0" type="checkbox"> sprzed rundy</label><input id="oid0" type="text" aria-label="Identyfikator oferty 1" spellcheck="false"><input id="otitle0" type="text" aria-label="Tytuł zlecenia w ofercie 1"></div><div class="offrow"><label class="inline"><input id="known1" type="checkbox"> sprzed rundy</label><input id="oid1" type="text" aria-label="Identyfikator oferty 2" spellcheck="false"><input id="otitle1" type="text" aria-label="Tytuł zlecenia w ofercie 2"></div><div class="offrow"><label class="inline"><input id="known2" type="checkbox"> sprzed rundy</label><input id="oid2" type="text" aria-label="Identyfikator oferty 3" spellcheck="false"><input id="otitle2" type="text" aria-label="Tytuł zlecenia w ofercie 3"></div><div class="offrow"><label class="inline"><input id="known3" type="checkbox"> sprzed rundy</label><input id="oid3" type="text" aria-label="Identyfikator oferty 4" spellcheck="false"><input id="otitle3" type="text" aria-label="Tytuł zlecenia w ofercie 4"></div><div class="offrow"><label class="inline"><input id="known4" type="checkbox"> sprzed rundy</label><input id="oid4" type="text" aria-label="Identyfikator oferty 5" spellcheck="false"><input id="otitle4" type="text" aria-label="Tytuł zlecenia w ofercie 5"></div><div class="offrow"><label class="inline"><input id="known5" type="checkbox"> sprzed rundy</label><input id="oid5" type="text" aria-label="Identyfikator oferty 6" spellcheck="false"><input id="otitle5" type="text" aria-label="Tytuł zlecenia w ofercie 6"></div><div class="offrow"><label class="inline"><input id="known6" type="checkbox"> sprzed rundy</label><input id="oid6" type="text" aria-label="Identyfikator oferty 7" spellcheck="false"><input id="otitle6" type="text" aria-label="Tytuł zlecenia w ofercie 7"></div></div>
+<div id="textBox" hidden><label>Tekst skopiowany ze stron „Moje oferty” (Ctrl+A, Ctrl+C)<textarea id="pasted" rows="12" spellcheck="false"></textarea></label><p class="muted gap">W tym trybie nie ma identyfikatorów ofert, więc oferta sprzed rundy o tym samym tytule też oznacza zlecenie; dlatego skrypt domyślnie czyta migawkę listy.</p></div></section>
+<section><h2>Kolejka świeżych zleceń</h2><p class="muted">Identyfikator zlecenia, tytuł z ogłoszenia i nasza cena netto. Zmień tytuł, aby zobaczyć, kiedy dopasowanie przestaje działać.</p>
+<div class="jobrow"><input id="jid0" type="text" aria-label="Identyfikator zlecenia 1" spellcheck="false"><input id="jtitle0" type="text" aria-label="Tytuł zlecenia 1"><input id="jprice0" type="number" min="0" step="100" aria-label="Cena zlecenia 1 w zł"></div><div class="jobrow"><input id="jid1" type="text" aria-label="Identyfikator zlecenia 2" spellcheck="false"><input id="jtitle1" type="text" aria-label="Tytuł zlecenia 2"><input id="jprice1" type="number" min="0" step="100" aria-label="Cena zlecenia 2 w zł"></div><div class="jobrow"><input id="jid2" type="text" aria-label="Identyfikator zlecenia 3" spellcheck="false"><input id="jtitle2" type="text" aria-label="Tytuł zlecenia 3"><input id="jprice2" type="number" min="0" step="100" aria-label="Cena zlecenia 3 w zł"></div><div class="jobrow"><input id="jid3" type="text" aria-label="Identyfikator zlecenia 4" spellcheck="false"><input id="jtitle3" type="text" aria-label="Tytuł zlecenia 4"><input id="jprice3" type="number" min="0" step="100" aria-label="Cena zlecenia 4 w zł"></div><div class="jobrow"><input id="jid4" type="text" aria-label="Identyfikator zlecenia 5" spellcheck="false"><input id="jtitle4" type="text" aria-label="Tytuł zlecenia 5"><input id="jprice4" type="number" min="0" step="100" aria-label="Cena zlecenia 5 w zł"></div><div class="jobrow"><input id="jid5" type="text" aria-label="Identyfikator zlecenia 6" spellcheck="false"><input id="jtitle5" type="text" aria-label="Tytuł zlecenia 6"><input id="jprice5" type="number" min="0" step="100" aria-label="Cena zlecenia 6 w zł"></div><div class="jobrow"><input id="jid6" type="text" aria-label="Identyfikator zlecenia 7" spellcheck="false"><input id="jtitle6" type="text" aria-label="Tytuł zlecenia 7"><input id="jprice6" type="number" min="0" step="100" aria-label="Cena zlecenia 7 w zł"></div><div class="jobrow"><input id="jid7" type="text" aria-label="Identyfikator zlecenia 8" spellcheck="false"><input id="jtitle7" type="text" aria-label="Tytuł zlecenia 8"><input id="jprice7" type="number" min="0" step="100" aria-label="Cena zlecenia 8 w zł"></div><div class="jobrow"><input id="jid8" type="text" aria-label="Identyfikator zlecenia 9" spellcheck="false"><input id="jtitle8" type="text" aria-label="Tytuł zlecenia 9"><input id="jprice8" type="number" min="0" step="100" aria-label="Cena zlecenia 9 w zł"></div><div class="jobrow"><input id="jid9" type="text" aria-label="Identyfikator zlecenia 10" spellcheck="false"><input id="jtitle9" type="text" aria-label="Tytuł zlecenia 10"><input id="jprice9" type="number" min="0" step="100" aria-label="Cena zlecenia 10 w zł"></div></section>
+<section><h2>Wynik synchronizacji</h2><div class="grid4"><div class="kpi"><span class="muted">Świeże zlecenia</span><b id="kFresh"></b></div><div class="kpi"><span class="muted">Z naszą ofertą na liście</span><b id="kMatched"></b></div><div class="kpi big"><span class="muted">Nowo oznaczone</span><b id="kMarked"></b></div><div class="kpi"><span class="muted">Już w rejestrze</span><b id="kAlready"></b></div></div>
+<div class="scroll gap"><table><thead><tr><th>Zlecenie</th><th>Tytuł po normTitle</th><th>Dopasowanie</th><th>Rejestr po synchronizacji</th><th>Przed wysyłką, bez synchronizacji</th><th>Przed wysyłką, po synchronizacji</th></tr></thead><tbody id="rows"></tbody></table></div>
+<h3>Wydruk skryptu</h3><pre id="report"></pre><div class="share"><button class="btn" id="apply" type="button">Zapisz synchronizację w rejestrze</button><button class="ghost" id="reset" type="button">Przywróć przykład</button><span class="muted" id="applied"></span></div></section>
+<section><h2>Rejestr wysłanych (tylko w tej karcie)</h2><pre id="tracker"></pre></section>
+<section><h2>Co tu jest kodem backendu, a co logiką strony</h2><p>Dopasowanie (matchSubmitted, normTitle) i oznaczanie (applySync) to src/sales/useme/sent-sync.ts, rejestr to src/sales/useme/sent-tracker.ts: ten sam kod uruchamia npm run useme:sync-sent. Wydruk to port 1:1 z scripts/useme-sync-sent.ts, bez zapisu pliku.</p>
+<p class="muted">Logika strony (src/sales/arsenal-70k.ts, pokryta testem): bramka przed wysyłką z regułą turboQueue (zlecenie z wpisem job:&lt;id&gt; w rejestrze nie wraca do kolejki), ten sam tytuł dwa razy w kolejce, ostrzeżenie o tytule starej oferty i podpowiedź podobnego tytułu, gdy dopasowania nie ma. Skrypt porównuje tylko tytuły i nie czyta treści wątków.</p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 6,0 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-sync.ts</code></span><span class="muted">matchSubmitted, applySync, normTitle · silnik npm run useme:sync-sent: dopasowanie po tytule, oferty sprzed rundy pominięte, oznaczanie job:&lt;id&gt;</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-tracker.ts</code></span><span class="muted">emptyTracker, markSent · rejestr wysłanych: pierwszy termin zostaje, licznik rośnie</span></li><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z scripts/useme-sync-sent.ts</code></span><span class="muted">syncReportLines · wydruk skryptu dla tych samych danych, bez zapisu pliku</span></li><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">sendGate, similarTitle · bramka przed wysyłką: reguła turboQueue (zlecenie z job:&lt;id&gt; w rejestrze nie wraca), duplikat tytułu w kolejce i podpowiedź podobnego tytułu: logika strony, pokryta testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/useme/sent-tracker.ts</code> <code>src/sales/useme/sent-sync.ts</code> <code>src/sales/arsenal-70k.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-symulator-synchronizacji-ofert.entry.ts
+  var arsenal_symulator_synchronizacji_ofert_entry_exports = {};
+  __export(arsenal_symulator_synchronizacji_ofert_entry_exports, {
+    applySync: () => applySync,
+    emptyTracker: () => emptyTracker,
+    markSent: () => markSent,
+    matchSubmitted: () => matchSubmitted,
+    normTitle: () => normTitle,
+    sendGate: () => sendGate,
+    similarTitle: () => similarTitle,
+    syncReportLines: () => syncReportLines
+  });
+
+  // src/sales/useme/sent-tracker.ts
+  var SENT_SCHEMA = "havrelle-useme-sent/1";
+  var NEXT_PING_MS = 72 * 36e5;
+  var SENT_KEY = /^(?:thread|offer|job):\d{4,10}$/u;
+  var SentTrackerError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+    }
+    code;
+  };
+  var emptyTracker = () => ({ schema: SENT_SCHEMA, entries: {} });
+  var DAY = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Warsaw", year: "numeric", month: "2-digit", day: "2-digit" });
+  function markSent(tracker, input, now) {
+    if (!SENT_KEY.test(input.key)) throw new SentTrackerError("SENT_KEY_INVALID");
+    const previous = tracker.entries[input.key];
+    const at = now.toISOString();
+    const entry = {
+      key: input.key,
+      sentAt: at,
+      firstSentAt: previous?.firstSentAt ?? at,
+      count: (previous?.count ?? 0) + 1,
+      variant: input.variant ?? null,
+      amountPLN: input.amountPLN ?? null,
+      wave: input.wave ?? null
+    };
+    return { schema: SENT_SCHEMA, entries: { ...tracker.entries, [input.key]: entry } };
+  }
+
+  // src/sales/useme/sent-sync.ts
+  var normTitle = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").replace(/\u0141/gu, "L").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  var MIN_TITLE = 12;
+  function matchSubmitted(jobs, live, knownOfferIds = /* @__PURE__ */ new Set()) {
+    const matches = [];
+    if (typeof live === "string") {
+      const text = ` ${normTitle(live)} `;
+      for (const job of jobs) {
+        const title = normTitle(job.jobTitle);
+        if (title.length >= MIN_TITLE && text.includes(` ${title} `)) matches.push({ jobId: job.jobId, offerId: null, title: job.jobTitle, priceNet: job.priceNet });
+      }
+      return matches;
+    }
+    const fresh = live.filter((offer) => !offer.id || !knownOfferIds.has(offer.id));
+    for (const job of jobs) {
+      const title = normTitle(job.jobTitle);
+      if (title.length < MIN_TITLE) continue;
+      const offer = fresh.find((item) => normTitle(item.title) === title);
+      if (offer) matches.push({ jobId: job.jobId, offerId: offer.id, title: job.jobTitle, priceNet: job.priceNet });
+    }
+    return matches;
+  }
+  function applySync(tracker, matches, now) {
+    let next = tracker;
+    const marked = [], already = [];
+    for (const match of matches) {
+      const key = `job:${match.jobId}`;
+      if (next.entries[key]) {
+        already.push(key);
+        continue;
+      }
+      next = markSent(next, { key, variant: "USEME", amountPLN: match.priceNet }, now);
+      marked.push(key);
+    }
+    return { tracker: next, marked, already };
+  }
+
+  // src/sales/arsenal-70k.ts
+  var ARSENAL_FOLDER = "arsenal-70k-27-10-2026";
+  var SAMPLES_PAGES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var ARSENAL_PUBLIC_BASE = `${SAMPLES_PAGES_BASE}${ARSENAL_FOLDER}/`;
+  function syncReportLines(source, freshCount, matches, result, dryRun) {
+    return [
+      `\u0179r\xF3d\u0142o: ${source}`,
+      `\u015Awie\u017Ce zlecenia: ${freshCount}, z ofert\u0105 na li\u015Bcie Useme: ${matches.length}, nowo oznaczone: ${result.marked.length}, ju\u017C w rejestrze: ${result.already.length}`,
+      ...matches.map((match) => `  ${result.marked.includes(`job:${match.jobId}`) ? "OZNACZONE" : "by\u0142o     "} job:${match.jobId} ${match.title}${match.offerId ? ` (oferta ${match.offerId})` : ""}`),
+      ...dryRun && result.marked.length ? ["Tryb pr\xF3bny: rejestr bez zmian."] : []
+    ];
+  }
+  function sendGate(jobs, sent, oldTitles, norm) {
+    const first = /* @__PURE__ */ new Map();
+    const old = new Set(oldTitles.map(norm).filter(Boolean));
+    return jobs.map((job) => {
+      const title = norm(job.jobTitle);
+      const duplicateOf = title ? first.get(title) ?? null : null;
+      if (title && !duplicateOf) first.set(title, job.jobId);
+      const status = sent[`job:${job.jobId}`] ? "SENT_ALREADY" : duplicateOf ? "DUPLICATE_IN_QUEUE" : old.has(title) ? "OLD_OFFER_TITLE" : "SEND";
+      return { jobId: job.jobId, status, duplicateOf };
+    });
+  }
+  function similarTitle(title, offers, norm) {
+    const words = (text) => new Set(norm(text).split(" ").filter((word) => word.length > 2));
+    const mine = words(title);
+    let best = null;
+    for (const offer of offers) {
+      const other = words(offer.title);
+      const union = (/* @__PURE__ */ new Set([...mine, ...other])).size;
+      const score = union ? [...mine].filter((word) => other.has(word)).length / union : 0;
+      if (score >= 0.5 && score < 1 && (!best || score > best.score)) best = { id: offer.id, title: offer.title, score: Math.round(score * 100) / 100 };
+    }
+    return best;
+  }
+  var SAMPLE_LINK = `${ARSENAL_PUBLIC_BASE}kreator-makiet-instant/`;
+  return __toCommonJS(arsenal_symulator_synchronizacji_ofert_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"offers":[["2100201","INTEGRACJA SKLEPU INTERNETOWEGO Z PROGRAMEM MAGAZYNOWYM",false],["2100202","Aplikacja do rezerwacji wizyt, gabinet fizjoterapii",false],["2100203","Panel KPI dla zarzadu firmy produkcyjnej",false],["2100204","Automatyzacja obiegu faktur kosztowych w biurze",false],["2100205","Logo firmy",false],["2100099","Strona internetowa dla biura nieruchomości",true],["2100206","Migracja danych ze starego systemu CRM",false]],"jobs":[["300101","Integracja sklepu internetowego z programem magazynowym",12000],["300102","Aplikacja do rezerwacji wizyt – gabinet fizjoterapii",8500],["300103","Panel KPI dla zarządu firmy produkcyjnej",18000],["300104","Automatyzacja obiegu faktur w biurze rachunkowym",7200],["300105","Logo firmy",900],["300106","Strona internetowa dla biura nieruchomości",4800],["300107","System zgłoszeń serwisowych z bazą klientów",9500],["300108","Migracja danych ze starego systemu CRM",6400],["300109","Kalkulator wyceny usług dla firmy budowlanej",5200],["300110","KALKULATOR WYCENY USŁUG DLA FIRMY BUDOWLANEJ",5200]],"sent":[{"key":"job:300108","hoursAgo":26,"amount":6400}],"pasted":"Moje oferty\nZłożone oferty · strona 1\nINTEGRACJA SKLEPU INTERNETOWEGO Z PROGRAMEM MAGAZYNOWYM\nOferta złożona 27.10.2026 · 12 000 zł netto · oczekuje na odpowiedź\nAplikacja do rezerwacji wizyt, gabinet fizjoterapii\nOferta złożona 27.10.2026 · 8 500 zł netto\nPanel KPI dla zarzadu firmy produkcyjnej\nOferta złożona 26.10.2026 · 18 000 zł netto\nAutomatyzacja obiegu faktur kosztowych w biurze\nOferta złożona 26.10.2026 · 7 200 zł netto\nLogo firmy\nOferta złożona 26.10.2026 · 900 zł netto\nStrona internetowa dla biura nieruchomości\nOferta złożona 12.10.2026 · 4 800 zł netto · zakończone\nMigracja danych ze starego systemu CRM\nOferta złożona 26.10.2026 · 6 400 zł netto","rows":{"offers":7,"jobs":10}};
+const GATE={SEND:['','do wysłania'],SENT_ALREADY:['ok','zablokowane: oferta już złożona, wpis w rejestrze'],DUPLICATE_IN_QUEUE:['bad','duplikat w kolejce'],OLD_OFFER_TITLE:['warn','tytuł starej oferty: sprawdź, czy to nie to samo zlecenie']};
+const RO=CFG.rows.offers,RJ=CFG.rows.jobs;let mode='snapshot',tracker=null,last=null,applied='';
+const seed=()=>{let t=E.emptyTracker();for(const s of CFG.sent)t=E.markSent(t,{key:s.key,variant:'USEME',amountPLN:s.amount},new Date(Date.now()-s.hoursAgo*3600000));return t;};
+const load=()=>{CFG.offers.forEach((o,i)=>{$('oid'+i).value=o[0];$('otitle'+i).value=o[1];$('known'+i).checked=!!o[2];});CFG.jobs.forEach((j,i)=>{$('jid'+i).value=j[0];$('jtitle'+i).value=j[1];$('jprice'+i).value=String(j[2]);});$('pasted').value=CFG.pasted;tracker=seed();applied='';};
+const jobs=()=>{const out=[];for(let i=0;i<RJ;i++){const id=$('jid'+i).value.trim(),title=$('jtitle'+i).value.trim();if(!/^\d{4,10}$/.test(id)||!title)continue;out.push({jobId:id,jobTitle:title,priceNet:Math.max(0,Math.round(num('jprice'+i)))});}return out;};
+const offers=()=>{const out=[];for(let i=0;i<RO;i++){const title=$('otitle'+i).value.trim();if(!title)continue;out.push({id:$('oid'+i).value.trim()||null,title,known:$('known'+i).checked});}return out;};
+const cell=(c,t)=>'<td'+(c?' class="'+c+'"':'')+'>'+esc(t)+'</td>';
+const run=()=>{mark('[data-mode]','mode',mode);$('snapBox').hidden=mode!=='snapshot';$('textBox').hidden=mode!=='text';
+ const J=jobs(),O=offers(),known=new Set(O.filter((o)=>o.known&&o.id).map((o)=>o.id));
+ const live=mode==='text'?$('pasted').value:O.map((o)=>({id:o.id,title:o.title}));
+ const matches=E.matchSubmitted(J,live,known),now=new Date(),result=E.applySync(tracker,matches,now);last=result;
+ const byJob=new Map(matches.map((m)=>[m.jobId,m])),oldTitles=mode==='text'?[]:O.filter((o)=>o.known).map((o)=>o.title);
+ const before=E.sendGate(J,tracker.entries,oldTitles,E.normTitle),after=E.sendGate(J,result.tracker.entries,oldTitles,E.normTitle);
+ const why=(j)=>{if(!E.matchSubmitted([j],[{id:null,title:j.jobTitle}]).length)return['warn','brak: tytuł krótszy niż 12 znaków po normalizacji jest za ogólny jako dowód'];
+  if(mode!=='text'&&E.matchSubmitted([j],live,new Set()).length)return['warn','brak: ten tytuł ma tylko oferta sprzed rundy'];
+  const s=mode==='text'?null:E.similarTitle(j.jobTitle,O,E.normTitle);return s?['warn','brak: podobny tytuł „'+s.title+'” (oferta '+(s.id||'bez numeru')+'); zmieniony tytuł oznacz ręcznie']:['','brak naszej oferty na liście'];};
+ $('rows').innerHTML=J.map((j,i)=>{const m=byJob.get(j.jobId),key='job:'+j.jobId,match=m?['ok',m.offerId?'oferta '+m.offerId:'tytuł w tekście stron']:why(j);
+  const reg=result.marked.includes(key)?['ok','OZNACZONE: nowy wpis']:result.already.includes(key)?['','już w rejestrze']:tracker.entries[key]?['','w rejestrze']:['','—'];
+  const b=before[i].status==='SEND'&&m?['bad','do wysłania, choć nasza oferta już jest na liście: druga oferta do tego samego zlecenia']:GATE[before[i].status],a=GATE[after[i].status];
+  return '<tr data-job="'+esc(j.jobId)+'"><td><b>'+esc(j.jobId)+'</b><br><span class="muted">'+esc(j.jobTitle)+'</span></td><td><code>'+esc(E.normTitle(j.jobTitle))+'</code></td>'+cell(match[0],match[1])+cell(reg[0],reg[1])
+   +cell(b[0],b[1]+(before[i].duplicateOf?' (jak '+before[i].duplicateOf+')':''))+cell(a[0],a[1]+(after[i].duplicateOf?' (jak '+after[i].duplicateOf+')':''))+'</tr>';}).join('');
+ $('kFresh').textContent=String(J.length);$('kMatched').textContent=String(matches.length);$('kMarked').textContent=String(result.marked.length);$('kAlready').textContent=String(result.already.length);
+ const source=mode==='text'?'tekst stron „Moje oferty” (wklejony na tej stronie)':'migawka listy ofert z '+now.toISOString()+' ('+O.length+' ofert)';
+ $('report').textContent=E.syncReportLines(source,J.length,matches,result,true).join('\n')+(applied?'\n'+applied:'');
+ $('tracker').textContent=JSON.stringify(tracker,null,1);};
+$('apply').addEventListener('click',()=>{if(!last)return;const n=last.marked.length;tracker=last.tracker;applied=n?'Zapisano rejestr w tej karcie: '+n+' '+plural(n,'nowy wpis','nowe wpisy','nowych wpisów')+'.':'Nic nowego do zapisania.';$('applied').textContent=applied;run();});
+$('reset').addEventListener('click',()=>{load();$('applied').textContent='';run();});
+for(const b of document.querySelectorAll('[data-mode]'))b.addEventListener('click',()=>{mode=b.dataset.mode;run();});
+const ids=['pasted'];for(let i=0;i<RO;i++)ids.push('known'+i,'oid'+i,'otitle'+i);for(let i=0;i<RJ;i++)ids.push('jid'+i,'jtitle'+i,'jprice'+i);watch(ids,run);load();run();</script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-55UZs7rH9fTHyUACA3NGM+tMXtOuRmP34l+6heHZvdw='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Kwota netto z groszami, 23% VAT i podział 30/40/30: funkcje z backendu pokazują, gdzie powstaje każdy grosz, dlaczego umowa liczy w pełnych złotych i że etapy zawsze sumują się do wyceny.">
+<meta property="og:title" content="Kalkulator zaokrągleń i etapów VAT">
+<meta property="og:description" content="Kwota netto z groszami, 23% VAT i podział 30/40/30: funkcje z backendu pokazują, gdzie powstaje każdy grosz, dlaczego umowa liczy w pełnych złotych i że etapy zawsze sumują się do wyceny.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kalkulator-zaokraglen-i-etapow-vat/">
+<title>Kalkulator zaokrągleń i etapów VAT</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Kalkulator zaokrągleń i etapów VAT</h1><p class="lead">Kwota netto z groszami, 23% VAT i podział 30/40/30: funkcje z backendu pokazują, gdzie powstaje każdy grosz, dlaczego umowa liczy w pełnych złotych i że etapy zawsze sumują się do wyceny.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Kwota netto</h2><div class="chips"><button class="chip" type="button" data-net="243,90">243,90 zł</button><button class="chip" type="button" data-net="1 234,56">1 234,56 zł</button><button class="chip" type="button" data-net="6 000,00">6 000,00 zł</button><button class="chip" type="button" data-net="12 345,67">12 345,67 zł</button><button class="chip" type="button" data-net="99,99">99,99 zł</button></div>
+<div class="grid3"><label>Kwota netto z groszami (np. 243,90)<input id="net" type="text" inputmode="decimal" spellcheck="false"></label><div class="kpi"><span class="muted">Stawka VAT w kodzie (VAT_PERCENT)</span><b id="rate"></b></div><div class="kpi"><span class="muted">Ta sama kwota w groszach</span><b id="minor"></b></div></div>
+<p class="err gap" id="err" hidden></p></section>
+<section><h2>1 · Netto z groszami → brutto</h2><ul class="steps" id="chain"></ul>
+<div class="grid4 gap"><div class="kpi"><span class="muted">Netto</span><b id="kNet"></b></div><div class="kpi"><span class="muted">VAT po zaokrągleniu do grosza</span><b id="kVat"></b></div><div class="kpi"><span class="muted">Brutto bez zaokrąglenia</span><b id="kExact"></b></div><div class="kpi big"><span class="muted">Brutto do zapłaty</span><b id="kGross"></b></div></div></section>
+<section><h2>2 · Wycena w umowie Useme: pełne złote i etapy 30/40/30</h2><p class="muted">contractTexts zaokrągla wycenę do pełnych złotych i dopiero wtedy ją dzieli; stageSplit zaokrągla dwa pierwsze etapy do 10 zł, a ostatni bierze resztę, więc suma zawsze równa się wycenie.</p>
+<div class="stages" id="stages"></div><p id="sum"></p>
+<div class="scroll"><table><thead><tr><th>Etap</th><th>Netto</th><th>Udział</th><th>VAT 23%</th><th>Brutto</th></tr></thead><tbody id="rows"></tbody><tfoot id="foot"></tfoot></table></div><p class="muted gap" id="grossNote"></p></section>
+<section><h2>3 · Pełne złote a grosze w podziale</h2><p id="raw"></p><div class="share"><button class="btn" id="audit" type="button">Sprawdź 10 000 kwot</button></div><ul class="list gap" id="auditOut"></ul></section>
+<section><h2>Co tu jest kodem backendu, a co logiką strony</h2><p>Etapy liczy stageSplit z src/sales/demo-scaffolder.ts, a pełne złote w umowie contractTexts z src/sales/useme-contract-spec.ts, oba bez zmian. Brutto liczy port 1:1 funkcji grossMinorOf z src/sales/b2b/stripe-payment-link.ts (VAT 23%, zaokrąglenie połówkowe do grosza): oryginał na starcie ładuje pakiet płatności i moduły Node, których strona nie uruchamia, więc test porównuje port z oryginałem.</p>
+<p class="muted">Logika strony (src/sales/arsenal-70k.ts, pokryta testem): odczyt kwoty z przecinkiem, dokładne brutto przed zaokrągleniem (np. 299,997 zł), VAT od każdego etapu osobno i przegląd 10 000 podziałów.</p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 18,8 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z src/sales/b2b/stripe-payment-link.ts</code></span><span class="muted">grossMinorOfPort, plnPort, VAT_PERCENT_PORT · grossMinorOf, pln i VAT_PERCENT: netto → brutto w groszach, +23% VAT, zaokrąglenie połówkowe do grosza; oryginał ładuje pakiet płatności, więc działa tu port, a test porównuje go z oryginałem</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit, STAGE_SHARES · 30/40/30: dwa pierwsze etapy do 10 zł, reszta w ostatnim</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme-contract-spec.ts</code></span><span class="muted">contractTexts, ContractInputError · wycena w umowie zaokrąglona do pełnych złotych przed podziałem</span></li><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">parseAmountMinor, formatMinor, groupDigits, exactGross, exactVat, fullPrecision, stageSplitAudit · odczyt kwoty z groszami, dokładne brutto przed zaokrągleniem i przegląd 10 000 podziałów: logika strony, pokryta testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/arsenal-70k.ts</code> <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/resume-followup.ts</code> <code>src/sales/useme-contract-spec.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-kalkulator-zaokraglen-i-etapow-vat.entry.ts
+  var arsenal_kalkulator_zaokraglen_i_etapow_vat_entry_exports = {};
+  __export(arsenal_kalkulator_zaokraglen_i_etapow_vat_entry_exports, {
+    ContractInputError: () => ContractInputError,
+    STAGE_SHARES: () => STAGE_SHARES,
+    VAT_PERCENT_PORT: () => VAT_PERCENT_PORT,
+    contractTexts: () => contractTexts,
+    exactGross: () => exactGross,
+    exactVat: () => exactVat,
+    formatMinor: () => formatMinor,
+    fullPrecision: () => fullPrecision,
+    grossMinorOfPort: () => grossMinorOfPort,
+    groupDigits: () => groupDigits,
+    parseAmountMinor: () => parseAmountMinor,
+    plnPort: () => plnPort,
+    stageSplit: () => stageSplit,
+    stageSplitAudit: () => stageSplitAudit
+  });
+
+  // src/sales/arsenal-70k.ts
+  var ARSENAL_FOLDER = "arsenal-70k-27-10-2026";
+  var SAMPLES_PAGES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var ARSENAL_PUBLIC_BASE = `${SAMPLES_PAGES_BASE}${ARSENAL_FOLDER}/`;
+  var VAT_PERCENT_PORT = 23;
+  var grossMinorOfPort = (netMinor) => netMinor + Math.round(netMinor * VAT_PERCENT_PORT / 100);
+  var plnPort = (minor) => (minor / 100).toFixed(2);
+  function parseAmountMinor(raw) {
+    const match = /^(\d{1,9})(?:[.,](\d{1,2}))?$/u.exec(raw.replace(/[\s\u00a0\u202f]/gu, "").replace(/z\u0142$/iu, ""));
+    return match ? Number(match[1]) * 100 + Number((match[2] ?? "").padEnd(2, "0")) : null;
+  }
+  var groupDigits = (n) => `${n < 0 ? "-" : ""}${String(Math.trunc(Math.abs(n))).replace(/\B(?=(\d{3})+(?!\d))/gu, " ")}`;
+  var formatMinor = (minor) => `${minor < 0 ? "-" : ""}${groupDigits(Math.floor(Math.abs(minor) / 100))},${String(Math.abs(minor) % 100).padStart(2, "0")} z\u0142`;
+  var exactDecimal = (tenThousandths) => `${groupDigits(Math.floor(tenThousandths / 1e4))},${String(tenThousandths % 1e4).padStart(4, "0").replace(/0{1,2}$/u, "")}`;
+  var exactGross = (netMinor, vatPercent) => exactDecimal(netMinor * (100 + vatPercent));
+  var exactVat = (netMinor, vatPercent) => exactDecimal(netMinor * vatPercent);
+  var fullPrecision = (n) => (Number.isInteger(n) ? String(n) : n.toPrecision(17).replace(/0+$/u, "")).replace(".", ",");
+  function stageSplitAudit(split, count = 1e4) {
+    let exact = 0, checked = 0, offGrosz = 0;
+    let example = null;
+    const text = fullPrecision;
+    for (let i = 0; i < count; i++) {
+      const zl2 = 100 + i * 7919 % 99901;
+      const parts = split(zl2);
+      if (parts.every(Number.isInteger) && parts.reduce((sum, part) => sum + part, 0) === zl2) exact += 1;
+      const grosze = i * 37 % 100;
+      if (!grosze) continue;
+      checked += 1;
+      const amount = zl2 + grosze / 100;
+      const raw = split(amount);
+      if (raw.some((part) => Math.round(part * 100) !== part * 100)) {
+        offGrosz += 1;
+        example ??= `${amount.toFixed(2).replace(".", ",")} z\u0142 \u2192 ${raw.map(text).join(" / ")}`;
+      }
+    }
+    return { whole: { checked: count, exact }, grosze: { checked, offGrosz, example } };
+  }
+  var SAMPLE_LINK = `${ARSENAL_PUBLIC_BASE}kreator-makiet-instant/`;
+
+  // src/sales/demo-scaffolder.ts
+  var STAGE_SHARES = [30, 40, 30];
+  function stageSplit(total) {
+    let left = total;
+    return STAGE_SHARES.map((share, index) => {
+      const amount = index === STAGE_SHARES.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= amount;
+      return amount;
+    });
+  }
+  var stage1Days = (days) => Math.max(2, Math.round((days ?? 7) * 0.3));
+
+  // src/sales/useme/conversion-style.ts
+  var WORD_LIMITS = { OFFER: [80, 220], REPLY: [35, 160], FOLLOWUP: [25, 100] };
+  var FIRST_PARAGRAPH = { OFFER: [1, 32], REPLY: [2, 45], FOLLOWUP: [2, 60] };
+  var USEME_CLICHES = [
+    "ch\u0119tnie",
+    "z przyjemno\u015Bci\u0105",
+    "z ch\u0119ci\u0105",
+    "z mi\u0142\u0105 ch\u0119ci\u0105",
+    "jestem zainteresowany",
+    "jestem zainteresowana",
+    "oto",
+    "jako model",
+    "jako ai",
+    "kompleksow*",
+    "profesjonaln*",
+    "najwy\u017Cszej jako\u015Bci",
+    "najwy\u017Csz\u0105 jako\u015B\u0107",
+    "nie wahaj*",
+    "s\u0142u\u017C\u0119 pomoc\u0105",
+    "prosz\u0119 o kontakt",
+    "gwarantuj*",
+    "gwarancj*",
+    "innowacyjn*",
+    "szyte na miar\u0119",
+    "szyty na miar\u0119",
+    "skrojon*",
+    "wieloletnie do\u015Bwiadczenie",
+    "wieloletniego do\u015Bwiadczenia",
+    "pasj*",
+    "w dzisiejszych czasach",
+    "w dobie",
+    "dedykowan*",
+    "holistyczn*",
+    "synergi*",
+    "rewolucyjn*",
+    "prze\u0142omow*",
+    "bezproblemow*",
+    "wychodz\u0105c naprzeciw",
+    "na ka\u017Cdym etapie",
+    "zapraszam do wsp\xF3\u0142pracy",
+    "idealnie si\u0119 nadaj\u0119",
+    "idealnym wyborem",
+    "mam do\u015Bwiadczenie w",
+    "doskonale rozumiem",
+    "rozumiem doskonale",
+    "ciesz\u0119 si\u0119",
+    "dzi\u0119kuj\u0119 za mo\u017Cliwo\u015B\u0107"
+  ];
+  var fold = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").toLowerCase();
+  var URL_RE = /https?:\/\/[^\s)>\]]+/giu;
+  var trimUrl = (url) => url.replace(/[.,;:]+$/u, "");
+  var sentences = (paragraph) => paragraph.split(/(?<=[.?!])\s+(?=[A-Z\u0104\u0106\u0118\u0141\u0143\u00d3\u015a\u0179\u017b0-9\u201e"])/u).filter((part) => part.trim()).length;
+  var wordCount = (text) => text.replace(URL_RE, " link ").split(/\s+/u).filter((word) => /[\p{L}\p{N}]/u.test(word)).length;
+  var PLAN_LINE = /^\s*(?:[1-3][.)]|[-\u2013\u2022])\s+\S/u;
+  var NOUNS_ENDING_LEM = [
+    "dzia\u0142",
+    "materia\u0142",
+    "kana\u0142",
+    "zapa\u0142",
+    "upa\u0142",
+    "sza\u0142",
+    "pomys\u0142",
+    "przemys\u0142",
+    "zmys\u0142",
+    "namys\u0142",
+    "ko\u0142",
+    "sto\u0142",
+    "anio\u0142",
+    "ko\u015Bcio\u0142",
+    "popio\u0142",
+    "w\u0119z\u0142",
+    "or\u0142",
+    "mu\u0142",
+    "paw\u0142",
+    "sy\u0142",
+    "artyku\u0142",
+    "\u015Bwiat\u0142",
+    "\u017Ar\xF3d\u0142",
+    "szk\u0142",
+    "krzes\u0142",
+    "rzemios\u0142",
+    "myd\u0142",
+    "mas\u0142",
+    "potencja\u0142",
+    "kapita\u0142",
+    "sygna\u0142",
+    "rytua\u0142",
+    "kryszta\u0142",
+    "zespo\u0142"
+  ];
+  function checkUsemeText(text, options) {
+    const issues = [];
+    const add = (code, detail) => {
+      issues.push({ code, detail });
+    };
+    const body = text.replace(/\r/gu, "").trim();
+    const paragraphs = body.split(/\n\s*\n/u).map((part) => part.trim()).filter(Boolean);
+    if (!/^Dzie\u0144 dobry,/u.test(body)) add("GREETING", "Wiadomo\u015B\u0107 zaczyna si\u0119 od \u201EDzie\u0144 dobry,\u201D.");
+    const folded = ` ${fold(body.replace(URL_RE, " ")).replace(/[^\p{L}\p{N}]+/gu, " ")} `;
+    for (const entry of USEME_CLICHES) {
+      const stem = entry.endsWith("*"), phrase = entry.replace(/\*$/u, "");
+      if (folded.includes(` ${fold(phrase)}${stem ? "" : " "}`)) add("CLICHE", `Usu\u0144 fraz\u0119 \u201E${phrase}${stem ? "\u2026" : ""}\u201D.`);
+    }
+    if (body.includes("!")) add("EXCLAMATION", "Bez wykrzyknik\xF3w.");
+    if (/\p{Extended_Pictographic}/u.test(body)) add("EMOJI", "Bez emotikon.");
+    const urls = (body.match(URL_RE) ?? []).map(trimUrl);
+    for (const url of urls) if (!options.allowedUrls.has(url)) add("URL_NOT_ALLOWED", `Adres spoza portfolio: ${url}`);
+    if (urls.length > 1) add("TOO_MANY_LINKS", "Najwy\u017Cej jeden link do pr\xF3bki.");
+    if (options.requireLink && !urls.some((url) => options.allowedUrls.has(url))) add("LINK_MISSING", 'Dodaj jeden link z pola "probki".');
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/u.test(body) || /(?:\+?\d[\d\s-]{7,}\d)/u.test(body.replace(URL_RE, "")) || /(?:^|[^\p{L}])(?:whats ?app|telegram|messenger|signal|skype)(?=$|[^\p{L}])/iu.test(body)) {
+      add("CONTACT_DATA", "Bez danych kontaktowych i komunikator\xF3w (regulamin Useme).");
+    }
+    if (/(?:^|[^\p{L}])(?:stripe|paypal|payu|blik|przelew\p{L}*|poza useme|poza platform\p{L}*|bezpo\u015brednio na konto)(?=$|[^\p{L}])/iu.test(body)) add("OFF_PLATFORM_PAYMENT", "Rozliczenie wy\u0142\u0105cznie przez Useme.");
+    const informal = /(?:^|[^\p{L}])(chcesz|masz|mo\u017cesz|wolisz|zobaczysz|potrzebujesz|twoj\p{L}*|twoim|twoj\u0105|twoich|ci\u0119|ciebie|tob\u0105|tobie|daj zna\u0107|chcecie|macie|mo\u017cecie|wasz\p{L}*|chcia\u0142by pa\u0144stwo|chce pa\u0144stwa)(?=$|[^\p{L}])/iu.exec(body);
+    if (informal) add("INFORMAL", `Forma grzeczno\u015Bciowa (Pa\u0144stwo), bez \u201E${informal[1]}\u201D.`);
+    if (/Pan\s*\/\s*Pani|Pani\s*\/\s*Pan/u.test(body)) add("PAN_PANI", "Bez \u201EPan/Pani\u201D: forma \u201EPa\u0144stwo\u201D.");
+    if (/(?:^|[^\p{L}])(rozmow\p{L}* telefoniczn\p{L}*|kontakt\p{L}* telefoniczn\p{L}*|telefonicznie|telekonferencj\p{L}*|zadzwoni\p{L}*|zadzwo\u0144|numer\p{L}* telefonu)(?=$|[^\p{L}])/iu.test(body)) {
+      add("OFF_PLATFORM_CONTACT", "Bez propozycji rozmowy telefonicznej: ustalenia w wiadomo\u015Bciach Useme.");
+    }
+    if (/(?:^|\n)\s*(?:Klient|Klientka|Zleceniodawca)\s/u.test(body) || /klient (?:jest )?zainteresowan/iu.test(body)) add("META", "Pisz do klienta, nie o kliencie w trzeciej osobie.");
+    const gendered = [...body.matchAll(/(?:^|[^\p{L}])(\p{L}+(?:\u0142em|\u0142am))(?=$|[^\p{L}])/gu)].map((match) => match[1]).find((word) => !NOUNS_ENDING_LEM.some((stem) => word.toLowerCase().slice(0, -2).endsWith(stem)));
+    if (gendered) add("GENDERED_PAST", `Forma neutralna zamiast \u201E${gendered}\u201D: \u201Eprzygotuj\u0119\u201D, \u201Esprawdz\u0119\u201D.`);
+    const last = paragraphs.at(-1) ?? "";
+    const questions = (body.match(/\?/gu) ?? []).length;
+    if (!last.endsWith("?")) add("QUESTION_END", "Ostatnie zdanie to jedno pytanie otwarte; po nim nic.");
+    if (questions !== 1) add("ONE_QUESTION", `Dok\u0142adnie jedno pytanie (jest ${questions}).`);
+    const planLines = body.split("\n").filter((line) => PLAN_LINE.test(line));
+    if (options.requirePlan && planLines.length !== 3) add("PLAN", `Plan ma dok\u0142adnie 3 punkty (jest ${planLines.length}).`);
+    const diagnosis = paragraphs[0]?.replace(/^Dzie\u0144 dobry,\s*/u, "").trim() || paragraphs[1] || "";
+    const firstText = diagnosis && !PLAN_LINE.test(diagnosis) ? diagnosis : "";
+    const [maxSentences, maxWords] = FIRST_PARAGRAPH[options.kind];
+    if (firstText && (sentences(firstText) > maxSentences || wordCount(firstText) > maxWords)) {
+      add("DIAGNOSIS", options.kind === "OFFER" ? "Diagnoza: jedno zdanie do 30 s\u0142\xF3w." : `Pierwszy akapit: najwy\u017Cej ${maxSentences} zdania i ${maxWords} s\u0142\xF3w.`);
+    }
+    const [min, max] = WORD_LIMITS[options.kind];
+    const words = wordCount(body);
+    if (words < min || words > max) add("WORDS", `D\u0142ugo\u015B\u0107 ${words} s\u0142\xF3w, dozwolone ${min}\u2013${max}.`);
+    if (typeof options.price === "number") {
+      for (const match of body.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/giu)) {
+        const amount = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+        if (amount !== options.price) add("PRICE", `Kwota ${match[0].trim()} r\xF3\u017Cni si\u0119 od naszej wyceny ${options.price} z\u0142.`);
+      }
+    }
+    return issues;
+  }
+
+  // src/sales/architecture-hubs.ts
+  var SAMPLES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var HUBS_PUBLIC_BASE = `${SAMPLES_BASE}huby-architektury-24-10-2026/`;
+  var BLUEPRINT_BASE = `${SAMPLES_BASE}audyty-24-10-2026/`;
+
+  // src/sales/useme/resume-followup.ts
+  function quotableTitle(title) {
+    const clean = title.replace(/https?:\/\/\S+/gu, "").replace(/[\w.+-]+@[\w-]+\.[\w.]+/gu, "").replace(/[?!\u201e\u201d"]/gu, "").replace(/\s+/gu, " ").trim();
+    if (clean.length <= 70) return clean;
+    const cut = clean.slice(0, 70);
+    return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 40)).replace(/[\s,;:\u2013-]+$/u, "")}\u2026`;
+  }
+
+  // src/sales/useme-contract-spec.ts
+  var MESSAGE_ONLY = /* @__PURE__ */ new Set(["GREETING", "QUESTION_END", "ONE_QUESTION", "WORDS", "DIAGNOSIS", "PLAN", "PRICE", "TOO_MANY_LINKS", "LINK_MISSING"]);
+  var LINK_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var zl = (n) => `${Math.round(n).toLocaleString("pl-PL", { useGrouping: true }).replace(/[\u00a0\u202f]/gu, " ")} z\u0142`;
+  var sentence = (text) => {
+    const t = text.trim().replace(/[.;:,\s]+$/u, "");
+    return t ? `${t.charAt(0).toUpperCase()}${t.slice(1)}.` : "";
+  };
+  var lowerStart = (text) => /^\p{Lu}[\p{Ll}\d-]*(?=[\s,:;.]|$)/u.test(text) ? text.charAt(0).toLowerCase() + text.slice(1) : text;
+  var lower = lowerStart;
+  var bare = (text) => text.trim().replace(/[.;:,\s]+$/u, "");
+  var ContractInputError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+    }
+    code;
+  };
+  function checkContractText(text, amounts, links = []) {
+    const issues = checkUsemeText(text, { kind: "REPLY", allowedUrls: new Set(links), requirePlan: false, requireLink: false, price: null }).filter((issue) => !MESSAGE_ONLY.has(issue.code));
+    const allowed = new Set(amounts);
+    for (const match of text.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/gu)) {
+      const value = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+      if (!allowed.has(value)) issues.push({ code: "AMOUNT", detail: `Kwota ${match[0].trim()} spoza podzia\u0142u 30/40/30 tej oferty.` });
+    }
+    return issues;
+  }
+  function contractTexts(input) {
+    if (!Number.isFinite(input.amountPLN) || input.amountPLN < 100 || input.amountPLN > 1e6) throw new ContractInputError("AMOUNT_INVALID");
+    const scope = input.scope.map((item) => item.trim()).filter(Boolean).slice(0, 4);
+    const deliverables = input.deliverables.map((item) => item.trim()).filter(Boolean).slice(0, 4);
+    if (!scope.length) throw new ContractInputError("SCOPE_MISSING");
+    if (!deliverables.length) throw new ContractInputError("DELIVERABLES_MISSING");
+    const total = Math.round(input.amountPLN);
+    const [s1, s2, s3] = stageSplit(total);
+    const days = stage1Days(input.days ?? null);
+    const link = input.link && input.link.startsWith(LINK_BASE) && !/\s/u.test(input.link) ? input.link : null;
+    const title = quotableTitle(input.title);
+    const rights = input.kind === "CODE" ? "kodu \u017Ar\xF3d\u0142owego i plik\xF3w" : "projekt\xF3w i plik\xF3w \u017Ar\xF3d\u0142owych";
+    const licence = input.rights === "LICENSE";
+    const titleLine = title ? `Zlecenie: \u201E${title}\u201D` : "Zlecenie: zgodnie z ofert\u0105 w Useme";
+    const specLines = (head) => [
+      "Specyfikacja Etapu 1 (30%): prototyp i fundament",
+      head,
+      "",
+      "Zakres prac Etapu 1:",
+      ...scope.map((item, i) => `${i + 1}. ${sentence(item)}`),
+      "",
+      "Kryteria odbioru (Etap 1 jest wykonany, gdy Zamawiaj\u0105cy otrzyma):",
+      ...deliverables.map((item) => `- ${sentence(item)}`),
+      "- Kr\xF3tki opis wykonanych prac i sposobu sprawdzenia, przekazany w wiadomo\u015Bci w Useme.",
+      "- Poprawki zg\u0142oszone do zakresu Etapu 1 w ci\u0105gu 3 dni roboczych od przekazania, wprowadzone w jednej rundzie.",
+      "",
+      `Kwota Etapu 1: ${zl(s1)} netto (30% wyceny ca\u0142o\u015Bci ${zl(total)} netto).`,
+      `Termin: start i pierwszy podgl\u0105d w ci\u0105gu 48\u201372 godzin od zawarcia umowy; przekazanie Etapu 1 w ci\u0105gu ${days} dni roboczych.`,
+      licence ? `Prawa autorskie: zgodnie z ustawieniem zlecenia bez przeniesienia praw; Zamawiaj\u0105cy otrzymuje niewy\u0142\u0105czn\u0105, nieograniczon\u0105 w czasie licencj\u0119 na korzystanie z ${rights} powsta\u0142ych w Etapie 1 po odbiorze i rozliczeniu etapu w Useme, w zakresie wskazanym w umowie Useme.` : `Prawa autorskie: autorskie prawa maj\u0105tkowe do ${rights} powsta\u0142ych w Etapie 1 przechodz\u0105 na Zamawiaj\u0105cego po odbiorze i rozliczeniu etapu w Useme, na polach eksploatacji wskazanych w umowie Useme.`,
+      "Poza zakresem Etapu 1: prace Etap\xF3w 2 i 3; ka\u017Cdy kolejny etap to osobna umowa w Useme po odbiorze poprzedniego.",
+      ...link ? ["", `Zakres odpowiada makiecie lub karcie planu: ${link}`] : []
+    ];
+    const spec = specLines(titleLine).join("\n");
+    const issuesSpec = checkContractText(specLines("Zlecenie: zgodnie z ofert\u0105 w Useme").join("\n"), [s1, s2, s3, total], link ? [link] : []);
+    const scheduleLines = (head) => [
+      "Harmonogram i rozliczenie przez Useme",
+      head,
+      `Wycena ca\u0142o\u015Bci: ${zl(total)} netto, trzy etapy, ka\u017Cdy jako osobna umowa w Useme.`,
+      "",
+      `Etap 1 (30%): ${zl(s1)} netto. Prototyp i fundament: ${scope.map((item) => lower(bare(item))).join("; ")}. Odbi\xF3r: ${deliverables.map((item) => lower(bare(item))).join("; ")}. Start w ci\u0105gu 48\u201372 godzin od umowy, przekazanie w ci\u0105gu ${days} dni roboczych.`,
+      `Etap 2 (40%): ${zl(s2)} netto. ${sentence(input.stage2)}`,
+      `Etap 3 (30%): ${zl(s3)} netto. ${sentence(input.stage3)}`,
+      "",
+      licence ? "Kolejny etap zaczyna si\u0119 po odbiorze poprzedniego. Licencja na rezultaty ka\u017Cdego etapu (bez przeniesienia praw) obowi\u0105zuje od jego rozliczenia w Useme." : "Kolejny etap zaczyna si\u0119 po odbiorze poprzedniego. Autorskie prawa maj\u0105tkowe do rezultat\xF3w ka\u017Cdego etapu przechodz\u0105 na Zamawiaj\u0105cego po jego rozliczeniu w Useme."
+    ];
+    const schedule = scheduleLines(titleLine).join("\n");
+    const issuesSchedule = checkContractText(scheduleLines("Zlecenie: zgodnie z ofert\u0105 w Useme").join("\n"), [s1, s2, s3, total]);
+    const message = [
+      "Dzie\u0144 dobry,",
+      `dzi\u0119kuj\u0119 za decyzj\u0119; poni\u017Cej zakres Etapu 1 do umowy w Useme: ${zl(s1)} netto, start i pierwszy podgl\u0105d w ci\u0105gu 48\u201372 godzin od zawarcia umowy.`,
+      `1. Zakres: ${lower(scope[0]).replace(/[.\s]+$/u, "")}.
+2. Odbi\xF3r: ${lower(deliverables[0]).replace(/[.\s]+$/u, "")}.
+3. ${licence ? "Licencja na rezultaty obowi\u0105zuje" : "Prawa maj\u0105tkowe przechodz\u0105 na Pa\u0144stwa"} po odbiorze i rozliczeniu etapu w Useme.`,
+      "Czy mog\u0119 przygotowa\u0107 umow\u0119 na Etap 1 z tym zakresem?"
+    ].join("\n\n");
+    const issuesMessage = checkUsemeText(message, { kind: "REPLY", allowedUrls: /* @__PURE__ */ new Set(), requirePlan: true, requireLink: false, price: null });
+    const issues = [...issuesSpec, ...issuesSchedule, ...issuesMessage];
+    return { spec, schedule, message, amounts: [s1, s2, s3], issues };
+  }
+  return __toCommonJS(arsenal_kalkulator_zaokraglen_i_etapow_vat_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"presets":["243,90","1 234,56","6 000,00","12 345,67","99,99"]};
+const VAT=E.VAT_PERCENT_PORT;
+const pct=(part,total)=>(Math.round(part/total*1000)/10).toFixed(1).replace('.',',')+'%';
+const clear=(text)=>{$('err').textContent=text;$('err').hidden=false;for(const id of ['chain','stages','rows','foot','sum','raw'])$(id).innerHTML='';for(const id of ['minor','kNet','kVat','kExact','kGross','grossNote'])$(id).textContent='';};
+const run=()=>{const minor=E.parseAmountMinor($('net').value);$('rate').textContent=VAT+'%';
+ if(minor===null||minor<=0){clear('Wpisz kwotę netto, np. 243,90 albo 1 234,56 (najwyżej dwa miejsca po przecinku).');return;}
+ $('err').hidden=true;const gross=E.grossMinorOfPort(minor),vat=gross-minor;
+ $('minor').textContent=E.groupDigits(minor)+' gr';$('kNet').textContent=E.formatMinor(minor);$('kVat').textContent=E.formatMinor(vat);$('kExact').textContent=E.exactGross(minor,VAT)+' zł';$('kGross').textContent=E.formatMinor(gross);
+ $('chain').innerHTML=[['Netto',E.formatMinor(minor)+' = '+E.groupDigits(minor)+' gr'],['VAT '+VAT+'% bez zaokrąglenia',E.exactVat(minor,VAT)+' zł'],
+  ['Brutto bez zaokrąglenia',E.formatMinor(minor).replace(' zł','')+' × 1,'+String(VAT).padStart(2,'0')+' = '+E.exactGross(minor,VAT)+' zł'],
+  ['VAT zaokrąglony połówkowo do grosza (grossMinorOf)',E.formatMinor(vat)],['Brutto do zapłaty',E.formatMinor(gross)+' · pln(): '+E.plnPort(gross)]].map((s)=>'<li><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></li>').join('');
+ let t=null,cErr='';
+ try{t=E.contractTexts({title:'',amountPLN:minor/100,days:null,scope:['Zakres Etapu 1'],deliverables:['Odbiór Etapu 1'],stage2:'Etap 2',stage3:'Etap 3',kind:'CODE'});}
+ catch(e){cErr=e&&e.code==='AMOUNT_INVALID'?'Generator umowy przyjmuje wycenę od 100 do 1 000 000 zł netto (contractTexts: AMOUNT_INVALID), więc tej kwoty nie dzieli na etapy.':String(e&&e.message||e);}
+ if(!t){for(const id of ['stages','rows','foot'])$(id).innerHTML='';$('sum').innerHTML='<span class="err">'+esc(cErr)+'</span>';$('grossNote').textContent='';}
+ else{const a=t.amounts,total=a[0]+a[1]+a[2];const stated=(/Wycena całości: ([\d ]+) zł netto/.exec(t.schedule)||['',''])[1];const diff=total*100-minor;
+  $('stages').innerHTML=a.map((v,i)=>'<div class="stage"><span class="muted">Etap '+(i+1)+' · '+E.STAGE_SHARES[i]+'%</span><b>'+esc(E.formatMinor(v*100))+'</b><span class="muted">'+pct(v,total)+' wyceny</span></div>').join('');
+  $('sum').innerHTML='<b class="ok">'+esc(a.map((v)=>E.groupDigits(v)).join(' + ')+' = '+E.groupDigits(total)+' zł'+(String(total)===stated.replace(/ /g,'')?' = wycena w umowie ✓':''))+'</b><br><span class="muted">W harmonogramie: „Wycena całości: '+esc(stated)+' zł netto”. '
+   +esc(diff?'Różnica względem kwoty z groszami: '+(diff>0?'+':'')+E.formatMinor(diff)+' (zaokrąglenie do pełnych złotych).':'Kwota nie miała groszy, więc nic nie zaokrąglono.')+'</span>';
+  const g=a.map((v)=>E.grossMinorOfPort(v*100)),gSum=g.reduce((x,y)=>x+y,0),gTotal=E.grossMinorOfPort(total*100);
+  $('rows').innerHTML=a.map((v,i)=>'<tr><td>Etap '+(i+1)+'</td><td>'+esc(E.formatMinor(v*100))+'</td><td>'+pct(v,total)+'</td><td>'+esc(E.formatMinor(g[i]-v*100))+'</td><td>'+esc(E.formatMinor(g[i]))+'</td></tr>').join('');
+  $('foot').innerHTML='<tr><th>Razem</th><th>'+esc(E.formatMinor(total*100))+'</th><th>100%</th><th>'+esc(E.formatMinor(gSum-total*100))+'</th><th>'+esc(E.formatMinor(gSum))+'</th></tr>';
+  $('grossNote').textContent='Brutto całej wyceny '+E.formatMinor(gTotal)+(gSum===gTotal?' = suma brutto etapów ✓':' · suma brutto etapów różni się o '+E.formatMinor(gSum-gTotal)+': VAT każdego etapu zaokrągla się osobno.');}
+ const raw=E.stageSplit(minor/100);const off=raw.some((p)=>Math.round(p*100)!==p*100);
+ $('raw').innerHTML=esc('stageSplit na kwocie z groszami ('+E.formatMinor(minor)+'), bez zaokrąglenia do pełnych złotych, daje: ')+'<code>'+esc(raw.map(E.fullPrecision).join(' / '))+'</code>. '
+  +esc(off?'Ostatni etap nie jest dokładną liczbą groszy (arytmetyka zmiennoprzecinkowa); na pełnych złotych tego problemu nie ma, co pokazuje przegląd 10 000 kwot.':'Tu wynik wychodzi w pełnych groszach, ale nie zawsze: przegląd 10 000 kwot pokazuje, jak często etap nie jest dokładną liczbą groszy.');};
+$('audit').addEventListener('click',()=>{const a=E.stageSplitAudit(E.stageSplit,10000);
+ $('auditOut').innerHTML='<li><b>Pełne złote: '+E.groupDigits(a.whole.exact)+' z '+E.groupDigits(a.whole.checked)+'</b><span>podziałów sumuje się dokładnie do wyceny, wszystkie etapy w pełnych złotych.</span></li>'
+  +'<li class="'+(a.grosze.offGrosz?'warn':'')+'"><b>Z groszami: '+E.groupDigits(a.grosze.offGrosz)+' z '+E.groupDigits(a.grosze.checked)+'</b><span>'+esc('podziałów ma etap, który nie jest dokładną liczbą groszy'+(a.grosze.example?', np. '+a.grosze.example:'')+'.')+'</span></li>';});
+for(const b of document.querySelectorAll('[data-net]'))b.addEventListener('click',()=>{$('net').value=b.dataset.net;mark('[data-net]','net',b.dataset.net);run();});
+watch(['net'],run);$('net').value=CFG.presets[0];mark('[data-net]','net',CFG.presets[0]);run();</script>
+</body>
+</html>

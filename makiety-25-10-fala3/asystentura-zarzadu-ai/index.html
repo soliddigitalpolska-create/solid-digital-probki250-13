@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-zGELdtm4zdP3gaX3Ymib7c9zJaRMZ5BAO+l88CJbbSw='; script-src 'sha256-X8NEwl6EmHn6XE8BT+ajO2o4aQR1vfw+gVI9D4HYLVo='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-zGELdtm4zdP3gaX3Ymib7c9zJaRMZ5BAO+l88CJbbSw='; script-src 'sha256-5n4q/l5IiDF6cyK0ZCLaWygu/0g+ejCarzFmc7t6Wa8='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
 <meta name="description" content="Lista powtarzalnych zadań zarządu, szkice i streszczenia z AI zatwierdzane przez człowieka, codzienne podsumowanie i cotygodniowy raport. Firmy fikcyjne.">
 <title>Asystentura zarządu z AI: szkice, podsumowania i priorytety — makieta</title>
@@ -82,6 +82,10 @@ box.querySelector('[data-tnet]').textContent=fmt(tn);box.querySelector('[data-tv
 sel.addEventListener('change',render);box.addEventListener('input',render);box.querySelector('[data-print]').addEventListener('click',()=>window.print());render();}
 for(const b of document.querySelectorAll('[data-flow]'))b.addEventListener('click',()=>b.classList.toggle('on'));
 const progress=()=>{for(const p of document.querySelectorAll('[data-progress]')){const all=document.querySelectorAll('[data-check^="'+p.dataset.progress+'-"]');const done=[...all].filter((c)=>c.checked).length;p.textContent='Wykonano '+done+' z '+all.length;}};document.addEventListener('change',progress);progress();
+const offerPrice=(()=>{try{const u=new URL(location.href);const raw=u.searchParams.get('p')??(/^#p=([0-9]+(?:[.,][0-9]{1,2})?)$/.exec(u.hash)||[])[1];if(raw==null)return null;const v=Number(String(raw).replace(',','.'));return Number.isFinite(v)&&v>=100&&v<=200000?Math.round(v*100)/100:null;}catch(e){return null}})();
+if(offerPrice!==null){const ms=[...document.querySelectorAll('[data-mod]')],before=ms.reduce((a,m)=>a+Number(m.dataset.mod),0),target=Math.round(offerPrice);if(before>0&&ms.length&&target!==before){let rest=target;ms.forEach((m,i)=>{const v=i===ms.length-1?rest:Math.round(Number(m.dataset.mod)*target/before);rest-=v;m.dataset.mod=String(v);for(const b of [m.closest('label')?.querySelector('b'),document.querySelector('[data-pick="'+m.id+'"]')?.closest('label')?.querySelector('b')])if(b)b.textContent=fmt(v);});
+const exact=offerPrice.toLocaleString('pl-PL',{minimumFractionDigits:Number.isInteger(offerPrice)?0:2,maximumFractionDigits:2});const desc=document.querySelector('#zakres .desc');if(desc)desc.textContent=desc.textContent.replace(/[(][^)]*? zł netto/,'('+exact+' zł netto');
+const note=document.createElement('p');note.className='desc';note.textContent='Kwota z oferty na Useme: '+exact+' zł netto. Moduły, Etap 1 i podsumowanie są przeliczone do tej kwoty.';const calc=document.querySelector('#zakres .calc');if(calc)calc.before(note);}}
 const mods=[...document.querySelectorAll('[data-mod]')],stages=[...document.querySelectorAll('[data-stage]')];
 const total=()=>{const s=mods.filter((m)=>m.checked).reduce((a,m)=>a+Number(m.dataset.mod),0);document.getElementById('sum').textContent=fmt(s);let left=s;
 const amts=stages.map((st,i)=>{const v=i===stages.length-1?left:Math.round(s*Number(st.dataset.stage)/1000)*10;left-=v;st.querySelector('[data-stage-amt]').textContent=fmt(v);return v;});
