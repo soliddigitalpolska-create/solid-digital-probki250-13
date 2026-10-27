@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-vWy6r9EoXSXVXHhW2vbja1Y/gENNWJt2Ius6AMGPOQ8='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Każdy wpływ dzielony na pięć koszyków: Podatki, Rezerwa, Rozwój, Inwestycje i Wypłata, co do złotówki, z księgą wpływów, celem i kontrolą zamrożenia gotówki.">
+<meta property="og:title" content="Kalkulator koszyków CFO K1–K5">
+<meta property="og:description" content="Każdy wpływ dzielony na pięć koszyków: Podatki, Rezerwa, Rozwój, Inwestycje i Wypłata, co do złotówki, z księgą wpływów, celem i kontrolą zamrożenia gotówki.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kalkulator-koszykow-cfo/">
+<title>Kalkulator koszyków CFO K1–K5</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Kalkulator koszyków CFO K1–K5</h1><p class="lead">Każdy wpływ dzielony na pięć koszyków: Podatki, Rezerwa, Rozwój, Inwestycje i Wypłata, co do złotówki, z księgą wpływów, celem i kontrolą zamrożenia gotówki.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Wpływ</h2><div class="chips"><button class="chip" type="button" data-preset="0">Alfa · zaliczka Etapu 1</button><button class="chip" type="button" data-preset="1">Beta · Etap 2</button><button class="chip" type="button" data-preset="2">Gamma · zlecenie z Facebooka</button></div>
+<div class="grid3"><label>Kwota wpływu w pełnych złotych<input id="amount" type="number" min="0" step="1" value="12345"></label><label>Źródło<select id="source"><option value="Useme">Useme</option><option value="Facebook">Facebook</option><option value="Inne">Inne</option></select></label>
+<div class="kpi big" id="sumBox"><span class="muted">Suma udziałów</span><b id="sum"></b></div></div>
+<h3>Udziały koszyków (%)</h3><div class="grid5"><label>K1 · Podatki<input id="s1" type="number" min="0" max="100" step="1" value="25"></label><label>K2 · Rezerwa<input id="s2" type="number" min="0" max="100" step="1" value="20"></label><label>K3 · Rozwój<input id="s3" type="number" min="0" max="100" step="1" value="20"></label><label>K4 · Inwestycje<input id="s4" type="number" min="0" max="100" step="1" value="20"></label><label>K5 · Wypłata<input id="s5" type="number" min="0" max="100" step="1" value="15"></label></div>
+<p class="err gap" id="err" hidden></p></section>
+<section><h2>Podział tego wpływu</h2><div class="buckets" id="split"></div><p class="muted" id="check"></p><div class="share"><button class="btn" id="add" type="button">Dopisz do księgi</button><button class="ghost" id="demo" type="button">Wczytaj przykładową księgę</button><button class="ghost" id="clear" type="button">Wyczyść księgę</button></div></section>
+<section><h2>Księga wpływów (tylko w tej karcie)</h2><div class="scroll"><table><thead><tr><th>#</th><th>Kwota</th><th>Źródło</th><th>K1</th><th>K2</th><th>K3</th><th>K4</th><th>K5</th></tr></thead><tbody id="ledger"></tbody><tfoot id="totals"></tfoot></table></div></section>
+<section><h2>Cel i zamrożenie gotówki</h2><div class="grid3"><label>Cel finansowy (zł)<input id="goal" type="number" min="0" step="100" value="50000"></label><label>Miesięcy do terminu<input id="months" type="number" min="0" step="1" value="6"></label><label>Planowany zakup z K4 (zł)<input id="buy" type="number" min="0" step="10" value="1500"></label></div>
+<div class="grid2 gap"><div class="kpi" id="goalBox"><span class="muted">Realizacja celu (suma wpływów w księdze)</span><b id="goalPct"></b><span class="muted" id="goalGap"></span></div><div class="kpi" id="freezeBox"><span class="muted">Zakup jako część salda K4</span><b id="freeze"></b><span class="muted" id="freezeNote"></span></div></div></section>
+<section><h2>Skąd ta reguła</h2><p>W kodzie backendu nie było implementacji koszyków K1–K5. Strona liczy według domyślnego podziału z opisu komendy /kasa: K1 Podatki, ZUS i koszty stałe 25%, K2 Rezerwa 20%, K3 Rozwój 20%, K4 Inwestycje (kapitał pod flipy i okazje) 20%, K5 Wypłata 15%.</p>
+<p class="muted">Podział co do złotówki: każdy koszyk dostaje swój udział zaokrąglony w dół, a pozostałe złotówki trafiają po kolei do koszyków z największymi resztami, więc suma zawsze równa się wpływowi. Zmiana udziałów działa tylko, gdy suma wynosi 100%. Kod: nowa funkcja splitInflow w src/sales/arsenal-70k.ts, pokryta testem jednostkowym.</p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 4,0 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">splitInflow, validateShares, goalProgress, k4Freeze, DEFAULT_BUCKETS, BucketSplitError · w backendzie nie było kodu K1–K5; reguła z opisu komendy /kasa zaimplementowana tutaj i pokryta testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/arsenal-70k.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-kalkulator-koszykow-cfo.entry.ts
+  var arsenal_kalkulator_koszykow_cfo_entry_exports = {};
+  __export(arsenal_kalkulator_koszykow_cfo_entry_exports, {
+    BucketSplitError: () => BucketSplitError,
+    DEFAULT_BUCKETS: () => DEFAULT_BUCKETS,
+    goalProgress: () => goalProgress,
+    k4Freeze: () => k4Freeze,
+    splitInflow: () => splitInflow,
+    validateShares: () => validateShares
+  });
+
+  // src/sales/arsenal-70k.ts
+  var ARSENAL_FOLDER = "arsenal-70k-27-10-2026";
+  var SAMPLES_PAGES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var ARSENAL_PUBLIC_BASE = `${SAMPLES_PAGES_BASE}${ARSENAL_FOLDER}/`;
+  var DEFAULT_BUCKETS = [
+    { id: "K1", short: "Podatki", name: "Podatki, ZUS i koszty sta\u0142e (nietykalne)", share: 25 },
+    { id: "K2", short: "Rezerwa", name: "\u017Belazna rezerwa p\u0142ynno\u015Bciowa", share: 20 },
+    { id: "K3", short: "Rozw\xF3j", name: "Rozw\xF3j biznesu, narz\u0119dzia i reklama", share: 20 },
+    { id: "K4", short: "Inwestycje", name: "Kapita\u0142 pod flipy i okazje", share: 20 },
+    { id: "K5", short: "Wyp\u0142ata", name: "Czysta wyp\u0142ata dla operatora", share: 15 }
+  ];
+  var BucketSplitError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+      this.name = "BucketSplitError";
+    }
+    code;
+  };
+  function validateShares(shares) {
+    if (shares.length !== 5 || shares.some((share) => !Number.isInteger(share) || share < 0 || share > 100)) throw new BucketSplitError("SHARES_INVALID");
+    if (shares.reduce((sum, share) => sum + share, 0) !== 100) throw new BucketSplitError("SHARES_SUM");
+  }
+  function splitInflow(amountPLN, shares = DEFAULT_BUCKETS.map((bucket) => bucket.share)) {
+    validateShares(shares);
+    if (!Number.isSafeInteger(amountPLN) || amountPLN < 0 || !Number.isSafeInteger(amountPLN * 100)) throw new BucketSplitError("AMOUNT_INVALID");
+    const exact = shares.map((share) => amountPLN * share);
+    const parts = exact.map((value) => Math.floor(value / 100));
+    let left = amountPLN - parts.reduce((sum, part) => sum + part, 0);
+    const order = exact.map((value, index) => ({ index, rest: value % 100 })).sort((a, b) => b.rest - a.rest || a.index - b.index);
+    for (const { index } of order) {
+      if (left <= 0) break;
+      parts[index] = (parts[index] ?? 0) + 1;
+      left -= 1;
+    }
+    return parts;
+  }
+  function goalProgress(totalPLN, goalPLN, monthsLeft) {
+    const percent = goalPLN > 0 ? Math.min(100, Math.floor(Math.max(0, totalPLN) / goalPLN * 1e3) / 10) : 0;
+    const missingPLN = Math.max(0, Math.round(goalPLN - totalPLN));
+    return { percent, missingPLN, perMonthPLN: monthsLeft > 0 ? Math.ceil(missingPLN / monthsLeft) : null };
+  }
+  function k4Freeze(purchasePLN, k4BalancePLN) {
+    const purchase = Math.max(0, purchasePLN);
+    if (!(k4BalancePLN > 0)) return { percent: null, overHalf: purchase > 0, overBalance: purchase > 0 };
+    return { percent: Math.round(purchase / k4BalancePLN * 1e3) / 10, overHalf: purchase > k4BalancePLN / 2, overBalance: purchase > k4BalancePLN };
+  }
+  var SAMPLE_LINK = `${ARSENAL_PUBLIC_BASE}kreator-makiet-instant/`;
+  return __toCommonJS(arsenal_kalkulator_koszykow_cfo_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"presets":[{"name":"Alfa · zaliczka Etapu 1","amount":3600,"source":"Useme"},{"name":"Beta · Etap 2","amount":4800,"source":"Useme"},{"name":"Gamma · zlecenie z Facebooka","amount":2150,"source":"Facebook"}]};
+const B=E.DEFAULT_BUCKETS;let shares=B.map((b)=>b.share),ledger=[],current=[0,0,0,0,0];
+const read=()=>[1,2,3,4,5].map((i)=>Number($('s'+i).value));
+const balances=()=>[0,1,2,3,4].map((i)=>ledger.reduce((s,r)=>s+r.parts[i],0));
+const run=()=>{const s=read();const sum=s.reduce((a,b)=>a+(Number.isFinite(b)?b:0),0);$('sum').textContent=sum+'%';
+ try{E.validateShares(s);shares=s;$('err').hidden=true;$('sumBox').className='kpi big';}
+ catch(e){$('err').textContent=(e&&e.code==='SHARES_SUM'?'Suma udziałów musi wynosić 100% (teraz '+sum+'%).':'Udział to liczba całkowita od 0 do 100.')+' Podział się nie zmienia: liczę według ostatniego poprawnego ('+shares.join('/')+').';$('err').hidden=false;$('sumBox').className='kpi bad';}
+ const amount=Math.max(0,Math.round(num('amount')));current=E.splitInflow(amount,shares);
+ $('split').innerHTML=B.map((b,i)=>'<div class="kpi'+(i===4?' big':'')+'"><span class="muted">'+b.id+' · '+esc(b.short)+' · '+shares[i]+'%</span><b data-k="'+b.id+'">'+esc(zl(current[i]))+'</b><span class="muted">'+esc(b.name)+'</span></div>').join('');
+ $('check').textContent='Suma koszyków '+zl(current.reduce((a,b)=>a+b,0))+' = wpływ '+zl(amount)+' · udziały '+shares.join('/');
+ const bal=balances();const total=ledger.reduce((s2,r)=>s2+r.amount,0);
+ $('ledger').innerHTML=ledger.length?ledger.map((r,i)=>'<tr><td>'+(i+1)+'</td><td>'+esc(zl(r.amount))+'</td><td>'+esc(r.source)+'</td>'+r.parts.map((p)=>'<td>'+esc(zl(p))+'</td>').join('')+'</tr>').join(''):'<tr><td colspan="8" class="muted">Księga jest pusta: dopisz wpływ albo wczytaj przykład.</td></tr>';
+ $('totals').innerHTML='<tr><th>Saldo</th><th>'+esc(zl(total))+'</th><th></th>'+bal.map((b)=>'<th>'+esc(zl(b))+'</th>').join('')+'</tr>';
+ const g=E.goalProgress(total,num('goal'),num('months'));$('goalPct').textContent=String(g.percent).replace('.',',')+'%';
+ $('goalGap').textContent=g.missingPLN?('Brakuje '+zl(g.missingPLN)+(g.perMonthPLN!==null?', średnio '+zl(g.perMonthPLN)+' miesięcznie':'')):'Cel osiągnięty.';
+ const k4=ledger.length?bal[3]:current[3];const f=E.k4Freeze(num('buy'),k4);
+ $('freeze').textContent=f.percent===null?'brak salda K4':String(f.percent).replace('.',',')+'%';$('freezeBox').className='kpi'+(f.overHalf?' bad':' big');
+ $('freezeNote').textContent=(ledger.length?'Saldo K4 z księgi: ':'Księga pusta, K4 z bieżącego wpływu: ')+zl(k4)+(f.overBalance?' · zakup większy niż saldo K4':f.overHalf?' · uwaga: ponad 50% salda K4':' · w granicach bezpiecznego limitu');};
+const push=(amount,source)=>{ledger.push({amount,source,parts:E.splitInflow(amount,shares)});};
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>{const p=CFG.presets[Number(b.dataset.preset)];$('amount').value=String(p.amount);$('source').value=p.source;mark('[data-preset]','preset',b.dataset.preset);run();});
+$('add').addEventListener('click',()=>{push(Math.max(0,Math.round(num('amount'))),$('source').value);run();});
+$('demo').addEventListener('click',()=>{ledger=[];for(const p of CFG.presets)push(p.amount,p.source);run();});
+$('clear').addEventListener('click',()=>{ledger=[];run();});
+watch(['amount','source','s1','s2','s3','s4','s5','goal','months','buy'],run);run();</script>
+</body>
+</html>

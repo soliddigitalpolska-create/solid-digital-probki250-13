@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-iX+uL4PM1MXV/qQs3041aZM0KCKlNkRAVHuAP8hE/H0='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Wklej ofertę albo wiadomość: prawdziwy walidator, którym sprawdzamy każdy tekst przed wysłaniem, pokazuje problemy na żywo, razem z kontrolą kwot i spójności z podziałem 30/40/30.">
+<meta property="og:title" content="Walidator ofert AI (USEME-CONV-1.0)">
+<meta property="og:description" content="Wklej ofertę albo wiadomość: prawdziwy walidator, którym sprawdzamy każdy tekst przed wysłaniem, pokazuje problemy na żywo, razem z kontrolą kwot i spójności z podziałem 30/40/30.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/walidator-ofert-ai/">
+<title>Walidator ofert AI (USEME-CONV-1.0)</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Walidator ofert AI (USEME-CONV-1.0)</h1><p class="lead">Wklej ofertę albo wiadomość: prawdziwy walidator, którym sprawdzamy każdy tekst przed wysłaniem, pokazuje problemy na żywo, razem z kontrolą kwot i spójności z podziałem 30/40/30.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Tekst do sprawdzenia</h2><div class="chips"><button class="chip" type="button" data-sample="good">Przykład: oferta zgodna</button><button class="chip" type="button" data-sample="bad">Przykład: oferta z błędami</button><button class="chip" type="button" data-sample="reply">Przykład: odpowiedź w wątku</button></div>
+<label>Oferta, odpowiedź albo follow-up (sprawdzane na żywo przy każdej zmianie)<textarea id="text" rows="14" spellcheck="false"></textarea></label>
+<div class="grid4 gap"><label>Rodzaj tekstu<select id="kind"><option value="OFFER">Nowa oferta</option><option value="REPLY">Odpowiedź w wątku</option><option value="FOLLOWUP">Follow-up</option></select></label>
+<label>Nasza wycena w zł netto (puste: bez kontroli kwot)<input id="price" type="number" min="0" step="1"></label>
+<label>Dozwolony link do próbki<input id="link" type="text" spellcheck="false"></label>
+<div class="checks"><label><input id="reqPlan" type="checkbox"> Wymagaj planu w 3 punktach</label><label><input id="reqLink" type="checkbox"> Wymagaj linku do próbki</label></div></div></section>
+<section><h2>Wynik kontroli</h2><div class="verdict" id="verdict"><b id="vhead"></b><span class="muted" id="vsub"></span></div><ul class="issues" id="issues"></ul>
+<div class="grid4 gap"><div class="kpi"><span class="muted">Słowa</span><b id="words"></b><span class="muted" id="wlimit"></span></div><div class="kpi"><span class="muted">Znaki zapytania</span><b id="questions"></b><span class="muted">dokładnie jedno, na końcu</span></div>
+<div class="kpi"><span class="muted">Linki</span><b id="links"></b><span class="muted">najwyżej jeden, z portfolio</span></div><div class="kpi"><span class="muted">Punkty planu</span><b id="planCount"></b><span class="muted">plan ma 3 punkty</span></div></div></section>
+<section><h2>Kwoty i spójność z podziałem 30/40/30</h2><p class="muted">Każda kwota w ofercie musi być równa naszej wycenie (reguła PRICE), a w tekstach umowy należeć do podziału 30/40/30 tej wyceny (checkContractText).</p><div class="stages" id="split"></div><ul class="issues" id="amounts"></ul></section>
+<section><h2>Informacja zwrotna dla modelu</h2><p class="muted">Tę listę silnik oddaje lokalnemu modelowi przy ponownej próbie (correctionsFor); gdy tekst nadal nie przechodzi, zastępuje go stały szablon.</p><pre id="corrections"></pre></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 10,3 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/conversion-style.ts</code></span><span class="muted">checkUsemeText, wordCount, correctionsFor, USEME_CLICHES, WORD_LIMITS, USEME_STYLE_VERSION · reguły USEME-CONV-1.0: powitanie, frazesy, kontakt i płatność poza platformą, jedno pytanie, plan, długość, kwota</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme-contract-spec.ts</code></span><span class="muted">checkContractText · kwoty spoza podziału 30/40/30 tej oferty</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit · podział 30/40/30 zaokrąglony do 10 zł</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme-contract-spec.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-walidator-ofert-ai.entry.ts
+  var arsenal_walidator_ofert_ai_entry_exports = {};
+  __export(arsenal_walidator_ofert_ai_entry_exports, {
+    USEME_CLICHES: () => USEME_CLICHES,
+    USEME_STYLE_VERSION: () => USEME_STYLE_VERSION,
+    WORD_LIMITS: () => WORD_LIMITS,
+    checkContractText: () => checkContractText,
+    checkUsemeText: () => checkUsemeText,
+    correctionsFor: () => correctionsFor,
+    stageSplit: () => stageSplit,
+    wordCount: () => wordCount
+  });
+
+  // src/sales/useme/conversion-style.ts
+  var USEME_STYLE_VERSION = "USEME-CONV-1.0";
+  var WORD_LIMITS = { OFFER: [80, 220], REPLY: [35, 160], FOLLOWUP: [25, 100] };
+  var FIRST_PARAGRAPH = { OFFER: [1, 32], REPLY: [2, 45], FOLLOWUP: [2, 60] };
+  var USEME_CLICHES = [
+    "ch\u0119tnie",
+    "z przyjemno\u015Bci\u0105",
+    "z ch\u0119ci\u0105",
+    "z mi\u0142\u0105 ch\u0119ci\u0105",
+    "jestem zainteresowany",
+    "jestem zainteresowana",
+    "oto",
+    "jako model",
+    "jako ai",
+    "kompleksow*",
+    "profesjonaln*",
+    "najwy\u017Cszej jako\u015Bci",
+    "najwy\u017Csz\u0105 jako\u015B\u0107",
+    "nie wahaj*",
+    "s\u0142u\u017C\u0119 pomoc\u0105",
+    "prosz\u0119 o kontakt",
+    "gwarantuj*",
+    "gwarancj*",
+    "innowacyjn*",
+    "szyte na miar\u0119",
+    "szyty na miar\u0119",
+    "skrojon*",
+    "wieloletnie do\u015Bwiadczenie",
+    "wieloletniego do\u015Bwiadczenia",
+    "pasj*",
+    "w dzisiejszych czasach",
+    "w dobie",
+    "dedykowan*",
+    "holistyczn*",
+    "synergi*",
+    "rewolucyjn*",
+    "prze\u0142omow*",
+    "bezproblemow*",
+    "wychodz\u0105c naprzeciw",
+    "na ka\u017Cdym etapie",
+    "zapraszam do wsp\xF3\u0142pracy",
+    "idealnie si\u0119 nadaj\u0119",
+    "idealnym wyborem",
+    "mam do\u015Bwiadczenie w",
+    "doskonale rozumiem",
+    "rozumiem doskonale",
+    "ciesz\u0119 si\u0119",
+    "dzi\u0119kuj\u0119 za mo\u017Cliwo\u015B\u0107"
+  ];
+  var fold = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").toLowerCase();
+  var URL_RE = /https?:\/\/[^\s)>\]]+/giu;
+  var trimUrl = (url) => url.replace(/[.,;:]+$/u, "");
+  var sentences = (paragraph) => paragraph.split(/(?<=[.?!])\s+(?=[A-Z\u0104\u0106\u0118\u0141\u0143\u00d3\u015a\u0179\u017b0-9\u201e"])/u).filter((part) => part.trim()).length;
+  var wordCount = (text) => text.replace(URL_RE, " link ").split(/\s+/u).filter((word) => /[\p{L}\p{N}]/u.test(word)).length;
+  var PLAN_LINE = /^\s*(?:[1-3][.)]|[-\u2013\u2022])\s+\S/u;
+  var NOUNS_ENDING_LEM = [
+    "dzia\u0142",
+    "materia\u0142",
+    "kana\u0142",
+    "zapa\u0142",
+    "upa\u0142",
+    "sza\u0142",
+    "pomys\u0142",
+    "przemys\u0142",
+    "zmys\u0142",
+    "namys\u0142",
+    "ko\u0142",
+    "sto\u0142",
+    "anio\u0142",
+    "ko\u015Bcio\u0142",
+    "popio\u0142",
+    "w\u0119z\u0142",
+    "or\u0142",
+    "mu\u0142",
+    "paw\u0142",
+    "sy\u0142",
+    "artyku\u0142",
+    "\u015Bwiat\u0142",
+    "\u017Ar\xF3d\u0142",
+    "szk\u0142",
+    "krzes\u0142",
+    "rzemios\u0142",
+    "myd\u0142",
+    "mas\u0142",
+    "potencja\u0142",
+    "kapita\u0142",
+    "sygna\u0142",
+    "rytua\u0142",
+    "kryszta\u0142",
+    "zespo\u0142"
+  ];
+  function checkUsemeText(text, options) {
+    const issues = [];
+    const add = (code, detail) => {
+      issues.push({ code, detail });
+    };
+    const body = text.replace(/\r/gu, "").trim();
+    const paragraphs = body.split(/\n\s*\n/u).map((part) => part.trim()).filter(Boolean);
+    if (!/^Dzie\u0144 dobry,/u.test(body)) add("GREETING", "Wiadomo\u015B\u0107 zaczyna si\u0119 od \u201EDzie\u0144 dobry,\u201D.");
+    const folded = ` ${fold(body.replace(URL_RE, " ")).replace(/[^\p{L}\p{N}]+/gu, " ")} `;
+    for (const entry of USEME_CLICHES) {
+      const stem = entry.endsWith("*"), phrase = entry.replace(/\*$/u, "");
+      if (folded.includes(` ${fold(phrase)}${stem ? "" : " "}`)) add("CLICHE", `Usu\u0144 fraz\u0119 \u201E${phrase}${stem ? "\u2026" : ""}\u201D.`);
+    }
+    if (body.includes("!")) add("EXCLAMATION", "Bez wykrzyknik\xF3w.");
+    if (/\p{Extended_Pictographic}/u.test(body)) add("EMOJI", "Bez emotikon.");
+    const urls = (body.match(URL_RE) ?? []).map(trimUrl);
+    for (const url of urls) if (!options.allowedUrls.has(url)) add("URL_NOT_ALLOWED", `Adres spoza portfolio: ${url}`);
+    if (urls.length > 1) add("TOO_MANY_LINKS", "Najwy\u017Cej jeden link do pr\xF3bki.");
+    if (options.requireLink && !urls.some((url) => options.allowedUrls.has(url))) add("LINK_MISSING", 'Dodaj jeden link z pola "probki".');
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/u.test(body) || /(?:\+?\d[\d\s-]{7,}\d)/u.test(body.replace(URL_RE, "")) || /(?:^|[^\p{L}])(?:whats ?app|telegram|messenger|signal|skype)(?=$|[^\p{L}])/iu.test(body)) {
+      add("CONTACT_DATA", "Bez danych kontaktowych i komunikator\xF3w (regulamin Useme).");
+    }
+    if (/(?:^|[^\p{L}])(?:stripe|paypal|payu|blik|przelew\p{L}*|poza useme|poza platform\p{L}*|bezpo\u015brednio na konto)(?=$|[^\p{L}])/iu.test(body)) add("OFF_PLATFORM_PAYMENT", "Rozliczenie wy\u0142\u0105cznie przez Useme.");
+    const informal = /(?:^|[^\p{L}])(chcesz|masz|mo\u017cesz|wolisz|zobaczysz|potrzebujesz|twoj\p{L}*|twoim|twoj\u0105|twoich|ci\u0119|ciebie|tob\u0105|tobie|daj zna\u0107|chcecie|macie|mo\u017cecie|wasz\p{L}*|chcia\u0142by pa\u0144stwo|chce pa\u0144stwa)(?=$|[^\p{L}])/iu.exec(body);
+    if (informal) add("INFORMAL", `Forma grzeczno\u015Bciowa (Pa\u0144stwo), bez \u201E${informal[1]}\u201D.`);
+    if (/Pan\s*\/\s*Pani|Pani\s*\/\s*Pan/u.test(body)) add("PAN_PANI", "Bez \u201EPan/Pani\u201D: forma \u201EPa\u0144stwo\u201D.");
+    if (/(?:^|[^\p{L}])(rozmow\p{L}* telefoniczn\p{L}*|kontakt\p{L}* telefoniczn\p{L}*|telefonicznie|telekonferencj\p{L}*|zadzwoni\p{L}*|zadzwo\u0144|numer\p{L}* telefonu)(?=$|[^\p{L}])/iu.test(body)) {
+      add("OFF_PLATFORM_CONTACT", "Bez propozycji rozmowy telefonicznej: ustalenia w wiadomo\u015Bciach Useme.");
+    }
+    if (/(?:^|\n)\s*(?:Klient|Klientka|Zleceniodawca)\s/u.test(body) || /klient (?:jest )?zainteresowan/iu.test(body)) add("META", "Pisz do klienta, nie o kliencie w trzeciej osobie.");
+    const gendered = [...body.matchAll(/(?:^|[^\p{L}])(\p{L}+(?:\u0142em|\u0142am))(?=$|[^\p{L}])/gu)].map((match) => match[1]).find((word) => !NOUNS_ENDING_LEM.some((stem) => word.toLowerCase().slice(0, -2).endsWith(stem)));
+    if (gendered) add("GENDERED_PAST", `Forma neutralna zamiast \u201E${gendered}\u201D: \u201Eprzygotuj\u0119\u201D, \u201Esprawdz\u0119\u201D.`);
+    const last = paragraphs.at(-1) ?? "";
+    const questions = (body.match(/\?/gu) ?? []).length;
+    if (!last.endsWith("?")) add("QUESTION_END", "Ostatnie zdanie to jedno pytanie otwarte; po nim nic.");
+    if (questions !== 1) add("ONE_QUESTION", `Dok\u0142adnie jedno pytanie (jest ${questions}).`);
+    const planLines = body.split("\n").filter((line) => PLAN_LINE.test(line));
+    if (options.requirePlan && planLines.length !== 3) add("PLAN", `Plan ma dok\u0142adnie 3 punkty (jest ${planLines.length}).`);
+    const diagnosis = paragraphs[0]?.replace(/^Dzie\u0144 dobry,\s*/u, "").trim() || paragraphs[1] || "";
+    const firstText = diagnosis && !PLAN_LINE.test(diagnosis) ? diagnosis : "";
+    const [maxSentences, maxWords] = FIRST_PARAGRAPH[options.kind];
+    if (firstText && (sentences(firstText) > maxSentences || wordCount(firstText) > maxWords)) {
+      add("DIAGNOSIS", options.kind === "OFFER" ? "Diagnoza: jedno zdanie do 30 s\u0142\xF3w." : `Pierwszy akapit: najwy\u017Cej ${maxSentences} zdania i ${maxWords} s\u0142\xF3w.`);
+    }
+    const [min, max] = WORD_LIMITS[options.kind];
+    const words = wordCount(body);
+    if (words < min || words > max) add("WORDS", `D\u0142ugo\u015B\u0107 ${words} s\u0142\xF3w, dozwolone ${min}\u2013${max}.`);
+    if (typeof options.price === "number") {
+      for (const match of body.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/giu)) {
+        const amount = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+        if (amount !== options.price) add("PRICE", `Kwota ${match[0].trim()} r\xF3\u017Cni si\u0119 od naszej wyceny ${options.price} z\u0142.`);
+      }
+    }
+    return issues;
+  }
+  function correctionsFor(issues) {
+    return issues.map((issue) => `- ${issue.detail}`).join("\n");
+  }
+
+  // src/sales/demo-scaffolder.ts
+  var STAGE_SHARES = [30, 40, 30];
+  function stageSplit(total) {
+    let left = total;
+    return STAGE_SHARES.map((share, index) => {
+      const amount = index === STAGE_SHARES.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= amount;
+      return amount;
+    });
+  }
+
+  // src/sales/architecture-hubs.ts
+  var SAMPLES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var HUBS_PUBLIC_BASE = `${SAMPLES_BASE}huby-architektury-24-10-2026/`;
+  var BLUEPRINT_BASE = `${SAMPLES_BASE}audyty-24-10-2026/`;
+
+  // src/sales/useme-contract-spec.ts
+  var MESSAGE_ONLY = /* @__PURE__ */ new Set(["GREETING", "QUESTION_END", "ONE_QUESTION", "WORDS", "DIAGNOSIS", "PLAN", "PRICE", "TOO_MANY_LINKS", "LINK_MISSING"]);
+  function checkContractText(text, amounts, links = []) {
+    const issues = checkUsemeText(text, { kind: "REPLY", allowedUrls: new Set(links), requirePlan: false, requireLink: false, price: null }).filter((issue) => !MESSAGE_ONLY.has(issue.code));
+    const allowed = new Set(amounts);
+    for (const match of text.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/gu)) {
+      const value = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+      if (!allowed.has(value)) issues.push({ code: "AMOUNT", detail: `Kwota ${match[0].trim()} spoza podzia\u0142u 30/40/30 tej oferty.` });
+    }
+    return issues;
+  }
+  return __toCommonJS(arsenal_walidator_ofert_ai_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"kinds":{"OFFER":"nowa oferta","REPLY":"odpowiedź w wątku","FOLLOWUP":"follow-up"},"samples":{"good":{"kind":"OFFER","price":6000,"reqPlan":true,"reqLink":true,"link":"https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kreator-makiet-instant/","text":"Dzień dobry,\n\nw ogłoszeniu najwięcej czasu zabiera ręczne przepisywanie zamówień ze sklepu do arkusza, więc zacznę od automatycznego importu z kontrolą sum.\n\n1. Import zamówień ze sklepu do arkusza co godzinę, z historią zmian.\n2. Kontrola sum i alert przy rozbieżności stanów.\n3. Raport dzienny dla zespołu, bez ręcznego sklejania plików.\n\nMakieta podobnego rozwiązania na fikcyjnych danych firm Alfa, Beta i Gamma: https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kreator-makiet-instant/\n\nWycena całości to 6 000 zł netto, rozliczana w trzech etapach przez Useme; Etap 1 to 30% tej kwoty i obejmuje import oraz pierwszy raport do sprawdzenia.\n\nKtóry system sklepowy jest dziś źródłem zamówień?"},"bad":{"kind":"OFFER","price":6000,"reqPlan":true,"reqLink":true,"link":"https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kreator-makiet-instant/","text":"Witam!\nChętnie pomogę, mam wieloletnie doświadczenie i gwarantuję kompleksową realizację. Zrobiłem już wiele takich projektów 🙂\nMożesz napisać na WhatsApp albo zapłacić przelewem poza Useme, wtedy będzie taniej: 4 500 zł.\nCo myślisz? Kiedy startujemy?"},"reply":{"kind":"REPLY","price":6000,"reqPlan":false,"reqLink":false,"link":"","text":"Dzień dobry,\n\ndziękuję za odpowiedź i przesłany plik z zamówieniami. Na tej próbce sprawdzę import i kontrolę sum, a wynik pokażę w makiecie jeszcze przed startem Etapu 1.\n\nWycena całości zostaje bez zmian: 6 000 zł netto, rozliczana w trzech etapach przez Useme, każdy po odbiorze poprzedniego.\n\nCzy plik zawiera wszystkie kolumny używane dziś w arkuszu?"}}};
+const LABELS={GREETING:'Powitanie',CLICHE:'Frazes',EXCLAMATION:'Wykrzyknik',EMOJI:'Emotikona',URL_NOT_ALLOWED:'Link spoza portfolio',TOO_MANY_LINKS:'Za dużo linków',LINK_MISSING:'Brak linku do próbki',CONTACT_DATA:'Dane kontaktowe',OFF_PLATFORM_PAYMENT:'Płatność poza platformą',INFORMAL:'Forma grzecznościowa',PAN_PANI:'Pan/Pani',OFF_PLATFORM_CONTACT:'Kontakt poza platformą',META:'Trzecia osoba',GENDERED_PAST:'Forma rodzajowa',QUESTION_END:'Zakończenie pytaniem',ONE_QUESTION:'Jedno pytanie',PLAN:'Plan w 3 punktach',DIAGNOSIS:'Diagnoza',WORDS:'Długość',PRICE:'Kwota różna od wyceny',AMOUNT:'Kwota spoza 30/40/30'};
+const BLOCKING=new Set(['CONTACT_DATA','OFF_PLATFORM_PAYMENT','OFF_PLATFORM_CONTACT','URL_NOT_ALLOWED','PRICE','AMOUNT']);
+const AMOUNT_RE=/(\d[\d\s]*(?:,\d+)?)\s*(?:zł|PLN)/giu;const PLAN_RE=/^\s*(?:[1-3][.)]|[-–•])\s+\S/u;
+const item=(i)=>'<li class="'+(BLOCKING.has(i.code)?'bad':'warn')+'"><b>'+esc(LABELS[i.code]||i.code)+' <code>'+esc(i.code)+'</code></b><span>'+esc(i.detail)+'</span></li>';
+const run=()=>{const text=$('text').value,kind=$('kind').value,link=$('link').value.trim();const raw=$('price').value.trim(),p=Number(raw);const price=raw!==''&&Number.isFinite(p)&&p>0?Math.round(p):null;
+ const allowed=new Set(link?[link]:[]);
+ const issues=E.checkUsemeText(text,{kind,allowedUrls:allowed,requirePlan:$('reqPlan').checked,requireLink:$('reqLink').checked,price});
+ $('verdict').className='verdict '+(issues.length?(issues.some((i)=>BLOCKING.has(i.code))?'bad':'warn'):'ok');
+ $('vhead').textContent=issues.length?('Do poprawy: '+issues.length+' '+plural(issues.length,'problem','problemy','problemów')):('Tekst zgodny z '+E.USEME_STYLE_VERSION);
+ $('vsub').textContent='Rodzaj: '+CFG.kinds[kind]+' · reguły '+E.USEME_STYLE_VERSION+' · '+E.USEME_CLICHES.length+' fraz na liście frazesów';
+ $('issues').innerHTML=issues.length?issues.map(item).join(''):'<li><b>Brak uwag</b><span>Powitanie, plan, link, jedno pytanie na końcu i forma „Państwo” są w porządku.</span></li>';
+ const lim=E.WORD_LIMITS[kind];$('words').textContent=String(E.wordCount(text));$('wlimit').textContent='dozwolone '+lim[0]+'–'+lim[1];
+ $('questions').textContent=String((text.match(/\?/g)||[]).length);$('links').textContent=String((text.match(/https?:\/\/[^\s)>\]]+/giu)||[]).length);
+ $('planCount').textContent=String(text.split('\n').filter((l)=>PLAN_RE.test(l)).length);
+ const found=[...text.matchAll(AMOUNT_RE)].map((m)=>({raw:m[0].trim(),value:Number(m[1].replace(/\s/gu,'').replace(',','.'))}));
+ if(price){const split=E.stageSplit(price),allowedAmounts=[...split,price];
+  $('split').innerHTML=['Etap 1 · 30%','Etap 2 · 40%','Etap 3 · 30%'].map((n,i)=>'<div class="stage"><span class="muted">'+n+'</span><b>'+esc(zl(split[i]))+'</b></div>').join('');
+  const contract=E.checkContractText(text,allowedAmounts,link?[link]:[]).filter((i)=>i.code==='AMOUNT');
+  $('amounts').innerHTML=(found.length?found.map((f)=>'<li class="'+(f.value===price?'':allowedAmounts.includes(f.value)?'warn':'bad')+'"><b>'+esc(f.raw)+'</b><span>'+(f.value===price?'równa wycenie całości':allowedAmounts.includes(f.value)?'kwota jednego z etapów (w umowie tak, w ofercie podaj wycenę całości)':'spoza wyceny i podziału tej oferty')+'</span></li>').join(''):'<li><b>Brak kwot w tekście</b><span>Nie ma czego porównać z wyceną.</span></li>')+contract.map(item).join('');}
+ else{$('split').innerHTML='';$('amounts').innerHTML='<li class="warn"><b>Bez wyceny</b><span>Wpisz naszą wycenę, aby sprawdzić kwoty w tekście.</span></li>';}
+ $('corrections').textContent=issues.length?E.correctionsFor(issues):'(brak poprawek: tekst przechodzi kontrolę)';};
+const setSample=(name)=>{const s=CFG.samples[name];$('text').value=s.text;$('kind').value=s.kind;$('price').value=String(s.price);$('link').value=s.link;$('reqPlan').checked=s.reqPlan;$('reqLink').checked=s.reqLink;mark('[data-sample]','sample',name);run();};
+for(const b of document.querySelectorAll('[data-sample]'))b.addEventListener('click',()=>setSample(b.dataset.sample));
+watch(['text','kind','price','link','reqPlan','reqLink'],run);setSample('good');</script>
+</body>
+</html>

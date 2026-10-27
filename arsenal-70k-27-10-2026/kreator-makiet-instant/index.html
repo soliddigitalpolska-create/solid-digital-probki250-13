@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-C22tvp3p3iyC7E+EH2RScKgHd6I6O6f92UcWMemMgVI='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Wybierz branżę i trzy moduły: ten sam kreator, który w milisekundach składa nasze makiety do zleceń, buduje podgląd architektury, wycenę modułów, etapy i follow-up.">
+<meta property="og:title" content="Kreator makiet instant">
+<meta property="og:description" content="Wybierz branżę i trzy moduły: ten sam kreator, który w milisekundach składa nasze makiety do zleceń, buduje podgląd architektury, wycenę modułów, etapy i follow-up.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/kreator-makiet-instant/">
+<title>Kreator makiet instant</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Kreator makiet instant</h1><p class="lead">Wybierz branżę i trzy moduły: ten sam kreator, który w milisekundach składa nasze makiety do zleceń, buduje podgląd architektury, wycenę modułów, etapy i follow-up.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Branża i zlecenie</h2><div class="chips"><button class="chip" type="button" data-industry="0">E-commerce</button><button class="chip" type="button" data-industry="1">Gabinety medyczne</button><button class="chip" type="button" data-industry="2">Logistyka</button><button class="chip" type="button" data-industry="3">Produkcja</button><button class="chip" type="button" data-industry="4">Biuro rachunkowe</button><button class="chip" type="button" data-industry="5">Nieruchomości</button></div>
+<div class="grid3"><label>Tytuł zlecenia<input id="title" type="text"></label><label>Wycena w zł netto<input id="price" type="number" min="300" max="200000" step="100"></label><label>Termin w dniach<input id="days" type="number" min="1" step="1"></label></div>
+<h3>Wybierz dokładnie trzy moduły</h3><div class="chips"><button class="chip" type="button" id="m0" data-m="0"></button><button class="chip" type="button" id="m1" data-m="1"></button><button class="chip" type="button" id="m2" data-m="2"></button><button class="chip" type="button" id="m3" data-m="3"></button><button class="chip" type="button" id="m4" data-m="4"></button><button class="chip" type="button" id="m5" data-m="5"></button><button class="chip" type="button" id="m6" data-m="6"></button><button class="chip" type="button" id="m7" data-m="7"></button><button class="chip" type="button" id="m8" data-m="8"></button></div><p class="muted" id="pickInfo"></p></section>
+<section><h2>Podgląd architektury</h2><div class="arch" id="arch"></div></section>
+<section><h2>Moduły, cena i etapy</h2><div class="grid2"><ul class="list" id="mods"></ul><div class="stages" id="stages"></div></div></section>
+<section><h2>Dane przykładowych firm w makiecie</h2><div class="chips"><button class="chip" type="button" data-company="0">Alfa</button><button class="chip" type="button" data-company="1">Beta</button><button class="chip" type="button" data-company="2">Gamma</button></div><div class="scroll"><table id="ds"></table></div></section>
+<section><h2>Follow-up do Useme</h2><pre id="followup"></pre><p class="muted" id="fcheck"></p><p class="muted">Adres makiety po publikacji: <code id="url"></code></p><div class="share"><button class="btn" id="copyFollow" type="button">Kopiuj follow-up</button><span class="ok" id="copied" hidden></span></div></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 22,4 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/instant-mockup-builder.ts</code></span><span class="muted">instantSpec, instantFollowup, validateInstantInput, InstantInputError, INSTANT_PUBLIC_BASE · kreator za npm run useme:instant-mockup: spec makiety i follow-up z kontrolą USEME-CONV-1.0</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit, stage1Days · podział 30/40/30 i termin Etapu 1</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/resume-followup.ts</code> <code>src/sales/instant-mockup-builder.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-kreator-makiet-instant.entry.ts
+  var arsenal_kreator_makiet_instant_entry_exports = {};
+  __export(arsenal_kreator_makiet_instant_entry_exports, {
+    INSTANT_PUBLIC_BASE: () => INSTANT_PUBLIC_BASE,
+    InstantInputError: () => InstantInputError,
+    instantFollowup: () => instantFollowup,
+    instantSpec: () => instantSpec,
+    stage1Days: () => stage1Days,
+    stageSplit: () => stageSplit,
+    validateInstantInput: () => validateInstantInput
+  });
+
+  // src/sales/demo-scaffolder.ts
+  var STAGE_SHARES = [30, 40, 30];
+  function stageSplit(total) {
+    let left = total;
+    return STAGE_SHARES.map((share, index) => {
+      const amount = index === STAGE_SHARES.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= amount;
+      return amount;
+    });
+  }
+  var stage1Days = (days) => Math.max(2, Math.round((days ?? 7) * 0.3));
+  var RULES = [
+    { test: /rezerwac|termin|booking|wizyt/iu, feature: () => ({ title: "Rezerwacja online", description: "Wyb\xF3r us\u0142ugi, osoby i wolnego terminu na telefonie.", mock: { kind: "booking", services: [{ name: "Us\u0142uga podstawowa", minutes: 60, price: 150 }, { name: "Us\u0142uga rozszerzona", minutes: 90, price: 220 }], staff: ["Pierwsza wolna osoba", "Specjalista A", "Specjalista B"], slots: ["Pon 10:00", "Pon 13:30", "Wt 9:00", "Wt 16:00", "\u015Ar 11:30"] } }) },
+    { test: /katalog|produkt|oferta|asortyment/iu, feature: () => ({ title: "Katalog z filtrami", description: "Filtrowanie oferty i przej\u015Bcie do kontaktu z karty produktu.", mock: { kind: "catalog", filters: ["Kategoria A", "Kategoria B", "Kategoria C"], items: [{ name: "Produkt 1", tag: "Kategoria A", detail: "Kr\xF3tki opis i najwa\u017Cniejsze parametry." }, { name: "Produkt 2", tag: "Kategoria B", detail: "Kr\xF3tki opis i najwa\u017Cniejsze parametry." }, { name: "Produkt 3", tag: "Kategoria C", detail: "Kr\xF3tki opis i najwa\u017Cniejsze parametry." }] } }) },
+    { test: /faktur|ofert\p{L}* pdf|pdf|dokument/iu, feature: () => ({ title: "Dokument PDF z wyliczeniami", description: "Pozycje, przeliczenie netto, VAT i brutto oraz wydruk do PDF.", mock: { kind: "document", companies: [{ name: "Firma Przyk\u0142ad", nip: "000-000-00-00", address: "ul. Przyk\u0142adowa 1, Warszawa", color: "#2f6bff" }], items: [{ name: "Us\u0142uga", qty: 1, net: 1e3, vat: 23 }] } }) },
+    { test: /kalendarz|grafik|harmonogram|przypomn/iu, feature: () => ({ title: "Kalendarz i przypomnienia", description: "Widok tygodnia z wydarzeniami i przypomnieniami.", mock: { kind: "calendar", days: ["Pon", "Wt", "\u015Ar", "Czw", "Pt"], events: [{ day: 0, time: "9:00", title: "Zadanie 1" }, { day: 2, time: "14:00", title: "Zadanie 2" }] } }) },
+    { test: /zadani|status|zg\u0142osze|crm|lead|klient/iu, feature: () => ({ title: "Lista zada\u0144 i statusy", description: "Ka\u017Cda sprawa ma status i osob\u0119 odpowiedzialn\u0105.", mock: { kind: "kanban", columns: [{ title: "Nowe", cards: ["Sprawa 1", "Sprawa 2"] }, { title: "W toku", cards: ["Sprawa 3"] }, { title: "Zako\u0144czone", cards: ["Sprawa 4"] }] } }) },
+    { test: /raport|dashboard|power bi|statysty|analiz/iu, feature: () => ({ title: "Raport", description: "Najwa\u017Cniejsze liczby na jednym ekranie.", mock: { kind: "chart", unit: "szt.", bars: [{ label: "Pozycja A", value: 42 }, { label: "Pozycja B", value: 27 }, { label: "Pozycja C", value: 15 }] } }) },
+    { test: /seo|404|b\u0142\u0119d|audyt|popraw/iu, feature: () => ({ title: "Lista poprawek", description: "Poprawki uszeregowane wed\u0142ug wp\u0142ywu.", mock: { kind: "checklist", items: [{ label: "Przegl\u0105d b\u0142\u0119d\xF3w technicznych", done: true }, { label: "Poprawki struktury i link\xF3w", done: false }, { label: "Test po wdro\u017Ceniu", done: false }] } }) },
+    { test: /automatyz|integrac|api|ai\b|sztuczn|n8n|python|skrypt/iu, feature: () => ({ title: "Przep\u0142yw automatyzacji", description: "Kolejne kroki, z akceptacj\u0105 cz\u0142owieka przed wysy\u0142k\u0105.", mock: { kind: "flow", steps: [{ title: "Dane wej\u015Bciowe", detail: "Pobranie danych ze \u017Ar\xF3d\u0142a." }, { title: "Przetworzenie", detail: "Regu\u0142y i walidacja." }, { title: "Akceptacja", detail: "Cz\u0142owiek zatwierdza wynik." }, { title: "Wynik", detail: "Zapis lub wysy\u0142ka po akceptacji." }] } }) },
+    { test: /formularz|zapis|kontakt|zapytani/iu, feature: () => ({ title: "Formularz kontaktowy", description: "Kr\xF3tki formularz prowadz\u0105cy do kontaktu.", mock: { kind: "form", fields: [{ label: "Imi\u0119", type: "text" }, { label: "E-mail", type: "email" }, { label: "Wiadomo\u015B\u0107", type: "textarea" }], submit: "Wy\u015Blij", success: "Zg\u0142oszenie demonstracyjne przyj\u0119te." } }) }
+  ];
+  function slugify(text) {
+    return text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/giu, "l").toLowerCase().replace(/[^a-z0-9]+/gu, "-").replace(/^-|-$/gu, "").slice(0, 48) || "makieta";
+  }
+  function splitPrice(price, names) {
+    const base = Math.floor(price / names.length / 50) * 50;
+    return names.map((name, index) => ({ name, price: index === names.length - 1 ? price - base * (names.length - 1) : base, required: index === 0 }));
+  }
+  function specFromJob(job) {
+    const text = `${job.title} ${job.description ?? ""}`;
+    const features = RULES.filter((rule) => rule.test.test(text)).slice(0, 4).map((rule) => rule.feature(job.title));
+    if (!features.length) features.push(RULES[RULES.length - 1].feature(job.title));
+    const names = ["Analiza i projekt", ...features.map((feature) => feature.title)];
+    return {
+      slug: slugify(job.title),
+      title: job.title,
+      tagline: "Makieta pokazuje, jak mog\u0105 dzia\u0142a\u0107 kluczowe funkcje z og\u0142oszenia. Dane s\u0105 fikcyjne.",
+      jobTitle: job.title,
+      features,
+      modules: splitPrice(job.price, names),
+      days: job.days ?? null,
+      question: "Kt\xF3ra funkcja jest dla Pa\u0144stwa najwa\u017Cniejsza na start?"
+    };
+  }
+
+  // src/sales/useme/conversion-style.ts
+  var WORD_LIMITS = { OFFER: [80, 220], REPLY: [35, 160], FOLLOWUP: [25, 100] };
+  var FIRST_PARAGRAPH = { OFFER: [1, 32], REPLY: [2, 45], FOLLOWUP: [2, 60] };
+  var USEME_CLICHES = [
+    "ch\u0119tnie",
+    "z przyjemno\u015Bci\u0105",
+    "z ch\u0119ci\u0105",
+    "z mi\u0142\u0105 ch\u0119ci\u0105",
+    "jestem zainteresowany",
+    "jestem zainteresowana",
+    "oto",
+    "jako model",
+    "jako ai",
+    "kompleksow*",
+    "profesjonaln*",
+    "najwy\u017Cszej jako\u015Bci",
+    "najwy\u017Csz\u0105 jako\u015B\u0107",
+    "nie wahaj*",
+    "s\u0142u\u017C\u0119 pomoc\u0105",
+    "prosz\u0119 o kontakt",
+    "gwarantuj*",
+    "gwarancj*",
+    "innowacyjn*",
+    "szyte na miar\u0119",
+    "szyty na miar\u0119",
+    "skrojon*",
+    "wieloletnie do\u015Bwiadczenie",
+    "wieloletniego do\u015Bwiadczenia",
+    "pasj*",
+    "w dzisiejszych czasach",
+    "w dobie",
+    "dedykowan*",
+    "holistyczn*",
+    "synergi*",
+    "rewolucyjn*",
+    "prze\u0142omow*",
+    "bezproblemow*",
+    "wychodz\u0105c naprzeciw",
+    "na ka\u017Cdym etapie",
+    "zapraszam do wsp\xF3\u0142pracy",
+    "idealnie si\u0119 nadaj\u0119",
+    "idealnym wyborem",
+    "mam do\u015Bwiadczenie w",
+    "doskonale rozumiem",
+    "rozumiem doskonale",
+    "ciesz\u0119 si\u0119",
+    "dzi\u0119kuj\u0119 za mo\u017Cliwo\u015B\u0107"
+  ];
+  var fold = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").toLowerCase();
+  var URL_RE = /https?:\/\/[^\s)>\]]+/giu;
+  var trimUrl = (url) => url.replace(/[.,;:]+$/u, "");
+  var sentences = (paragraph) => paragraph.split(/(?<=[.?!])\s+(?=[A-Z\u0104\u0106\u0118\u0141\u0143\u00d3\u015a\u0179\u017b0-9\u201e"])/u).filter((part) => part.trim()).length;
+  var wordCount = (text) => text.replace(URL_RE, " link ").split(/\s+/u).filter((word) => /[\p{L}\p{N}]/u.test(word)).length;
+  var PLAN_LINE = /^\s*(?:[1-3][.)]|[-\u2013\u2022])\s+\S/u;
+  var NOUNS_ENDING_LEM = [
+    "dzia\u0142",
+    "materia\u0142",
+    "kana\u0142",
+    "zapa\u0142",
+    "upa\u0142",
+    "sza\u0142",
+    "pomys\u0142",
+    "przemys\u0142",
+    "zmys\u0142",
+    "namys\u0142",
+    "ko\u0142",
+    "sto\u0142",
+    "anio\u0142",
+    "ko\u015Bcio\u0142",
+    "popio\u0142",
+    "w\u0119z\u0142",
+    "or\u0142",
+    "mu\u0142",
+    "paw\u0142",
+    "sy\u0142",
+    "artyku\u0142",
+    "\u015Bwiat\u0142",
+    "\u017Ar\xF3d\u0142",
+    "szk\u0142",
+    "krzes\u0142",
+    "rzemios\u0142",
+    "myd\u0142",
+    "mas\u0142",
+    "potencja\u0142",
+    "kapita\u0142",
+    "sygna\u0142",
+    "rytua\u0142",
+    "kryszta\u0142",
+    "zespo\u0142"
+  ];
+  function checkUsemeText(text, options) {
+    const issues = [];
+    const add = (code, detail) => {
+      issues.push({ code, detail });
+    };
+    const body = text.replace(/\r/gu, "").trim();
+    const paragraphs = body.split(/\n\s*\n/u).map((part) => part.trim()).filter(Boolean);
+    if (!/^Dzie\u0144 dobry,/u.test(body)) add("GREETING", "Wiadomo\u015B\u0107 zaczyna si\u0119 od \u201EDzie\u0144 dobry,\u201D.");
+    const folded = ` ${fold(body.replace(URL_RE, " ")).replace(/[^\p{L}\p{N}]+/gu, " ")} `;
+    for (const entry of USEME_CLICHES) {
+      const stem = entry.endsWith("*"), phrase = entry.replace(/\*$/u, "");
+      if (folded.includes(` ${fold(phrase)}${stem ? "" : " "}`)) add("CLICHE", `Usu\u0144 fraz\u0119 \u201E${phrase}${stem ? "\u2026" : ""}\u201D.`);
+    }
+    if (body.includes("!")) add("EXCLAMATION", "Bez wykrzyknik\xF3w.");
+    if (/\p{Extended_Pictographic}/u.test(body)) add("EMOJI", "Bez emotikon.");
+    const urls = (body.match(URL_RE) ?? []).map(trimUrl);
+    for (const url of urls) if (!options.allowedUrls.has(url)) add("URL_NOT_ALLOWED", `Adres spoza portfolio: ${url}`);
+    if (urls.length > 1) add("TOO_MANY_LINKS", "Najwy\u017Cej jeden link do pr\xF3bki.");
+    if (options.requireLink && !urls.some((url) => options.allowedUrls.has(url))) add("LINK_MISSING", 'Dodaj jeden link z pola "probki".');
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/u.test(body) || /(?:\+?\d[\d\s-]{7,}\d)/u.test(body.replace(URL_RE, "")) || /(?:^|[^\p{L}])(?:whats ?app|telegram|messenger|signal|skype)(?=$|[^\p{L}])/iu.test(body)) {
+      add("CONTACT_DATA", "Bez danych kontaktowych i komunikator\xF3w (regulamin Useme).");
+    }
+    if (/(?:^|[^\p{L}])(?:stripe|paypal|payu|blik|przelew\p{L}*|poza useme|poza platform\p{L}*|bezpo\u015brednio na konto)(?=$|[^\p{L}])/iu.test(body)) add("OFF_PLATFORM_PAYMENT", "Rozliczenie wy\u0142\u0105cznie przez Useme.");
+    const informal = /(?:^|[^\p{L}])(chcesz|masz|mo\u017cesz|wolisz|zobaczysz|potrzebujesz|twoj\p{L}*|twoim|twoj\u0105|twoich|ci\u0119|ciebie|tob\u0105|tobie|daj zna\u0107|chcecie|macie|mo\u017cecie|wasz\p{L}*|chcia\u0142by pa\u0144stwo|chce pa\u0144stwa)(?=$|[^\p{L}])/iu.exec(body);
+    if (informal) add("INFORMAL", `Forma grzeczno\u015Bciowa (Pa\u0144stwo), bez \u201E${informal[1]}\u201D.`);
+    if (/Pan\s*\/\s*Pani|Pani\s*\/\s*Pan/u.test(body)) add("PAN_PANI", "Bez \u201EPan/Pani\u201D: forma \u201EPa\u0144stwo\u201D.");
+    if (/(?:^|[^\p{L}])(rozmow\p{L}* telefoniczn\p{L}*|kontakt\p{L}* telefoniczn\p{L}*|telefonicznie|telekonferencj\p{L}*|zadzwoni\p{L}*|zadzwo\u0144|numer\p{L}* telefonu)(?=$|[^\p{L}])/iu.test(body)) {
+      add("OFF_PLATFORM_CONTACT", "Bez propozycji rozmowy telefonicznej: ustalenia w wiadomo\u015Bciach Useme.");
+    }
+    if (/(?:^|\n)\s*(?:Klient|Klientka|Zleceniodawca)\s/u.test(body) || /klient (?:jest )?zainteresowan/iu.test(body)) add("META", "Pisz do klienta, nie o kliencie w trzeciej osobie.");
+    const gendered = [...body.matchAll(/(?:^|[^\p{L}])(\p{L}+(?:\u0142em|\u0142am))(?=$|[^\p{L}])/gu)].map((match) => match[1]).find((word) => !NOUNS_ENDING_LEM.some((stem) => word.toLowerCase().slice(0, -2).endsWith(stem)));
+    if (gendered) add("GENDERED_PAST", `Forma neutralna zamiast \u201E${gendered}\u201D: \u201Eprzygotuj\u0119\u201D, \u201Esprawdz\u0119\u201D.`);
+    const last = paragraphs.at(-1) ?? "";
+    const questions = (body.match(/\?/gu) ?? []).length;
+    if (!last.endsWith("?")) add("QUESTION_END", "Ostatnie zdanie to jedno pytanie otwarte; po nim nic.");
+    if (questions !== 1) add("ONE_QUESTION", `Dok\u0142adnie jedno pytanie (jest ${questions}).`);
+    const planLines = body.split("\n").filter((line) => PLAN_LINE.test(line));
+    if (options.requirePlan && planLines.length !== 3) add("PLAN", `Plan ma dok\u0142adnie 3 punkty (jest ${planLines.length}).`);
+    const diagnosis = paragraphs[0]?.replace(/^Dzie\u0144 dobry,\s*/u, "").trim() || paragraphs[1] || "";
+    const firstText = diagnosis && !PLAN_LINE.test(diagnosis) ? diagnosis : "";
+    const [maxSentences, maxWords] = FIRST_PARAGRAPH[options.kind];
+    if (firstText && (sentences(firstText) > maxSentences || wordCount(firstText) > maxWords)) {
+      add("DIAGNOSIS", options.kind === "OFFER" ? "Diagnoza: jedno zdanie do 30 s\u0142\xF3w." : `Pierwszy akapit: najwy\u017Cej ${maxSentences} zdania i ${maxWords} s\u0142\xF3w.`);
+    }
+    const [min, max] = WORD_LIMITS[options.kind];
+    const words = wordCount(body);
+    if (words < min || words > max) add("WORDS", `D\u0142ugo\u015B\u0107 ${words} s\u0142\xF3w, dozwolone ${min}\u2013${max}.`);
+    if (typeof options.price === "number") {
+      for (const match of body.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/giu)) {
+        const amount = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+        if (amount !== options.price) add("PRICE", `Kwota ${match[0].trim()} r\xF3\u017Cni si\u0119 od naszej wyceny ${options.price} z\u0142.`);
+      }
+    }
+    return issues;
+  }
+
+  // src/sales/architecture-hubs.ts
+  var SAMPLES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var HUBS_PUBLIC_BASE = `${SAMPLES_BASE}huby-architektury-24-10-2026/`;
+  var BLUEPRINT_BASE = `${SAMPLES_BASE}audyty-24-10-2026/`;
+
+  // src/sales/useme/resume-followup.ts
+  function quotableTitle(title) {
+    const clean2 = title.replace(/https?:\/\/\S+/gu, "").replace(/[\w.+-]+@[\w-]+\.[\w.]+/gu, "").replace(/[?!\u201e\u201d"]/gu, "").replace(/\s+/gu, " ").trim();
+    if (clean2.length <= 70) return clean2;
+    const cut = clean2.slice(0, 70);
+    return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 40)).replace(/[\s,;:\u2013-]+$/u, "")}\u2026`;
+  }
+
+  // src/sales/instant-mockup-builder.ts
+  var INSTANT_PUBLIC_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-instant/";
+  var COMPANIES = [
+    { name: "Alfa Serwis sp. z o.o.", nip: "000-000-00-01", city: "Warszawa" },
+    { name: "Beta Logistyka sp. z o.o.", nip: "000-000-00-02", city: "Krak\xF3w" },
+    { name: "Gamma Technika S.A.", nip: "000-000-00-03", city: "Gda\u0144sk" }
+  ];
+  var STATUSES = ["nowe", "w toku", "do akceptacji", "zako\u0144czone"];
+  var DATES = ["28.10", "30.10", "04.11", "07.11"];
+  var zl = (n) => `${Math.round(n).toLocaleString("pl-PL", { useGrouping: true }).replace(/[\u00a0\u202f]/gu, " ")} z\u0142`;
+  var clean = (text, max) => text.replace(/\s+/gu, " ").trim().slice(0, max);
+  var lowerFirst = (text) => /^\p{Lu}{2}/u.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1);
+  var InstantInputError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+    }
+    code;
+  };
+  function validateInstantInput(input) {
+    if (!clean(input.title ?? "", 160)) throw new InstantInputError("TITLE_MISSING");
+    if (!clean(input.industry ?? "", 80)) throw new InstantInputError("INDUSTRY_MISSING");
+    if (!Number.isFinite(input.price) || input.price < 300 || input.price > 2e5) throw new InstantInputError("PRICE_INVALID");
+    if (!Array.isArray(input.modules) || input.modules.length !== 3 || input.modules.some((name) => !clean(name ?? "", 80))) throw new InstantInputError("MODULES_INVALID");
+  }
+  function instantSpec(input) {
+    validateInstantInput(input);
+    const title = clean(input.title, 160), industry = clean(input.industry, 80);
+    const [m1, m2, m3] = input.modules.map((name) => clean(name, 80));
+    const modulePrices = splitPrice(Math.round(input.price), ["Analiza i projekt", m1, m2, m3]);
+    const share = (index) => modulePrices[index + 1].price;
+    const datasets = {
+      title: `Dane trzech przyk\u0142adowych firm z bran\u017Cy: ${industry}`,
+      description: "Prze\u0142\u0105cz firm\u0119: ta sama struktura, inne dane. Wszystkie firmy i liczby s\u0105 fikcyjne.",
+      mock: { kind: "dataset", columns: ["Sprawa", "Modu\u0142", "Status", "Termin", "Warto\u015B\u0107"], sets: COMPANIES.map((company, ci) => ({
+        name: `${company.name.split(" ")[0]} \xB7 ${company.city}`,
+        rows: [m1, m2, m3, m1].map((mod, ri) => [`${company.name.split(" ")[0]}/${String(ci * 4 + ri + 1).padStart(3, "0")}`, mod, STATUSES[(ri + ci) % 4], DATES[ri], zl(Math.round(share(ri % 3) / 4 * (1 + (ci + ri) % 3 * 0.25)))])
+      })) }
+    };
+    const flow = {
+      title: "Przebieg procesu",
+      description: "Trzy modu\u0142y z oferty jako kolejne kroki; kliknij krok, \u017Ceby oznaczy\u0107 go jako om\xF3wiony.",
+      mock: { kind: "flow", steps: [
+        { title: "Wej\u015Bcie", detail: "Zg\u0142oszenie, plik albo dane z systemu firmy." },
+        { title: m1, detail: "Pierwszy modu\u0142 z zakresu oferty." },
+        { title: m2, detail: "Drugi modu\u0142 z zakresu oferty." },
+        { title: m3, detail: "Trzeci modu\u0142 z zakresu oferty." },
+        { title: "Akceptacja i wynik", detail: "Cz\u0142owiek zatwierdza wynik przed zapisem i wysy\u0142k\u0105." }
+      ] }
+    };
+    const simulator = {
+      title: "Symulacja: jedna sprawa przez ca\u0142y proces",
+      description: "Wybierz przyk\u0142ad i uruchom; kolejne kroki pokazuj\u0105 si\u0119 po kolei.",
+      mock: { kind: "simulator", samples: [
+        { label: `${COMPANIES[0].name}: sprawa kompletna`, input: `Zg\u0142oszenie: ${COMPANIES[0].name}, NIP ${COMPANIES[0].nip}, ul. Przyk\u0142adowa 1, ${COMPANIES[0].city}.
+Zakres: ${lowerFirst(m1)}, ${lowerFirst(m2)}.`, steps: [
+          { title: m1, detail: "Dane kompletne, krok wykonany.", status: "ok" },
+          { title: m2, detail: "Wynik przygotowany na podstawie danych z kroku 1.", status: "ok" },
+          { title: m3, detail: "Wynik gotowy do sprawdzenia.", status: "ok" },
+          { title: "Akceptacja", detail: "Czeka na decyzj\u0119 cz\u0142owieka.", status: "warn" }
+        ] },
+        { label: `${COMPANIES[1].name}: brak danych`, input: `Zg\u0142oszenie: ${COMPANIES[1].name}, NIP ${COMPANIES[1].nip}.
+Brak terminu i zakresu.`, steps: [
+          { title: m1, detail: "Brakuje terminu i zakresu.", status: "block" },
+          { title: "Pro\u015Bba o uzupe\u0142nienie", detail: "Kr\xF3tka wiadomo\u015B\u0107 z list\u0105 brakuj\u0105cych danych.", status: "warn" }
+        ] }
+      ] }
+    };
+    const kpi = {
+      title: "Przed i po wdro\u017Ceniu (dane przyk\u0142adowe)",
+      description: "Czas obs\u0142ugi jednej sprawy w minutach; liczby ilustracyjne, mierzone u Pa\u0144stwa na Etapie 1.",
+      mock: { kind: "chart", unit: "min", bars: [{ label: "Dzi\u015B, r\u0119cznie", value: 45 }, { label: `Po module: ${m1}`.slice(0, 40), value: 25 }, { label: "Po wdro\u017Ceniu ca\u0142o\u015Bci", value: 10 }] }
+    };
+    const extra = specFromJob({ title: `${title} ${industry}`, price: input.price }).features.find((feature) => !["flow", "kanban"].includes(feature.mock.kind));
+    const handover = {
+      title: "Co zostaje u Pa\u0144stwa po odbiorze",
+      description: "Lista kontrolna przekazania.",
+      mock: { kind: "checklist", items: [
+        { label: "Dzia\u0142aj\u0105cy zakres z oferty", done: false },
+        { label: "Kod lub pliki \u017Ar\xF3d\u0142owe na koncie firmy", done: false },
+        { label: "Instrukcja obs\u0142ugi", done: false },
+        { label: "Dost\u0119py i klucze po stronie firmy", done: false }
+      ] }
+    };
+    const days = typeof input.days === "number" && input.days > 0 ? Math.round(input.days) : null;
+    return {
+      slug: input.slug && /^[a-z0-9][a-z0-9-]{1,60}$/u.test(input.slug) ? input.slug : slugify(title),
+      title: `${title}: makieta rozwi\u0105zania`,
+      tagline: `${industry}: ${m1}, ${m2} i ${m3} na fikcyjnych danych firm Alfa, Beta i Gamma, z planem rozliczenia etapami przez Useme.`,
+      jobTitle: title,
+      days,
+      features: [datasets, flow, simulator, kpi, ...extra ? [extra] : [], handover],
+      modules: modulePrices,
+      stages: [
+        { name: "Etap 1 \xB7 Analiza i pierwszy modu\u0142", text: `Projekt i ${lowerFirst(m1)} do akceptacji w ok. ${stage1Days(days)} dni roboczych.` },
+        { name: `Etap 2 \xB7 ${m2}`, text: "G\u0142\xF3wna funkcjonalno\u015B\u0107 na danych testowych." },
+        { name: `Etap 3 \xB7 ${m3}`, text: "Testy, wdro\u017Cenie i przekazanie." }
+      ],
+      question: `Kt\xF3ry z modu\u0142\xF3w jest dla Pa\u0144stwa najwa\u017Cniejszy na start: ${lowerFirst(m1)}, ${lowerFirst(m2)} czy ${lowerFirst(m3)}?`
+    };
+  }
+  function instantFollowup(input, url) {
+    const [m1, m2, m3] = input.modules.map((name) => lowerFirst(clean(name, 80)));
+    const build = (subject) => [
+      "Dzie\u0144 dobry,",
+      `przygotowana jest dzia\u0142aj\u0105ca makieta do ${subject}: ${m1}, ${m2} i ${m3} na fikcyjnych danych, z kalkulatorem Etapu 1: ${url}`,
+      `Ca\u0142o\u015B\u0107 wyceny to ${zl(input.price)}; Etap 1 to 30% tej kwoty przez umow\u0119 w Useme, a kolejne etapy rozliczamy osobno po Pa\u0144stwa akceptacji.`,
+      "Kt\xF3ry z trzech modu\u0142\xF3w jest dla Pa\u0144stwa najwa\u017Cniejszy na start?"
+    ].join("\n\n");
+    const check = (text) => checkUsemeText(text, { kind: "FOLLOWUP", allowedUrls: /* @__PURE__ */ new Set([url]), requireLink: true, requirePlan: false, price: input.price });
+    const title = quotableTitle(input.title);
+    const withTitle = build(`zlecenia \u201E${title}\u201D`);
+    const issues = check(withTitle);
+    if (!issues.length) return { text: withTitle, issues };
+    const plain = build("tego zlecenia");
+    return { text: plain, issues: check(plain) };
+  }
+  return __toCommonJS(arsenal_kreator_makiet_instant_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"industries":[{"name":"E-commerce","title":"Panel obsługi zamówień dla sklepu internetowego","price":9000,"days":30,"modules":["Import zamówień","Synchronizacja stanów","Raport sprzedaży","Powiadomienia o niskim stanie","Eksport do księgowości","Panel zwrotów","Etykiety wysyłkowe","Rabaty i kody","Opinie klientów"]},{"name":"Gabinety medyczne","title":"System rezerwacji wizyt dla sieci gabinetów","price":8500,"days":30,"modules":["Kalendarz wizyt","Przypomnienia SMS","Panel pacjenta","Grafik personelu","Lista oczekujących","Raport obłożenia","Ankieta po wizycie","Karta wizyty","Rozliczenia gabinetów"]},{"name":"Logistyka","title":"Śledzenie zleceń transportowych","price":12000,"days":45,"modules":["Rejestr zleceń","Statusy przewozu","Dokumenty przewozowe","Powiadomienia dla odbiorcy","Raport terminowości","Przypisanie kierowców","Mapa tras","Rozliczenia przewoźników","Reklamacje"]},{"name":"Produkcja","title":"Panel wskaźników dla hali produkcyjnej","price":15000,"days":45,"modules":["Import danych z maszyn","Wskaźnik OEE","Raport zmianowy","Alerty przestojów","Plan produkcji","Rejestr braków","Historia partii","Panel kierownika","Eksport do arkusza"]},{"name":"Biuro rachunkowe","title":"Obieg dokumentów dla biura rachunkowego","price":7000,"days":30,"modules":["Odczyt faktur","Akceptacja dokumentów","Raport miesięczny","Przypomnienia o terminach","Portal klienta biura","Archiwum dokumentów","Rejestr VAT","Eksport do programu księgowego","Zadania zespołu"]},{"name":"Nieruchomości","title":"Katalog ofert z formularzem zapytań","price":6500,"days":21,"modules":["Katalog ofert","Filtry wyszukiwania","Formularz zapytań","Kalendarz prezentacji","Panel agenta","Raport zapytań","Mapa ofert","Porównywarka ofert","Powiadomienia o nowych ofertach"]}]};
+const ERR={TITLE_MISSING:'Wpisz tytuł zlecenia.',PRICE_INVALID:'Wycena musi mieścić się w przedziale od 300 do 200 000 zł.',MODULES_INVALID:'Wybierz dokładnie trzy moduły.',INDUSTRY_MISSING:'Wybierz branżę.'};
+const KIND={dataset:'dane firm',flow:'przebieg procesu',simulator:'symulator',chart:'przed i po',checklist:'lista odbioru',booking:'rezerwacje',catalog:'katalog',document:'dokument PDF',calendar:'kalendarz',kanban:'tablica zadań',form:'formularz',table:'tabela',banner:'banery'};
+let ind=0,picked=[0,1,2],company=0,follow='';
+const marks=()=>{const I=CFG.industries[ind];for(let k=0;k<9;k++){const c=$('m'+k);c.textContent=I.modules[k];c.classList.toggle('on',picked.includes(k));}mark('[data-industry]','industry',ind);mark('[data-company]','company',company);};
+const fail=(text)=>{$('arch').innerHTML='<p class="err">'+esc(text)+'</p>';for(const id of ['mods','stages','ds'])$(id).innerHTML='';for(const id of ['followup','fcheck','url'])$(id).textContent='';follow='';};
+const run=()=>{const I=CFG.industries[ind];const mods=picked.map((k)=>I.modules[k]);
+ $('pickInfo').textContent='Wybrane: '+picked.length+' z 3'+(picked.length===3?' · kolejność wyboru to kolejność modułów w makiecie':' · silnik wymaga dokładnie trzech modułów');
+ const input={title:$('title').value,industry:I.name,price:num('price'),modules:mods,days:num('days')||null};
+ let spec;try{spec=E.instantSpec(input);}catch(e){fail((ERR[e&&e.code]||String(e&&e.message||e))+(e&&e.code?' ('+e.code+')':''));return;}
+ const url=E.INSTANT_PUBLIC_BASE+spec.slug+'/';const f=E.instantFollowup(input,url);follow=f.text;
+ const flow=spec.features.find((x)=>x.mock.kind==='flow');
+ $('arch').innerHTML='<div class="flowline">'+flow.mock.steps.map((s,i)=>'<div class="blk'+(i>0&&i<4?' core':'')+'"><b>'+esc(s.title)+'</b><span class="muted">'+esc(s.detail)+'</span></div>').join('<span class="arrow">→</span>')+'</div>'
+  +'<div class="cards">'+spec.features.map((x)=>'<div class="blk"><span class="badge">'+esc(KIND[x.mock.kind]||x.mock.kind)+'</span><b>'+esc(x.title)+'</b><span class="muted">'+esc(x.description)+'</span></div>').join('')+'</div>'
+  +'<p class="muted">'+esc(spec.tagline)+'</p><p class="muted">Pytanie na koniec makiety: '+esc(spec.question)+'</p>';
+ const total=spec.modules.reduce((s,m)=>s+m.price,0);
+ $('mods').innerHTML=spec.modules.map((m)=>'<li><b>'+esc(m.name)+(m.required?' <span class="badge BUNDLE">zawsze w zakresie</span>':'')+'</b><span>'+esc(zl(m.price))+'</span></li>').join('')+'<li><b>Razem netto</b><span>'+esc(zl(total))+'</span></li>';
+ const split=E.stageSplit(total);$('stages').innerHTML=spec.stages.map((s,i)=>'<div class="stage"><span class="muted">'+esc(s.name)+' · '+[30,40,30][i]+'%</span><b>'+esc(zl(split[i]))+'</b><span class="muted">'+esc(s.text)+'</span></div>').join('');
+ const ds=spec.features.find((x)=>x.mock.kind==='dataset').mock;const set=ds.sets[company];
+ $('ds').innerHTML='<thead><tr>'+ds.columns.map((c)=>'<th>'+esc(c)+'</th>').join('')+'</tr></thead><tbody>'+set.rows.map((r)=>'<tr>'+r.map((c)=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody>';
+ $('followup').textContent=f.text;$('fcheck').textContent=f.issues.length?('USEME-CONV-1.0: do poprawy ('+f.issues.map((i)=>i.code).join(', ')+')'):'USEME-CONV-1.0: follow-up przechodzi kontrolę (link z portfolio, kwota równa wycenie, jedno pytanie).';
+ $('url').textContent=url;};
+const setIndustry=(i)=>{ind=i;const I=CFG.industries[i];$('title').value=I.title;$('price').value=String(I.price);$('days').value=String(I.days);picked=[0,1,2];marks();run();};
+for(let k=0;k<9;k++)$('m'+k).addEventListener('click',()=>{if(picked.includes(k))picked=picked.filter((x)=>x!==k);else{picked.push(k);if(picked.length>3)picked.shift();}marks();run();});
+for(const b of document.querySelectorAll('[data-industry]'))b.addEventListener('click',()=>setIndustry(Number(b.dataset.industry)));
+for(const b of document.querySelectorAll('[data-company]'))b.addEventListener('click',()=>{company=Number(b.dataset.company);marks();run();});
+$('copyFollow').addEventListener('click',()=>copyText(follow,'copied'));watch(['title','price','days'],run);setIndustry(0);</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-FXhQrfuXj9sZ7RBh+puzuIXNNtzYZy8ANJUlsRCRBfo='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Symulator naszego harmonogramu: priorytet z wartości oczekiwanej, blokady dat i 72-godzinne okna po każdej wysyłce rozkładają kolejkę na bezpieczne dzienne partie.">
+<meta property="og:title" content="Silnik kolejkowania wysyłek (SLA)">
+<meta property="og:description" content="Symulator naszego harmonogramu: priorytet z wartości oczekiwanej, blokady dat i 72-godzinne okna po każdej wysyłce rozkładają kolejkę na bezpieczne dzienne partie.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/silnik-kolejkowania-sla/">
+<title>Silnik kolejkowania wysyłek (SLA)</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Silnik kolejkowania wysyłek (SLA)</h1><p class="lead">Symulator naszego harmonogramu: priorytet z wartości oczekiwanej, blokady dat i 72-godzinne okna po każdej wysyłce rozkładają kolejkę na bezpieczne dzienne partie.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Ustawienia kolejki</h2><div class="grid4"><label>Dzień startu (Warszawa)<input id="today" type="date"></label>
+<label>Wysyłek dziennie: <output id="perDayOut"></output><input id="perDay" type="range" min="1" max="15" step="1" value="4"></label><label>Dni w planie: <output id="daysOut"></output><input id="days" type="range" min="3" max="10" step="1" value="7"></label>
+<div class="checks"><label><input id="locks" type="checkbox" checked> Blokady dat (follow-up od dnia)</label><label><input id="cool" type="checkbox" checked> Okno 72 h po ostatniej wysyłce</label></div></div>
+<div class="share"><button class="ghost" id="reset" type="button">Przywróć przykładową kolejkę</button><span class="muted">W produkcji partia ma do 15 wysyłek dziennie (SCHEDULE_PER_DAY); tu zmniejsz ją, żeby zobaczyć przelewanie się kolejki.</span></div></section>
+<section><h2>Plan wysyłek na kolejne dni</h2><p class="muted">Kliknij ofertę w planie, aby oznaczyć ją jako wysłaną teraz: silnik przeniesie ją dopiero za 72 godziny.</p><div class="board" id="board"></div><p class="muted gap" id="later"></p></section>
+<section><h2>Kolejka (priorytet = kwota × szansa odpowiedzi fali)</h2><div class="scroll"><table><thead><tr><th>Oferta</th><th>Fala</th><th>Kwota</th><th>Priorytet</th><th>Blokada daty</th><th>Okno 72 h</th><th>W planie</th></tr></thead><tbody id="pool"></tbody></table></div></section>
+<section><h2>Szanse odpowiedzi (PLAN_CHANCE)</h2><div class="grid3" id="chances"></div></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 3,9 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/send-schedule.ts</code></span><span class="muted">sendSchedule, SCHEDULE_DAYS, SCHEDULE_PER_DAY · dzienne partie wysyłek: priorytet, blokady dat, okno 72 h</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/daily-plan.ts</code></span><span class="muted">PLAN_CHANCE · szansa odpowiedzi dla każdej fali</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-tracker.ts</code></span><span class="muted">NEXT_PING_MS, warsawDay, cooldown · dni kalendarzowe w Warszawie i blokady dat</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/useme/sent-tracker.ts</code> <code>src/sales/useme/daily-plan.ts</code> <code>src/sales/useme/send-schedule.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-silnik-kolejkowania-sla.entry.ts
+  var arsenal_silnik_kolejkowania_sla_entry_exports = {};
+  __export(arsenal_silnik_kolejkowania_sla_entry_exports, {
+    NEXT_PING_MS: () => NEXT_PING_MS,
+    PLAN_CHANCE: () => PLAN_CHANCE,
+    SCHEDULE_DAYS: () => SCHEDULE_DAYS,
+    SCHEDULE_PER_DAY: () => SCHEDULE_PER_DAY,
+    cooldown: () => cooldown,
+    sendSchedule: () => sendSchedule,
+    warsawDay: () => warsawDay
+  });
+
+  // src/sales/useme/sent-tracker.ts
+  var NEXT_PING_MS = 72 * 36e5;
+  var DAY = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Warsaw", year: "numeric", month: "2-digit", day: "2-digit" });
+  var warsawDay = (date) => DAY.format(date);
+  function cooldown(notBefore, now) {
+    if (!notBefore || !/^\d{4}-\d{2}-\d{2}$/u.test(notBefore)) return { locked: false, until: null };
+    return { locked: warsawDay(now) < notBefore, until: notBefore };
+  }
+
+  // src/sales/useme/daily-plan.ts
+  var PLAN_CHANCE = { THREAD_WAITING: 0.3, THREAD: 0.1, WAVE1: 0.08, WAVE2: 0.04, WAVE3: 0.02, WAVE4: 0.01 };
+
+  // src/sales/useme/send-schedule.ts
+  var SCHEDULE_DAYS = 7;
+  var SCHEDULE_PER_DAY = 15;
+  var WAVES = [["topRoi", "WAVE1"], ["wave2", "WAVE2"], ["wave3", "WAVE3"], ["wave4", "WAVE4"]];
+  var DAY_MS = 864e5;
+  var dayAfter = (now, offset) => warsawDay(new Date(Date.parse(`${warsawDay(now)}T12:00:00Z`) + offset * DAY_MS));
+  function sendSchedule(drafts, sent, now, options = {}) {
+    const days = options.days ?? SCHEDULE_DAYS, perDay = options.perDay ?? SCHEDULE_PER_DAY;
+    const pool = WAVES.flatMap(([field, kind], index) => (drafts[field] ?? []).filter((offer) => offer.currency === "PLN" && typeof offer.amount === "number" && offer.followups["A"]).map((offer) => ({ offer, key: `offer:${offer.id}`, wave: index + 1, expected: Math.round(offer.amount * PLAN_CHANCE[kind]) }))).sort((a, b) => b.expected - a.expected || b.offer.amount - a.offer.amount);
+    const placed = /* @__PURE__ */ new Set();
+    const result = [];
+    for (let offset = 0; offset < days; offset++) {
+      const day = dayAfter(now, offset);
+      const dayNoon = Date.parse(`${day}T12:00:00Z`);
+      const items = [];
+      for (const candidate of pool) {
+        if (items.length >= perDay) break;
+        if (placed.has(candidate.key)) continue;
+        if ((candidate.offer.followUpFrom ?? "") > day) continue;
+        const entry = sent[candidate.key];
+        if (entry && dayNoon < Date.parse(entry.sentAt) + NEXT_PING_MS) continue;
+        placed.add(candidate.key);
+        items.push({
+          key: candidate.key,
+          title: candidate.offer.title,
+          amountPLN: candidate.offer.amount,
+          expectedPLN: candidate.expected,
+          wave: candidate.wave,
+          rank: candidate.offer.rank ?? null,
+          url: candidate.offer.url ?? null
+        });
+      }
+      result.push({ day, items, amountPLN: items.reduce((sum, item) => sum + item.amountPLN, 0) });
+    }
+    return { days: result, later: pool.filter((candidate) => !placed.has(candidate.key)).length, perDay };
+  }
+  return __toCommonJS(arsenal_silnik_kolejkowania_sla_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"offers":[["200101","Alfa · panel rezerwacji",14000,1,null,null],["200102","Beta · integracja magazynu",22000,1,null,30],["200103","Gamma · raporty KPI",9500,1,1,null],["200104","Alfa · sklep z konfiguratorem",18000,2,null,null],["200105","Beta · automatyzacja faktur",7200,2,2,null],["200106","Gamma · portal klienta",26000,2,null,50],["200107","Alfa · aplikacja serwisowa",12500,2,null,null],["200116","Alfa · eksport do księgowości",8800,2,null,null],["200108","Beta · strona z rezerwacją",4800,3,null,null],["200109","Gamma · migracja danych",6400,3,null,12],["200110","Alfa · bot do zgłoszeń",5200,3,3,null],["200111","Beta · audyt sklepu",2400,3,null,null],["200117","Beta · panel zwrotów",6100,3,null,null],["200118","Gamma · kalkulator wyceny",4300,3,null,null],["200112","Gamma · tłumaczenie katalogu",3600,4,null,null],["200113","Alfa · landing kampanii",2900,4,null,null],["200114","Beta · poprawki SEO",1800,4,1,null],["200115","Gamma · grafiki produktowe",2200,4,null,66]]};
+const WAVES=['topRoi','wave2','wave3','wave4'];const CH={THREAD_WAITING:'wątek czeka na nas',THREAD:'inny aktywny wątek',WAVE1:'fala 1: dedykowana makieta',WAVE2:'fala 2',WAVE3:'fala 3: karta planu',WAVE4:'fala 4: szybkie wznowienie'};
+let marked={},nowIso='';
+const addDays=(day,n)=>new Date(Date.parse(day+'T12:00:00Z')+n*86400000).toISOString().slice(0,10);
+const dayLabel=(day)=>new Date(day+'T12:00:00Z').toLocaleDateString('pl-PL',{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'UTC'});
+const timeLabel=(ms)=>new Date(ms).toLocaleString('pl-PL',{timeZone:'Europe/Warsaw',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+const run=()=>{$('perDayOut').textContent=$('perDay').value;$('daysOut').textContent=$('days').value;
+ const day=/^\d{4}-\d{2}-\d{2}$/.test($('today').value)?$('today').value:E.warsawDay(new Date());const now=new Date(day+'T07:00:00Z');nowIso=now.toISOString();
+ const drafts={topRoi:[],wave2:[],wave3:[],wave4:[]},sent={},info={};
+ for(const o of CFG.offers){const key='offer:'+o[0];const lock=$('locks').checked&&o[4]!==null?addDays(day,o[4]):null;
+  drafts[WAVES[o[3]-1]].push({id:o[0],title:o[1],amount:o[2],currency:'PLN',followUpFrom:lock,url:null,followups:{A:{text:'follow-up A'}}});
+  const at=marked[key]||(o[5]!==null?new Date(now.getTime()-o[5]*3600000).toISOString():null);
+  if(at&&$('cool').checked)sent[key]={key,sentAt:at,firstSentAt:at,count:1,variant:'A',amountPLN:o[2],wave:o[3]};
+  info[key]={o,lock,at:$('cool').checked?at:null};}
+ const s=E.sendSchedule(drafts,sent,now,{days:Math.round(num('days')),perDay:Math.round(num('perDay'))});
+ const where={};
+ $('board').innerHTML=s.days.map((d)=>{for(const it of d.items)where[it.key]=d.day;return '<div class="day"><b>'+esc(dayLabel(d.day))+'</b><span class="muted">'+d.items.length+' / '+s.perDay+' · '+esc(zl(d.amountPLN))+'</span>'
+  +d.items.map((it)=>'<button type="button" class="w'+it.wave+'" data-key="'+esc(it.key)+'"><b>'+esc(it.title)+'</b><span class="muted">fala '+it.wave+' · '+esc(zl(it.amountPLN))+' · priorytet '+esc(zl(it.expectedPLN))+'</span></button>').join('')+'</div>';}).join('');
+ $('later').textContent=s.later?('Poza oknem planu: '+s.later+' '+plural(s.later,'oferta czeka','oferty czekają','ofert czeka')+' na kolejne dni.'):'Wszystkie oferty z kolejki mieszczą się w planie.';
+ const kind=['WAVE1','WAVE2','WAVE3','WAVE4'];
+ const rows=Object.values(info).map((x)=>({x,exp:Math.round(x.o[2]*E.PLAN_CHANCE[kind[x.o[3]-1]])})).sort((a,b)=>b.exp-a.exp||b.x.o[2]-a.x.o[2]);
+ $('pool').innerHTML=rows.map(({x,exp})=>{const key='offer:'+x.o[0];const c=E.cooldown(x.lock,now);const until=x.at?Date.parse(x.at)+E.NEXT_PING_MS:null;
+  return '<tr data-row="'+esc(key)+'"><td>'+esc(x.o[1])+'</td><td>'+x.o[3]+'</td><td>'+esc(zl(x.o[2]))+'</td><td>'+esc(zl(exp))+'</td><td>'+(x.lock?(c.locked?'do '+esc(x.lock):'od '+esc(x.lock)+' (odblokowana)'):'—')+'</td><td>'+(until?(until>now.getTime()?'do '+esc(timeLabel(until)):'minęło'):'—')+'</td><td>'+(where[key]?esc(dayLabel(where[key])):'później')+'</td></tr>';}).join('');};
+$('chances').innerHTML=Object.entries(E.PLAN_CHANCE).map(([k,v])=>'<div class="kpi"><span class="muted">'+esc(CH[k]||k)+'</span><b>'+esc(String(Math.round(v*100)))+'%</b></div>').join('');
+$('board').addEventListener('click',(e)=>{const t=e.target&&e.target.closest?e.target.closest('[data-key]'):null;if(!t)return;marked[t.dataset.key]=nowIso;run();});
+$('reset').addEventListener('click',()=>{marked={};run();});
+$('perDay').max=String(E.SCHEDULE_PER_DAY);$('today').value=E.warsawDay(new Date());watch(['today','perDay','days','locks','cool'],run);run();</script>
+</body>
+</html>
