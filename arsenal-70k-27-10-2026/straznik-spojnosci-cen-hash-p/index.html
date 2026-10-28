@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-aiPFTCs6gWklcc5bZ24+JM3tCQWg0oX0yyRSXT19DzU='; script-src 'sha256-MVJn9SNaBU3Dpm1c4JTrm+3WdNk7M3jJ59E66qrTERs='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Kwota wpisana w formularzu Useme ma być tą samą kwotą w tekście oferty, w etapach 30/40/30, na karcie modułów i w makiecie: strażnik przelicza moduły do tej kwoty, a link do makiety dostaje #p=, bo znak zapytania w linku walidator ofert liczy jako drugie pytanie.">
+<meta property="og:title" content="Strażnik spójności cen (#p=)">
+<meta property="og:description" content="Kwota wpisana w formularzu Useme ma być tą samą kwotą w tekście oferty, w etapach 30/40/30, na karcie modułów i w makiecie: strażnik przelicza moduły do tej kwoty, a link do makiety dostaje #p=, bo znak zapytania w linku walidator ofert liczy jako drugie pytanie.">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/straznik-spojnosci-cen-hash-p/">
+<title>Strażnik spójności cen (#p=)</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 18px}header{padding-top:40px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}.lead{color:var(--muted);font-size:16.5px;max-width:760px;margin:0}.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}h2{margin:0 0 8px;font-size:19px}h3{margin:14px 0 6px;font-size:15px}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 10px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--text);text-decoration:none}
+input[type=number],input[type=text],input[type=date],select,textarea{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+textarea{font:13.5px/1.5 ui-monospace,Consolas,monospace;resize:vertical}input[type=range]{width:100%;accent-color:var(--accent)}input[type=checkbox]{accent-color:var(--accent)}
+label{font-size:13px;color:var(--muted);display:grid;gap:4px}output{color:var(--text);font-weight:700}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}.gap{margin-top:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.checks{display:grid;gap:8px;align-content:start}.checks label,label.inline{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px;align-content:start}.kpi b{font-size:21px;letter-spacing:-.01em}.kpi.big b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+.verdict{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px;margin-bottom:12px}.verdict.ok{border-color:var(--ok)}.verdict.warn{border-color:var(--warn)}.verdict.bad{border-color:var(--bad)}.verdict b{font-size:18px}
+.issues,.list,.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.issues li,.list li,.steps li{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:9px 12px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.issues li.bad,.list li.bad,.steps li.block{border-left-color:var(--bad)}.issues li.warn,.list li.warn,.steps li.warn{border-left-color:var(--warn)}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Consolas,monospace;margin:0 0 10px;max-height:460px;overflow:auto}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.stage:first-child{border-color:var(--ok)}.stage b{font-size:20px}
+.buckets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.modrow{display:grid;grid-template-columns:auto minmax(0,1fr) 120px auto;gap:8px;align-items:center;margin-bottom:6px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.day{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.day button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 9px;display:grid;gap:1px;font-size:13px}
+.w1{border-left:4px solid var(--ok)!important}.w2{border-left:4px solid var(--accent)!important}.w3{border-left:4px solid var(--warn)!important}.w4{border-left:4px solid var(--muted)!important}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+.arch{display:grid;gap:12px}.flowline{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}.blk{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;animation:pop .35s ease both}.blk.core{border-color:var(--ok)}.arrow{color:var(--muted);align-self:center}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);color:var(--muted)}.badge.BUNDLE,.badge.ISOLATED{color:var(--ok);border-color:var(--ok)}.badge.PORT{color:var(--warn);border-color:var(--warn)}.badge.NEW{color:var(--accent);border-color:var(--accent)}
+.bar{display:block;height:10px;background:var(--panel2);border-radius:6px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%;background:var(--accent);width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}a.card{color:inherit;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}a.card:hover{border-color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.err{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}li.ok{color:inherit;font-weight:inherit}.cta{border-color:var(--ok)}
+details summary{cursor:pointer}details summary h2{display:inline}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+@media(max-width:760px){.grid2,.grid3,.grid4,.grid5,.stages{grid-template-columns:1fr}.buckets{grid-template-columns:1fr 1fr}.modrow{grid-template-columns:auto minmax(0,1fr) 96px}.modrow .req{grid-column:2/4}}td.bad{color:var(--bad);font-weight:600}td.warn{color:var(--warn);font-weight:600}</style>
+</head>
+<body>
+<header><p class="eyebrow">Havrelle Code Arsenal · prawdziwy silnik w przeglądarce</p><h1>Strażnik spójności cen (#p=)</h1><p class="lead">Kwota wpisana w formularzu Useme ma być tą samą kwotą w tekście oferty, w etapach 30/40/30, na karcie modułów i w makiecie: strażnik przelicza moduły do tej kwoty, a link do makiety dostaje #p=, bo znak zapytania w linku walidator ofert liczy jako drugie pytanie.</p>
+<div class="top"><a class="ghost" href="../centrum-architektury-70k/">Centrum architektury</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section><h2>Kwota z formularza Useme</h2><p class="muted">Fikcyjny projekt firmy Alfa ma w specyfikacji trzy moduły za 5 400 zł netto. Wpisz kwotę, którą wpisujesz w formularzu oferty: strażnik ją sprawdza i przelicza do niej wszystko, co zobaczy klient.</p>
+<div class="chips"><button class="chip" type="button" data-amount="6 000">6 000 zł</button><button class="chip" type="button" data-amount="5 750">5 750 zł</button><button class="chip" type="button" data-amount="6 543,21">6 543,21 zł</button><button class="chip" type="button" data-amount="243,90">243,90 zł</button><button class="chip" type="button" data-amount="200 000">200 000 zł</button><button class="chip" type="button" data-amount="99,99">99,99 zł</button><button class="chip" type="button" data-amount="1 234,567">1 234,567 zł</button><button class="chip" type="button" data-amount="250 000">250 000 zł</button></div>
+<div class="grid3"><label>Kwota netto (np. 6 000 albo 6 543,21)<input id="amount" type="text" inputmode="decimal" spellcheck="false"></label>
+<div class="kpi"><span class="muted">Po validPrice</span><b id="kPrice"></b><span class="muted" id="kRange"></span></div>
+<div class="kpi"><span class="muted">Moduły ze specyfikacji Alfa</span><b id="kSpec"></b><span class="muted" id="kUnit"></span></div></div>
+<p class="err gap" id="err" hidden></p></section>
+<section><h2>Spójność: oferta i karta kontra makieta z #p=</h2><div class="verdict" id="verdict"><b id="vhead"></b><span class="muted" id="vsub"></span></div>
+<p class="muted">Strażnik: tekst oferty, etapy 30/40/30 i ceny modułów na karcie po przeliczeniu. Makieta: to, co pokaże strona makiety po odczycie #p= (port jej skryptu).</p>
+<div class="scroll"><table><thead><tr><th>Pozycja</th><th>Strażnik</th><th>Makieta</th><th>Wynik</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="muted gap" id="mockNote"></p></section>
+<section><h2>Link do makiety: #p= czy ?p=</h2><p class="muted">Makieta czyta oba zapisy. Walidator USEME-CONV-1.0 liczy każdy znak zapytania w tekście oferty, także ten w linku, więc z ?p= oferta ma dwa pytania zamiast jednego na końcu.</p>
+<ul class="list" id="variants"></ul>
+<div class="share"><button class="btn" id="copyLink" type="button">Kopiuj link z #p=</button><a class="ghost" id="selfLink" href="#">Ta strona z #p=</a><span class="ok" id="copied" hidden></span></div>
+<p class="muted gap" id="selfRead"></p></section>
+<section><h2>Tekst oferty po przeliczeniu</h2><div class="chips"><button class="chip" type="button" data-variant="#">Z linkiem #p=</button><button class="chip" type="button" data-variant="?">Z linkiem ?p=</button></div>
+<pre id="offer"></pre><ul class="issues" id="issues"></ul>
+<details class="gap"><summary>Szablon oferty: {demo} to adres makiety, {price} kwota, {etap1} dni Etapu 1</summary><label class="gap">Szablon w formacie freshItem (zmiany liczą się na żywo)<textarea id="tpl" rows="12" spellcheck="false"></textarea></label></details></section>
+<section><h2>Co tu jest kodem backendu, a co logiką strony</h2><p>Kwotę sprawdza validPrice, a moduły przelicza scaleModules: obie funkcje pochodzą z scripts/useme-price-overrides.ts, strażnika cen, przez którego przechodzi każda zmiana kwoty przed wysłaniem oferty. Ten plik zapisuje JSON i czyta listę zleceń, więc build odcina jego importy i do strony trafiają tylko te czyste funkcje. Etapy liczy stageSplit z src/sales/demo-scaffolder.ts, kwotę w tekście formatPLN z src/sales/useme/fresh-jobs.ts, a tekst ocenia checkUsemeText z src/sales/useme/conversion-style.ts, bez zmian.</p>
+<p class="muted">Porty 1:1 w src/sales/arsenal-70k.ts, porównane w teście z oryginałami: link z #p= i tekst oferty z overriddenItem oraz freshItem, a po stronie makiety odczyt ?p= i #p=, przeliczenie modułów i etapy ze skryptu, który renderDemo wbudowuje w każdą makietę. W tej demonstracji link prowadzi do tej strony, która czyta #p= tym samym portem: „Ta strona z #p=” pokazuje odczyt na prawdziwym adresie.</p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 14,1 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge ISOLATED">prawdziwy kod · same funkcje</span> <code>scripts/useme-price-overrides.ts (importy odcięte, same czyste funkcje)</code></span><span class="muted">validPrice, scaleModules, PRICE_MIN, PRICE_MAX, PriceOverrideError · Useme Price Sync Guard: kwota z formularza od 100 do 200 000 zł netto, najwyżej dwa miejsca po przecinku, i ceny modułów przeskalowane do niej metodą największych reszt (pełne złote albo grosze); importy pliku (zapis JSON, lista zleceń) odcięte</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/conversion-style.ts</code></span><span class="muted">checkUsemeText, USEME_STYLE_VERSION · USEME-CONV-1.0: znak zapytania w linku ?p= to drugie pytanie w tekście (ONE_QUESTION), link z #p= przechodzi</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit, stage1Days, STAGE_SHARES · etapy 30/40/30 kwoty zaokrąglonej do pełnych złotych, jak w freshItem, i dni Etapu 1</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/fresh-jobs.ts</code></span><span class="muted">formatPLN, formDays · kwota w tekście oferty („6 543,21 zł”) i termin w formularzu Useme</span></li><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z scripts/useme-price-overrides.ts</code></span><span class="muted">guardOfferPort · overriddenItem na tekście z freshItem: szablon oferty wypełniony kwotą i adresem makiety, potem adres zastąpiony linkiem z #p=&lt;kwota&gt;; wariant ?p= tylko do porównania; test porównuje port z oryginałem</span></li><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z src/sales/demo-scaffolder.ts (skrypt makiety)</code></span><span class="muted">mockupOfferPricePort, mockupRescalePort, mockupTotalPort · skrypt, który renderDemo wbudowuje w każdą makietę: odczyt ?p= i #p=, moduły przeliczone do tej kwoty metodą największych reszt, suma i etapy; test uruchamia oryginalny skrypt i porównuje wyniki</span></li></ul><p class="muted gap">Pliki w paczce: <code>scripts/useme-price-overrides.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/fresh-jobs.ts</code> <code>src/sales/arsenal-70k.ts</code></p></section>
+<section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
+</main>
+<footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
+<script>'use strict';
+var HavrelleEngine = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // arsenal-straznik-spojnosci-cen-hash-p.entry.ts
+  var arsenal_straznik_spojnosci_cen_hash_p_entry_exports = {};
+  __export(arsenal_straznik_spojnosci_cen_hash_p_entry_exports, {
+    PRICE_MAX: () => PRICE_MAX,
+    PRICE_MIN: () => PRICE_MIN,
+    PriceOverrideError: () => PriceOverrideError,
+    STAGE_SHARES: () => STAGE_SHARES,
+    USEME_STYLE_VERSION: () => USEME_STYLE_VERSION,
+    checkUsemeText: () => checkUsemeText2,
+    formDays: () => formDays,
+    formatPLN: () => formatPLN,
+    guardOfferPort: () => guardOfferPort,
+    mockupOfferPricePort: () => mockupOfferPricePort,
+    mockupRescalePort: () => mockupRescalePort,
+    mockupTotalPort: () => mockupTotalPort,
+    scaleModules: () => scaleModules,
+    stage1Days: () => stage1Days,
+    stageSplit: () => stageSplit,
+    validPrice: () => validPrice
+  });
+
+  // scripts/useme-price-overrides.ts
+  var PRICE_MIN = 100;
+  var PRICE_MAX = 2e5;
+  var PriceOverrideError = class extends Error {
+    constructor(code) {
+      super(code);
+      this.code = code;
+    }
+    code;
+  };
+  function validPrice(value) {
+    const price = typeof value === "string" ? Number(value.replace(",", ".").replace(/\s/gu, "")) : value;
+    if (typeof price !== "number" || !Number.isFinite(price) || price < PRICE_MIN || price > PRICE_MAX || Math.abs(price * 100 - Math.round(price * 100)) > 1e-6) throw new PriceOverrideError("PRICE_INVALID");
+    return Math.round(price * 100) / 100;
+  }
+  function scaleModules(modules, total) {
+    const unit = Number.isInteger(total) ? 100 : 1;
+    const target = Math.round(total * 100 / unit), before = modules.reduce((sum, mod) => sum + mod.price, 0);
+    const raw = modules.map((mod) => (before > 0 ? mod.price / before : 1 / modules.length) * target);
+    const floors = raw.map(Math.floor);
+    let left = target - floors.reduce((sum, value) => sum + value, 0);
+    for (const index of raw.map((value, i) => [value - floors[i], i]).sort((a, b) => b[0] - a[0] || a[1] - b[1]).map(([, i]) => i)) {
+      if (left <= 0) break;
+      floors[index]++;
+      left--;
+    }
+    return modules.map((mod, i) => ({ ...mod, price: floors[i] * unit / 100 }));
+  }
+
+  // src/sales/useme/conversion-style.ts
+  var USEME_STYLE_VERSION = "USEME-CONV-1.0";
+  var WORD_LIMITS = { OFFER: [80, 220], REPLY: [35, 160], FOLLOWUP: [25, 100] };
+  var FIRST_PARAGRAPH = { OFFER: [1, 32], REPLY: [2, 45], FOLLOWUP: [2, 60] };
+  var USEME_CLICHES = [
+    "ch\u0119tnie",
+    "z przyjemno\u015Bci\u0105",
+    "z ch\u0119ci\u0105",
+    "z mi\u0142\u0105 ch\u0119ci\u0105",
+    "jestem zainteresowany",
+    "jestem zainteresowana",
+    "oto",
+    "jako model",
+    "jako ai",
+    "kompleksow*",
+    "profesjonaln*",
+    "najwy\u017Cszej jako\u015Bci",
+    "najwy\u017Csz\u0105 jako\u015B\u0107",
+    "nie wahaj*",
+    "s\u0142u\u017C\u0119 pomoc\u0105",
+    "prosz\u0119 o kontakt",
+    "gwarantuj*",
+    "gwarancj*",
+    "innowacyjn*",
+    "szyte na miar\u0119",
+    "szyty na miar\u0119",
+    "skrojon*",
+    "wieloletnie do\u015Bwiadczenie",
+    "wieloletniego do\u015Bwiadczenia",
+    "pasj*",
+    "w dzisiejszych czasach",
+    "w dobie",
+    "dedykowan*",
+    "holistyczn*",
+    "synergi*",
+    "rewolucyjn*",
+    "prze\u0142omow*",
+    "bezproblemow*",
+    "wychodz\u0105c naprzeciw",
+    "na ka\u017Cdym etapie",
+    "zapraszam do wsp\xF3\u0142pracy",
+    "idealnie si\u0119 nadaj\u0119",
+    "idealnym wyborem",
+    "mam do\u015Bwiadczenie w",
+    "doskonale rozumiem",
+    "rozumiem doskonale",
+    "ciesz\u0119 si\u0119",
+    "dzi\u0119kuj\u0119 za mo\u017Cliwo\u015B\u0107"
+  ];
+  var fold = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").replace(/\u0142/gu, "l").toLowerCase();
+  var URL_RE = /https?:\/\/[^\s)>\]]+/giu;
+  var trimUrl = (url) => url.replace(/[.,;:]+$/u, "");
+  var sentences = (paragraph) => paragraph.split(/(?<=[.?!])\s+(?=[A-Z\u0104\u0106\u0118\u0141\u0143\u00d3\u015a\u0179\u017b0-9\u201e"])/u).filter((part) => part.trim()).length;
+  var wordCount = (text) => text.replace(URL_RE, " link ").split(/\s+/u).filter((word) => /[\p{L}\p{N}]/u.test(word)).length;
+  var PLAN_LINE = /^\s*(?:[1-3][.)]|[-\u2013\u2022])\s+\S/u;
+  var NOUNS_ENDING_LEM = [
+    "dzia\u0142",
+    "materia\u0142",
+    "kana\u0142",
+    "zapa\u0142",
+    "upa\u0142",
+    "sza\u0142",
+    "pomys\u0142",
+    "przemys\u0142",
+    "zmys\u0142",
+    "namys\u0142",
+    "ko\u0142",
+    "sto\u0142",
+    "anio\u0142",
+    "ko\u015Bcio\u0142",
+    "popio\u0142",
+    "w\u0119z\u0142",
+    "or\u0142",
+    "mu\u0142",
+    "paw\u0142",
+    "sy\u0142",
+    "artyku\u0142",
+    "\u015Bwiat\u0142",
+    "\u017Ar\xF3d\u0142",
+    "szk\u0142",
+    "krzes\u0142",
+    "rzemios\u0142",
+    "myd\u0142",
+    "mas\u0142",
+    "potencja\u0142",
+    "kapita\u0142",
+    "sygna\u0142",
+    "rytua\u0142",
+    "kryszta\u0142",
+    "zespo\u0142"
+  ];
+  function checkUsemeText2(text, options) {
+    const issues = [];
+    const add = (code, detail) => {
+      issues.push({ code, detail });
+    };
+    const body = text.replace(/\r/gu, "").trim();
+    const paragraphs = body.split(/\n\s*\n/u).map((part) => part.trim()).filter(Boolean);
+    if (!/^Dzie\u0144 dobry,/u.test(body)) add("GREETING", "Wiadomo\u015B\u0107 zaczyna si\u0119 od \u201EDzie\u0144 dobry,\u201D.");
+    const folded = ` ${fold(body.replace(URL_RE, " ")).replace(/[^\p{L}\p{N}]+/gu, " ")} `;
+    for (const entry of USEME_CLICHES) {
+      const stem = entry.endsWith("*"), phrase = entry.replace(/\*$/u, "");
+      if (folded.includes(` ${fold(phrase)}${stem ? "" : " "}`)) add("CLICHE", `Usu\u0144 fraz\u0119 \u201E${phrase}${stem ? "\u2026" : ""}\u201D.`);
+    }
+    if (body.includes("!")) add("EXCLAMATION", "Bez wykrzyknik\xF3w.");
+    if (/\p{Extended_Pictographic}/u.test(body)) add("EMOJI", "Bez emotikon.");
+    const urls = (body.match(URL_RE) ?? []).map(trimUrl);
+    for (const url of urls) if (!options.allowedUrls.has(url)) add("URL_NOT_ALLOWED", `Adres spoza portfolio: ${url}`);
+    if (urls.length > 1) add("TOO_MANY_LINKS", "Najwy\u017Cej jeden link do pr\xF3bki.");
+    if (options.requireLink && !urls.some((url) => options.allowedUrls.has(url))) add("LINK_MISSING", 'Dodaj jeden link z pola "probki".');
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/u.test(body) || /(?:\+?\d[\d\s-]{7,}\d)/u.test(body.replace(URL_RE, "")) || /(?:^|[^\p{L}])(?:whats ?app|telegram|messenger|signal|skype)(?=$|[^\p{L}])/iu.test(body)) {
+      add("CONTACT_DATA", "Bez danych kontaktowych i komunikator\xF3w (regulamin Useme).");
+    }
+    if (/(?:^|[^\p{L}])(?:stripe|paypal|payu|blik|przelew\p{L}*|poza useme|poza platform\p{L}*|bezpo\u015brednio na konto)(?=$|[^\p{L}])/iu.test(body)) add("OFF_PLATFORM_PAYMENT", "Rozliczenie wy\u0142\u0105cznie przez Useme.");
+    const informal = /(?:^|[^\p{L}])(chcesz|masz|mo\u017cesz|wolisz|zobaczysz|potrzebujesz|twoj\p{L}*|twoim|twoj\u0105|twoich|ci\u0119|ciebie|tob\u0105|tobie|daj zna\u0107|chcecie|macie|mo\u017cecie|wasz\p{L}*|chcia\u0142by pa\u0144stwo|chce pa\u0144stwa)(?=$|[^\p{L}])/iu.exec(body);
+    if (informal) add("INFORMAL", `Forma grzeczno\u015Bciowa (Pa\u0144stwo), bez \u201E${informal[1]}\u201D.`);
+    if (/Pan\s*\/\s*Pani|Pani\s*\/\s*Pan/u.test(body)) add("PAN_PANI", "Bez \u201EPan/Pani\u201D: forma \u201EPa\u0144stwo\u201D.");
+    if (/(?:^|[^\p{L}])(rozmow\p{L}* telefoniczn\p{L}*|kontakt\p{L}* telefoniczn\p{L}*|telefonicznie|telekonferencj\p{L}*|zadzwoni\p{L}*|zadzwo\u0144|numer\p{L}* telefonu)(?=$|[^\p{L}])/iu.test(body)) {
+      add("OFF_PLATFORM_CONTACT", "Bez propozycji rozmowy telefonicznej: ustalenia w wiadomo\u015Bciach Useme.");
+    }
+    if (/(?:^|\n)\s*(?:Klient|Klientka|Zleceniodawca)\s/u.test(body) || /klient (?:jest )?zainteresowan/iu.test(body)) add("META", "Pisz do klienta, nie o kliencie w trzeciej osobie.");
+    const gendered = [...body.matchAll(/(?:^|[^\p{L}])(\p{L}+(?:\u0142em|\u0142am))(?=$|[^\p{L}])/gu)].map((match) => match[1]).find((word) => !NOUNS_ENDING_LEM.some((stem) => word.toLowerCase().slice(0, -2).endsWith(stem)));
+    if (gendered) add("GENDERED_PAST", `Forma neutralna zamiast \u201E${gendered}\u201D: \u201Eprzygotuj\u0119\u201D, \u201Esprawdz\u0119\u201D.`);
+    const last = paragraphs.at(-1) ?? "";
+    const questions = (body.match(/\?/gu) ?? []).length;
+    if (!last.endsWith("?")) add("QUESTION_END", "Ostatnie zdanie to jedno pytanie otwarte; po nim nic.");
+    if (questions !== 1) add("ONE_QUESTION", `Dok\u0142adnie jedno pytanie (jest ${questions}).`);
+    const planLines = body.split("\n").filter((line) => PLAN_LINE.test(line));
+    if (options.requirePlan && planLines.length !== 3) add("PLAN", `Plan ma dok\u0142adnie 3 punkty (jest ${planLines.length}).`);
+    const diagnosis = paragraphs[0]?.replace(/^Dzie\u0144 dobry,\s*/u, "").trim() || paragraphs[1] || "";
+    const firstText = diagnosis && !PLAN_LINE.test(diagnosis) ? diagnosis : "";
+    const [maxSentences, maxWords] = FIRST_PARAGRAPH[options.kind];
+    if (firstText && (sentences(firstText) > maxSentences || wordCount(firstText) > maxWords)) {
+      add("DIAGNOSIS", options.kind === "OFFER" ? "Diagnoza: jedno zdanie do 30 s\u0142\xF3w." : `Pierwszy akapit: najwy\u017Cej ${maxSentences} zdania i ${maxWords} s\u0142\xF3w.`);
+    }
+    const [min, max] = WORD_LIMITS[options.kind];
+    const words = wordCount(body);
+    if (words < min || words > max) add("WORDS", `D\u0142ugo\u015B\u0107 ${words} s\u0142\xF3w, dozwolone ${min}\u2013${max}.`);
+    if (typeof options.price === "number") {
+      for (const match of body.matchAll(/(\d[\d\s]*(?:,\d+)?)\s*(?:z\u0142|PLN)/giu)) {
+        const amount = Number(match[1].replace(/\s/gu, "").replace(",", "."));
+        if (amount !== options.price) add("PRICE", `Kwota ${match[0].trim()} r\xF3\u017Cni si\u0119 od naszej wyceny ${options.price} z\u0142.`);
+      }
+    }
+    return issues;
+  }
+
+  // src/sales/demo-scaffolder.ts
+  var STAGE_SHARES = [30, 40, 30];
+  function stageSplit(total) {
+    let left = total;
+    return STAGE_SHARES.map((share, index) => {
+      const amount = index === STAGE_SHARES.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= amount;
+      return amount;
+    });
+  }
+  var stage1Days = (days) => Math.max(2, Math.round((days ?? 7) * 0.3));
+
+  // src/sales/architecture-hubs.ts
+  var SAMPLES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var HUBS_PUBLIC_BASE = `${SAMPLES_BASE}huby-architektury-24-10-2026/`;
+  var BLUEPRINT_BASE = `${SAMPLES_BASE}audyty-24-10-2026/`;
+
+  // src/sales/useme/fresh-jobs.ts
+  var formatPLN = (amount) => `${amount.toLocaleString("pl-PL", { useGrouping: "always", ...Number.isInteger(amount) ? {} : { minimumFractionDigits: 2, maximumFractionDigits: 2 } }).replace(/[\u00a0\u202f]/gu, " ")} z\u0142`;
+  var MIN_FORM_DAYS = 7;
+  function formDays(days) {
+    const value = typeof days === "number" && Number.isFinite(days) ? Math.round(days) : 14;
+    return Math.max(MIN_FORM_DAYS, value);
+  }
+
+  // src/sales/arsenal-70k.ts
+  var ARSENAL_FOLDER = "arsenal-70k-27-10-2026";
+  var SAMPLES_PAGES_BASE = "https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/";
+  var ARSENAL_PUBLIC_BASE = `${SAMPLES_PAGES_BASE}${ARSENAL_FOLDER}/`;
+  function guardOfferPort(input, formatPLN2, marker = "#") {
+    const link = `${input.publicUrl}${marker}p=${input.price}`;
+    const offer = input.template.replaceAll("{demo}", input.publicUrl).replaceAll("{price}", formatPLN2(input.price)).replaceAll("{etap1}", String(input.etap1)).replaceAll(input.publicUrl, link);
+    return { link, offer, search: marker === "?" ? `?p=${input.price}` : "", hash: marker === "#" ? `#p=${input.price}` : "" };
+  }
+  function mockupOfferPricePort(search, hash) {
+    try {
+      const raw = new URLSearchParams(search).get("p") ?? (/^#p=([0-9]+(?:[.,][0-9]{1,2})?)$/u.exec(hash) || [])[1];
+      if (raw === null || raw === void 0) return null;
+      const value = Number(String(raw).replace(",", "."));
+      return Number.isFinite(value) && value >= 100 && value <= 2e5 ? Math.round(value * 100) / 100 : null;
+    } catch {
+      return null;
+    }
+  }
+  function mockupRescalePort(prices, offerPrice) {
+    if (offerPrice === null) return { prices: [...prices], note: null };
+    const before = prices.reduce((sum, price) => sum + price, 0), target = Math.round(offerPrice);
+    if (!(before > 0 && prices.length && target !== before)) return { prices: [...prices], note: null };
+    const raw = prices.map((price) => price * target / before), out = raw.map(Math.floor);
+    let left = target - out.reduce((sum, value) => sum + value, 0);
+    for (const [, index] of raw.map((value, i) => [value - out[i], i]).sort((a, b) => b[0] - a[0] || a[1] - b[1])) {
+      if (left <= 0) break;
+      out[index] = out[index] + 1;
+      left -= 1;
+    }
+    const exact = offerPrice.toLocaleString("pl-PL", { minimumFractionDigits: Number.isInteger(offerPrice) ? 0 : 2, maximumFractionDigits: 2 });
+    return { prices: out, note: `Kwota z oferty na Useme: ${exact} z\u0142 netto. Modu\u0142y, Etap 1 i podsumowanie s\u0105 przeliczone do tej kwoty.` };
+  }
+  function mockupTotalPort(prices, shares = [30, 40, 30]) {
+    const total = prices.reduce((sum, price) => sum + price, 0);
+    let left = total;
+    const stages = shares.map((share, index) => {
+      const value = index === shares.length - 1 ? left : Math.round(total * share / 1e3) * 10;
+      left -= value;
+      return value;
+    });
+    return { total, stages };
+  }
+  var SAMPLE_LINK = `${ARSENAL_PUBLIC_BASE}kreator-makiet-instant/`;
+  return __toCommonJS(arsenal_straznik_spojnosci_cen_hash_p_entry_exports);
+})();
+const E=HavrelleEngine;
+const root=document.documentElement;const saved=(()=>{try{return localStorage.getItem('tool-theme')}catch(e){return null}})();if(saved)root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme)}catch(e){}});
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const zl=(n)=>Math.round(Number(n)||0).toLocaleString('pl-PL')+' zł';
+const num=(id)=>{const v=Number($(id).value);return Number.isFinite(v)?v:0;};
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+const watch=(ids,fn)=>{for(const id of ids){const e=$(id);e.addEventListener('input',()=>fn());e.addEventListener('change',()=>fn());}};
+const mark=(sel,attr,value)=>{for(const b of document.querySelectorAll(sel))b.classList.toggle('on',b.dataset[attr]===String(value));};
+const copyText=async(text,doneId)=>{let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true;}}catch(e){ok=false;}
+ if(!ok){const t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(e){ok=false;}t.remove();}
+ const d=$(doneId);if(d){d.textContent=ok?'Skopiowano.':'Zaznacz tekst i skopiuj ręcznie.';d.hidden=false;}};
+const CFG={"modules":[{"name":"Import zamówień ze sklepu","price":2400,"required":true},{"name":"Synchronizacja stanów magazynowych","price":1800,"required":false},{"name":"Raport dzienny sprzedaży","price":1200,"required":false}],"days":30,"template":"Dzień dobry,\n\nw ogłoszeniu firmy Alfa najwięcej czasu zabiera ręczne przepisywanie zamówień ze sklepu do arkusza, więc zacznę od automatycznego importu z kontrolą sum.\n\n1. Import zamówień ze sklepu co godzinę, z historią zmian i kontrolą sum.\n2. Synchronizacja stanów magazynowych z alertem przy rozbieżności.\n3. Raport dzienny sprzedaży dla zespołu, bez ręcznego sklejania plików.\n\nMakieta z modułami i etapami na fikcyjnych danych: {demo}\n\nWycena całości to {price} netto, rozliczana w trzech etapach przez Useme; Etap 1 to 30% tej kwoty i obejmuje import oraz pierwszy raport do sprawdzenia w {etap1} dni roboczych.\n\nKtóry system sklepowy jest dziś źródłem zamówień?","publicUrl":"https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/arsenal-70k-27-10-2026/straznik-spojnosci-cen-hash-p/","start":"6 000","presets":["6 000","5 750","6 543,21","243,90","200 000","99,99","1 234,567","250 000"]};
+const MODS=CFG.modules,SPEC=MODS.reduce((a,m)=>a+m.price,0);let variant='#',last=null;
+const pln=(n)=>E.formatPLN(n);const field=(n)=>E.formatPLN(n).replace(/ zł$/u,'');
+const gap=(a,b)=>Math.round((a-b)*100)/100;const signed=(d)=>(d>0?'+':'')+pln(d);
+const cell=(c,t)=>'<td'+(c?' class="'+c+'"':'')+'>'+esc(t)+'</td>';
+const ERR='Kwota netto musi mieścić się w przedziale od '+pln(E.PRICE_MIN)+' do '+pln(E.PRICE_MAX)+' i mieć najwyżej dwa miejsca po przecinku (validPrice: PRICE_INVALID). Strażnik nie zapisuje takiej kwoty i nie zmienia linku.';
+const fail=(text)=>{last=null;$('err').textContent=text;$('err').hidden=false;$('kPrice').textContent='odrzucona';$('kUnit').textContent='';$('verdict').className='verdict bad';
+ $('vhead').textContent='Kwota odrzucona: oferta, etapy i link zostają bez zmian';$('vsub').textContent='validPrice: PRICE_INVALID';
+ for(const id of ['rows','variants','issues'])$(id).innerHTML='';for(const id of ['offer','mockNote'])$(id).textContent='';$('selfLink').hidden=true;};
+const readOwn=()=>{let read=null,where='';try{where=String(location.search)+String(location.hash);read=E.mockupOfferPricePort(location.search,location.hash);}catch(e){read=null;}
+ $('selfRead').textContent=read!==null?'Adres tej strony: '+where+' → odczyt tym samym portem co w makiecie: '+pln(read)+'.'
+  :where?'Adres tej strony ('+where+') nie zawiera kwoty, którą makieta by przyjęła.':'Adres tej strony nie ma #p= ani ?p=; „Ta strona z #p=” pokazuje odczyt na prawdziwym adresie.';return read;};
+const run=()=>{let price;
+ try{price=E.validPrice($('amount').value);}catch(e){fail(e&&e.code==='PRICE_INVALID'?ERR:String(e&&e.message||e));return;}
+ $('err').hidden=true;$('selfLink').hidden=false;
+ const scaled=E.scaleModules(MODS,price),whole=Number.isInteger(price),etap1=E.stage1Days(E.formDays(CFG.days)),base=Math.round(price),stages=E.stageSplit(base);
+ const input={template:$('tpl').value,publicUrl:CFG.publicUrl,price,etap1},V={},I={},M={};
+ for(const k of ['#','?']){const v=E.guardOfferPort(input,E.formatPLN,k);V[k]=v;
+  I[k]=E.checkUsemeText(v.offer,{kind:'OFFER',allowedUrls:new Set([v.link]),requireLink:true,requirePlan:true,price});
+  const read=E.mockupOfferPricePort(v.search,v.hash),r=E.mockupRescalePort(MODS.map((m)=>m.price),read),t=E.mockupTotalPort(r.prices);M[k]={read,note:r.note,prices:r.prices,total:t.total,stages:t.stages};}
+ last=V;const m=M['#'],sum=Math.round(scaled.reduce((a,x)=>a+x.price,0)*100)/100;
+ $('kPrice').textContent=pln(price);$('kUnit').textContent='scaleModules liczy w '+(whole?'pełnych złotych':'groszach');
+ const status=(a,b,soft)=>{const d=gap(a,b);return d?[soft?'warn':'bad','różnica '+signed(d)]:['ok','zgodne'];};
+ const rows=[['Kwota z formularza i z linku #p=',pln(price),m.read===null?'brak odczytu':pln(m.read),...(m.read===price?['ok','zgodne']:['bad','nie odczyta'])],
+  ['Suma modułów',pln(sum),pln(m.total),...status(m.total,sum,m.total===base)]];
+ stages.forEach((s,i)=>rows.push(['Etap '+(i+1)+' · '+E.STAGE_SHARES[i]+'%',pln(s),pln(m.stages[i]),...status(m.stages[i],s,false)]));
+ scaled.forEach((x,i)=>rows.push(['Moduł: '+x.name+(x.required?' (rdzeń)':''),pln(x.price),pln(m.prices[i]),...status(m.prices[i],x.price,!whole)]));
+ $('rows').innerHTML=rows.map((r)=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td>'+cell(r[3],r[4])+'</tr>').join('');
+ const bad=rows.filter((r)=>r[3]==='bad').length,warn=rows.filter((r)=>r[3]==='warn').length;
+ const why=!whole?'Kwota ma grosze: strażnik liczy moduły w groszach, a makieta w pełnych złotych; etapy, tak jak umowa, liczą się od '+pln(base)+', więc się zgadzają. '
+  :bad?'':'Strażnik i makieta dzielą kwotę tą samą metodą największych reszt w pełnych złotych, więc ceny modułów są równe. ';
+ $('verdict').className='verdict '+(bad?'bad':warn?'warn':'ok');
+ $('vhead').textContent=bad?'Niespójność: '+bad+' '+plural(bad,'pozycja','pozycje','pozycji'):warn?'Kwota i etapy zgodne; '+warn+' '+plural(warn,'pozycja różni się','pozycje różnią się','pozycji różni się')+' zaokrągleniem':'Oferta, etapy, karta i makieta pokazują tę samą kwotę';
+ $('vsub').textContent='Specyfikacja Alfa '+pln(SPEC)+' → formularz '+pln(price)+(price===SPEC?' (bez zmiany)':' ('+signed(gap(price,SPEC))+')')+' · Etap 1: '+pln(stages[0])+', '+etap1+' dni roboczych';
+ $('mockNote').textContent=why+(m.note?'Notka na makiecie: „'+m.note+'”':'Kwota równa sumie modułów makiety: makieta nic nie przelicza i pokazuje swoje ceny.');
+ $('variants').innerHTML=['#','?'].map((k)=>{const ok=!I[k].length&&M[k].read===price;
+  return '<li'+(ok?'':' class="bad"')+'><b>'+esc(k+'p= · makieta odczyta '+(M[k].read===null?'brak kwoty':pln(M[k].read)))+'</b><code>'+esc(V[k].link)+'</code><span class="'+(I[k].length?'err':'ok')+'">'
+   +esc(I[k].length?I[k].map((i)=>i.code+': '+i.detail).join(' · '):'przechodzi '+E.USEME_STYLE_VERSION+', 0 uwag')+'</span></li>';}).join('');
+ mark('[data-variant]','variant',variant);$('offer').textContent=V[variant].offer;
+ $('issues').innerHTML=I[variant].length?I[variant].map((i)=>'<li class="bad"><b><code>'+esc(i.code)+'</code></b><span>'+esc(i.detail)+'</span></li>').join('')
+  :'<li><b>Bez uwag</b><span>'+esc('Tekst z linkiem '+variant+'p= przechodzi '+E.USEME_STYLE_VERSION+': jedno pytanie na końcu, plan w 3 punktach, link z portfolio i kwota równa wycenie.')+'</span></li>';
+ $('selfLink').href='#p='+price;$('selfLink').textContent='Ta strona z #p='+price;};
+const setAmount=(value)=>{$('amount').value=value;mark('[data-amount]','amount',value);run();};
+for(const b of document.querySelectorAll('[data-amount]'))b.addEventListener('click',()=>setAmount(b.dataset.amount));
+for(const b of document.querySelectorAll('[data-variant]'))b.addEventListener('click',()=>{variant=b.dataset.variant;run();});
+$('copyLink').addEventListener('click',()=>{if(last)copyText(last['#'].link,'copied');});
+watch(['amount','tpl'],()=>{mark('[data-amount]','amount',$('amount').value);run();});
+if(typeof window.addEventListener==='function')window.addEventListener('hashchange',()=>{const read=readOwn();if(read!==null)setAmount(field(read));});
+$('tpl').value=CFG.template;$('kSpec').textContent=pln(SPEC);$('kRange').textContent='od '+pln(E.PRICE_MIN)+' do '+pln(E.PRICE_MAX)+', do grosza';
+const own=readOwn();setAmount(own!==null?field(own):CFG.start);</script>
+</body>
+</html>
