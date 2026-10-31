@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-qVGsTK3BGyEZERPOyxupRlZpd/NU2fV0DwcwE1OKqcg='; script-src 'sha256-eaZ83l/SwhHdsOzq5pOiRUNx5eRtc238Pak78RMn6dU='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Szybki Etap 1, MVP czy pełny zakres: Europejska porównywarka aukcji samochodowych. Porównanie modułów, kwot etapów 30/40/30 i ryzyka na kwocie z oferty.">
+<meta property="og:title" content="Europejska porównywarka aukcji samochodowych: Szybki Etap 1, MVP czy pełny zakres">
+<meta property="og:url" content="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownywarki-mvp-pro-fala2-c/europejska-porownywarka-aukcji-samochodowych/">
+<title>Europejska porównywarka aukcji samochodowych · MVP czy pełny zakres</title>
+<style>:root{--bg:#07080b;--panel:#0f1218;--panel2:#141924;--line:rgba(255,255,255,.09);--text:#edeef2;--muted:#8f98a8;--accent:#8b9cff;--sel:rgba(139,156,255,.12);--ok:#34d3a6;--warn:#fbbf24;--bad:#f87171;color-scheme:dark}
+:root[data-theme=light]{--bg:#f6f7fb;--panel:#fff;--panel2:#f1f4f9;--line:#dde3ec;--text:#141b2b;--muted:#5a667c;--accent:#3b5bff;--sel:rgba(59,91,255,.08);--ok:#0f9f7a;--warn:#b45309;--bad:#dc2626;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-wrap:break-word}
+header,main,footer{max-width:1040px;margin:0 auto;padding:0 16px}header{padding-top:32px}main{display:grid;gap:16px;padding-bottom:24px}
+.eyebrow{display:inline-block;color:var(--ok);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+h1{font-size:clamp(24px,4.2vw,38px);line-height:1.12;margin:0 0 10px;letter-spacing:-.02em}.lead{color:var(--muted);font-size:16px;max-width:780px;margin:0 0 6px}
+h2{margin:0 0 10px;font-size:19px}h3{margin:0 0 6px;font-size:17px}h4{margin:14px 0 6px;font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0}.muted{color:var(--muted);font-size:13.5px}p{margin:0 0 8px}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}a{color:var(--accent)}
+.btn{background:var(--text);color:var(--bg);border:0;border-radius:10px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-block}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:var(--text);text-decoration:none;display:inline-block}
+input[type=number],select{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}label{font-size:13px;color:var(--muted);display:grid;gap:4px}
+.amount{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin:12px 0 0}.amount b{font-size:24px;letter-spacing:-.01em}
+.price{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:12px 0 0}.price label{flex:0 1 230px}
+.top{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 22px}
+.switch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.vbtn{display:grid;gap:2px;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0}
+.vbtn[aria-pressed=true]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.vbtn b{font-size:21px;letter-spacing:-.01em}.vbtn small{color:var(--muted)}
+.bar{display:block;height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:var(--accent)}
+.variant{border-top:1px solid var(--line);padding-top:14px}.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ul.items{list-style:none;margin:0;padding:0;display:grid;gap:6px}ul.items li{display:flex;justify-content:space-between;gap:10px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+ul.items li b{white-space:nowrap}ul.items li.none{color:var(--muted)}ul.plain{margin:0;padding-left:18px}ul.plain li{margin:3px 0}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:2px;align-content:start}
+.stage b{font-size:18px}.stage span{font-size:13px;color:var(--muted)}.stage.next{border-style:dashed}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{font-size:13px;color:var(--muted);font-weight:600}td{white-space:nowrap}tbody th{font-weight:500;min-width:230px;white-space:normal}tbody th,thead th:first-child,tfoot th{position:sticky;left:0;z-index:1;background:var(--panel)}.hint{display:none}
+td small,th small{display:block;color:var(--muted);font-size:12px;font-weight:400;white-space:normal}td.in{font-weight:600}td.later,td.incl{color:var(--muted)}td.incl{white-space:normal}
+.sel{background:var(--sel)}thead th.sel{color:var(--text)}tfoot th,tfoot td{font-weight:700;border-bottom:0}
+.tag{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:99px;padding:1px 7px;margin-left:6px;color:var(--ok);vertical-align:middle;font-weight:600}.tag.est{color:var(--warn)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}
+.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+fieldset{border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:8px 12px;min-width:0}legend{font-size:13px;color:var(--muted);padding:0 6px}
+.mod{display:flex;gap:8px;align-items:flex-start;color:var(--text);font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line)}.mod:last-child{border-bottom:0}
+.mod span{flex:1;min-width:0}.mod b{white-space:nowrap;font-weight:600}.mod input{margin-top:4px}
+.verdict{border-radius:12px;padding:12px 14px;font-weight:700;margin:12px 0 8px;border:1px solid var(--line);background:var(--panel2)}
+.verdict.ok{color:var(--ok)}.verdict.warn{color:var(--warn)}.verdict.block{color:var(--bad)}
+ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:8px}ul.checks li{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.pill{flex:none;font-size:11.5px;font-weight:700;border-radius:99px;padding:2px 8px;border:1px solid currentColor}.pill.ok{color:var(--ok)}.pill.warn{color:var(--warn)}.pill.block{color:var(--bad)}
+footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:760px){.switch,.cols2,.stages,.grid2{grid-template-columns:1fr}.price label{flex:1 1 100%}h1{font-size:25px}table{min-width:480px;font-size:13.5px}tbody th{min-width:140px;max-width:160px}th,td{padding:8px}.hint{display:block}}</style>
+</head>
+<body>
+<header><p class="eyebrow">Solid Digital · MVP czy pełny zakres</p><p class="muted">Programowanie i IT › Aplikacje webowe</p>
+<h1>Europejska porównywarka aukcji samochodowych</h1>
+<p class="lead">Trzy warianty tego samego zlecenia na kwocie z oferty: Szybki Etap 1, MVP i pełny zakres. Kwoty etapów liczone jak w umowie Useme: 30/40/30, w pełnych złotych.</p>
+<div class="amount"><span class="muted">Kwota z oferty</span><b id="amt">900 zł</b><span class="muted">netto</span><span class="muted" id="amtNote" hidden>· przeliczona z adresu strony</span></div>
+<div class="price"><label for="price">Przelicz na inną kwotę (zł netto)<input id="price" type="number" min="100" max="200000" step="0.01" inputmode="decimal" value="900"></label><button class="ghost" id="apply" type="button">Przelicz</button><button class="ghost" id="reset" type="button">Kwota z oferty</button></div>
+<div class="top"><a class="btn" id="mock" href="https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-31-10-pelne-pokrycie/europejska-porownywarka-aukcji-samochodowych/#p=900">Makieta tego zlecenia</a><a class="ghost" href="../">Wszystkie porównania</a><button id="theme" class="ghost" type="button">Jasny / ciemny motyw</button></div></header>
+<main>
+<section aria-labelledby="h-var"><h2 id="h-var">Wybierz wariant</h2>
+<div class="switch" role="group" aria-label="Wariant zakresu"><button type="button" class="vbtn" data-variant="0" aria-pressed="false"><span>Szybki Etap 1</span><b data-total="0">270 zł</b><small data-share="0">30% kwoty</small><span class="bar"><i data-bar="0"></i></span></button><button type="button" class="vbtn" data-variant="1" aria-pressed="true"><span>MVP</span><b data-total="1">440 zł</b><small data-share="1">49% kwoty</small><span class="bar"><i data-bar="1"></i></span></button><button type="button" class="vbtn" data-variant="2" aria-pressed="false"><span>Pełny zakres z oferty</span><b data-total="2">900 zł</b><small data-share="2">100% kwoty</small><span class="bar"><i data-bar="2"></i></span></button></div>
+<article class="variant" data-panel="0" hidden>
+<h3>Szybki Etap 1 · <span data-total="0">270 zł</span> netto</h3>
+<p class="muted">30% kwoty z oferty, jedna umowa w Useme. Każdy kolejny etap to osobna umowa po odbiorze poprzedniego, bez zobowiązania z góry.</p>
+<div class="cols2"><div><h4>Co Państwo dostają</h4><ul class="plain"><li>Projekt i specyfikacja i model danych aukcji do akceptacji w ok. 2 dni roboczych.</li><li>Moduł „Analiza i projekt” według makiety.</li></ul></div>
+<div><h4>Odbiór Etapu 1</h4><ul class="plain"><li>Moduł „Analiza i projekt” w wersji do sprawdzenia (link testowy albo pliki).</li><li>Lista ustaleń i decyzji potrzebnych do Etapu 2.</li><li>Krótki opis wykonanych prac i sposobu sprawdzenia, przekazany w wiadomości w Useme.</li><li>Poprawki zgłoszone do zakresu Etapu 1 w ciągu 3 dni roboczych od przekazania, wprowadzone w jednej rundzie.</li></ul></div></div>
+<p class="muted">Termin: start i pierwszy podgląd w ciągu 48–72 godzin od umowy, przekazanie Etapu 1 w ciągu 2 dni roboczych.</p>
+<p class="muted">Prawa autorskie: autorskie prawa majątkowe do kodu źródłowego i plików powstałych w Etapie 1 przechodzą na Zamawiającego po odbiorze i rozliczeniu etapu w Useme, na polach eksploatacji wskazanych w umowie Useme.</p>
+<div class="stages"><div class="stage"><span>Etap 1 (30%) · teraz</span><b data-st="0-0">270 zł</b></div>
+<div class="stage next"><span>Etap 2 (40%) pełnego zakresu, po odbiorze Etapu 1</span><b data-next="0">360 zł</b></div>
+<div class="stage next"><span>Etap 3 (30%) pełnego zakresu, po odbiorze Etapu 2</span><b data-next="1">270 zł</b></div></div>
+</article>
+<article class="variant" data-panel="1">
+<h3>MVP · <span data-total="1">440 zł</span> netto <span class="muted">(<span data-share="1">49% kwoty</span>)</span></h3>
+<p class="muted">Budżet MVP to 70% kwoty (<span data-budget>630 zł</span>). Cena MVP to suma modułów, które się w nim mieszczą, a nie rabat na ten sam zakres; moduły rdzenia zostają zawsze.</p>
+<div class="cols2"><div><h4>W MVP</h4><ul class="items" data-list="kept"><li><span>Analiza i projekt</span><b>220 zł</b></li><li><span>Specyfikacja i model danych aukcji</span><b>220 zł</b></li></ul></div>
+<div><h4>Później, jako opcja</h4><ul class="items" data-list="later"><li><span>Import ofert z partnerskich API</span><b>220 zł</b></li><li><span>Porównanie z kosztami importu</span><b>240 zł</b></li></ul><p class="muted">Opcjonalna faza rozwojowa po wdrożeniu MVP, wyceniana osobno.</p></div></div>
+<div class="stages"><div class="stage"><span>Etap 1 (30%)</span><b data-st="1-0">130 zł</b><span data-sd="0">Moduł „Analiza i projekt” w zakresie wersji MVP i ustalenie szczegółów modułów MVP.</span></div><div class="stage"><span>Etap 2 (40%)</span><b data-st="1-1">180 zł</b><span data-sd="1">Moduły MVP: specyfikacja i model danych aukcji.</span></div><div class="stage"><span>Etap 3 (30%)</span><b data-st="1-2">130 zł</b><span data-sd="2">Odbiór i przekazanie wersji MVP. Poza zakresem MVP: import ofert z partnerskich API i porównanie z kosztami importu (opcjonalna faza rozwojowa, wyceniana osobno).</span></div></div>
+</article>
+<article class="variant" data-panel="2" hidden>
+<h3>Pełny zakres z oferty · <span data-total="2">900 zł</span> netto</h3>
+<p class="muted">Wszystkie moduły z oferty, trzy etapy 30/40/30, każdy jako osobna umowa w Useme po odbiorze poprzedniego. Termin z oferty: 7 dni.</p>
+<h4>Moduły</h4><ul class="items" data-list="all"><li><span>Analiza i projekt</span><b>220 zł</b></li><li><span>Specyfikacja i model danych aukcji</span><b>220 zł</b></li><li><span>Import ofert z partnerskich API</span><b>220 zł</b></li><li><span>Porównanie z kosztami importu</span><b>240 zł</b></li></ul>
+<div class="stages"><div class="stage"><span>Etap 1 · Analiza i pierwszy moduł (30%)</span><b data-st="2-0">270 zł</b></div><div class="stage"><span>Etap 2 · Import ofert z partnerskich API (40%)</span><b data-st="2-1">360 zł</b></div><div class="stage"><span>Etap 3 · Porównanie z kosztami importu (30%)</span><b data-st="2-2">270 zł</b></div></div>
+</article>
+</section>
+<section aria-labelledby="h-tab"><h2 id="h-tab">Moduły w każdym wariancie</h2>
+<p class="muted">Kwota w kolumnie to cena modułu w danym wariancie; „później” oznacza moduł poza tym wariantem. Ceny w każdej kolumnie sumują się dokładnie do kwoty wariantu.</p>
+<p class="muted hint">Tabelę można przesuwać w bok; nazwa modułu zostaje po lewej.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabela modułów w wariantach (przewijana w poziomie)"><table>
+<caption class="sr">Moduły w wariantach Szybki Etap 1, MVP i pełny zakres, z cenami netto</caption>
+<thead><tr><th scope="col">Moduł</th><th scope="col" data-col="0" class="">Szybki Etap 1</th><th scope="col" data-col="1" class="sel">MVP</th><th scope="col" data-col="2" class="">Pełny zakres z oferty</th></tr></thead>
+<tbody>
+<tr><th scope="row">Analiza i projekt<span class="tag">rdzeń</span></th><td data-c="0-0" data-v="220" class="in">220 zł<small>w Etapie 1</small></td><td data-c="1-0" data-v="220" class="in sel">220 zł</td><td data-c="2-0" data-v="220" class="in">220 zł</td></tr>
+<tr><th scope="row">Specyfikacja i model danych aukcji</th><td data-c="0-1" data-v="0" class="later">później<small>kolejne etapy</small></td><td data-c="1-1" data-v="220" class="in sel">220 zł</td><td data-c="2-1" data-v="220" class="in">220 zł</td></tr>
+<tr><th scope="row">Import ofert z partnerskich API</th><td data-c="0-2" data-v="0" class="later">później<small>kolejne etapy</small></td><td data-c="1-2" data-v="0" class="later sel">później<small>opcja po MVP</small></td><td data-c="2-2" data-v="220" class="in">220 zł</td></tr>
+<tr><th scope="row">Porównanie z kosztami importu</th><td data-c="0-3" data-v="0" class="later">później<small>kolejne etapy</small></td><td data-c="1-3" data-v="0" class="later sel">później<small>opcja po MVP</small></td><td data-c="2-3" data-v="240" class="in">240 zł</td></tr>
+<tr><th scope="row">Reszta zakresu Etapu 1<small>Projekt i specyfikacja i model danych aukcji do akceptacji w ok. 2 dni roboczych.</small></th><td data-c="0-r" data-v="50" class="in">50 zł<small>reszta Etapu 1</small></td><td data-c="1-r" data-v="0" class="incl sel">w cenie modułów</td><td data-c="2-r" data-v="0" class="incl">w cenie modułów</td></tr>
+</tbody>
+<tfoot><tr><th scope="row">Razem netto</th><td data-t="0" data-v="270" class="">270 zł</td><td data-t="1" data-v="440" class="sel">440 zł</td><td data-t="2" data-v="900" class="">900 zł</td></tr></tfoot>
+</table></div>
+</section>
+<section aria-labelledby="h-sim"><h2 id="h-sim">Symulator ryzyka</h2>
+<p class="muted">Przykładowe plany firm fikcyjnych (Alfa, Beta, Gamma) albo własny układ: zaznacz moduły, sposób rozliczenia i budżet. Wynik: OK, Uwaga albo Blokada.</p>
+<div class="chips" role="group" aria-label="Dane przykładowe"><button class="chip" type="button" data-preset="0">Alfa · całość z góry</button><button class="chip" type="button" data-preset="1">Beta · budżet o połowę niższy</button><button class="chip" type="button" data-preset="2">Gamma · Szybki Etap 1</button></div>
+<p class="muted" id="who">Plan z wybranego wariantu; zmień moduły, sposób rozliczenia albo budżet, a wynik przeliczy się od razu.</p>
+<div class="grid2"><label for="mode">Sposób rozliczenia<select id="mode"><option value="staged">Etapami 30/40/30 przez Useme</option><option value="etap1">Tylko Szybki Etap 1, decyzja po odbiorze</option><option value="upfront">Całość z góry, bez Etapu 1</option></select></label>
+<label for="budget">Budżet Państwa (zł netto, opcjonalnie)<input id="budget" type="number" min="0" step="10" inputmode="numeric" placeholder="np. 540"></label></div>
+<fieldset><legend>Moduły w zakresie</legend><label class="mod"><input type="checkbox" data-m="0" checked><span>Analiza i projekt<span class="tag">rdzeń</span></span><b data-mp="0">220 zł</b></label><label class="mod"><input type="checkbox" data-m="1" checked><span>Specyfikacja i model danych aukcji</span><b data-mp="1">220 zł</b></label><label class="mod"><input type="checkbox" data-m="2"><span>Import ofert z partnerskich API</span><b data-mp="2">220 zł</b></label><label class="mod"><input type="checkbox" data-m="3"><span>Porównanie z kosztami importu</span><b data-mp="3">240 zł</b></label></fieldset>
+<button class="ghost" id="fit" type="button">Dopasuj do budżetu</button>
+<div class="verdict warn" id="verdict" role="status" aria-live="polite">Uwaga: plan wykonalny, z ryzykiem opisanym niżej.</div>
+<ul class="checks" id="checks"><li><span class="pill ok">OK</span><span>Etapy 30/40/30: każda płatność w Useme dopiero po odbiorze poprzedniego etapu.</span></li><li><span class="pill ok">OK</span><span>Rdzeń w zakresie: „Analiza i projekt”.</span></li><li><span class="pill warn">Uwaga</span><span>Integracja później: „Import ofert z partnerskich API” i „Porównanie z kosztami importu”. Do fazy rozwojowej dane przenoszone ręcznie albo plikiem.</span></li></ul>
+<p class="muted" id="simTotal">Zakres w symulacji: 440 zł netto · Etap 1: 130 zł · Etap 2: 180 zł · Etap 3: 130 zł</p>
+</section>
+<section aria-labelledby="h-rules"><h2 id="h-rules">Jak to rozliczamy</h2>
+<ul class="plain"><li>Każdy wariant rozliczany wyłącznie przez Useme; każdy etap to osobna umowa po odbiorze poprzedniego.</li><li>Etapy 30/40/30 liczone od kwoty w pełnych złotych: dwa pierwsze zaokrąglone do 10 zł, ostatni domyka sumę.</li><li>MVP nie jest rabatem: to mniejszy zakres, a moduły spoza MVP można dołożyć później.</li></ul>
+</section>
+</main>
+<footer>Solid Digital · Havrelle. Dane przykładowe (Alfa, Beta, Gamma) są fikcyjne. Strona nie wysyła żadnych danych; zapamiętuje tylko wybrany motyw w przeglądarce. Kwoty netto.</footer>
+<script>'use strict';
+const CFG={"amount":900,"share":0.7,"est":false,"scaled":false,"mods":[{"n":"Analiza i projekt","p":220,"r":true},{"n":"Specyfikacja i model danych aukcji","p":220,"r":false},{"n":"Import ofert z partnerskich API","p":220,"r":false},{"n":"Porównanie z kosztami importu","p":240,"r":false}],"stages":["Etap 1 · Analiza i pierwszy moduł","Etap 2 · Import ofert z partnerskich API","Etap 3 · Porównanie z kosztami importu"],"days":7,"e1":{"scope":["Projekt i specyfikacja i model danych aukcji do akceptacji w ok. 2 dni roboczych.","Moduł „Analiza i projekt” według makiety."],"accept":["Moduł „Analiza i projekt” w wersji do sprawdzenia (link testowy albo pliki).","Lista ustaleń i decyzji potrzebnych do Etapu 2.","Krótki opis wykonanych prac i sposobu sprawdzenia, przekazany w wiadomości w Useme.","Poprawki zgłoszone do zakresu Etapu 1 w ciągu 3 dni roboczych od przekazania, wprowadzone w jednej rundzie."],"days":2,"rights":"Autorskie prawa majątkowe do kodu źródłowego i plików powstałych w Etapie 1 przechodzą na Zamawiającego po odbiorze i rozliczeniu etapu w Useme, na polach eksploatacji wskazanych w umowie Useme."},"kinds":{"pay":[],"integ":[2,3],"test":[]},"market":null,"demo":"https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/makiety-31-10-pelne-pokrycie/europejska-porownywarka-aukcji-samochodowych/"};
+const STAGE_SHARES=[30,40,30];
+const NB='\u00a0';
+const group=(n)=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,NB);
+const zl=(n)=>{const v=Math.round(n);return (v<0?'-':'')+group(Math.abs(v))+NB+'zł';};
+const amountText=(p)=>{const c=Math.round(p*100),w=Math.floor(c/100),g=c%100;return group(w)+(g?','+(g<10?'0':'')+g:'')+NB+'zł';};
+const priceText=(p)=>{const c=Math.round(p*100);return c%100?(c/100).toFixed(2):String(c/100);};
+const pct=(part,total)=>(total>0?Math.round((part*100)/total):0);
+const quote=(s)=>'„'+s+'”';
+const lowerFirst=(t)=>(/^\p{Lu}\p{Ll}/u.test(t)?t.charAt(0).toLowerCase()+t.slice(1):t);
+const list=(items)=>(items.length<2?items.join(''):items.slice(0,-1).join(', ')+' i '+items[items.length-1]);
+function stageSplit(total){let left=total;return STAGE_SHARES.map((share,index)=>{const amount=index===STAGE_SHARES.length-1?left:Math.round((total*share)/1000)*10;left-=amount;return amount;});}
+function scaleModules(prices,target){const before=prices.reduce((a,v)=>a+v,0);if(!(before>0)||before===target)return prices.slice();const raw=prices.map((v)=>(v*target)/before),fl=raw.map(Math.floor);let left=target-fl.reduce((a,v)=>a+v,0);for(const item of raw.map((v,i)=>[v-fl[i],i]).sort((a,b)=>b[0]-a[0]||a[1]-b[1])){if(left<=0)break;fl[item[1]]++;left--;}return fl;}
+function priceModules(modules,amount){
+ const given=modules.every((m)=>typeof m.price==='number'&&m.price>=0)&&modules.reduce((s,m)=>s+(m.price??0),0)===amount;
+ if(given)return {modules:modules.map((m)=>({name:m.name,price:m.price,required:m.required})),estimated:false};
+ const anyRequired=modules.some((m)=>m.required);
+ const required=modules.filter((m)=>m.required).length||1;
+ const optional=modules.length-modules.filter((m)=>m.required).length;
+ const weights=modules.map((m,i)=>(m.required||(i===0&&!anyRequired)?0.3/required:optional?0.7/optional:0));
+ const sumWeights=weights.reduce((s,w)=>s+w,0)||1;
+ let left=amount;
+ const priced=modules.map((m,i)=>{const price=i===modules.length-1?left:Math.round((amount*weights[i])/sumWeights/10)*10;left-=price;return {name:m.name,price:price,required:m.required||(i===0&&!anyRequired)};});
+ return {modules:priced,estimated:true};
+}
+function trim(modules,budgetPLN){
+ const budget=Math.round(budgetPLN);
+ const kept=modules.map((m)=>Boolean(m.required));
+ const coreSum=modules.reduce((s,m)=>s+(m.required?m.price:0),0);
+ let used=coreSum;
+ modules.forEach((m,i)=>{if(kept[i]||used+m.price>budget)return;kept[i]=true;used+=m.price;});
+ const mvpPLN=modules.reduce((s,m,i)=>s+(kept[i]?m.price:0),0);
+ const outcome=kept.every(Boolean)?'FITS':coreSum>budget?'CORE_ABOVE_BUDGET':'TRIMMED';
+ return {budget:budget,kept:kept,mvpPLN:mvpPLN,coreSum:coreSum,outcome:outcome};
+}
+function parsePrice(href){try{const u=new URL(href);const raw=u.searchParams.get('p')??(/^#p=([0-9]+(?:[.,][0-9]{1,2})?)$/.exec(u.hash)||[])[1];if(raw==null)return null;const v=Number(String(raw).replace(',','.'));return Number.isFinite(v)&&v>=100&&v<=200000?Math.round(v*100)/100:null;}catch(e){return null;}}
+function compute(cfg,p){
+ const base=Math.round(p);
+ let source;
+ if(cfg.est)source=cfg.mods.map((m)=>({name:m.n,price:null,required:m.r}));
+ else{const scaled=scaleModules(cfg.mods.map((m)=>m.p),base);source=cfg.mods.map((m,i)=>({name:m.n,price:scaled[i],required:m.r}));}
+ const priced=priceModules(source,base);
+ const mods=priced.modules;
+ const t=trim(mods,base*cfg.share);
+ const full=stageSplit(base);
+ const e1=full[0];
+ const start=Math.max(0,mods.findIndex((m)=>m.required));
+ const startE1=Math.min(mods[start].price,e1);
+ return {p:p,base:base,estimated:priced.estimated,mods:mods,start:start,budget:t.budget,kept:t.kept,outcome:t.outcome,coreSum:t.coreSum,
+  cols:[
+   {key:'e1',total:e1,cells:mods.map((m,i)=>(i===start?startE1:null)),rest:e1-startE1,stages:[e1],next:[full[1],full[2]]},
+   {key:'mvp',total:t.mvpPLN,cells:mods.map((m,i)=>(t.kept[i]?m.price:null)),rest:0,stages:stageSplit(t.mvpPLN)},
+   {key:'full',total:base,cells:mods.map((m)=>m.price),rest:0,stages:full}]};
+}
+function view(cfg,m){
+ const est=m.estimated?' (szacunek)':'';
+ const keptIdx=m.mods.map((x,i)=>i).filter((i)=>m.kept[i]);
+ const laterIdx=m.mods.map((x,i)=>i).filter((i)=>!m.kept[i]);
+ const first=m.mods[keptIdx.length?keptIdx[0]:m.start];
+ const middle=keptIdx.slice(1).map((i)=>lowerFirst(m.mods[i].name));
+ const later=laterIdx.map((i)=>lowerFirst(m.mods[i].name));
+ const cells=m.cols.map((col,v)=>m.mods.map((mod,i)=>{const val=col.cells[i];
+  if(val==null)return {v:0,cls:'later',main:'później',note:v===0?'kolejne etapy':'opcja po MVP'};
+  return {v:val,cls:'in',main:zl(val),note:v===0?(mod.price>val?'część modułu w Etapie 1':'w Etapie 1'):(m.estimated?'szacunek':'')};}));
+ const e1=m.cols[0];
+ const rest=[e1.rest>0?{v:e1.rest,cls:'in',main:zl(e1.rest),note:'reszta Etapu 1'}:{v:0,cls:'incl',main:'w cenie modułu startowego',note:''},
+  {v:0,cls:'incl',main:'w cenie modułów',note:''},{v:0,cls:'incl',main:'w cenie modułów',note:''}];
+ return {amount:amountText(m.p),href:cfg.demo+'#p='+priceText(m.p),
+  totals:m.cols.map((c)=>zl(c.total)),shares:m.cols.map((c)=>pct(c.total,m.base)),
+  stages:m.cols.map((c)=>c.stages.map(zl)),next:e1.next.map(zl),budget:zl(m.budget),
+  cells:cells,rest:rest,
+  kept:keptIdx.map((i)=>[m.mods[i].name,zl(m.mods[i].price)+est]),
+  later:laterIdx.map((i)=>[m.mods[i].name,zl(m.mods[i].price)+est]),
+  all:m.mods.map((x)=>[x.name,zl(x.price)+est]),
+  mvpStages:['Moduł '+quote(first.name)+' w zakresie wersji MVP i ustalenie szczegółów modułów MVP.',
+   middle.length?'Moduły MVP: '+list(middle)+'.':'Dopracowanie modułu MVP po uwagach z Etapu 1.',
+   'Odbiór i przekazanie wersji MVP.'+(later.length?' Poza zakresem MVP: '+list(later)+' (opcjonalna faza rozwojowa, wyceniana osobno).':'')],
+  modPrices:m.mods.map((x)=>zl(x.price))};
+}
+function presets(cfg,m){
+ const n=m.mods.length;
+ const pay=cfg.market?(cfg.kinds.pay||[]).filter((i)=>!m.mods[i].required):[];
+ const alfa={key:'alfa',name:'Alfa · całość z góry',who:'Alfa (firma fikcyjna) chce cały zakres od razu i proponuje jedną płatność z góry, bez Etapu 1.',state:{mode:'upfront',on:Array.from({length:n},()=>true),budget:null}};
+ let beta;
+ if(pay.length)beta={key:'beta',name:'Beta · MVP bez płatności',who:'Beta (firma fikcyjna) chce wystartować z MVP, ale bez modułu płatności, i rozliczać zamówienia ręcznie.',state:{mode:'staged',on:m.kept.map((k,i)=>k&&pay.indexOf(i)<0),budget:null}};
+ else{const b=Math.round(m.base*0.5);beta={key:'beta',name:'Beta · budżet o połowę niższy',who:'Beta (firma fikcyjna) ma budżet o połowę niższy niż kwota oferty: '+zl(b)+' netto.',state:{mode:'staged',on:trim(m.mods,b).kept,budget:b}};}
+ const gamma={key:'gamma',name:'Gamma · Szybki Etap 1',who:'Gamma (firma fikcyjna) zaczyna od Szybkiego Etapu 1 i decyduje o kolejnych etapach po odbiorze.',state:{mode:'etap1',on:m.mods.map((x,i)=>i===m.start),budget:null}};
+ return [alfa,beta,gamma];
+}
+function simulate(cfg,m,state){
+ const mods=m.mods,checks=[];
+ const sel=mods.map((x,i)=>(state.mode==='etap1'?i===m.start:Boolean(state.on[i])));
+ const total=state.mode==='etap1'?m.cols[0].total:mods.reduce((s,x,i)=>s+(sel[i]?x.price:0),0);
+ const names=(idx)=>list(idx.map((i)=>quote(mods[i].name)));
+ if(state.mode==='upfront')checks.push({s:'block',t:'Zakres bez Etapu 1: całość płatna przed pierwszym odbiorem. Rozliczenie zostaje w Useme etapami 30/40/30, każdy etap po odbiorze poprzedniego.'});
+ else if(state.mode==='etap1')checks.push({s:'ok',t:'Szybki Etap 1: jedna umowa na 30% kwoty ('+zl(total)+'), odbiór modułu '+quote(mods[m.start].name)+' przed decyzją o kolejnych etapach.'});
+ else checks.push({s:'ok',t:'Etapy 30/40/30: każda płatność w Useme dopiero po odbiorze poprzedniego etapu.'});
+ if(state.mode!=='etap1'){
+  const core=mods.map((x,i)=>i).filter((i)=>mods[i].required);
+  const missing=core.filter((i)=>!sel[i]);
+  if(missing.length)checks.push({s:'block',t:'Bez modułu '+names(missing)+' nie ma działającego efektu do odbioru: rdzeń zostaje w każdym wariancie.'});
+  else checks.push({s:'ok',t:'Rdzeń w zakresie: '+names(core)+'.'});
+  const off=(kind)=>(cfg.kinds[kind]||[]).filter((i)=>!mods[i].required&&!sel[i]);
+  const pay=cfg.market?off('pay'):[];
+  const integ=off('integ'),test=off('test');
+  if(pay.length)checks.push({s:'warn',t:'Zakres bez modułu płatności przy '+cfg.market+': '+names(pay)+' później, więc zamówienia i rozliczenia trzeba prowadzić ręcznie do fazy rozwojowej.'});
+  if(integ.length)checks.push({s:'warn',t:'Integracja później: '+names(integ)+'. Do fazy rozwojowej dane przenoszone ręcznie albo plikiem.'});
+  if(test.length)checks.push({s:'warn',t:'Poza zakresem: '+names(test)+'. Bez tego wersja nie zostaje uruchomiona ani przekazana do codziennej pracy; wejdzie w fazie rozwojowej.'});
+  const other=mods.map((x,i)=>i).filter((i)=>!sel[i]&&!mods[i].required&&pay.indexOf(i)<0&&integ.indexOf(i)<0&&test.indexOf(i)<0);
+  if(other.length)checks.push({s:'ok',t:'Później, jako opcja: '+names(other)+' (opcjonalna faza rozwojowa, wyceniana osobno).'});
+ }
+ const budget=Number(state.budget)||0;
+ if(budget>0){
+  if(state.mode!=='etap1'&&m.coreSum>budget)checks.push({s:'block',t:'Budżet '+zl(budget)+' jest niższy niż cena rdzenia ('+zl(m.coreSum)+'): poniżej tej kwoty nie oddam sprawdzonej wersji.'});
+  else if(total>budget)checks.push({s:'warn',t:'Wybrany zakres ('+zl(total)+') przekracza budżet o '+zl(total-budget)+': przycisk „Dopasuj do budżetu” zostawi rdzeń i moduły, które się mieszczą.'});
+  else checks.push({s:'ok',t:'Zakres '+zl(total)+' mieści się w budżecie '+zl(budget)+'.'});
+ }
+ const rank={ok:0,warn:1,block:2};
+ const verdict=checks.reduce((w,c)=>(rank[c.s]>rank[w]?c.s:w),'ok');
+ const stages=state.mode==='staged'?stageSplit(total):state.mode==='etap1'?[total]:[];
+ return {checks:checks,verdict:verdict,total:total,stages:stages,sel:sel};
+}
+function simView(r){
+ const label={ok:'OK',warn:'Uwaga',block:'Blokada'};
+ const verdictText={ok:'OK: plan bez blokad, rozliczany etapami po odbiorze.',warn:'Uwaga: plan wykonalny, z ryzykiem opisanym niżej.',block:'Blokada: ten plan wymaga zmiany przed umową.'}[r.verdict];
+ const totalText=r.stages.length===3?'Zakres w symulacji: '+zl(r.total)+' netto · Etap 1: '+zl(r.stages[0])+' · Etap 2: '+zl(r.stages[1])+' · Etap 3: '+zl(r.stages[2])
+  :r.stages.length===1?'Szybki Etap 1: '+zl(r.total)+' netto, jedna umowa w Useme.'
+  :'Zakres w symulacji: '+zl(r.total)+' netto jedną płatnością z góry, poza modelem etapów.';
+ return {verdict:r.verdict,verdictText:verdictText,checks:r.checks.map((c)=>({s:c.s,label:label[c.s],t:c.t})),totalText:totalText};
+}
+const $=(id)=>document.getElementById(id);
+const all=(sel)=>Array.prototype.slice.call(document.querySelectorAll(sel));
+const root=document.documentElement;
+try{const saved=localStorage.getItem('tool-theme');if(saved==='light'||saved==='dark')root.dataset.theme=saved;}catch(e){}
+$('theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('tool-theme',root.dataset.theme);}catch(e){}});
+let model=null,variant=1,state=null,source={kind:'variant',index:1},presetList=[];
+const put=(el,text)=>{if(el&&el.textContent!==text)el.textContent=text;};
+const cell=(el,c)=>{if(!el)return;el.dataset.v=String(c.v);el.className=c.cls+(el.classList.contains('sel')?' sel':'');el.textContent=c.main;if(c.note){const s=document.createElement('small');s.textContent=c.note;el.appendChild(s);}};
+const fill=(ul,items)=>{if(!ul)return;ul.textContent='';for(const it of items){const li=document.createElement('li');const a=document.createElement('span');a.textContent=it[0];const b=document.createElement('b');b.textContent=it[1];li.appendChild(a);li.appendChild(b);ul.appendChild(li);}if(!items.length){const li=document.createElement('li');li.className='none';li.textContent='Brak: wszystkie moduły mieszczą się w MVP.';ul.appendChild(li);}};
+const fromVariant=(v)=>(v===0?{mode:'etap1',on:model.mods.map((x,i)=>i===model.start),budget:state?state.budget:null}:v===1?{mode:'staged',on:model.kept.slice(),budget:state?state.budget:null}:{mode:'staged',on:model.mods.map(()=>true),budget:state?state.budget:null});
+function renderSim(){
+ const r=simulate(CFG,model,state),sv=simView(r);
+ $('mode').value=state.mode;$('budget').value=state.budget?String(state.budget):'';
+ all('[data-m]').forEach((box)=>{const i=Number(box.dataset.m);box.checked=r.sel[i];box.disabled=state.mode==='etap1';});
+ const v=$('verdict');v.className='verdict '+sv.verdict;put(v,sv.verdictText);
+ const ul=$('checks');ul.textContent='';
+ for(const c of sv.checks){const li=document.createElement('li');const pill=document.createElement('span');pill.className='pill '+c.s;pill.textContent=c.label;const t=document.createElement('span');t.textContent=c.t;li.appendChild(pill);li.appendChild(t);ul.appendChild(li);}
+ put($('simTotal'),sv.totalText);
+ all('[data-preset]').forEach((b)=>b.classList.toggle('on',source.kind==='preset'&&Number(b.dataset.preset)===source.index));
+ put($('who'),source.kind==='preset'?presetList[source.index].who:'Plan z wybranego wariantu; zmień moduły, sposób rozliczenia albo budżet, a wynik przeliczy się od razu.');
+}
+function render(){
+ const m=model,w=view(CFG,m);
+ put($('amt'),w.amount);$('amtNote').hidden=m.p===CFG.amount;$('mock').href=w.href;
+ if(document.activeElement!==$('price'))$('price').value=String(m.p);
+ w.totals.forEach((t,v)=>{all('[data-total="'+v+'"]').forEach((el)=>put(el,t));all('[data-share="'+v+'"]').forEach((el)=>put(el,w.shares[v]+'% kwoty'));all('[data-bar="'+v+'"]').forEach((el)=>{el.style.width=Math.min(100,w.shares[v])+'%';});all('[data-t="'+v+'"]').forEach((el)=>{el.dataset.v=String(m.cols[v].total);put(el,t);});});
+ w.stages.forEach((list,v)=>list.forEach((t,s)=>all('[data-st="'+v+'-'+s+'"]').forEach((el)=>put(el,t))));
+ w.next.forEach((t,s)=>all('[data-next="'+s+'"]').forEach((el)=>put(el,t)));
+ w.mvpStages.forEach((t,s)=>all('[data-sd="'+s+'"]').forEach((el)=>put(el,t)));
+ all('[data-budget]').forEach((el)=>put(el,w.budget));
+ w.cells.forEach((col,v)=>col.forEach((c,i)=>cell(document.querySelector('[data-c="'+v+'-'+i+'"]'),c)));
+ w.rest.forEach((c,v)=>cell(document.querySelector('[data-c="'+v+'-r"]'),c));
+ fill(document.querySelector('[data-list="kept"]'),w.kept);fill(document.querySelector('[data-list="later"]'),w.later);fill(document.querySelector('[data-list="all"]'),w.all);
+ w.modPrices.forEach((t,i)=>all('[data-mp="'+i+'"]').forEach((el)=>put(el,t)));
+ presetList=presets(CFG,m);
+ if(source.kind==='variant')state=fromVariant(source.index);else if(source.kind==='preset')state=JSON.parse(JSON.stringify(presetList[source.index].state));
+ renderSim();
+}
+function showVariant(v){variant=v;
+ all('[data-variant]').forEach((b)=>b.setAttribute('aria-pressed',String(Number(b.dataset.variant)===v)));
+ all('[data-panel]').forEach((p)=>{p.hidden=Number(p.dataset.panel)!==v;});
+ all('[data-col]').forEach((el)=>el.classList.toggle('sel',Number(el.dataset.col)===v));
+ all('[data-c]').forEach((el)=>el.classList.toggle('sel',el.dataset.c.split('-')[0]===String(v)));
+ all('[data-t]').forEach((el)=>el.classList.toggle('sel',el.dataset.t===String(v)));
+}
+function setPrice(p){model=compute(CFG,p);render();}
+all('[data-variant]').forEach((b)=>b.addEventListener('click',()=>{const v=Number(b.dataset.variant);showVariant(v);source={kind:'variant',index:v};state=fromVariant(v);renderSim();}));
+all('[data-preset]').forEach((b)=>b.addEventListener('click',()=>{const i=Number(b.dataset.preset);source={kind:'preset',index:i};state=JSON.parse(JSON.stringify(presetList[i].state));renderSim();}));
+$('mode').addEventListener('change',()=>{state.mode=$('mode').value;if(state.mode==='etap1')state.on=model.mods.map((x,i)=>i===model.start);source={kind:'custom'};renderSim();});
+$('budget').addEventListener('input',()=>{const b=Number($('budget').value);state.budget=Number.isFinite(b)&&b>0?Math.round(b):null;source={kind:'custom'};renderSim();});
+all('[data-m]').forEach((box)=>box.addEventListener('change',()=>{state.on[Number(box.dataset.m)]=box.checked;source={kind:'custom'};renderSim();}));
+$('fit').addEventListener('click',()=>{const b=Number(state.budget)||0;if(b>0){state.on=trim(model.mods,b).kept;if(state.mode!=='staged')state.mode='staged';}else{$('budget').focus();}source={kind:'custom'};renderSim();});
+const applyPrice=()=>{const raw=String($('price').value).replace(',','.');const v=Number(raw);if(!Number.isFinite(v)||v<100||v>200000){$('price').setCustomValidity('Kwota od 100 do 200 000 zł');$('price').reportValidity();return;}$('price').setCustomValidity('');const p=Math.round(v*100)/100;try{history.replaceState(null,'',location.pathname+'#p='+priceText(p));}catch(e){}setPrice(p);};
+$('apply').addEventListener('click',applyPrice);
+$('price').addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();applyPrice();}});
+$('reset').addEventListener('click',()=>{try{history.replaceState(null,'',location.pathname+'#p='+priceText(CFG.amount));}catch(e){}setPrice(CFG.amount);});
+window.addEventListener('hashchange',()=>setPrice(parsePrice(location.href)??CFG.amount));
+model=compute(CFG,parsePrice(location.href)??CFG.amount);
+showVariant(1);render();
+</script>
+</body>
+</html>
