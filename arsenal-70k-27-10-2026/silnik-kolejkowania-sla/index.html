@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-FXhQrfuXj9sZ7RBh+puzuIXNNtzYZy8ANJUlsRCRBfo='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-Pek5ZtaREvpQeZDLKDTyqpIhAuVtqWshjOvR3UEgEVY='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="description" content="Symulator naszego harmonogramu: priorytet z wartości oczekiwanej, blokady dat i 72-godzinne okna po każdej wysyłce rozkładają kolejkę na bezpieczne dzienne partie.">
 <meta property="og:title" content="Silnik kolejkowania wysyłek (SLA)">
 <meta property="og:description" content="Symulator naszego harmonogramu: priorytet z wartości oczekiwanej, blokady dat i 72-godzinne okna po każdej wysyłce rozkładają kolejkę na bezpieczne dzienne partie.">
@@ -110,7 +110,7 @@ var HavrelleEngine = (() => {
 
   // src/sales/useme/send-schedule.ts
   var SCHEDULE_DAYS = 7;
-  var SCHEDULE_PER_DAY = 15;
+  var SCHEDULE_PER_DAY = 10;
   var WAVES = [["topRoi", "WAVE1"], ["wave2", "WAVE2"], ["wave3", "WAVE3"], ["wave4", "WAVE4"]];
   var DAY_MS = 864e5;
   var dayAfter = (now, offset) => warsawDay(new Date(Date.parse(`${warsawDay(now)}T12:00:00Z`) + offset * DAY_MS));
