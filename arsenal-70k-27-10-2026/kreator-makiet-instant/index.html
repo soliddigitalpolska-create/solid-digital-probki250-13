@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-C22tvp3p3iyC7E+EH2RScKgHd6I6O6f92UcWMemMgVI='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-/WSEFlBCix86PNuswvljtBHL5pBFazwnhVCbNCcFBbI='; script-src 'sha256-sTBPlzd51oBoOeJTq57bNNPsU2g1fQeGZsaGXgcCUTk='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="description" content="Wybierz branżę i trzy moduły: ten sam kreator, który w milisekundach składa nasze makiety do zleceń, buduje podgląd architektury, wycenę modułów, etapy i follow-up.">
 <meta property="og:title" content="Kreator makiet instant">
 <meta property="og:description" content="Wybierz branżę i trzy moduły: ten sam kreator, który w milisekundach składa nasze makiety do zleceń, buduje podgląd architektury, wycenę modułów, etapy i follow-up.">
@@ -60,7 +60,7 @@ footer{color:var(--muted);font-size:13px;padding-bottom:36px}[hidden]{display:no
 <section><h2>Moduły, cena i etapy</h2><div class="grid2"><ul class="list" id="mods"></ul><div class="stages" id="stages"></div></div></section>
 <section><h2>Dane przykładowych firm w makiecie</h2><div class="chips"><button class="chip" type="button" data-company="0">Alfa</button><button class="chip" type="button" data-company="1">Beta</button><button class="chip" type="button" data-company="2">Gamma</button></div><div class="scroll"><table id="ds"></table></div></section>
 <section><h2>Follow-up do Useme</h2><pre id="followup"></pre><p class="muted" id="fcheck"></p><p class="muted">Adres makiety po publikacji: <code id="url"></code></p><div class="share"><button class="btn" id="copyFollow" type="button">Kopiuj follow-up</button><span class="ok" id="copied" hidden></span></div></section>
-<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 22,4 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/instant-mockup-builder.ts</code></span><span class="muted">instantSpec, instantFollowup, validateInstantInput, InstantInputError, INSTANT_PUBLIC_BASE · kreator za npm run useme:instant-mockup: spec makiety i follow-up z kontrolą USEME-CONV-1.0</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit, stage1Days · podział 30/40/30 i termin Etapu 1</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/resume-followup.ts</code> <code>src/sales/instant-mockup-builder.ts</code></p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 27,2 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/instant-mockup-builder.ts</code></span><span class="muted">instantSpec, instantFollowup, validateInstantInput, InstantInputError, INSTANT_PUBLIC_BASE · kreator za npm run useme:instant-mockup: spec makiety i follow-up z kontrolą USEME-CONV-1.0</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/demo-scaffolder.ts</code></span><span class="muted">stageSplit, stage1Days · podział 30/40/30 i termin Etapu 1</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/demo-scaffolder.ts</code> <code>src/sales/useme/conversion-style.ts</code> <code>src/sales/architecture-hubs.ts</code> <code>src/sales/useme/resume-followup.ts</code> <code>src/sales/instant-mockup-builder.ts</code></p></section>
 <section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
 </main>
 <footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
@@ -295,7 +295,7 @@ var HavrelleEngine = (() => {
 
   // src/sales/useme/resume-followup.ts
   function quotableTitle(title) {
-    const clean2 = title.replace(/https?:\/\/\S+/gu, "").replace(/[\w.+-]+@[\w-]+\.[\w.]+/gu, "").replace(/[?!\u201e\u201d"]/gu, "").replace(/\s+/gu, " ").trim();
+    const clean2 = title.replace(/https?:\/\/\S+/gu, "").replace(/[\w.+-]+@[\w-]+\.[\w.]+/gu, "").replace(/\[[^\]\n]{1,24}\]/gu, " ").replace(/[?!\u201e\u201d"]/gu, "").replace(/\s+/gu, " ").trim().replace(/^[\s+,;:\u2013|/-]+|[\s+,;:\u2013|/-]+$/gu, "").trim();
     if (clean2.length <= 70) return clean2;
     const cut = clean2.slice(0, 70);
     return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 40)).replace(/[\s,;:\u2013-]+$/u, "")}\u2026`;
@@ -308,11 +308,13 @@ var HavrelleEngine = (() => {
     { name: "Beta Logistyka sp. z o.o.", nip: "000-000-00-02", city: "Krak\xF3w" },
     { name: "Gamma Technika S.A.", nip: "000-000-00-03", city: "Gda\u0144sk" }
   ];
-  var STATUSES = ["nowe", "w toku", "do akceptacji", "zako\u0144czone"];
+  var STATUSES = { APP: ["nowe", "w toku", "do akceptacji", "zako\u0144czone"], PRODUCTION: ["brief", "w realizacji", "do akceptacji", "oddane"] };
   var DATES = ["28.10", "30.10", "04.11", "07.11"];
   var zl = (n) => `${Math.round(n).toLocaleString("pl-PL", { useGrouping: true }).replace(/[\u00a0\u202f]/gu, " ")} z\u0142`;
   var clean = (text, max) => text.replace(/\s+/gu, " ").trim().slice(0, max);
   var lowerFirst = (text) => /^\p{Lu}{2}/u.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1);
+  var PRODUCTION_HINT = /wideo|video|film|monta[z\u017c]|rolk|reels|tiktok|youtube|grafi[kc]|logo|canva|ilustrac|wizualizac|\b3d\b|copywrit|tekst|artyku|blog|scenari|social|instagram|kampani|reklam|\bads\b|pozycjonow|\bseo\b|e-?book|sk\u0142ad|\u0142amani|kreacj|animac|audyt/iu;
+  var instantView = (input) => input.view === "APP" || input.view === "PRODUCTION" ? input.view : PRODUCTION_HINT.test(`${input.title ?? ""} ${input.industry ?? ""}`) ? "PRODUCTION" : "APP";
   var InstantInputError = class extends Error {
     constructor(code) {
       super(code);
@@ -323,24 +325,43 @@ var HavrelleEngine = (() => {
   function validateInstantInput(input) {
     if (!clean(input.title ?? "", 160)) throw new InstantInputError("TITLE_MISSING");
     if (!clean(input.industry ?? "", 80)) throw new InstantInputError("INDUSTRY_MISSING");
-    if (!Number.isFinite(input.price) || input.price < 300 || input.price > 2e5) throw new InstantInputError("PRICE_INVALID");
+    if (!Number.isFinite(input.price) || input.price < 100 || input.price > 2e5) throw new InstantInputError("PRICE_INVALID");
     if (!Array.isArray(input.modules) || input.modules.length !== 3 || input.modules.some((name) => !clean(name ?? "", 80))) throw new InstantInputError("MODULES_INVALID");
+  }
+  function splitInstant(price, names) {
+    const step = price < 1e3 ? 10 : 50;
+    const base = Math.floor(price / names.length / step) * step;
+    return names.map((name, index) => ({ name, price: index === names.length - 1 ? price - base * (names.length - 1) : base, required: index === 0 }));
   }
   function instantSpec(input) {
     validateInstantInput(input);
     const title = clean(input.title, 160), industry = clean(input.industry, 80);
+    const view = instantView(input), production = view === "PRODUCTION";
     const [m1, m2, m3] = input.modules.map((name) => clean(name, 80));
-    const modulePrices = splitPrice(Math.round(input.price), ["Analiza i projekt", m1, m2, m3]);
+    const modulePrices = splitInstant(Math.round(input.price), [production ? "Brief i plan" : "Analiza i projekt", m1, m2, m3]);
     const share = (index) => modulePrices[index + 1].price;
+    const days = typeof input.days === "number" && input.days > 0 ? Math.round(input.days) : null;
+    const short = (company) => company.name.split(" ")[0];
+    const [alfa, beta, gamma] = COMPANIES;
     const datasets = {
-      title: `Dane trzech przyk\u0142adowych firm z bran\u017Cy: ${industry}`,
-      description: "Prze\u0142\u0105cz firm\u0119: ta sama struktura, inne dane. Wszystkie firmy i liczby s\u0105 fikcyjne.",
-      mock: { kind: "dataset", columns: ["Sprawa", "Modu\u0142", "Status", "Termin", "Warto\u015B\u0107"], sets: COMPANIES.map((company, ci) => ({
-        name: `${company.name.split(" ")[0]} \xB7 ${company.city}`,
-        rows: [m1, m2, m3, m1].map((mod, ri) => [`${company.name.split(" ")[0]}/${String(ci * 4 + ri + 1).padStart(3, "0")}`, mod, STATUSES[(ri + ci) % 4], DATES[ri], zl(Math.round(share(ri % 3) / 4 * (1 + (ci + ri) % 3 * 0.25)))])
+      title: `Prze\u0142\u0105cznik danych fikcyjnych Alfa / Beta / Gamma: ${industry}`,
+      description: "Prze\u0142\u0105cz firm\u0119: ta sama struktura, inne dane. Wszystkie firmy, pozycje i liczby s\u0105 fikcyjne.",
+      mock: { kind: "dataset", columns: production ? ["Pozycja", "Etap", "Status", "Termin", "Warto\u015B\u0107"] : ["Sprawa", "Modu\u0142", "Status", "Termin", "Warto\u015B\u0107"], sets: COMPANIES.map((company, ci) => ({
+        name: `${short(company)} \xB7 ${company.city}`,
+        rows: [m1, m2, m3, m1].map((mod, ri) => [`${short(company)}/${String(ci * 4 + ri + 1).padStart(3, "0")}`, mod, STATUSES[view][(ri + ci) % 4], DATES[ri], zl(Math.round(share(ri % 3) / 4 * (1 + (ci + ri) % 3 * 0.25)))])
       })) }
     };
-    const flow = {
+    const flow = production ? {
+      title: "Przebieg realizacji",
+      description: "Brief, trzy cz\u0119\u015Bci zakresu z oferty i akceptacja; kliknij krok, \u017Ceby oznaczy\u0107 go jako om\xF3wiony.",
+      mock: { kind: "flow", steps: [
+        { title: "Brief i materia\u0142y", detail: "Cel, materia\u0142y \u017Ar\xF3d\u0142owe, wytyczne i przyk\u0142ady." },
+        { title: m1, detail: "Pierwsza cz\u0119\u015B\u0107 zakresu z oferty." },
+        { title: m2, detail: "Druga cz\u0119\u015B\u0107 zakresu z oferty." },
+        { title: m3, detail: "Trzecia cz\u0119\u015B\u0107 zakresu z oferty." },
+        { title: "Akceptacja i przekazanie", detail: "Zatwierdzona wersja i przekazanie plik\xF3w lub raportu." }
+      ] }
+    } : {
       title: "Przebieg procesu",
       description: "Trzy modu\u0142y z oferty jako kolejne kroki; kliknij krok, \u017Ceby oznaczy\u0107 go jako om\xF3wiony.",
       mock: { kind: "flow", steps: [
@@ -351,55 +372,79 @@ var HavrelleEngine = (() => {
         { title: "Akceptacja i wynik", detail: "Cz\u0142owiek zatwierdza wynik przed zapisem i wysy\u0142k\u0105." }
       ] }
     };
+    const what = production ? "Brief" : "Zg\u0142oszenie";
     const simulator = {
-      title: "Symulacja: jedna sprawa przez ca\u0142y proces",
-      description: "Wybierz przyk\u0142ad i uruchom; kolejne kroki pokazuj\u0105 si\u0119 po kolei.",
+      title: "Symulator stan\xF3w OK / Warn / Block",
+      description: "Trzy przypadki na fikcyjnych danych: OK (wszystko przechodzi), Warn (wynik czeka na decyzj\u0119 cz\u0142owieka), Block (brak danych zatrzymuje proces). Wybierz przypadek i uruchom; kroki pokazuj\u0105 si\u0119 po kolei.",
       mock: { kind: "simulator", samples: [
-        { label: `${COMPANIES[0].name}: sprawa kompletna`, input: `Zg\u0142oszenie: ${COMPANIES[0].name}, NIP ${COMPANIES[0].nip}, ul. Przyk\u0142adowa 1, ${COMPANIES[0].city}.
-Zakres: ${lowerFirst(m1)}, ${lowerFirst(m2)}.`, steps: [
-          { title: m1, detail: "Dane kompletne, krok wykonany.", status: "ok" },
-          { title: m2, detail: "Wynik przygotowany na podstawie danych z kroku 1.", status: "ok" },
-          { title: m3, detail: "Wynik gotowy do sprawdzenia.", status: "ok" },
-          { title: "Akceptacja", detail: "Czeka na decyzj\u0119 cz\u0142owieka.", status: "warn" }
+        { label: `OK \xB7 ${alfa.name}: ${production ? "materia\u0142y kompletne" : "sprawa kompletna"}`, input: `${what}: ${alfa.name}, NIP ${alfa.nip}, ul. Przyk\u0142adowa 1, ${alfa.city}.
+Zakres: ${lowerFirst(m1)}, ${lowerFirst(m2)}, ${lowerFirst(m3)}.`, steps: [
+          { title: m1, detail: production ? "Materia\u0142y kompletne, cz\u0119\u015B\u0107 wykonana." : "Dane kompletne, krok wykonany.", status: "ok" },
+          { title: m2, detail: production ? "Wersja przygotowana wed\u0142ug briefu." : "Wynik przygotowany na podstawie danych z kroku 1.", status: "ok" },
+          { title: m3, detail: production ? "Wersja gotowa i sprawdzona z briefem." : "Wynik gotowy i sprawdzony.", status: "ok" },
+          { title: "Stan: OK", detail: production ? "Wersja zaakceptowana, pliki gotowe do przekazania." : "Wynik zatwierdzony przez cz\u0142owieka i zapisany.", status: "ok" }
         ] },
-        { label: `${COMPANIES[1].name}: brak danych`, input: `Zg\u0142oszenie: ${COMPANIES[1].name}, NIP ${COMPANIES[1].nip}.
-Brak terminu i zakresu.`, steps: [
-          { title: m1, detail: "Brakuje terminu i zakresu.", status: "block" },
-          { title: "Pro\u015Bba o uzupe\u0142nienie", detail: "Kr\xF3tka wiadomo\u015B\u0107 z list\u0105 brakuj\u0105cych danych.", status: "warn" }
+        { label: `Warn \xB7 ${beta.name}: ${production ? "wersja do akceptacji" : "wynik do decyzji"}`, input: `${what}: ${beta.name}, NIP ${beta.nip}.
+Zakres: ${lowerFirst(m1)}, ${lowerFirst(m2)}; jedna pozycja niejednoznaczna.`, steps: [
+          { title: m1, detail: production ? "Materia\u0142y kompletne." : "Dane kompletne, krok wykonany.", status: "ok" },
+          { title: m2, detail: production ? "Jeden element do decyzji: dwa warianty do wyboru." : "Jedna pozycja niejednoznaczna: oznaczona do sprawdzenia.", status: "warn" },
+          { title: "Stan: Warn", detail: production ? "Czeka na wyb\xF3r wariantu; dalsza praca po decyzji." : "Czeka na decyzj\u0119 cz\u0142owieka; nic nie jest zapisywane ani wysy\u0142ane.", status: "warn" }
+        ] },
+        { label: `Block \xB7 ${gamma.name}: brak danych`, input: `${what}: ${gamma.name}, NIP ${gamma.nip}.
+${production ? "Brak materia\u0142\xF3w \u017Ar\xF3d\u0142owych i terminu." : "Brak terminu i zakresu."}`, steps: [
+          { title: m1, detail: production ? "Brakuje materia\u0142\xF3w \u017Ar\xF3d\u0142owych i terminu: realizacja wstrzymana." : "Brakuje terminu i zakresu: proces zatrzymany.", status: "block" },
+          { title: "Stan: Block", detail: "Kr\xF3tka wiadomo\u015B\u0107 z list\u0105 brakuj\u0105cych danych; start po uzupe\u0142nieniu.", status: "block" }
         ] }
       ] }
     };
-    const kpi = {
+    const etap1Days = stage1Days(days), total = days ?? 14, etap2Days = Math.max(1, Math.round(total * 0.4));
+    const kpi = production ? {
+      title: "Harmonogram realizacji (przyk\u0142ad)",
+      description: "Dni robocze na kolejne etapy przy terminie z oferty; dok\u0142adny plan powstaje na Etapie 1.",
+      mock: { kind: "chart", unit: "dni", bars: [
+        { label: `Etap 1: ${m1}`.slice(0, 40), value: etap1Days },
+        { label: `Etap 2: ${m2}`.slice(0, 40), value: etap2Days },
+        { label: `Etap 3: ${m3}`.slice(0, 40), value: Math.max(1, total - etap1Days - etap2Days) }
+      ] }
+    } : {
       title: "Przed i po wdro\u017Ceniu (dane przyk\u0142adowe)",
       description: "Czas obs\u0142ugi jednej sprawy w minutach; liczby ilustracyjne, mierzone u Pa\u0144stwa na Etapie 1.",
       mock: { kind: "chart", unit: "min", bars: [{ label: "Dzi\u015B, r\u0119cznie", value: 45 }, { label: `Po module: ${m1}`.slice(0, 40), value: 25 }, { label: "Po wdro\u017Ceniu ca\u0142o\u015Bci", value: 10 }] }
     };
-    const extra = specFromJob({ title: `${title} ${industry}`, price: input.price }).features.find((feature) => !["flow", "kanban"].includes(feature.mock.kind));
+    const extra = production ? void 0 : specFromJob({ title: `${title} ${industry}`, price: input.price }).features.find((feature) => !["flow", "kanban"].includes(feature.mock.kind));
     const handover = {
       title: "Co zostaje u Pa\u0144stwa po odbiorze",
       description: "Lista kontrolna przekazania.",
-      mock: { kind: "checklist", items: [
+      mock: { kind: "checklist", items: production ? [
+        { label: "Pliki finalne lub raport w uzgodnionej formie", done: false },
+        { label: "Pliki \u017Ar\xF3d\u0142owe lub projekt edytowalny", done: false },
+        { label: "Prawa autorskie zgodnie z ofert\u0105 na Useme", done: false },
+        { label: "Zamkni\u0119ta lista poprawek", done: false }
+      ] : [
         { label: "Dzia\u0142aj\u0105cy zakres z oferty", done: false },
         { label: "Kod lub pliki \u017Ar\xF3d\u0142owe na koncie firmy", done: false },
         { label: "Instrukcja obs\u0142ugi", done: false },
         { label: "Dost\u0119py i klucze po stronie firmy", done: false }
       ] }
     };
-    const days = typeof input.days === "number" && input.days > 0 ? Math.round(input.days) : null;
     return {
       slug: input.slug && /^[a-z0-9][a-z0-9-]{1,60}$/u.test(input.slug) ? input.slug : slugify(title),
-      title: `${title}: makieta rozwi\u0105zania`,
-      tagline: `${industry}: ${m1}, ${m2} i ${m3} na fikcyjnych danych firm Alfa, Beta i Gamma, z planem rozliczenia etapami przez Useme.`,
+      title: `${title}: ${production ? "plan realizacji" : "makieta rozwi\u0105zania"}`,
+      tagline: production ? `${industry}: ${m1}, ${m2} i ${m3} na fikcyjnych przyk\u0142adach Alfa, Beta i Gamma: plan, realizacja i akceptacja, z rozliczeniem etapami przez Useme.` : `${industry}: ${m1}, ${m2} i ${m3} na fikcyjnych danych firm Alfa, Beta i Gamma, z planem rozliczenia etapami przez Useme.`,
       jobTitle: title,
       days,
       features: [datasets, flow, simulator, kpi, ...extra ? [extra] : [], handover],
       modules: modulePrices,
-      stages: [
-        { name: "Etap 1 \xB7 Analiza i pierwszy modu\u0142", text: `Projekt i ${lowerFirst(m1)} do akceptacji w ok. ${stage1Days(days)} dni roboczych.` },
+      stages: production ? [
+        { name: `Etap 1 \xB7 Brief i ${lowerFirst(m1)}`, text: `Plan i ${lowerFirst(m1)} do akceptacji w ok. ${etap1Days} dni roboczych.` },
+        { name: `Etap 2 \xB7 ${m2}`, text: "G\u0142\xF3wna cz\u0119\u015B\u0107 realizacji do akceptacji." },
+        { name: `Etap 3 \xB7 ${m3}`, text: "Poprawki, finalizacja i przekazanie plik\xF3w." }
+      ] : [
+        { name: "Etap 1 \xB7 Analiza i pierwszy modu\u0142", text: `Projekt i ${lowerFirst(m1)} do akceptacji w ok. ${etap1Days} dni roboczych.` },
         { name: `Etap 2 \xB7 ${m2}`, text: "G\u0142\xF3wna funkcjonalno\u015B\u0107 na danych testowych." },
         { name: `Etap 3 \xB7 ${m3}`, text: "Testy, wdro\u017Cenie i przekazanie." }
       ],
-      question: `Kt\xF3ry z modu\u0142\xF3w jest dla Pa\u0144stwa najwa\u017Cniejszy na start: ${lowerFirst(m1)}, ${lowerFirst(m2)} czy ${lowerFirst(m3)}?`
+      question: `Kt\xF3ry z ${production ? "element\xF3w" : "modu\u0142\xF3w"} jest dla Pa\u0144stwa najwa\u017Cniejszy na start: ${lowerFirst(m1)}, ${lowerFirst(m2)} czy ${lowerFirst(m3)}?`
     };
   }
   function instantFollowup(input, url) {

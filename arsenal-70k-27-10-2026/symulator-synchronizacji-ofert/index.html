@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-7euyCYYVPanpnMQIh5uHohGvz39igoDDbG8OYEl8lX8='; script-src 'sha256-FMhJgNLllln+doxSEXvSKmEHK05Z0ucdBeJ4HLxeMvE='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-7euyCYYVPanpnMQIh5uHohGvz39igoDDbG8OYEl8lX8='; script-src 'sha256-SEpnBv/6+Gi8xgbVwv6GYtbUSkfEwhhBgur4SLtbbLc='; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="description" content="Silnik npm run useme:sync-sent na fikcyjnych tytułach: które świeże zlecenia mają już naszą ofertę na liście, dlaczego zmieniony tytuł nie pasuje i jak rejestr blokuje drugą ofertę do tego samego zlecenia przed wysyłką.">
 <meta property="og:title" content="Symulator synchronizacji ofert">
 <meta property="og:description" content="Silnik npm run useme:sync-sent na fikcyjnych tytułach: które świeże zlecenia mają już naszą ofertę na liście, dlaczego zmieniony tytuł nie pasuje i jak rejestr blokuje drugą ofertę do tego samego zlecenia przed wysyłką.">
@@ -67,7 +67,7 @@ td.bad{color:var(--bad);font-weight:600}td.warn{color:var(--warn)}td.ok{color:va
 <section><h2>Rejestr wysłanych (tylko w tej karcie)</h2><pre id="tracker"></pre></section>
 <section><h2>Co tu jest kodem backendu, a co logiką strony</h2><p>Dopasowanie (matchSubmitted, normTitle) i oznaczanie (applySync) to src/sales/useme/sent-sync.ts, rejestr to src/sales/useme/sent-tracker.ts: ten sam kod uruchamia npm run useme:sync-sent. Wydruk to port 1:1 z scripts/useme-sync-sent.ts, bez zapisu pliku.</p>
 <p class="muted">Logika strony (src/sales/arsenal-70k.ts, pokryta testem): bramka przed wysyłką z regułą turboQueue (zlecenie z wpisem job:&lt;id&gt; w rejestrze nie wraca do kolejki), ten sam tytuł dwa razy w kolejce, ostrzeżenie o tytule starej oferty i podpowiedź podobnego tytułu, gdy dopasowania nie ma. Skrypt porównuje tylko tytuły i nie czyta treści wątków.</p></section>
-<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 6,0 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-sync.ts</code></span><span class="muted">matchSubmitted, applySync, normTitle · silnik npm run useme:sync-sent: dopasowanie po tytule, oferty sprzed rundy pominięte, oznaczanie job:&lt;id&gt;</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-tracker.ts</code></span><span class="muted">emptyTracker, markSent · rejestr wysłanych: pierwszy termin zostaje, licznik rośnie</span></li><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z scripts/useme-sync-sent.ts</code></span><span class="muted">syncReportLines · wydruk skryptu dla tych samych danych, bez zapisu pliku</span></li><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">sendGate, similarTitle · bramka przed wysyłką: reguła turboQueue (zlecenie z job:&lt;id&gt; w rejestrze nie wraca), duplikat tytułu w kolejce i podpowiedź podobnego tytułu: logika strony, pokryta testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/useme/sent-tracker.ts</code> <code>src/sales/useme/sent-sync.ts</code> <code>src/sales/arsenal-70k.ts</code></p></section>
+<section><h2>Kod silnika na tej stronie</h2><p class="muted">Silnik działa w tej karcie przeglądarki: paczka 6,2 kB zbudowana esbuild z repozytorium backendu, wbudowana w stronę i przypięta hashem SHA-256 w CSP. Importy node: są zastąpione zaślepkami, które build musi całkowicie usunąć; gdy któraś zostaje w paczce, build kończy się błędem.</p><ul class="list"><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-sync.ts</code></span><span class="muted">matchSubmitted, applySync, normTitle · silnik npm run useme:sync-sent: dopasowanie po tytule, oferty sprzed rundy pominięte, oznaczanie job:&lt;id&gt;</span></li><li><span><span class="badge BUNDLE">prawdziwy kod</span> <code>src/sales/useme/sent-tracker.ts</code></span><span class="muted">emptyTracker, markSent · rejestr wysłanych: pierwszy termin zostaje, licznik rośnie</span></li><li><span><span class="badge PORT">port 1:1</span> <code>port 1:1 z scripts/useme-sync-sent.ts</code></span><span class="muted">syncReportLines · wydruk skryptu dla tych samych danych, bez zapisu pliku</span></li><li><span><span class="badge NEW">nowa reguła</span> <code>nowa reguła: src/sales/arsenal-70k.ts</code></span><span class="muted">sendGate, similarTitle · bramka przed wysyłką: reguła turboQueue (zlecenie z job:&lt;id&gt; w rejestrze nie wraca), duplikat tytułu w kolejce i podpowiedź podobnego tytułu: logika strony, pokryta testem</span></li></ul><p class="muted gap">Pliki w paczce: <code>src/sales/useme/sent-tracker.ts</code> <code>src/sales/useme/sent-sync.ts</code> <code>src/sales/arsenal-70k.ts</code></p></section>
 <section class="cta" id="wdrozenie"><h2>Wdrożenie w 48h</h2><p>Ten sam silnik mogę uruchomić na danych Twojej firmy: pierwszy działający podgląd w ciągu 48 godzin od startu Etapu 1, potem rozliczenie etapami 30/40/30, każdy etap po odbiorze poprzedniego.</p><p class="muted">Napisz „Wdrożenie” w wiadomości tam, skąd masz ten link. Strona nie zbiera danych i nie przyjmuje płatności.</p></section>
 </main>
 <footer>Havrelle Code Arsenal · dane przykładowe: fikcyjne firmy Alfa, Beta i Gamma (NIP 000-000-00-01, 000-000-00-02, 000-000-00-03). Strona działa w całości w przeglądarce: niczego nie zapisuje na serwerze i niczego nie wysyła (CSP: default-src &#39;none&#39;). Wyniki to działanie kodu na wpisanych danych, nie obietnica efektu.</footer>
@@ -128,7 +128,8 @@ var HavrelleEngine = (() => {
       count: (previous?.count ?? 0) + 1,
       variant: input.variant ?? null,
       amountPLN: input.amountPLN ?? null,
-      wave: input.wave ?? null
+      wave: input.wave ?? null,
+      ...input.offerId ? { offerId: input.offerId } : previous?.offerId ? { offerId: previous.offerId } : {}
     };
     return { schema: SENT_SCHEMA, entries: { ...tracker.entries, [input.key]: entry } };
   }
@@ -164,7 +165,7 @@ var HavrelleEngine = (() => {
         already.push(key);
         continue;
       }
-      next = markSent(next, { key, variant: "USEME", amountPLN: match.priceNet }, now);
+      next = markSent(next, { key, variant: "USEME", amountPLN: match.priceNet, offerId: match.offerId }, now);
       marked.push(key);
     }
     return { tracker: next, marked, already };
