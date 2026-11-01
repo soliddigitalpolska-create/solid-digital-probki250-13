@@ -1,0 +1,42 @@
+Autorskie próbki demonstracyjne przygotowane na potrzeby portfolio, bez publikacji u klienta.
+Próbka IT przygotowana 1 listopada 2026.
+
+Kopia zapasowa danych małej firmy: co ustalić przed wdrożeniem
+
+Hasło „codzienny backup” nie odpowiada na najważniejsze pytanie: co firma będzie mogła odzyskać po awarii i kiedy wróci do pracy? Przed zakupem usługi warto opisać potrzebny rezultat. Lista systemów, cele odtworzenia i zasady obsługi pomogą wykonawcy przygotować ofertę, której zakres da się później sprawdzić.
+
+Najpierw procesy, potem gigabajty
+
+Zacznij od czynności, bez których firma nie może działać: przyjmowania zamówień, wystawiania dokumentów czy dostępu do projektów. Dla każdej wskaż wykorzystywaną aplikację, miejsce zapisu danych i osobę odpowiedzialną. W zestawieniu uwzględnij zarówno firmowe urządzenia, jak i usługi internetowe. Przy każdej pozycji zapytaj, co dokładnie ma obejmować proponowana kopia.
+
+Rozdziel dane potrzebne do wznowienia bieżącej pracy od archiwum, do którego zaglądasz sporadycznie. Poproś wykonawcę o wskazanie zależności: czy do odtworzenia aplikacji będą potrzebne również jej ustawienia, baza danych lub inne zasoby. Zapis „kopiujemy folder firmowy” powinien odnosić się do konkretnej listy, a ewentualne wyłączenia muszą być widoczne przed zamówieniem.
+
+RPO i RTO przełóż na język firmy
+
+RPO określa, jak duża utrata najnowszych danych jest akceptowalna, wyrażając ją czasem od ostatniego punktu odtworzenia. RTO oznacza maksymalny akceptowalny czas od przerwania do przywrócenia usługi. AWS zaleca ustalanie tych celów na podstawie wpływu awarii na działalność oraz możliwości technicznych. To wymagania do zaplanowania i sprawdzenia, a nie wynik osiągnięty przez samo uruchomienie kopii. [1]
+
+Przykładowo: firma może uznać, że dla rejestru zamówień utrata całego dnia zmian jest zbyt duża, a dla starego archiwum dopuszczalna. Podobnie czas przywrócenia systemu sprzedaży może mieć inne znaczenie niż dostęp do zdjęć z zakończonego projektu. Nie musisz nadawać wszystkim zasobom jednakowego priorytetu. Poproś o osobne założenia dla najważniejszych procesów.
+
+Ustal, jak daleko wstecz sięga odtworzenie
+
+Zapytaj, z jakich dni lub godzin będzie można odzyskać dane i jak długo zachowywane są wcześniejsze wersje. To okres retencji kopii, który powinien być opisany w ofercie. Ustal również sposób postępowania, gdy pomyłkę zauważysz dopiero po pewnym czasie. Samo potwierdzenie, że istnieje najnowsza kopia, nie wyjaśnia dostępności starszego stanu danych.
+
+Poproś o opis miejsca przechowywania kopii oraz uprawnień do ich odczytu i usuwania. Niech wykonawca wyjaśni, jak rozwiązanie uwzględnia awarię urządzenia, przypadkowe skasowanie danych i utratę dostępu do konta. Na etapie oferty potrzebujesz zrozumiałego opisu zabezpieczeń i ich ograniczeń. Hasła, klucze i dane dostępowe nie powinny trafiać do zwykłego formularza zapytania.
+
+Wpisz próbę odtworzenia w zakres usługi
+
+AWS zaleca okresowe odtwarzanie danych, sprawdzanie ich dostępności i integralności oraz porównanie wyniku z celami RPO i RTO. Sam fakt utworzenia kopii nie rozstrzyga, czy odzyskane dane będą użyteczne. [2] Uzgodnij więc próbę obejmującą wybrany proces, a nie wyłącznie pokazanie zielonego statusu w panelu. Ustal, jak zostanie przeprowadzona bez zakłócania bieżącej pracy.
+
+W raporcie z próby powinny znaleźć się zakres danych, wybrany punkt odtworzenia, zmierzony czas i wynik sprawdzenia przez wskazaną osobę z zespołu. Poproś także o opis braków oraz działań potrzebnych do ich usunięcia. Termin pierwszej próby i zasady kolejnych testów ustal przed wdrożeniem. Sprawdzony scenariusz daje konkretną podstawę do oceny tego, co rzeczywiście zamawiasz.
+
+Porównaj pełny koszt i podział obowiązków
+
+Oddziel jednorazowe wdrożenie od abonamentu, przestrzeni na dane, licencji i obsługi odtworzenia. Zapytaj o koszty wzrostu zbioru oraz prac poza ustalonymi godzinami. Ustal, kto sprawdza błędy kopii, kto reaguje na alarm i kto zleca odzyskanie danych. Oferta powinna też opisywać przekazanie dokumentacji i danych przy zakończeniu współpracy. Dzięki temu cena obejmie usługę z określonym zakresem odpowiedzialności, a nie samo narzędzie.
+
+Źródła:
+[1] AWS Well-Architected Framework — REL13-BP01: Define recovery objectives for downtime and data loss
+https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_planning_for_recovery_objective_defined_recovery.html
+[2] AWS Reliability Pillar — REL09-BP04: Perform periodic recovery of the data to verify backup integrity and processes
+https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_periodic_recovery_testing_data.html
+
+Sprawdzono: 1 listopada 2026.

@@ -1,0 +1,42 @@
+Autorskie próbki demonstracyjne przygotowane na potrzeby portfolio, bez publikacji u klienta.
+Próbka IT przygotowana 1 listopada 2026.
+
+Jak przygotować brief integracji sklepu z systemem magazynowym
+
+Prośba „proszę połączyć sklep z magazynem” nie określa jeszcze zakresu wdrożenia. Dla jednej firmy oznacza aktualizowanie dostępności, dla innej także obsługę zamówień, rezerwacji i zwrotów. Przed wyceną warto opisać przepływ pracy: skąd pochodzą dane, gdzie mają trafić i po czym zespół rozpozna poprawny wynik.
+
+Nazwij systemy i zadanie pierwszego etapu
+
+Wymień platformę sklepową, system magazynowy i używane dodatki, wraz z wersjami oraz dostępną dokumentacją. Zapisz liczbę produktów, wariantów, magazynów i orientacyjną liczbę zamówień. Wskaż też okresy największego ruchu. Taki opis pomaga wykonawcy sprawdzić możliwości istniejącego łącznika i ustalić, które wymagania potrzebują osobnej analizy. Wpisz też zakres potrzebnych dostępów i osobę, która je nada. Sam brief nie powinien zawierać haseł ani kluczy API do usług.
+
+Oddziel cel pierwszego etapu od planów na przyszłość. Możesz zacząć od przesyłania stanów jednego magazynu do sklepu, a automatyzację innych procesów wycenić później. Zaznacz funkcje niezbędne do uruchomienia i te, które mogą poczekać. Dzięki temu obie strony oceniają koszt tego samego zakresu, zamiast inaczej rozumieć hasło „pełna integracja”.
+
+Ustal kierunek dla każdego rodzaju danych
+
+Przy stanach, cenach, opisach i zamówieniach wskaż osobno system źródłowy oraz docelowy. Napisz, gdzie pracownik może zmienić daną wartość i co ma się stać, gdy zmiana pojawi się w obu miejscach. Nie zakładaj, że połączenie będzie dwukierunkowe. W dokumentacji integracji Shoper Faktury i Magazyn producent opisuje przesyłanie stanów do sklepu, bez kierunku odwrotnego. To przykład konkretnego rozwiązania, nie reguła dla wszystkich łączników. [1]
+
+Opisz również znaczenie wysyłanej ilości: czy chodzi o cały stan, czy dostępność uwzględniającą rezerwacje i wyłączone lokalizacje. Jeśli w firmie używa się różnych jednostek sprzedaży, zapisz sposób ich rozumienia. Definicję powinny uzgodnić osoby obsługujące magazyn i sklep. Sama nazwa pola „ilość” nie rozstrzyga, jaką informację otrzyma kupujący.
+
+Sprawdź, jak systemy rozpoznają ten sam produkt
+
+Przygotuj niewielki zestaw przykładowych kart produktów i wariantów z obu systemów. Wskaż identyfikator, po którym mają być łączone, oraz przypadki brakujących lub powtórzonych kodów. Shoper w przywołanej instrukcji wymaga zgodności kodu produktu w sklepie z symbolem w programie magazynowym. Przed wdrożeniem trzeba sprawdzić regułę właściwą dla wybranego łącznika. [1]
+
+W briefie ustal, co ma się wydarzyć, gdy produktu nie da się jednoznacznie dopasować. Może to wymagać zgłoszenia do operatora i wyjaśnienia danych przed dalszym przetwarzaniem. Nie zostawiaj wykonawcy domysłu, czy powinien utworzyć nową kartę. Tę decyzję powinna podjąć firma, która później będzie odpowiadać za porządek w katalogu.
+
+Opisz błędy tak samo dokładnie jak udany przebieg
+
+Do scenariuszy odbioru dopisz przerwę w połączeniu, brak produktu i ponownie odebrane zdarzenie. Shopify wyjaśnia w dokumentacji, że ten sam webhook, czyli powiadomienie wysłane do aplikacji, może dotrzeć więcej niż raz. Zaleca przetwarzanie, w którym powtórna dostawa nie powoduje dodatkowego skutku. W briefie wystarczy opisać oczekiwany wynik, bez narzucania konkretnego kodu. [2]
+
+Przykładowe kryterium brzmi: ponowne odebranie tego samego powiadomienia nie tworzy drugiego zamówienia w magazynie. Ustal także, gdzie operator zobaczy błąd, kto otrzyma zgłoszenie i jak sprawdzi brakujące dane po przywróceniu połączenia. Status „integracja działa” powinien wynikać z konkretnych scenariuszy, a nie jedynie z pomyślnego zalogowania do dwóch systemów.
+
+Zamknij zakres testem i planem obsługi
+
+Uzgodnij próbę na wydzielonych danych, sposób uruchomienia i postępowanie po wykryciu błędu. Do wyceny dopisz licencje, utrzymanie i obsługę zmian po stronie dostawców. Wyznacz osobę zatwierdzającą wyniki oraz osobę przejmującą bieżącą obsługę. Dobry brief kończy się opisem sprawdzalnego procesu, który zespół potrafi później nadzorować.
+
+Źródła:
+[1] Shoper — konfiguracja integracji Shoper Faktury i Magazyn ze sklepem
+https://www.shoper.pl/learn/artykul/fim-konfiguracja-integracji-shoper-magazyn
+[2] Shopify Developer Documentation — Verify webhook deliveries, Ignoring duplicates
+https://shopify.dev/docs/apps/build/webhooks/verify-deliveries#ignoring-duplicates
+
+Sprawdzono: 1 listopada 2026.

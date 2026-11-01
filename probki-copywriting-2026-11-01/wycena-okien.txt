@@ -1,0 +1,43 @@
+Autorskie próbki demonstracyjne przygotowane na potrzeby portfolio, bez publikacji u klienta.
+
+Jak porównać wyceny okien, gdy każda oferta wygląda inaczej
+
+W jednej wycenie widzisz nazwę systemu i końcową kwotę, w drugiej kilka stron parametrów. Obie dotyczą tego samego domu, ale czy tego samego zamówienia? Zanim wybierzesz dostawcę, sprowadź oferty do wspólnego zakresu. Wtedy łatwiej ustalisz, za co dopłacasz i czego w cenie brakuje.
+
+Zacznij od jednego zestawienia stolarki
+
+Przekaż każdemu sprzedawcy tę samą listę okien z oznaczeniami pomieszczeń, liczbą sztuk i oczekiwanym sposobem otwierania. Dołącz projekt oraz zaznacz, które informacje wymagają sprawdzenia podczas pomiaru. Nie zgaduj wymiarów do zamówienia. Ustal, kto je potwierdzi, na jakim etapie i czy wynik pomiaru może zmienić cenę.
+
+Rozdziel wariant podstawowy od opcji. Jeśli rozważasz inne wykończenie ram lub dodatkowe osłony, poproś o osobne pozycje. Dzięki temu nie będziesz zestawiać tańszego wariantu jednej firmy z rozbudowaną konfiguracją drugiej. W każdej ofercie przyda się ten sam numer okna, odpowiadający numerowi na Twojej liście.
+
+Sprawdź też wyposażenie użytkowe: typ klamek, ograniczniki otwierania i inne uzgodnione dodatki. Poproś o przypisanie ich do konkretnych okien, zamiast wpisywania zbiorczego hasła „akcesoria”. Jeśli część wyborów pozostaje otwarta, oznacz je w zestawieniu wraz z osobą odpowiedzialną za decyzję. Ułatwi to zamknięcie konfiguracji przed pełną wyceną okien.
+
+Uw i Ug opisują różne elementy
+
+Współczynnik Uw dotyczy przenikania ciepła przez całe okno, a Ug odnosi się do szyby. Dokumentacja techniczna FAKRO pokazuje je w oddzielnych wierszach. Podana wartość Ug nie zastępuje więc informacji o Uw. Jeśli w jednej wycenie znajdziesz Uw, a w drugiej wyłącznie Ug, poproś o uzupełnienie danych przed porównaniem. [1]
+
+Zapytaj również, do jakiej konfiguracji i wymiaru odnosi się deklarowany wynik. OKNOPLAST wskazuje, że na Uw wpływają między innymi wielkość okna, system profili i pakiet szybowy. Zapis dotyczący modelu referencyjnego nie wyjaśnia jeszcze parametrów wszystkich pozycji w Twoim zestawieniu. Poproś sprzedawcę o jednoznaczne przypisanie danych do oferowanych produktów. [2]
+
+Rozpisz usługę zamiast porównywać samo słowo „montaż”
+
+Poproś o rozpisanie zakresu prac: pomiaru, dostawy, wniesienia, przygotowania miejsca, montażu oraz wykończenia po jego zakończeniu. Przy wymianie istniejących okien dopisz pytania o demontaż i zagospodarowanie zdemontowanych elementów. Ustal, czy parapety są częścią zamówienia i kto odpowiada za prace przy otworach. Sam nagłówek „montaż w cenie” nie odpowiada na te pytania.
+
+Technologię i materiały montażowe powinien dobrać wykonawca do konkretnej sytuacji. Twoim zadaniem na etapie zamawiania jest uzyskać opis, który pozwoli sprawdzić zakres usługi. Jeżeli dwie firmy proponują odmienne rozwiązania, poproś o wyjaśnienie różnicy oraz jej wpływu na wycenę. Dopiero po wyjaśnieniu tej różnicy porównaj kwoty.
+
+Oddziel cenę produktu od pozostałych kosztów
+
+W tabeli porównawczej przygotuj kolumny na okna, dodatki, transport, usługę i inne opłaty. Przy każdej kwocie zaznacz, czy jest netto, czy brutto. Brakującą pozycję oznacz jako „do potwierdzenia”, zamiast wpisywać zero. Pusta rubryka może oznaczać zarówno koszt uwzględniony gdzie indziej, jak i usługę, której firma w ogóle nie oferuje.
+
+Sprawdź termin ważności wyceny i założenia dotyczące dostawy. Zapytaj, od którego momentu liczy się deklarowany czas realizacji: od zatwierdzenia specyfikacji, pomiaru czy spełnienia innych uzgodnionych warunków. Przygotuj też listę decyzji, które musisz podjąć przed uruchomieniem zamówienia. Nie traktuj daty na pierwszej rozmowie jako gotowego harmonogramu.
+
+Poproś o ostatnią wersję porównywalnych ofert
+
+Po wyjaśnieniu różnic odeślij dostawcom krótkie podsumowanie ustaleń. Poproś o aktualne dokumenty z numerem wersji lub datą, a poprzednie zachowaj osobno. Wybieraj na podstawie kompletu: konkretnego produktu, określonej usługi, pełnej kwoty i ustalonego terminu. To pozwoli rozmawiać o cenie zamówienia, którego zakres obie strony rozumieją tak samo.
+
+Źródła:
+[1] FAKRO — specyfikacja techniczna PWP, tabela parametrów
+https://docs.gofakro.com/files/Product-structure/fakro/technical-specifications/roof-windows-and-access-windows/PL/201119%20PL%20Specyfikacja%20techniczna%20PWP.pdf
+[2] OKNOPLAST — współczynnik przenikania ciepła okien
+https://oknoplast.com.pl/blog/wspolczynnik-przenikania-ciepla-okien-co-to-jest-i-jak-wazne-jest-to-naprawde-2/
+
+Sprawdzono: 1 listopada 2026.
