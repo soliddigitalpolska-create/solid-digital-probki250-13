@@ -1,5 +1,11 @@
 # Solid Digital — autorskie próbki portfolio
 
+> **Rola repozytorium — stan 03.11.2026:** publiczne portfolio i statyczne makiety. Gałąź publikacji: `main`. To repozytorium nie uruchamia backendu, kolejek ani usług VPS.
+>
+> Zweryfikowane drzewo zawiera **841 plików HTML**; katalog aplikacji odwołuje się do **764 różnych próbek**. Są to różne miary, nie liczby repozytoriów. Strona główna Pages pokazuje starszy podzbiór — pozostałe zestawy są dostępne przez poniższy indeks i katalogi.
+>
+> Zachowujemy istniejące nazwy i adresy plików. Materiały są demonstracjami, a nie potwierdzonymi wdrożeniami klientów. Prywatny kod usług, klucze, dane i rejestry operacyjne pozostają poza tym repozytorium.
+
 Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty oraz przykładowe procesy. Materiały pokazują warsztat i proponowane rozwiązania; nie są listą zrealizowanych zleceń ani dowodem wyników klientów.
 
 **[Otwórz portfolio w GitHub Pages](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/)**
