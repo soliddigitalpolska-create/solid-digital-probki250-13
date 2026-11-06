@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Lokalny brief Veyrelo: mierzalny zakres, materiały, kontrola kompletności oraz eksport Markdown i JSON.">
+  <title>Brief projektu — Veyrelo</title>
+  <link rel="stylesheet" href="../assets/toolkit.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="ui.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#brief-form">Przejdź do formularza</a>
+  <div class="container">
+    <header class="topbar">
+      <a class="brand" href="../">Veyrelo<span aria-hidden="true"> ↗</span></a>
+      <nav aria-label="Narzędzia">
+        <a href="../" aria-label="Wszystkie narzędzia">Zestaw narzędzi</a>
+        <a href="../csv/">Audyt CSV</a>
+        <a href="../kalkulator/">Kalkulator</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero brief-hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">01 / BRIEF PROJEKTU</p>
+          <h1 id="page-title">Dobry zakres.<br>Mniej domysłów.</h1>
+          <p class="brief-lead">Zamień pomysł w opis, który da się sprawdzić. Ustal wynik, granice i materiały potrzebne do startu.</p>
+        </div>
+        <div class="brief-intro-note">
+          <span class="brief-note-number" aria-hidden="true">10</span>
+          <p>funkcji do przygotowania briefu</p>
+          <p class="muted">Bez konta. Dane wpisujesz i eksportujesz lokalnie.</p>
+        </div>
+      </section>
+      <p class="notice">Formularz i pliki są przetwarzane w tej karcie. Nie wysyłamy treści briefu. Nie wpisuj haseł, kluczy API ani danych osobowych. Odświeżenie strony usuwa wpisy — zapisz JSON, aby wrócić do pracy.</p>
+      <noscript><p class="notice">Włącz JavaScript, aby korzystać z lokalnego formularza i eksportów.</p></noscript>
+      <section class="panel brief-tools" aria-labelledby="start-heading">
+        <div>
+          <h2 id="start-heading">Zacznij od własnego zakresu</h2>
+          <p class="muted">Możesz też obejrzeć fikcyjny przykład albo wznowić zapisany brief.</p>
+          <button id="sample-button" class="button secondary" type="button">Wstaw fikcyjny przykład</button>
+        </div>
+        <div class="field">
+          <label for="import-file">Wznów z pliku JSON</label>
+          <input id="import-file" type="file" accept=".json,application/json" aria-describedby="import-help">
+          <small id="import-help">Tylko eksport tego narzędzia, wersja 1. Maksymalnie 128 KiB. Przed zastąpieniem pokażemy potwierdzenie.</small>
+        </div>
+      </section>
+      <p id="message" class="status" role="status" aria-live="polite"></p>
+      <div class="brief-layout">
+        <form id="brief-form" novalidate>
+          <section class="panel" aria-labelledby="scope-heading">
+            <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="scope-heading">Cel i proces</h2></div>
+            <div class="field">
+              <label for="scenario">Scenariusz</label>
+              <select id="scenario" aria-describedby="scenario-description">
+                <option value="ceny">Ceny i cenniki</option>
+                <option value="integracje">Integracje systemów</option>
+                <option value="raporty">Raporty i zestawienia</option>
+              </select>
+              <small id="scenario-description"></small>
+            </div>
+            <div class="field"><label for="title">Robocza nazwa projektu</label><input id="title" type="text" maxlength="160" autocomplete="off" placeholder="Np. kontrola cennika przed importem"></div>
+            <div class="field"><label for="goal">Jaki problem rozwiązujesz?</label><textarea id="goal" maxlength="2000" rows="3" aria-describedby="goal-help"></textarea><small id="goal-help">Opisz oczekiwaną zmianę. Bez danych umożliwiających identyfikację osób.</small></div>
+            <div class="field"><label for="process">Wejście → działanie → wynik</label><textarea id="process" maxlength="2000" rows="4" placeholder="Skąd przychodzą dane? Co ma się z nimi stać? Co otrzymasz na końcu?"></textarea></div>
+          </section>
+          <section class="panel" aria-labelledby="acceptance-heading">
+            <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="acceptance-heading">Po czym poznasz, że działa?</h2></div>
+            <p class="muted" id="acceptance-help">Każde kryterium wymaga metryki, wartości liczbowej, jednostki oraz sposobu sprawdzenia. Ustal realne wartości dla własnego procesu.</p>
+            <div id="acceptance" aria-describedby="acceptance-help"></div>
+            <button id="add-criterion" class="button secondary" type="button">+ Dodaj kryterium</button>
+            <p class="muted"><small>Od 1 do 10 kryteriów. Cel liczbowy: od 0 do 1 000 000 000.</small></p>
+          </section>
+          <section class="panel" aria-labelledby="boundaries-heading">
+            <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h2 id="boundaries-heading">Granice współpracy</h2></div>
+            <div class="field"><label for="dependencies">Od czego zależy rozpoczęcie lub zakończenie prac?</label><textarea id="dependencies" maxlength="2000" rows="3" placeholder="Np. dostarczenie próbki, uzgodnienie reguł, dostęp do środowiska testowego."></textarea></div>
+            <div class="field"><label for="constraints">Jakie ograniczenia trzeba uwzględnić?</label><textarea id="constraints" maxlength="2000" rows="3" placeholder="Np. tylko odczyt, format CSV, brak zmian na produkcji."></textarea></div>
+            <div class="field"><label for="exclusions">Co wyraźnie pozostaje poza zakresem?</label><textarea id="exclusions" maxlength="2000" rows="3" placeholder="Np. wdrożenie ERP, bieżące utrzymanie, dodatkowe raporty."></textarea></div>
+            <p class="muted"><small>Jeśli czegoś nie ma, wpisz to wprost, np. „Brak dodatkowych zależności”. Puste pole pozostaje brakiem.</small></p>
+          </section>
+          <section class="panel" aria-labelledby="materials-heading">
+            <div class="section-heading"><span class="section-number" aria-hidden="true">04</span><h2 id="materials-heading">Materiały do startu</h2></div>
+            <p class="muted">Oceń każdy element. „Do dostarczenia” opisuje ustalony brak; „Do ustalenia” pozostawia brief niekompletny. Plików źródłowych tutaj nie załączasz.</p>
+            <div id="materials"></div>
+          </section>
+          <section class="panel" aria-labelledby="limits-heading">
+            <div class="section-heading"><span class="section-number" aria-hidden="true">05</span><h2 id="limits-heading">Budżet i termin <span class="optional">opcjonalne</span></h2></div>
+            <div class="two-col">
+              <div class="field"><label for="budgetPLN">Deklarowany limit budżetu w PLN</label><input id="budgetPLN" type="number" min="0" max="10000000" step="0.01" inputmode="decimal" placeholder="Nie podano"><small>To Twoje ograniczenie, nie wycena ani oferta. Ustal osobno zasady podatków i rozliczenia.</small></div>
+              <div class="field"><label for="deadline">Oczekiwany termin</label><input id="deadline" type="date" min="1900-01-01" max="9999-12-31"><small>Puste pole nie obniża kompletności briefu.</small></div>
+            </div>
+            <button type="submit" class="button">Sprawdź i przygotuj podgląd <span aria-hidden="true">↗</span></button>
+          </section>
+        </form>
+        <aside class="brief-summary" aria-labelledby="summary-heading">
+          <div class="panel summary-panel">
+            <p class="eyebrow">TWÓJ BRIEF</p>
+            <h2 id="summary-heading">Gotowy do rozmowy?</h2>
+            <p id="summary-status">Wypełnij zakres i przygotuj podgląd.</p>
+            <output id="completeness" class="completeness" aria-label="Kompletność briefu">—</output>
+            <p id="completeness-caption" class="muted">8 sprawdzanych obszarów</p>
+            <div id="missing-summary"></div>
+            <p id="materials-summary" class="muted"></p>
+            <div class="actions export-actions">
+              <button id="export-markdown" class="button" type="button" disabled>Pobierz Markdown</button>
+              <button id="export-json" class="button secondary" type="button" disabled>Zapisz JSON</button>
+            </div>
+            <p class="muted"><small>Możesz wyeksportować niepełny szkic. Markdown pokaże braki, a JSON zachowa pola do dalszej edycji.</small></p>
+          </div>
+          <div class="brief-side-note"><strong>Zakres opisany ≠ prace zaakceptowane.</strong><p>Sprawdź założenia z wykonawcą. Narzędzie nie potwierdza wykonalności, wyceny ani dostępności terminu.</p></div>
+        </aside>
+      </div>
+      <section id="preview" class="panel result" aria-labelledby="preview-heading" hidden>
+        <h2 id="preview-heading" tabindex="-1">Podgląd pliku Markdown</h2>
+        <p class="muted">To bieżący zapis briefu. Zmiana dowolnego pola unieważni podgląd i eksporty do ponownego sprawdzenia.</p>
+        <pre id="preview-text"></pre>
+      </section>
+    </main>
+    <footer class="brief-footer"><a href="../">← Wszystkie narzędzia Veyrelo</a><p>Twoje założenia. Twój plik. Lokalnie w przeglądarce.</p></footer>
+  </div>
+  <dialog id="replace-dialog" aria-labelledby="replace-title" aria-describedby="replace-description">
+    <h2 id="replace-title">Zastąpić bieżący formularz?</h2>
+    <p id="replace-description"></p>
+    <p>Obecne wpisy zostaną zastąpione. Jeśli chcesz je zachować, anuluj i najpierw zapisz JSON.</p>
+    <div class="actions"><button id="confirm-replace" class="button" type="button">Zastąp formularz</button><button id="cancel-replace" class="button secondary" type="button" autofocus>Anuluj</button></div>
+  </dialog>
+</body>
+</html>

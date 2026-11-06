@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Lokalny audyt CSV produktów: SKU, GTIN, ceny, adresy URL oraz eksport raportu. Dane pozostają w przeglądarce.">
+  <title>Audyt CSV produktów — Veyrelo</title>
+  <link rel="stylesheet" href="../assets/toolkit.css">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./ui.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do narzędzia</a>
+  <header class="container topbar">
+    <a class="brand" href="../">VEYRELO <span>toolkit</span></a>
+    <nav aria-label="Narzędzia"><a href="../brief/">Brief</a><a aria-current="page" href="./">Audyt CSV</a><a href="../kalkulator/">Kalkulator</a></nav>
+  </header>
+  <main id="main" class="container">
+    <section class="hero csv-hero">
+      <p class="eyebrow">02 / DANE PRODUKTÓW</p>
+      <h1>Znajdź błędy,<br>zanim trafią do importu.</h1>
+      <p class="csv-lead">Sprawdź strukturę pliku, wymagane pola, duplikaty SKU, GTIN, ceny i adresy. Zobacz każdą proponowaną zmianę i pobierz raport.</p>
+      <p class="privacy-pill">Lokalnie w przeglądarce · bez wysyłania danych</p>
+    </section>
+    <noscript><p class="notice">To narzędzie wymaga JavaScript. Włącz go, aby przetworzyć CSV lokalnie.</p></noscript>
+    <section class="panel" aria-labelledby="source-title">
+      <div class="step-heading"><span class="step-number" aria-hidden="true">1</span><div><h2 id="source-title">Dodaj dane</h2><p class="muted">Plik UTF-8 lub tekst z nagłówkiem w pierwszym rekordzie.</p></div></div>
+      <div class="two-col">
+        <div class="field"><label for="csv-file">Plik CSV (maks. 2 MiB)</label><input type="file" id="csv-file" accept=".csv,.tsv,text/csv,text/tab-separated-values,text/plain" aria-describedby="csv-limits"></div>
+        <div class="field"><label for="csv-delimiter">Separator pól</label><select id="csv-delimiter"><option value="auto">Rozpoznaj automatycznie</option><option value="comma">Przecinek (,)</option><option value="semicolon">Średnik (;)</option><option value="tab">Tabulator</option></select></div>
+      </div>
+      <div class="field"><label for="csv-source">Treść CSV</label><textarea id="csv-source" rows="9" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="csv-limits csv-format" placeholder="SKU;Nazwa;Cena;GTIN;URL"></textarea></div>
+      <p id="csv-limits" class="muted small">Limity: 2 MiB UTF-8 · 5000 rekordów danych · 50 kolumn · 100 000 komórek z nagłówkiem · 10 000 znaków UTF-16 w komórce.</p>
+      <p id="csv-format" class="muted small">Obsługiwane: BOM UTF-8, cudzysłowy, podwójne cudzysłowy wewnątrz pola i pola wielowierszowe. Liczba pól musi zgadzać się z nagłówkiem; błędne rekordy nie są pomijane.</p>
+      <div class="actions"><button type="button" id="csv-parse" class="button">Wczytaj i zobacz kolumny</button><button type="button" id="csv-demo" class="button secondary">Wstaw fikcyjny przykład</button></div>
+      <p id="csv-status" class="status" role="status" aria-live="polite" aria-atomic="true">Wybierz plik lub wklej dane. Nic nie jest przechowywane po zamknięciu strony.</p>
+    </section>
+    <section id="csv-mapping-panel" class="panel" aria-labelledby="mapping-title" hidden>
+      <div class="step-heading"><span class="step-number" aria-hidden="true">2</span><div><h2 id="mapping-title">Sprawdź kolumny i mapowanie</h2><p class="muted">Sugestie wymagają sprawdzenia. Jedna kolumna może odpowiadać jednemu polu.</p></div></div>
+      <p id="csv-loaded" class="notice"></p>
+      <div class="mapping-grid">
+        <div class="field"><label for="map-sku">SKU — wymagane</label><select id="map-sku"></select></div>
+        <div class="field"><label for="map-name">Nazwa — wymagane</label><select id="map-name"></select></div>
+        <div class="field"><label for="map-price">Cena — wymagane</label><select id="map-price"></select></div>
+        <div class="field"><label for="map-gtin">GTIN — opcjonalne</label><select id="map-gtin"></select></div>
+        <div class="field"><label for="map-url">URL — opcjonalne</label><select id="map-url"></select></div>
+      </div>
+      <p class="muted small">Puste wartości GTIN i URL są dozwolone. SKU porównujemy po przycięciu brzegów, z rozróżnieniem wielkości liter. Ceny: liczby nieujemne, do 2 miejsc dziesiętnych; np. 1234,50 lub 1 234,50. Zapis „1,234” wymaga wyjaśnienia.</p>
+      <p id="mapping-status" class="status" aria-live="polite"></p>
+      <button type="button" class="button" id="csv-audit">Uruchom audyt</button>
+      <details class="csv-details" open><summary>Podgląd danych źródłowych</summary><p class="muted small">Pierwsze 20 rekordów; długie wartości skrócone w podglądzie. Numery rekordów: nagłówek = 1, pierwsze dane = 2. Pole wielowierszowe jest jednym rekordem.</p><div id="csv-preview" class="table-wrap" tabindex="0" role="region" aria-label="Podgląd danych CSV"></div></details>
+      <details class="csv-details"><summary>Profil kolumn</summary><p class="muted small">Puste i unikalne wartości liczone po przycięciu brzegów. Próbki pokazują maksymalnie 3 niepuste wartości.</p><div id="csv-profiles" class="table-wrap" tabindex="0" role="region" aria-label="Profil kolumn CSV"></div></details>
+    </section>
+    <section id="csv-result-panel" class="panel" aria-labelledby="result-title" hidden>
+      <div class="step-heading"><span class="step-number" aria-hidden="true">3</span><div><h2 id="result-title">Sprawdź wynik i pobierz pliki</h2><p class="muted">Audyt nie dopisuje danych ani nie naprawia GTIN i cen.</p></div></div>
+      <div id="csv-summary" class="result" aria-live="polite"></div>
+      <h3>Problemy wymagające uwagi</h3><p id="issue-count" class="muted small"></p><div id="csv-issues" class="table-wrap" tabindex="0" role="region" aria-label="Problemy wykryte w danych"></div>
+      <h3>Porządki: tylko przycięcie brzegów</h3><p class="muted small">Eksport usuwa wyłącznie białe znaki na początku i końcu pól, także nagłówków. Nie zmienia zer początkowych, separatorów cen ani białych znaków wewnątrz tekstu. Poniżej zapis JSON wartości uwidacznia spacje i znaki końca linii.</p>
+      <p id="trim-count" class="muted small"></p><div id="csv-changes" class="table-wrap" tabindex="0" role="region" aria-label="Podgląd zmian przed eksportem"></div>
+      <p id="csv-export-status" class="notice"></p><div id="csv-unsafe" class="table-wrap" tabindex="0" role="region" aria-label="Komórki blokujące eksport CSV"></div>
+      <div class="actions"><button type="button" id="csv-download" class="button" disabled>Pobierz CSV po przycięciu</button><button type="button" id="json-download" class="button secondary" disabled>Pobierz raport JSON</button></div>
+      <p class="muted small">CSV: UTF-8 z BOM, oryginalny separator, końce rekordów CRLF. JSON zawiera wszystkie problemy i zmiany, również wartości przed i po przycięciu. Sprawdź raport przed udostępnieniem.</p>
+    </section>
+    <aside class="panel limitations" aria-labelledby="limits-title">
+      <h2 id="limits-title">Co oznacza ten wynik?</h2>
+      <p>GTIN przechodzi kontrolę długości i cyfry kontrolnej. To nie potwierdza rejestracji numeru, właściciela ani zgodności z konkretnym produktem. Nie generujemy ani nie podmieniamy kodów.</p>
+      <p>Adresy HTTP/HTTPS są sprawdzane wyłącznie składniowo. Narzędzie nie otwiera adresów, nie sprawdza dostępności stron ani zawartości produktów. Wynik nie jest certyfikacją Google ani gwarancją przyjęcia pliku przez platformę.</p>
+      <p>Komórki mogące uruchomić formułę blokują cały eksport CSV. Kontrola obejmuje nagłówki, oryginalne wartości, wiodące białe znaki i warianty znaków o pełnej szerokości. Nie istnieje uniwersalna metoda zabezpieczania CSV dla wszystkich arkuszy. Raport JSON pozostaje dostępny.</p>
+      <p class="muted small">Metodyka: <a href="https://www.help.gs1us.org/check-digit-calculator" target="_blank" rel="noopener noreferrer">GS1 US — cyfra kontrolna</a> · <a href="https://community.owasp.org/attacks/CSV_Injection" target="_blank" rel="noopener noreferrer">OWASP — CSV Injection</a>. Odnośniki otwierają strony zewnętrzne dopiero po kliknięciu.</p>
+      <p class="muted small">Plik jest przetwarzany w pamięci tej karty. Nie korzystamy z wysyłania danych, analityki ani pamięci lokalnej. Odświeżenie strony usuwa bieżącą pracę.</p>
+    </aside>
+  </main>
+  <footer class="container csv-footer"><a href="../">← Wszystkie narzędzia Veyrelo</a><span>10 funkcji · C01–C10</span></footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Lokalny kalkulator obciążenia pracą i trzech scenariuszy automatyzacji. Jawne założenia, wartość czasu i notatka decyzyjna.">
+  <title>Kalkulator wartości czasu — Veyrelo</title>
+  <link rel="stylesheet" href="../assets/toolkit.css">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./ui.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do kalkulatora</a>
+  <header class="topbar container">
+    <a class="brand" href="../">Veyrelo / narzędzia</a>
+    <nav aria-label="Narzędzia Veyrelo">
+      <a href="../brief/">Brief</a>
+      <a href="../csv/">Kontrola CSV</a>
+      <a href="./" aria-current="page">Kalkulator</a>
+    </nav>
+  </header>
+  <main id="main" class="container">
+    <section class="hero">
+      <p class="eyebrow">5 funkcji · K01–K05 · lokalnie w przeglądarce</p>
+      <h1>Ile czasu może uwolnić automatyzacja?</h1>
+      <p class="lead">Policz dzisiejszy nakład pracy, porównaj trzy własne scenariusze i zapisz założenia do decyzji.</p>
+      <p class="notice"><strong>Wartość czasu to nie oszczędność gotówkowa.</strong> Wyniki nie są prognozą przychodu, zysku ani gwarancją zwrotu pieniędzy.</p>
+      <p class="muted">Dane pozostają w tej karcie. Brak wysyłania i automatycznego zapisu. Odświeżenie strony usuwa wpisane wartości; notatkę możesz pobrać samodzielnie.</p>
+    </section>
+    <noscript><p class="notice">Do wykonania obliczeń potrzebny jest JavaScript. Włącz go w przeglądarce; kalkulator działa lokalnie.</p></noscript>
+    <form id="calculator-form" novalidate autocomplete="off">
+      <div class="grid calculator-inputs">
+        <section class="panel" aria-labelledby="workload-heading" data-feature="K01">
+          <p class="eyebrow">K01 / punkt wyjścia</p>
+          <h2 id="workload-heading">Obciążenie pracą</h2>
+          <p class="muted">Wpisz własny pomiar. Możesz ująć jeden proces całego zespołu.</p>
+          <div class="field">
+            <label for="minutesPerTask">Minuty na jedno zadanie</label>
+            <input id="minutesPerTask" name="minutesPerTask" type="text" inputmode="decimal" maxlength="64" placeholder="np. 12" aria-describedby="minutes-hint" required>
+            <small id="minutes-hint">Od 0 do 1440. Ułamki i przecinek dziesiętny są dozwolone.</small>
+          </div>
+          <div class="field">
+            <label for="repetitionsPerDay">Powtórzenia dziennie</label>
+            <input id="repetitionsPerDay" name="repetitionsPerDay" type="text" inputmode="decimal" maxlength="64" placeholder="np. 10" aria-describedby="repetitions-hint" required>
+            <small id="repetitions-hint">Od 0 do 1 000 000. Może to być średnia.</small>
+          </div>
+          <div class="field">
+            <label for="daysPerMonth">Dni wykonywania zadania w miesiącu</label>
+            <input id="daysPerMonth" name="daysPerMonth" type="text" inputmode="numeric" maxlength="2" placeholder="np. 20" aria-describedby="days-hint" required>
+            <small id="days-hint">Liczba całkowita od 0 do 31.</small>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="scenarios-heading" data-feature="K02">
+          <p class="eyebrow">K02 / trzy scenariusze</p>
+          <h2 id="scenarios-heading">O ile skrócisz pracę?</h2>
+          <p class="muted">20%, 40% i 60% to wyłącznie ilustracja, nie pomiar ani obietnica. Zmień każdy procent według własnych założeń.</p>
+          <div class="field">
+            <label for="reduction1">Scenariusz 1 — redukcja czasu (%)</label>
+            <input id="reduction1" name="reduction1" type="text" inputmode="decimal" maxlength="64" value="20" aria-describedby="reduction-hint" required>
+          </div>
+          <div class="field">
+            <label for="reduction2">Scenariusz 2 — redukcja czasu (%)</label>
+            <input id="reduction2" name="reduction2" type="text" inputmode="decimal" maxlength="64" value="40" aria-describedby="reduction-hint" required>
+          </div>
+          <div class="field">
+            <label for="reduction3">Scenariusz 3 — redukcja czasu (%)</label>
+            <input id="reduction3" name="reduction3" type="text" inputmode="decimal" maxlength="64" value="60" aria-describedby="reduction-hint" required>
+          </div>
+          <small id="reduction-hint">Każdy procent: od 0 do 100. Kolejność jest dowolna.</small>
+        </section>
+        <section class="panel" aria-labelledby="value-heading" data-feature="K03">
+          <p class="eyebrow">K03 / wartość czasu</p>
+          <h2 id="value-heading">Wycena i utrzymanie</h2>
+          <p class="muted">Podaj całkowite kwoty w PLN na spójnej podstawie kosztowej. Kalkulator nie dolicza ani nie odlicza VAT.</p>
+          <div class="field">
+            <label for="hourlyRate">Przyjęta wartość godziny pracy (PLN)</label>
+            <input id="hourlyRate" name="hourlyRate" type="text" inputmode="decimal" maxlength="64" placeholder="np. 100" aria-describedby="money-hint" required>
+          </div>
+          <div class="field">
+            <label for="monthlyMaintenance">Miesięczny koszt utrzymania (PLN)</label>
+            <input id="monthlyMaintenance" name="monthlyMaintenance" type="text" inputmode="decimal" maxlength="64" placeholder="np. 100; wpisz 0, jeśli brak" aria-describedby="money-hint" required>
+          </div>
+          <small id="money-hint">Każda kwota od 0 do 1 000 000 000 000 PLN. Ujmij wszystkie znane koszty utrzymania.</small>
+        </section>
+        <section class="panel" aria-labelledby="coverage-heading" data-feature="K04">
+          <p class="eyebrow">K04 / porównanie z kosztem</p>
+          <h2 id="coverage-heading">Pokrycie kosztu wdrożenia</h2>
+          <div class="field">
+            <label for="implementationCost">Jednorazowy całkowity koszt wdrożenia (PLN)</label>
+            <input id="implementationCost" name="implementationCost" type="text" inputmode="decimal" maxlength="64" placeholder="np. 2400; wpisz 0, jeśli brak" aria-describedby="implementation-hint" required>
+            <small id="implementation-hint">Od 0 do 1 000 000 000 000 PLN. Ta sama podstawa kosztowa co utrzymanie.</small>
+          </div>
+          <p class="muted">Miesiące = koszt wdrożenia / dodatnia miesięczna wartość czasu po odjęciu utrzymania. Przy wartości ≤ 0 wynik jest niedostępny.</p>
+          <p class="muted">To porównanie wartości czasu z kosztem przy stałych założeniach. Nie prognozuje przepływów pieniężnych.</p>
+        </section>
+      </div>
+      <div class="actions calculator-actions">
+        <button class="button" type="submit">Oblicz trzy scenariusze</button>
+        <span class="muted">Zmiana danych unieważnia poprzedni wynik.</span>
+      </div>
+    </form>
+    <div id="status" class="status" role="status" aria-live="polite">Uzupełnij własne dane i uruchom obliczenia.</div>
+    <div id="errors" class="notice" role="alert" tabindex="-1" hidden></div>
+    <section id="results" class="panel results-panel" aria-labelledby="results-heading" hidden>
+      <p class="eyebrow">Wynik dla wprowadzonych założeń</p>
+      <h2 id="results-heading">Miesiąc pracy w liczbach</h2>
+      <p id="workload-result" class="workload-result"></p>
+      <div id="scenario-results" class="scenario-grid"></div>
+      <p class="muted result-rounding">Ekran zaokrągla liczby do dwóch miejsc; bardzo małe wartości pokazuje w zapisie naukowym. Eksport zachowuje obliczoną precyzję. W obliczeniach nie zaokrąglamy etapów.</p>
+    </section>
+    <section class="panel export-panel" aria-labelledby="export-heading" data-feature="K05">
+      <p class="eyebrow">K05 / decyzja na piśmie</p>
+      <h2 id="export-heading">Notatka z założeniami</h2>
+      <p>Plik Markdown zawiera wszystkie dane wejściowe, trzy scenariusze, wzory i ograniczenia modelu. Możesz go otworzyć w zwykłym edytorze tekstu.</p>
+      <button id="download-note" class="button secondary" type="button" disabled>Pobierz notatkę .md</button>
+      <p class="muted">Pobieranie odblokuje się po poprawnym obliczeniu. Plik powstaje lokalnie po kliknięciu.</p>
+    </section>
+    <section class="panel limits-panel" aria-labelledby="limits-heading">
+      <h2 id="limits-heading">Co sprawdzić przed decyzją</h2>
+      <p>Zmierz reprezentatywną próbkę zadań i zweryfikuj redukcję w pilotażu. Model zakłada stałą liczbę zadań, wartość godziny i koszt utrzymania oraz natychmiastowe osiągnięcie redukcji.</p>
+      <p class="muted">Nie uwzględnia wdrażania zespołu, błędów, przestojów, zmian jakości, sezonowości, dyskonta ani kosztów, których nie wpiszesz. Odzyskane godziny wymagają planu wykorzystania. Skrajne wartości przekraczające bezpieczny zakres obliczeń są odrzucane.</p>
+    </section>
+  </main>
+  <footer class="container calculator-footer"><a href="../">Wróć do wszystkich narzędzi</a><span class="muted">Veyrelo · lokalna praca na Twoich danych</span></footer>
+</body>
+</html>
