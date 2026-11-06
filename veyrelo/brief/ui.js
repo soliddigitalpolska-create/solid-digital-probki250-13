@@ -248,7 +248,11 @@ byId('confirm-replace').addEventListener('click', () => {
   byId('title').focus();
 });
 byId('cancel-replace').addEventListener('click', () => dialog.close());
-dialog.addEventListener('close', () => { staged = null; byId('import-file').value = ''; });
+dialog.addEventListener('close', () => {
+  if (staged) byId('message').textContent = 'Anulowano zastąpienie. Bieżący formularz pozostaje bez zmian.';
+  staged = null;
+  byId('import-file').value = '';
+});
 
 byId('import-file').addEventListener('change', async event => {
   const file = event.target.files?.[0];
