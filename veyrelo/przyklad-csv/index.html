@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Fikcyjny przykład Veyrelo: 5 produktów w CSV, raport z 6 problemami, jawne korekty ze źródła i brief z kryteriami odbioru. Pobierz materiały i powtórz ćwiczenie.">
+  <title>CSV → raport → brief — przykład Veyrelo</title>
+  <link rel="stylesheet" href="../assets/toolkit.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do przykładu</a>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Veyrelo — strona główna">Veyrelo</a>
+    <nav aria-label="Narzędzia Veyrelo">
+      <a href="../">Wróć do narzędzi</a>
+      <a href="../csv/">Audyt CSV</a>
+      <a href="../brief/">Pełny brief</a>
+    </nav>
+  </header>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">Fikcyjny przykład · do samodzielnego sprawdzenia</p>
+      <h1 id="title">Od pliku CSV<br>do jasnego zakresu pracy.</h1>
+      <p class="lead">Pięć produktów, raport z problemami i korekty oparte na jawnej tabeli źródłowej. Przejdź przez przykład i zobacz, jak zapisać wynik w briefie.</p>
+      <div class="notice">
+        <p><strong>To ćwiczenie, nie realizacja dla klienta.</strong> Nazwy, SKU, ceny i adresy są fikcyjne. Pakiet nie zawiera danych klientów, nie składa zamówienia i nie uruchamia płatności.</p>
+      </div>
+      <div class="grid" aria-label="Wyniki przykładu">
+        <article class="card"><h2>5 produktów</h2><p>6 problemów w 4 rekordach danych.</p></article>
+        <article class="card"><h2>2 porządki + 5 korekt</h2><p>Przycięcie spacji oraz osobne zmiany potwierdzone tabelą źródłową.</p></article>
+        <article class="card"><h2>0 problemów po korektach</h2><p>W zakresie kontroli tego audytora. To nie certyfikacja pliku.</p></article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="step-1">
+      <p class="eyebrow">Krok 1 / Materiały</p>
+      <h2 id="step-1">Pobierz i rozpakuj przykład.</h2>
+      <p>ZIP zawiera 11 plików: wejściowy CSV, raporty przed i po korektach, fikcyjny katalog źródłowy, ślad zmian, brief oraz instrukcję i wynik sprawdzeń.</p>
+      <div class="actions"><a class="button primary" href="./VEYRELO_PRZYKLAD_CSV_AUDYT_BRIEF.zip" download>Pobierz przykład ZIP</a></div>
+      <p class="muted">Materiały możesz przejrzeć przed wczytaniem do narzędzi. Nic nie zostanie wysłane automatycznie.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="step-2">
+      <p class="eyebrow">Krok 2 / Audyt</p>
+      <h2 id="step-2">Wczytaj plik z błędami.</h2>
+      <p>Otwórz audytor i wybierz <code>01_wejscie-z-bledami.csv</code>. Ustaw separator <strong>średnik</strong>. Przypisz pola SKU, Nazwa, Cena, GTIN i URL do kolumn o tych samych nazwach. Kolumna <code>Pozycja_demo</code> służy tylko do porównania produktów ze źródłem — nie przypisuj jej jako SKU.</p>
+      <div class="actions"><a class="button" href="../csv/">Otwórz audytor CSV →</a></div>
+      <p><strong>Oczekiwany wynik: 5 produktów, 6 problemów w 4 rekordach.</strong></p>
+      <ul>
+        <li>Powtórzony SKU — 2 wpisy raportu, po jednym dla każdego z dwóch produktów.</li>
+        <li>Niejednoznaczna cena <code>1,234</code>.</li>
+        <li>Niepoprawny adres <code>brak-adresu</code>.</li>
+        <li>Brak nazwy jednego produktu.</li>
+        <li>Brak ceny jednego produktu.</li>
+      </ul>
+      <p class="muted">Porównaj wynik z <code>02_raport-przed.json</code>. Raport liczy nagłówek jako rekord 1; pierwszy produkt to rekord 2.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="step-3">
+      <p class="eyebrow">Krok 3 / Porządki i źródło danych</p>
+      <h2 id="step-3">Spacje to jedno. Poprawne dane — drugie.</h2>
+      <div class="two-col">
+        <div>
+          <h3>Najpierw sam trim</h3>
+          <p>Eksport audytora przycina białe znaki na brzegach pól. W przykładzie zmienia <strong>2 komórki</strong>: SKU i nazwę pierwszego produktu.</p>
+          <p>Wczytaj <code>03_po-samym-trim.csv</code>. Nadal otrzymasz <strong>6 problemów</strong>. Usunięcie spacji nie rozstrzyga właściwej ceny ani tożsamości produktu.</p>
+        </div>
+        <div>
+          <h3>Następnie korekty ze źródła</h3>
+          <p>Porównaj dane z <code>04_katalog-zrodlowy-fikcyjny.csv</code>, używając kolumny <code>Pozycja_demo</code>. Z tej jawnej tabeli wynikają <strong>5 korekt</strong>: SKU, dwie ceny, nazwa i URL.</p>
+          <p>Wczytaj <code>05_po-korektach-ze-zrodla.csv</code>: otrzymasz <strong>0 problemów w sprawdzanym zakresie</strong>. Wynik i ślad zmian są w <code>06_raport-po.json</code> oraz <code>ZMIANY_ZE_ZRODLA.json</code>.</p>
+        </div>
+      </div>
+      <div class="notice"><p><strong>Publiczny audytor nie wykonuje tych pięciu korekt automatycznie.</strong> Plik wynikowy przygotowano do ćwiczenia na podstawie fikcyjnej tabeli źródłowej. Przy prawdziwych danych każda zmiana wymaga wiarygodnego źródła.</p></div>
+    </section>
+
+    <section class="panel" aria-labelledby="step-4">
+      <p class="eyebrow">Krok 4 / Brief</p>
+      <h2 id="step-4">Zapisz wynik i kryteria odbioru.</h2>
+      <p>Pobierz <code>07_brief-do-importu.json</code>, otwórz pełny kreator briefu i wybierz import JSON. Ten sam plik znajdziesz w ZIP-ie.</p>
+      <div class="actions">
+        <a class="button primary" href="./07_brief-do-importu.json" download>Pobierz brief JSON</a>
+        <a class="button secondary" href="../brief/">Otwórz pełny kreator briefu →</a>
+      </div>
+      <p>Brief opisuje proces, cztery mierzalne kryteria odbioru, ograniczenia i potrzebne materiały. Import pokaże <strong>100% kompletności opisu i 1 materiał do dostarczenia</strong>: akceptację reguł przez właściciela danych.</p>
+      <p>To nie otrzymana zgoda klienta ani gotowość do wdrożenia. Budżet i termin pozostają do ustalenia.</p>
+      <div class="notice"><p>Jeśli masz już własne dane w kreatorze, najpierw je wyeksportuj. Import zastępuje formularz po potwierdzeniu.</p></div>
+    </section>
+
+    <section class="panel" aria-labelledby="limits">
+      <h2 id="limits">Co ten wynik sprawdza — i gdzie kończy się przykład.</h2>
+      <ul>
+        <li><strong>GTIN pozostają puste.</strong> Nie dopisano ani jednego identyfikatora. Puste GTIN nie są błędem obecnego audytora; wymagania rzeczywistego katalogu trzeba ustalić osobno.</li>
+        <li><strong>URL są sprawdzane tylko składniowo.</strong> Adresy <code>example.invalid</code> celowo nie prowadzą do sklepu. Narzędzie nie sprawdza dostępności stron.</li>
+        <li><strong>Brak problemów dotyczy wybranych kontroli.</strong> Nie potwierdza zgodności z wymaganiami Google Merchant Center ani przyjęcia pliku przez sklep.</li>
+        <li><strong>Dane są przetwarzane w przeglądarce.</strong> Raport może zawierać wartości z pliku wejściowego — przejrzyj go przed udostępnieniem.</li>
+      </ul>
+      <p class="muted">Pakiet przeszedł 13 sprawdzeń z użyciem funkcji audytu i importu briefu. Szczegóły są w <code>WERYFIKACJA.json</code>. To sprawdzenie tego przykładu, nie pełny test całej platformy.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="own-problem">
+      <p class="eyebrow">Twój proces</p>
+      <h2 id="own-problem">Masz podobny problem z własnym plikiem?</h2>
+      <p>Na początek przygotuj:</p>
+      <ol>
+        <li><strong>Anonimową próbkę</strong> — kilka reprezentatywnych rekordów, bez danych osobowych, haseł i tokenów.</li>
+        <li><strong>Format docelowy</strong> — nazwy narzędzi i wymagania importu.</li>
+        <li><strong>Źródło poprawnych danych</strong> — skąd pochodzą SKU, nazwy, ceny i identyfikatory.</li>
+        <li><strong>Potrzebny wynik</strong> — co ma zostać sprawdzone lub zmienione i po czym poznasz poprawny rezultat.</li>
+      </ol>
+      <div class="actions"><a class="button primary" href="../#brief">Przygotuj zapytanie o swój proces →</a></div>
+      <p class="muted">Formularz na stronie głównej przygotowuje tekst zapytania. Nie wysyła go i nie składa zamówienia. Zakres, wycenę i termin ustalamy osobno.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Veyrelo · Fikcyjny przykład na jawnych danych.</p>
+    <a href="../">Wróć do wszystkich narzędzi</a>
+  </footer>
+</body>
+</html>

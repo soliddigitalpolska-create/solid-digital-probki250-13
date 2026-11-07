@@ -1,0 +1,67 @@
+{
+  "schema": "veyrelo-brief",
+  "version": 1,
+  "brief": {
+    "scenario": "ceny",
+    "title": "DEMO FIKCYJNE — kontrola CSV przed importem",
+    "goal": "Na pięciu fikcyjnych produktach wykryć niejednoznaczną cenę, brak nazwy i ceny, powtórzony SKU oraz niepoprawny adres URL. Oddzielić kosmetyczny trim od korekt wymagających jawnego źródła danych.",
+    "process": "01_wejscie-z-bledami.csv → lokalny audyt CSV → 02_raport-przed.json (6 problemów, 4 rekordy) → 03_po-samym-trim.csv (2 zmiany, nadal 6 problemów) → porównanie z fikcyjnym katalogiem 04 → 05_po-korektach-ze-zrodla.csv → 06_raport-po.json. Pozycja_demo wiąże ten sam produkt w obu tabelach. Przy prawdziwym zleceniu źródło i każda zmiana wymagają uzgodnienia z klientem.",
+    "acceptance": [
+      {
+        "metric": "Problemy wykryte w pliku wejściowym",
+        "operator": "eq",
+        "target": 6,
+        "unit": "wpisów raportu",
+        "verification": "Zaimportuj 01 do publicznego audytora; separator średnik, mapowanie według nazw. Wynik: 5 produktów, 6 problemów w 4 rekordach."
+      },
+      {
+        "metric": "Problemy po korektach ze źródła",
+        "operator": "eq",
+        "target": 0,
+        "unit": "wpisów raportu",
+        "verification": "Zaimportuj 05 do audytora z tym samym mapowaniem. Brak problemów oznacza tylko przejście tych konkretnych kontroli."
+      },
+      {
+        "metric": "Korekty biznesowe mające jawne źródło",
+        "operator": "eq",
+        "target": 5,
+        "unit": "zmienionych komórek",
+        "verification": "Porównaj 03 i 05, korzystając z Pozycja_demo. Każda zmiana ma odpowiadać tabeli 04 oraz plikowi ZMIANY_ZE_ZRODLA.json."
+      },
+      {
+        "metric": "Nowo dopisane identyfikatory GTIN",
+        "operator": "eq",
+        "target": 0,
+        "unit": "kodów",
+        "verification": "Kolumna GTIN pozostaje pusta we wszystkich 5 wierszach. Braku GTIN nie wolno maskować wygenerowanym numerem."
+      }
+    ],
+    "dependencies": "Materiał demonstracyjny zawiera fikcyjny katalog źródłowy. Dla rzeczywistego projektu potrzebne będą reguły sklepu, właściwa specyfikacja importu oraz właściciel akceptujący dane. Samego raportu audytora nie traktujemy jako autoryzacji importu.",
+    "constraints": "CSV UTF-8, separator średnik, ceny w PLN bez symbolu waluty i z przecinkiem dziesiętnym. Wszystkie nazwy, SKU, kwoty i adresy są fikcyjne. Adresy example.invalid są celowo niedziałającymi przykładami. Audyt sprawdza składnię URL, nie pobiera adresów. GTIN w tym ćwiczeniu pozostaje nieustalony. W prawdziwym katalogu wymagania identyfikatorów trzeba ustalić osobno.",
+    "exclusions": "Import do sklepu, połączenie z Merchant Center, wysyłka wiadomości lub ofert, płatności, dane prawdziwych klientów, certyfikacja i gwarancja przyjęcia pliku przez platformę. Pakiet nie jest umową ani wyceną.",
+    "materials": [
+      {
+        "id": "price-sample",
+        "status": "ready",
+        "note": "01_wejscie-z-bledami.csv; pięć fikcyjnych produktów, bez danych osobowych."
+      },
+      {
+        "id": "price-rules",
+        "status": "ready",
+        "note": "Reguły i jawna fikcyjna tabela 04 opisane w INSTRUKCJA.md; każda cena pochodzi z tabeli 04."
+      },
+      {
+        "id": "price-output",
+        "status": "ready",
+        "note": "05_po-korektach-ze-zrodla.csv oraz raport 06 pokazują oczekiwany wynik ćwiczenia."
+      },
+      {
+        "id": "price-approval",
+        "status": "needed",
+        "note": "Przed prawdziwym wdrożeniem klient musi wskazać właściciela danych i zatwierdzić reguły. Nie ma tu rzeczywistej zgody klienta."
+      }
+    ],
+    "budgetPLN": null,
+    "deadline": ""
+  }
+}
