@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-v3zHUbUy/IEdgiyUt16h6X5bKWe6Q5uHSLf4n91xuMs='; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="Fikcyjny przykład Veyrelo: 5 produktów w CSV, raport z 6 problemami, jawne korekty ze źródła i brief z kryteriami odbioru. Pobierz materiały i powtórz ćwiczenie.">
   <title>CSV → raport → brief — przykład Veyrelo</title>
@@ -32,6 +32,7 @@
         <article class="card"><h2>2 porządki + 5 korekt</h2><p>Przycięcie spacji oraz osobne zmiany potwierdzone tabelą źródłową.</p></article>
         <article class="card"><h2>0 problemów po korektach</h2><p>W zakresie kontroli tego audytora. To nie certyfikacja pliku.</p></article>
       </div>
+      <div class="actions"><a class="button primary" href="#zapytanie">Przygotuj zapytanie o audyt CSV →</a></div>
     </section>
 
     <section class="panel" aria-labelledby="step-1">
@@ -115,13 +116,102 @@
         <li><strong>Nazwę systemu docelowego</strong> i opis błędu albo oczekiwanego wyniku.</li>
         <li><strong>Źródło poprawnych danych</strong> — np. katalog lub arkusz z zatwierdzonymi cenami.</li>
       </ol>
-      <div class="actions"><a class="button primary" href="../#brief">Przygotuj zapytanie o audyt CSV →</a></div>
-      <p class="muted">Skopiuj gotowe zapytanie i wyślij je w wybranym kanale. Cenę i termin ustalimy po sprawdzeniu próbki.</p>
+      <div id="zapytanie" class="two-col">
+        <fieldset id="inquiry-fields" disabled aria-describedby="inquiry-hint">
+          <legend>Przygotuj zapytanie o audyt CSV</legend>
+          <p id="inquiry-hint" class="muted">Wystarczy krótki opis. Zachowaj próbkę pliku do rozmowy i pomiń hasła, tokeny oraz dane klientów.</p>
+          <div class="field">
+            <label for="inquiry-target">System docelowy (wymagane)</label>
+            <input id="inquiry-target" required maxlength="100" placeholder="Np. Base lub WooCommerce" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="inquiry-problem">Co chcesz sprawdzić lub poprawić? (wymagane)</label>
+            <textarea id="inquiry-problem" required maxlength="600" placeholder="Np. import odrzuca wiersze z cenami w formacie 1,234."></textarea>
+          </div>
+          <div class="field">
+            <label for="inquiry-size">Liczba produktów (opcjonalnie)</label>
+            <select id="inquiry-size">
+              <option value="">Wybierz przedział</option>
+              <option>Do 100</option>
+              <option>101–500</option>
+              <option>501–1000</option>
+              <option>Powyżej 1000 — zakres do ustalenia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="inquiry-source">Źródło poprawnych danych (opcjonalnie)</label>
+            <input id="inquiry-source" maxlength="180" placeholder="Np. cennik dostawcy albo katalog sklepu" autocomplete="off">
+          </div>
+          <button class="primary" id="inquiry-generate" type="button">Przygotuj tekst</button>
+        </fieldset>
+        <div>
+          <label for="inquiry-preview">Gotowa wiadomość</label>
+          <textarea id="inquiry-preview" rows="9" readonly placeholder="Tutaj pojawi się tekst do skopiowania."></textarea>
+          <div class="actions">
+            <button id="inquiry-copy" type="button" disabled>Skopiuj zapytanie</button>
+          </div>
+          <p id="inquiry-status" class="status" role="status"></p>
+          <p class="muted">Wklej tekst w dotychczasowej rozmowie na Useme albo napisz przez <a href="https://www.facebook.com/profile.php?id=61560176831987" target="_blank" rel="noopener noreferrer">profil Kamil na Facebooku</a>. Cenę i termin ustalimy po sprawdzeniu próbki.</p>
+          <noscript>W wiadomości podaj system docelowy, opis problemu oraz liczbę produktów, jeśli ją znasz.</noscript>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
     <p>Veyrelo · Fikcyjny przykład na jawnych danych.</p>
     <a href="../">Wróć do wszystkich narzędzi</a>
   </footer>
+  <script>
+    (() => {
+      const fields = document.getElementById('inquiry-fields');
+      const target = document.getElementById('inquiry-target');
+      const problem = document.getElementById('inquiry-problem');
+      const size = document.getElementById('inquiry-size');
+      const source = document.getElementById('inquiry-source');
+      const preview = document.getElementById('inquiry-preview');
+      const copy = document.getElementById('inquiry-copy');
+      const status = document.getElementById('inquiry-status');
+
+      fields.addEventListener('input', event => {
+        event.target.setCustomValidity('');
+        if (preview.value) status.textContent = 'Dane się zmieniły. Przygotuj tekst ponownie.';
+        preview.value = '';
+        copy.disabled = true;
+      });
+
+      document.getElementById('inquiry-generate').addEventListener('click', () => {
+        target.setCustomValidity(target.value.trim().length < 2 ? 'Podaj nazwę systemu docelowego.' : '');
+        problem.setCustomValidity(problem.value.trim().length < 12 ? 'Opisz problem w co najmniej 12 znakach.' : '');
+        if (!target.reportValidity() || !problem.reportValidity()) return;
+
+        const lines = ['Dzień dobry, proszę o wycenę audytu katalogu produktowego w CSV.', '',
+          'System docelowy: ' + target.value.trim(),
+          'Do sprawdzenia: ' + problem.value.trim()];
+        if (size.value) lines.push('Liczba produktów: ' + size.value);
+        if (source.value.trim()) lines.push('Źródło poprawnych danych: ' + source.value.trim());
+        lines.push('', 'Proszę o informację, jak przygotować anonimową próbkę i jaki będzie następny krok.');
+        preview.value = lines.join('\n');
+        copy.disabled = false;
+        status.textContent = 'Tekst gotowy do skopiowania.';
+        preview.focus();
+      });
+
+      copy.addEventListener('click', async () => {
+        const message = preview.value;
+        if (!message) return;
+        try {
+          await navigator.clipboard.writeText(message);
+          if (preview.value === message) status.textContent = 'Skopiowano. Wklej tekst w rozmowie.';
+        } catch {
+          if (preview.value !== message) return;
+          preview.focus();
+          preview.select();
+          status.textContent = 'Tekst zaznaczono. Skopiuj go poleceniem Kopiuj.';
+        }
+      });
+
+      fields.disabled = false;
+    })();
+  </script>
 </body>
 </html>
