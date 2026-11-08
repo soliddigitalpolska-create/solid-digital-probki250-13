@@ -1,0 +1,103 @@
+{
+  "fictional": true,
+  "records": 5,
+  "issuesBefore": [
+    {
+      "record": 2,
+      "line": 2,
+      "column": 2,
+      "field": "sku",
+      "code": "DUPLICATE_SKU",
+      "message": "Powtórzony SKU w 2 rekordach; porównanie po przycięciu brzegów, z rozróżnieniem wielkości liter."
+    },
+    {
+      "record": 3,
+      "line": 3,
+      "column": 2,
+      "field": "sku",
+      "code": "DUPLICATE_SKU",
+      "message": "Powtórzony SKU w 2 rekordach; porównanie po przycięciu brzegów, z rozróżnieniem wielkości liter."
+    },
+    {
+      "record": 3,
+      "line": 3,
+      "column": 4,
+      "field": "price",
+      "code": "PRICE_AMBIGUOUS",
+      "message": "Niejednoznaczna cena. Użyj np. 1234,50 lub 1 234,50; narzędzie nie zgaduje separatorów."
+    },
+    {
+      "record": 3,
+      "line": 3,
+      "column": 6,
+      "field": "url",
+      "code": "URL_INVALID",
+      "message": "Wymagany pełny adres HTTP lub HTTPS bez spacji, znaków sterujących i danych logowania."
+    },
+    {
+      "record": 4,
+      "line": 4,
+      "column": 3,
+      "field": "name",
+      "code": "REQUIRED_EMPTY",
+      "message": "Brak wartości wymaganego pola Nazwa."
+    },
+    {
+      "record": 6,
+      "line": 6,
+      "column": 4,
+      "field": "price",
+      "code": "REQUIRED_EMPTY",
+      "message": "Brak wartości wymaganego pola Cena."
+    }
+  ],
+  "issuesAfterTrim": 6,
+  "issuesAfterSourceCorrections": [],
+  "sourceCorrections": [
+    {
+      "demoId": "2",
+      "record": 3,
+      "column": 2,
+      "field": "SKU",
+      "before": "KUB-01",
+      "after": "TOR-02",
+      "source": "04_katalog-zrodlowy-fikcyjny.csv; Pozycja_demo=2"
+    },
+    {
+      "demoId": "2",
+      "record": 3,
+      "column": 4,
+      "field": "Cena",
+      "before": "1,234",
+      "after": "39,90",
+      "source": "04_katalog-zrodlowy-fikcyjny.csv; Pozycja_demo=2"
+    },
+    {
+      "demoId": "2",
+      "record": 3,
+      "column": 6,
+      "field": "URL",
+      "before": "brak-adresu",
+      "after": "https://example.invalid/torba",
+      "source": "04_katalog-zrodlowy-fikcyjny.csv; Pozycja_demo=2"
+    },
+    {
+      "demoId": "3",
+      "record": 4,
+      "column": 3,
+      "field": "Nazwa",
+      "before": "",
+      "after": "Notes demonstracyjny",
+      "source": "04_katalog-zrodlowy-fikcyjny.csv; Pozycja_demo=3"
+    },
+    {
+      "demoId": "5",
+      "record": 6,
+      "column": 4,
+      "field": "Cena",
+      "before": "",
+      "after": "34,90",
+      "source": "04_katalog-zrodlowy-fikcyjny.csv; Pozycja_demo=5"
+    }
+  ]
+}

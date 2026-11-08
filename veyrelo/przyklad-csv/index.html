@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-v3zHUbUy/IEdgiyUt16h6X5bKWe6Q5uHSLf4n91xuMs='; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hbrewWWKXJaEfdC7iKrPDw1GkWPV5xHLRPfRcLjyDvQ='; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="Fikcyjny przykład Veyrelo: 5 produktów w CSV, raport z 6 problemami, jawne korekty ze źródła i brief z kryteriami odbioru. Pobierz materiały i powtórz ćwiczenie.">
   <title>CSV → raport → brief — przykład Veyrelo</title>
@@ -15,7 +15,8 @@
     <a class="brand" href="../" aria-label="Veyrelo — strona główna">Veyrelo</a>
     <nav aria-label="Narzędzia Veyrelo">
       <a href="../">Wróć do narzędzi</a>
-      <a href="../csv/">Audyt CSV</a>
+      <a href="../csv/">Audytor CSV</a>
+      <a href="../audyt-csv/">Usługa audytu</a>
       <a href="../brief/">Pełny brief</a>
     </nav>
   </header>
@@ -32,7 +33,10 @@
         <article class="card"><h2>2 porządki + 5 korekt</h2><p>Przycięcie spacji oraz osobne zmiany potwierdzone tabelą źródłową.</p></article>
         <article class="card"><h2>0 problemów po korektach</h2><p>W zakresie kontroli tego audytora. To nie certyfikacja pliku.</p></article>
       </div>
-      <div class="actions"><a class="button primary" href="#zapytanie">Przygotuj zapytanie o audyt CSV →</a></div>
+      <div class="actions">
+        <a class="button primary" href="#zapytanie">Przygotuj zapytanie o audyt CSV →</a>
+        <a class="button secondary" href="./raport/">Zobacz przykładowy raport</a>
+      </div>
     </section>
 
     <section class="panel" aria-labelledby="step-1">
@@ -149,6 +153,7 @@
           <textarea id="inquiry-preview" rows="9" readonly placeholder="Tutaj pojawi się tekst do skopiowania."></textarea>
           <div class="actions">
             <button id="inquiry-copy" type="button" disabled>Skopiuj zapytanie</button>
+            <button class="secondary" id="inquiry-download" type="button" disabled>Pobierz tekst</button>
           </div>
           <p id="inquiry-status" class="status" role="status"></p>
           <p class="muted">Wklej tekst w dotychczasowej rozmowie na Useme albo napisz przez <a href="https://www.facebook.com/profile.php?id=61560176831987" target="_blank" rel="noopener noreferrer">profil Kamil na Facebooku</a>. Cenę i termin ustalimy po sprawdzeniu próbki.</p>
@@ -170,6 +175,7 @@
       const source = document.getElementById('inquiry-source');
       const preview = document.getElementById('inquiry-preview');
       const copy = document.getElementById('inquiry-copy');
+      const download = document.getElementById('inquiry-download');
       const status = document.getElementById('inquiry-status');
 
       fields.addEventListener('input', event => {
@@ -177,6 +183,7 @@
         if (preview.value) status.textContent = 'Dane się zmieniły. Przygotuj tekst ponownie.';
         preview.value = '';
         copy.disabled = true;
+        download.disabled = true;
       });
 
       document.getElementById('inquiry-generate').addEventListener('click', () => {
@@ -192,6 +199,7 @@
         lines.push('', 'Proszę o informację, jak przygotować anonimową próbkę i jaki będzie następny krok.');
         preview.value = lines.join('\n');
         copy.disabled = false;
+        download.disabled = false;
         status.textContent = 'Tekst gotowy do skopiowania.';
         preview.focus();
       });
@@ -208,6 +216,18 @@
           preview.select();
           status.textContent = 'Tekst zaznaczono. Skopiuj go poleceniem Kopiuj.';
         }
+      });
+
+      download.addEventListener('click', () => {
+        if (!preview.value) return;
+        const url = URL.createObjectURL(new Blob([preview.value + '\n'], { type: 'text/plain;charset=utf-8' }));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'veyrelo-zapytanie-audyt-csv.txt';
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
       });
 
       fields.disabled = false;

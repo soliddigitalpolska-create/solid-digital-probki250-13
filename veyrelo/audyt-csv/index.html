@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-l1comzatxpHlJ6/4lCqybZl47XYbB/5BwIr13LOlaag='; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'; font-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Audyt katalogu produktów przed importem. Sprawdzenie jednego pliku CSV do 1000 pozycji, raport, uzgodnione poprawki i ponowna kontrola.">
+  <title>Audyt pliku CSV przed importem — Veyrelo</title>
+  <link rel="stylesheet" href="../assets/toolkit.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do oferty</a>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Veyrelo — strona główna">Veyrelo</a>
+    <nav aria-label="Usługa audytu CSV">
+      <a href="#dopasowanie">Sprawdź swój przypadek</a>
+      <a href="../przyklad-csv/raport/">Zobacz przykładowy raport</a>
+      <a href="../przyklad-csv/#zapytanie">Przygotuj zapytanie</a>
+    </nav>
+  </header>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">Veyrelo · audyt katalogu produktów</p>
+      <h1 id="title">Sprawdź katalog,<br>zanim wgrasz go do sklepu.</h1>
+      <p class="lead">Jeśli import odrzuca ceny, pomija produkty albo znajduje powtórzone SKU, sprawdzimy jeden plik CSV w UTF-8 do 1000 rekordów produktów. Zaczynamy od 5–20 anonimowych wierszy z nagłówkami. Po obejrzeniu próbki określimy zakres, cenę i termin.</p>
+      <div class="actions">
+        <a class="button primary" href="#dopasowanie">Sprawdź, czy audyt pasuje</a>
+        <a class="button secondary" href="../przyklad-csv/raport/">Zobacz przykładowy raport</a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="scope">
+      <h2 id="scope">Co sprawdzimy</h2>
+      <p>Sprawdzimy, czy plik można odczytać, czy wiersze mają właściwą liczbę pól oraz gdzie brakuje SKU, nazwy lub ceny. Wskażemy powtórzone SKU, niejednoznaczne ceny, błędy składni adresów URL i niepoprawne podane numery GTIN.</p>
+      <div class="grid" aria-label="Wyniki audytu">
+        <article class="card">
+          <h3>Raport z numerami rekordów</h3>
+          <p>Zobaczysz problem, miejsce wystąpienia i decyzje potrzebne do poprawki.</p>
+        </article>
+        <article class="card">
+          <h3>Plik po uzgodnionych zmianach</h3>
+          <p>Poprawki oprzemy na wskazanym źródle, na przykład aktualnym cenniku lub katalogu dostawcy. W wykazie zmian podamy źródło nowych wartości.</p>
+        </article>
+        <article class="card">
+          <h3>Wynik ponownego sprawdzenia</h3>
+          <p>Porównamy liczbę problemów i wskażemy otwarte pozycje. Ewentualny próbny import wymaga osobnego uzgodnienia z właścicielem sklepu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="dopasowanie" class="panel" aria-labelledby="fit-heading">
+      <h2 id="fit-heading">Sprawdź, od czego zacząć</h2>
+      <p>Wybierz odpowiedzi. Wynik pojawi się w tej karcie. Do sprawdzenia wystarczą informacje o pliku i systemie.</p>
+      <div class="two-col">
+        <fieldset id="fit-fields" disabled>
+          <legend>Krótka lista kontrolna</legend>
+          <div class="field">
+            <label for="fit-target">Czy znasz docelowy sklep lub system?</label>
+            <select id="fit-target" required>
+              <option value="">Wybierz odpowiedź</option>
+              <option value="known">Tak</option>
+              <option value="unknown">Jeszcze nie</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fit-file">Czy masz próbkę pliku CSV?</label>
+            <select id="fit-file" required>
+              <option value="">Wybierz odpowiedź</option>
+              <option value="ready">Tak, mogę przygotować 5–20 anonimowych wierszy</option>
+              <option value="missing">Jeszcze nie mam eksportu w CSV</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fit-size">Ile produktów ma katalog?</label>
+            <select id="fit-size" required>
+              <option value="">Wybierz odpowiedź</option>
+              <option value="within">Do 1000</option>
+              <option value="larger">Ponad 1000</option>
+              <option value="unknown">Jeszcze nie wiem</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fit-source">Czy masz potwierdzone źródło poprawnych wartości?</label>
+            <select id="fit-source" required>
+              <option value="">Wybierz odpowiedź</option>
+              <option value="known">Tak, mogę wskazać źródło</option>
+              <option value="unknown">Jeszcze nie</option>
+            </select>
+          </div>
+          <button id="fit-check" class="primary" type="button">Sprawdź następny krok</button>
+        </fieldset>
+        <div class="result">
+          <div id="fit-result" class="notice" role="status" aria-live="polite">
+            <p>Wybierz odpowiedzi, aby zobaczyć następny krok.</p>
+          </div>
+          <div class="actions">
+            <a class="button secondary" href="../przyklad-csv/#zapytanie">Przygotuj zapytanie o audyt CSV</a>
+          </div>
+          <p class="muted">Na początek opisz sytuację i pomiń dane klientów, hasła oraz tokeny. Cenę i termin ustalimy po sprawdzeniu anonimowej próbki.</p>
+        </div>
+      </div>
+      <noscript>Na początek przygotuj nazwę systemu docelowego, liczbę produktów i anonimową próbkę 5–20 wierszy z nagłówkami. Przy większym katalogu zapytaj o wydzielenie jednej partii.</noscript>
+    </section>
+
+    <section class="panel" aria-labelledby="example-heading">
+      <h2 id="example-heading">Zobacz, jak wygląda wynik</h2>
+      <p>W fikcyjnym katalogu wykryliśmy sześć problemów w pięciu produktach. Przykład pokazuje, które wartości można poprawić na podstawie katalogu źródłowego i jak ponownie sprawdzić plik przed importem.</p>
+      <div class="actions">
+        <a class="button" href="../przyklad-csv/raport/">Zobacz porównanie przed i po</a>
+        <a class="button secondary" href="../przyklad-csv/">Przejdź przykład krok po kroku</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Veyrelo · Przejrzyste dane przed importem</p>
+    <a href="../">Wróć do narzędzi</a>
+  </footer>
+  <script>
+    (() => {
+      const fields = document.getElementById('fit-fields');
+      const target = document.getElementById('fit-target');
+      const file = document.getElementById('fit-file');
+      const size = document.getElementById('fit-size');
+      const source = document.getElementById('fit-source');
+      const result = document.getElementById('fit-result');
+
+      function show(title, instructions) {
+        const heading = document.createElement('p');
+        const emphasis = document.createElement('strong');
+        emphasis.textContent = title;
+        heading.append(emphasis);
+        const list = document.createElement('ul');
+        for (const instruction of instructions) {
+          const item = document.createElement('li');
+          item.textContent = instruction;
+          list.append(item);
+        }
+        result.replaceChildren(heading, list);
+      }
+
+      fields.addEventListener('change', () => {
+        result.textContent = 'Odpowiedzi się zmieniły. Sprawdź następny krok ponownie.';
+      });
+
+      document.getElementById('fit-check').addEventListener('click', () => {
+        if (![target, file, size, source].every(field => field.reportValidity())) {
+          result.textContent = 'Uzupełnij cztery odpowiedzi, aby sprawdzić zakres.';
+          return;
+        }
+
+        const missing = [];
+        if (target.value === 'unknown') missing.push('Ustal nazwę systemu, do którego trafią dane, lub przygotuj jego wymagania importu.');
+        if (file.value === 'missing') missing.push('Pobierz eksport CSV z nagłówkami i przygotuj 5–20 anonimowych wierszy.');
+        if (size.value === 'unknown') missing.push('Sprawdź orientacyjną liczbę rekordów bez wiersza nagłówka.');
+        if (size.value === 'larger') {
+          show('Ustal zakres pierwszej partii', [
+            'W zapytaniu podaj wielkość katalogu i wskaż pierwszą partię do 1000 produktów.',
+            ...missing,
+            'Z tej partii wybierz 5–20 różnych przykładów do oceny.'
+          ]);
+        } else if (missing.length) {
+          show('Uzupełnij materiały do wyceny', missing);
+        } else if (source.value === 'unknown') {
+          show('Zacznij od raportu', [
+            'Przygotuj zapytanie i zaznacz, że źródło poprawnych wartości wymaga ustalenia.',
+            'Po sprawdzeniu próbki ustalimy, które błędy da się rozstrzygnąć i które wymagają potwierdzenia.'
+          ]);
+        } else {
+          show('Możesz przygotować zapytanie', [
+            'Opisz system docelowy i problem. Wskaż źródło poprawnych wartości.',
+            'Zachowaj 5–20 anonimowych wierszy z nagłówkami do oceny zakresu.'
+          ]);
+        }
+      });
+
+      fields.disabled = false;
+    })();
+  </script>
+</body>
+</html>

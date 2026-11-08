@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="description" content="Przykładowy raport Veyrelo z audytu katalogu CSV. Zobacz wykryte problemy, poprawione wartości i źródło każdej korekty.">
+  <title>Przykładowy raport audytu CSV · Veyrelo</title>
+  <link rel="stylesheet" href="../../assets/toolkit.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do raportu</a>
+  <header class="topbar">
+    <a class="brand" href="../../">Veyrelo</a>
+    <nav aria-label="Ścieżka audytu">
+      <a href="../">Przykład CSV</a>
+      <a href="../../audyt-csv/">Usługa audytu</a>
+      <a href="../#zapytanie">Zapytanie</a>
+    </nav>
+  </header>
+  <main class="container" id="main">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">Przykładowy wynik · dane fikcyjne</p>
+      <h1 id="title">Raport z audytu CSV</h1>
+      <p class="lead">W katalogu z 5 produktami sam porządek w zapisie pozostawił 6 problemów. Po porównaniu z tabelą źródłową skorygowano 5 wartości. Ponowny audyt wykazał 0 problemów w sprawdzanym zakresie.</p>
+      <div class="actions">
+        <a class="button primary" href="./dane-raportu.json" download>Pobierz dane raportu</a>
+        <a class="button secondary" href="../VEYRELO_PRZYKLAD_CSV_AUDYT_BRIEF.zip" download>Pobierz cały przykład ZIP</a>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="issues">
+      <h2 id="issues">Co wykrył audyt</h2>
+      <p>6 zgłoszeń dotyczy 4 rekordów. Numeracja obejmuje nagłówek jako rekord 1.</p>
+      <div class="table-wrap" role="region" aria-label="Wykryte problemy" tabindex="0">
+        <table><thead><tr><th scope="col">Rekord</th><th scope="col">Pole</th><th scope="col">Problem</th></tr></thead>
+        <tbody><tr><th scope="row">2</th><td>SKU</td><td>Powtórzony SKU w 2 rekordach; porównanie po przycięciu brzegów, z rozróżnieniem wielkości liter.</td></tr>
+<tr><th scope="row">3</th><td>SKU</td><td>Powtórzony SKU w 2 rekordach; porównanie po przycięciu brzegów, z rozróżnieniem wielkości liter.</td></tr>
+<tr><th scope="row">3</th><td>Cena</td><td>Niejednoznaczna cena. Użyj np. 1234,50 lub 1 234,50; narzędzie nie zgaduje separatorów.</td></tr>
+<tr><th scope="row">3</th><td>URL</td><td>Wymagany pełny adres HTTP lub HTTPS bez spacji, znaków sterujących i danych logowania.</td></tr>
+<tr><th scope="row">4</th><td>Nazwa</td><td>Brak wartości wymaganego pola Nazwa.</td></tr>
+<tr><th scope="row">6</th><td>Cena</td><td>Brak wartości wymaganego pola Cena.</td></tr></tbody></table>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="changes">
+      <h2 id="changes">Co poprawiono i skąd pochodzą wartości</h2>
+      <p>Najpierw przycięto spacje w 2 komórkach. Pięć poniższych korekt pochodzi z osobnego katalogu źródłowego dostępnego w paczce.</p>
+      <div class="table-wrap" role="region" aria-label="Korekty ze źródła" tabindex="0">
+        <table><thead><tr><th scope="col">Rekord i pole</th><th scope="col">Przed</th><th scope="col">Po</th><th scope="col">Dowód w paczce</th></tr></thead>
+        <tbody><tr><th scope="row">3 · SKU</th><td><code>KUB-01</code></td><td><code>TOR-02</code></td><td>Pozycja 2 w katalogu źródłowym</td></tr>
+<tr><th scope="row">3 · Cena</th><td><code>1,234</code></td><td><code>39,90</code></td><td>Pozycja 2 w katalogu źródłowym</td></tr>
+<tr><th scope="row">3 · URL</th><td><code>brak-adresu</code></td><td><code>https://example.invalid/torba</code></td><td>Pozycja 2 w katalogu źródłowym</td></tr>
+<tr><th scope="row">4 · Nazwa</th><td><em>pusto</em></td><td><code>Notes demonstracyjny</code></td><td>Pozycja 3 w katalogu źródłowym</td></tr>
+<tr><th scope="row">6 · Cena</th><td><em>pusto</em></td><td><code>34,90</code></td><td>Pozycja 5 w katalogu źródłowym</td></tr></tbody></table>
+      </div>
+      <p class="notice">Wynik obejmuje kontrole struktury, pól i składni. Ostateczny test importu zależy od wymagań konkretnego sklepu. Adresy z domeny example.invalid pełnią rolę danych testowych.</p>
+    </section>
+    <section class="panel" aria-labelledby="request">
+      <h2 id="request">Sprawdź własny katalog</h2>
+      <p>Przygotuj krótkie zapytanie z nazwą systemu i opisem problemu. Na początek wystarczy anonimowa próbka z nagłówkami.</p>
+      <div class="actions"><a class="button primary" href="../#zapytanie">Przygotuj zapytanie</a><a class="button secondary" href="../../csv/">Otwórz audytor CSV</a></div>
+    </section>
+  </main>
+  <footer>Veyrelo · Przykładowy raport na jawnych danych testowych</footer>
+</body>
+</html>
