@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktywna próbka kontroli zakupu GA4 dla sklepu Shopify. Sprawdza zgodę w trybie Basic, duplikaty, walutę i wartość w logu testowym.">
+  <title>Kontrola pomiaru zakupu · Havrelle</title>
+  <style>
+    :root { color-scheme: light; --ink: #193a31; --paper: #f5f5ed; --muted: #50625a; --line: #d6ded4; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 system-ui, sans-serif; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    header { display: flex; justify-content: space-between; gap: 12px; padding-block: 23px; border-bottom: 1px solid var(--line); }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px solid #b45c31; outline-offset: 3px; }
+    main { padding-block: 44px; }
+    .label { text-transform: uppercase; font-size: 12px; letter-spacing: .12em; font-weight: 750; }
+    h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.07; letter-spacing: -.055em; margin: 14px 0; }
+    h2 { font-size: 23px; margin: 0 0 10px; }
+    p { color: var(--muted); }
+    .intro { max-width: 760px; margin-bottom: 28px; }
+    .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+    .panel { padding: 22px; border-radius: 15px; border: 1px solid var(--line); background: #fffef9; min-width: 0; }
+    textarea { width: 100%; min-height: 310px; resize: vertical; border-radius: 8px; border: 1px solid #abb9ad; padding: 12px; font: 13px/1.55 ui-monospace, monospace; color: var(--ink); background: #fafbf7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 12px; }
+    button { min-height: 44px; border: 0; border-radius: 8px; background: #e7eee3; color: var(--ink); padding: 8px 12px; font: 650 14px system-ui, sans-serif; cursor: pointer; }
+    button.primary { background: var(--ink); color: white; }
+    button:disabled { opacity: .55; cursor: default; }
+    #summary { margin: 0 0 12px; font-weight: 700; }
+    #result { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+    #result > li { padding: 12px; border-radius: 8px; border: 1px solid var(--line); overflow-wrap: anywhere; }
+    .pass { background: #edf6eb; }
+    .fail { background: #fff1eb; }
+    #result ul { padding-left: 19px; margin-block: 5px 0; font-size: 14px; }
+    footer { border-top: 1px solid var(--line); padding-block: 20px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 720px) { .layout { grid-template-columns: 1fr; } .wrap { width: calc(100% - 28px); } .panel { padding: 16px; } main { padding-top: 30px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><strong>Havrelle / CloudCode Studio</strong><a href="../../pliki/">Gotowe pliki</a></header>
+    <main>
+      <div class="intro">
+        <p class="label">Shopify · próbka kontroli technicznej</p>
+        <h1>Jeden zakup. Jeden pomiar.</h1>
+        <p>Sprawdź, czy próbny zakup trafia do GA4 raz, z właściwą kwotą i walutą. W scenariuszu Basic test sprawdza również, czy po odmowie zgody analitycznej log pozostaje bez zdarzenia zakupu.</p>
+        <p>Przykłady zawierają fikcyjne transakcje. Narzędzie analizuje log w przeglądarce. Możesz wkleić dane testowe w tym samym formacie, bez danych klientów i kluczy.</p>
+      </div>
+      <div class="layout">
+        <section class="panel" aria-labelledby="input-title">
+          <h2 id="input-title"><label for="log">Log testowy JSON</label></h2>
+          <div class="actions">
+            <button type="button" id="broken">Wczytaj usterki</button>
+            <button type="button" id="fixed">Wczytaj poprawny przykład</button>
+          </div>
+          <textarea id="log" maxlength="50000" spellcheck="false" aria-describedby="input-help"></textarea>
+          <p id="input-help">Jeden wpis obejmuje cały przebieg próby. W próbie ponownego otwarcia pole <code>events</code> zawiera zdarzenia zakupu z pierwszego wyświetlenia i odświeżenia potwierdzenia.</p>
+          <button class="primary" type="button" id="check">Sprawdź log</button>
+        </section>
+        <section class="panel" aria-labelledby="result-title">
+          <h2 id="result-title">Wynik kontroli</h2>
+          <p id="summary" role="status" aria-live="polite"></p>
+          <ul id="result"></ul>
+          <div class="actions"><button type="button" id="download" disabled>Pobierz wynik JSON</button></div>
+          <p>Zakres obejmuje zakup GA4 i regułę odmowy w trybie Basic. Sprawdzenie konfiguracji sklepu wymaga osobnego przebiegu na jego środowisku testowym.</p>
+        </section>
+      </div>
+    </main>
+    <footer>Dokumentacja formatu zdarzeń i ustawień zgód. <a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce">Google Analytics</a> · <a href="https://help.shopify.com/en/manual/privacy-and-security/privacy/customer-privacy-settings/privacy-settings">Shopify Customer Privacy</a></footer>
+  </div>
+  <script>
+    const testPurchase = { transaction_id: 'DEMO-042', value: 149.90, currency: 'PLN' };
+    const correctLog = [
+      { name: 'Odmowa zgody', analytics_storage: 'denied', expected: null, events: [] },
+      { name: 'Zakup po zgodzie', analytics_storage: 'granted', expected: testPurchase, events: [testPurchase] },
+      { name: 'Ponowne otwarcie potwierdzenia', analytics_storage: 'granted', expected: testPurchase, events: [testPurchase] },
+    ];
+    const faultyLog = [
+      { ...correctLog[0], events: [testPurchase] },
+      { ...correctLog[1], events: [{ ...testPurchase, value: 1499, currency: 'EUR' }] },
+      { ...correctLog[2], events: [testPurchase, testPurchase] },
+    ];
+
+    function purchaseShape(purchase) {
+      return purchase && typeof purchase.transaction_id === 'string' &&
+        purchase.transaction_id.trim().length > 0 &&
+        Number.isFinite(purchase.value) && purchase.value >= 0 &&
+        typeof purchase.currency === 'string' && /^[A-Z]{3}$/.test(purchase.currency);
+    }
+
+    function checkPurchaseLog(log) {
+      if (!Array.isArray(log) || log.length === 0 || log.length > 40) {
+        throw new Error('Wklej od 1 do 40 prób w tablicy JSON.');
+      }
+
+      const cases = log.map((run, index) => {
+        const number = index + 1;
+        if (!run || typeof run.name !== 'string' || !run.name.trim() ||
+            !['granted', 'denied'].includes(run.analytics_storage) ||
+            !Array.isArray(run.events) || run.events.length > 100) {
+          throw new Error(`Próba ${number} wymaga nazwy, stanu zgody i tablicy zdarzeń.`);
+        }
+
+        const findings = [];
+        if (run.analytics_storage === 'denied') {
+          if (run.expected !== null) throw new Error(`Próba ${number}: dla odmowy ustaw expected na null.`);
+          if (run.events.length) findings.push('Zakup pojawił się w logu po odmowie zgody w scenariuszu Basic.');
+        } else {
+          if (!purchaseShape(run.expected)) throw new Error(`Próba ${number}: podaj oczekiwany identyfikator, kwotę i walutę.`);
+          if (!run.events.length) findings.push('Po zgodzie brakuje zdarzenia zakupu.');
+          if (run.events.length > 1) findings.push(`Oczekiwano jednego zakupu, odczytano ${run.events.length}.`);
+          for (const event of run.events) {
+            if (!purchaseShape(event)) {
+              findings.push('Zdarzenie nie ma poprawnego identyfikatora, kwoty lub waluty.');
+              continue;
+            }
+            if (event.transaction_id !== run.expected.transaction_id) findings.push('Identyfikator zakupu różni się od testowego zamówienia.');
+            if (Math.abs(event.value - run.expected.value) > 0.00001) findings.push('Kwota zakupu różni się od testowego zamówienia.');
+            if (event.currency !== run.expected.currency) findings.push('Waluta zakupu różni się od testowego zamówienia.');
+          }
+        }
+
+        return { name: run.name, result: findings.length ? 'FAIL' : 'PASS', findings: [...new Set(findings)] };
+      });
+
+      return { mode: 'basic-ga4-purchase', passed: cases.filter(run => run.result === 'PASS').length, total: cases.length, cases };
+    }
+  </script>
+  <script>
+    const input = document.querySelector('#log');
+    const summary = document.querySelector('#summary');
+    const list = document.querySelector('#result');
+    const download = document.querySelector('#download');
+    let currentReport = null;
+
+    function render() {
+      list.replaceChildren();
+      currentReport = null;
+      download.disabled = true;
+      try {
+        currentReport = checkPurchaseLog(JSON.parse(input.value));
+        summary.textContent = `Poprawne próby: ${currentReport.passed} z ${currentReport.total}`;
+        for (const run of currentReport.cases) {
+          const card = document.createElement('li');
+          card.className = run.result.toLowerCase();
+          const heading = document.createElement('strong');
+          heading.textContent = `${run.result} · ${run.name}`;
+          card.append(heading);
+          if (run.findings.length) {
+            const notes = document.createElement('ul');
+            for (const finding of run.findings) {
+              const note = document.createElement('li');
+              note.textContent = finding;
+              notes.append(note);
+            }
+            card.append(notes);
+          }
+          list.append(card);
+        }
+        download.disabled = false;
+      } catch (error) {
+        summary.textContent = error instanceof SyntaxError ? 'Sprawdź składnię JSON w logu.' : error.message;
+      }
+    }
+
+    function loadExample(example) {
+      input.value = JSON.stringify(example, null, 2);
+      render();
+    }
+
+    document.querySelector('#broken').addEventListener('click', () => loadExample(faultyLog));
+    document.querySelector('#fixed').addEventListener('click', () => loadExample(correctLog));
+    document.querySelector('#check').addEventListener('click', render);
+    input.addEventListener('input', () => {
+      currentReport = null;
+      download.disabled = true;
+      list.replaceChildren();
+      summary.textContent = 'Kliknij „Sprawdź log”, aby przeliczyć wynik.';
+    });
+    download.addEventListener('click', () => {
+      if (!currentReport) return;
+      const blob = new Blob([JSON.stringify(currentReport, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'kontrola-zakupu-ga4.json';
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+    loadExample(faultyLog);
+  </script>
+</body>
+</html>
