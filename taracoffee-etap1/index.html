@@ -34,7 +34,7 @@ fieldset{margin:1rem 0;border:0;padding:0}legend,.select-label{font-weight:700;m
 <label class="choice"><input type="radio" name="market" value="DE"><span>Niemcy · EUR</span></label>
 </div></fieldset>
 <div class="selectors">
-<label class="select-label">Postać<select name="grind"><option value="beans">Ziarno</option><option value="ground">Mielona</option></select></label>
+<label class="select-label">Postać<select name="grind"><option value="beans">Ziarno</option><option value="fine">Mielona drobno</option><option value="medium">Mielona średnio</option><option value="coarse">Mielona grubo</option></select></label>
 <label class="select-label">Gramatura<select name="weight"><option value="180">180 g</option><option value="360">360 g · wariant przykładowy</option></select></label>
 </div>
 <fieldset><legend>Opcja zakupu</legend><div class="choices">
@@ -43,7 +43,7 @@ fieldset{margin:1rem 0;border:0;padding:0}legend,.select-label{font-weight:700;m
 </div></fieldset>
 <fieldset id="frequency" hidden><legend>Częstotliwość dostawy</legend><div class="choices">
 <label class="choice"><input type="radio" name="cycle" value="2" checked><span>Co 2 tygodnie · −15%</span></label>
-<label class="choice"><input type="radio" name="cycle" value="4"><span>Co 4 tygodnie · −10%</span></label>
+<label class="choice"><input type="radio" name="cycle" value="4"><span>Co 4 tygodnie · −15%</span></label>
 </div></fieldset>
 <div aria-live="polite" aria-atomic="true"><p id="subtotal" class="subtotal">59,00 zł</p><p id="eq" class="secondary-price">≈ 13,72 € przy przykładowym kursie 4,30 PLN/EUR</p></div>
 <button class="buy" type="submit">Pokaż podsumowanie</button>
@@ -56,7 +56,7 @@ fieldset{margin:1rem 0;border:0;padding:0}legend,.select-label{font-weight:700;m
 <h2 id="pay-title">Płatności w Polsce i Niemczech</h2>
 <p>Rekomendacja dla jednego produktu. Porównanie taryf publicznych sprawdzonych 15 listopada 2026 r. Dostępność i rozliczenia wymagają weryfikacji na koncie sprzedawcy.</p>
 <div class="data">
-<section class="option"><h3>Stripe Checkout + Billing</h3><p>Na start karta EOG jako wspólna metoda odnowień. W Polsce BLIK i Przelewy24 dla zakupu jednorazowego. W Niemczech dodatkowo SEPA w EUR jako kandydat do odnowień, po teście mandatu i opóźnionego potwierdzenia. Billing Pay as you go dolicza 0,7% do wolumenu rozliczanego w Billing.</p></section>
+<section class="option"><h3>Stripe Checkout + Billing</h3><p>Na start karta EOG jako wspólna metoda odnowień. W Polsce BLIK dla zakupu jednorazowego. Przelewy24 dopiero po weryfikacji kategorii sprzedawcy. W Niemczech dodatkowo SEPA w EUR jako kandydat do odnowień, po teście mandatu i opóźnionego potwierdzenia. Billing Pay as you go dolicza 0,7% do wolumenu rozliczanego w Billing.</p></section>
 <section class="option"><h3>WooCommerce + WooCommerce Subscriptions</h3><p>Do wyboru, gdy sklep ma działać na WordPressie. Licencja Subscriptions to 279 USD rocznie według publicznej oferty, plus hosting i prowizja wybranej bramki. Automatyczne odnowienie zależy od funkcji wtyczki, metody i konta. Nie trzeba przy tym dokładać Stripe Billing, jeśli odnowienia rozlicza WooCommerce.</p></section>
 </div>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Porównanie opłat i metod płatności">
@@ -64,14 +64,14 @@ fieldset{margin:1rem 0;border:0;padding:0}legend,.select-label{font-weight:700;m
 <tbody>
 <tr><th scope="row">Karta EOG, standardowa</th><td>Stripe PL · 1,5% + 1,00 zł</td><td>Zakup i odnowienia. Opłata Billing osobno.</td></tr>
 <tr><th scope="row">BLIK · PL</th><td>Stripe PL · 1,6% + 1,00 zł</td><td>Zakup jednorazowy w proponowanej konfiguracji.</td></tr>
-<tr><th scope="row">Przelewy24 · PL</th><td>Stripe PL · 1,9% + 1,00 zł</td><td>Zakup jednorazowy w proponowanej konfiguracji.</td></tr>
+<tr><th scope="row">Przelewy24 · PL</th><td>Stripe PL · 1,9% + 1,00 zł</td><td>Zakup jednorazowy. Stripe wyklucza m.in. specjalistyczne sklepy z żywnością (MCC 5499). Przed włączeniem sprawdź klasyfikację kawy na koncie.</td></tr>
 <tr><th scope="row">Klarna · DE</th><td>Stripe PL · 2,99% + 1,65 zł dla kupującego z DE</td><td>Opcjonalnie jednorazowo po sprawdzeniu kwalifikacji produktu i konta. Nie zakładamy odnowień w pierwszym wdrożeniu.</td></tr>
 <tr><th scope="row">SEPA Direct Debit · DE</th><td>Stripe PL · 1,60 zł</td><td>EUR, mandat klienta. Kandydat do cyklicznych obciążeń po potwierdzeniu dostępności. Wysyłka po potwierdzeniu płatności.</td></tr>
 <tr><th scope="row">PayPal · DE</th><td>PayPal PL · 2,90% + stała opłata, np. 0,35 EUR w taryfie podstawowej</td><td>Opcja zakupu jednorazowego. Odnowienia po potwierdzeniu integracji i funkcji zapisanej metody płatności.</td></tr>
 </tbody></table></div>
 <p class="muted section-note">Stawki są punktami odniesienia. Mogą wystąpić opłaty za przewalutowanie, zwroty, spory lub inny rodzaj karty. Ceny sprzedaży dla PL i DE można ostatecznie ustalić osobno.</p>
 <ul class="sources" aria-label="Źródła stawek i kompatybilności">
-<li><a href="https://stripe.com/en-pl/pricing">Stripe Payments i Billing</a></li><li><a href="https://stripe.com/en-pl/pricing/local-payment-methods">Lokalne płatności Stripe</a></li><li><a href="https://docs.stripe.com/payments/sepa-debit">Mandat i rozliczenie SEPA</a></li><li><a href="https://woocommerce.com/products/woocommerce-subscriptions/">Licencja WooCommerce</a></li><li><a href="https://woocommerce.com/document/subscriptions/payment-gateways/">Bramki subskrypcji</a></li><li><a href="https://www.paypal.com/pl/business/paypal-business-fees">Cennik PayPal PL</a></li>
+<li><a href="https://stripe.com/en-pl/pricing">Stripe Payments i Billing</a></li><li><a href="https://stripe.com/en-pl/pricing/local-payment-methods">Lokalne płatności Stripe</a></li><li><a href="https://docs.stripe.com/payments/p24">Kwalifikacja Przelewy24</a></li><li><a href="https://docs.stripe.com/payments/sepa-debit">Mandat i rozliczenie SEPA</a></li><li><a href="https://woocommerce.com/products/woocommerce-subscriptions/">Licencja WooCommerce</a></li><li><a href="https://woocommerce.com/document/subscriptions/payment-gateways/">Bramki subskrypcji</a></li><li><a href="https://www.paypal.com/pl/business/paypal-business-fees">Cennik PayPal PL</a></li>
 </ul>
 </section>
 </main>
@@ -82,16 +82,16 @@ const summary = document.querySelector('#summary');
 const priceDisplay = document.querySelector('#subtotal');
 const conversionDisplay = document.querySelector('#eq');
 const packWeight = document.querySelector('#pack-weight');
-const centPrices = {180: 5900, 360: 10900};
+const centPrices = {180: 5900, 360: 11800};
 const rate = 4.30;
-const discounts = {2: 15, 4: 10};
+const subscriptionDiscount = 15;
 function currency(cents, code) {
   return new Intl.NumberFormat('pl-PL', {style:'currency', currency:code}).format(cents / 100);
 }
 function details() {
   const data = Object.fromEntries(new FormData(config));
   const repeat = data.mode === 'repeat';
-  const cut = repeat ? discounts[data.cycle] : 0;
+  const cut = repeat ? subscriptionDiscount : 0;
   const pln = Math.round(centPrices[data.weight] * (100 - cut) / 100);
   const eur = Math.round(pln / rate);
   const main = data.market === 'PL' ? currency(pln,'PLN') : currency(eur,'EUR');
@@ -112,7 +112,7 @@ config.addEventListener('change', update);
 config.addEventListener('submit', event => {
   event.preventDefault();
   const {data, repeat, main} = details();
-  const form = data.grind === 'beans' ? 'ziarno' : 'mielona';
+  const form = config.elements.grind.selectedOptions[0].textContent.toLowerCase();
   const cycle = repeat ? 'dostawa co ' + data.cycle + ' tygodnie' : 'zakup jednorazowy';
   summary.textContent = 'Taracoffee ' + data.weight + ' g, ' + form + ' · ' + cycle + ' · ' + main + (repeat ? ' za dostawę' : '') + '.';
   summary.hidden = false;
