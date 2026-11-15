@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Taracoffee · karta produktu | CloudCode Studio</title>
+<meta name="description" content="Prototyp karty produktu z zakupem jednorazowym i subskrypcją dla dwóch rynków.">
+<style>
+:root{color-scheme:light;--cream:#f5efe1;--ink:#28241c;--muted:#655a4a;--line:#c9bda9;--dark:#322617;--light:#fffaf0;--accent:#593414}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:1rem/1.55 "DM Sans",system-ui,sans-serif}a{color:var(--accent)}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible+span{outline:3px solid #9c4615;outline-offset:4px}.wrap{max-width:1110px;margin:auto;padding:0 clamp(1.15rem,4vw,3.5rem)}
+header{border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1.2rem;padding-bottom:1.2rem}.identity{font-weight:760}.nav{font-size:.92rem;text-underline-offset:4px}
+main{padding-block:clamp(2rem,5vw,4.5rem)}.product{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(2rem,7vw,6rem);align-items:start}
+.art{min-height:420px;display:grid;place-items:center;overflow:hidden;border-radius:1rem;background:radial-gradient(ellipse at 46% 39%,#d8bc95 0,#ac8158 65%,#896745 100%);padding:3rem 1rem}
+.pack{width:min(66%,235px);min-width:156px;min-height:282px;display:grid;align-content:center;justify-items:center;gap:.5rem;background:#39271c;border:1px solid #21170f;border-radius:.42rem .42rem .9rem .9rem;box-shadow:10px 16px 34px #2e1e1680,inset 0 8px 0 #231810;color:#eed9b6;text-align:center;padding:1rem;font-family:Georgia,serif;transform:rotate(-5deg)}
+.pack strong{font-size:clamp(1.25rem,3vw,2.25rem);font-weight:normal}.pack small{font:700 .73rem/1.3 system-ui;letter-spacing:.14em}.pack .pack-size{border-top:1px solid #c7a570;padding-top:.5rem;margin-top:1rem}
+h1,h2{font-family:Georgia,serif;font-weight:normal;line-height:1.05;letter-spacing:-.04em}h1{font-size:clamp(2.6rem,5.5vw,5rem);margin:.5rem 0 .75rem}h2{font-size:clamp(2rem,3.7vw,3rem);margin:0 0 1rem}p{margin:.5rem 0 1rem}.subtitle,.muted{color:var(--muted)}.subtotal{font-weight:760;font-size:1.55rem;margin:.85rem 0 .25rem}.secondary-price{font-size:.96rem;color:var(--muted)}
+fieldset{margin:1rem 0;border:0;padding:0}legend,.select-label{font-weight:700;margin-bottom:.35rem}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.choice{position:relative}.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}.choice span{display:block;padding:.62rem .7rem;border:1px solid var(--line);border-radius:.5rem;background:var(--light);font-size:.93rem;pointer-events:none}.choice input:checked+span{border:2px solid var(--accent);padding:calc(.62rem - 1px) calc(.7rem - 1px);font-weight:720;background:#ecdfc7}.selectors{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}select{width:100%;min-height:44px;background:var(--light);color:var(--ink);font:inherit;border:1px solid var(--line);border-radius:.45rem;padding:.45rem}.buy{background:var(--dark);color:#fff9eb;border:0;border-radius:.5rem;min-height:46px;width:100%;font:700 1rem system-ui;margin-top:1rem;cursor:pointer}.summary{background:var(--light);border:1px solid var(--line);border-radius:.5rem;padding:.7rem;margin-top:.65rem}.process{margin-top:clamp(3rem,8vw,6rem);border-top:1px solid var(--line);padding-top:2rem}.data{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}.option{background:var(--light);padding:1rem 1.1rem;border:1px solid var(--line);border-radius:.55rem}.option h3{margin:0 0 .5rem;font-size:1.04rem}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px;text-align:left}th,td{padding:.68rem .65rem;vertical-align:top;border-bottom:1px solid var(--line)}thead th{background:#e8decb}td{font-size:.94rem}.sources{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;margin:1rem 0;padding:0;list-style:none;font-size:.91rem}.section-note{font-size:.9rem}
+@media(max-width:730px){.product,.data{grid-template-columns:1fr}.art{min-height:258px;padding:1.25rem}.pack{min-height:195px;width:150px}.wrap{padding-inline:1rem}header .wrap{padding-top:.8rem;padding-bottom:.8rem}.product{gap:1.6rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><span class="identity">CloudCode Studio · Etap 1</span><a class="nav" href="#platnosci">Płatności PL / DE</a></div></header>
+<main class="wrap">
+<section class="product" aria-labelledby="name">
+<div class="art" role="img" aria-label="Ilustracja opakowania kawy do prototypu"><div class="pack"><small>KONCEPCJA OPAKOWANIA</small><strong>Taracoffee</strong><small id="pack-weight" class="pack-size">180 g</small></div></div>
+<div>
+<p class="subtitle">Niezależny prototyp CloudCode Studio · ceny przykładowe</p>
+<h1 id="name">Taracoffee</h1>
+<p>Wybierz paczkę kawy, jednorazowy zakup albo cykliczną dostawę.</p>
+<form id="config">
+<fieldset><legend>Rynek i waluta</legend><div class="choices">
+<label class="choice"><input type="radio" name="market" value="PL" checked><span>Polska · PLN</span></label>
+<label class="choice"><input type="radio" name="market" value="DE"><span>Niemcy · EUR</span></label>
+</div></fieldset>
+<div class="selectors">
+<label class="select-label">Postać<select name="grind"><option value="beans">Ziarno</option><option value="ground">Mielona</option></select></label>
+<label class="select-label">Gramatura<select name="weight"><option value="180">180 g</option><option value="360">360 g · wariant przykładowy</option></select></label>
+</div>
+<fieldset><legend>Opcja zakupu</legend><div class="choices">
+<label class="choice"><input type="radio" name="mode" value="once" checked><span>Zakup jednorazowy</span></label>
+<label class="choice"><input type="radio" name="mode" value="repeat"><span>Subskrypcja</span></label>
+</div></fieldset>
+<fieldset id="frequency" hidden><legend>Częstotliwość dostawy</legend><div class="choices">
+<label class="choice"><input type="radio" name="cycle" value="2" checked><span>Co 2 tygodnie · −15%</span></label>
+<label class="choice"><input type="radio" name="cycle" value="4"><span>Co 4 tygodnie · −10%</span></label>
+</div></fieldset>
+<div aria-live="polite" aria-atomic="true"><p id="subtotal" class="subtotal">59,00 zł</p><p id="eq" class="secondary-price">≈ 13,72 € przy przykładowym kursie 4,30 PLN/EUR</p></div>
+<button class="buy" type="submit">Pokaż podsumowanie</button>
+<p class="muted section-note">Symulacja bez płatności i zbierania danych. Cena dostawy i ostateczny cennik wymagają potwierdzenia.</p>
+<p id="summary" class="summary" role="status" hidden></p>
+</form>
+</div>
+</section>
+<section class="process" id="platnosci" aria-labelledby="pay-title">
+<h2 id="pay-title">Płatności w Polsce i Niemczech</h2>
+<p>Rekomendacja dla jednego produktu. Porównanie taryf publicznych sprawdzonych 15 listopada 2026 r. Dostępność i rozliczenia wymagają weryfikacji na koncie sprzedawcy.</p>
+<div class="data">
+<section class="option"><h3>Stripe Checkout + Billing</h3><p>Na start karta EOG jako wspólna metoda odnowień. W Polsce BLIK i Przelewy24 dla zakupu jednorazowego. W Niemczech dodatkowo SEPA w EUR jako kandydat do odnowień, po teście mandatu i opóźnionego potwierdzenia. Billing Pay as you go dolicza 0,7% do wolumenu rozliczanego w Billing.</p></section>
+<section class="option"><h3>WooCommerce + WooCommerce Subscriptions</h3><p>Do wyboru, gdy sklep ma działać na WordPressie. Licencja Subscriptions to 279 USD rocznie według publicznej oferty, plus hosting i prowizja wybranej bramki. Automatyczne odnowienie zależy od funkcji wtyczki, metody i konta. Nie trzeba przy tym dokładać Stripe Billing, jeśli odnowienia rozlicza WooCommerce.</p></section>
+</div>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Porównanie opłat i metod płatności">
+<table><thead><tr><th>Metoda</th><th>Publiczna opłata referencyjna</th><th>Zastosowanie</th></tr></thead>
+<tbody>
+<tr><th scope="row">Karta EOG, standardowa</th><td>Stripe PL · 1,5% + 1,00 zł</td><td>Zakup i odnowienia. Opłata Billing osobno.</td></tr>
+<tr><th scope="row">BLIK · PL</th><td>Stripe PL · 1,6% + 1,00 zł</td><td>Zakup jednorazowy w proponowanej konfiguracji.</td></tr>
+<tr><th scope="row">Przelewy24 · PL</th><td>Stripe PL · 1,9% + 1,00 zł</td><td>Zakup jednorazowy w proponowanej konfiguracji.</td></tr>
+<tr><th scope="row">Klarna · DE</th><td>Stripe PL · 2,99% + 1,65 zł dla kupującego z DE</td><td>Opcjonalnie jednorazowo po sprawdzeniu kwalifikacji produktu i konta. Nie zakładamy odnowień w pierwszym wdrożeniu.</td></tr>
+<tr><th scope="row">SEPA Direct Debit · DE</th><td>Stripe PL · 1,60 zł</td><td>EUR, mandat klienta. Kandydat do cyklicznych obciążeń po potwierdzeniu dostępności. Wysyłka po potwierdzeniu płatności.</td></tr>
+<tr><th scope="row">PayPal · DE</th><td>PayPal PL · 2,90% + stała opłata, np. 0,35 EUR w taryfie podstawowej</td><td>Opcja zakupu jednorazowego. Odnowienia po potwierdzeniu integracji i funkcji zapisanej metody płatności.</td></tr>
+</tbody></table></div>
+<p class="muted section-note">Stawki są punktami odniesienia. Mogą wystąpić opłaty za przewalutowanie, zwroty, spory lub inny rodzaj karty. Ceny sprzedaży dla PL i DE można ostatecznie ustalić osobno.</p>
+<ul class="sources" aria-label="Źródła stawek i kompatybilności">
+<li><a href="https://stripe.com/en-pl/pricing">Stripe Payments i Billing</a></li><li><a href="https://stripe.com/en-pl/pricing/local-payment-methods">Lokalne płatności Stripe</a></li><li><a href="https://docs.stripe.com/payments/sepa-debit">Mandat i rozliczenie SEPA</a></li><li><a href="https://woocommerce.com/products/woocommerce-subscriptions/">Licencja WooCommerce</a></li><li><a href="https://woocommerce.com/document/subscriptions/payment-gateways/">Bramki subskrypcji</a></li><li><a href="https://www.paypal.com/pl/business/paypal-business-fees">Cennik PayPal PL</a></li>
+</ul>
+</section>
+</main>
+<script>
+const config = document.querySelector('#config');
+const frequency = document.querySelector('#frequency');
+const summary = document.querySelector('#summary');
+const priceDisplay = document.querySelector('#subtotal');
+const conversionDisplay = document.querySelector('#eq');
+const packWeight = document.querySelector('#pack-weight');
+const centPrices = {180: 5900, 360: 10900};
+const rate = 4.30;
+const discounts = {2: 15, 4: 10};
+function currency(cents, code) {
+  return new Intl.NumberFormat('pl-PL', {style:'currency', currency:code}).format(cents / 100);
+}
+function details() {
+  const data = Object.fromEntries(new FormData(config));
+  const repeat = data.mode === 'repeat';
+  const cut = repeat ? discounts[data.cycle] : 0;
+  const pln = Math.round(centPrices[data.weight] * (100 - cut) / 100);
+  const eur = Math.round(pln / rate);
+  const main = data.market === 'PL' ? currency(pln,'PLN') : currency(eur,'EUR');
+  const secondary = data.market === 'PL' ? currency(eur,'EUR') : currency(pln,'PLN');
+  return {data, repeat, main, secondary};
+}
+function update() {
+  const selectedSubscription = config.elements.mode.value === 'repeat';
+  frequency.hidden = !selectedSubscription;
+  frequency.disabled = !selectedSubscription;
+  const {data, repeat, main, secondary} = details();
+  summary.hidden = true;
+  priceDisplay.textContent = main + (repeat ? ' / dostawa' : '');
+  conversionDisplay.textContent = '≈ ' + secondary + ' przy przykładowym kursie 4,30 PLN/EUR';
+  packWeight.textContent = data.weight + ' g';
+}
+config.addEventListener('change', update);
+config.addEventListener('submit', event => {
+  event.preventDefault();
+  const {data, repeat, main} = details();
+  const form = data.grind === 'beans' ? 'ziarno' : 'mielona';
+  const cycle = repeat ? 'dostawa co ' + data.cycle + ' tygodnie' : 'zakup jednorazowy';
+  summary.textContent = 'Taracoffee ' + data.weight + ' g, ' + form + ' · ' + cycle + ' · ' + main + (repeat ? ' za dostawę' : '') + '.';
+  summary.hidden = false;
+});
+update();
+</script>
+</body></html>
