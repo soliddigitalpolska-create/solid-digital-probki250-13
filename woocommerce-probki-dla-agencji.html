@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Próbki kwalifikacji WooCommerce | CloudCode Studio</title>
+  <style>
+    :root{font-family:Inter,system-ui,sans-serif;color:#1b2826;background:#f6f5f0;line-height:1.6;font-synthesis:none;--dark:#173630;--ink:#233b36;--muted:#4e615a;--line:#ced9d1;--paper:#fff;--green:#006754}
+    *{box-sizing:border-box}
+    body{margin:0}
+    a{color:var(--green);text-underline-offset:.2em}
+    .wrap{width:min(1050px,100% - 2.5rem);margin:auto}
+    header{background:var(--dark);color:#f4f7ee;padding:clamp(2rem,6vw,4.25rem) 0}
+    header p{max-width:62ch;color:#d9e9df;margin:.65rem 0 0}
+    .brand{font-weight:650;letter-spacing:.025em}
+    h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.06;letter-spacing:-.04em;margin:.65rem 0}
+    h2,h3,p{margin:0}
+    main{padding:1.5rem 0 3.5rem}
+    .controls{display:flex;align-items:end;flex-wrap:wrap;gap:1rem;padding:1.15rem 0 1.35rem}
+    label{display:grid;gap:.3rem;font-weight:650;flex:1 1 14rem}
+    select,button,.button{font:inherit;border-radius:.45rem;min-height:2.8rem}
+    select{max-width:100%;width:100%;border:1px solid #768e83;background:var(--paper);color:var(--ink);padding:.5rem .65rem}
+    button,.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--green);background:var(--green);color:#fff;padding:.5rem .9rem;font-weight:650;cursor:pointer;text-align:center;text-decoration:none}
+    button:disabled{opacity:.55;cursor:default}
+    :focus-visible{outline:3px solid #bd5d19;outline-offset:3px}
+    .notice{border-left:4px solid #768e83;color:var(--muted);padding:.25rem .65rem;margin:.5rem 0}
+    #count{min-height:1.6rem;margin:.5rem 0;color:var(--muted);font-size:.93rem}
+    #cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15.5rem),1fr));gap:.9rem}
+    article,.inquiry{background:var(--paper);border:1px solid var(--line);border-radius:.65rem;padding:1.15rem}
+    article h2{font-size:1.04rem;line-height:1.35;overflow-wrap:anywhere;color:var(--ink)}
+    .priority{font-size:.88rem;font-weight:650;color:#634125;margin-bottom:.5rem}
+    article p{margin:.6rem 0}
+    .check{font-size:.94rem;color:var(--muted)}
+    code{font-size:.81rem;overflow-wrap:anywhere}
+    .inquiry{margin-top:1.3rem;display:grid;gap:.65rem}
+    .links{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center}
+    @media(max-width:45rem){.wrap{width:calc(100% - 1.5rem)}h1{letter-spacing:-.025em}.controls{align-items:stretch}button{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="brand">CloudCode Studio</p>
+      <h1>Próbka kwalifikacji WooCommerce</h1>
+      <p id="intro">Przegląd domen z obserwacją, sposobem weryfikacji i eksportem do kolejki.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="notice"><strong>Dane demonstracyjne.</strong> Wszystkie domeny, obserwacje i priorytety w tej próbce są fikcyjne.</p>
+    <div class="controls">
+      <label>Zakres próbki<select id="profile"></select></label>
+      <label>Priorytet<select id="severity"><option value="all">Wszystkie</option><option value="high">Wysoki</option><option value="medium">Średni</option></select></label>
+      <button id="export" type="button">Pobierz widoczne wiersze CSV</button>
+    </div>
+    <p id="count" role="status"></p>
+    <section id="cases" aria-label="Przykładowe domeny i obserwacje"></section>
+    <section class="inquiry" aria-labelledby="scope-title">
+      <h2 id="scope-title">Pakiet dla agencji</h2>
+      <p>Panel do importu i deduplikacji oraz pula 100 domen przygotowywana na zamówienie za 2 000 zł. Każdy wiersz zawiera adres publicznej strony, zaobserwowany sygnał techniczny i datę sprawdzenia. Kryteria, termin i wyłączność na pulę uzgadniamy przed startem.</p>
+      <div class="links">
+        <a id="inquiry" class="button" href="mailto:solid.digital.polska@gmail.com">Porozmawiajmy o kryteriach doboru</a>
+        <a href="https://solid-digital-projekty.brunolewandowski2009.chatgpt.site/p/webdevai-kwalifikacja-woocommerce">Otwórz oryginalne demo kolejki (próbka WebDevAI)</a>
+      </div>
+    </section>
+    <noscript><p>Włącz JavaScript, aby wybrać zakres i pobrać próbkę CSV.</p></noscript>
+  </main>
+  <script>
+    const profiles = {
+      'checkout-mobilny': {
+        label: 'Checkout mobilny', intro: 'Sygnały do weryfikacji między kartą produktu a wyborem dostawy na telefonie.', rows: [
+          ['checkout-gosc', '/zamowienie/', 'high', 'Koszyk gościa pokazuje ekran logowania przed wyborem dostawy.', 'Przejdź od koszyka jako niezalogowany użytkownik i zapisz widok pierwszego kroku.'],
+          ['dostawa-koszyk', '/koszyk/', 'medium', 'Szacowany koszt dostawy pojawia się dopiero w podsumowaniu.', 'Porównaj komunikat przy produkcie z koszykiem i podsumowaniem.'],
+          ['pole-zip', '/zamowienie/', 'high', 'Klawiatura numeryczna utrudnia wpisanie wymaganego formatu kodu pocztowego.', 'Sprawdź pole na klawiaturze mobilnej przy użyciu przykładowego kodu, bez składania zamówienia.']
+        ]
+      },
+      'migracja-sklepu': {
+        label: 'Migracja sklepu', intro: 'Jak ocenić zależności WooCommerce przed rozmową o zmianie platformy.', rows: [
+          ['warianty-migracja', '/produkt/zestaw/', 'high', 'Warianty produktu mają osobne zdjęcia i reguły dostępności.', 'Zapisz zachowanie trzech wariantów i przygotuj próbkę mapowania SKU.'],
+          ['konta-migracja', '/moje-konto/', 'medium', 'Konto klienta udostępnia historię zamówień i adresy dostaw.', 'Zapisz publicznie opisane funkcje konta i zadaj pytania o zakres migracji po uzyskaniu dostępu.'],
+          ['subskrypcje-migracja', '/subskrypcja/', 'high', 'Regulamin przewiduje odnowienia i możliwość pomijania dostaw.', 'Zapisz publiczne funkcje subskrypcji jako zależności do rozmowy o migracji.']
+        ]
+      },
+      'dane-produktowe': {
+        label: 'Dane produktowe i integracje', intro: 'Ocena spójności katalogu pod wdrożenie feedu produktowego i integracji.', rows: [
+          ['sku-feed', '/produkt/kolor/', 'high', 'Warianty koloru pokazują ten sam identyfikator w danych strukturalnych.', 'Porównaj identyfikator prezentowany na stronie i publiczne dane dwóch wariantów.'],
+          ['dostepnosc-feed', '/produkt/komplet/', 'high', 'Na stronie produkt jest wyprzedany, a publiczne dane strukturalne wskazują dostępność.', 'Zapisz dwa źródła dla tego samego wariantu oraz czas sprawdzenia.'],
+          ['marka-feed', '/kategoria/akcesoria/', 'medium', 'Karty z tej samej kategorii używają dwóch różnych nazw tej samej marki.', 'Zbierz przykłady z jednej kategorii i określ regułę normalizacji.']
+        ]
+      },
+      'seo-i-przekierowania': {
+        label: 'SEO i przekierowania', intro: 'Kwalifikacja domen przed zmianą adresów, wdrożeniem filtrów i planem migracji SEO.', rows: [
+          ['przekierowania-seo', '/stary-katalog/', 'high', 'Stara kategoria prowadzi przez dwa przekierowania do strony głównej.', 'Zapisz wszystkie statusy HTTP i sprawdź, czy istnieje odpowiadająca nowa kategoria.'],
+          ['kanoniczny-seo', '/kategoria/swieczki/?kolor=bialy', 'medium', 'Filtrowana podstrona wskazuje inny adres kanoniczny niż link w nawigacji.', 'Zestaw adres wejściowy, kanoniczny i link wewnętrzny dla jednego filtra.'],
+          ['warianty-seo', '/produkt/mlynek/', 'high', 'Adres kanoniczny produktu wskazuje wariant, który zwraca 404.', 'Odczytaj deklarację canonical oraz sprawdź status docelowego adresu.']
+        ]
+      },
+      'automatyzacja-operacji': {
+        label: 'Automatyzacja operacji', intro: 'Zdarzenia w publicznym sklepie, które uzasadniają rozmowę o automatyzacji.', rows: [
+          ['zamowienia-operacje', '/zamowienia-hurtowe/', 'high', 'Zamówienia ilościowe wymagają wysłania ręcznie wypełnionej listy.', 'Odtwórz pola z publicznej instrukcji i zaznacz dane potrzebne do formularza.'],
+          ['material-operacje', '/dostawa/', 'medium', 'Wymagany termin dla produktów na zamówienie zależy od kategorii.', 'Sprawdź, czy publiczne czasy wysyłki można powiązać z typem produktu.'],
+          ['stan-operacje', '/produkt/zapas/', 'high', 'Strona listingu pokazuje dostępny wariant, ale karta produktu wskazuje brak stanu.', 'Porównaj tę samą wersję produktu na obu stronach i udokumentuj rozbieżność.']
+        ]
+      },
+      'zdarzenia-i-analityka': {
+        label: 'Zdarzenia i analityka', intro: 'Hipotezy do krótkiej diagnostyki pomiaru zakupów przed dostępem do konta reklamowego.', rows: [
+          ['zdarzenie-koszyk', '/produkt/pakiet/', 'high', 'Przycisk koszyka działa w dwóch miejscach, lecz scenariusze prowadzą odmiennymi ścieżkami.', 'Zmapuj akcje na kartach i koszyku. Wynik pomiaru potwierdź dopiero w uprawnionym podglądzie zdarzeń.'],
+          ['parametry-utm', '/promocja/?utm_source=demo', 'medium', 'Publiczne przekierowanie usuwa parametr UTM z adresu docelowego.', 'Porównaj pełne adresy początkowy i docelowy oraz sprawdź stan przekierowań.'],
+          ['dwa-kroki', '/zapis/', 'high', 'Potwierdzenie zapisu pojawia się w tym samym widoku bez zmiany adresu.', 'Udokumentuj, dlaczego pomiar oparty na zmianie URL wymaga weryfikacji w podglądzie.']
+        ]
+      },
+      'sprzedaz-b2b': {
+        label: 'Sprzedaż hurtowa B2B', intro: 'Ścieżka od katalogu i minimum logistycznego do zapytania hurtowego.', rows: [
+          ['ilosc-b2b', '/hurt/', 'high', 'Formularz hurtowy nie podaje minimum ani jednostek zamówienia.', 'Porównaj instrukcję hurtową i etykiety formularza przed wysłaniem jakichkolwiek danych.'],
+          ['vat-b2b', '/produkt/opakowanie/', 'medium', 'Karta pokazuje cenę detaliczną, a warunki hurtowe odsyłają do osobnego pliku.', 'Zapisz, gdzie firma komunikuje cennik i warunki dla stałych klientów.'],
+          ['wariant-b2b', '/wycena/', 'high', 'Przejście z produktu do zapytania gubi nazwę wybranego wariantu.', 'Testuj przejście z dwóch wariantów i porównaj wypełnienie pól bez wysyłki.']
+        ]
+      },
+      'rynki-ue': {
+        label: 'Sprzedaż na rynkach UE', intro: 'Sprawdzenie języka, waluty i opcji dostawy na ścieżce PL i DE.', rows: [
+          ['jezyk-ue', '/de/produkt/set/', 'high', 'Niemiecka karta produktu kieruje do polskiego koszyka.', 'Zapisz język i adres na każdym etapie przed potwierdzeniem zamówienia.'],
+          ['waluta-ue', '/de/warenkorb/', 'high', 'Koszyk przedstawia PLN po wcześniejszym pokazaniu EUR na karcie produktu.', 'Sprawdź walutę i oznaczenie kwoty w produkcie oraz koszyku dla jednej pozycji.'],
+          ['dostawa-ue', '/versand/', 'medium', 'Publiczna informacja o wysyłce do DE nie jest widoczna na karcie produktu.', 'Zestaw warunki dostawy, język i widoczność odnośnika w obu wersjach.']
+        ]
+      },
+      'platnosci-i-dostawa': {
+        label: 'Płatności i dostawa', intro: 'Wstępna diagnoza wyboru dostawy i dostępnych płatności bez składania zamówienia.', rows: [
+          ['punkt-dostawy', '/koszyk/', 'high', 'Wybór odbioru w punkcie nie pokazuje listy punktów w mobilnym widoku.', 'Sprawdź otwarcie listy i przewijanie widoku na telefonie.'],
+          ['metoda-platnosci', '/zamowienie/', 'medium', 'Karta produktu obiecuje płatność odroczoną, ale przy wybranej dostawie opcja znika.', 'Udokumentuj kombinację produktu i metody dostawy w publicznej ścieżce testowej.'],
+          ['prog-wysylki', '/dostawa/', 'high', 'Po rabacie komunikat o darmowej wysyłce pozostaje widoczny mimo zmiany kosztu.', 'Porównaj dwa przykładowe koszyki wokół opublikowanego progu.']
+        ]
+      },
+      'dostepnosc-mobilna': {
+        label: 'Dostępność na telefonie', intro: 'Kwalifikacja usterek widoku produktu i nawigacji po wariantach.', rows: [
+          ['powiekszenie-mobile', '/produkt/olej/', 'high', 'Strona ogranicza powiększenie widoku podczas czytania informacji produktowych.', 'Odczytaj ustawienia viewport i sprawdź powiększenie dwoma palcami.'],
+          ['fokus-mobile', '/kategoria/herbaty/', 'medium', 'Po zamknięciu filtrów fokus nie wraca na przycisk otwierania.', 'Odtwórz otwarcie i zamknięcie filtrów przy użyciu klawiatury.'],
+          ['etykiety-mobile', '/produkt/krem/', 'high', 'Pole wyboru pojemności wyróżnia wybór wyłącznie kolorem.', 'Porównaj widoczne etykiety z nazwą i stanem odczytywanym przez czytnik ekranowy.']
+        ]
+      }
+    };
+
+    const profileInput = document.getElementById('profile');
+    const severityInput = document.getElementById('severity');
+    const exportButton = document.getElementById('export');
+    const cards = document.getElementById('cases');
+    const count = document.getElementById('count');
+    const parameters = new URLSearchParams(location.search);
+    let visibleRows = [];
+
+    for (const [slug, profile] of Object.entries(profiles)) {
+      profileInput.add(new Option(profile.label, slug));
+    }
+    if (Object.hasOwn(profiles, parameters.get('profil'))) profileInput.value = parameters.get('profil');
+
+    function render() {
+      const profile = profiles[profileInput.value];
+      document.getElementById('intro').textContent = profile.intro;
+      document.title = `${profile.label} | CloudCode Studio`;
+      const inquiry = new URLSearchParams({subject: `Kwalifikacja WooCommerce — ${profile.label}`});
+      document.getElementById('inquiry').href = `mailto:solid.digital.polska@gmail.com?${inquiry.toString().replaceAll('+', '%20')}`;
+      visibleRows = profile.rows.filter((row) => severityInput.value === 'all' || severityInput.value === row[2]);
+      count.textContent = `Widoczne wiersze: ${visibleRows.length} z ${profile.rows.length}`;
+      exportButton.disabled = visibleRows.length === 0;
+      cards.replaceChildren();
+
+      for (const [name, path, priority, finding, method] of visibleRows) {
+        const domain = `${name}.example.com`;
+        const card = document.createElement('article');
+        const label = document.createElement('div');
+        label.className = 'priority';
+        label.textContent = priority === 'high' ? 'Wysoki priorytet' : 'Średni priorytet';
+        const heading = document.createElement('h2');
+        heading.textContent = domain;
+        const url = document.createElement('code');
+        url.textContent = `https://${domain}${path}`;
+        const issue = document.createElement('p');
+        issue.textContent = finding;
+        const check = document.createElement('p');
+        check.className = 'check';
+        check.textContent = method;
+        card.append(label, heading, url, issue, check);
+        cards.append(card);
+      }
+    }
+
+    profileInput.addEventListener('change', () => {
+      const url = new URL(location.href);
+      url.searchParams.set('profil', profileInput.value);
+      history.replaceState(null, '', url);
+      render();
+    });
+    severityInput.addEventListener('change', render);
+    exportButton.addEventListener('click', () => {
+      const table = [['domain', 'issue', 'source_url', 'status']];
+      for (const [name, path, , finding, method] of visibleRows) {
+        const domain = `${name}.example.com`;
+        table.push([domain, `[DEMO] ${finding} ${method}`, `https://${domain}${path}`, 'unknown']);
+      }
+      const csv = table.map((row) => row.map((value) => `"${value.replaceAll('"', '""')}"`).join(',')).join('\r\n');
+      const blob = new Blob(['\ufeff', csv, '\r\n'], {type:'text/csv;charset=utf-8'});
+      const link = document.createElement('a');
+      const objectUrl = URL.createObjectURL(blob);
+      link.href = objectUrl;
+      link.download = `cloudcode-probka-${profileInput.value}.csv`;
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+    });
+    render();
+  </script>
+</body>
+</html>
