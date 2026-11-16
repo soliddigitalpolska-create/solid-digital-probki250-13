@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Film z rejsu | Podgląd kolejności ujęć</title>
+  <style>
+    :root{color-scheme:light;--ink:#142831;--paper:#f7f7f0;--teal:#005660;--line:#cbd5cf;--light:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "DM Sans",system-ui,sans-serif}
+    main{max-width:1080px;margin:auto;padding:24px 16px 48px}
+    .brand{font-weight:760;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+    h1,h2,p{margin:0}h1{font-size:clamp(2rem,6.2vw,4.2rem);line-height:1.05;letter-spacing:-.055em;margin:12px 0}
+    .lead{max-width:65ch;margin-bottom:22px;color:#35505a}
+    .layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start}
+    .panel{padding:16px;background:var(--light);border:1px solid var(--line);border-radius:16px;min-width:0}
+    .preview{display:flex;flex-direction:column;justify-content:end;aspect-ratio:16/9;padding:clamp(12px,3vw,28px);background:#005660;color:white;border-radius:11px;overflow-wrap:anywhere}
+    .preview[data-scene="port"]{background:linear-gradient(156deg,#224448,#005660 58%,#00696c)}
+    .preview[data-scene="woda"]{background:linear-gradient(167deg,#21576a,#00374d)}
+    .preview[data-scene="postoje"]{background:linear-gradient(145deg,#80532e,#503524)}
+    .preview[data-scene="powrot"]{background:linear-gradient(160deg,#465776,#202f4c)}
+    .preview .label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+    #sceneTitle{font-size:clamp(1.25rem,3.1vw,2.25rem);line-height:1.05;margin:5px 0}
+    #description{font-size:.94rem}
+    button,input{font:inherit}button{background:#eef5f2;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 11px;cursor:pointer;font-weight:650}
+    button:disabled{opacity:.42;cursor:default}
+    button:focus-visible,input:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+    #play{background:var(--teal);color:white;border-color:var(--teal)}
+    .player{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}
+    #position{display:block;width:100%;margin:8px 0 0;accent-color:var(--teal)}
+    .panel h2{font-size:1.1rem;margin:0 0 8px}
+    ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 8px;border:1px solid var(--line);padding:8px;border-radius:9px}
+    li[data-active="true"]{border-color:var(--teal);background:#f3faf8}
+    .item-title{font-weight:750}
+    .controls{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+    input[type=number]{width:3.5rem;border:1px solid var(--line);padding:5px 3px;border-radius:6px;background:#fff;color:var(--ink)}
+    .note{font-size:.89rem;color:#35505a;margin-top:12px}
+    @media(max-width:690px){.layout{grid-template-columns:1fr}.panel{padding:12px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">CloudCode Studio</div>
+  <h1>Z rejsu do krótkiego filmu</h1>
+  <p class="lead">Przykładowy przebieg montażu z czterema fragmentami. Zmień kolejność lub długość, a potem odtwórz plan. Treść demonstracyjna.</p>
+  <div class="layout">
+    <section class="panel" aria-label="Podgląd filmu">
+      <div class="preview" id="preview" data-scene="port">
+        <div class="label" id="sceneStep">Ujęcie 1 z 4</div>
+        <h2 id="sceneTitle">Otwarcie w porcie</h2>
+        <p id="description">Krótki kadr z miejscem i tytułem filmu.</p>
+      </div>
+      <div class="player">
+        <button id="play" type="button">Odtwórz plan</button>
+        <output id="time" aria-label="Czas odtwarzania">0:00 / 1:20</output>
+      </div>
+      <input id="position" type="range" min="0" max="80" value="0" step="0.1" aria-label="Pozycja odtwarzania">
+    </section>
+    <section class="panel" aria-labelledby="timelineHeading">
+      <h2 id="timelineHeading">Kolejność ujęć</h2>
+      <ol id="timeline"></ol>
+      <p class="note">Czas liczy się automatycznie. Przykładowy rezultat to jeden poziomy plik MP4 w 1080p, z napisami miejsc oraz dźwiękiem z materiałów lub muzyką na uzgodnionej licencji.</p>
+    </section>
+  </div>
+</main>
+<script>
+  const frames = [
+    {id:'port', title:'Otwarcie w porcie', seconds:9, detail:'Krótki kadr z miejscem i tytułem filmu.'},
+    {id:'woda', title:'Żegluga', seconds:29, detail:'Dłuższe kadry przeplatane detalami z pokładu.'},
+    {id:'postoje', title:'Postoje po drodze', seconds:30, detail:'Miejsca i zdjęcia w rytmie krótszych cięć.'},
+    {id:'powrot', title:'Zakończenie', seconds:12, detail:'Spokojne ujęcie końcowe i wygaszenie dźwięku.'},
+  ];
+  const byId = id => document.getElementById(id);
+  const timeline = byId('timeline');
+  const clock = byId('time');
+  const slider = byId('position');
+  const play = byId('play');
+  let position = 0;
+  let playing = false;
+  let last = 0;
+  let animation;
+
+  const duration = () => frames.reduce((sum, frame) => sum + frame.seconds, 0);
+  const clockText = seconds => Math.floor(seconds / 60) + ':' + String(Math.floor(seconds) % 60).padStart(2,'0');
+
+  function paint() {
+    let end = 0;
+    let index = frames.findIndex(frame => (end += frame.seconds) > position);
+    if (index < 0) index = frames.length - 1;
+    const current = frames[index];
+    byId('preview').dataset.scene = current.id;
+    byId('sceneStep').textContent = 'Ujęcie ' + (index + 1) + ' z ' + frames.length;
+    byId('sceneTitle').textContent = current.title;
+    byId('description').textContent = current.detail;
+    clock.textContent = clockText(position) + ' / ' + clockText(duration());
+    slider.max = String(duration());
+    slider.value = String(position);
+    [...timeline.children].forEach((row, i) => { row.dataset.active = String(i === index); });
+  }
+
+  function drawTimeline() {
+    timeline.replaceChildren();
+    frames.forEach((frame, index) => {
+      const row = document.createElement('li');
+      const title = document.createElement('span');
+      title.className = 'item-title';
+      title.textContent = frame.title;
+      const controls = document.createElement('div');
+      controls.className = 'controls';
+      const seconds = document.createElement('input');
+      seconds.type = 'number';
+      seconds.min = '2';
+      seconds.max = '45';
+      seconds.value = String(frame.seconds);
+      seconds.setAttribute('aria-label', 'Czas w sekundach – ' + frame.title);
+      seconds.addEventListener('change', () => {
+        const parsed = Number.parseInt(seconds.value,10);
+        if (Number.isFinite(parsed)) frame.seconds = Math.max(2, Math.min(45, parsed));
+        seconds.value = String(frame.seconds);
+        position = Math.min(position, duration());
+        paint();
+      });
+      controls.append(seconds);
+      for (const [offset, label, icon] of [[-1,'Przenieś wcześniej','↑'],[1,'Przenieś później','↓']]) {
+        const move = document.createElement('button');
+        move.type = 'button';
+        move.textContent = icon;
+        move.setAttribute('aria-label', label + ' – ' + frame.title);
+        move.disabled = !frames[index + offset];
+        move.addEventListener('click', () => {
+          [frames[index], frames[index + offset]] = [frames[index + offset], frames[index]];
+          drawTimeline();
+        });
+        controls.append(move);
+      }
+      row.append(title, controls);
+      timeline.append(row);
+    });
+    paint();
+  }
+
+  function tick(timestamp) {
+    if (!playing) return;
+    position = Math.min(duration(), position + (timestamp - last) / 1000);
+    last = timestamp;
+    paint();
+    if (position === duration()) {
+      playing = false;
+      play.textContent = 'Odtwórz ponownie';
+      return;
+    }
+    animation = requestAnimationFrame(tick);
+  }
+
+  play.addEventListener('click', () => {
+    if (playing) {
+      playing = false;
+      cancelAnimationFrame(animation);
+      play.textContent = 'Wznów odtwarzanie';
+      return;
+    }
+    if (position >= duration()) position = 0;
+    last = performance.now();
+    playing = true;
+    play.textContent = 'Wstrzymaj';
+    animation = requestAnimationFrame(tick);
+  });
+  slider.addEventListener('input', () => {
+    position = Number(slider.value);
+    paint();
+  });
+  drawTimeline();
+</script>
+</body>
+</html>
