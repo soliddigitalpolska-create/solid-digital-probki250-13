@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Próba karty mebla na Etsy · CloudCode Studio</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f6efe5;color:#332a21;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:clamp(18px,5.7vw,64px)}h1{font:700 clamp(2.2rem,6.8vw,4rem)/.99 Georgia,serif;letter-spacing:-.042em;margin:.27em 0 .4em}h2,h3{line-height:1.18}header{max-width:700px}.muted{font-size:.86em;opacity:.82}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin:26px 0}.card{background:#fff;border:1px solid #d7d7cf;border-radius:16px;padding:clamp(15px,4vw,29px);min-width:0}.actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}label{display:grid;gap:4px;margin:12px 0}select,input,button,a.button{max-width:100%;border-radius:7px;border:1px solid #b6b4aa;background:#fff;color:inherit;font:inherit;padding:8px 12px}button{cursor:pointer}button[aria-pressed=true],button.primary{background:#704529;border-color:#704529;color:#fff}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #63a59b;outline-offset:3px}a{color:#704529}a.button{display:inline-block;text-decoration:none}output{display:block}summary{cursor:pointer}@media(max-width:640px){.grid{grid-template-columns:1fr}}.listing{border-top:5px solid #704529}.listing output{background:#f1e8dd;border-radius:9px;padding:15px;font-weight:650}
+</style></head><body><main><header><p class="muted">CloudCode Studio · Próbka konfiguracji</p><h1>Fotel z czytelną wysyłką</h1><p>Podgląd angielskiej karty mebla i dwóch przykładowych kierunków dostawy. Zmień koszt oraz czas i sprawdź, co zobaczy kupujący.</p></header>
+<div class="grid"><section class="card"><h2>Ustawienia</h2><label>Kraj docelowy<select id="country"><option value="de">Niemcy</option><option value="cz">Czechy</option></select></label>
+<label>Cena mebla w EUR<input id="price" type="number" min="1" max="100000" step="0.01" value="360"></label>
+<label>Dostawa w EUR<input id="fee" type="number" min="0" max="10000" step="0.01" value="62"></label>
+<label>Dni na przygotowanie<input id="handling" type="number" min="1" max="90" step="1" value="7"></label>
+<p class="muted">Wszystkie ceny i terminy są demonstracyjne. Właściciel sklepu dostarcza stawki kuriera, określa kraje i akceptuje ustawienia przed publikacją.</p></section>
+<section class="card listing" lang="en"><p class="muted">Example listing</p><h2>Upholstered reading chair</h2><p>Choose your fabric. Birch legs, seat height 45 cm. Packed in one box, with legs enclosed separately for assembly.</p><p>Package dimensions 82 × 73 × 58 cm · 24 kg.</p><output id="summary" aria-live="polite"></output></section></div>
+<details><summary>Co przygotować do pierwszej oferty</summary><p>Zdjęcia i kolory tkanin, wymiary i waga gotowej paczki, kraj produkcji, czas przygotowania oraz stawki przewoźnika. Właściciel przechodzi weryfikację Etsy i rozlicza opłaty platformy.</p><a href="https://help.etsy.com/hc/en-us/articles/115015672808-How-to-Open-an-Etsy-Shop">Oficjalna instrukcja Etsy</a></details></main><script>"use strict";
+const markets={de:{name:"Germany",fee:62},cz:{name:"Czechia",fee:46}};
+const country=document.querySelector("#country"), price=document.querySelector("#price"), fee=document.querySelector("#fee"), handling=document.querySelector("#handling"), out=document.querySelector("#summary");
+const money=new Intl.NumberFormat("en-IE",{style:"currency",currency:"EUR"});
+function update(){
+ if([price,fee,handling].some(el=>!el.value||!el.validity.valid)){
+  out.textContent="Enter a valid product price, shipping cost and processing time.";
+  return;
+ }
+ const base=Number(price.value), shipping=Number(fee.value), destination=markets[country.value];
+ out.textContent=money.format(base)+" + "+money.format(shipping)+" shipping to "+destination.name+" = "+money.format(base+shipping)+". Dispatch in "+handling.value+" business days.";
+}
+country.addEventListener("change",()=>{fee.value=String(markets[country.value].fee);update();});
+[price,fee,handling].forEach(el=>el.addEventListener("input",update));
+update();</script></body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Miesięczny plan social marki odzieżowej · CloudCode Studio</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f8eeeb;color:#35262d;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:clamp(18px,5.7vw,64px)}h1{font:700 clamp(2.2rem,6.8vw,4rem)/.99 Georgia,serif;letter-spacing:-.042em;margin:.27em 0 .4em}h2,h3{line-height:1.18}header{max-width:700px}.muted{font-size:.86em;opacity:.82}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin:26px 0}.card{background:#fff;border:1px solid #d7d7cf;border-radius:16px;padding:clamp(15px,4vw,29px);min-width:0}.actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}label{display:grid;gap:4px;margin:12px 0}select,input,button,a.button{max-width:100%;border-radius:7px;border:1px solid #b6b4aa;background:#fff;color:inherit;font:inherit;padding:8px 12px}button{cursor:pointer}button[aria-pressed=true],button.primary{background:#803e5b;border-color:#803e5b;color:#fff}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #63a59b;outline-offset:3px}a{color:#803e5b}a.button{display:inline-block;text-decoration:none}output{display:block}summary{cursor:pointer}@media(max-width:640px){.grid{grid-template-columns:1fr}}.video{margin:0;background:white;border:1px solid #dfd2d5;border-radius:16px;overflow:hidden}.video video{display:block;width:100%;background:#3b2130;max-height:490px}.video figcaption{padding:11px 17px;font-size:.89em}dt{font-weight:700;margin-top:10px}dd{margin:0}
+</style></head><body><main><header><p class="muted">CloudCode Studio · Próbka planu publikacji</p><h1>Treści wokół jednej kolekcji</h1><p>Wybierz tygodniowy wątek i zobacz, jak połączyć rolkę, publikację w siatce i relację z tych samych nagrań.</p></header>
+<div class="grid"><section class="card"><div class="actions"><button type="button" data-week="0" aria-pressed="true">Fason</button><button type="button" data-week="1" aria-pressed="false">Detal</button><button type="button" data-week="2" aria-pressed="false">Stylizacja</button><button type="button" data-week="3" aria-pressed="false">Społeczność</button></div>
+<h2 id="topic" aria-live="polite"></h2><dl><dt>Rolka</dt><dd id="reel"></dd><dt>Post</dt><dd id="post"></dd><dt>Relacje</dt><dd id="story"></dd></dl></section>
+<figure class="video"><video controls playsinline preload="metadata" src="probki295-14/fashion/forma-fashion-motion-12s.mp4" aria-label="Przykładowy klip fashion"></video><figcaption>Wideo demonstracyjne z portfolio studia.</figcaption></figure></div></main><script>"use strict";
+const weeks=[
+ ["Jeden fason, dwie okazje","Dwa frontalne kadry tego samego ubrania, spięte przejściem w ruchu.","Karuzela 3 plansz z dwoma sposobami stylizacji.","Ankieta o ulubionym zestawie i odpowiedź z linkiem do produktu."],
+ ["Co czuć pod palcami","Pokaż strukturę materiału w ruchu i detal szwu w naturalnym świetle.","Dwa zdjęcia detalu z opisem materiału i pielęgnacji.","Pytanie o tkaninę, której odbiorca szuka na co dzień."],
+ ["Zestaw na zwyczajny dzień","Pokaż zestaw od początku do końca z trzema krótkimi podpisami.","Karta kompletu z sugestią alternatywnego koloru.","Dwa warianty do wyboru i zaproszenie do zapisania wpisu."],
+ ["Co lubisz w swoim ubraniu?","Pokaż trzy zatwierdzone odpowiedzi odbiorców jako krótkie napisy.","Post z jedną odpowiedzią i pytaniem do kolejnej osoby.","Pudełko pytań zbierające materiał do kolejnej publikacji."]
+];
+const controls=[...document.querySelectorAll("[data-week]")], fields=["#topic","#reel","#post","#story"];
+function show(index){
+ fields.forEach((field,i)=>{document.querySelector(field).textContent=weeks[index][i];});
+ controls.forEach((control,i)=>control.setAttribute("aria-pressed",String(i===index)));
+}
+controls.forEach((control,index)=>control.addEventListener("click",()=>show(index)));
+show(0);</script></body></html>
