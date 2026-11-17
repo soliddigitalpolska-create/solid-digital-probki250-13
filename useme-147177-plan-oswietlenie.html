@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Plan treści dla marki oświetleniowej · CloudCode Studio</title>
+<style>*{box-sizing:border-box}body{margin:0;color:#1c2322;background:#f5f4ee;font:17px/1.6 Inter,system-ui,sans-serif}main{max-width:820px;margin:auto;padding:clamp(18px,6vw,65px)}h1{font-size:clamp(2rem,6vw,3.45rem);line-height:1.08;letter-spacing:-.04em;margin:.3em 0}h2{line-height:1.2}.small{font-size:.85em;color:#484f49}.buttons,.grid{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}button,select{color:inherit;background:#fff;font:inherit;border:1px solid #b3beb6;border-radius:7px;padding:.45em .65em;max-width:100%}button{cursor:pointer}button[aria-pressed=true]{color:white;background:#8f542a;border-color:#8f542a}label{display:grid;gap:4px;min-width:0}article{border-left:4px solid #8f542a;border-radius:10px;padding:16px 22px;background:white}button:focus-visible,select:focus-visible{outline:3px solid #2c4f8a;outline-offset:4px}@media(max-width:500px){.grid{display:grid}}</style></head>
+<body><main><header><p class="small">Próbka redakcyjna · CloudCode Studio</p><h1>Jedna realizacja, dwie historie o świetle</h1></header>
+<p>Przełącz perspektywę i zobacz, jak te same zdjęcia można wykorzystać w treści dla architekta oraz osoby urządzającej wnętrze.</p>
+<div class="buttons" aria-label="Odbiorca">
+<button type="button" data-key="arch" aria-pressed="true">Dla architekta</button>
+<button type="button" data-key="home" aria-pressed="false">Dla klienta</button>
+</div>
+<article aria-live="polite"><h2 id="story"></h2><p id="frame"></p><p id="action"></p></article>
+<p class="small">Przykładowe scenariusze rolek. Ujęcia i dane techniczne dobieramy do rzeczywistej realizacji.</p></main><script>"use strict";
+const entries={
+  arch:["Warstwy światła w jednym wnętrzu","Zacznij od kadru z całą przestrzenią. Pokaż osobno światło ogólne, robocze i akcent na ścianie. Dodaj rzut, jeśli jest dostępny.","Zakończ zaproszeniem do przesłania rzutu pomieszczenia do doboru opraw."],
+  home:["Przestaw światło z pracy na odpoczynek","Nagraj to samo miejsce dwukrotnie. Najpierw pokaż biurko podczas pracy, potem punktowe światło przy sofie. Zachowaj ten sam kadr.","Zakończ pytaniem, z którego miejsca w pokoju odbiorca korzysta po zmroku."]
+};
+for (const b of document.querySelectorAll("[data-key]")){
+  b.addEventListener("click",()=>display(b.dataset.key));
+}
+function display(key){
+  for (const b of document.querySelectorAll("[data-key]")) b.setAttribute("aria-pressed",String(key===b.dataset.key));
+  const [title,frame,action]=entries[key];
+  document.querySelector("#story").textContent=title;
+  document.querySelector("#frame").textContent=frame;
+  document.querySelector("#action").textContent=action;
+}
+display("arch");
+</script></body></html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Kontrola ścieżki i pierwsza poprawka sklepu · CloudCode Studio</title>
+<style>*{box-sizing:border-box}body{margin:0;color:#1c2322;background:#f5f4ee;font:17px/1.6 Inter,system-ui,sans-serif}main{max-width:820px;margin:auto;padding:clamp(18px,6vw,65px)}h1{font-size:clamp(2rem,6vw,3.45rem);line-height:1.08;letter-spacing:-.04em;margin:.3em 0}h2{line-height:1.2}.small{font-size:.85em;color:#484f49}.buttons,.grid{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}button,select{color:inherit;background:#fff;font:inherit;border:1px solid #b3beb6;border-radius:7px;padding:.45em .65em;max-width:100%}button{cursor:pointer}button[aria-pressed=true]{color:white;background:#286053;border-color:#286053}label{display:grid;gap:4px;min-width:0}article{border-left:4px solid #286053;border-radius:10px;padding:16px 22px;background:white}button:focus-visible,select:focus-visible{outline:3px solid #2c4f8a;outline-offset:4px}@media(max-width:500px){.grid{display:grid}}</style></head>
+<body><main><header><p class="small">Próbka operacyjna · CloudCode Studio</p><h1>Gdzie klient traci drogę do zamówienia?</h1></header>
+<p>Wybierz wynik trzech kontroli na przykładowej ścieżce zakupu. Raport pokaże pierwszy blokujący krok i osobę, która może podjąć działanie.</p>
+<div class="grid">
+<label>Karta produktu <select id="card"><option value="yes">Cena, zawartość i CTA widoczne</option><option value="no">Kupujący nie widzi kluczowej informacji</option></select></label>
+<label>Checkout <select id="checkout"><option value="yes">Cena i produkt zgodne</option><option value="no">Inny produkt, cena lub błąd linku</option></select></label>
+<label>Odbiór <select id="pickup"><option value="yes">Instrukcja odbioru jest jasna</option><option value="no">Nie wiadomo, co robić po zapłacie</option></select></label>
+</div>
+<article aria-live="polite"><h2 id="report"></h2><p id="steps"></p></article><p class="small">Scenariusz demonstracyjny, bez danych klientów i bez płatności testowych.</p></main><script>"use strict";
+const checks=[
+  ["checkout","Płatność: najpierw popraw link lub konfigurację","Administrator sklepu porównuje produkt i kwotę w checkout z ofertą. Potem potwierdza poprawiony podgląd z telefonu i komputera."],
+  ["pickup","Odbiór: usuń lukę po zapłacie","Operator sprawdza konfigurację potwierdzenia i odbioru na kopii. Dopisuje następną czynność do komunikatu po płatności."],
+  ["card","Karta: wyjaśnij koszt i zawartość","Redaktor uzupełnia kluczową informację w karcie i sprawdza, czy widać przycisk zakupu na telefonie."]
+];
+function report(){
+  const failed=checks.find(([id])=>document.getElementById(id).value==="no");
+  const [title,detail]=failed?failed.slice(1):["Ścieżka przechodzi trzy kontrole","Zapisz datę i wersję produktu. Powtórz kontrolę po każdej zmianie ceny lub checkoutu."];
+  document.querySelector("#report").textContent=title;
+  document.querySelector("#steps").textContent=detail;
+}
+for(const select of document.querySelectorAll("select")) select.addEventListener("change",report);
+report();
+</script></body></html>
