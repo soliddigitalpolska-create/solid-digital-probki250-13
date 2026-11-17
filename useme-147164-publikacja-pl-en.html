@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Karta odcinka PL i EN · CloudCode Studio</title>
+<style>*{box-sizing:border-box}html{color-scheme:light}body{margin:0;color:#18231f;background:#f7f6f0;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:960px;margin:auto;padding:clamp(20px,5vw,58px)}header{max-width:690px}h1{font-size:clamp(2.1rem,6vw,3.75rem);line-height:1.03;letter-spacing:-.055em;margin:.3em 0}h2{font-size:1.4rem;line-height:1.2}p{max-width:65ch}.note{font-size:.87rem;color:#475850}.card{background:white;border:1px solid #dbdfd3;padding:clamp(16px,4vw,28px);border-radius:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}label{display:grid;gap:6px}button,select,input{color:inherit;font:inherit;border:1px solid #b6c2b7;background:white;border-radius:7px;padding:9px 12px}button{cursor:pointer}button[aria-pressed=true]{background:#244738;color:white;border-color:#244738}a{color:#214f3c}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #7957db;outline-offset:3px}nav,.actions{display:flex;gap:9px;flex-wrap:wrap}@media(max-width:640px){.two{grid-template-columns:1fr}}.actions{margin-bottom:18px}.checks label{display:flex;align-items:start;gap:10px;margin:10px 0}.checks input{width:20px;height:20px;margin-top:2px}progress{width:100%;accent-color:#244738}.meta{align-self:start}.meta h2{margin-top:0}.meta p{min-height:3.2rem}</style>
+</head>
+<body>
+<main>
+<header><p class="note">CloudCode Studio · Próbka workflow publikacji</p><h1>Jeden odcinek. Dwie wersje językowe.</h1><p>Przykładowa karta redakcyjna pokazuje metadane i osobną kontrolę gotowości każdej wersji YouTube.</p></header>
+<div class="actions" aria-label="Język"><button aria-pressed="true" type="button" data-lang="pl">Polski</button><button aria-pressed="false" type="button" data-lang="en">English</button></div>
+<div class="two">
+<section class="card meta" aria-label="Metadane" aria-live="polite"><h2 id="title"></h2><p id="note"></p><button type="button" id="copy">Kopiuj metadane</button> <span id="clipboard" role="status"></span></section>
+<section class="card checks" aria-label="Kontrola publikacji"><h2>Przed podglądem</h2><label><input type="checkbox"> Dopasowany tytuł i opis</label><label><input type="checkbox"> Miniatura i napisy sprawdzone</label><label><input type="checkbox"> Link gotowy do akceptacji</label><progress id="progress" max="3" value="0" aria-label="Liczba ukończonych kroków"></progress><output id="result" aria-live="polite"></output></section>
+</div>
+</main>
+<script>
+"use strict";
+const content={
+  pl:["Jak przygotować się do pierwszego spaceru w grupie","Trzy proste kroki. Zaplanuj tempo, ubiór i punkt spotkania. W opisie odcinka znajdziesz listę rzeczy do zabrania."],
+  en:["Getting ready for your first group walk","Three simple steps: plan your pace, clothes and meeting point. Find the packing checklist in the episode description."]
+};
+const steps={pl:[false,false,false],en:[false,false,false]};
+let active="pl";
+const checks=[...document.querySelectorAll(".checks input")];
+const progress=document.querySelector("#progress");
+const result=document.querySelector("#result");
+function show(){
+  const [title,copy]=content[active];
+  document.querySelector("#title").textContent=title;
+  document.querySelector("#note").textContent=copy;
+  for(const button of document.querySelectorAll("[data-lang]"))
+    button.setAttribute("aria-pressed",String(button.dataset.lang===active));
+  checks.forEach((check,index)=>{check.checked=steps[active][index];});
+  progress.value=steps[active].filter(Boolean).length;
+  result.textContent=progress.value+" z 3 kroków dla "+active.toUpperCase();
+  document.querySelector("#clipboard").textContent="";
+}
+for(const button of document.querySelectorAll("[data-lang]"))
+  button.addEventListener("click",()=>{active=button.dataset.lang;show();});
+checks.forEach((check,index)=>check.addEventListener("change",()=>{
+  steps[active][index]=check.checked;
+  show();
+}));
+document.querySelector("#copy").addEventListener("click",async()=>{
+  const status=document.querySelector("#clipboard");
+  try {
+    await navigator.clipboard.writeText(content[active].join("\n\n"));
+    status.textContent="Skopiowano.";
+  } catch {
+    status.textContent="Zaznacz tytuł i opis, by je skopiować.";
+  }
+});
+show();
+</script>
+</body>
+</html>

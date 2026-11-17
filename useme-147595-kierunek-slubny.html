@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kierunek identyfikacji ślubnej · CloudCode Studio</title>
+<style>*{box-sizing:border-box}html{color-scheme:light}body{margin:0;color:#18231f;background:#f7f6f0;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:960px;margin:auto;padding:clamp(20px,5vw,58px)}header{max-width:690px}h1{font-size:clamp(2.1rem,6vw,3.75rem);line-height:1.03;letter-spacing:-.055em;margin:.3em 0}h2{font-size:1.4rem;line-height:1.2}p{max-width:65ch}.note{font-size:.87rem;color:#475850}.card{background:white;border:1px solid #dbdfd3;padding:clamp(16px,4vw,28px);border-radius:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}label{display:grid;gap:6px}button,select,input{color:inherit;font:inherit;border:1px solid #b6c2b7;background:white;border-radius:7px;padding:9px 12px}button{cursor:pointer}button[aria-pressed=true]{background:#244738;color:white;border-color:#244738}a{color:#214f3c}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #7957db;outline-offset:3px}nav,.actions{display:flex;gap:9px;flex-wrap:wrap}@media(max-width:640px){.two{grid-template-columns:1fr}}.sample{--paper:#f1e1db;--ink:#582d3f;--accent:#b35b67;position:relative;display:grid;align-items:center;justify-items:center;text-align:center;min-height:290px;background:var(--paper);color:var(--ink);border-radius:7px;padding:12%;font-family:Georgia,serif}.sample.olive{--paper:#e9eadc;--ink:#283a26;--accent:#8d7652}.sample.vertical{max-width:260px;margin:auto;aspect-ratio:9/16}.sample>div{width:100%;padding:24px 12px;border:1px solid var(--accent)}.symbol{font:28px/1 Georgia,serif}.sample strong{display:block;font-size:clamp(1.9rem,5vw,3rem);font-weight:400;line-height:1.12;margin:.3em 0}.sample small{letter-spacing:.14em;text-transform:uppercase}.swatches{margin:20px 0;display:flex;gap:12px;flex-wrap:wrap}.swatch{display:grid;gap:4px;text-align:center;font:12px monospace}.chip{height:28px;width:62px;border:1px solid #ccd1c6;border-radius:5px}fieldset{border:0;padding:0;margin:0 0 18px}legend{font-weight:700;margin-bottom:8px}</style>
+</head>
+<body>
+<main>
+<header><p class="note">CloudCode Studio · Próbka identyfikacji</p><h1>Oprawa marki ślubnej</h1><p>Porównaj dwa kierunki stylistyczne i sprawdź, jak ten sam projekt sprawdza się w poście, relacji i na okładce rolki.</p></header>
+<div class="two">
+<section class="card">
+<fieldset><legend>Kierunek</legend><div class="actions"><button type="button" data-style="rose" aria-pressed="true">Pudrowy</button><button type="button" data-style="olive" aria-pressed="false">Oliwkowy</button></div></fieldset>
+<label>Format <select id="format"><option value="post">Post 1080 × 1350</option><option value="story">Relacja 1080 × 1920</option><option value="reel">Okładka rolki 1080 × 1920</option></select></label>
+<div class="swatches" id="swatches" aria-label="Paleta kolorów"></div>
+<p class="note">Przykładowa treść. Po wyborze kierunku szablony zostaną przygotowane do edycji w Canvie.</p>
+</section>
+<section aria-label="Podgląd grafiki"><div class="sample" id="sample"><div><span class="symbol" aria-hidden="true">∿</span><strong id="headline">Chwile, które zostają</strong><small id="caption">Wedding content</small></div></div></section>
+</div>
+</main>
+<script>
+"use strict";
+const formats={
+  post:["Chwile, które zostają","Wedding content"],
+  story:["Pierwsze spojrzenie","Relacja z przygotowań"],
+  reel:["Od pierwszej minuty","Okładka rolki"]
+};
+const colors={rose:["#F1E1DB","#582D3F","#B35B67"],olive:["#E9EADC","#283A26","#8D7652"]};
+const sample=document.querySelector("#sample");
+const format=document.querySelector("#format");
+function chooseStyle(selected){
+  sample.classList.toggle("olive",selected==="olive");
+  for(const button of document.querySelectorAll("button[data-style]"))
+    button.setAttribute("aria-pressed",String(button.dataset.style===selected));
+  const swatches=colors[selected].map(color=>{
+    const swatch=document.createElement("span");
+    swatch.className="swatch";
+    const chip=document.createElement("span");
+    chip.className="chip";
+    chip.style.backgroundColor=color;
+    swatch.append(chip,color);
+    return swatch;
+  });
+  document.querySelector("#swatches").replaceChildren(...swatches);
+}
+for(const button of document.querySelectorAll("button[data-style]"))
+  button.addEventListener("click",()=>chooseStyle(button.dataset.style));
+format.addEventListener("change",()=>{
+  const [title,caption]=formats[format.value];
+  document.querySelector("#headline").textContent=title;
+  document.querySelector("#caption").textContent=caption;
+  sample.classList.toggle("vertical",format.value!=="post");
+});
+chooseStyle("rose");
+</script>
+</body>
+</html>

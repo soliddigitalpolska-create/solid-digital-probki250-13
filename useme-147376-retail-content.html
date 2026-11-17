@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Retail analytics writing samples · CloudCode Studio</title>
+<style>*{box-sizing:border-box}html{color-scheme:light}body{margin:0;color:#18231f;background:#f7f6f0;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:960px;margin:auto;padding:clamp(20px,5vw,58px)}header{max-width:690px}h1{font-size:clamp(2.1rem,6vw,3.75rem);line-height:1.03;letter-spacing:-.055em;margin:.3em 0}h2{font-size:1.4rem;line-height:1.2}p{max-width:65ch}.note{font-size:.87rem;color:#475850}.card{background:white;border:1px solid #dbdfd3;padding:clamp(16px,4vw,28px);border-radius:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}label{display:grid;gap:6px}button,select,input{color:inherit;font:inherit;border:1px solid #b6c2b7;background:white;border-radius:7px;padding:9px 12px}button{cursor:pointer}button[aria-pressed=true]{background:#244738;color:white;border-color:#244738}a{color:#214f3c}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #7957db;outline-offset:3px}nav,.actions{display:flex;gap:9px;flex-wrap:wrap}@media(max-width:640px){.two{grid-template-columns:1fr}}body{background:#edf2f5;color:#182d40}.card{margin:18px 0}.card p{max-width:66ch}a{color:#175074}nav a{padding:6px 11px;border:1px solid #abcdde;border-radius:7px}.card:target{outline:3px solid #5784a4}.calculator{display:grid;grid-template-columns:repeat(2,minmax(0,210px));gap:10px}.calculator input{width:100%}output{display:block;font-size:1.25rem;font-weight:700;padding-top:14px}</style>
+</head>
+<body>
+<main>
+<header><p class="note">CloudCode Studio · Original writing samples</p><h1>Make a retail metric useful.</h1><p>Three B2B content formats for a retail analytics audience, using illustrative figures.</p></header>
+<nav aria-label="Writing formats"><a href="#article">Article</a><a href="#email">Email</a><a href="#linkedin">LinkedIn</a></nav>
+<article id="article" class="card">
+<h2>What to check when Friday sales look wrong</h2>
+<p>One shop’s Friday revenue drops by 12%. Before changing the staff rota, check which measure moved. Revenue can fall because fewer baskets reached the till, because shoppers spent less per transaction, or both.</p>
+<p>Start by comparing the same hours in two comparable weeks. Check that both stores reported a full day, then break revenue and transaction count down by hour. If the gap starts at 17:00, check late stockouts and till coverage before attributing it to demand.</p>
+<p>Use the result to choose one test for next Friday. A useful dashboard narrows the decision to an action you can observe.</p>
+<div class="calculator"><label>Net sales (€)<input id="sales" type="number" min="0" step="0.01" value="2160"></label><label>Transactions<input id="orders" type="number" min="1" step="1" value="180"></label></div>
+<output id="basket" for="sales orders" aria-live="polite"></output>
+</article>
+<article id="email" class="card"><h2>Email to retail operations managers</h2><p><strong>Subject</strong> Where did Friday’s sales gap start?</p><p>Hi there,</p><p>When Friday trading falls short, the daily total tells you how much you missed. The hourly breakdown tells you where to start looking. In the article above, we walk through a store example and show how to compare sales, transactions and basket value for the same trading hours.</p><p><a href="#article">Read the three checks</a></p></article>
+<article id="linkedin" class="card"><h2>LinkedIn post</h2><p>Two shops can both be down 12% on Friday and need completely different follow-up.</p><p>At the first shop, fewer transactions go through after 17:00. At the second, transaction count is flat, but basket value drops around lunch. The first deserves a look at availability and service coverage. The second deserves a look at item mix and discounts.</p><p>Before you change anything across the whole chain, compare like-for-like hours and write down one thing the store can test next week. Which measure would you open first?</p></article>
+</main>
+<script>
+"use strict";
+const sales=document.querySelector("#sales");
+const orders=document.querySelector("#orders");
+const output=document.querySelector("#basket");
+const eur=new Intl.NumberFormat("en-IE",{style:"currency",currency:"EUR"});
+function showBasket(){
+  if(!sales.value || !orders.value || !sales.validity.valid || !orders.validity.valid){
+    output.textContent="Enter net sales and a positive transaction count.";
+    return;
+  }
+  output.textContent=eur.format(Number(sales.value)/Number(orders.value))+" per transaction";
+}
+for(const input of [sales,orders]) input.addEventListener("input",showBasket);
+showBasket();
+</script>
+</body>
+</html>

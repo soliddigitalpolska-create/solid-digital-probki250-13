@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zaplecze kolekcji odzieżowej · CloudCode Studio</title>
+<style>*{box-sizing:border-box}html{color-scheme:light}body{margin:0;color:#18231f;background:#f7f6f0;font:16px/1.6 Inter,system-ui,sans-serif}main{max-width:960px;margin:auto;padding:clamp(20px,5vw,58px)}header{max-width:690px}h1{font-size:clamp(2.1rem,6vw,3.75rem);line-height:1.03;letter-spacing:-.055em;margin:.3em 0}h2{font-size:1.4rem;line-height:1.2}p{max-width:65ch}.note{font-size:.87rem;color:#475850}.card{background:white;border:1px solid #dbdfd3;padding:clamp(16px,4vw,28px);border-radius:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}label{display:grid;gap:6px}button,select,input{color:inherit;font:inherit;border:1px solid #b6c2b7;background:white;border-radius:7px;padding:9px 12px}button{cursor:pointer}button[aria-pressed=true]{background:#244738;color:white;border-color:#244738}a{color:#214f3c}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #7957db;outline-offset:3px}nav,.actions{display:flex;gap:9px;flex-wrap:wrap}@media(max-width:640px){.two{grid-template-columns:1fr}}body{background:#f0f4ee}.angle{margin-top:16px;min-height:220px}.angle strong{display:block;margin-top:12px}.preview{margin:0;border-radius:12px;overflow:hidden;background:#20241f;align-self:start}.preview video{width:100%;display:block;max-height:420px}.preview figcaption{color:#fff;padding:12px 18px;font-size:.85rem}.note{color:#405c48}</style>
+</head>
+<body>
+<main>
+<header><p class="note">CloudCode Studio · Próbka planu treści</p><h1>Trzy spojrzenia na jedną kolekcję</h1><p>Przełącz format. Każdy wariant wykorzystuje materiały, które zespół sklepu może nagrać telefonem na miejscu.</p></header>
+<div class="two">
+<section aria-label="Format publikacji">
+<div class="actions"><button type="button" data-angle="reel" aria-pressed="true">Rolka</button><button type="button" data-angle="post" aria-pressed="false">Karuzela</button><button type="button" data-angle="story" aria-pressed="false">Relacja</button></div>
+<article class="card angle" aria-live="polite"><h2 id="title">Jedna rzecz, dwa zestawy</h2><strong>Co nagrać</strong><p id="shots">1. Detal tkaniny. 2. Zestaw do pracy. 3. Zestaw na wieczór.</p><strong>Tekst i działanie</strong><p id="copy">„Tę samą koszulę załóż na dwa sposoby.” Pokaż dwa zestawy i zaproś do zapisania pomysłu.</p></article>
+</section>
+<figure class="preview"><video controls playsinline preload="none" aria-label="Przykładowy montaż odzieżowy"><source src="probki295-14/fashion/forma-fashion-motion-12s.mp4" type="video/mp4"></video><figcaption>Przykład formatu wideo z portfolio CloudCode Studio</figcaption></figure>
+</div>
+</main>
+<script>
+"use strict";
+const angles={
+  reel:["Jedna rzecz, dwa zestawy","1. Detal tkaniny. 2. Zestaw do pracy. 3. Zestaw na wieczór.","„Tę samą koszulę załóż na dwa sposoby.” Pokaż dwa zestawy i zaproś do zapisania pomysłu."],
+  post:["Od paczki do wieszaka","1. Rozpakowanie dostawy. 2. Zbliżenie szwu. 3. Zdjęcie całej sylwetki.","„Zajrzyj do nowej dostawy.” Ostatnia plansza pokazuje, jak sprawdzić dostępny rozmiar."],
+  story:["Który zestaw wybierasz?","Nagraj przymiarkę dwóch kurtek i pokaż je w tym samym świetle.","Dodaj ankietę „A czy B?”. W kolejnym slajdzie podlinkuj oba modele."]
+};
+for(const button of document.querySelectorAll("button[data-angle]")){
+  button.addEventListener("click",()=>{
+    for(const other of document.querySelectorAll("button[data-angle]"))
+      other.setAttribute("aria-pressed",String(other===button));
+    const [title,shots,copy]=angles[button.dataset.angle];
+    document.querySelector("#title").textContent=title;
+    document.querySelector("#shots").textContent=shots;
+    document.querySelector("#copy").textContent=copy;
+  });
+}
+</script>
+</body>
+</html>
