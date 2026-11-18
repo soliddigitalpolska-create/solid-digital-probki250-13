@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Katalog Multistore · Próba importu</title>
+<style>
+  :root{color-scheme:light;--ink:#132c27;--paper:#f6f8f6;--accent:#145648;--muted:#526964;--edge:#dbe4df;--warn:#a0461f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif}
+  header{background:#0e3028;color:#f4fff9;padding:2.8rem max(1.25rem,calc((100vw - 1000px)/2))}
+  h1,h2{line-height:1.18;margin:0 0 .6rem}
+  h1{font-size:clamp(2rem,6vw,3.5rem);letter-spacing:-.055em}
+  h2{font-size:1.36rem}
+  p{margin:.4rem 0 1rem}
+  header p{color:#cce7de;max-width:48rem;margin:0}
+  main{max-width:1040px;margin:auto;padding:1.3rem}
+  .surface{background:white;border:1px solid var(--edge);border-radius:1rem;padding:clamp(1rem,3vw,1.7rem);margin-bottom:1rem}
+  label{font-weight:700;display:block;margin-bottom:.5rem}
+  textarea{display:block;width:100%;min-height:10rem;resize:vertical;border:1px solid #a0b8ad;border-radius:.55rem;padding:.85rem;color:var(--ink);font:14px/1.6 "IBM Plex Mono",monospace}
+  button{background:var(--accent);border:1px solid var(--accent);border-radius:.55rem;color:white;padding:.67rem .9rem;font:inherit;font-weight:700;cursor:pointer}
+  button.secondary{background:white;color:var(--accent)}
+  button:focus-visible,textarea:focus-visible{outline:3px solid #83c5b0;outline-offset:2px}
+  .actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.85rem}
+  .subtle{color:var(--muted);font-size:.94rem}
+  .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:1rem 0}
+  .summary div{padding:.55rem .7rem;border-radius:.55rem;background:#eaf3ef;font-size:.86rem}
+  .summary output{display:block;font-size:1.58rem;font-weight:750}
+  .table-wrap{overflow:auto;border-radius:.5rem;border:1px solid var(--edge)}
+  table{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+  th,td{padding:.55rem .7rem;border-bottom:1px solid var(--edge);vertical-align:top}
+  th{background:#f0f5f2}
+  td:nth-child(1),td:nth-child(2){white-space:nowrap;font-family:"IBM Plex Mono",monospace}
+  .blocked,#error{color:var(--warn)}
+  .ready{color:var(--accent)}
+  #error:empty{display:none}
+  footer{text-align:center;color:var(--muted);padding:0 1.3rem 1.5rem;font-size:.9rem}
+  @media(max-width:590px){main{padding:.78rem}.summary div{padding:.45rem}.table-wrap{max-height:26rem}table{min-width:520px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Próba importu Multistore</h1>
+  <p>Sprawdź, który rekord utworzy produkt, który zmieni nazwę w jednym sklepie, a który trzeba zatrzymać przed importem.</p>
+</header>
+<main>
+  <section class="surface">
+    <h2>Dane wejściowe</h2>
+    <p class="subtle" id="help">Dane przykładowe. Separator to średnik. W tej próbie dopuszczone są sklepy 1 i 2. Ten sam SKU może mieć różną nazwę w każdym z nich.</p>
+    <label for="source">CSV produktów</label>
+    <textarea id="source" aria-describedby="help" spellcheck="false"></textarea>
+    <div class="actions">
+      <button id="run" type="button">Sprawdź import</button>
+      <button id="reset" class="secondary" type="button">Przywróć przykład</button>
+    </div>
+    <p role="alert" id="error"></p>
+  </section>
+  <section class="surface" aria-labelledby="result">
+    <h2 id="result">Decyzja dla każdego wiersza</h2>
+    <div class="summary" aria-live="polite">
+      <div><output id="nNew">0</output>Do utworzenia</div>
+      <div><output id="nUpdate">0</output>Do aktualizacji</div>
+      <div><output id="nBlock">0</output>Wstrzymane</div>
+    </div>
+    <div class="table-wrap" tabindex="0" aria-label="Tabela wyniku próby importu">
+      <table>
+        <thead><tr><th>Sklep</th><th>SKU</th><th>Decyzja</th><th>Zmiana lub powód</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="subtle">Po pozytywnym wyniku operator zatwierdza mapę sklepów i próbę na kopii. Przetłumaczone treści oraz grafiki otrzymują osobny odbiór.</p>
+  </section>
+</main>
+<footer>CloudCode Studio · Demonstracja lokalna. Przeglądarka nie modyfikuje sklepu.</footer>
+<script>
+const columns = ["id_shop", "sku", "ean", "nazwa"];
+const sample = `id_shop;sku;ean;nazwa
+1;DEMO-100;5901234123457;"Uchwyt A; kolor czarny"
+2;DEMO-100;5901234123457;Uchwyt A – sklep 2
+2;DEMO-200;4006381333931;Półka stalowa
+1;DEMO-301;5901234123450;Uszkodzony EAN
+3;DEMO-500;4006381333931;Poza wybranymi sklepami
+1;DEMO-777;5901234123457;Zduplikowany wiersz
+1;DEMO-777;5901234123457;Druga wersja tego SKU`;
+const stores = new Set(["1", "2"]);
+const existingNames = new Map([["1|DEMO-100", "Uchwyt A"], ["2|DEMO-100", "Uchwyt A – stary opis"]]);
+
+function parseCsv(input) {
+  const records = [];
+  let row = [], cell = "", quoted = false;
+  const data = input.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
+  for (let i = 0; i < data.length; i++) {
+    const char = data[i];
+    if (char === '"') {
+      if (quoted && data[i + 1] === '"') {cell += '"'; i++;}
+      else if (quoted || !cell.trim()) quoted = !quoted;
+      else throw new Error("Cudzysłów w niewłaściwym miejscu.");
+    } else if (!quoted && (char === ";" || char === "\n")) {
+      row.push(cell.trim());
+      cell = "";
+      if (char === "\n") {
+        if (row.some(Boolean)) records.push(row);
+        row = [];
+      }
+    } else {
+      cell += char;
+    }
+  }
+  if (quoted) throw new Error("Brakuje zamknięcia cudzysłowu.");
+  row.push(cell.trim());
+  if (row.some(Boolean)) records.push(row);
+  return records;
+}
+
+function validEan(ean) {
+  if (!/^(?:\d{8}|\d{13})$/.test(ean)) return false;
+  const digits = [...ean].map(Number).reverse();
+  const sum = digits.reduce((total, digit, index) => total + digit * (index % 2 ? 3 : 1), 0);
+  return sum % 10 === 0;
+}
+
+function classify(input) {
+  const [header, ...records] = parseCsv(input);
+  if (!header || header.join("|") !== columns.join("|")) {
+    throw new Error("Pierwszy wiersz musi mieć nagłówek id_shop;sku;ean;nazwa.");
+  }
+  const keyCounts = new Map();
+  for (const [shop, sku] of records) {
+    const key = shop + "|" + sku;
+    keyCounts.set(key, (keyCounts.get(key) || 0) + 1);
+  }
+  return records.map((record) => {
+    const [shop = "", sku = "", ean = "", name = ""] = record;
+    const key = shop + "|" + sku;
+    const blockers = [];
+    if (record.length !== columns.length) blockers.push("Nieprawidłowa liczba kolumn");
+    if (!stores.has(shop)) blockers.push("Sklep poza zakresem próby");
+    if (!sku || !name) blockers.push("Brak SKU lub nazwy");
+    if (keyCounts.get(key) > 1) blockers.push("Powtórzony SKU w tym sklepie");
+    if (!validEan(ean)) blockers.push("Nieprawidłowy EAN");
+    if (blockers.length) return {shop, sku, kind:"blocked", label:"Wstrzymaj", note:blockers.join(" · ")};
+    const oldName = existingNames.get(key);
+    if (oldName === name) return {shop, sku, kind:"same", label:"Bez zmian", note:name};
+    return oldName
+      ? {shop, sku, kind:"update", label:"Aktualizacja", note:oldName + " → " + name}
+      : {shop, sku, kind:"new", label:"Nowy produkt", note:name};
+  });
+}
+
+const source = document.getElementById("source");
+const rows = document.getElementById("rows");
+const error = document.getElementById("error");
+function show() {
+  rows.replaceChildren();
+  error.textContent = "";
+  const counts = {new:0,update:0,blocked:0,same:0};
+  try {
+    for (const item of classify(source.value)) {
+      const tr = document.createElement("tr");
+      for (const value of [item.shop || "—",item.sku || "—",item.label,item.note]) {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.append(td);
+      }
+      tr.children[2].className = item.kind === "blocked" ? "blocked" : "ready";
+      rows.append(tr);
+      counts[item.kind]++;
+    }
+  } catch (e) {
+    error.textContent = e.message;
+  }
+  document.getElementById("nNew").value = counts.new;
+  document.getElementById("nUpdate").value = counts.update;
+  document.getElementById("nBlock").value = counts.blocked;
+}
+document.getElementById("run").addEventListener("click",show);
+document.getElementById("reset").addEventListener("click",()=>{source.value=sample;show();});
+source.value = sample;
+show();
+</script>
+</body>
+</html>
+
