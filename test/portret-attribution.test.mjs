@@ -16,18 +16,23 @@ function run(search, hrefs = [destination]) {
   return anchors.map(a => a.href);
 }
 
-test('all live inquiry calls to action retain the allowed campaign and fragment', () => {
+test('Shopify product and contact links retain the approved inbound campaign', () => {
   assert.match(html, /<script src="assets\/portret-pupila\/attribution.js" defer><\/script>/);
-  const inquiry = [...html.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).filter(x=>x===destination);
-  assert.ok(inquiry.length >= 9);
-  for (const href of run('?'+campaign+'&utm_content=bio', inquiry)) {
-    const u=new URL(href);
-    assert.equal(u.origin, 'https://portret-pupila.myshopify.com');
-    assert.equal(u.pathname, '/pages/contact');
-    assert.equal(u.hash, '#portret-zapytanie');
-    assert.equal(u.searchParams.get('utm_content'), 'bio');
-    assert.equal(u.searchParams.get('utm_source'), 'tiktok');
-    assert.equal(u.searchParams.size, 4);
+  const storefront = [...html.matchAll(/href="([^"]+)"/g)]
+    .map(([, href]) => href.replaceAll('&amp;', '&'))
+    .filter(href => href.startsWith('https://portret-pupila.myshopify.com/'));
+  assert.equal(storefront.length, 10);
+  const forwarded = run('?' + campaign + '&utm_content=bio', storefront);
+  for (const [index, href] of forwarded.entries()) {
+    const url = new URL(href);
+    const original = new URL(storefront[index]);
+    assert.equal(url.pathname, original.pathname);
+    assert.equal(url.hash, original.hash);
+    assert.equal(url.searchParams.get('utm_content'), 'bio');
+    assert.equal(url.searchParams.get('utm_source'), 'tiktok');
+    assert.equal(url.searchParams.get('utm_medium'), 'organic_social');
+    assert.equal(url.searchParams.get('utm_campaign'), 'pierwsza_sprzedaz_14dni_20261117');
+    assert.equal(url.searchParams.size, 4);
   }
 });
 

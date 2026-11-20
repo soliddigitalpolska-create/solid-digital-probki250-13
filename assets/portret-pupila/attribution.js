@@ -1,4 +1,4 @@
-/* Forward only known campaign labels to our inquiry page. No storage or analytics request. */
+/* Forward only known campaign labels to our storefront. No storage or analytics request. */
 (() => {
   'use strict';
   const incoming = new URLSearchParams(window.location.search);
@@ -8,6 +8,10 @@
     utm_campaign: ['pierwsza_sprzedaz_14dni_20261117'],
     utm_content: ['bio', 'portret', 'profil', 'przyklad', 'szczegoly', 'wybor_zdjecia', 'dwa_klimaty', 'ta_mina', 'co_dostajesz_99', '500_zdjec']
   };
+  const storefrontPaths = new Set([
+    '/pages/contact',
+    '/products/pierwsze-swieta-z-pupilem-miniportret-na-plotnie-20-20-cm'
+  ]);
   const selected = new URLSearchParams();
   for (const [key, values] of Object.entries(allowed)) {
     const supplied = incoming.getAll(key);
@@ -18,7 +22,7 @@
   for (const anchor of document.querySelectorAll('a[href]')) {
     let destination;
     try { destination = new URL(anchor.href); } catch { continue; }
-    if (destination.origin !== 'https://portret-pupila.myshopify.com' || destination.pathname !== '/pages/contact') continue;
+    if (destination.origin !== 'https://portret-pupila.myshopify.com' || !storefrontPaths.has(destination.pathname)) continue;
     for (const [key, value] of selected) destination.searchParams.set(key, value);
     anchor.href = destination.href;
   }
