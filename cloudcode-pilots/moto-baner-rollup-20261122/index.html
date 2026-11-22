@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Baner i roll-up · autorskie demo CloudCode Studio</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#13221e;background:#f4f3ee}*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:40px 24px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}h1{font-size:clamp(32px,5vw,64px);letter-spacing:-.055em;max-width:760px;margin:20px 0}p{line-height:1.6;max-width:750px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0}button{border:1px solid #152720;border-radius:30px;background:transparent;color:#152720;padding:12px 20px;cursor:pointer;font-weight:bold}button.active,button:hover{background:#152720;color:#fff}.card{background:white;padding:24px;margin:20px 0;border:1px solid #deded6;border-radius:16px}.visual{background:#eae9e1;padding:24px;overflow:auto;border-radius:10px}.visual svg{display:block;width:100%;height:auto}.vertical svg{max-width:350px;margin:auto}.meta{display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap}small{line-height:1.6}.safe{display:none}body.guides .safe{display:block}code{word-break:break-all}footer{margin:40px 0;font-size:13px;color:#50645a}
+@media(max-width:600px){main{padding:24px 14px}.visual{padding:10px}.card{padding:16px}.tools{gap:6px}button{padding:10px 14px}}
+</style>
+<main><span class="eyebrow">CloudCode Studio / Studia formatu / 01</span>
+<h1>Jeden charakter.<br>Dwa różne formaty.</h1>
+<p>Autorski projekt demonstracyjny dla fikcyjnej marki <strong>APEX MOTO</strong>. Pokazuje hierarchię komunikatu, adaptację do banera oraz roll-upu i kontrolę marginesów. Nie jest realizacją dla Barton Motors ani gotowym plikiem produkcyjnym.</p>
+<div class="tools"><button id="lime" class="active">Limonka / grafit</button><button id="orange">Pomarańcz / grafit</button><button id="guides">Pokaż bezpieczny obszar</button></div>
+<section class="card"><div class="meta"><div><span class="eyebrow">01 / Baner</span><h2>Najpierw komunikat. Potem detal.</h2></div><button id="download-banner">Pobierz SVG banera</button></div><div class="visual" id="banner"></div><p><small>Podgląd 1600 × 600 px. Ta sama kompozycja może być przeliczona na wymiar banera po otrzymaniu specyfikacji drukarni. Tekst pozostaje wektorowy.</small></p></section>
+<section class="card"><div class="meta"><div><span class="eyebrow">02 / Roll-up</span><h2>Czytelny z kilku metrów.</h2></div><button id="download-rollup">Pobierz SVG roll-upu</button></div><div class="visual vertical" id="rollup"></div><p><small>Proporcja 85 × 200. Dodatkowy obszar kasety, spad i profil CMYK/PDF/X muszą wynikać z szablonu wybranej drukarni. Ten podgląd nie zawiera zatwierdzonej specyfikacji druku.</small></p></section>
+<section class="card"><span class="eyebrow">Dostarczenie finalne</span><p>Po ustaleniu briefu: logo i zdjęcia, do których klient ma prawa, jeden komunikat i dane kontaktowe, adaptacja formatów, jedna zbiorcza runda uwag, plik do internetu i PDF do druku według specyfikacji drukarni. Bez fikcyjnych promocji, cen motocykli lub obietnic finansowania.</p></section>
+<footer>Demo © CloudCode Studio, 22.11.2026. Wszystkie nazwy i dane w projekcie są fikcyjne. Strona nie zbiera danych, nie ma formularza kontaktowego i nie wysyła niczego do serwera.</footer></main>
+<script>
+let accent='#cefa38';
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function svg(type){const vertical=type==='rollup';return vertical?
+`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 2000" role="img" aria-label="Roll-up fikcyjnej marki APEX MOTO">
+<rect width="850" height="2000" fill="#121b1a"/><path d="M525 0H850L340 1120H0Z" fill="#202c29"/><path d="M815 0H850L340 1120H305Z" fill="${accent}"/>
+<text x="72" y="126" fill="white" font-family="Arial,sans-serif" font-size="46" font-weight="900" letter-spacing="-2">APEX <tspan fill="${accent}">MOTO</tspan></text>
+<text x="72" y="540" fill="white" font-family="Arial,sans-serif" font-size="107" font-weight="900" letter-spacing="-5"><tspan x="72">TWOJA</tspan><tspan x="72" dy="116">DROGA.</tspan><tspan x="72" dy="116" fill="${accent}">TWÓJ</tspan><tspan x="72" dy="116" fill="${accent}">RYTM.</tspan></text>
+<path d="M70 1110H780M70 1140H780M70 1170H780" stroke="#394742" stroke-width="2"/>
+<text x="72" y="1330" fill="white" font-family="Arial,sans-serif" font-size="39" font-weight="700">POZNAJ NOWY KIERUNEK</text>
+<text x="72" y="1400" fill="#b8c9c1" font-family="Arial,sans-serif" font-size="31">Sprawdź ofertę w salonie.</text>
+<rect x="72" y="1510" width="706" height="110" rx="4" fill="${accent}"/><text x="110" y="1581" fill="#121b1a" font-family="Arial,sans-serif" font-weight="900" font-size="36">UMÓW JAZDĘ PRÓBNĄ →</text>
+<text x="72" y="1780" fill="white" font-family="Arial,sans-serif" font-size="30">apex-moto.example</text><text x="72" y="1840" fill="#b8c9c1" font-family="Arial,sans-serif" font-size="24">KONCEPCJA / DANE FIKCYJNE</text>
+<rect class="safe" x="50" y="50" width="750" height="1830" fill="none" stroke="#ff55aa" stroke-width="3" stroke-dasharray="15 10"/></svg>`:
+`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" role="img" aria-label="Baner fikcyjnej marki APEX MOTO">
+<rect width="1600" height="600" fill="#121b1a"/><path d="M1220 0H1600L1320 600H940Z" fill="#202c29"/><path d="M1550 0H1600L1320 600H1270Z" fill="${accent}"/>
+<text x="64" y="85" fill="white" font-family="Arial,sans-serif" font-size="32" font-weight="900" letter-spacing="-1">APEX <tspan fill="${accent}">MOTO</tspan></text>
+<text x="60" y="255" fill="white" font-family="Arial,sans-serif" font-size="100" font-weight="900" letter-spacing="-5">TWOJA DROGA.</text><text x="60" y="363" fill="${accent}" font-family="Arial,sans-serif" font-size="100" font-weight="900" letter-spacing="-5">TWÓJ RYTM.</text>
+<text x="66" y="434" fill="#c1d1c8" font-family="Arial,sans-serif" font-size="26">Poznaj nowy kierunek. Sprawdź ofertę w salonie.</text>
+<rect x="66" y="481" width="560" height="64" rx="4" fill="${accent}"/><text x="92" y="523" fill="#121b1a" font-family="Arial,sans-serif" font-size="25" font-weight="900">UMÓW JAZDĘ PRÓBNĄ →</text>
+<text x="1070" y="515" fill="white" font-family="Arial,sans-serif" font-size="24" transform="rotate(-66 1070 515)">apex-moto.example</text><text x="1340" y="565" fill="#c1d1c8" font-family="Arial,sans-serif" font-size="15">KONCEPCJA / DEMO</text>
+<rect class="safe" x="35" y="35" width="1530" height="530" fill="none" stroke="#ff55aa" stroke-width="3" stroke-dasharray="15 10"/></svg>`;}
+function render(){document.querySelector('#banner').innerHTML=svg('banner');document.querySelector('#rollup').innerHTML=svg('rollup');}
+function color(v){accent=v;document.querySelector('#lime').classList.toggle('active',v==='#cefa38');document.querySelector('#orange').classList.toggle('active',v!=='#cefa38');render();}
+document.querySelector('#lime').onclick=()=>color('#cefa38');document.querySelector('#orange').onclick=()=>color('#ff754b');
+document.querySelector('#guides').onclick=()=>{document.body.classList.toggle('guides');document.querySelector('#guides').textContent=document.body.classList.contains('guides')?'Ukryj bezpieczny obszar':'Pokaż bezpieczny obszar';};
+function download(type){let text=svg(type).replace(/<rect class="safe"[^>]+\/>/g,'');const blob=new Blob([text],{type:'image/svg+xml'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='cloudcode-demo-'+type+'.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+document.querySelector('#download-banner').onclick=()=>download('banner');document.querySelector('#download-rollup').onclick=()=>download('rollup');render();
+</script></html>
