@@ -12,6 +12,15 @@ Publiczny katalog demonstracji: strony, interfejsy, grafika, animacja, teksty or
 
 ## Najnowsze materiały
 
+**22.11.2026 — trzy nowe, przetestowane demonstracje**
+
+- [Krótkie portfolio CloudCode Studio](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/cloudcode-pilots/)
+- [Autorski baner i roll-up: dwie palety, marginesy i eksport SVG](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/cloudcode-pilots/moto-baner-rollup-20261122/)
+- [Film produktowy 15 s: własny model 3D, kamera, napisy i audio](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/cloudcode-pilots/product-motion-20261122/)
+- [Kontrola checkoutu i eksportu: kaucja, waluta, duplikaty, 20 testów](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/cloudcode-pilots/checkout-reconcile-20261122/)
+
+Wszystkie to autorskie demonstracje na fikcyjnych danych, nie wdrożenia klientów. Kontrola checkoutu nie potwierdza wpłat w bramce; film nie przedstawia rzeczywistego produktu klienta. Kontakt i rozliczenie zleceń Useme pozostają na platformie.
+
 **25.10.2026 — 10 interaktywnych porównań „przed i po wdrożeniu”** (firmy fikcyjne Alfa/Beta/Gamma, wynik liczony z wpisanych liczb):
 
 - [Lista wszystkich 10](https://soliddigitalpolska-create.github.io/solid-digital-probki250-13/porownania-b2b-25-10-2026/)
