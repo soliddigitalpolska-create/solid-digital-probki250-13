@@ -10,6 +10,7 @@
   };
   const storefrontPaths = new Set([
     '/pages/contact',
+    '/products/pp-cyfrowy',
     '/products/pierwsze-swieta-z-pupilem-miniportret-na-plotnie-20-20-cm'
   ]);
   const selected = new URLSearchParams();
